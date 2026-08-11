@@ -1,0 +1,67 @@
+<%# Renders one dashboard's elements in cell order.
+    Expects: elements (array from buildDashboardView). %>
+<% const _t = typeof t === 'function' ? t : (k, v) => k; %>
+<% const _tx = typeof tx === 'function' ? tx : (s) => s; %>
+<% (elements || []).forEach(el => { %>
+  <section class="dash-element dash-<%= el.typeName %>">
+    <h2><%= _tx(el.table || el.name) %>
+      <% if (el.typeName === 'list' && el.available && !el.denied) { %>
+        <span class="badge"><%= el.count %></span>
+      <% } %>
+    </h2>
+
+    <% if (el.denied) { %>
+      <p class="muted"><%= _t('no_table_permission') %></p>
+
+    <% } else if (el.typeName === 'list') { %>
+      <% if (!el.available) { %>
+        <p class="muted"><%= _t('table_unavailable') %><% if (el.error) { %> <span class="muted">(<%= el.error %>)</span><% } %></p>
+      <% } else if (!el.rows || el.rows.length === 0) { %>
+        <p class="muted"><%= _t('no_entries') %></p>
+      <% } else { %>
+        <div class="table-wrap dash-table-wrap"><table class="dash-data-table">
+          <tbody>
+          <% el.rows.forEach(row => { %>
+            <tr>
+              <% if (row.preview.length === 0) { %>
+                <td>#<%= row.id %></td>
+              <% } else { %>
+                <% row.preview.forEach(cell => { %>
+                  <td><span class="muted"><%= cell.key %>:</span> <%= cell.value %></td>
+                <% }) %>
+              <% } %>
+              <% if (el.href && row.id != null) { %>
+                <td><a class="btn btn-link btn-sm" href="<%= el.href %>/<%= row.id %>"><%= _t('open') %></a></td>
+              <% } %>
+            </tr>
+          <% }) %>
+          </tbody>
+        </table></div>
+        <% if (el.count > el.rows.length && el.href) { %>
+          <p><a href="<%= el.href %>"><%= _t('show_all', { n: el.count }) %></a></p>
+        <% } %>
+      <% } %>
+
+    <% } else if (el.typeName === 'chart') { %>
+      <% if (el.chartHtml) { %>
+        <%- el.chartHtml %>
+      <% } else { %>
+        <p><a class="btn btn-link" href="<%= el.href %>"><%= _t('open_chart') %></a><% if (el.chartError) { %> <span class="muted">(<%= el.chartError %>)</span><% } %></p>
+      <% } %>
+
+    <% } else if (el.typeName === 'report') { %>
+      <p><a class="btn btn-link" href="<%= el.href %>"><%= _t('open_report') %></a></p>
+
+    <% } else if (el.typeName === 'map') { %>
+      <p class="muted"><%= _t('map_pending', { table: el.table || '' }) %></p>
+
+    <% } else if (el.typeName === 'snippet') { %>
+      <% if (el.snippetHtml) { %>
+        <h3><%= _tx(el.snippetTitle) %></h3>
+        <div class="snippet-body"><%- el.snippetHtml %></div>
+      <% } else { %>
+        <p class="muted"><%= _t('snippet_pending', { id: el.snippetId || '' }) %><% if (el.snippetError) { %> (<%= el.snippetError %>)<% } %></p>
+      <% } %>
+    <% } %>
+  </section>
+<% }) %>

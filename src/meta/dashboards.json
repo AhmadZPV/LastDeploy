@@ -1,0 +1,1039 @@
+{
+  "generatedFrom": "include/*_settings.php",
+  "counts": {
+    "settingsFiles": 172,
+    "dashboards": 7,
+    "elements": 41,
+    "type_0": 22,
+    "type_1": 11,
+    "type_2": 1,
+    "type_6": 1,
+    "type_7": 6,
+    "searchFields": 92
+  },
+  "dashboards": {
+    "Adressen_Diagramme": {
+      "elements": [
+        {
+          "elementName": "Verteilung_nach_Klassifikation_chart",
+          "table": "Verteilung nach Klassifikation",
+          "type": 1,
+          "cellName": "cell_1_0"
+        },
+        {
+          "elementName": "Verteilung_nach_Ort_chart",
+          "table": "Verteilung nach Ort",
+          "type": 1,
+          "cellName": "cell_1_1"
+        },
+        {
+          "elementName": "Verteilung_nach_Bundesland_chart",
+          "table": "Verteilung nach Bundesland",
+          "type": 1,
+          "cellName": "cell_2_0"
+        },
+        {
+          "elementName": "Verteilung_nach_Staat_chart",
+          "table": "Verteilung nach Staat",
+          "type": 1,
+          "cellName": "cell_2_1"
+        },
+        {
+          "elementName": "Adressen_map",
+          "table": "Adressen",
+          "type": 6,
+          "cellName": "cell_3_0",
+          "width": 1200,
+          "height": 600,
+          "zoom": "auto",
+          "addressF": "",
+          "latF": "Breitengrad",
+          "lonF": "Laengengrad",
+          "descF": "Kurzname",
+          "mapMarkerCount": 50,
+          "isMarkerIconCustom": 0,
+          "updateMoved": true
+        },
+        {
+          "elementName": "Adressen_Diagramme_snippet",
+          "table": "Adressen Diagramme",
+          "type": 7,
+          "cellName": "cell_0_0",
+          "snippetId": "Anzahl_Mieter_Eigent_mer"
+        },
+        {
+          "elementName": "Adressen_Diagramme_snippet1",
+          "table": "Adressen Diagramme",
+          "type": 7,
+          "cellName": "cell_0_1",
+          "snippetId": "Objekte__Einheiten_und_Fl_chen"
+        }
+      ],
+      "searchFields": {}
+    },
+    "Assistent_Abrechnungen": {
+      "elements": [
+        {
+          "elementName": "Abrechnungen_list",
+          "table": "Abrechnungen",
+          "type": 0,
+          "cellName": "cell_1_0",
+          "inlineAdd": false,
+          "inlineEdit": false,
+          "deleteRecord": false,
+          "popupAdd": true,
+          "popupEdit": true,
+          "popupView": true,
+          "updateSelected": false
+        },
+        {
+          "elementName": "Abrechnungskonten_list",
+          "table": "Abrechnungskonten",
+          "type": 0,
+          "cellName": "cell_2_0",
+          "inlineAdd": false,
+          "inlineEdit": false,
+          "deleteRecord": false,
+          "popupAdd": true,
+          "popupEdit": true,
+          "popupView": true,
+          "updateSelected": false,
+          "masterTable": "Abrechnungen"
+        },
+        {
+          "elementName": "Kosten_list",
+          "table": "Kosten",
+          "type": 0,
+          "cellName": "cell_3_0",
+          "inlineAdd": false,
+          "inlineEdit": false,
+          "deleteRecord": true,
+          "popupAdd": true,
+          "popupEdit": true,
+          "popupView": true,
+          "updateSelected": false,
+          "masterTable": "Abrechnungen"
+        },
+        {
+          "elementName": "DirekteKosten_list",
+          "table": "DirekteKosten",
+          "type": 0,
+          "cellName": "cell_4_0",
+          "inlineAdd": false,
+          "inlineEdit": false,
+          "deleteRecord": true,
+          "popupAdd": true,
+          "popupEdit": true,
+          "popupView": true,
+          "updateSelected": false,
+          "masterTable": "Abrechnungskonten"
+        },
+        {
+          "elementName": "Vorauszahlungen_list",
+          "table": "Vorauszahlungen",
+          "type": 0,
+          "cellName": "cell_5_0",
+          "inlineAdd": false,
+          "inlineEdit": false,
+          "deleteRecord": true,
+          "popupAdd": true,
+          "popupEdit": true,
+          "popupView": true,
+          "updateSelected": false,
+          "masterTable": "Abrechnungskonten"
+        },
+        {
+          "elementName": "Abrechnungsdruck_report",
+          "table": "Abrechnungsdruck",
+          "type": 2,
+          "cellName": "cell_6_0"
+        },
+        {
+          "elementName": "Assistent_Abrechnungen_snippet",
+          "table": "Assistent Abrechnungen",
+          "type": 7,
+          "cellName": "cell_6_1",
+          "snippetId": "Assistent_Abrechnungen_snippet"
+        },
+        {
+          "elementName": "Kerndaten_list",
+          "table": "Kerndaten",
+          "type": 0,
+          "cellName": "cell_0_0",
+          "inlineAdd": false,
+          "inlineEdit": false,
+          "deleteRecord": true,
+          "popupAdd": true,
+          "popupEdit": true,
+          "popupView": true,
+          "updateSelected": false
+        }
+      ],
+      "searchFields": {
+        "Abrechnungen_ID": [
+          {
+            "table": "Abrechnungen",
+            "field": "ID"
+          }
+        ],
+        "Abrechnungen_Bezeichnung": [
+          {
+            "table": "Abrechnungen",
+            "field": "Bezeichnung"
+          }
+        ],
+        "Abrechnungen_Von": [
+          {
+            "table": "Abrechnungen",
+            "field": "Von"
+          }
+        ],
+        "Abrechnungen_Bis": [
+          {
+            "table": "Abrechnungen",
+            "field": "Bis"
+          }
+        ],
+        "Abrechnungen_Tage": [
+          {
+            "table": "Abrechnungen",
+            "field": "Tage"
+          }
+        ],
+        "Abrechnungen_Quadratmeter": [
+          {
+            "table": "Abrechnungen",
+            "field": "Quadratmeter"
+          }
+        ],
+        "Abrechnungen_Gesamtquadratmetertage": [
+          {
+            "table": "Abrechnungen",
+            "field": "Gesamtquadratmetertage"
+          }
+        ],
+        "Abrechnungen_Einheiten": [
+          {
+            "table": "Abrechnungen",
+            "field": "Einheiten"
+          }
+        ],
+        "Abrechnungen_Miteigentumsanteile": [
+          {
+            "table": "Abrechnungen",
+            "field": "Miteigentumsanteile"
+          }
+        ],
+        "Abrechnungen_Einheiten2": [
+          {
+            "table": "Abrechnungen",
+            "field": "Einheiten2"
+          }
+        ],
+        "Abrechnungen_Einheiten3": [
+          {
+            "table": "Abrechnungen",
+            "field": "Einheiten3"
+          }
+        ],
+        "Abrechnungen_Quadratmeter2": [
+          {
+            "table": "Abrechnungen",
+            "field": "Quadratmeter2"
+          }
+        ],
+        "Abrechnungen_Quadratmeter3": [
+          {
+            "table": "Abrechnungen",
+            "field": "Quadratmeter3"
+          }
+        ],
+        "Abrechnungen_Wasserverbrauch": [
+          {
+            "table": "Abrechnungen",
+            "field": "Wasserverbrauch"
+          }
+        ],
+        "Abrechnungen_Muellverbrauch": [
+          {
+            "table": "Abrechnungen",
+            "field": "Muellverbrauch"
+          }
+        ],
+        "Abrechnungen_Stromverbrauch": [
+          {
+            "table": "Abrechnungen",
+            "field": "Stromverbrauch"
+          }
+        ],
+        "Abrechnungen_Personen": [
+          {
+            "table": "Abrechnungen",
+            "field": "Personen"
+          }
+        ],
+        "Abrechnungen_Gesamtpersonentage": [
+          {
+            "table": "Abrechnungen",
+            "field": "Gesamtpersonentage"
+          }
+        ],
+        "Abrechnungen_Objekt": [
+          {
+            "table": "Abrechnungen",
+            "field": "Objekt"
+          }
+        ],
+        "Abrechnungen_Art": [
+          {
+            "table": "Abrechnungen",
+            "field": "Art"
+          }
+        ],
+        "Abrechnungen_Heizwert": [
+          {
+            "table": "Abrechnungen",
+            "field": "Heizwert"
+          }
+        ],
+        "Abrechnungen_Waermemengenzaehler": [
+          {
+            "table": "Abrechnungen",
+            "field": "Waermemengenzaehler"
+          }
+        ],
+        "Abrechnungen_Waermeverbrauch": [
+          {
+            "table": "Abrechnungen",
+            "field": "Waermeverbrauch"
+          }
+        ],
+        "Abrechnungen_Grundkostenanteil": [
+          {
+            "table": "Abrechnungen",
+            "field": "Grundkostenanteil"
+          }
+        ],
+        "Abrechnungen_Warmwasser_Anteil": [
+          {
+            "table": "Abrechnungen",
+            "field": "Warmwasser_Anteil"
+          }
+        ],
+        "Abrechnungen_Buchfuehrung": [
+          {
+            "table": "Abrechnungen",
+            "field": "Buchfuehrung"
+          }
+        ],
+        "Abrechnungen_Anmerkungen": [
+          {
+            "table": "Abrechnungen",
+            "field": "Anmerkungen"
+          }
+        ],
+        "Abrechnungen_Miteigentumsanteile2": [
+          {
+            "table": "Abrechnungen",
+            "field": "Miteigentumsanteile2"
+          }
+        ],
+        "Abrechnungen_Miteigentumsanteile3": [
+          {
+            "table": "Abrechnungen",
+            "field": "Miteigentumsanteile3"
+          }
+        ],
+        "Abrechnungen_Erledigt": [
+          {
+            "table": "Abrechnungen",
+            "field": "Erledigt"
+          }
+        ]
+      }
+    },
+    "Assistent_Doppelte_Buchf_hrung": {
+      "elements": [
+        {
+          "elementName": "Buchfuehrungen_list",
+          "table": "Buchfuehrungen",
+          "type": 0,
+          "cellName": "cell_0_0",
+          "inlineAdd": false,
+          "inlineEdit": false,
+          "deleteRecord": false,
+          "popupAdd": false,
+          "popupEdit": false,
+          "popupView": true,
+          "updateSelected": false
+        },
+        {
+          "elementName": "Kontenrahmen_list",
+          "table": "Kontenrahmen",
+          "type": 0,
+          "cellName": "cell_1_0",
+          "inlineAdd": false,
+          "inlineEdit": false,
+          "deleteRecord": false,
+          "popupAdd": true,
+          "popupEdit": false,
+          "popupView": true,
+          "updateSelected": false,
+          "masterTable": "Buchfuehrungen"
+        },
+        {
+          "elementName": "Journal_list",
+          "table": "Journal",
+          "type": 0,
+          "cellName": "cell_2_0",
+          "inlineAdd": false,
+          "inlineEdit": false,
+          "deleteRecord": false,
+          "popupAdd": true,
+          "popupEdit": false,
+          "popupView": true,
+          "updateSelected": false,
+          "masterTable": "Buchfuehrungen"
+        },
+        {
+          "elementName": "Assistent_Doppelte_Buchf_hrung_snippet",
+          "table": "Assistent Doppelte Buchführung",
+          "type": 7,
+          "cellName": "cell_3_0",
+          "snippetId": "Assistent_Doppelte_Buchf_hrung"
+        },
+        {
+          "elementName": "Assistent_Doppelte_Buchf_hrung_snippet1",
+          "table": "Assistent Doppelte Buchführung",
+          "type": 7,
+          "cellName": "cell_3_1",
+          "snippetId": "Assistent_Doppelte_Buchf_hrung1"
+        },
+        {
+          "elementName": "Assistent_Doppelte_Buchf_hrung_snippet2",
+          "table": "Assistent Doppelte Buchführung",
+          "type": 7,
+          "cellName": "cell_3_2",
+          "snippetId": "Assistent_Doppelte_Buchf_hrung2"
+        }
+      ],
+      "searchFields": {
+        "Buchfuehrungen_ID": [
+          {
+            "table": "Buchfuehrungen",
+            "field": "ID"
+          }
+        ],
+        "Buchfuehrungen_Bezeichnung": [
+          {
+            "table": "Buchfuehrungen",
+            "field": "Bezeichnung"
+          }
+        ],
+        "Buchfuehrungen_Anfangsdatum": [
+          {
+            "table": "Buchfuehrungen",
+            "field": "Anfangsdatum"
+          }
+        ],
+        "Buchfuehrungen_Enddatum": [
+          {
+            "table": "Buchfuehrungen",
+            "field": "Enddatum"
+          }
+        ],
+        "Buchfuehrungen_Objekt": [
+          {
+            "table": "Buchfuehrungen",
+            "field": "Objekt"
+          }
+        ],
+        "Buchfuehrungen_Bemerkungen": [
+          {
+            "table": "Buchfuehrungen",
+            "field": "Bemerkungen"
+          }
+        ]
+      }
+    },
+    "Assistent_Objekte_und_Einheiten": {
+      "elements": [
+        {
+          "elementName": "Adressen_list",
+          "table": "Adressen",
+          "type": 0,
+          "cellName": "cell_0_0",
+          "inlineAdd": false,
+          "inlineEdit": false,
+          "deleteRecord": true,
+          "popupAdd": true,
+          "popupEdit": true,
+          "popupView": true,
+          "updateSelected": false
+        },
+        {
+          "elementName": "Objekte_list",
+          "table": "Objekte",
+          "type": 0,
+          "cellName": "cell_1_0",
+          "inlineAdd": false,
+          "inlineEdit": false,
+          "deleteRecord": true,
+          "popupAdd": true,
+          "popupEdit": true,
+          "popupView": true,
+          "updateSelected": false
+        },
+        {
+          "elementName": "Einheiten_list",
+          "table": "Einheiten",
+          "type": 0,
+          "cellName": "cell_2_0",
+          "inlineAdd": false,
+          "inlineEdit": false,
+          "deleteRecord": true,
+          "popupAdd": true,
+          "popupEdit": true,
+          "popupView": true,
+          "updateSelected": false,
+          "masterTable": "Objekte"
+        },
+        {
+          "elementName": "Raeume_list",
+          "table": "Raeume",
+          "type": 0,
+          "cellName": "cell_3_0",
+          "inlineAdd": false,
+          "inlineEdit": false,
+          "deleteRecord": true,
+          "popupAdd": true,
+          "popupEdit": true,
+          "popupView": true,
+          "updateSelected": false,
+          "masterTable": "Einheiten"
+        },
+        {
+          "elementName": "Flaechen_list",
+          "table": "Flaechen",
+          "type": 0,
+          "cellName": "cell_4_0",
+          "inlineAdd": false,
+          "inlineEdit": false,
+          "deleteRecord": true,
+          "popupAdd": true,
+          "popupEdit": true,
+          "popupView": true,
+          "updateSelected": false,
+          "masterTable": "Raeume"
+        }
+      ],
+      "searchFields": {
+        "Adressen_ID": [
+          {
+            "table": "Adressen",
+            "field": "ID"
+          }
+        ],
+        "Adressen_Kurzname": [
+          {
+            "table": "Adressen",
+            "field": "Kurzname"
+          }
+        ],
+        "Adressen_Firma": [
+          {
+            "table": "Adressen",
+            "field": "Firma"
+          }
+        ],
+        "Adressen_Abteilung": [
+          {
+            "table": "Adressen",
+            "field": "Abteilung"
+          }
+        ],
+        "Adressen_Vorname": [
+          {
+            "table": "Adressen",
+            "field": "Vorname"
+          }
+        ],
+        "Adressen_Nachname": [
+          {
+            "table": "Adressen",
+            "field": "Nachname"
+          }
+        ],
+        "Adressen_Strasse": [
+          {
+            "table": "Adressen",
+            "field": "Strasse"
+          }
+        ],
+        "Adressen_PLZ": [
+          {
+            "table": "Adressen",
+            "field": "PLZ"
+          }
+        ],
+        "Adressen_Ort": [
+          {
+            "table": "Adressen",
+            "field": "Ort"
+          }
+        ],
+        "Adressen_Bundesland": [
+          {
+            "table": "Adressen",
+            "field": "Bundesland"
+          }
+        ],
+        "Adressen_Staat": [
+          {
+            "table": "Adressen",
+            "field": "Staat"
+          }
+        ],
+        "Adressen_Benutzer": [
+          {
+            "table": "Adressen",
+            "field": "Benutzer"
+          }
+        ],
+        "Adressen_Telefon": [
+          {
+            "table": "Adressen",
+            "field": "Telefon"
+          }
+        ],
+        "Adressen_Handy": [
+          {
+            "table": "Adressen",
+            "field": "Handy"
+          }
+        ],
+        "Adressen_Email": [
+          {
+            "table": "Adressen",
+            "field": "Email"
+          }
+        ],
+        "Adressen_Website": [
+          {
+            "table": "Adressen",
+            "field": "Website"
+          }
+        ],
+        "Adressen_Telefax": [
+          {
+            "table": "Adressen",
+            "field": "Telefax"
+          }
+        ],
+        "Adressen_Bemerkungen": [
+          {
+            "table": "Adressen",
+            "field": "Bemerkungen"
+          }
+        ],
+        "Adressen_Klassifikation": [
+          {
+            "table": "Adressen",
+            "field": "Klassifikation"
+          }
+        ],
+        "Adressen_Geburtstag": [
+          {
+            "table": "Adressen",
+            "field": "Geburtstag"
+          }
+        ],
+        "Adressen_Geschlecht": [
+          {
+            "table": "Adressen",
+            "field": "Geschlecht"
+          }
+        ],
+        "Adressen_Anrede": [
+          {
+            "table": "Adressen",
+            "field": "Anrede"
+          }
+        ],
+        "Adressen_Titel": [
+          {
+            "table": "Adressen",
+            "field": "Titel"
+          }
+        ],
+        "Adressen_Stellung": [
+          {
+            "table": "Adressen",
+            "field": "Stellung"
+          }
+        ],
+        "Adressen_Strasse_Liefer": [
+          {
+            "table": "Adressen",
+            "field": "Strasse_Liefer"
+          }
+        ],
+        "Adressen_PLZ_Liefer": [
+          {
+            "table": "Adressen",
+            "field": "PLZ_Liefer"
+          }
+        ],
+        "Adressen_Ort_Liefer": [
+          {
+            "table": "Adressen",
+            "field": "Ort_Liefer"
+          }
+        ],
+        "Adressen_Staat_Liefer": [
+          {
+            "table": "Adressen",
+            "field": "Staat_Liefer"
+          }
+        ],
+        "Adressen_UIDNr": [
+          {
+            "table": "Adressen",
+            "field": "UIDNr"
+          }
+        ],
+        "Adressen_Bank": [
+          {
+            "table": "Adressen",
+            "field": "Bank"
+          }
+        ],
+        "Adressen_IBAN": [
+          {
+            "table": "Adressen",
+            "field": "IBAN"
+          }
+        ],
+        "Adressen_Kontoinhaber": [
+          {
+            "table": "Adressen",
+            "field": "Kontoinhaber"
+          }
+        ],
+        "Adressen_Debitorennummer": [
+          {
+            "table": "Adressen",
+            "field": "Debitorennummer"
+          }
+        ],
+        "Adressen_Kreditorennummer": [
+          {
+            "table": "Adressen",
+            "field": "Kreditorennummer"
+          }
+        ],
+        "Adressen_Paypal": [
+          {
+            "table": "Adressen",
+            "field": "Paypal"
+          }
+        ],
+        "Adressen_Wiedervorlage": [
+          {
+            "table": "Adressen",
+            "field": "Wiedervorlage"
+          }
+        ],
+        "Adressen_Skype": [
+          {
+            "table": "Adressen",
+            "field": "Skype"
+          }
+        ],
+        "Adressen_Detailfeld1": [
+          {
+            "table": "Adressen",
+            "field": "Detailfeld1"
+          }
+        ],
+        "Adressen_Detailfeld2": [
+          {
+            "table": "Adressen",
+            "field": "Detailfeld2"
+          }
+        ],
+        "Adressen_Detailfeld3": [
+          {
+            "table": "Adressen",
+            "field": "Detailfeld3"
+          }
+        ],
+        "Adressen_Detailfeld4": [
+          {
+            "table": "Adressen",
+            "field": "Detailfeld4"
+          }
+        ],
+        "Adressen_Detailfeld5": [
+          {
+            "table": "Adressen",
+            "field": "Detailfeld5"
+          }
+        ],
+        "Adressen_Bearbeitungsstatus": [
+          {
+            "table": "Adressen",
+            "field": "Bearbeitungsstatus"
+          }
+        ],
+        "Adressen_Kundennummer": [
+          {
+            "table": "Adressen",
+            "field": "Kundennummer"
+          }
+        ],
+        "Adressen_Xing": [
+          {
+            "table": "Adressen",
+            "field": "Xing"
+          }
+        ],
+        "Adressen_Linkedin": [
+          {
+            "table": "Adressen",
+            "field": "Linkedin"
+          }
+        ],
+        "Adressen_Facebook": [
+          {
+            "table": "Adressen",
+            "field": "Facebook"
+          }
+        ],
+        "Adressen_Chat": [
+          {
+            "table": "Adressen",
+            "field": "Chat"
+          }
+        ],
+        "Adressen_Telefonprivat": [
+          {
+            "table": "Adressen",
+            "field": "Telefonprivat"
+          }
+        ],
+        "Adressen_Emailprivat": [
+          {
+            "table": "Adressen",
+            "field": "Emailprivat"
+          }
+        ],
+        "Adressen_Handyprivat": [
+          {
+            "table": "Adressen",
+            "field": "Handyprivat"
+          }
+        ],
+        "Adressen_Lieferbedingungen": [
+          {
+            "table": "Adressen",
+            "field": "Lieferbedingungen"
+          }
+        ],
+        "Adressen_Zahlungsbedingungen": [
+          {
+            "table": "Adressen",
+            "field": "Zahlungsbedingungen"
+          }
+        ],
+        "Adressen_Anredeformat": [
+          {
+            "table": "Adressen",
+            "field": "Anredeformat"
+          }
+        ],
+        "Adressen_Favorit": [
+          {
+            "table": "Adressen",
+            "field": "Favorit"
+          }
+        ]
+      }
+    },
+    "Heute": {
+      "elements": [
+        {
+          "elementName": "WV_list",
+          "table": "WV",
+          "type": 0,
+          "cellName": "cell_0_0",
+          "inlineAdd": false,
+          "inlineEdit": true,
+          "deleteRecord": false,
+          "popupAdd": false,
+          "popupEdit": false,
+          "popupView": false,
+          "updateSelected": false
+        },
+        {
+          "elementName": "Aufgaben_list",
+          "table": "Aufgaben",
+          "type": 0,
+          "cellName": "cell_1_0",
+          "inlineAdd": false,
+          "inlineEdit": false,
+          "deleteRecord": false,
+          "popupAdd": false,
+          "popupEdit": false,
+          "popupView": true,
+          "updateSelected": false,
+          "masterTable": "WV"
+        },
+        {
+          "elementName": "Termine_list",
+          "table": "Termine",
+          "type": 0,
+          "cellName": "cell_2_0",
+          "inlineAdd": false,
+          "inlineEdit": false,
+          "deleteRecord": false,
+          "popupAdd": false,
+          "popupEdit": false,
+          "popupView": true,
+          "updateSelected": false,
+          "masterTable": "WV"
+        },
+        {
+          "elementName": "Notizen_list",
+          "table": "Notizen",
+          "type": 0,
+          "cellName": "cell_3_0",
+          "inlineAdd": false,
+          "inlineEdit": false,
+          "deleteRecord": false,
+          "popupAdd": false,
+          "popupEdit": false,
+          "popupView": true,
+          "updateSelected": false,
+          "masterTable": "WV"
+        },
+        {
+          "elementName": "Korrespondenz_list",
+          "table": "Korrespondenz",
+          "type": 0,
+          "cellName": "cell_4_0",
+          "inlineAdd": false,
+          "inlineEdit": false,
+          "deleteRecord": false,
+          "popupAdd": false,
+          "popupEdit": false,
+          "popupView": true,
+          "updateSelected": false,
+          "masterTable": "WV"
+        },
+        {
+          "elementName": "Adressen_list",
+          "table": "Adressen",
+          "type": 0,
+          "cellName": "cell_5_0",
+          "inlineAdd": false,
+          "inlineEdit": false,
+          "deleteRecord": false,
+          "popupAdd": false,
+          "popupEdit": false,
+          "popupView": true,
+          "updateSelected": false,
+          "masterTable": "WV"
+        },
+        {
+          "elementName": "Dokumente_list",
+          "table": "Dokumente",
+          "type": 0,
+          "cellName": "cell_6_0",
+          "inlineAdd": false,
+          "inlineEdit": false,
+          "deleteRecord": false,
+          "popupAdd": false,
+          "popupEdit": false,
+          "popupView": true,
+          "updateSelected": false,
+          "masterTable": "WV"
+        },
+        {
+          "elementName": "Vertraege_list",
+          "table": "Vertraege",
+          "type": 0,
+          "cellName": "cell_7_0",
+          "inlineAdd": false,
+          "inlineEdit": false,
+          "deleteRecord": false,
+          "popupAdd": false,
+          "popupEdit": false,
+          "popupView": true,
+          "updateSelected": false,
+          "masterTable": "WV"
+        }
+      ],
+      "searchFields": {
+        "WV_Tag": [
+          {
+            "table": "WV",
+            "field": "Tag"
+          }
+        ]
+      }
+    },
+    "Immobilien_Diagramme": {
+      "elements": [
+        {
+          "elementName": "Objekte_nach_Art_chart",
+          "table": "Objekte nach Art",
+          "type": 1,
+          "cellName": "cell_0_0"
+        },
+        {
+          "elementName": "Objekte_nach_Flaeche_chart",
+          "table": "Objekte nach Flaeche",
+          "type": 1,
+          "cellName": "cell_0_1"
+        },
+        {
+          "elementName": "Einheiten_nach_Art_chart",
+          "table": "Einheiten nach Art",
+          "type": 1,
+          "cellName": "cell_1_0"
+        }
+      ],
+      "searchFields": {}
+    },
+    "Inventar_Diagramme": {
+      "elements": [
+        {
+          "elementName": "Inventar_nach_Kategorien_chart",
+          "table": "Inventar nach Kategorien",
+          "type": 1,
+          "cellName": "cell_0_0"
+        },
+        {
+          "elementName": "Inventar_nach_Aufbewahrungort_chart",
+          "table": "Inventar nach Aufbewahrungsort",
+          "type": 1,
+          "cellName": "cell_0_1"
+        },
+        {
+          "elementName": "Inventar_nach_Verk_ufer_chart",
+          "table": "Inventar nach Verkäufer",
+          "type": 1,
+          "cellName": "cell_1_0"
+        },
+        {
+          "elementName": "Inventar_nach_Hersteller_chart",
+          "table": "Inventar nach Hersteller",
+          "type": 1,
+          "cellName": "cell_1_1"
+        }
+      ],
+      "searchFields": {}
+    }
+  }
+}

@@ -1,0 +1,26 @@
+<%- include('partials/layout_top', { pageTitle: title }) %>
+<% const _t = typeof t === 'function' ? t : (k) => k; %>
+<% if (dashboard.searchFields && Object.keys(dashboard.searchFields).length) { %>
+  <form class="dash-search" method="get" action="<%= dashboard.elements && dashboard.elements[0] && dashboard.elements[0].href ? dashboard.elements[0].href : '#' %>">
+    <fieldset>
+      <legend><%= _t('search_dashboard') %></legend>
+      <% for (const [key, field] of Object.entries(dashboard.searchFields)) {
+           const f = Array.isArray(field) ? field[0] : field;
+           const tableLabel = f && f.table ? f.table : key;
+           const fieldLabel = f && f.field ? f.field : key;
+      %>
+        <label class="form-group">
+          <span><%= typeof tx === 'function' ? tx(tableLabel) : tableLabel %>.<%= fieldLabel %></span>
+          <input type="search" name="<%= key %>" placeholder="<%= _t('search') %>">
+        </label>
+      <% } %>
+      <button type="submit" class="btn btn-primary"><%= _t('search') %></button>
+    </fieldset>
+  </form>
+<% } %>
+<% if (!dashboard.elements || dashboard.elements.length === 0) { %>
+  <p class="muted"><%= _t('empty_dashboard') %></p>
+<% } else { %>
+  <%- include('partials/dashboard_elements', { elements: dashboard.elements }) %>
+<% } %>
+<%- include('partials/layout_bottom') %>

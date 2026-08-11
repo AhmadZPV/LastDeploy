@@ -1,0 +1,41 @@
+{
+ "entity": "Inventar_Diagramme",
+ "shortName": "Inventar_Diagramme",
+ "baseTable": "Inventar_Diagramme",
+ "isVirtual": true,
+ "ownerField": null,
+ "sql": {
+  "strOrderBy": "",
+  "sqlHead": "",
+  "sqlFrom": "",
+  "sqlWhere": "",
+  "sqlTail": ""
+ },
+ "keys": [],
+ "pageSize": 0,
+ "capabilities": {
+  "list": false,
+  "view": false,
+  "add": false,
+  "edit": false,
+  "export": false,
+  "print": false,
+  "search": false,
+  "masterList": false
+ },
+ "fieldSets": {},
+ "export": {
+  "exportTo": null,
+  "exportDelimiter": null,
+  "exportFormatting": null
+ },
+ "print": {
+  "printerPageOrientation": null,
+  "nPrinterPageScale": null,
+  "nPrinterSplitRecords": null,
+  "nPrinterPDFSplitRecords": null
+ },
+ "tabs": [],
+ "labels": {},
+ "fields": []
+}

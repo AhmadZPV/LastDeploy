@@ -1,0 +1,14 @@
+<link rel="manifest" href="/manifest.json">
+<meta name="csrf-token" content="<%= csrfToken || '' %>">
+<meta name="theme-color" content="#122530">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('/sw.js?v=9', { scope: '/' }).then(function (registration) {
+      registration.update();
+    }).catch(function () {});
+  });
+}
+</script>

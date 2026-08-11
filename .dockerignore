@@ -1,0 +1,17 @@
+node_modules
+npm-debug.log*
+.env
+.env.*
+!.env.example
+.git
+.gitignore
+.kilo
+data
+uploads
+tests/parity/latest-report.json
+*.log
+Dockerfile*
+compose*.yml
+compose*.yaml
+!Dockerfile
+!compose.yaml

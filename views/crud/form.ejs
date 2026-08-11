@@ -1,0 +1,91 @@
+<%- include('../partials/layout_top', { pageTitle: (isEdit ? t('edit') : t('new')) + ': ' + tx(meta.titleSingle) }) %>
+<% if (typeof error === 'string' && error) { %><div class="form-error"><%= error %></div><% } %>
+
+<%
+  function inputFor(field, val) {
+    const cat = helpers.fieldCategory(module, field);
+    const nm = field, val4 = (val != null && val !== '') ? val : '';
+    if (cat === 'lookup') {
+      const opts = lookups[field] || [];
+      const cur = String(val4);
+      const af = meta.autoFillFields && meta.autoFillFields[field] ? ' data-autofill-entity="' + module + '" data-autofill-field="' + field + '"' : '';
+      let s = `<select name="${nm}"${af}><option value="">—</option>`;
+      for (const o of opts) {
+        const oval = String(o.ID);
+        const lbl = o.Kurzname || o.Bezeichnung || o.Name || (o.Vorname ? (o.Vorname + ' ' + (o.Nachname||'')).trim() : '') || o.Nummer || ('#'+o.ID);
+        s += `<option value="${oval}"${oval === cur ? ' selected' : ''}>${String(lbl).replace(/[<&>]/g, c => ({'<':'<','&':'&','>':'>'}[c]))}</option>`;
+      }
+      return s + '</select>';
+    }
+    if (cat === 'date') {
+      const dv = helpers.inputDate(val4) || '';
+      return `<input type="date" name="${nm}" value="${dv}">`;
+    }
+    if (cat === 'money') {
+      const dv = (val4 !== '' && val4 != null) ? helpers.fmtNum(val4, 2) : '';
+      return `<input type="number" step="0.01" name="${nm}" value="${dv}">`;
+    }
+    if (cat === 'bool') {
+      const checked = (val4 === 1 || val4 === '1' || val4 === true) ? ' checked' : '';
+      return `<input type="checkbox" name="${nm}" value="1"${checked}>`;
+    }
+    if (cat === 'color') {
+      const cv = val4 || '#cccccc';
+      return `<input type="color" name="${nm}" value="${cv}">`;
+    }
+    if (cat === 'textarea' || cat === 'richtext') {
+      const cls = cat === 'richtext' ? ' class="rich-text-source" data-rich-text' : '';
+      return `<textarea${cls} name="${nm}" rows="6">${String(val4 == null ? '' : val4)
+        .replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))}</textarea>`;
+    }
+    if (cat === 'blob') {
+      const has = val4 != null && val4 !== '';
+      return `<input type="file" name="${nm}">` + (has ? `<span class="muted"> (${t('present_replace')})</span>` : '');
+    }
+    // plain text
+    const fid = meta.fields?.[field] || {};
+    if (fid.type === 'Int') {
+      const dv = (val4 !== '' && val4 != null) ? String(val4) : '';
+      return `<input type="number" name="${nm}" value="${dv}">`;
+    }
+    const dv = String(val4 == null ? '' : val4).replace(/[&<>"]/g, c => ({'&':'&','<':'<','>':'>','"':'"'}[c]));
+    return `<input type="text" name="${nm}" value="${dv}">`;
+  }
+%>
+
+<form class="entity-form<%= module === 'benutzer' ? ' user-edit-form' : '' %>" method="post" action="/<%= module %><%= isEdit ? '/' + item.ID : '' %>" enctype="multipart/form-data">
+  <%- include('../partials/csrf') %>
+  <div class="form-group form-id-field">
+    <label>ID</label>
+    <input type="number" name="ID" value="<%= item.ID || '' %>" <%= isEdit ? 'readonly' : '' %>>
+  </div>
+  <% const specFields = (typeof spec !== 'undefined' && spec && spec.fields && spec.fields.length) ? spec.fields : null; %>
+  <% const formFields = specFields ? spec.fields.map(f => [f.name, f.label, f.required]) : (meta.listColumns || []).map(c => [c, c, false]); %>
+  <div class="entity-form-grid"><% for (const [fn, flabel, freq] of formFields) { %>
+    <div class="form-group">
+      <label><%= tx(flabel) %><% if (freq) { %> <span class="req">*</span><% } %></label>
+      <%- inputFor(fn, isEdit ? item[fn] : undefined) %>
+    </div>
+  <% } %></div>
+
+  <% const listed = new Set(['ID', ...(meta.listColumns || [])]); %>
+  <% const extra = Object.keys(meta.fields || {}).filter(f => !listed.has(f)); %>
+  <% if (extra.length) { %>
+  <details class="form-extra">
+    <summary><%= t('more_fields') %> (<%= extra.length %>)</summary>
+    <% for (const c of extra) { %>
+      <% const cat = helpers.fieldCategory(module, c); if (cat === 'blob') continue; %>
+      <div class="form-group">
+        <label><%= tx(c) %></label>
+        <%- inputFor(c, isEdit ? item[c] : undefined) %>
+      </div>
+    <% } %>
+  </details>
+  <% } %>
+
+  <div class="form-actions">
+    <button class="btn btn-primary"><%= t('save') %></button>
+    <a href="/<%= module %>" class="btn btn-link"><%= t('cancel') %></a>
+  </div>
+</form>
+<%- include('../partials/layout_bottom') %>

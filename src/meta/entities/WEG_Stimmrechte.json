@@ -1,0 +1,447 @@
+{
+ "entity": "WEG_Stimmrechte",
+ "shortName": "WEG_Stimmrechte",
+ "baseTable": "Einheiten",
+ "isVirtual": true,
+ "ownerField": "Team",
+ "sql": {
+  "strOrderBy": "ORDER BY `Objekt`, `Besitzer`, `Bezeichnung`",
+  "sqlHead": "SELECT `ID`,  `Bezeichnung`,  `Nummer`,  `Objekt`,  `Besitzer`,  `Nutzer`,  `Einheitenart`,  `Miteigentumsanteil`,  `Kopfstimmen`,  Einheiten.Team",
+  "sqlFrom": "FROM `Einheiten`",
+  "sqlWhere": "",
+  "sqlTail": ""
+ },
+ "keys": [
+  "ID"
+ ],
+ "pageSize": 1,
+ "capabilities": {
+  "list": true,
+  "view": true,
+  "add": true,
+  "edit": true,
+  "export": true,
+  "print": true,
+  "search": true,
+  "masterList": true
+ },
+ "fieldSets": {
+  "list": [
+   "ID",
+   "Bezeichnung",
+   "Nummer",
+   "Objekt",
+   "Besitzer",
+   "Nutzer",
+   "Einheitenart",
+   "Miteigentumsanteil",
+   "Kopfstimmen",
+   "Team"
+  ],
+  "view": [
+   "ID",
+   "Bezeichnung",
+   "Nummer",
+   "Objekt",
+   "Besitzer",
+   "Nutzer",
+   "Einheitenart",
+   "Miteigentumsanteil",
+   "Kopfstimmen",
+   "Team"
+  ],
+  "add": [
+   "Bezeichnung",
+   "Nummer",
+   "Objekt",
+   "Besitzer",
+   "Nutzer",
+   "Einheitenart",
+   "Miteigentumsanteil",
+   "Kopfstimmen"
+  ],
+  "edit": [
+   "Bezeichnung",
+   "Nummer",
+   "Objekt",
+   "Besitzer",
+   "Nutzer",
+   "Einheitenart",
+   "Miteigentumsanteil",
+   "Kopfstimmen",
+   "Team"
+  ],
+  "export": [
+   "ID",
+   "Bezeichnung",
+   "Nummer",
+   "Objekt",
+   "Besitzer",
+   "Nutzer",
+   "Einheitenart",
+   "Miteigentumsanteil",
+   "Kopfstimmen",
+   "Team"
+  ],
+  "print": [
+   "ID",
+   "Bezeichnung",
+   "Nummer",
+   "Objekt",
+   "Besitzer",
+   "Nutzer",
+   "Einheitenart",
+   "Miteigentumsanteil",
+   "Kopfstimmen",
+   "Team"
+  ],
+  "search": [
+   "ID",
+   "Bezeichnung",
+   "Nummer",
+   "Objekt",
+   "Besitzer",
+   "Nutzer",
+   "Einheitenart",
+   "Miteigentumsanteil",
+   "Kopfstimmen"
+  ],
+  "masterList": [
+   "ID",
+   "Bezeichnung",
+   "Nummer",
+   "Objekt",
+   "Besitzer",
+   "Nutzer",
+   "Einheitenart",
+   "Miteigentumsanteil",
+   "Kopfstimmen",
+   "Team"
+  ]
+ },
+ "export": {
+  "exportTo": true,
+  "exportDelimiter": ",",
+  "exportFormatting": 2
+ },
+ "print": {
+  "printerPageOrientation": 0,
+  "nPrinterPageScale": 100,
+  "nPrinterSplitRecords": 40,
+  "nPrinterPDFSplitRecords": 40
+ },
+ "tabs": [],
+ "labels": {
+  "German": {
+   "ID": "ID",
+   "Bezeichnung": "Bezeichnung",
+   "Nummer": "Nummer",
+   "Objekt": "Objekt",
+   "Besitzer": "Besitzer",
+   "Nutzer": "Nutzer",
+   "Einheitenart": "Einheitenart",
+   "Miteigentumsanteil": "Miteigentumsanteil",
+   "Kopfstimmen": "Kopfstimmen",
+   "Team": "Team"
+  }
+ },
+ "fields": [
+  {
+   "name": "ID",
+   "type": 3,
+   "index": 1,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "number",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "AutoInc": true,
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Bezeichnung",
+   "type": 200,
+   "index": 2,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Nummer",
+   "type": 3,
+   "index": 3,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "number",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Objekt",
+   "type": 3,
+   "index": 4,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Objekte",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 2,
+    "LinkField": "ID",
+    "LinkFieldType": 0,
+    "DisplayField": "Bezeichnung",
+    "LookupOrderBy": "Bezeichnung",
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Besitzer",
+   "type": 3,
+   "index": 5,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Adressen",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 2,
+    "LinkField": "ID",
+    "LinkFieldType": 0,
+    "DisplayField": "Kurzname",
+    "LookupOrderBy": "Kurzname",
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Nutzer",
+   "type": 3,
+   "index": 6,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Adressen",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 2,
+    "LinkField": "ID",
+    "LinkFieldType": 0,
+    "DisplayField": "Kurzname",
+    "LookupOrderBy": "Kurzname",
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Einheitenart",
+   "type": 200,
+   "index": 7,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Einheitenarten",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 0,
+    "LinkField": "Bezeichnung",
+    "LinkFieldType": 0,
+    "DisplayField": "Bezeichnung",
+    "LookupOrderBy": "Bezeichnung",
+    "SelectSize": 1,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Miteigentumsanteil",
+   "type": 200,
+   "index": 8,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Kopfstimmen",
+   "type": 3,
+   "index": 9,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Team",
+   "type": 200,
+   "index": 10,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  }
+ ]
+}

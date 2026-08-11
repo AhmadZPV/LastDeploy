@@ -1,0 +1,4252 @@
+{
+ "generated": "2026-08-08T17:18:25.228Z",
+ "source": "hausverwaltungplus version 1812 vorlage",
+ "entries": [
+  {
+   "kind": "page",
+   "id": "menu:Navi",
+   "source": "menunodes_main.php",
+   "table": "Navigator",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/navigator"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Kontobuch",
+   "source": "menunodes_main.php",
+   "table": "Kontobuch",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/kontobuch"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Kontoauszugsimport",
+   "source": "menunodes_main.php",
+   "table": "Kontoauszuege2",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/kontoauszuege2"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Kontobuch Auszug",
+   "source": "menunodes_main.php",
+   "table": "Kontobuch Auszug",
+   "pageType": "Report",
+   "status": "ported",
+   "target": "/report/Kontobuch Auszug"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Banking",
+   "source": "menunodes_main.php",
+   "table": "Kontobuch Banking",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/kontobuch banking"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Buchungsbericht (Abrechnungen)",
+   "source": "menunodes_main.php",
+   "table": "Buchungsbericht",
+   "pageType": "Report",
+   "status": "ported",
+   "target": "/report/Buchungsbericht"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Buchungsbericht (Objekte)",
+   "source": "menunodes_main.php",
+   "table": "Buchungsbericht Objekte",
+   "pageType": "Report",
+   "status": "ported",
+   "target": "/report/Buchungsbericht Objekte"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Buchungsbericht Mwst",
+   "source": "menunodes_main.php",
+   "table": "Buchungsbericht Mwst",
+   "pageType": "Report",
+   "status": "ported",
+   "target": "/report/Buchungsbericht Mwst"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Mieterkonten Saldenliste",
+   "source": "menunodes_main.php",
+   "table": "Mieterkonten Saldenliste",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/mieterkonten saldenliste"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Mieterkonten",
+   "source": "menunodes_main.php",
+   "table": "Mieterkonten",
+   "pageType": "Report",
+   "status": "ported",
+   "target": "/report/Mieterkonten"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Einnahmen/Ausgaben",
+   "source": "menunodes_main.php",
+   "table": "Kontostände",
+   "pageType": "Chart",
+   "status": "ported",
+   "target": "/chart/Kontostände"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Kostenverteilung",
+   "source": "menunodes_main.php",
+   "table": "Kostenverteilung",
+   "pageType": "Chart",
+   "status": "ported",
+   "target": "/chart/Kostenverteilung"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Einnahmeverteilung",
+   "source": "menunodes_main.php",
+   "table": "Einnahmeverteilung",
+   "pageType": "Chart",
+   "status": "ported",
+   "target": "/chart/Einnahmeverteilung"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Klassifikationen Kontobuch",
+   "source": "menunodes_main.php",
+   "table": "KlassifikationenKontobuch",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/klassifikationenkontobuch"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Assistent Doppelte Buchführung",
+   "source": "menunodes_main.php",
+   "table": "Assistent Doppelte Buchführung",
+   "pageType": "Dashboard",
+   "status": "ported",
+   "target": "/dashboard/Assistent Doppelte Buchführung"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Journale",
+   "source": "menunodes_main.php",
+   "table": "Journal",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/journal"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Schnellbuchungen",
+   "source": "menunodes_main.php",
+   "table": "Schnellbuchungen",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/schnellbuchungen"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Buchungsassistent",
+   "source": "menunodes_main.php",
+   "table": "Buchungsassistent",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/buchungsassistent"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Kontoauszugsimport",
+   "source": "menunodes_main.php",
+   "table": "Kontoauszuege",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/kontoauszuege"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Buchungsimport",
+   "source": "menunodes_main.php",
+   "table": "Buchungsimport",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/buchungsimport"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Buchungsübersicht",
+   "source": "menunodes_main.php",
+   "table": "Buchungsübersicht",
+   "pageType": "Report",
+   "status": "ported",
+   "target": "/report/Buchungsübersicht"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Banking",
+   "source": "menunodes_main.php",
+   "table": "Banking",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/banking"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Kontenrahmen Druck",
+   "source": "menunodes_main.php",
+   "table": "Kontenrahmen Druck",
+   "pageType": "Report",
+   "status": "ported",
+   "target": "/report/Kontenrahmen Druck"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Kontenblätter",
+   "source": "menunodes_main.php",
+   "table": "Kontenblätter",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/kontenblätter"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Summen und Salden",
+   "source": "menunodes_main.php",
+   "table": "Summen und Salden",
+   "pageType": "Report",
+   "status": "ported",
+   "target": "/report/Summen und Salden"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Summen und Salden (kurz)",
+   "source": "menunodes_main.php",
+   "table": "Summen und Salden kurz",
+   "pageType": "Report",
+   "status": "ported",
+   "target": "/report/Summen und Salden kurz"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Saldenliste",
+   "source": "menunodes_main.php",
+   "table": "Saldenliste",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/saldenliste"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Gewinn und Verlust",
+   "source": "menunodes_main.php",
+   "table": "Gewinn und Verlust",
+   "pageType": "Report",
+   "status": "ported",
+   "target": "/report/Gewinn und Verlust"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Gewinn und Verlust (kurz)",
+   "source": "menunodes_main.php",
+   "table": "GuV kurz",
+   "pageType": "Report",
+   "status": "ported",
+   "target": "/report/GuV kurz"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Umsatzsteuervoranmeldung",
+   "source": "menunodes_main.php",
+   "table": "Umsatzsteuervoranmeldung",
+   "pageType": "Report",
+   "status": "ported",
+   "target": "/report/Umsatzsteuervoranmeldung"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Debitorenkonten",
+   "source": "menunodes_main.php",
+   "table": "Debitorenkonten",
+   "pageType": "Report",
+   "status": "ported",
+   "target": "/report/Debitorenkonten"
+  },
+  {
+   "kind": "page",
+   "id": "menu:DATEV Export",
+   "source": "menunodes_main.php",
+   "table": "DATEV Export",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/datev export"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Aufteilungsassistent",
+   "source": "menunodes_main.php",
+   "table": "Aufteilungsassistent",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/aufteilungsassistent"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Vorwegabzüge",
+   "source": "menunodes_main.php",
+   "table": "Vorwegabzuege",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/vorwegabzuege"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Buchführungen",
+   "source": "menunodes_main.php",
+   "table": "Buchfuehrungen",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/buchfuehrungen"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Konten/Kontenrahmen",
+   "source": "menunodes_main.php",
+   "table": "Kontenrahmen",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/kontenrahmen"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Assistent Abrechnungen",
+   "source": "menunodes_main.php",
+   "table": "Assistent Abrechnungen",
+   "pageType": "Dashboard",
+   "status": "ported",
+   "target": "/dashboard/Assistent Abrechnungen"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Abrechnungen",
+   "source": "menunodes_main.php",
+   "table": "Abrechnungen",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/abrechnungen"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Abrechnungskonten",
+   "source": "menunodes_main.php",
+   "table": "Abrechnungskonten",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/abrechnungskonten"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Vorauszahlungen",
+   "source": "menunodes_main.php",
+   "table": "Vorauszahlungen",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/vorauszahlungen"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Rücklagebuchungen",
+   "source": "menunodes_main.php",
+   "table": "Ruecklagebuchungen",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/ruecklagebuchungen"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Umlagen",
+   "source": "menunodes_main.php",
+   "table": "Kosten",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/kosten"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Direkte Kosten",
+   "source": "menunodes_main.php",
+   "table": "DirekteKosten",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/direktekosten"
+  },
+  {
+   "kind": "page",
+   "id": "menu:§35a Einkommensteuergesetz",
+   "source": "menunodes_main.php",
+   "table": "P35aEStG",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/p35aestg"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Verbrauchsanteile",
+   "source": "menunodes_main.php",
+   "table": "Verbrauchsanteile",
+   "pageType": "Chart",
+   "status": "ported",
+   "target": "/chart/Verbrauchsanteile"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Zeitliche Verteilung",
+   "source": "menunodes_main.php",
+   "table": "Abrechnungskonten Zeitliche Verteilung",
+   "pageType": "Chart",
+   "status": "ported",
+   "target": "/chart/Abrechnungskonten Zeitliche Verteilung"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Verteilung Umlegbare Kosten",
+   "source": "menunodes_main.php",
+   "table": "Verteilung Umlegbare Kosten",
+   "pageType": "Chart",
+   "status": "ported",
+   "target": "/chart/Verteilung Umlegbare Kosten"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Betriebskosten",
+   "source": "menunodes_main.php",
+   "table": "Abrechnungsdruck",
+   "pageType": "Report",
+   "status": "ported",
+   "target": "/report/Abrechnungsdruck"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Betriebskosten (Individuell)",
+   "source": "menunodes_main.php",
+   "table": "Abrechnungsdruck individuell",
+   "pageType": "Report",
+   "status": "ported",
+   "target": "/report/Abrechnungsdruck individuell"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Betriebskosten netto",
+   "source": "menunodes_main.php",
+   "table": "Abrechnungsdruck Netto",
+   "pageType": "Report",
+   "status": "ported",
+   "target": "/report/Abrechnungsdruck Netto"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Heizkosten",
+   "source": "menunodes_main.php",
+   "table": "Abrechnungsdruck HK",
+   "pageType": "Report",
+   "status": "ported",
+   "target": "/report/Abrechnungsdruck HK"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Heizkosten ohne Warmwasser",
+   "source": "menunodes_main.php",
+   "table": "Abrechnungsdruck HK ohne WW",
+   "pageType": "Report",
+   "status": "ported",
+   "target": "/report/Abrechnungsdruck HK ohne WW"
+  },
+  {
+   "kind": "page",
+   "id": "menu:§35a EStG Druck",
+   "source": "menunodes_main.php",
+   "table": "P35aEStG Druck",
+   "pageType": "Report",
+   "status": "ported",
+   "target": "/report/P35aEStG Druck"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Abrechnungsdaten Übersicht",
+   "source": "menunodes_main.php",
+   "table": "Abrechnungsdaten Übersicht",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/abrechnungsdaten übersicht"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Abrechnungsbericht",
+   "source": "menunodes_main.php",
+   "table": "Abrechnungsbericht",
+   "pageType": "Report",
+   "status": "ported",
+   "target": "/report/Abrechnungsbericht"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Abrechnungsempfänger",
+   "source": "menunodes_main.php",
+   "table": "Abrechnungsempfänger",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/abrechnungsempfänger"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Serienbrief",
+   "source": "menunodes_main.php",
+   "table": "Serienbrief",
+   "pageType": "Report",
+   "status": "ported",
+   "target": "/report/Serienbrief"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Kostenarten",
+   "source": "menunodes_main.php",
+   "table": "Kostenarten",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/kostenarten"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Assistent Objekte und Einheiten",
+   "source": "menunodes_main.php",
+   "table": "Assistent Objekte und Einheiten",
+   "pageType": "Dashboard",
+   "status": "ported",
+   "target": "/dashboard/Assistent Objekte und Einheiten"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Objekte",
+   "source": "menunodes_main.php",
+   "table": "Objekte",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/objekte"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Ansprechpartner",
+   "source": "menunodes_main.php",
+   "table": "Ansprechpartner",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/ansprechpartner"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Einheiten",
+   "source": "menunodes_main.php",
+   "table": "Einheiten",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/einheiten"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Räume",
+   "source": "menunodes_main.php",
+   "table": "Raeume",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/raeume"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Schlüssel",
+   "source": "menunodes_main.php",
+   "table": "Schluessel",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/schluessel"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Protokolle",
+   "source": "menunodes_main.php",
+   "table": "Protokolle",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/protokolle"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Zähler",
+   "source": "menunodes_main.php",
+   "table": "Zaehler",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/zaehler"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Flächen / Quadratmeter",
+   "source": "menunodes_main.php",
+   "table": "Flaechen",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/flaechen"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Objektübersicht",
+   "source": "menunodes_main.php",
+   "table": "Objektübersicht",
+   "pageType": "Report",
+   "status": "ported",
+   "target": "/report/Objektübersicht"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Nutzerliste",
+   "source": "menunodes_main.php",
+   "table": "Nutzerliste",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/nutzerliste"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Leerstandsquote",
+   "source": "menunodes_main.php",
+   "table": "Leerstandsquote",
+   "pageType": "Chart",
+   "status": "ported",
+   "target": "/chart/Leerstandsquote"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Vermietungskonditionen",
+   "source": "menunodes_main.php",
+   "table": "Vermietungskonditionen",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/vermietungskonditionen"
+  },
+  {
+   "kind": "page",
+   "id": "menu:WEG Stimmrechte",
+   "source": "menunodes_main.php",
+   "table": "WEG Stimmrechte",
+   "pageType": "Report",
+   "status": "ported",
+   "target": "/report/WEG Stimmrechte"
+  },
+  {
+   "kind": "page",
+   "id": "menu:WEG Eigentümerliste",
+   "source": "menunodes_main.php",
+   "table": "WEG Eigentümerliste",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/weg eigentümerliste"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Immobilien Diagramme",
+   "source": "menunodes_main.php",
+   "table": "Immobilien Diagramme",
+   "pageType": "Dashboard",
+   "status": "ported",
+   "target": "/dashboard/Immobilien Diagramme"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Objektarten",
+   "source": "menunodes_main.php",
+   "table": "Objektarten",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/objektarten"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Einheitenarten",
+   "source": "menunodes_main.php",
+   "table": "Einheitenarten",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/einheitenarten"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Raumarten",
+   "source": "menunodes_main.php",
+   "table": "Raumarten",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/raumarten"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Inventar",
+   "source": "menunodes_main.php",
+   "table": "Inventar",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/inventar"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Ausleihen",
+   "source": "menunodes_main.php",
+   "table": "Ausleihen",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/ausleihen"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Inventar Bilder",
+   "source": "menunodes_main.php",
+   "table": "Inventar Bilder",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/inventar bilder"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Finanzbericht",
+   "source": "menunodes_main.php",
+   "table": "Finanzbericht",
+   "pageType": "Report",
+   "status": "ported",
+   "target": "/report/Finanzbericht"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Mengenbericht",
+   "source": "menunodes_main.php",
+   "table": "Mengenbericht",
+   "pageType": "Report",
+   "status": "ported",
+   "target": "/report/Mengenbericht"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Inventar Diagramme",
+   "source": "menunodes_main.php",
+   "table": "Inventar Diagramme",
+   "pageType": "Dashboard",
+   "status": "ported",
+   "target": "/dashboard/Inventar Diagramme"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Inventar Datenblätter",
+   "source": "menunodes_main.php",
+   "table": "Inventar Datenblatt",
+   "pageType": "Report",
+   "status": "ported",
+   "target": "/report/Inventar Datenblatt"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Inventar Etiketten",
+   "source": "menunodes_main.php",
+   "table": "Inventar Etiketten",
+   "pageType": "Report",
+   "status": "ported",
+   "target": "/report/Inventar Etiketten"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Kategorien",
+   "source": "menunodes_main.php",
+   "table": "Klassifikationen Inventar",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/klassifikationen inventar"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Sets",
+   "source": "menunodes_main.php",
+   "table": "Sets",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/sets"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Schlagwörter",
+   "source": "menunodes_main.php",
+   "table": "Schlagwoerter",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/schlagwoerter"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Stapelverarbeitung",
+   "source": "menunodes_main.php",
+   "table": "Inventar Stapelverarbeitung",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/inventar stapelverarbeitung"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Rechnungen",
+   "source": "menunodes_main.php",
+   "table": "Rechnungen",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/rechnungen"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Angebote",
+   "source": "menunodes_main.php",
+   "table": "Angebote",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/angebote"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Rechnungsdruck",
+   "source": "menunodes_main.php",
+   "table": "Rechnungsdruck",
+   "pageType": "Report",
+   "status": "ported",
+   "target": "/report/Rechnungsdruck"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Angebotsdruck",
+   "source": "menunodes_main.php",
+   "table": "Angebotsdruck",
+   "pageType": "Report",
+   "status": "ported",
+   "target": "/report/Angebotsdruck"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Vorgänge",
+   "source": "menunodes_main.php",
+   "table": "Verkauf",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/verkauf"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Verkauf Serienbrief Steuerdatei",
+   "source": "menunodes_main.php",
+   "table": "Verkauf Serienbrief Steuerdatei",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/verkauf serienbrief steuerdatei"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Umsatzauswertung",
+   "source": "menunodes_main.php",
+   "table": "Umsatzauswertung",
+   "pageType": "Report",
+   "status": "ported",
+   "target": "/report/Umsatzauswertung"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Leistungen",
+   "source": "menunodes_main.php",
+   "table": "Leistungen",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/leistungen"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Adressen",
+   "source": "menunodes_main.php",
+   "table": "Adressen",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/adressen"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Adressen (Kerndaten)",
+   "source": "menunodes_main.php",
+   "table": "Kerndaten",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/kerndaten"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Adressen (Vertraulich)",
+   "source": "menunodes_main.php",
+   "table": "Vertraulich",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/vertraulich"
+  },
+  {
+   "kind": "page",
+   "id": "menu:vCard Import",
+   "source": "menunodes_main.php",
+   "table": "vCard Import",
+   "pageType": "Edit",
+   "status": "ported",
+   "target": "/vcard import/edit"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Adressliste",
+   "source": "menunodes_main.php",
+   "table": "Adressliste",
+   "pageType": "Report",
+   "status": "ported",
+   "target": "/report/Adressliste"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Adressetiketten",
+   "source": "menunodes_main.php",
+   "table": "Adressetiketten",
+   "pageType": "Report",
+   "status": "ported",
+   "target": "/report/Adressetiketten"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Telefonliste",
+   "source": "menunodes_main.php",
+   "table": "Telefonliste",
+   "pageType": "Report",
+   "status": "ported",
+   "target": "/report/Telefonliste"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Mail Web Skype",
+   "source": "menunodes_main.php",
+   "table": "Mail Web Skype",
+   "pageType": "Report",
+   "status": "ported",
+   "target": "/report/Mail Web Skype"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Serienbrief Steuerdatei",
+   "source": "menunodes_main.php",
+   "table": "Serienbrief Steuerdatei",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/serienbrief steuerdatei"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Adressen Diagramme",
+   "source": "menunodes_main.php",
+   "table": "Adressen Diagramme",
+   "pageType": "Dashboard",
+   "status": "ported",
+   "target": "/dashboard/Adressen Diagramme"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Klassifikationen",
+   "source": "menunodes_main.php",
+   "table": "Klassifikationen Adressen",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/klassifikationen adressen"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Stapelverarbeitung",
+   "source": "menunodes_main.php",
+   "table": "Adressen Stapelverarbeitung",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/adressen stapelverarbeitung"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Notizen",
+   "source": "menunodes_main.php",
+   "table": "Notizen",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/notizen"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Aufgaben",
+   "source": "menunodes_main.php",
+   "table": "Aufgaben",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/aufgaben"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Wiedervorlage",
+   "source": "menunodes_main.php",
+   "table": "Heute",
+   "pageType": "Dashboard",
+   "status": "ported",
+   "target": "/dashboard/Heute"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Dokumente",
+   "source": "menunodes_main.php",
+   "table": "Dokumente",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/dokumente"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Fotos",
+   "source": "menunodes_main.php",
+   "table": "Dokumente Fotos",
+   "pageType": "Add",
+   "status": "ported",
+   "target": "/dokumente fotos/add"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Bilder",
+   "source": "menunodes_main.php",
+   "table": "Bilder",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/bilder"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Verträge",
+   "source": "menunodes_main.php",
+   "table": "Vertraege",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/vertraege"
+  },
+  {
+   "kind": "page",
+   "id": "menu:OneNote",
+   "source": "menunodes_main.php",
+   "table": null,
+   "pageType": "List",
+   "status": "not-applicable",
+   "target": "https://www.onenote.com",
+   "note": "external link"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Onedrive",
+   "source": "menunodes_main.php",
+   "table": null,
+   "pageType": "List",
+   "status": "not-applicable",
+   "target": "https://onedrive.live.com",
+   "note": "external link"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Alle Termine",
+   "source": "menunodes_main.php",
+   "table": "Termine",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/termine"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Agenda Heute",
+   "source": "menunodes_main.php",
+   "table": "Agenda heute",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/agenda heute"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Kalenderwoche",
+   "source": "menunodes_main.php",
+   "table": "Kalenderwoche",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/kalenderwoche"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Termine diese Woche",
+   "source": "menunodes_main.php",
+   "table": "Termine diese Woche",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/termine diese woche"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Monatskalender",
+   "source": "menunodes_main.php",
+   "table": "Kalender",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/kalender"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Termine dieser Monat",
+   "source": "menunodes_main.php",
+   "table": "Termine dieser Monat",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/termine dieser monat"
+  },
+  {
+   "kind": "page",
+   "id": "menu:ics Import",
+   "source": "menunodes_main.php",
+   "table": "ics Import",
+   "pageType": "Edit",
+   "status": "ported",
+   "target": "/ics import/edit"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Outlook Kalender",
+   "source": "menunodes_main.php",
+   "table": null,
+   "pageType": "List",
+   "status": "not-applicable",
+   "target": "https://outlook.live.com/calendar/view/month",
+   "note": "external link"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Korrespondenz",
+   "source": "menunodes_main.php",
+   "table": "Korrespondenz",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/korrespondenz"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Export nach Word",
+   "source": "menunodes_main.php",
+   "table": "Korrespondenz Word",
+   "pageType": "Report",
+   "status": "ported",
+   "target": "/report/Korrespondenz Word"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Briefdruck",
+   "source": "menunodes_main.php",
+   "table": "Korrespondenz Briefdruck",
+   "pageType": "Report",
+   "status": "ported",
+   "target": "/report/Korrespondenz Briefdruck"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Outlook Mail",
+   "source": "menunodes_main.php",
+   "table": null,
+   "pageType": "List",
+   "status": "not-applicable",
+   "target": "https://outlook.live.com/mail/inbox",
+   "note": "external link"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Word online",
+   "source": "menunodes_main.php",
+   "table": null,
+   "pageType": "List",
+   "status": "not-applicable",
+   "target": "https://office.live.com/start/Word.aspx",
+   "note": "external link"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Informationen",
+   "source": "menunodes_main.php",
+   "table": "Informationen",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/informationen"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Gesetze/Verordnungen",
+   "source": "menunodes_main.php",
+   "table": null,
+   "pageType": "List",
+   "status": "not-applicable",
+   "target": "https://www.intex-publishing.de/kundenportal/Gesetze_list.php?orderby=aBezeichnung",
+   "note": "external link"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Urteile",
+   "source": "menunodes_main.php",
+   "table": null,
+   "pageType": "List",
+   "status": "not-applicable",
+   "target": "https://www.intex-publishing.de/kundenportal/Urteile_list.php?orderby=dDatum",
+   "note": "external link"
+  },
+  {
+   "kind": "page",
+   "id": "menu:PLZ",
+   "source": "menunodes_main.php",
+   "table": "PLZ",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/plz"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Wertelisten",
+   "source": "menunodes_main.php",
+   "table": "Wertelisten",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/wertelisten"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Farben",
+   "source": "menunodes_main.php",
+   "table": "Farben",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/farben"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Seriennummern",
+   "source": "menunodes_main.php",
+   "table": "Seriennummern",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/seriennummern"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Einstellungen",
+   "source": "menunodes_main.php",
+   "table": "Einstellungen",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/einstellungen"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Vertragsdaten",
+   "source": "menunodes_main.php",
+   "table": "Vertragsdaten",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/vertragsdaten"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Backup",
+   "source": "menunodes_main.php",
+   "table": null,
+   "pageType": "List",
+   "status": "ported",
+   "target": "/"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Anmeldung",
+   "source": "menunodes_main.php",
+   "table": "Anmeldung",
+   "pageType": "Add",
+   "status": "ported",
+   "target": "/anmeldung/add"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Kontaktaufnahme",
+   "source": "menunodes_main.php",
+   "table": "Kontaktaufnahme",
+   "pageType": "Add",
+   "status": "ported",
+   "target": "/kontaktaufnahme/add"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Zählerstände melden",
+   "source": "menunodes_main.php",
+   "table": "Zaehlerstaende melden",
+   "pageType": "Add",
+   "status": "ported",
+   "target": "/zaehlerstaende melden/add"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Mitteilungen",
+   "source": "menunodes_main.php",
+   "table": "Mitteilungen",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/mitteilungen"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Objekte Vermietung Verkauf",
+   "source": "menunodes_main.php",
+   "table": "Objekte Vermietung Verkauf",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/objekte vermietung verkauf"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Einheiten Vermietung Verkauf",
+   "source": "menunodes_main.php",
+   "table": "Einheiten Vermietung Verkauf",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/einheiten vermietung verkauf"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Mitarbeiter",
+   "source": "menunodes_main.php",
+   "table": "Mitarbeiter",
+   "pageType": "List",
+   "status": "ported",
+   "target": "/mitarbeiter"
+  },
+  {
+   "kind": "page",
+   "id": "menu:Zugriffsrechte",
+   "source": "menunodes_main.php",
+   "table": "admin_rights",
+   "pageType": "AdminArea",
+   "status": "pending",
+   "target": null
+  },
+  {
+   "kind": "page",
+   "id": "menu:Benutzer einer Gruppe zuordnen",
+   "source": "menunodes_main.php",
+   "table": "admin_members",
+   "pageType": "AdminArea",
+   "status": "pending",
+   "target": null
+  },
+  {
+   "kind": "page",
+   "id": "menu:Hinzufügen/Ändern eines Benutzers",
+   "source": "menunodes_main.php",
+   "table": "admin_users",
+   "pageType": "AdminArea",
+   "status": "pending",
+   "target": null
+  },
+  {
+   "kind": "chart",
+   "id": "chart:Abrechnungskonten_Zeitliche_Verteilung",
+   "source": "Abrechnungskonten_Zeitliche_Verteilung_chart.php",
+   "status": "tested",
+   "target": "/chart/Abrechnungskonten_Zeitliche_Verteilung",
+   "note": "runs on the shared fixture (npm run smoke:charts)"
+  },
+  {
+   "kind": "chart",
+   "id": "chart:Einheiten_nach_Art",
+   "source": "Einheiten_nach_Art_chart.php",
+   "status": "tested",
+   "target": "/chart/Einheiten_nach_Art",
+   "note": "runs on the shared fixture (npm run smoke:charts)"
+  },
+  {
+   "kind": "chart",
+   "id": "chart:Einnahmeverteilung",
+   "source": "Einnahmeverteilung_chart.php",
+   "status": "tested",
+   "target": "/chart/Einnahmeverteilung",
+   "note": "runs on the shared fixture (npm run smoke:charts)"
+  },
+  {
+   "kind": "chart",
+   "id": "chart:Inventar_nach_Aufbewahrungsort",
+   "source": "Inventar_nach_Aufbewahrungsort_chart.php",
+   "status": "tested",
+   "target": "/chart/Inventar_nach_Aufbewahrungsort",
+   "note": "runs on the shared fixture (npm run smoke:charts)"
+  },
+  {
+   "kind": "chart",
+   "id": "chart:Inventar_nach_Hersteller",
+   "source": "Inventar_nach_Hersteller_chart.php",
+   "status": "tested",
+   "target": "/chart/Inventar_nach_Hersteller",
+   "note": "runs on the shared fixture (npm run smoke:charts)"
+  },
+  {
+   "kind": "chart",
+   "id": "chart:Inventar_nach_Kategorien",
+   "source": "Inventar_nach_Kategorien_chart.php",
+   "status": "tested",
+   "target": "/chart/Inventar_nach_Kategorien",
+   "note": "runs on the shared fixture (npm run smoke:charts)"
+  },
+  {
+   "kind": "chart",
+   "id": "chart:Inventar_nach_Verk_ufer",
+   "source": "Inventar_nach_Verk_ufer_chart.php",
+   "status": "tested",
+   "target": "/chart/Inventar_nach_Verk_ufer",
+   "note": "runs on the shared fixture (npm run smoke:charts)"
+  },
+  {
+   "kind": "chart",
+   "id": "chart:Kontost_nde",
+   "source": "Kontost_nde_chart.php",
+   "status": "tested",
+   "target": "/chart/Kontost_nde",
+   "note": "runs on the shared fixture (npm run smoke:charts)"
+  },
+  {
+   "kind": "chart",
+   "id": "chart:Kostenverteilung",
+   "source": "Kostenverteilung_chart.php",
+   "status": "tested",
+   "target": "/chart/Kostenverteilung",
+   "note": "runs on the shared fixture (npm run smoke:charts)"
+  },
+  {
+   "kind": "chart",
+   "id": "chart:Leerstandsquote",
+   "source": "Leerstandsquote_chart.php",
+   "status": "tested",
+   "target": "/chart/Leerstandsquote",
+   "note": "runs on the shared fixture (npm run smoke:charts)"
+  },
+  {
+   "kind": "chart",
+   "id": "chart:Objekte_nach_Art",
+   "source": "Objekte_nach_Art_chart.php",
+   "status": "tested",
+   "target": "/chart/Objekte_nach_Art",
+   "note": "runs on the shared fixture (npm run smoke:charts)"
+  },
+  {
+   "kind": "chart",
+   "id": "chart:Objekte_nach_Flaeche",
+   "source": "Objekte_nach_Flaeche_chart.php",
+   "status": "tested",
+   "target": "/chart/Objekte_nach_Flaeche",
+   "note": "runs on the shared fixture (npm run smoke:charts)"
+  },
+  {
+   "kind": "chart",
+   "id": "chart:Verbrauchsanteile",
+   "source": "Verbrauchsanteile_chart.php",
+   "status": "tested",
+   "target": "/chart/Verbrauchsanteile",
+   "note": "runs on the shared fixture (npm run smoke:charts)"
+  },
+  {
+   "kind": "chart",
+   "id": "chart:Verteilung_Umlegbare_Kosten",
+   "source": "Verteilung_Umlegbare_Kosten_chart.php",
+   "status": "tested",
+   "target": "/chart/Verteilung_Umlegbare_Kosten",
+   "note": "runs on the shared fixture (npm run smoke:charts)"
+  },
+  {
+   "kind": "chart",
+   "id": "chart:Verteilung_nach_Bundesland",
+   "source": "Verteilung_nach_Bundesland_chart.php",
+   "status": "tested",
+   "target": "/chart/Verteilung_nach_Bundesland",
+   "note": "runs on the shared fixture (npm run smoke:charts)"
+  },
+  {
+   "kind": "chart",
+   "id": "chart:Verteilung_nach_Klassifikation",
+   "source": "Verteilung_nach_Klassifikation_chart.php",
+   "status": "tested",
+   "target": "/chart/Verteilung_nach_Klassifikation",
+   "note": "runs on the shared fixture (npm run smoke:charts)"
+  },
+  {
+   "kind": "chart",
+   "id": "chart:Verteilung_nach_Ort",
+   "source": "Verteilung_nach_Ort_chart.php",
+   "status": "tested",
+   "target": "/chart/Verteilung_nach_Ort",
+   "note": "runs on the shared fixture (npm run smoke:charts)"
+  },
+  {
+   "kind": "chart",
+   "id": "chart:Verteilung_nach_Staat",
+   "source": "Verteilung_nach_Staat_chart.php",
+   "status": "tested",
+   "target": "/chart/Verteilung_nach_Staat",
+   "note": "runs on the shared fixture (npm run smoke:charts)"
+  },
+  {
+   "kind": "dashboard",
+   "id": "dashboard:Adressen_Diagramme",
+   "source": "Adressen_Diagramme_dashboard.php",
+   "status": "ported",
+   "target": "/dashboard/adressen_diagramme"
+  },
+  {
+   "kind": "dashboard",
+   "id": "dashboard:Assistent_Abrechnungen",
+   "source": "Assistent_Abrechnungen_dashboard.php",
+   "status": "ported",
+   "target": "/dashboard/assistent_abrechnungen"
+  },
+  {
+   "kind": "dashboard",
+   "id": "dashboard:Assistent_Doppelte_Buchf_hrung",
+   "source": "Assistent_Doppelte_Buchf_hrung_dashboard.php",
+   "status": "ported",
+   "target": "/dashboard/assistent_doppelte_buchf_hrung"
+  },
+  {
+   "kind": "dashboard",
+   "id": "dashboard:Assistent_Objekte_und_Einheiten",
+   "source": "Assistent_Objekte_und_Einheiten_dashboard.php",
+   "status": "ported",
+   "target": "/dashboard/assistent_objekte_und_einheiten"
+  },
+  {
+   "kind": "dashboard",
+   "id": "dashboard:Heute",
+   "source": "Heute_dashboard.php",
+   "status": "ported",
+   "target": "/dashboard/heute"
+  },
+  {
+   "kind": "dashboard",
+   "id": "dashboard:Immobilien_Diagramme",
+   "source": "Immobilien_Diagramme_dashboard.php",
+   "status": "ported",
+   "target": "/dashboard/immobilien_diagramme"
+  },
+  {
+   "kind": "dashboard",
+   "id": "dashboard:Inventar_Diagramme",
+   "source": "Inventar_Diagramme_dashboard.php",
+   "status": "ported",
+   "target": "/dashboard/inventar_diagramme"
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Abrechnungen.AfterAdd",
+   "source": "include/Abrechnungen_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 19
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Abrechnungen.BeforeProcessAdd",
+   "source": "include/Abrechnungen_events.php",
+   "status": "not-applicable",
+   "target": "src/events/runtime.js",
+   "lines": 0
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Abrechnungen.BeforeInsert",
+   "source": "include/Abrechnungen_events.php",
+   "status": "ported",
+   "target": "src/events/runtime.js",
+   "lines": 0
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Abrechnungsdaten__bersicht.BeforeEdit",
+   "source": "include/Abrechnungsdaten__bersicht_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 1
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Abrechnungsdaten__bersicht.BeforeAdd",
+   "source": "include/Abrechnungsdaten__bersicht_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 25
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Abrechnungskonten.BeforeInsert",
+   "source": "include/Abrechnungskonten_events.php",
+   "status": "ported",
+   "target": "src/events/runtime.js",
+   "lines": 1
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Adressen_Stapelverarbeitung.BeforeInsert",
+   "source": "include/Adressen_Stapelverarbeitung_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 1
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Adressen.BeforeInsert",
+   "source": "include/Adressen_events.php",
+   "status": "partial",
+   "target": "src/events/runtime.js",
+   "lines": 39
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Adressen.BeforeAdd",
+   "source": "include/Adressen_events.php",
+   "status": "partial",
+   "target": "src/events/runtime.js",
+   "lines": 37
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Adressen.BeforeEdit",
+   "source": "include/Adressen_events.php",
+   "status": "partial",
+   "target": "src/events/runtime.js",
+   "lines": 17
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Agenda_heute.BeforeAdd",
+   "source": "include/Agenda_heute_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 2
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Angebote.BeforeProcessAdd",
+   "source": "include/Angebote_events.php",
+   "status": "not-applicable",
+   "target": "src/events/runtime.js",
+   "lines": 9
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Angebote.AfterAdd",
+   "source": "include/Angebote_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 58
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Angebotsdruck.BeforeProcessReportPrint",
+   "source": "include/Angebotsdruck_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 30
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Anmeldung.BeforeInsert",
+   "source": "include/Anmeldung_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 4
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Anmeldung.BeforeAdd",
+   "source": "include/Anmeldung_events.php",
+   "status": "partial",
+   "target": "src/events/runtime.js",
+   "lines": 35
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Anmeldung.BeforeEdit",
+   "source": "include/Anmeldung_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 44
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Aufgaben.BeforeProcessAdd",
+   "source": "include/Aufgaben_events.php",
+   "status": "not-applicable",
+   "target": "src/events/runtime.js",
+   "lines": 9
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Aufgaben.AfterAdd",
+   "source": "include/Aufgaben_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 55
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Banking.BeforeMoveNextList",
+   "source": "include/Banking_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 3
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Banking.BeforeAdd",
+   "source": "include/Banking_events.php",
+   "status": "partial",
+   "target": "src/events/runtime.js",
+   "lines": 25
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Bilder.BeforeMoveNextList",
+   "source": "include/Bilder_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 4
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Buchfuehrungen.BeforeProcessAdd",
+   "source": "include/Buchfuehrungen_events.php",
+   "status": "not-applicable",
+   "target": "src/events/runtime.js",
+   "lines": 8
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Buchfuehrungen.AfterAdd",
+   "source": "include/Buchfuehrungen_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 63
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Buchfuehrungen.BeforeInsert",
+   "source": "include/Buchfuehrungen_events.php",
+   "status": "ported",
+   "target": "src/events/runtime.js",
+   "lines": 0
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Buchungen.BeforeMoveNextList",
+   "source": "include/Buchungen_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 6
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Buchungen.BeforeAdd",
+   "source": "include/Buchungen_events.php",
+   "status": "partial",
+   "target": "src/events/runtime.js",
+   "lines": 17
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Buchungsassistent.AfterAdd",
+   "source": "include/Buchungsassistent_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 61
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Buchungsassistent.AfterEdit",
+   "source": "include/Buchungsassistent_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 50
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Buchungsassistent.BeforeInsert",
+   "source": "include/Buchungsassistent_events.php",
+   "status": "ported",
+   "target": "src/events/runtime.js",
+   "lines": 0
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Buchungsimport.BeforeInsert",
+   "source": "include/Buchungsimport_events.php",
+   "status": "partial",
+   "target": "src/events/runtime.js",
+   "lines": 25
+  },
+  {
+   "kind": "hook",
+   "id": "hook:DATEV_Export.BeforeMoveNextList",
+   "source": "include/DATEV_Export_events.php",
+   "status": "not-applicable",
+   "target": "src/events/runtime.js",
+   "lines": 3
+  },
+  {
+   "kind": "hook",
+   "id": "hook:DATEV_Export.BeforeAdd",
+   "source": "include/DATEV_Export_events.php",
+   "status": "partial",
+   "target": "src/events/runtime.js",
+   "lines": 30
+  },
+  {
+   "kind": "hook",
+   "id": "hook:DirekteKosten.BeforeAdd",
+   "source": "include/DirekteKosten_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 6
+  },
+  {
+   "kind": "hook",
+   "id": "hook:DirekteKosten.BeforeInsert",
+   "source": "include/DirekteKosten_events.php",
+   "status": "ported",
+   "target": "src/events/runtime.js",
+   "lines": 12
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Dokumente_Fotos.BeforeMoveNextList",
+   "source": "include/Dokumente_Fotos_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 4
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Dokumente.BeforeMoveNextList",
+   "source": "include/Dokumente_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 10
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Einstellungen.AfterEdit",
+   "source": "include/Einstellungen_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 61
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Einstellungen.BeforeShowList",
+   "source": "include/Einstellungen_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 4
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Einstellungen.AfterAdd",
+   "source": "include/Einstellungen_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 2
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Gegenbuchungen.BeforeAdd",
+   "source": "include/Gegenbuchungen_events.php",
+   "status": "partial",
+   "target": "src/events/runtime.js",
+   "lines": 8
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Gegenbuchungen.BeforeMoveNextList",
+   "source": "include/Gegenbuchungen_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 36
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Heute.BeforeProcessDashboard",
+   "source": "include/Heute_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 8
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Inventar_Stapelverarbeitung.BeforeAdd",
+   "source": "include/Inventar_Stapelverarbeitung_events.php",
+   "status": "partial",
+   "target": "src/events/runtime.js",
+   "lines": 19
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Inventar_Stapelverarbeitung.BeforeProcessView",
+   "source": "include/Inventar_Stapelverarbeitung_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 69
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Inventar_Stapelverarbeitung.BeforeProcessAdd",
+   "source": "include/Inventar_Stapelverarbeitung_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 61
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Inventar_Stapelverarbeitung.BeforeProcessEdit",
+   "source": "include/Inventar_Stapelverarbeitung_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 23
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Inventar.BeforeAdd",
+   "source": "include/Inventar_events.php",
+   "status": "partial",
+   "target": "src/events/runtime.js",
+   "lines": 4
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Inventar.BeforeProcessView",
+   "source": "include/Inventar_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 30
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Inventar.BeforeProcessAdd",
+   "source": "include/Inventar_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 31
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Inventar.BeforeProcessEdit",
+   "source": "include/Inventar_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 72
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Inventar.BeforeEdit",
+   "source": "include/Inventar_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 2
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Inventar.BeforeInsert",
+   "source": "include/Inventar_events.php",
+   "status": "ported",
+   "target": "src/events/runtime.js",
+   "lines": 1
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Journal.BeforeAdd",
+   "source": "include/Journal_events.php",
+   "status": "partial",
+   "target": "src/events/runtime.js",
+   "lines": 18
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Journal.BeforeInsert",
+   "source": "include/Journal_events.php",
+   "status": "partial",
+   "target": "src/events/runtime.js",
+   "lines": 118
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Kalender.BeforeProcessList",
+   "source": "include/Kalender_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 36
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Kalenderwoche.BeforeProcessList",
+   "source": "include/Kalenderwoche_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 34
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Kerndaten.BeforeInsert",
+   "source": "include/Kerndaten_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 4
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Kerndaten.BeforeAdd",
+   "source": "include/Kerndaten_events.php",
+   "status": "partial",
+   "target": "src/events/runtime.js",
+   "lines": 56
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Kerndaten.BeforeEdit",
+   "source": "include/Kerndaten_events.php",
+   "status": "partial",
+   "target": "src/events/runtime.js",
+   "lines": 79
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Kontaktaufnahme.BeforeAdd",
+   "source": "include/Kontaktaufnahme_events.php",
+   "status": "ported",
+   "target": "src/events/runtime.js",
+   "lines": 1
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Kontenrahmen.BeforeInsert",
+   "source": "include/Kontenrahmen_events.php",
+   "status": "ported",
+   "target": "src/events/runtime.js",
+   "lines": 1
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Kontoauszuege2.BeforeInsert",
+   "source": "include/Kontoauszuege2_events.php",
+   "status": "partial",
+   "target": "src/events/runtime.js",
+   "lines": 58
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Kontoauszuege.BeforeInsert",
+   "source": "include/Kontoauszuege_events.php",
+   "status": "partial",
+   "target": "src/events/runtime.js",
+   "lines": 33
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Kontobuch_Auszug.BeforeProcessReport",
+   "source": "include/Kontobuch_Auszug_events.php",
+   "status": "not-applicable",
+   "target": "src/events/runtime.js",
+   "lines": 8
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Kontobuch_Banking.BeforeAdd",
+   "source": "include/Kontobuch_Banking_events.php",
+   "status": "partial",
+   "target": "src/events/runtime.js",
+   "lines": 13
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Kontobuch.BeforeAdd",
+   "source": "include/Kontobuch_events.php",
+   "status": "partial",
+   "target": "src/events/runtime.js",
+   "lines": 16
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Kontobuch.BeforeInsert",
+   "source": "include/Kontobuch_events.php",
+   "status": "partial",
+   "target": "src/events/runtime.js",
+   "lines": 132
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Korrespondenz.BeforeAdd",
+   "source": "include/Korrespondenz_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 13
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Kosten.BeforeEdit",
+   "source": "include/Kosten_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 6
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Kosten.BeforeAdd",
+   "source": "include/Kosten_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 51
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Kosten.BeforeInsert",
+   "source": "include/Kosten_events.php",
+   "status": "ported",
+   "target": "src/events/runtime.js",
+   "lines": 4
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Leistungen.BeforeInsert",
+   "source": "include/Leistungen_events.php",
+   "status": "ported",
+   "target": "src/events/runtime.js",
+   "lines": 1
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Mieterkonten_Saldenliste.BeforeAdd",
+   "source": "include/Mieterkonten_Saldenliste_events.php",
+   "status": "partial",
+   "target": "src/events/runtime.js",
+   "lines": 13
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Mieterkonten_Saldenliste.BeforeProcessList",
+   "source": "include/Mieterkonten_Saldenliste_events.php",
+   "status": "not-applicable",
+   "target": "src/events/runtime.js",
+   "lines": 7
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Mieterkonten_Saldenliste.BeforeMoveNextList",
+   "source": "include/Mieterkonten_Saldenliste_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 41
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Mitarbeiter.BeforeInsert",
+   "source": "include/Mitarbeiter_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 4
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Mitarbeiter.BeforeAdd",
+   "source": "include/Mitarbeiter_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 34
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Mitarbeiter.BeforeEdit",
+   "source": "include/Mitarbeiter_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 43
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Objekte.AfterAdd",
+   "source": "include/Objekte_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 10
+  },
+  {
+   "kind": "hook",
+   "id": "hook:P35aEStG.BeforeInsert",
+   "source": "include/P35aEStG_events.php",
+   "status": "ported",
+   "target": "src/events/runtime.js",
+   "lines": 1
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Raeume.BeforeAdd",
+   "source": "include/Raeume_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 2
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Raeume.BeforeEdit",
+   "source": "include/Raeume_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 9
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Rechnungen.BeforeAdd",
+   "source": "include/Rechnungen_events.php",
+   "status": "partial",
+   "target": "src/events/runtime.js",
+   "lines": 13
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Rechnungen.AfterAdd",
+   "source": "include/Rechnungen_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 63
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Rechnungen.BeforeProcessAdd",
+   "source": "include/Rechnungen_events.php",
+   "status": "not-applicable",
+   "target": "src/events/runtime.js",
+   "lines": 2
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Rechnungen.BeforeEdit",
+   "source": "include/Rechnungen_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 1
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Rechnungsdruck.BeforeProcessReportPrint",
+   "source": "include/Rechnungsdruck_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 31
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Ruecklagebuchungen.BeforeAdd",
+   "source": "include/Ruecklagebuchungen_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 6
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Ruecklagebuchungen.BeforeInsert",
+   "source": "include/Ruecklagebuchungen_events.php",
+   "status": "ported",
+   "target": "src/events/runtime.js",
+   "lines": 12
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Saldenliste.BeforeInsert",
+   "source": "include/Saldenliste_events.php",
+   "status": "ported",
+   "target": "src/events/runtime.js",
+   "lines": 1
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Schluessel.BeforeAdd",
+   "source": "include/Schluessel_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 2
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Schluessel.BeforeEdit",
+   "source": "include/Schluessel_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 9
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Schnellbuchungen.BeforeMoveNextList",
+   "source": "include/Schnellbuchungen_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 9
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Schnellbuchungen.BeforeAdd",
+   "source": "include/Schnellbuchungen_events.php",
+   "status": "partial",
+   "target": "src/events/runtime.js",
+   "lines": 21
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Steckbrief.BeforeInsert",
+   "source": "include/Steckbrief_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 4
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Steckbrief.BeforeAdd",
+   "source": "include/Steckbrief_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 34
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Steckbrief.BeforeEdit",
+   "source": "include/Steckbrief_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 43
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Termine_diese_Woche.BeforeMoveNextList",
+   "source": "include/Termine_diese_Woche_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 7
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Termine_diese_Woche.BeforeAdd",
+   "source": "include/Termine_diese_Woche_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 3
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Termine_diese_Woche.BeforeEdit",
+   "source": "include/Termine_diese_Woche_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 3
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Termine_dieser_Monat.BeforeEdit",
+   "source": "include/Termine_dieser_Monat_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 1
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Termine_dieser_Monat.BeforeAdd",
+   "source": "include/Termine_dieser_Monat_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 25
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Termine_dieser_Monat.BeforeMoveNextList",
+   "source": "include/Termine_dieser_Monat_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 11
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Termine.BeforeEdit",
+   "source": "include/Termine_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 3
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Termine.BeforeAdd",
+   "source": "include/Termine_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 20
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Termine.BeforeMoveNextList",
+   "source": "include/Termine_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 6
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Terminliste.BeforeEdit",
+   "source": "include/Terminliste_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 1
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Terminliste.BeforeAdd",
+   "source": "include/Terminliste_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 25
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Terminliste.BeforeMoveNextList",
+   "source": "include/Terminliste_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 11
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Verkauf_Serienbrief_Steuerdatei.BeforeAdd",
+   "source": "include/Verkauf_Serienbrief_Steuerdatei_events.php",
+   "status": "partial",
+   "target": "src/events/runtime.js",
+   "lines": 4
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Verkauf.BeforeAdd",
+   "source": "include/Verkauf_events.php",
+   "status": "partial",
+   "target": "src/events/runtime.js",
+   "lines": 4
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Vertraulich.BeforeInsert",
+   "source": "include/Vertraulich_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 14
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Vertraulich.BeforeAdd",
+   "source": "include/Vertraulich_events.php",
+   "status": "partial",
+   "target": "src/events/runtime.js",
+   "lines": 66
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Vertraulich.BeforeEdit",
+   "source": "include/Vertraulich_events.php",
+   "status": "partial",
+   "target": "src/events/runtime.js",
+   "lines": 87
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Vorauszahlungen.BeforeAdd",
+   "source": "include/Vorauszahlungen_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 2
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Zaehler.BeforeInsert",
+   "source": "include/Zaehler_events.php",
+   "status": "ported",
+   "target": "src/events/runtime.js",
+   "lines": 2
+  },
+  {
+   "kind": "hook",
+   "id": "hook:Zaehlerstaende_melden.BeforeAdd",
+   "source": "include/Zaehlerstaende_melden_events.php",
+   "status": "ported",
+   "target": "src/events/runtime.js",
+   "lines": 4
+  },
+  {
+   "kind": "hook",
+   "id": "hook:admin_users.BeforeQueryList",
+   "source": "include/admin_users_events.php",
+   "status": "not-applicable",
+   "target": "src/events/runtime.js",
+   "lines": 1
+  },
+  {
+   "kind": "hook",
+   "id": "hook:admin_users.BeforeShowList",
+   "source": "include/admin_users_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 36
+  },
+  {
+   "kind": "hook",
+   "id": "hook:admin_users.BeforeAdd",
+   "source": "include/admin_users_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 6
+  },
+  {
+   "kind": "hook",
+   "id": "hook:ics_Import.AfterEdit",
+   "source": "include/ics_Import_events.php",
+   "status": "manual",
+   "target": "src/events/runtime.js",
+   "lines": 6
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Abrechnungen->Abrechnungskonten",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Abrechnungen->Kosten",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Abrechnungen->P35aEStG",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Abrechnungen->Buchfuehrungen",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Abrechnungen->Gesamtpersonen",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Abrechnungen->Kontobuch",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Abrechnungskonten->DirekteKosten",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Abrechnungskonten->Vorauszahlungen",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Abrechnungskonten->Ruecklagebuchungen",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Abrechnungskonten->Abrechnungsdaten Übersicht",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Abrechnungskonten->Personen",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Abrechnungskonten->Kontobuch",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Adressen->Notizen",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Adressen->Dokumente",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Adressen->Aufgaben",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Adressen->Terminliste",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Adressen->Korrespondenz",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Adressen->Inventar",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Adressen->Ausleihen",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Adressen->Verkauf",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Adressen->Vertraege",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Adressen->Objekte",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Adressen->Einheiten",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Adressen->Abrechnungskonten",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Adressen->Kontenrahmen",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Angebote->Positionen",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Aufgaben->Checklisten",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Aufgaben->Zeiten",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Buchfuehrungen->Kontenrahmen",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Buchfuehrungen->Journal",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:DirekteKosten->Kontenrahmen",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Einheiten->Raeume",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Einheiten->Dokumente",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Einheiten->Aufgaben",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Einheiten->Notizen",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Einheiten->Verkauf",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Einheiten->Abrechnungskonten",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Einheiten->Protokolle",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Einheiten->Vertraege",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Einheiten->Korrespondenz",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Einheiten->Einheiten Historie",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Inventar->Aufgaben",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Inventar->Dokumente",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Inventar->Notizen",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Inventar->Terminliste",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Inventar->Ausleihen",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Inventar->Korrespondenz",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Inventar->Vertraege",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Kalender->Terminliste",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Kalenderwoche->Terminliste",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Kontenrahmen->Buchungen",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Kontenrahmen->Gegenbuchungen",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Kontenrahmen->Kontenblätter",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Kosten->Kontenrahmen",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Kosten->Kostenbelege",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Kosten->Kontobuch",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Objekte->Einheiten",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Objekte->Ansprechpartner",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Objekte->Dokumente",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Objekte->Aufgaben",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Objekte->Notizen",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Objekte->Verkauf",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Objekte->Abrechnungen",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Objekte->Buchfuehrungen",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Objekte->Vertraege",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Objekte->Korrespondenz",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Objekte->Objekte Historie",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Protokolle->Zaehler",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Protokolle->Schluessel",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Protokolle->Dokumente",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Raeume->Inventar",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Raeume->Schluessel",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Raeume->Zaehler",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Raeume->Flaechen",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Raeume->Dokumente",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Raeume->Aufgaben",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Raeume->Notizen",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Rechnungen->Positionen",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Ruecklagebuchungen->Kontenrahmen",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Sets->Inventar",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Verkauf->Positionen",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Verkauf->Dokumente",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Vertraege->Korrespondenz",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Vertraege->Dokumente",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Vertraege->Notizen",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Vertraege->Aufgaben",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Vertraege->Vertraege Historie",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Vertraulich->Adressen Historie",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Vorauszahlungen->Kontenrahmen",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Vorauszahlungen->Vorauszahlungsbelege",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:Vorauszahlungen->Kontobuch",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:WV->Adressen",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:WV->Dokumente",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:WV->Notizen",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:WV->Korrespondenz",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:WV->Termine",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:WV->Aufgaben",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:WV->Vertraege",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:admin_users->Adressen",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:admin_users->Objekte",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:admin_users->Einheiten",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "relation",
+   "id": "relation:admin_users->Abrechnungen",
+   "source": "include/*_settings.php",
+   "status": "ported",
+   "target": "src/master-detail.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:vCard",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:_ics_Kalender",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:New_Button",
+   "source": "buttonhandler.php",
+   "status": "manual",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Notizen",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Notizen1",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Notizen2",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Notizen3",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Notizen4",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Notizen41",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:_ics_Kalender4",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Mails_ziehen1",
+   "source": "buttonhandler.php",
+   "status": "manual",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Notizen41316",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Notizen413161",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:New_Button1",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Notizen23",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Notizen13",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Notizen7",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Notizen33",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Notizen44",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Notizen413",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Projekt5",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Notizen413141",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Notizen231",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Notizen131",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Notizen71",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Notizen331",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Notizen441",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Notizen4132",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:_span_class__glyphicon_glyphicon_chevron_right____span__Adresse5",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Notizen413143",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Notizen233",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Notizen133",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Notizen73",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Notizen333",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Notizen443",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Notizen4134",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:vCard3",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:New_Button12",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Notizen24",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Notizen14",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Notizen8",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Notizen34",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Notizen45",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Notizen414",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Markierte_duplizieren1",
+   "source": "buttonhandler.php",
+   "status": "manual",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Markierte_buchen",
+   "source": "buttonhandler.php",
+   "status": "manual",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:vCard4",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:New_Button13",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Notizen25",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Notizen15",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Notizen9",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Notizen35",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Notizen46",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Notizen415",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Mails_ziehen11",
+   "source": "buttonhandler.php",
+   "status": "manual",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:New_Button3",
+   "source": "buttonhandler.php",
+   "status": "manual",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Kontoinfo",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Kontoinfo1",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:QM_aus_Fl_chenberechnung",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Kontosaldo__bernehmen",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Kontosaldo__bernehmen1",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Kontosaldo__bernehmen6",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Kontosaldo__bernehmen7",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:QM_aus_Fl_chenberechnung4",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Einheiten_aus_Objekt",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Z_hlerst_nde_einsehen",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Z_hlerst_nde_einsehen1",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Z_hlerst_nde_einsehen2",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Z_hlerst_nde_einsehen3",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Steckbrief",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Steckbrief1",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Steckbrief2",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Steckbrief3",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Steckbrief4",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Steckbrief5",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Steckbrief6",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Steckbrief7",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Steckbrief8",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Steckbrief9",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Steckbrief10",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Ansicht",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:PDF_Ansicht",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:SEPA__berweisung",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Steckbrief11",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Wie_letzte_Abrechnung",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Wie_letzte_Abrechnung1",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Wie_letzte_Abrechnung2",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Wie_letzte_Abrechnung3",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Steckbrief12",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Z_hlerst_nde_einlesen1",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Exportieren",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:New_Button16",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:New_Button121",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:New_Button31",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:New_Button17",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:___",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:_SPAN_class__glyphicon_glyphic",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Aufteilungsassistent",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Splitt",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Steuerbetrag",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Steuerbetrag1",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Markierte_duplizieren",
+   "source": "buttonhandler.php",
+   "status": "manual",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:vCard1",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:ics",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:vCard7",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:vCard8",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Abrechnung_drucken",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Brief_drucken",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Rechnung_drucken",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Rechnung_drucken1",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Angebot_drucken",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Saldo",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:BKVo1",
+   "source": "buttonhandler.php",
+   "status": "manual",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Personenschnitt",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Info1",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Immobilien",
+   "source": "buttonhandler.php",
+   "status": "manual",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Wohnungswirtschaft",
+   "source": "buttonhandler.php",
+   "status": "manual",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:SKR03",
+   "source": "buttonhandler.php",
+   "status": "manual",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:SKR04",
+   "source": "buttonhandler.php",
+   "status": "manual",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Webhook",
+   "source": "buttonhandler.php",
+   "status": "manual",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Webhook1",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Webhook2",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Webhook3",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Teilen",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Teilen1",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Teilen2",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Teilen3",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Teilen4",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:BKVo2",
+   "source": "buttonhandler.php",
+   "status": "manual",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Markierte_duplizieren4",
+   "source": "buttonhandler.php",
+   "status": "manual",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Markierte_dupliziere",
+   "source": "buttonhandler.php",
+   "status": "manual",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Markierte_duplizieren5",
+   "source": "buttonhandler.php",
+   "status": "manual",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Markierte_duplizieren6",
+   "source": "buttonhandler.php",
+   "status": "manual",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Steckbrief31",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Steckbrief21",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Std_Farben",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Kontrollsummen",
+   "source": "buttonhandler.php",
+   "status": "manual",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Saldo1",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  },
+  {
+   "kind": "button",
+   "id": "button:Hilfe",
+   "source": "buttonhandler.php",
+   "status": "ported",
+   "target": "src/button-handlers/runtime.js"
+  }
+ ],
+ "counts": {
+  "total": 539,
+  "menuLeaves": 151,
+  "charts": 18,
+  "dashboards": 7,
+  "hooks": 134,
+  "relations": 102,
+  "byStatus": {
+   "ported": 385,
+   "not-applicable": 16,
+   "pending": 3,
+   "tested": 18,
+   "manual": 90,
+   "partial": 27
+  },
+  "byKind": {
+   "page": 151,
+   "chart": 18,
+   "dashboard": 7,
+   "hook": 122,
+   "relation": 102,
+   "button": 139
+  }
+ }
+}

@@ -1,0 +1,1434 @@
+{
+ "team": "Team",
+ "extraTeams": [
+  "TeamB"
+ ],
+ "tables": {
+  "Adressen": [
+   {
+    "ID": 1,
+    "Kurzname": "Meier",
+    "Vorname": "Karl",
+    "Nachname": "Meier",
+    "Firma": "Meier GmbH",
+    "Strasse": "Hauptstr. 1",
+    "PLZ": "10115",
+    "Ort": "Berlin",
+    "Bundesland": "Berlin",
+    "Staat": "Deutschland",
+    "Klassifikation": "Eigentümer",
+    "Email": "meier@example.de",
+    "Telefon": "030-1001",
+    "Aktiv": 1
+   },
+   {
+    "ID": 2,
+    "Kurzname": "Schmidt",
+    "Vorname": "Anna",
+    "Nachname": "Schmidt",
+    "Strasse": "Parkweg 5",
+    "PLZ": "10117",
+    "Ort": "Berlin",
+    "Bundesland": "Berlin",
+    "Staat": "Deutschland",
+    "Klassifikation": "Mieter",
+    "Email": "anna.schmidt@example.de",
+    "Telefon": "030-1002",
+    "Aktiv": 1
+   },
+   {
+    "ID": 3,
+    "Kurzname": "Huber",
+    "Vorname": "Josef",
+    "Nachname": "Huber",
+    "Strasse": "Marienplatz 8",
+    "PLZ": "80331",
+    "Ort": "München",
+    "Bundesland": "Bayern",
+    "Staat": "Deutschland",
+    "Klassifikation": "Mieter",
+    "Email": "huber@example.de",
+    "Aktiv": 1
+   },
+   {
+    "ID": 4,
+    "Kurzname": "Becker",
+    "Vorname": "Claudia",
+    "Nachname": "Becker",
+    "Firma": "Becker Verwaltung",
+    "Strasse": "Wiesenweg 3",
+    "PLZ": "60311",
+    "Ort": "Frankfurt am Main",
+    "Bundesland": "Hessen",
+    "Staat": "Deutschland",
+    "Klassifikation": "Verwalter",
+    "Email": "becker@example.de",
+    "Aktiv": 1
+   },
+   {
+    "ID": 5,
+    "Kurzname": "Wagner Bau",
+    "Firma": "Wagner Bau GmbH",
+    "Strasse": "Industriestr. 44",
+    "PLZ": "50667",
+    "Ort": "Köln",
+    "Bundesland": "Nordrhein-Westfalen",
+    "Staat": "Deutschland",
+    "Klassifikation": "Handwerker",
+    "Email": "kontakt@wagner-bau.example.de",
+    "Aktiv": 1
+   },
+   {
+    "ID": 6,
+    "Kurzname": "Stadtwerke",
+    "Firma": "Stadtwerke Berlin",
+    "PLZ": "10110",
+    "Ort": "Berlin",
+    "Bundesland": "Berlin",
+    "Staat": "Deutschland",
+    "Klassifikation": "Lieferant",
+    "Aktiv": 1
+   },
+   {
+    "ID": 7,
+    "Kurzname": "Novak",
+    "Vorname": "Petra",
+    "Nachname": "Novak",
+    "Strasse": "Graben 21",
+    "PLZ": "1010",
+    "Ort": "Wien",
+    "Staat": "Österreich",
+    "Bundesland": "Wien",
+    "Klassifikation": "Mieter",
+    "Aktiv": 1
+   },
+   {
+    "ID": 8,
+    "Kurzname": "Lehmann",
+    "Vorname": "Torsten",
+    "Nachname": "Lehmann",
+    "PLZ": "20144",
+    "Ort": "Hamburg",
+    "Bundesland": "Hamburg",
+    "Staat": "Deutschland",
+    "Klassifikation": "Eigentümer",
+    "Aktiv": 1
+   },
+   {
+    "ID": 9,
+    "Kurzname": "TeamB Kontakt",
+    "Nachname": "Fremd",
+    "Ort": "Berlin",
+    "Bundesland": "Berlin",
+    "Staat": "Deutschland",
+    "Klassifikation": "Mieter",
+    "Team": "TeamB",
+    "Aktiv": 1
+   }
+  ],
+  "Objekte": [
+   {
+    "ID": 1,
+    "Bezeichnung": "Wohnhaus Hauptstraße",
+    "Nummer": 1,
+    "Objektart": "Wohnhaus",
+    "Anschrift": "Hauptstr. 1, 10115 Berlin",
+    "Besitzer": 1,
+    "Wohnflaeche": 320,
+    "Nutzflaeche": 40,
+    "Grundstuecksgroesse": 650,
+    "Kaltmiete": 3200,
+    "Aktiv": 1
+   },
+   {
+    "ID": 2,
+    "Bezeichnung": "Gewerbehof Berliner Allee",
+    "Nummer": 2,
+    "Objektart": "Gewerbe",
+    "Anschrift": "Berliner Allee 12, 10115 Berlin",
+    "Besitzer": 1,
+    "Wohnflaeche": 0,
+    "Nutzflaeche": 480,
+    "Grundstuecksgroesse": 900,
+    "Kaltmiete": 5400,
+    "Aktiv": 1
+   },
+   {
+    "ID": 3,
+    "Bezeichnung": "Mehrfamilienhaus Parkweg",
+    "Nummer": 3,
+    "Objektart": "Wohnhaus",
+    "Anschrift": "Parkweg 5, 10117 Berlin",
+    "Besitzer": 8,
+    "Wohnflaeche": 560,
+    "Nutzflaeche": 60,
+    "Grundstuecksgroesse": 1100,
+    "Kaltmiete": 6100,
+    "Aktiv": 1
+   },
+   {
+    "ID": 4,
+    "Bezeichnung": "Bürohaus Westend",
+    "Nummer": 4,
+    "Objektart": "Büro",
+    "Anschrift": "Westend 3, 60311 Frankfurt am Main",
+    "Besitzer": 8,
+    "Wohnflaeche": 0,
+    "Nutzflaeche": 300,
+    "Kaltmiete": 3900,
+    "Aktiv": 1
+   },
+   {
+    "ID": 5,
+    "Bezeichnung": "TeamB Objekt",
+    "Nummer": 5,
+    "Objektart": "Wohnhaus",
+    "Besitzer": 9,
+    "Wohnflaeche": 200,
+    "Team": "TeamB",
+    "Aktiv": 1
+   }
+  ],
+  "Einheiten": [
+   {
+    "ID": 1,
+    "Bezeichnung": "Whg 1 links",
+    "Objekt": 1,
+    "Einheitenart": "Wohnung",
+    "Etage": "EG",
+    "Nutzer": 2,
+    "Kaltmiete": 850,
+    "Wohnflaeche": 75,
+    "Zimmer": 3,
+    "Aktiv": 1
+   },
+   {
+    "ID": 2,
+    "Bezeichnung": "Whg 1 rechts",
+    "Objekt": 1,
+    "Einheitenart": "Wohnung",
+    "Etage": "EG",
+    "Nutzer": 3,
+    "Kaltmiete": 920,
+    "Wohnflaeche": 82,
+    "Zimmer": 3,
+    "Aktiv": 1
+   },
+   {
+    "ID": 3,
+    "Bezeichnung": "Whg 2 OG",
+    "Objekt": 1,
+    "Einheitenart": "Wohnung",
+    "Etage": "1. OG",
+    "Nutzer": null,
+    "Kaltmiete": 880,
+    "Wohnflaeche": 78,
+    "Zimmer": 3,
+    "Aktiv": 1
+   },
+   {
+    "ID": 4,
+    "Bezeichnung": "Laden EG",
+    "Objekt": 2,
+    "Einheitenart": "Laden",
+    "Etage": "EG",
+    "Nutzer": 6,
+    "Kaltmiete": 2400,
+    "Nutzflaeche": 160,
+    "Aktiv": 1
+   },
+   {
+    "ID": 5,
+    "Bezeichnung": "Büro 1.OG",
+    "Objekt": 2,
+    "Einheitenart": "Büro",
+    "Etage": "1. OG",
+    "Nutzer": 4,
+    "Kaltmiete": 1800,
+    "Nutzflaeche": 120,
+    "Aktiv": 1
+   },
+   {
+    "ID": 6,
+    "Bezeichnung": "Whg Parkweg 1",
+    "Objekt": 3,
+    "Einheitenart": "Wohnung",
+    "Etage": "EG",
+    "Nutzer": 7,
+    "Kaltmiete": 1150,
+    "Wohnflaeche": 95,
+    "Zimmer": 4,
+    "Aktiv": 1
+   },
+   {
+    "ID": 7,
+    "Bezeichnung": "Whg Parkweg 2",
+    "Objekt": 3,
+    "Einheitenart": "Wohnung",
+    "Etage": "1. OG",
+    "Nutzer": null,
+    "Kaltmiete": 1090,
+    "Wohnflaeche": 88,
+    "Zimmer": 3,
+    "Aktiv": 1
+   },
+   {
+    "ID": 8,
+    "Bezeichnung": "Garage 1",
+    "Objekt": 1,
+    "Einheitenart": "Garage",
+    "Nutzer": 2,
+    "Kaltmiete": 80,
+    "Aktiv": 1
+   },
+   {
+    "ID": 9,
+    "Bezeichnung": "TeamB Einheit",
+    "Objekt": 5,
+    "Einheitenart": "Wohnung",
+    "Nutzer": 9,
+    "Kaltmiete": 700,
+    "Team": "TeamB",
+    "Aktiv": 1
+   }
+  ],
+  "Vertraege": [
+   {
+    "ID": 1,
+    "Bezeichnung": "Mietvertrag Schmidt",
+    "Einheit": 1,
+    "Objekt": 1,
+    "Adresse": 2,
+    "Datum": "2024-02-01",
+    "Kaltmiete": 850,
+    "NK_Vorauszahlung": 150,
+    "HK_Vorauszahlung": 90,
+    "Art": "Miete"
+   },
+   {
+    "ID": 2,
+    "Bezeichnung": "Mietvertrag Huber",
+    "Einheit": 2,
+    "Objekt": 1,
+    "Adresse": 3,
+    "Datum": "2024-06-15",
+    "Kaltmiete": 920,
+    "NK_Vorauszahlung": 160,
+    "HK_Vorauszahlung": 95,
+    "Art": "Miete"
+   },
+   {
+    "ID": 3,
+    "Bezeichnung": "Gewerbemietvertrag Stadtwerke",
+    "Einheit": 4,
+    "Objekt": 2,
+    "Adresse": 6,
+    "Datum": "2023-11-01",
+    "Kaltmiete": 2400,
+    "NK_Vorauszahlung": 400,
+    "Art": "Gewerbemiete"
+   },
+   {
+    "ID": 4,
+    "Bezeichnung": "Mietvertrag Novak",
+    "Einheit": 6,
+    "Objekt": 3,
+    "Adresse": 7,
+    "Datum": "2025-01-01",
+    "Kaltmiete": 1150,
+    "NK_Vorauszahlung": 180,
+    "HK_Vorauszahlung": 110,
+    "Art": "Miete"
+   }
+  ],
+  "Kontobuch": [
+   {
+    "ID": 1,
+    "Datum": "2025-01-05",
+    "Betrag": 850,
+    "Betreff": "Miete Whg 1 links",
+    "Kategorie": "Miete",
+    "Art": "Einnahme",
+    "Abrechnungskonto": 1,
+    "Belegnummer": 1,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2025-01-05"
+   },
+   {
+    "ID": 2,
+    "Datum": "2025-01-05",
+    "Betrag": 920,
+    "Betreff": "Miete Whg 1 rechts",
+    "Kategorie": "Miete",
+    "Art": "Einnahme",
+    "Abrechnungskonto": 2,
+    "Belegnummer": 2,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2025-01-05"
+   },
+   {
+    "ID": 3,
+    "Datum": "2025-01-05",
+    "Betrag": 2400,
+    "Betreff": "Miete Laden",
+    "Kategorie": "Miete",
+    "Art": "Einnahme",
+    "Abrechnungskonto": 4,
+    "Belegnummer": 3,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2025-01-05"
+   },
+   {
+    "ID": 4,
+    "Datum": "2025-01-05",
+    "Betrag": 1800,
+    "Betreff": "Miete Büro",
+    "Kategorie": "Miete",
+    "Art": "Einnahme",
+    "Abrechnungskonto": 5,
+    "Belegnummer": 4,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2025-01-05"
+   },
+   {
+    "ID": 5,
+    "Datum": "2025-01-05",
+    "Betrag": 1150,
+    "Betreff": "Miete Parkweg 1",
+    "Kategorie": "Miete",
+    "Art": "Einnahme",
+    "Abrechnungskonto": 6,
+    "Belegnummer": 5,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2025-01-05"
+   },
+   {
+    "ID": 6,
+    "Datum": "2025-01-05",
+    "Betrag": 80,
+    "Betreff": "Garagenmiete",
+    "Kategorie": "Miete",
+    "Art": "Einnahme",
+    "Abrechnungskonto": 8,
+    "Belegnummer": 6,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2025-01-05"
+   },
+   {
+    "ID": 7,
+    "Datum": "2025-02-05",
+    "Betrag": 850,
+    "Betreff": "Miete Whg 1 links",
+    "Kategorie": "Miete",
+    "Art": "Einnahme",
+    "Abrechnungskonto": 1,
+    "Belegnummer": 7,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2025-02-05"
+   },
+   {
+    "ID": 8,
+    "Datum": "2025-02-05",
+    "Betrag": 920,
+    "Betreff": "Miete Whg 1 rechts",
+    "Kategorie": "Miete",
+    "Art": "Einnahme",
+    "Abrechnungskonto": 2,
+    "Belegnummer": 8,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2025-02-05"
+   },
+   {
+    "ID": 9,
+    "Datum": "2025-02-05",
+    "Betrag": 2400,
+    "Betreff": "Miete Laden",
+    "Kategorie": "Miete",
+    "Art": "Einnahme",
+    "Abrechnungskonto": 4,
+    "Belegnummer": 9,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2025-02-05"
+   },
+   {
+    "ID": 10,
+    "Datum": "2025-02-05",
+    "Betrag": 1800,
+    "Betreff": "Miete Büro",
+    "Kategorie": "Miete",
+    "Art": "Einnahme",
+    "Abrechnungskonto": 5,
+    "Belegnummer": 10,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2025-02-05"
+   },
+   {
+    "ID": 11,
+    "Datum": "2025-02-05",
+    "Betrag": 1150,
+    "Betreff": "Miete Parkweg 1",
+    "Kategorie": "Miete",
+    "Art": "Einnahme",
+    "Abrechnungskonto": 6,
+    "Belegnummer": 11,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2025-02-05"
+   },
+   {
+    "ID": 12,
+    "Datum": "2025-02-05",
+    "Betrag": 80,
+    "Betreff": "Garagenmiete",
+    "Kategorie": "Miete",
+    "Art": "Einnahme",
+    "Abrechnungskonto": 8,
+    "Belegnummer": 12,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2025-02-05"
+   },
+   {
+    "ID": 13,
+    "Datum": "2025-03-05",
+    "Betrag": 850,
+    "Betreff": "Miete Whg 1 links",
+    "Kategorie": "Miete",
+    "Art": "Einnahme",
+    "Abrechnungskonto": 1,
+    "Belegnummer": 13,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2025-03-05"
+   },
+   {
+    "ID": 14,
+    "Datum": "2025-03-05",
+    "Betrag": 920,
+    "Betreff": "Miete Whg 1 rechts",
+    "Kategorie": "Miete",
+    "Art": "Einnahme",
+    "Abrechnungskonto": 2,
+    "Belegnummer": 14,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2025-03-05"
+   },
+   {
+    "ID": 15,
+    "Datum": "2025-03-05",
+    "Betrag": 2400,
+    "Betreff": "Miete Laden",
+    "Kategorie": "Miete",
+    "Art": "Einnahme",
+    "Abrechnungskonto": 4,
+    "Belegnummer": 15,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2025-03-05"
+   },
+   {
+    "ID": 16,
+    "Datum": "2025-03-05",
+    "Betrag": 1800,
+    "Betreff": "Miete Büro",
+    "Kategorie": "Miete",
+    "Art": "Einnahme",
+    "Abrechnungskonto": 5,
+    "Belegnummer": 16,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2025-03-05"
+   },
+   {
+    "ID": 17,
+    "Datum": "2025-03-05",
+    "Betrag": 1150,
+    "Betreff": "Miete Parkweg 1",
+    "Kategorie": "Miete",
+    "Art": "Einnahme",
+    "Abrechnungskonto": 6,
+    "Belegnummer": 17,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2025-03-05"
+   },
+   {
+    "ID": 18,
+    "Datum": "2025-03-05",
+    "Betrag": 80,
+    "Betreff": "Garagenmiete",
+    "Kategorie": "Miete",
+    "Art": "Einnahme",
+    "Abrechnungskonto": 8,
+    "Belegnummer": 18,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2025-03-05"
+   },
+   {
+    "ID": 19,
+    "Datum": "2025-04-05",
+    "Betrag": 850,
+    "Betreff": "Miete Whg 1 links",
+    "Kategorie": "Miete",
+    "Art": "Einnahme",
+    "Abrechnungskonto": 1,
+    "Belegnummer": 19,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2025-04-05"
+   },
+   {
+    "ID": 20,
+    "Datum": "2025-04-05",
+    "Betrag": 920,
+    "Betreff": "Miete Whg 1 rechts",
+    "Kategorie": "Miete",
+    "Art": "Einnahme",
+    "Abrechnungskonto": 2,
+    "Belegnummer": 20,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2025-04-05"
+   },
+   {
+    "ID": 21,
+    "Datum": "2025-04-05",
+    "Betrag": 2400,
+    "Betreff": "Miete Laden",
+    "Kategorie": "Miete",
+    "Art": "Einnahme",
+    "Abrechnungskonto": 4,
+    "Belegnummer": 21,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2025-04-05"
+   },
+   {
+    "ID": 22,
+    "Datum": "2025-04-05",
+    "Betrag": 1800,
+    "Betreff": "Miete Büro",
+    "Kategorie": "Miete",
+    "Art": "Einnahme",
+    "Abrechnungskonto": 5,
+    "Belegnummer": 22,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2025-04-05"
+   },
+   {
+    "ID": 23,
+    "Datum": "2025-04-05",
+    "Betrag": 1150,
+    "Betreff": "Miete Parkweg 1",
+    "Kategorie": "Miete",
+    "Art": "Einnahme",
+    "Abrechnungskonto": 6,
+    "Belegnummer": 23,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2025-04-05"
+   },
+   {
+    "ID": 24,
+    "Datum": "2025-04-05",
+    "Betrag": 80,
+    "Betreff": "Garagenmiete",
+    "Kategorie": "Miete",
+    "Art": "Einnahme",
+    "Abrechnungskonto": 8,
+    "Belegnummer": 24,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2025-04-05"
+   },
+   {
+    "ID": 25,
+    "Datum": "2025-05-05",
+    "Betrag": 850,
+    "Betreff": "Miete Whg 1 links",
+    "Kategorie": "Miete",
+    "Art": "Einnahme",
+    "Abrechnungskonto": 1,
+    "Belegnummer": 25,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2025-05-05"
+   },
+   {
+    "ID": 26,
+    "Datum": "2025-05-05",
+    "Betrag": 920,
+    "Betreff": "Miete Whg 1 rechts",
+    "Kategorie": "Miete",
+    "Art": "Einnahme",
+    "Abrechnungskonto": 2,
+    "Belegnummer": 26,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2025-05-05"
+   },
+   {
+    "ID": 27,
+    "Datum": "2025-05-05",
+    "Betrag": 2400,
+    "Betreff": "Miete Laden",
+    "Kategorie": "Miete",
+    "Art": "Einnahme",
+    "Abrechnungskonto": 4,
+    "Belegnummer": 27,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2025-05-05"
+   },
+   {
+    "ID": 28,
+    "Datum": "2025-05-05",
+    "Betrag": 1800,
+    "Betreff": "Miete Büro",
+    "Kategorie": "Miete",
+    "Art": "Einnahme",
+    "Abrechnungskonto": 5,
+    "Belegnummer": 28,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2025-05-05"
+   },
+   {
+    "ID": 29,
+    "Datum": "2025-05-05",
+    "Betrag": 1150,
+    "Betreff": "Miete Parkweg 1",
+    "Kategorie": "Miete",
+    "Art": "Einnahme",
+    "Abrechnungskonto": 6,
+    "Belegnummer": 29,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2025-05-05"
+   },
+   {
+    "ID": 30,
+    "Datum": "2025-05-05",
+    "Betrag": 80,
+    "Betreff": "Garagenmiete",
+    "Kategorie": "Miete",
+    "Art": "Einnahme",
+    "Abrechnungskonto": 8,
+    "Belegnummer": 30,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2025-05-05"
+   },
+   {
+    "ID": 31,
+    "Datum": "2025-06-05",
+    "Betrag": 850,
+    "Betreff": "Miete Whg 1 links",
+    "Kategorie": "Miete",
+    "Art": "Einnahme",
+    "Abrechnungskonto": 1,
+    "Belegnummer": 31,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2025-06-05"
+   },
+   {
+    "ID": 32,
+    "Datum": "2025-06-05",
+    "Betrag": 920,
+    "Betreff": "Miete Whg 1 rechts",
+    "Kategorie": "Miete",
+    "Art": "Einnahme",
+    "Abrechnungskonto": 2,
+    "Belegnummer": 32,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2025-06-05"
+   },
+   {
+    "ID": 33,
+    "Datum": "2025-06-05",
+    "Betrag": 2400,
+    "Betreff": "Miete Laden",
+    "Kategorie": "Miete",
+    "Art": "Einnahme",
+    "Abrechnungskonto": 4,
+    "Belegnummer": 33,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2025-06-05"
+   },
+   {
+    "ID": 34,
+    "Datum": "2025-06-05",
+    "Betrag": 1800,
+    "Betreff": "Miete Büro",
+    "Kategorie": "Miete",
+    "Art": "Einnahme",
+    "Abrechnungskonto": 5,
+    "Belegnummer": 34,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2025-06-05"
+   },
+   {
+    "ID": 35,
+    "Datum": "2025-06-05",
+    "Betrag": 1150,
+    "Betreff": "Miete Parkweg 1",
+    "Kategorie": "Miete",
+    "Art": "Einnahme",
+    "Abrechnungskonto": 6,
+    "Belegnummer": 35,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2025-06-05"
+   },
+   {
+    "ID": 36,
+    "Datum": "2025-06-05",
+    "Betrag": 80,
+    "Betreff": "Garagenmiete",
+    "Kategorie": "Miete",
+    "Art": "Einnahme",
+    "Abrechnungskonto": 8,
+    "Belegnummer": 36,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2025-06-05"
+   },
+   {
+    "ID": 37,
+    "Datum": "2026-01-05",
+    "Betrag": 867,
+    "Betreff": "Miete Whg 1 links",
+    "Kategorie": "Miete",
+    "Art": "Einnahme",
+    "Abrechnungskonto": 1,
+    "Belegnummer": 37,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2026-01-05"
+   },
+   {
+    "ID": 38,
+    "Datum": "2026-01-05",
+    "Betrag": 938.4,
+    "Betreff": "Miete Whg 1 rechts",
+    "Kategorie": "Miete",
+    "Art": "Einnahme",
+    "Abrechnungskonto": 2,
+    "Belegnummer": 38,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2026-01-05"
+   },
+   {
+    "ID": 39,
+    "Datum": "2026-01-05",
+    "Betrag": 2448,
+    "Betreff": "Miete Laden",
+    "Kategorie": "Miete",
+    "Art": "Einnahme",
+    "Abrechnungskonto": 4,
+    "Belegnummer": 39,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2026-01-05"
+   },
+   {
+    "ID": 40,
+    "Datum": "2026-01-05",
+    "Betrag": 1836,
+    "Betreff": "Miete Büro",
+    "Kategorie": "Miete",
+    "Art": "Einnahme",
+    "Abrechnungskonto": 5,
+    "Belegnummer": 40,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2026-01-05"
+   },
+   {
+    "ID": 41,
+    "Datum": "2026-01-05",
+    "Betrag": 1173,
+    "Betreff": "Miete Parkweg 1",
+    "Kategorie": "Miete",
+    "Art": "Einnahme",
+    "Abrechnungskonto": 6,
+    "Belegnummer": 41,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2026-01-05"
+   },
+   {
+    "ID": 42,
+    "Datum": "2026-01-05",
+    "Betrag": 81.6,
+    "Betreff": "Garagenmiete",
+    "Kategorie": "Miete",
+    "Art": "Einnahme",
+    "Abrechnungskonto": 8,
+    "Belegnummer": 42,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2026-01-05"
+   },
+   {
+    "ID": 43,
+    "Datum": "2026-02-05",
+    "Betrag": 867,
+    "Betreff": "Miete Whg 1 links",
+    "Kategorie": "Miete",
+    "Art": "Einnahme",
+    "Abrechnungskonto": 1,
+    "Belegnummer": 43,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2026-02-05"
+   },
+   {
+    "ID": 44,
+    "Datum": "2026-02-05",
+    "Betrag": 938.4,
+    "Betreff": "Miete Whg 1 rechts",
+    "Kategorie": "Miete",
+    "Art": "Einnahme",
+    "Abrechnungskonto": 2,
+    "Belegnummer": 44,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2026-02-05"
+   },
+   {
+    "ID": 45,
+    "Datum": "2026-02-05",
+    "Betrag": 2448,
+    "Betreff": "Miete Laden",
+    "Kategorie": "Miete",
+    "Art": "Einnahme",
+    "Abrechnungskonto": 4,
+    "Belegnummer": 45,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2026-02-05"
+   },
+   {
+    "ID": 46,
+    "Datum": "2026-02-05",
+    "Betrag": 1836,
+    "Betreff": "Miete Büro",
+    "Kategorie": "Miete",
+    "Art": "Einnahme",
+    "Abrechnungskonto": 5,
+    "Belegnummer": 46,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2026-02-05"
+   },
+   {
+    "ID": 47,
+    "Datum": "2026-02-05",
+    "Betrag": 1173,
+    "Betreff": "Miete Parkweg 1",
+    "Kategorie": "Miete",
+    "Art": "Einnahme",
+    "Abrechnungskonto": 6,
+    "Belegnummer": 47,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2026-02-05"
+   },
+   {
+    "ID": 48,
+    "Datum": "2026-02-05",
+    "Betrag": 81.6,
+    "Betreff": "Garagenmiete",
+    "Kategorie": "Miete",
+    "Art": "Einnahme",
+    "Abrechnungskonto": 8,
+    "Belegnummer": 48,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2026-02-05"
+   },
+   {
+    "ID": 49,
+    "Datum": "2025-02-11",
+    "Betrag": 1450.5,
+    "Betreff": "Heizöl Lieferung",
+    "Kategorie": "Heizkosten",
+    "Art": "Ausgabe",
+    "Abrechnungskonto": 1,
+    "Belegnummer": 49,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2025-02-11"
+   },
+   {
+    "ID": 50,
+    "Datum": "2025-03-03",
+    "Betrag": 320.9,
+    "Betreff": "Strom Allgemein",
+    "Kategorie": "Strom",
+    "Art": "Ausgabe",
+    "Abrechnungskonto": 1,
+    "Belegnummer": 50,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2025-03-03"
+   },
+   {
+    "ID": 51,
+    "Datum": "2025-04-18",
+    "Betrag": 780,
+    "Betreff": "Reparatur Heizung",
+    "Kategorie": "Instandhaltung",
+    "Art": "Ausgabe",
+    "Abrechnungskonto": 1,
+    "Belegnummer": 51,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2025-04-18"
+   },
+   {
+    "ID": 52,
+    "Datum": "2025-05-06",
+    "Betrag": 612.3,
+    "Betreff": "Gebäudeversicherung",
+    "Kategorie": "Versicherung",
+    "Art": "Ausgabe",
+    "Abrechnungskonto": 1,
+    "Belegnummer": 52,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2025-05-06"
+   },
+   {
+    "ID": 53,
+    "Datum": "2025-06-02",
+    "Betrag": 96.4,
+    "Betreff": "Müllabfuhr",
+    "Kategorie": "Nebenkosten",
+    "Art": "Ausgabe",
+    "Abrechnungskonto": 1,
+    "Belegnummer": 53,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2025-06-02"
+   },
+   {
+    "ID": 54,
+    "Datum": "2026-01-13",
+    "Betrag": 140,
+    "Betreff": "Winterdienst",
+    "Kategorie": "Nebenkosten",
+    "Art": "Ausgabe",
+    "Abrechnungskonto": 1,
+    "Belegnummer": 54,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2026-01-13"
+   },
+   {
+    "ID": 55,
+    "Datum": "2026-02-21",
+    "Betrag": 210,
+    "Betreff": "Dachrinnen Reinigung",
+    "Kategorie": "Instandhaltung",
+    "Art": "Ausgabe",
+    "Abrechnungskonto": 1,
+    "Belegnummer": 55,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2026-02-21"
+   },
+   {
+    "ID": 56,
+    "Datum": "2026-02-25",
+    "Betrag": 388.7,
+    "Betreff": "Wasser/Abwasser",
+    "Kategorie": "Nebenkosten",
+    "Art": "Ausgabe",
+    "Abrechnungskonto": 1,
+    "Belegnummer": 56,
+    "Verbucht": 1,
+    "Erfassungsdatum": "2026-02-25"
+   },
+   {
+    "ID": 57,
+    "Datum": "2026-03-01",
+    "Betrag": 700,
+    "Betreff": "TeamB Miete",
+    "Kategorie": "Miete",
+    "Art": "Einnahme",
+    "Belegnummer": 1,
+    "Team": "TeamB",
+    "Verbucht": 1
+   }
+  ],
+  "Abrechnungen": [
+   {
+    "ID": 1,
+    "Bezeichnung": "Nebenkostenabrechnung 2024",
+    "Von": "2024-01-01",
+    "Bis": "2024-12-31",
+    "Objekt": 1,
+    "Quadratmeter": 320,
+    "Einheiten": 3,
+    "Wasserverbrauch": 210,
+    "Stromverbrauch": 900,
+    "Waermeverbrauch": 14500,
+    "Erledigt": 1
+   },
+   {
+    "ID": 2,
+    "Bezeichnung": "Nebenkostenabrechnung 2025",
+    "Von": "2025-01-01",
+    "Bis": "2025-12-31",
+    "Objekt": 1,
+    "Quadratmeter": 320,
+    "Einheiten": 3,
+    "Wasserverbrauch": 226,
+    "Stromverbrauch": 940,
+    "Waermeverbrauch": 15100,
+    "Erledigt": 0
+   }
+  ],
+  "Abrechnungskonten": [
+   {
+    "ID": 1,
+    "Bezeichnung": "Konto Whg 1 links",
+    "Von": "2025-01-01",
+    "Bis": "2025-12-31",
+    "Einheit": 1,
+    "Objekt": 1,
+    "Abrechnung": 2,
+    "Quadratmeter": 75,
+    "Wasserverbrauch": 62,
+    "Stromverbrauch": 210,
+    "Waermeverbrauch": 4100,
+    "Personen": 2
+   },
+   {
+    "ID": 2,
+    "Bezeichnung": "Konto Whg 1 rechts",
+    "Von": "2025-01-01",
+    "Bis": "2025-12-31",
+    "Einheit": 2,
+    "Objekt": 1,
+    "Abrechnung": 2,
+    "Quadratmeter": 82,
+    "Wasserverbrauch": 74,
+    "Stromverbrauch": 260,
+    "Waermeverbrauch": 4600,
+    "Personen": 2
+   },
+   {
+    "ID": 3,
+    "Bezeichnung": "Konto Whg 2 OG",
+    "Von": "2025-01-01",
+    "Bis": "2025-12-31",
+    "Einheit": 3,
+    "Objekt": 1,
+    "Abrechnung": 2,
+    "Quadratmeter": 78,
+    "Wasserverbrauch": 0,
+    "Stromverbrauch": 40,
+    "Waermeverbrauch": 800,
+    "Personen": 0
+   },
+   {
+    "ID": 4,
+    "Bezeichnung": "Konto Laden",
+    "Von": "2025-01-01",
+    "Bis": "2025-12-31",
+    "Einheit": 4,
+    "Objekt": 2,
+    "Abrechnung": 2,
+    "Quadratmeter": 160,
+    "Wasserverbrauch": 40,
+    "Stromverbrauch": 300,
+    "Waermeverbrauch": 3100,
+    "Personen": 3
+   }
+  ],
+  "Kosten": [
+   {
+    "ID": 1,
+    "Abrechnung": 2,
+    "Bezeichnung": "Heizkosten",
+    "Betrag": 2380.4,
+    "Umlageart": "Quadratmeter",
+    "Art": "Umlegbare Kosten",
+    "Abrechnungskonto": 1
+   },
+   {
+    "ID": 2,
+    "Abrechnung": 2,
+    "Bezeichnung": "Wasser/Abwasser",
+    "Betrag": 388.7,
+    "Umlageart": "Personen",
+    "Art": "Umlegbare Kosten",
+    "Abrechnungskonto": 1
+   },
+   {
+    "ID": 3,
+    "Abrechnung": 2,
+    "Bezeichnung": "Müllabfuhr",
+    "Betrag": 96.4,
+    "Umlageart": "Einheiten",
+    "Art": "Umlegbare Kosten",
+    "Abrechnungskonto": 1
+   },
+   {
+    "ID": 4,
+    "Abrechnung": 2,
+    "Bezeichnung": "Gebäudeversicherung",
+    "Betrag": 612.3,
+    "Umlageart": "Quadratmeter",
+    "Art": "Umlegbare Kosten",
+    "Abrechnungskonto": 1
+   },
+   {
+    "ID": 5,
+    "Abrechnung": 2,
+    "Bezeichnung": "Verwaltungskosten",
+    "Betrag": 300,
+    "Umlageart": "Einheiten",
+    "Art": "Nicht umlegbar",
+    "Abrechnungskonto": 1
+   }
+  ],
+  "Inventar": [
+   {
+    "ID": 1,
+    "Bezeichnung": "Heizkessel Viessmann",
+    "Kategorie": "Heizung",
+    "Anzahl": 1,
+    "Raum": 1,
+    "Hersteller": 5,
+    "Verkaeufer": 6,
+    "Zustand": "gut",
+    "Einkaufspreis": 4800,
+    "Einkaufsdatum": "2019-05-20",
+    "Objekt": "1",
+    "Kontrolliert": 1
+   },
+   {
+    "ID": 2,
+    "Bezeichnung": "Wasseraufbereitung",
+    "Kategorie": "Sanitär",
+    "Anzahl": 1,
+    "Raum": 1,
+    "Hersteller": 5,
+    "Verkaeufer": 6,
+    "Zustand": "gut",
+    "Objekt": "1"
+   },
+   {
+    "ID": 3,
+    "Bezeichnung": "Aufzug Steuerung",
+    "Kategorie": "Aufzug",
+    "Anzahl": 1,
+    "Raum": 2,
+    "Hersteller": 6,
+    "Verkaeufer": 6,
+    "Zustand": "wartung",
+    "Objekt": "3"
+   },
+   {
+    "ID": 4,
+    "Bezeichnung": "Rauchmelder Set",
+    "Kategorie": "Elektro",
+    "Anzahl": 24,
+    "Raum": 3,
+    "Hersteller": 5,
+    "Verkaeufer": 5,
+    "Zustand": "neu",
+    "Objekt": "1"
+   },
+   {
+    "ID": 5,
+    "Bezeichnung": "Dachfenster Velux",
+    "Kategorie": "Dach",
+    "Anzahl": 6,
+    "Raum": 2,
+    "Hersteller": 5,
+    "Verkaeufer": 5,
+    "Zustand": "gut",
+    "Objekt": "3"
+   },
+   {
+    "ID": 6,
+    "Bezeichnung": "Gartengeräte Set",
+    "Kategorie": "Sonstiges",
+    "Anzahl": 1,
+    "Raum": 3,
+    "Hersteller": 6,
+    "Verkaeufer": 6,
+    "Zustand": "gut",
+    "Objekt": "1"
+   }
+  ],
+  "Termine": [
+   {
+    "ID": 1,
+    "Titel": "Eigentümerversammlung",
+    "Datum": "2026-09-15",
+    "Uhrzeit": "2026-09-15T18:00:00",
+    "Dauer": 120,
+    "Zustaendigkeit": 4,
+    "Benutzer": "admin",
+    "Adresse": 1,
+    "Kalender": "Verwaltung"
+   },
+   {
+    "ID": 2,
+    "Titel": "Heizungswartung",
+    "Datum": "2026-09-02",
+    "Uhrzeit": "2026-09-02T09:00:00",
+    "Dauer": 90,
+    "Zustaendigkeit": 5,
+    "Benutzer": "admin",
+    "Kalender": "Wartung"
+   },
+   {
+    "ID": 3,
+    "Titel": "Übergabe Whg Parkweg 2",
+    "Datum": "2026-10-01",
+    "Uhrzeit": "2026-10-01T11:00:00",
+    "Dauer": 60,
+    "Benutzer": "admin",
+    "Kalender": "Verwaltung"
+   }
+  ],
+  "Aufgaben": [
+   {
+    "ID": 1,
+    "Titel": "Dachrinne Parkweg prüfen",
+    "Datum": "2026-08-20",
+    "Bearbeitungstatus": "Offen",
+    "Prioritaet": 2,
+    "Benutzer": "admin",
+    "Objekt": 3
+   },
+   {
+    "ID": 2,
+    "Titel": "Nebenkostenabrechnung 2025 versenden",
+    "Datum": "2026-09-30",
+    "Bearbeitungstatus": "In Bearbeitung",
+    "Prioritaet": 1,
+    "Benutzer": "admin",
+    "Objekt": 1
+   },
+   {
+    "ID": 3,
+    "Titel": "Rauchmelder Wartung",
+    "Datum": "2026-08-10",
+    "Bearbeitungstatus": "Erledigt",
+    "Prioritaet": 3,
+    "Benutzer": "admin",
+    "Objekt": 1
+   }
+  ],
+  "Notizen": [
+   {
+    "ID": 1,
+    "Titel": "Wartungsvertrag Heizung",
+    "Notiztext": "Wartung jedes Jahr im September.",
+    "Benutzer": "admin",
+    "Adresse": 5,
+    "Objekt": 1
+   },
+   {
+    "ID": 2,
+    "Titel": "Mieterhöhung 2026",
+    "Notiztext": "Miete ab Januar 2026 um 2% erhöht.",
+    "Benutzer": "admin",
+    "Adresse": 2,
+    "Objekt": 1
+   }
+  ],
+  "WV": [
+   {
+    "ID": 1,
+    "Tag": "2026-08-20"
+   },
+   {
+    "ID": 2,
+    "Tag": "2026-09-02"
+   },
+   {
+    "ID": 3,
+    "Tag": "2026-09-30"
+   }
+  ],
+  "Kontenrahmen": [
+   {
+    "ID": 1,
+    "Buchfuehrung": "SKR04",
+    "Klasse": "0",
+    "Nummer": "0100",
+    "Kontobezeichnung": "Grundstücke"
+   },
+   {
+    "ID": 2,
+    "Buchfuehrung": "SKR04",
+    "Klasse": "1",
+    "Nummer": "1200",
+    "Kontobezeichnung": "Bank"
+   },
+   {
+    "ID": 3,
+    "Buchfuehrung": "SKR04",
+    "Klasse": "4",
+    "Nummer": "4400",
+    "Kontobezeichnung": "Mieteinnahmen"
+   },
+   {
+    "ID": 4,
+    "Buchfuehrung": "SKR04",
+    "Klasse": "4",
+    "Nummer": "4500",
+    "Kontobezeichnung": "Nebenkosten"
+   },
+   {
+    "ID": 5,
+    "Buchfuehrung": "SKR04",
+    "Klasse": "6",
+    "Nummer": "6300",
+    "Kontobezeichnung": "Instandhaltung"
+   }
+  ],
+  "Benutzer": [
+   {
+    "ID": 1,
+    "Benutzername": "admin",
+    "Passwort": "Online@1234",
+    "Name": "Administrator",
+    "Email": "admin@example.de",
+    "active": 1,
+    "Gruppe": "Admins"
+   },
+   {
+    "ID": 2,
+    "Benutzername": "mitarbeiter",
+    "Passwort": "mitarbeiter123",
+    "Name": "Max Mitarbeiter",
+    "Email": "mitarbeiter@example.de",
+    "active": 1,
+    "Gruppe": "Mitarbeiter",
+    "Team": "TeamB"
+   }
+  ],
+  "intex hausverwaltung_uggroups": [
+   {
+    "GroupID": 1,
+    "Label": "Admins"
+   },
+   {
+    "GroupID": 2,
+    "Label": "Mitarbeiter"
+   }
+  ],
+  "intex hausverwaltung_ugmembers": [
+   {
+    "UserName": "admin",
+    "GroupID": 1
+   },
+   {
+    "UserName": "mitarbeiter",
+    "GroupID": 2
+   }
+  ],
+  "intex hausverwaltung_ugrights": [
+   {
+    "TableName": "Objekte",
+    "GroupID": 2,
+    "AccessMask": "S"
+   },
+   {
+    "TableName": "Einheiten",
+    "GroupID": 2,
+    "AccessMask": "S"
+   },
+   {
+    "TableName": "Adressen",
+    "GroupID": 2,
+    "AccessMask": "SE"
+   },
+   {
+    "TableName": "Aufgaben",
+    "GroupID": 2,
+    "AccessMask": "SAED"
+   }
+  ],
+  "Einstellungen": [
+   {
+    "ID": 1,
+    "Waehrung": "EUR",
+    "Team": "Team"
+   }
+  ]
+ }
+}

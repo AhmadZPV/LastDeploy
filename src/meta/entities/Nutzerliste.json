@@ -1,0 +1,841 @@
+{
+ "entity": "Nutzerliste",
+ "shortName": "Nutzerliste",
+ "baseTable": "Einheiten",
+ "isVirtual": true,
+ "ownerField": "Team",
+ "sql": {
+  "strOrderBy": "ORDER BY `Einheiten`.`Objekt`, `Einheiten`.`Nutzer`, `Einheiten`.`Bezeichnung`",
+  "sqlHead": "SELECT `Einheiten`.`ID`,  `Einheiten`.`Bezeichnung`,  `Einheiten`.`Nummer`,  `Einheiten`.`Objekt`,  `Einheiten`.`Besitzer`,  `Einheiten`.`Nutzer`,  `Einheiten`.`Einheitenart`,  `Einheiten`.`Miteigentumsanteil`,  `Adressen`.`Vorname`,  `Adressen`.`Nachname`,  `Adressen`.`Strasse`,  `Adressen`.`PLZ`,  `Adressen`.`Ort`,  `Adressen`.`Handy`,  `Adressen`.`Telefon`,  `Adressen`.`Email`,  `Adressen`.`Anschrift`,  `Adressen`.`Anrede`,  `Einheiten`.`Kaltmiete`,  `Einheiten`.`Nebenkosten`,  `Einheiten`.`Heizkosten`,  Einheiten.Team",
+  "sqlFrom": "FROM `Einheiten`  INNER JOIN `Adressen` ON `Einheiten`.`Nutzer` = `Adressen`.`ID`",
+  "sqlWhere": "",
+  "sqlTail": ""
+ },
+ "keys": [
+  "ID"
+ ],
+ "pageSize": 20,
+ "capabilities": {
+  "list": true,
+  "view": true,
+  "add": false,
+  "edit": false,
+  "export": true,
+  "print": true,
+  "search": true,
+  "masterList": true
+ },
+ "fieldSets": {
+  "list": [
+   "Objekt",
+   "Bezeichnung",
+   "Nutzer",
+   "Vorname",
+   "Nachname",
+   "Strasse",
+   "PLZ",
+   "Ort",
+   "Handy",
+   "Telefon",
+   "Email",
+   "Einheitenart",
+   "Besitzer",
+   "Nummer",
+   "Kaltmiete",
+   "Nebenkosten",
+   "Heizkosten"
+  ],
+  "view": [
+   "Anrede",
+   "Objekt",
+   "Bezeichnung",
+   "Nutzer",
+   "Vorname",
+   "Nachname",
+   "Strasse",
+   "PLZ",
+   "Ort",
+   "Handy",
+   "Telefon",
+   "Email",
+   "Einheitenart",
+   "Besitzer",
+   "Nummer",
+   "Miteigentumsanteil",
+   "Anschrift",
+   "Kaltmiete",
+   "Nebenkosten",
+   "Heizkosten"
+  ],
+  "export": [
+   "ID",
+   "Anrede",
+   "Objekt",
+   "Bezeichnung",
+   "Nutzer",
+   "Vorname",
+   "Nachname",
+   "Strasse",
+   "PLZ",
+   "Ort",
+   "Handy",
+   "Telefon",
+   "Email",
+   "Einheitenart",
+   "Besitzer",
+   "Nummer",
+   "Miteigentumsanteil",
+   "Anschrift",
+   "Kaltmiete",
+   "Nebenkosten",
+   "Heizkosten"
+  ],
+  "print": [
+   "Objekt",
+   "Bezeichnung",
+   "Nutzer",
+   "Vorname",
+   "Nachname",
+   "Strasse",
+   "PLZ",
+   "Ort",
+   "Handy",
+   "Telefon",
+   "Email",
+   "Einheitenart",
+   "Besitzer",
+   "Nummer",
+   "Anschrift",
+   "Kaltmiete",
+   "Nebenkosten",
+   "Heizkosten"
+  ],
+  "search": [
+   "ID",
+   "Anrede",
+   "Objekt",
+   "Bezeichnung",
+   "Nutzer",
+   "Vorname",
+   "Nachname",
+   "Strasse",
+   "PLZ",
+   "Ort",
+   "Handy",
+   "Telefon",
+   "Email",
+   "Einheitenart",
+   "Besitzer",
+   "Nummer",
+   "Miteigentumsanteil",
+   "Anschrift",
+   "Kaltmiete",
+   "Nebenkosten",
+   "Heizkosten"
+  ],
+  "masterList": [
+   "Anrede",
+   "Team",
+   "Objekt",
+   "Bezeichnung",
+   "Nutzer",
+   "Vorname",
+   "Nachname",
+   "Strasse",
+   "PLZ",
+   "Ort",
+   "Handy",
+   "Telefon",
+   "Email",
+   "Einheitenart",
+   "Besitzer",
+   "Nummer",
+   "Anschrift",
+   "Kaltmiete",
+   "Nebenkosten",
+   "Heizkosten"
+  ]
+ },
+ "export": {
+  "exportTo": true,
+  "exportDelimiter": ",",
+  "exportFormatting": 2
+ },
+ "print": {
+  "printerPageOrientation": 1,
+  "nPrinterPageScale": 100,
+  "nPrinterSplitRecords": 40,
+  "nPrinterPDFSplitRecords": 40
+ },
+ "tabs": [],
+ "labels": {
+  "German": {
+   "ID": "ID",
+   "Bezeichnung": "Bezeichnung",
+   "Nummer": "Nummer",
+   "Objekt": "Objekt",
+   "Besitzer": "Besitzer",
+   "Nutzer": "Nutzer",
+   "Einheitenart": "Einheitenart",
+   "Miteigentumsanteil": "Miteigentumsanteil",
+   "Vorname": "Vorname",
+   "Nachname": "Nachname",
+   "Strasse": "Strasse",
+   "PLZ": "PLZ",
+   "Ort": "Ort",
+   "Handy": "Handy",
+   "Telefon": "Telefon",
+   "Email": "Email",
+   "Anschrift": "Anschrift",
+   "Anrede": "Anrede",
+   "Kaltmiete": "Kaltmiete",
+   "Nebenkosten": "NK",
+   "Heizkosten": "HK",
+   "Team": "Team"
+  }
+ },
+ "fields": [
+  {
+   "name": "ID",
+   "type": 3,
+   "index": 1,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": false,
+    "search": true,
+    "masterList": false
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "number",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "AutoInc": true,
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Bezeichnung",
+   "type": 200,
+   "index": 2,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Nummer",
+   "type": 3,
+   "index": 3,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "number",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Objekt",
+   "type": 3,
+   "index": 4,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Objekte",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 2,
+    "LinkField": "ID",
+    "LinkFieldType": 0,
+    "DisplayField": "Bezeichnung",
+    "LookupOrderBy": "Bezeichnung",
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Besitzer",
+   "type": 3,
+   "index": 5,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Adressen",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 2,
+    "LinkField": "ID",
+    "LinkFieldType": 0,
+    "DisplayField": "Kurzname",
+    "LookupOrderBy": "Kurzname",
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Nutzer",
+   "type": 3,
+   "index": 6,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Adressen",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 2,
+    "LinkField": "ID",
+    "LinkFieldType": 0,
+    "DisplayField": "Kurzname",
+    "LookupOrderBy": "Kurzname",
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Einheitenart",
+   "type": 200,
+   "index": 7,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Einheitenarten",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 0,
+    "LinkField": "Bezeichnung",
+    "LinkFieldType": 0,
+    "DisplayField": "Bezeichnung",
+    "LookupOrderBy": "Bezeichnung",
+    "SelectSize": 1,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Miteigentumsanteil",
+   "type": 200,
+   "index": 8,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": false,
+    "search": true,
+    "masterList": false
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Vorname",
+   "type": 200,
+   "index": 9,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Nachname",
+   "type": 200,
+   "index": 10,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Strasse",
+   "type": 200,
+   "index": 11,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "PLZ",
+   "type": 200,
+   "index": 12,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Ort",
+   "type": 200,
+   "index": 13,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Handy",
+   "type": 200,
+   "index": 14,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "LinkPrefix": "tel:",
+    "hlType": 0,
+    "hlLinkWordNameType": "Text",
+    "hlLinkWordText": "Link",
+    "hlTitleField": ""
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Telefon",
+   "type": 200,
+   "index": 15,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "LinkPrefix": "tel:",
+    "hlType": 0,
+    "hlLinkWordNameType": "Text",
+    "hlLinkWordText": "Link",
+    "hlTitleField": ""
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Email",
+   "type": 200,
+   "index": 16,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "ViewFormat": "Email Hyperlink"
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Anschrift",
+   "type": 200,
+   "index": 17,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Anrede",
+   "type": 200,
+   "index": 18,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Kaltmiete",
+   "type": 14,
+   "index": 19,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "DecimalDigits": 2,
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Nebenkosten",
+   "type": 14,
+   "index": 20,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "DecimalDigits": 2,
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Heizkosten",
+   "type": 14,
+   "index": 21,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "DecimalDigits": 2,
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Team",
+   "type": 200,
+   "index": 22,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  }
+ ]
+}

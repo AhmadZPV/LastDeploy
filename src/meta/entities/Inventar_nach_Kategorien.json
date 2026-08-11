@@ -1,0 +1,206 @@
+{
+ "entity": "Inventar_nach_Kategorien",
+ "shortName": "Inventar_nach_Kategorien",
+ "baseTable": "Inventar",
+ "isVirtual": true,
+ "ownerField": "Team",
+ "sql": {
+  "strOrderBy": "",
+  "sqlHead": "SELECT Bezeichnung,  Kategorie,  Count(Kategorie) as Anteil,  Team",
+  "sqlFrom": "FROM Inventar",
+  "sqlWhere": "",
+  "sqlTail": ""
+ },
+ "keys": [],
+ "pageSize": 0,
+ "capabilities": {
+  "list": true,
+  "view": true,
+  "add": true,
+  "edit": true,
+  "export": true,
+  "print": true,
+  "search": false,
+  "masterList": true
+ },
+ "fieldSets": {
+  "list": [
+   "Bezeichnung",
+   "Kategorie",
+   "Anteil",
+   "Team"
+  ],
+  "view": [
+   "Bezeichnung",
+   "Kategorie",
+   "Anteil",
+   "Team"
+  ],
+  "add": [
+   "Bezeichnung",
+   "Kategorie"
+  ],
+  "edit": [
+   "Bezeichnung",
+   "Kategorie",
+   "Team"
+  ],
+  "export": [
+   "Bezeichnung",
+   "Kategorie",
+   "Anteil",
+   "Team"
+  ],
+  "print": [
+   "Bezeichnung",
+   "Kategorie",
+   "Anteil",
+   "Team"
+  ],
+  "masterList": [
+   "Bezeichnung",
+   "Kategorie",
+   "Anteil",
+   "Team"
+  ]
+ },
+ "export": {
+  "exportTo": null,
+  "exportDelimiter": null,
+  "exportFormatting": null
+ },
+ "print": {
+  "printerPageOrientation": 0,
+  "nPrinterPageScale": 100,
+  "nPrinterSplitRecords": 40,
+  "nPrinterPDFSplitRecords": 40
+ },
+ "tabs": [],
+ "labels": {
+  "German": {
+   "Bezeichnung": "Bezeichnung",
+   "Kategorie": "Kategorie",
+   "Anteil": "Anteil",
+   "Team": "Team"
+  }
+ },
+ "fields": [
+  {
+   "name": "Bezeichnung",
+   "type": 200,
+   "index": 1,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Kategorie",
+   "type": 200,
+   "index": 2,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Klassifikationen Inventar",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 0,
+    "LookupUnique": true,
+    "LinkField": "Hauptkategorie",
+    "LinkFieldType": 0,
+    "DisplayField": "Hauptkategorie",
+    "LookupOrderBy": "Hauptkategorie",
+    "SelectSize": 1,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Anteil",
+   "type": 3,
+   "index": 3,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "number",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Team",
+   "type": 200,
+   "index": 4,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  }
+ ]
+}

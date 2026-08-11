@@ -1,0 +1,1800 @@
+{
+ "entity": "Serienbrief",
+ "shortName": "Serienbrief",
+ "baseTable": "Abrechnungskonten",
+ "isVirtual": true,
+ "ownerField": "Team",
+ "sql": {
+  "strOrderBy": "",
+  "sqlHead": "SELECT Abrechnungskonten.ID,  Abrechnungskonten.Bezeichnung AS Abrechnungskonto,  Abrechnungskonten.Von,  Abrechnungskonten.Bis,  Abrechnungskonten.Quadratmeter,  Abrechnungskonten.Anschrift AS Anschrift,  Abrechnungskonten.Abrechnung,  Abrechnungskonten.Miteigentumsanteil,  Abrechnungskonten.Einheiten2,  Abrechnungskonten.Quadratmeter2,  Abrechnungskonten.Wasserverbrauch,  Abrechnungskonten.Muellverbrauch,  Abrechnungskonten.Personen,  Einheiten.Bezeichnung AS Einheit,  Abrechnungskonten.Adresse AS Empfaenger,  Objekte.Bezeichnung AS Objekt,  Abrechnungskonten.Warmwasserverbrauch,  Abrechnungskonten.Waermeverbrauch,  Abrechnungskonten.Anpassung,  Abrechnungskonten.Neuemiete,  Abrechnungskonten.Miteigentumsanteil2,  Abrechnungskonten.MwstSatz,  Abrechnungskonten.Quadratmeter3,  Abrechnungen.Von AS `Abrechnung Von`,  Abrechnungen.Bis AS `Abrechnung Bis`,  Abrechnungen.Quadratmeter AS `Abrechnung Quadratmeter`,  Abrechnungen.Einheiten,  Abrechnungen.Miteigentumsanteile,  Abrechnungen.Einheiten2 AS `Abrechnung Einheiten2`,  Abrechnungen.Quadratmeter2 AS `Abrechnung Quadratmeter2`,  Abrechnungen.Wasserverbrauch AS `Abrechnung Wasserverbrauch`,  Abrechnungen.Muellverbrauch AS `Abrechnung Muellverbrauch`,  Abrechnungen.Personen AS `Abrechnung Personen`,  Abrechnungen.Art,  Abrechnungen.Quadratmeter3 AS `Abrechnung Quadratmeter3`,  Einstellungen.Absenderzeile AS Absender,  Einstellungen.Ort,  Einstellungen.Grussformel AS Gruss,  Einstellungen.Fussbereich AS Fuss,  Einstellungen.LogoLink,  Einstellungen.Serienbrief,  Adressen.Vorname,  Adressen.Nachname,  Adressen.Anrede AS Anrede,  Einheiten.Kaltmiete,  Einheiten.Nebenkosten,  Einheiten.Heizkosten,  Abrechnungskonten.Team",
+  "sqlFrom": "FROM Abrechnungskonten  INNER JOIN Abrechnungen ON Abrechnungskonten.Abrechnung = Abrechnungen.ID  LEFT OUTER JOIN Adressen ON Abrechnungskonten.Adresse = Adressen.ID  INNER JOIN Objekte ON Abrechnungskonten.Objekt = Objekte.ID  LEFT OUTER JOIN Einheiten ON Abrechnungskonten.Einheit = Einheiten.ID  , Einstellungen",
+  "sqlWhere": "",
+  "sqlTail": ""
+ },
+ "keys": [
+  "ID"
+ ],
+ "pageSize": 20,
+ "capabilities": {
+  "list": true,
+  "view": true,
+  "add": true,
+  "edit": true,
+  "export": true,
+  "print": true,
+  "search": true,
+  "masterList": true
+ },
+ "fieldSets": {
+  "list": [
+   "ID",
+   "Abrechnungskonto",
+   "Von",
+   "Bis",
+   "Quadratmeter",
+   "Anschrift",
+   "Abrechnung",
+   "Miteigentumsanteil",
+   "Einheiten2",
+   "Quadratmeter2",
+   "Wasserverbrauch",
+   "Muellverbrauch",
+   "Personen",
+   "Einheit",
+   "Empfaenger",
+   "Objekt",
+   "Warmwasserverbrauch",
+   "Waermeverbrauch",
+   "Anpassung",
+   "Neuemiete",
+   "Miteigentumsanteil2",
+   "MwstSatz",
+   "Quadratmeter3",
+   "Abrechnung Von",
+   "Abrechnung Bis",
+   "Abrechnung Quadratmeter",
+   "Einheiten",
+   "Miteigentumsanteile",
+   "Abrechnung Einheiten2",
+   "Abrechnung Quadratmeter2",
+   "Abrechnung Wasserverbrauch",
+   "Abrechnung Muellverbrauch",
+   "Abrechnung Personen",
+   "Art",
+   "Abrechnung Quadratmeter3",
+   "Absender",
+   "Ort",
+   "Gruss",
+   "Fuss",
+   "LogoLink",
+   "Serienbrief",
+   "Vorname",
+   "Nachname",
+   "Anrede",
+   "Kaltmiete",
+   "Nebenkosten",
+   "Heizkosten",
+   "Team"
+  ],
+  "view": [
+   "ID",
+   "Abrechnungskonto",
+   "Von",
+   "Bis",
+   "Quadratmeter",
+   "Anschrift",
+   "Abrechnung",
+   "Miteigentumsanteil",
+   "Einheiten2",
+   "Quadratmeter2",
+   "Wasserverbrauch",
+   "Muellverbrauch",
+   "Personen",
+   "Einheit",
+   "Empfaenger",
+   "Objekt",
+   "Warmwasserverbrauch",
+   "Waermeverbrauch",
+   "Anpassung",
+   "Neuemiete",
+   "Miteigentumsanteil2",
+   "MwstSatz",
+   "Quadratmeter3",
+   "Abrechnung Von",
+   "Abrechnung Bis",
+   "Abrechnung Quadratmeter",
+   "Einheiten",
+   "Miteigentumsanteile",
+   "Abrechnung Einheiten2",
+   "Abrechnung Quadratmeter2",
+   "Abrechnung Wasserverbrauch",
+   "Abrechnung Muellverbrauch",
+   "Abrechnung Personen",
+   "Art",
+   "Abrechnung Quadratmeter3",
+   "Absender",
+   "Ort",
+   "Gruss",
+   "Fuss",
+   "LogoLink",
+   "Serienbrief",
+   "Vorname",
+   "Nachname",
+   "Anrede",
+   "Kaltmiete",
+   "Nebenkosten",
+   "Heizkosten",
+   "Team"
+  ],
+  "add": [
+   "Von",
+   "Bis",
+   "Quadratmeter",
+   "Anschrift",
+   "Abrechnung",
+   "Miteigentumsanteil",
+   "Einheiten2",
+   "Quadratmeter2",
+   "Wasserverbrauch",
+   "Muellverbrauch",
+   "Personen",
+   "Einheit",
+   "Objekt",
+   "Warmwasserverbrauch",
+   "Waermeverbrauch",
+   "Anpassung",
+   "Neuemiete",
+   "Miteigentumsanteil2",
+   "MwstSatz",
+   "Quadratmeter3"
+  ],
+  "edit": [
+   "Von",
+   "Bis",
+   "Quadratmeter",
+   "Anschrift",
+   "Abrechnung",
+   "Miteigentumsanteil",
+   "Einheiten2",
+   "Quadratmeter2",
+   "Wasserverbrauch",
+   "Muellverbrauch",
+   "Personen",
+   "Einheit",
+   "Objekt",
+   "Warmwasserverbrauch",
+   "Waermeverbrauch",
+   "Anpassung",
+   "Neuemiete",
+   "Miteigentumsanteil2",
+   "MwstSatz",
+   "Quadratmeter3",
+   "Team"
+  ],
+  "export": [
+   "ID",
+   "Abrechnungskonto",
+   "Von",
+   "Bis",
+   "Quadratmeter",
+   "Anschrift",
+   "Abrechnung",
+   "Miteigentumsanteil",
+   "Einheiten2",
+   "Quadratmeter2",
+   "Wasserverbrauch",
+   "Muellverbrauch",
+   "Personen",
+   "Einheit",
+   "Empfaenger",
+   "Objekt",
+   "Warmwasserverbrauch",
+   "Waermeverbrauch",
+   "Anpassung",
+   "Neuemiete",
+   "Miteigentumsanteil2",
+   "MwstSatz",
+   "Quadratmeter3",
+   "Abrechnung Von",
+   "Abrechnung Bis",
+   "Abrechnung Quadratmeter",
+   "Einheiten",
+   "Miteigentumsanteile",
+   "Abrechnung Einheiten2",
+   "Abrechnung Quadratmeter2",
+   "Abrechnung Wasserverbrauch",
+   "Abrechnung Muellverbrauch",
+   "Abrechnung Personen",
+   "Art",
+   "Abrechnung Quadratmeter3",
+   "Absender",
+   "Ort",
+   "Gruss",
+   "Fuss",
+   "LogoLink",
+   "Serienbrief",
+   "Vorname",
+   "Nachname",
+   "Anrede",
+   "Kaltmiete",
+   "Nebenkosten",
+   "Heizkosten",
+   "Team"
+  ],
+  "print": [
+   "ID",
+   "Abrechnungskonto",
+   "Von",
+   "Bis",
+   "Quadratmeter",
+   "Anschrift",
+   "Abrechnung",
+   "Miteigentumsanteil",
+   "Einheiten2",
+   "Quadratmeter2",
+   "Wasserverbrauch",
+   "Muellverbrauch",
+   "Personen",
+   "Einheit",
+   "Empfaenger",
+   "Objekt",
+   "Warmwasserverbrauch",
+   "Waermeverbrauch",
+   "Anpassung",
+   "Neuemiete",
+   "Miteigentumsanteil2",
+   "MwstSatz",
+   "Quadratmeter3",
+   "Abrechnung Von",
+   "Abrechnung Bis",
+   "Abrechnung Quadratmeter",
+   "Einheiten",
+   "Miteigentumsanteile",
+   "Abrechnung Einheiten2",
+   "Abrechnung Quadratmeter2",
+   "Abrechnung Wasserverbrauch",
+   "Abrechnung Muellverbrauch",
+   "Abrechnung Personen",
+   "Art",
+   "Abrechnung Quadratmeter3",
+   "Absender",
+   "Ort",
+   "Gruss",
+   "Fuss",
+   "LogoLink",
+   "Serienbrief",
+   "Vorname",
+   "Nachname",
+   "Anrede",
+   "Kaltmiete",
+   "Nebenkosten",
+   "Heizkosten",
+   "Team"
+  ],
+  "search": [
+   "ID",
+   "Abrechnungskonto",
+   "Von",
+   "Bis",
+   "Quadratmeter",
+   "Anschrift",
+   "Abrechnung",
+   "Miteigentumsanteil",
+   "Einheiten2",
+   "Quadratmeter2",
+   "Wasserverbrauch",
+   "Muellverbrauch",
+   "Personen",
+   "Einheit",
+   "Empfaenger",
+   "Objekt",
+   "Warmwasserverbrauch",
+   "Waermeverbrauch",
+   "Anpassung",
+   "Neuemiete",
+   "Miteigentumsanteil2",
+   "MwstSatz",
+   "Quadratmeter3",
+   "Abrechnung Von",
+   "Abrechnung Bis",
+   "Abrechnung Quadratmeter",
+   "Einheiten",
+   "Miteigentumsanteile",
+   "Abrechnung Einheiten2",
+   "Abrechnung Quadratmeter2",
+   "Abrechnung Wasserverbrauch",
+   "Abrechnung Muellverbrauch",
+   "Abrechnung Personen",
+   "Art",
+   "Abrechnung Quadratmeter3",
+   "Absender",
+   "Gruss",
+   "Fuss"
+  ],
+  "masterList": [
+   "ID",
+   "Abrechnungskonto",
+   "Von",
+   "Bis",
+   "Quadratmeter",
+   "Anschrift",
+   "Abrechnung",
+   "Miteigentumsanteil",
+   "Einheiten2",
+   "Quadratmeter2",
+   "Wasserverbrauch",
+   "Muellverbrauch",
+   "Personen",
+   "Einheit",
+   "Empfaenger",
+   "Objekt",
+   "Warmwasserverbrauch",
+   "Waermeverbrauch",
+   "Anpassung",
+   "Neuemiete",
+   "Miteigentumsanteil2",
+   "MwstSatz",
+   "Quadratmeter3",
+   "Abrechnung Von",
+   "Abrechnung Bis",
+   "Abrechnung Quadratmeter",
+   "Einheiten",
+   "Miteigentumsanteile",
+   "Abrechnung Einheiten2",
+   "Abrechnung Quadratmeter2",
+   "Abrechnung Wasserverbrauch",
+   "Abrechnung Muellverbrauch",
+   "Abrechnung Personen",
+   "Art",
+   "Abrechnung Quadratmeter3",
+   "Absender",
+   "Ort",
+   "Gruss",
+   "Fuss",
+   "LogoLink",
+   "Serienbrief",
+   "Vorname",
+   "Nachname",
+   "Anrede",
+   "Kaltmiete",
+   "Nebenkosten",
+   "Heizkosten",
+   "Team"
+  ]
+ },
+ "export": {
+  "exportTo": true,
+  "exportDelimiter": ",",
+  "exportFormatting": 2
+ },
+ "print": {
+  "printerPageOrientation": 0,
+  "nPrinterPageScale": 100,
+  "nPrinterSplitRecords": 1,
+  "nPrinterPDFSplitRecords": 1
+ },
+ "tabs": [],
+ "labels": {
+  "German": {
+   "ID": "ID",
+   "Von": "Von",
+   "Bis": "Bis",
+   "Quadratmeter": "Quadratmeter",
+   "Anschrift": "Anschrift",
+   "Abrechnung": "Abrechnung",
+   "Miteigentumsanteil": "Miteigentumsanteil",
+   "Einheiten2": "Einheiten2",
+   "Quadratmeter2": "Quadratmeter2",
+   "Wasserverbrauch": "Wasserverbrauch",
+   "Muellverbrauch": "Muellverbrauch",
+   "Personen": "Personen",
+   "Einheit": "Einheit",
+   "Objekt": "Objekt",
+   "Warmwasserverbrauch": "Warmwasserverbrauch",
+   "Waermeverbrauch": "Waermeverbrauch",
+   "Anpassung": "Anpassung",
+   "Neuemiete": "Neuemiete",
+   "Miteigentumsanteil2": "Miteigentumsanteil2",
+   "MwstSatz": "Mwst Satz",
+   "Quadratmeter3": "Quadratmeter3",
+   "Einheiten": "Einheiten",
+   "Miteigentumsanteile": "Miteigentumsanteile",
+   "Art": "Art",
+   "Ort": "Ort",
+   "LogoLink": "Logo Link",
+   "Serienbrief": "Serienbrief",
+   "Abrechnungskonto": "Abrechnungskonto",
+   "Abrechnung_Von": "Abrechnung Von",
+   "Abrechnung_Bis": "Abrechnung Bis",
+   "Abrechnung_Quadratmeter": "Abrechnung Quadratmeter",
+   "Abrechnung_Einheiten2": "Abrechnung Einheiten2",
+   "Abrechnung_Quadratmeter2": "Abrechnung Quadratmeter2",
+   "Abrechnung_Wasserverbrauch": "Abrechnung Wasserverbrauch",
+   "Abrechnung_Muellverbrauch": "Abrechnung Muellverbrauch",
+   "Abrechnung_Personen": "Abrechnung Personen",
+   "Abrechnung_Quadratmeter3": "Abrechnung Quadratmeter3",
+   "Empfaenger": "Empfänger",
+   "Vorname": "Vorname",
+   "Nachname": "Nachname",
+   "Anrede": "Anrede",
+   "Absender": "Absender",
+   "Gruss": "Gruss",
+   "Fuss": "Fuss",
+   "Kaltmiete": "Kaltmiete",
+   "Nebenkosten": "Nebenkosten",
+   "Heizkosten": "Heizkosten",
+   "Team": "Team"
+  }
+ },
+ "fields": [
+  {
+   "name": "ID",
+   "type": 3,
+   "index": 1,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "AutoInc": true,
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Abrechnungskonto",
+   "type": 200,
+   "index": 2,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Von",
+   "type": 7,
+   "index": 3,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "DateEditType": 13,
+    "InitialYearFactor": 3,
+    "LastYearFactor": 10,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Bis",
+   "type": 7,
+   "index": 4,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "DateEditType": 13,
+    "InitialYearFactor": 3,
+    "LastYearFactor": 10,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Quadratmeter",
+   "type": 14,
+   "index": 5,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "DecimalDigits": 2,
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Anschrift",
+   "type": 200,
+   "index": 6,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "nRows": 100,
+    "nCols": 200,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Abrechnung",
+   "type": 3,
+   "index": 7,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Abrechnungen",
+    "autoCompleteFieldsOnEdit": 1,
+    "LCType": 2,
+    "LinkField": "ID",
+    "LinkFieldType": 0,
+    "DisplayField": "Bezeichnung",
+    "LookupOrderBy": "Bezeichnung",
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Miteigentumsanteil",
+   "type": 14,
+   "index": 8,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "DecimalDigits": 2,
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Einheiten2",
+   "type": 3,
+   "index": 9,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "DecimalDigits": 2,
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Quadratmeter2",
+   "type": 14,
+   "index": 10,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "DecimalDigits": 2,
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Wasserverbrauch",
+   "type": 14,
+   "index": 11,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "DecimalDigits": 2,
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Muellverbrauch",
+   "type": 14,
+   "index": 12,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "DecimalDigits": 2,
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Personen",
+   "type": 14,
+   "index": 13,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "DecimalDigits": 2,
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Einheit",
+   "type": 200,
+   "index": 14,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "fieldEvents": [
+     null
+    ],
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Empfaenger",
+   "type": 3,
+   "index": 15,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Adressen",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 0,
+    "LinkField": "ID",
+    "LinkFieldType": 0,
+    "DisplayField": "Kurzname",
+    "LookupOrderBy": "Kurzname",
+    "SelectSize": 1,
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Objekt",
+   "type": 200,
+   "index": 16,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "fieldEvents": [
+     null
+    ],
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Warmwasserverbrauch",
+   "type": 14,
+   "index": 17,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "DecimalDigits": 2,
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Waermeverbrauch",
+   "type": 14,
+   "index": 18,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "DecimalDigits": 2,
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Anpassung",
+   "type": 14,
+   "index": 19,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "DecimalDigits": 2,
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Neuemiete",
+   "type": 14,
+   "index": 20,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "DecimalDigits": 2,
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Miteigentumsanteil2",
+   "type": 14,
+   "index": 21,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "DecimalDigits": 2,
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "MwstSatz",
+   "type": 14,
+   "index": 22,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "DecimalDigits": 2,
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Quadratmeter3",
+   "type": 14,
+   "index": 23,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "DecimalDigits": 2,
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Abrechnung Von",
+   "type": 7,
+   "index": 24,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "DateEditType": 13,
+    "InitialYearFactor": 3,
+    "LastYearFactor": 10,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Abrechnung Bis",
+   "type": 7,
+   "index": 25,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "DateEditType": 13,
+    "InitialYearFactor": 3,
+    "LastYearFactor": 10,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Abrechnung Quadratmeter",
+   "type": 14,
+   "index": 26,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "DecimalDigits": 2,
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Einheiten",
+   "type": 3,
+   "index": 27,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Miteigentumsanteile",
+   "type": 14,
+   "index": 28,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "DecimalDigits": 2,
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Abrechnung Einheiten2",
+   "type": 3,
+   "index": 29,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Abrechnung Quadratmeter2",
+   "type": 14,
+   "index": 30,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "DecimalDigits": 2,
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Abrechnung Wasserverbrauch",
+   "type": 14,
+   "index": 31,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "DecimalDigits": 2,
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Abrechnung Muellverbrauch",
+   "type": 14,
+   "index": 32,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "DecimalDigits": 2,
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Abrechnung Personen",
+   "type": 14,
+   "index": 33,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "DecimalDigits": 2,
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Art",
+   "type": 200,
+   "index": 34,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Abrechnung Quadratmeter3",
+   "type": 14,
+   "index": 35,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "DecimalDigits": 2,
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Absender",
+   "type": 201,
+   "index": 36,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "nRows": 100,
+    "nCols": 200,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Ort",
+   "type": 200,
+   "index": 37,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Gruss",
+   "type": 201,
+   "index": 38,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "nRows": 100,
+    "nCols": 200,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Fuss",
+   "type": 201,
+   "index": 39,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {},
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "nRows": 100,
+    "nCols": 200,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "LogoLink",
+   "type": 200,
+   "index": 40,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": false,
+    "masterList": true
+   },
+   "view": {},
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 79
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Serienbrief",
+   "type": 201,
+   "index": 41,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": false,
+    "masterList": true
+   },
+   "view": {},
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "nRows": 100,
+    "nCols": 200,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Vorname",
+   "type": 200,
+   "index": 42,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Nachname",
+   "type": 200,
+   "index": 43,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Anrede",
+   "type": 200,
+   "index": 44,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Kaltmiete",
+   "type": 14,
+   "index": 45,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "DecimalDigits": 2,
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Nebenkosten",
+   "type": 14,
+   "index": 46,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "DecimalDigits": 2,
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Heizkosten",
+   "type": 14,
+   "index": 47,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "DecimalDigits": 2,
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Team",
+   "type": 200,
+   "index": 48,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  }
+ ]
+}

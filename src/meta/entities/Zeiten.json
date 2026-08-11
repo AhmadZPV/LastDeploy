@@ -1,0 +1,306 @@
+{
+ "entity": "Zeiten",
+ "shortName": "Zeiten",
+ "baseTable": "Zeiten",
+ "isVirtual": false,
+ "ownerField": "Team",
+ "sql": {
+  "strOrderBy": "ORDER BY `Startzeit` DESC",
+  "sqlHead": "SELECT `ID`,  `Startzeit`,  `Endzeit`,  timediff(Endzeit, Startzeit) AS `Zeit`,  `Beschreibung`,  `Mitarbeiter`,  `Aufgabe`,  `Team`",
+  "sqlFrom": "FROM `Zeiten`",
+  "sqlWhere": "",
+  "sqlTail": ""
+ },
+ "keys": [
+  "ID"
+ ],
+ "pageSize": 20,
+ "capabilities": {
+  "list": true,
+  "view": false,
+  "add": false,
+  "edit": false,
+  "export": false,
+  "print": false,
+  "search": false,
+  "masterList": true
+ },
+ "fieldSets": {
+  "list": [
+   "Startzeit",
+   "Endzeit",
+   "Zeit",
+   "Beschreibung",
+   "Mitarbeiter"
+  ],
+  "masterList": [
+   "ID",
+   "Startzeit",
+   "Endzeit",
+   "Zeit",
+   "Beschreibung",
+   "Mitarbeiter",
+   "Aufgabe",
+   "Team"
+  ]
+ },
+ "export": {
+  "exportTo": null,
+  "exportDelimiter": null,
+  "exportFormatting": null
+ },
+ "print": {
+  "printerPageOrientation": 0,
+  "nPrinterPageScale": 100,
+  "nPrinterSplitRecords": 40,
+  "nPrinterPDFSplitRecords": 40
+ },
+ "tabs": [],
+ "labels": {
+  "German": {
+   "ID": "ID",
+   "Startzeit": "Startzeit",
+   "Endzeit": "Endzeit",
+   "Beschreibung": "Beschreibung",
+   "Mitarbeiter": "Mitarbeiter",
+   "Aufgabe": "Aufgabe",
+   "Team": "Team",
+   "Zeit": "Zeit"
+  }
+ },
+ "fields": [
+  {
+   "name": "ID",
+   "type": 3,
+   "index": 1,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "AutoInc": true,
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Startzeit",
+   "type": 135,
+   "index": 2,
+   "pages": {
+    "list": true,
+    "view": false,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "ShowTime": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "DateEditType": 11,
+    "InitialYearFactor": 3,
+    "LastYearFactor": 10,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Endzeit",
+   "type": 135,
+   "index": 3,
+   "pages": {
+    "list": true,
+    "view": false,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "ShowTime": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "DateEditType": 11,
+    "InitialYearFactor": 3,
+    "LastYearFactor": 10,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Zeit",
+   "type": 134,
+   "index": 4,
+   "pages": {
+    "list": true,
+    "view": false,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "EditFormat": "Time",
+    "useTimePicker": 0,
+    "minutes": 1,
+    "showSeconds": 0,
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Beschreibung",
+   "type": 200,
+   "index": 5,
+   "pages": {
+    "list": true,
+    "view": false,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Mitarbeiter",
+   "type": 200,
+   "index": 6,
+   "pages": {
+    "list": true,
+    "view": false,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Zeiten",
+    "freeInput": true,
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 1,
+    "LinkField": "Mitarbeiter",
+    "LinkFieldType": 0,
+    "DisplayField": "Mitarbeiter",
+    "LookupOrderBy": "Mitarbeiter",
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Aufgabe",
+   "type": 3,
+   "index": 7,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Team",
+   "type": 200,
+   "index": 8,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  }
+ ]
+}

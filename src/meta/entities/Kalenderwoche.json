@@ -1,0 +1,203 @@
+{
+ "entity": "Kalenderwoche",
+ "shortName": "Kalenderwoche",
+ "baseTable": "Kalenderwoche",
+ "isVirtual": false,
+ "ownerField": "Team",
+ "sql": {
+  "strOrderBy": "",
+  "sqlHead": "SELECT `ID`,  \t`Kalenderwoche`,  \t`Jahr`,  \t`Tag`,  \t`Team`",
+  "sqlFrom": "FROM `Kalenderwoche`",
+  "sqlWhere": "",
+  "sqlTail": ""
+ },
+ "keys": [
+  "ID"
+ ],
+ "pageSize": 20,
+ "capabilities": {
+  "list": true,
+  "view": false,
+  "add": false,
+  "edit": false,
+  "export": false,
+  "print": false,
+  "search": false,
+  "masterList": true
+ },
+ "fieldSets": {
+  "list": [
+   "Tag"
+  ],
+  "masterList": [
+   "Tag",
+   "Team",
+   "Kalenderwoche",
+   "Jahr"
+  ]
+ },
+ "export": {
+  "exportTo": null,
+  "exportDelimiter": null,
+  "exportFormatting": null
+ },
+ "print": {
+  "printerPageOrientation": 0,
+  "nPrinterPageScale": 100,
+  "nPrinterSplitRecords": 40,
+  "nPrinterPDFSplitRecords": 40
+ },
+ "tabs": [],
+ "labels": {
+  "German": {
+   "ID": "ID",
+   "Kalenderwoche": "Kalenderwoche",
+   "Jahr": "Jahr",
+   "Tag": "Tag",
+   "Team": "Team"
+  }
+ },
+ "fields": [
+  {
+   "name": "ID",
+   "type": 3,
+   "index": 1,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": false
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "number",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "AutoInc": true,
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Kalenderwoche",
+   "type": 3,
+   "index": 2,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "DecimalDigits": 0,
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "number",
+    "EditParams": "",
+    "controlWidth": 80
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Jahr",
+   "type": 3,
+   "index": 3,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "number",
+    "EditParams": "",
+    "controlWidth": 100
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Tag",
+   "type": 7,
+   "index": 4,
+   "pages": {
+    "list": true,
+    "view": false,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "DateEditType": 13,
+    "InitialYearFactor": 3,
+    "LastYearFactor": 10,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Team",
+   "type": 200,
+   "index": 5,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  }
+ ]
+}

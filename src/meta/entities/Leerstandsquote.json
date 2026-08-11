@@ -1,0 +1,206 @@
+{
+ "entity": "Leerstandsquote",
+ "shortName": "Leerstandsquote",
+ "baseTable": "Einheiten",
+ "isVirtual": true,
+ "ownerField": "Team",
+ "sql": {
+  "strOrderBy": "",
+  "sqlHead": "select Objekt,  if(Nutzer=\"\" or Nutzer is Null,\"Leerstand\",\"Vermietet\") as Status,  count(Bezeichnung) as Anteil,  Team",
+  "sqlFrom": "from Einheiten",
+  "sqlWhere": "",
+  "sqlTail": ""
+ },
+ "keys": [],
+ "pageSize": 0,
+ "capabilities": {
+  "list": true,
+  "view": true,
+  "add": true,
+  "edit": true,
+  "export": true,
+  "print": true,
+  "search": false,
+  "masterList": true
+ },
+ "fieldSets": {
+  "list": [
+   "Objekt",
+   "Status",
+   "Anteil",
+   "Team"
+  ],
+  "view": [
+   "Objekt",
+   "Status",
+   "Anteil",
+   "Team"
+  ],
+  "add": [
+   "Objekt",
+   "Team"
+  ],
+  "edit": [
+   "Objekt",
+   "Team"
+  ],
+  "export": [
+   "Objekt",
+   "Status",
+   "Anteil",
+   "Team"
+  ],
+  "print": [
+   "Objekt",
+   "Status",
+   "Anteil",
+   "Team"
+  ],
+  "masterList": [
+   "Objekt",
+   "Status",
+   "Anteil",
+   "Team"
+  ]
+ },
+ "export": {
+  "exportTo": null,
+  "exportDelimiter": null,
+  "exportFormatting": null
+ },
+ "print": {
+  "printerPageOrientation": 0,
+  "nPrinterPageScale": 100,
+  "nPrinterSplitRecords": 40,
+  "nPrinterPDFSplitRecords": 40
+ },
+ "tabs": [],
+ "labels": {
+  "German": {
+   "Objekt": "Objekt",
+   "Team": "Team",
+   "Status": "Status",
+   "Anteil": "Anteil"
+  }
+ },
+ "fields": [
+  {
+   "name": "Objekt",
+   "type": 3,
+   "index": 1,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Objekte",
+    "autoCompleteFieldsOnEdit": 1,
+    "LCType": 2,
+    "LinkField": "ID",
+    "LinkFieldType": 0,
+    "DisplayField": "Bezeichnung",
+    "LookupOrderBy": "Bezeichnung",
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Status",
+   "type": 200,
+   "index": 2,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "DecimalDigits": 2,
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Anteil",
+   "type": 3,
+   "index": 3,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Team",
+   "type": 200,
+   "index": 4,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  }
+ ]
+}

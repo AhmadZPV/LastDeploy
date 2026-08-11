@@ -1,0 +1,445 @@
+{
+ "entity": "Zaehlerstaende_melden",
+ "shortName": "Zaehlerstaende_melden",
+ "baseTable": "Zaehler",
+ "isVirtual": true,
+ "ownerField": "Team",
+ "sql": {
+  "strOrderBy": "ORDER BY Zaehler.Ablesedatum DESC",
+  "sqlHead": "SELECT Zaehler.ID,  Zaehler.Raum,  Zaehler.Zaehlerart,  Zaehler.Zaehlernummer,  Zaehler.Zaehlerstand,  Zaehler.Ablesedatum,  Einheiten.Bezeichnung AS Einheit,  Objekte.Bezeichnung AS Objekt,  Zaehler.Ableser,  Zaehler.Unterschrift,  Einheiten.ID AS EinheitenID,  Objekte.ID AS ObjekteID,  Zaehler.Team",
+  "sqlFrom": "FROM Zaehler  LEFT OUTER JOIN Raeume ON Zaehler.Raum = Raeume.ID  LEFT OUTER JOIN Einheiten ON Raeume.Einheit = Einheiten.ID  LEFT OUTER JOIN Objekte ON Einheiten.Objekt = Objekte.ID",
+  "sqlWhere": "",
+  "sqlTail": ""
+ },
+ "keys": [
+  "ID"
+ ],
+ "pageSize": 20,
+ "capabilities": {
+  "list": false,
+  "view": false,
+  "add": true,
+  "edit": false,
+  "export": false,
+  "print": false,
+  "search": false,
+  "masterList": true
+ },
+ "fieldSets": {
+  "add": [
+   "Zaehlerart",
+   "Zaehlernummer",
+   "Zaehlerstand",
+   "Ablesedatum",
+   "Unterschrift"
+  ],
+  "masterList": [
+   "ID",
+   "EinheitenID",
+   "ObjekteID",
+   "Team",
+   "Raum",
+   "Zaehlerart",
+   "Einheit",
+   "Zaehlernummer",
+   "Objekt",
+   "Zaehlerstand",
+   "Ablesedatum",
+   "Ableser",
+   "Unterschrift"
+  ]
+ },
+ "export": {
+  "exportTo": null,
+  "exportDelimiter": null,
+  "exportFormatting": null
+ },
+ "print": {
+  "printerPageOrientation": 1,
+  "nPrinterPageScale": 100,
+  "nPrinterSplitRecords": 40,
+  "nPrinterPDFSplitRecords": 40
+ },
+ "tabs": [],
+ "labels": {
+  "German": {
+   "ID": "ID",
+   "Raum": "Raum",
+   "Einheit": "Einheit",
+   "Objekt": "Objekt",
+   "Zaehlerart": "Zählerart",
+   "Zaehlernummer": "Zählernummer",
+   "Zaehlerstand": "Zählerstand",
+   "Ablesedatum": "Ablesedatum",
+   "Ableser": "Ableser",
+   "Unterschrift": "Unterschrift",
+   "EinheitenID": "Einheiten ID",
+   "ObjekteID": "Objekte ID",
+   "Team": "Team"
+  }
+ },
+ "fields": [
+  {
+   "name": "ID",
+   "type": 3,
+   "index": 1,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "number",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "AutoInc": true,
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Raum",
+   "type": 3,
+   "index": 2,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Raeume",
+    "autoCompleteFieldsOnEdit": 1,
+    "LCType": 2,
+    "LinkField": "ID",
+    "LinkFieldType": 0,
+    "DisplayField": "Bezeichnung",
+    "LookupOrderBy": "Bezeichnung",
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Zaehlerart",
+   "type": 200,
+   "index": 3,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": true,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 0,
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 4,
+    "HorizontalLookup": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Zaehlernummer",
+   "type": 200,
+   "index": 4,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": true,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Zaehlerstand",
+   "type": 200,
+   "index": 5,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": true,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Ablesedatum",
+   "type": 7,
+   "index": 6,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": true,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "DateEditType": 13,
+    "InitialYearFactor": 3,
+    "LastYearFactor": 10,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Einheit",
+   "type": 200,
+   "index": 7,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Objekt",
+   "type": 200,
+   "index": 8,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Ableser",
+   "type": 3,
+   "index": 9,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "number",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Unterschrift",
+   "type": 200,
+   "index": 10,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": true,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "ImageWidth": 457,
+    "ImageHeight": 0
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "EinheitenID",
+   "type": 3,
+   "index": 11,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "AutoInc": true,
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "ObjekteID",
+   "type": 3,
+   "index": 12,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "AutoInc": true,
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Team",
+   "type": 200,
+   "index": 13,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  }
+ ]
+}

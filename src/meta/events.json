@@ -1,0 +1,1816 @@
+{
+ "summary": {
+  "eventFiles": 91,
+  "hooks": 134,
+  "handlerFunctions": 317,
+  "nonEmptyHooks": 122,
+  "emptyHooks": 12,
+  "hooksWithDbWrites": 3,
+  "byHook": {
+   "BeforeAdd": 36,
+   "BeforeInsert": 26,
+   "BeforeEdit": 21,
+   "BeforeMoveNextList": 15,
+   "AfterAdd": 8,
+   "BeforeProcessAdd": 7,
+   "BeforeProcessReportPrint": 4,
+   "AfterEdit": 3,
+   "BeforeProcessList": 3,
+   "BeforeShowList": 2,
+   "BeforeProcessView": 2,
+   "BeforeProcessEdit": 2,
+   "BeforeProcessPrint": 2,
+   "BeforeProcessDashboard": 1,
+   "BeforeProcessReport": 1,
+   "BeforeQueryList": 1
+  }
+ },
+ "entities": {
+  "Abrechnungen": {
+   "file": "include/Abrechnungen_events.php",
+   "lines": 336,
+   "hooks": [
+    {
+     "hook": "AfterAdd",
+     "function": "AfterAdd",
+     "params": "&$values, &$keys, $inline, &$pageObject",
+     "lines": 19,
+     "signals": [
+      "defaults",
+      "session",
+      "sqlRead",
+      "sqlWrite"
+     ],
+     "empty": false
+    },
+    {
+     "hook": "BeforeProcessAdd",
+     "function": "BeforeProcessAdd",
+     "params": "&$pageObject",
+     "lines": 0,
+     "signals": [
+      "session"
+     ],
+     "empty": false
+    },
+    {
+     "hook": "BeforeInsert",
+     "function": "BeforeInsert",
+     "params": "&$rawvalues, &$values, &$pageObject, &$message",
+     "lines": 0,
+     "signals": [
+      "defaults"
+     ],
+     "empty": false
+    }
+   ],
+   "functionCount": 4
+  },
+  "Abrechnungsdaten__bersicht": {
+   "file": "include/Abrechnungsdaten__bersicht_events.php",
+   "lines": 244,
+   "hooks": [
+    {
+     "hook": "BeforeEdit",
+     "function": "BeforeEdit",
+     "params": "&$values, $where, &$oldvalues, &$keys, &$message, $inline, &$pageObject",
+     "lines": 1,
+     "signals": [],
+     "empty": false
+    },
+    {
+     "hook": "BeforeAdd",
+     "function": "BeforeAdd",
+     "params": "&$values, &$message, $inline, &$pageObject",
+     "lines": 25,
+     "signals": [],
+     "empty": false
+    }
+   ],
+   "functionCount": 4
+  },
+  "Abrechnungsdruck_HK": {
+   "file": "include/Abrechnungsdruck_HK_events.php",
+   "lines": 57,
+   "hooks": [],
+   "functionCount": 6
+  },
+  "Abrechnungsdruck_HK_ohne_WW": {
+   "file": "include/Abrechnungsdruck_HK_ohne_WW_events.php",
+   "lines": 57,
+   "hooks": [],
+   "functionCount": 6
+  },
+  "Abrechnungsdruck_Netto": {
+   "file": "include/Abrechnungsdruck_Netto_events.php",
+   "lines": 57,
+   "hooks": [],
+   "functionCount": 6
+  },
+  "Abrechnungsdruck": {
+   "file": "include/Abrechnungsdruck_events.php",
+   "lines": 57,
+   "hooks": [],
+   "functionCount": 6
+  },
+  "Abrechnungsdruck_individuell": {
+   "file": "include/Abrechnungsdruck_individuell_events.php",
+   "lines": 36,
+   "hooks": [],
+   "functionCount": 3
+  },
+  "Abrechnungsempf_nger": {
+   "file": "include/Abrechnungsempf_nger_events.php",
+   "lines": 22,
+   "hooks": [],
+   "functionCount": 1
+  },
+  "Abrechnungskonten_Zeitliche_Verteilung": {
+   "file": "include/Abrechnungskonten_Zeitliche_Verteilung_events.php",
+   "lines": 82,
+   "hooks": [],
+   "functionCount": 1
+  },
+  "Abrechnungskonten": {
+   "file": "include/Abrechnungskonten_events.php",
+   "lines": 95,
+   "hooks": [
+    {
+     "hook": "BeforeInsert",
+     "function": "BeforeInsert",
+     "params": "&$rawvalues, &$values, &$pageObject, &$message",
+     "lines": 1,
+     "signals": [],
+     "empty": false
+    }
+   ],
+   "functionCount": 2
+  },
+  "Adressen_Diagramme": {
+   "file": "include/Adressen_Diagramme_events.php",
+   "lines": 42,
+   "hooks": [],
+   "functionCount": 3
+  },
+  "Adressen_Stapelverarbeitung": {
+   "file": "include/Adressen_Stapelverarbeitung_events.php",
+   "lines": 101,
+   "hooks": [
+    {
+     "hook": "BeforeInsert",
+     "function": "BeforeInsert",
+     "params": "&$rawvalues, &$values, &$pageObject, &$message",
+     "lines": 1,
+     "signals": [],
+     "empty": false
+    }
+   ],
+   "functionCount": 2
+  },
+  "Adressen": {
+   "file": "include/Adressen_events.php",
+   "lines": 352,
+   "hooks": [
+    {
+     "hook": "BeforeInsert",
+     "function": "BeforeInsert",
+     "params": "&$rawvalues, &$values, &$pageObject, &$message",
+     "lines": 39,
+     "signals": [
+      "defaults",
+      "session",
+      "validation"
+     ],
+     "empty": false
+    },
+    {
+     "hook": "BeforeAdd",
+     "function": "BeforeAdd",
+     "params": "&$values, &$message, $inline, &$pageObject",
+     "lines": 37,
+     "signals": [
+      "defaults"
+     ],
+     "empty": false
+    },
+    {
+     "hook": "BeforeEdit",
+     "function": "BeforeEdit",
+     "params": "&$values, $where, &$oldvalues, &$keys, &$message, $inline, &$pageObject",
+     "lines": 17,
+     "signals": [
+      "defaults"
+     ],
+     "empty": false
+    }
+   ],
+   "functionCount": 4
+  },
+  "Agenda_heute": {
+   "file": "include/Agenda_heute_events.php",
+   "lines": 168,
+   "hooks": [
+    {
+     "hook": "BeforeAdd",
+     "function": "BeforeAdd",
+     "params": "&$values, &$message, $inline, &$pageObject",
+     "lines": 2,
+     "signals": [],
+     "empty": false
+    },
+    {
+     "hook": "BeforeEdit",
+     "function": "BeforeEdit",
+     "params": "&$values, $where, &$oldvalues, &$keys, &$message, $inline, &$pageObject",
+     "lines": 26,
+     "signals": [],
+     "empty": true
+    }
+   ],
+   "functionCount": 3
+  },
+  "Angebote": {
+   "file": "include/Angebote_events.php",
+   "lines": 176,
+   "hooks": [
+    {
+     "hook": "BeforeProcessAdd",
+     "function": "BeforeProcessAdd",
+     "params": "&$pageObject",
+     "lines": 9,
+     "signals": [],
+     "empty": false
+    },
+    {
+     "hook": "AfterAdd",
+     "function": "AfterAdd",
+     "params": "&$values, &$keys, $inline, &$pageObject",
+     "lines": 58,
+     "signals": [
+      "session"
+     ],
+     "empty": false
+    }
+   ],
+   "functionCount": 3
+  },
+  "Angebotsdruck": {
+   "file": "include/Angebotsdruck_events.php",
+   "lines": 126,
+   "hooks": [
+    {
+     "hook": "BeforeProcessReportPrint",
+     "function": "BeforeProcessReportPrint",
+     "params": "&$pageObject",
+     "lines": 30,
+     "signals": [],
+     "empty": false
+    }
+   ],
+   "functionCount": 5
+  },
+  "Anmeldung": {
+   "file": "include/Anmeldung_events.php",
+   "lines": 272,
+   "hooks": [
+    {
+     "hook": "BeforeInsert",
+     "function": "BeforeInsert",
+     "params": "&$rawvalues, &$values, &$pageObject, &$message",
+     "lines": 4,
+     "signals": [],
+     "empty": false
+    },
+    {
+     "hook": "BeforeAdd",
+     "function": "BeforeAdd",
+     "params": "&$values, &$message, $inline, &$pageObject",
+     "lines": 35,
+     "signals": [],
+     "empty": false
+    },
+    {
+     "hook": "BeforeEdit",
+     "function": "BeforeEdit",
+     "params": "&$values, $where, &$oldvalues, &$keys, &$message, $inline, &$pageObject",
+     "lines": 44,
+     "signals": [
+      "defaults"
+     ],
+     "empty": false
+    }
+   ],
+   "functionCount": 4
+  },
+  "Ansprechpartner": {
+   "file": "include/Ansprechpartner_events.php",
+   "lines": 22,
+   "hooks": [],
+   "functionCount": 1
+  },
+  "Assistent_Abrechnungen": {
+   "file": "include/Assistent_Abrechnungen_events.php",
+   "lines": 28,
+   "hooks": [],
+   "functionCount": 2
+  },
+  "Assistent_Doppelte_Buchf_hrung": {
+   "file": "include/Assistent_Doppelte_Buchf_hrung_events.php",
+   "lines": 38,
+   "hooks": [],
+   "functionCount": 4
+  },
+  "Aufgaben": {
+   "file": "include/Aufgaben_events.php",
+   "lines": 177,
+   "hooks": [
+    {
+     "hook": "BeforeProcessAdd",
+     "function": "BeforeProcessAdd",
+     "params": "&$pageObject",
+     "lines": 9,
+     "signals": [],
+     "empty": false
+    },
+    {
+     "hook": "AfterAdd",
+     "function": "AfterAdd",
+     "params": "&$values, &$keys, $inline, &$pageObject",
+     "lines": 55,
+     "signals": [],
+     "empty": false
+    }
+   ],
+   "functionCount": 3
+  },
+  "Ausleihen": {
+   "file": "include/Ausleihen_events.php",
+   "lines": 22,
+   "hooks": [],
+   "functionCount": 1
+  },
+  "Banking": {
+   "file": "include/Banking_events.php",
+   "lines": 172,
+   "hooks": [
+    {
+     "hook": "BeforeMoveNextList",
+     "function": "BeforeMoveNextList",
+     "params": "&$data, &$row, &$record, &$pageObject",
+     "lines": 3,
+     "signals": [],
+     "empty": false
+    },
+    {
+     "hook": "BeforeAdd",
+     "function": "BeforeAdd",
+     "params": "&$values, &$message, $inline, &$pageObject",
+     "lines": 25,
+     "signals": [],
+     "empty": false
+    }
+   ],
+   "functionCount": 3
+  },
+  "Bilder": {
+   "file": "include/Bilder_events.php",
+   "lines": 160,
+   "hooks": [
+    {
+     "hook": "BeforeMoveNextList",
+     "function": "BeforeMoveNextList",
+     "params": "&$data, &$row, &$record, &$pageObject",
+     "lines": 4,
+     "signals": [],
+     "empty": false
+    }
+   ],
+   "functionCount": 2
+  },
+  "Buchfuehrungen": {
+   "file": "include/Buchfuehrungen_events.php",
+   "lines": 247,
+   "hooks": [
+    {
+     "hook": "BeforeProcessAdd",
+     "function": "BeforeProcessAdd",
+     "params": "&$pageObject",
+     "lines": 8,
+     "signals": [],
+     "empty": false
+    },
+    {
+     "hook": "AfterAdd",
+     "function": "AfterAdd",
+     "params": "&$values, &$keys, $inline, &$pageObject",
+     "lines": 63,
+     "signals": [
+      "session",
+      "sqlRead"
+     ],
+     "empty": false
+    },
+    {
+     "hook": "BeforeInsert",
+     "function": "BeforeInsert",
+     "params": "&$rawvalues, &$values, &$pageObject, &$message",
+     "lines": 0,
+     "signals": [],
+     "empty": false
+    }
+   ],
+   "functionCount": 4
+  },
+  "Buchungen": {
+   "file": "include/Buchungen_events.php",
+   "lines": 175,
+   "hooks": [
+    {
+     "hook": "BeforeMoveNextList",
+     "function": "BeforeMoveNextList",
+     "params": "&$data, &$row, &$record, &$pageObject",
+     "lines": 6,
+     "signals": [],
+     "empty": false
+    },
+    {
+     "hook": "BeforeAdd",
+     "function": "BeforeAdd",
+     "params": "&$values, &$message, $inline, &$pageObject",
+     "lines": 17,
+     "signals": [],
+     "empty": false
+    }
+   ],
+   "functionCount": 3
+  },
+  "Buchungsassistent": {
+   "file": "include/Buchungsassistent_events.php",
+   "lines": 477,
+   "hooks": [
+    {
+     "hook": "AfterAdd",
+     "function": "AfterAdd",
+     "params": "&$values, &$keys, $inline, &$pageObject",
+     "lines": 61,
+     "signals": [
+      "defaults",
+      "session",
+      "sqlRead",
+      "sqlWrite"
+     ],
+     "empty": false
+    },
+    {
+     "hook": "AfterEdit",
+     "function": "AfterEdit",
+     "params": "&$values, $where, &$oldvalues, &$keys, $inline, &$pageObject",
+     "lines": 50,
+     "signals": [
+      "defaults",
+      "session",
+      "sqlRead",
+      "sqlWrite"
+     ],
+     "empty": false
+    },
+    {
+     "hook": "BeforeInsert",
+     "function": "BeforeInsert",
+     "params": "&$rawvalues, &$values, &$pageObject, &$message",
+     "lines": 0,
+     "signals": [],
+     "empty": false
+    }
+   ],
+   "functionCount": 4
+  },
+  "Buchungsimport": {
+   "file": "include/Buchungsimport_events.php",
+   "lines": 127,
+   "hooks": [
+    {
+     "hook": "BeforeInsert",
+     "function": "BeforeInsert",
+     "params": "&$rawvalues, &$values, &$pageObject, &$message",
+     "lines": 25,
+     "signals": [
+      "defaults",
+      "session",
+      "sqlRead"
+     ],
+     "empty": false
+    }
+   ],
+   "functionCount": 2
+  },
+  "DATEV_Export": {
+   "file": "include/DATEV_Export_events.php",
+   "lines": 169,
+   "hooks": [
+    {
+     "hook": "BeforeMoveNextList",
+     "function": "BeforeMoveNextList",
+     "params": "&$data, &$row, &$record, &$pageObject",
+     "lines": 3,
+     "signals": [],
+     "empty": false
+    },
+    {
+     "hook": "BeforeAdd",
+     "function": "BeforeAdd",
+     "params": "&$values, &$message, $inline, &$pageObject",
+     "lines": 30,
+     "signals": [],
+     "empty": false
+    }
+   ],
+   "functionCount": 3
+  },
+  "DirekteKosten": {
+   "file": "include/DirekteKosten_events.php",
+   "lines": 241,
+   "hooks": [
+    {
+     "hook": "BeforeAdd",
+     "function": "BeforeAdd",
+     "params": "&$values, &$message, $inline, &$pageObject",
+     "lines": 6,
+     "signals": [],
+     "empty": false
+    },
+    {
+     "hook": "BeforeEdit",
+     "function": "BeforeEdit",
+     "params": "&$values, $where, &$oldvalues, &$keys, &$message, $inline, &$pageObject",
+     "lines": 27,
+     "signals": [],
+     "empty": true
+    },
+    {
+     "hook": "BeforeInsert",
+     "function": "BeforeInsert",
+     "params": "&$rawvalues, &$values, &$pageObject, &$message",
+     "lines": 12,
+     "signals": [],
+     "empty": false
+    }
+   ],
+   "functionCount": 4
+  },
+  "Dokumente_Fotos": {
+   "file": "include/Dokumente_Fotos_events.php",
+   "lines": 162,
+   "hooks": [
+    {
+     "hook": "BeforeMoveNextList",
+     "function": "BeforeMoveNextList",
+     "params": "&$data, &$row, &$record, &$pageObject",
+     "lines": 4,
+     "signals": [],
+     "empty": false
+    }
+   ],
+   "functionCount": 2
+  },
+  "Dokumente": {
+   "file": "include/Dokumente_events.php",
+   "lines": 214,
+   "hooks": [
+    {
+     "hook": "BeforeMoveNextList",
+     "function": "BeforeMoveNextList",
+     "params": "&$data, &$row, &$record, &$pageObject",
+     "lines": 10,
+     "signals": [],
+     "empty": false
+    }
+   ],
+   "functionCount": 4
+  },
+  "Einheiten": {
+   "file": "include/Einheiten_events.php",
+   "lines": 22,
+   "hooks": [],
+   "functionCount": 1
+  },
+  "Einstellungen": {
+   "file": "include/Einstellungen_events.php",
+   "lines": 552,
+   "hooks": [
+    {
+     "hook": "AfterEdit",
+     "function": "AfterEdit",
+     "params": "&$values, $where, &$oldvalues, &$keys, $inline, &$pageObject",
+     "lines": 61,
+     "signals": [
+      "defaults",
+      "mail",
+      "session",
+      "sqlRead"
+     ],
+     "empty": false
+    },
+    {
+     "hook": "BeforeShowList",
+     "function": "BeforeShowList",
+     "params": "&$xt, &$templatefile, &$pageObject",
+     "lines": 4,
+     "signals": [
+      "session"
+     ],
+     "empty": false
+    },
+    {
+     "hook": "AfterAdd",
+     "function": "AfterAdd",
+     "params": "&$values, &$keys, $inline, &$pageObject",
+     "lines": 2,
+     "signals": [
+      "session"
+     ],
+     "empty": false
+    }
+   ],
+   "functionCount": 8
+  },
+  "Farben": {
+   "file": "include/Farben_events.php",
+   "lines": 22,
+   "hooks": [],
+   "functionCount": 1
+  },
+  "Gegenbuchungen": {
+   "file": "include/Gegenbuchungen_events.php",
+   "lines": 172,
+   "hooks": [
+    {
+     "hook": "BeforeAdd",
+     "function": "BeforeAdd",
+     "params": "&$values, &$message, $inline, &$pageObject",
+     "lines": 8,
+     "signals": [
+      "sqlRead"
+     ],
+     "empty": false
+    },
+    {
+     "hook": "BeforeMoveNextList",
+     "function": "BeforeMoveNextList",
+     "params": "&$data, &$row, &$record, &$pageObject",
+     "lines": 36,
+     "signals": [],
+     "empty": false
+    }
+   ],
+   "functionCount": 3
+  },
+  "Heute": {
+   "file": "include/Heute_events.php",
+   "lines": 96,
+   "hooks": [
+    {
+     "hook": "BeforeProcessDashboard",
+     "function": "BeforeProcessDashboard",
+     "params": "&$pageObject",
+     "lines": 8,
+     "signals": [],
+     "empty": false
+    }
+   ],
+   "functionCount": 2
+  },
+  "Inventar_Bilder": {
+   "file": "include/Inventar_Bilder_events.php",
+   "lines": 22,
+   "hooks": [],
+   "functionCount": 1
+  },
+  "Inventar_Stapelverarbeitung": {
+   "file": "include/Inventar_Stapelverarbeitung_events.php",
+   "lines": 417,
+   "hooks": [
+    {
+     "hook": "BeforeAdd",
+     "function": "BeforeAdd",
+     "params": "&$values, &$message, $inline, &$pageObject",
+     "lines": 19,
+     "signals": [],
+     "empty": false
+    },
+    {
+     "hook": "BeforeProcessView",
+     "function": "BeforeProcessView",
+     "params": "&$pageObject",
+     "lines": 69,
+     "signals": [],
+     "empty": false
+    },
+    {
+     "hook": "BeforeProcessAdd",
+     "function": "BeforeProcessAdd",
+     "params": "&$pageObject",
+     "lines": 61,
+     "signals": [
+      "session"
+     ],
+     "empty": false
+    },
+    {
+     "hook": "BeforeProcessEdit",
+     "function": "BeforeProcessEdit",
+     "params": "&$pageObject",
+     "lines": 23,
+     "signals": [
+      "session"
+     ],
+     "empty": false
+    }
+   ],
+   "functionCount": 6
+  },
+  "Inventar": {
+   "file": "include/Inventar_events.php",
+   "lines": 771,
+   "hooks": [
+    {
+     "hook": "BeforeAdd",
+     "function": "BeforeAdd",
+     "params": "&$values, &$message, $inline, &$pageObject",
+     "lines": 4,
+     "signals": [],
+     "empty": false
+    },
+    {
+     "hook": "BeforeProcessView",
+     "function": "BeforeProcessView",
+     "params": "&$pageObject",
+     "lines": 30,
+     "signals": [
+      "session",
+      "sqlRead"
+     ],
+     "empty": false
+    },
+    {
+     "hook": "BeforeProcessAdd",
+     "function": "BeforeProcessAdd",
+     "params": "&$pageObject",
+     "lines": 31,
+     "signals": [
+      "sqlRead"
+     ],
+     "empty": false
+    },
+    {
+     "hook": "BeforeProcessEdit",
+     "function": "BeforeProcessEdit",
+     "params": "&$pageObject",
+     "lines": 72,
+     "signals": [
+      "session"
+     ],
+     "empty": false
+    },
+    {
+     "hook": "BeforeEdit",
+     "function": "BeforeEdit",
+     "params": "&$values, $where, &$oldvalues, &$keys, &$message, $inline, &$pageObject",
+     "lines": 2,
+     "signals": [],
+     "empty": false
+    },
+    {
+     "hook": "BeforeInsert",
+     "function": "BeforeInsert",
+     "params": "&$rawvalues, &$values, &$pageObject, &$message",
+     "lines": 1,
+     "signals": [
+      "session"
+     ],
+     "empty": false
+    }
+   ],
+   "functionCount": 38
+  },
+  "Journal": {
+   "file": "include/Journal_events.php",
+   "lines": 448,
+   "hooks": [
+    {
+     "hook": "BeforeAdd",
+     "function": "BeforeAdd",
+     "params": "&$values, &$message, $inline, &$pageObject",
+     "lines": 18,
+     "signals": [],
+     "empty": false
+    },
+    {
+     "hook": "BeforeMoveNextList",
+     "function": "BeforeMoveNextList",
+     "params": "&$data, &$row, &$record, &$pageObject",
+     "lines": 41,
+     "signals": [],
+     "empty": true
+    },
+    {
+     "hook": "BeforeInsert",
+     "function": "BeforeInsert",
+     "params": "&$rawvalues, &$values, &$pageObject, &$message",
+     "lines": 118,
+     "signals": [
+      "defaults"
+     ],
+     "empty": false
+    }
+   ],
+   "functionCount": 6
+  },
+  "Kalender": {
+   "file": "include/Kalender_events.php",
+   "lines": 173,
+   "hooks": [
+    {
+     "hook": "BeforeProcessList",
+     "function": "BeforeProcessList",
+     "params": "&$pageObject",
+     "lines": 36,
+     "signals": [
+      "sqlRead"
+     ],
+     "empty": false
+    }
+   ],
+   "functionCount": 3
+  },
+  "Kalenderwoche": {
+   "file": "include/Kalenderwoche_events.php",
+   "lines": 174,
+   "hooks": [
+    {
+     "hook": "BeforeProcessList",
+     "function": "BeforeProcessList",
+     "params": "&$pageObject",
+     "lines": 34,
+     "signals": [
+      "sqlRead"
+     ],
+     "empty": false
+    }
+   ],
+   "functionCount": 3
+  },
+  "Kerndaten": {
+   "file": "include/Kerndaten_events.php",
+   "lines": 313,
+   "hooks": [
+    {
+     "hook": "BeforeInsert",
+     "function": "BeforeInsert",
+     "params": "&$rawvalues, &$values, &$pageObject, &$message",
+     "lines": 4,
+     "signals": [],
+     "empty": false
+    },
+    {
+     "hook": "BeforeAdd",
+     "function": "BeforeAdd",
+     "params": "&$values, &$message, $inline, &$pageObject",
+     "lines": 56,
+     "signals": [
+      "defaults"
+     ],
+     "empty": false
+    },
+    {
+     "hook": "BeforeEdit",
+     "function": "BeforeEdit",
+     "params": "&$values, $where, &$oldvalues, &$keys, &$message, $inline, &$pageObject",
+     "lines": 79,
+     "signals": [
+      "defaults"
+     ],
+     "empty": false
+    }
+   ],
+   "functionCount": 4
+  },
+  "Kontaktaufnahme": {
+   "file": "include/Kontaktaufnahme_events.php",
+   "lines": 95,
+   "hooks": [
+    {
+     "hook": "BeforeAdd",
+     "function": "BeforeAdd",
+     "params": "&$values, &$message, $inline, &$pageObject",
+     "lines": 1,
+     "signals": [],
+     "empty": false
+    }
+   ],
+   "functionCount": 2
+  },
+  "Kontenbl_tter": {
+   "file": "include/Kontenbl_tter_events.php",
+   "lines": 22,
+   "hooks": [],
+   "functionCount": 1
+  },
+  "Kontenrahmen": {
+   "file": "include/Kontenrahmen_events.php",
+   "lines": 95,
+   "hooks": [
+    {
+     "hook": "BeforeInsert",
+     "function": "BeforeInsert",
+     "params": "&$rawvalues, &$values, &$pageObject, &$message",
+     "lines": 1,
+     "signals": [],
+     "empty": false
+    }
+   ],
+   "functionCount": 2
+  },
+  "Kontoauszuege2": {
+   "file": "include/Kontoauszuege2_events.php",
+   "lines": 194,
+   "hooks": [
+    {
+     "hook": "BeforeInsert",
+     "function": "BeforeInsert",
+     "params": "&$rawvalues, &$values, &$pageObject, &$message",
+     "lines": 58,
+     "signals": [
+      "defaults",
+      "session",
+      "sqlRead"
+     ],
+     "empty": false
+    }
+   ],
+   "functionCount": 2
+  },
+  "Kontoauszuege": {
+   "file": "include/Kontoauszuege_events.php",
+   "lines": 145,
+   "hooks": [
+    {
+     "hook": "BeforeInsert",
+     "function": "BeforeInsert",
+     "params": "&$rawvalues, &$values, &$pageObject, &$message",
+     "lines": 33,
+     "signals": [
+      "defaults",
+      "session",
+      "sqlRead"
+     ],
+     "empty": false
+    }
+   ],
+   "functionCount": 2
+  },
+  "Kontobuch_Auszug": {
+   "file": "include/Kontobuch_Auszug_events.php",
+   "lines": 93,
+   "hooks": [
+    {
+     "hook": "BeforeProcessReport",
+     "function": "BeforeProcessReport",
+     "params": "&$pageObject",
+     "lines": 8,
+     "signals": [],
+     "empty": false
+    }
+   ],
+   "functionCount": 2
+  },
+  "Kontobuch_Banking": {
+   "file": "include/Kontobuch_Banking_events.php",
+   "lines": 380,
+   "hooks": [
+    {
+     "hook": "BeforeAdd",
+     "function": "BeforeAdd",
+     "params": "&$values, &$message, $inline, &$pageObject",
+     "lines": 13,
+     "signals": [],
+     "empty": false
+    },
+    {
+     "hook": "BeforeProcessPrint",
+     "function": "BeforeProcessPrint",
+     "params": "&$pageObject",
+     "lines": 10,
+     "signals": [],
+     "empty": true
+    },
+    {
+     "hook": "BeforeInsert",
+     "function": "BeforeInsert",
+     "params": "&$rawvalues, &$values, &$pageObject, &$message",
+     "lines": 18,
+     "signals": [],
+     "empty": true
+    }
+   ],
+   "functionCount": 5
+  },
+  "Kontobuch": {
+   "file": "include/Kontobuch_events.php",
+   "lines": 586,
+   "hooks": [
+    {
+     "hook": "BeforeAdd",
+     "function": "BeforeAdd",
+     "params": "&$values, &$message, $inline, &$pageObject",
+     "lines": 16,
+     "signals": [],
+     "empty": false
+    },
+    {
+     "hook": "BeforeMoveNextList",
+     "function": "BeforeMoveNextList",
+     "params": "&$data, &$row, &$record, &$pageObject",
+     "lines": 56,
+     "signals": [],
+     "empty": true
+    },
+    {
+     "hook": "BeforeProcessPrint",
+     "function": "BeforeProcessPrint",
+     "params": "&$pageObject",
+     "lines": 10,
+     "signals": [],
+     "empty": true
+    },
+    {
+     "hook": "BeforeInsert",
+     "function": "BeforeInsert",
+     "params": "&$rawvalues, &$values, &$pageObject, &$message",
+     "lines": 132,
+     "signals": [
+      "defaults",
+      "session",
+      "sqlRead"
+     ],
+     "empty": false
+    }
+   ],
+   "functionCount": 6
+  },
+  "Korrespondenz_Briefdruck": {
+   "file": "include/Korrespondenz_Briefdruck_events.php",
+   "lines": 98,
+   "hooks": [
+    {
+     "hook": "BeforeProcessReportPrint",
+     "function": "BeforeProcessReportPrint",
+     "params": "&$pageObject",
+     "lines": 4,
+     "signals": [],
+     "empty": true
+    }
+   ],
+   "functionCount": 3
+  },
+  "Korrespondenz_Word": {
+   "file": "include/Korrespondenz_Word_events.php",
+   "lines": 92,
+   "hooks": [
+    {
+     "hook": "BeforeProcessReportPrint",
+     "function": "BeforeProcessReportPrint",
+     "params": "&$pageObject",
+     "lines": 5,
+     "signals": [],
+     "empty": true
+    }
+   ],
+   "functionCount": 2
+  },
+  "Korrespondenz": {
+   "file": "include/Korrespondenz_events.php",
+   "lines": 219,
+   "hooks": [
+    {
+     "hook": "BeforeAdd",
+     "function": "BeforeAdd",
+     "params": "&$values, &$message, $inline, &$pageObject",
+     "lines": 13,
+     "signals": [],
+     "empty": false
+    },
+    {
+     "hook": "BeforeEdit",
+     "function": "BeforeEdit",
+     "params": "&$values, $where, &$oldvalues, &$keys, &$message, $inline, &$pageObject",
+     "lines": 16,
+     "signals": [],
+     "empty": true
+    }
+   ],
+   "functionCount": 5
+  },
+  "Kosten": {
+   "file": "include/Kosten_events.php",
+   "lines": 259,
+   "hooks": [
+    {
+     "hook": "BeforeEdit",
+     "function": "BeforeEdit",
+     "params": "&$values, $where, &$oldvalues, &$keys, &$message, $inline, &$pageObject",
+     "lines": 6,
+     "signals": [
+      "defaults"
+     ],
+     "empty": false
+    },
+    {
+     "hook": "BeforeAdd",
+     "function": "BeforeAdd",
+     "params": "&$values, &$message, $inline, &$pageObject",
+     "lines": 51,
+     "signals": [],
+     "empty": false
+    },
+    {
+     "hook": "BeforeInsert",
+     "function": "BeforeInsert",
+     "params": "&$rawvalues, &$values, &$pageObject, &$message",
+     "lines": 4,
+     "signals": [],
+     "empty": false
+    }
+   ],
+   "functionCount": 4
+  },
+  "Kostenarten": {
+   "file": "include/Kostenarten_events.php",
+   "lines": 22,
+   "hooks": [],
+   "functionCount": 1
+  },
+  "Leistungen": {
+   "file": "include/Leistungen_events.php",
+   "lines": 95,
+   "hooks": [
+    {
+     "hook": "BeforeInsert",
+     "function": "BeforeInsert",
+     "params": "&$rawvalues, &$values, &$pageObject, &$message",
+     "lines": 1,
+     "signals": [],
+     "empty": false
+    }
+   ],
+   "functionCount": 2
+  },
+  "Mieterkonten_Saldenliste": {
+   "file": "include/Mieterkonten_Saldenliste_events.php",
+   "lines": 366,
+   "hooks": [
+    {
+     "hook": "BeforeAdd",
+     "function": "BeforeAdd",
+     "params": "&$values, &$message, $inline, &$pageObject",
+     "lines": 13,
+     "signals": [],
+     "empty": false
+    },
+    {
+     "hook": "BeforeProcessList",
+     "function": "BeforeProcessList",
+     "params": "&$pageObject",
+     "lines": 7,
+     "signals": [],
+     "empty": false
+    },
+    {
+     "hook": "BeforeMoveNextList",
+     "function": "BeforeMoveNextList",
+     "params": "&$data, &$row, &$record, &$pageObject",
+     "lines": 41,
+     "signals": [],
+     "empty": false
+    }
+   ],
+   "functionCount": 4
+  },
+  "Mitarbeiter": {
+   "file": "include/Mitarbeiter_events.php",
+   "lines": 269,
+   "hooks": [
+    {
+     "hook": "BeforeInsert",
+     "function": "BeforeInsert",
+     "params": "&$rawvalues, &$values, &$pageObject, &$message",
+     "lines": 4,
+     "signals": [],
+     "empty": false
+    },
+    {
+     "hook": "BeforeAdd",
+     "function": "BeforeAdd",
+     "params": "&$values, &$message, $inline, &$pageObject",
+     "lines": 34,
+     "signals": [],
+     "empty": false
+    },
+    {
+     "hook": "BeforeEdit",
+     "function": "BeforeEdit",
+     "params": "&$values, $where, &$oldvalues, &$keys, &$message, $inline, &$pageObject",
+     "lines": 43,
+     "signals": [
+      "defaults"
+     ],
+     "empty": false
+    }
+   ],
+   "functionCount": 4
+  },
+  "Notizen": {
+   "file": "include/Notizen_events.php",
+   "lines": 22,
+   "hooks": [],
+   "functionCount": 1
+  },
+  "Nutzerliste": {
+   "file": "include/Nutzerliste_events.php",
+   "lines": 22,
+   "hooks": [],
+   "functionCount": 1
+  },
+  "Objekte": {
+   "file": "include/Objekte_events.php",
+   "lines": 103,
+   "hooks": [
+    {
+     "hook": "AfterAdd",
+     "function": "AfterAdd",
+     "params": "&$values, &$keys, $inline, &$pageObject",
+     "lines": 10,
+     "signals": [
+      "defaults"
+     ],
+     "empty": false
+    }
+   ],
+   "functionCount": 2
+  },
+  "P35aEStG_Druck": {
+   "file": "include/P35aEStG_Druck_events.php",
+   "lines": 37,
+   "hooks": [],
+   "functionCount": 3
+  },
+  "P35aEStG": {
+   "file": "include/P35aEStG_events.php",
+   "lines": 95,
+   "hooks": [
+    {
+     "hook": "BeforeInsert",
+     "function": "BeforeInsert",
+     "params": "&$rawvalues, &$values, &$pageObject, &$message",
+     "lines": 1,
+     "signals": [],
+     "empty": false
+    }
+   ],
+   "functionCount": 2
+  },
+  "Protokolle": {
+   "file": "include/Protokolle_events.php",
+   "lines": 22,
+   "hooks": [],
+   "functionCount": 1
+  },
+  "Raeume": {
+   "file": "include/Raeume_events.php",
+   "lines": 166,
+   "hooks": [
+    {
+     "hook": "BeforeAdd",
+     "function": "BeforeAdd",
+     "params": "&$values, &$message, $inline, &$pageObject",
+     "lines": 2,
+     "signals": [],
+     "empty": false
+    },
+    {
+     "hook": "BeforeEdit",
+     "function": "BeforeEdit",
+     "params": "&$values, $where, &$oldvalues, &$keys, &$message, $inline, &$pageObject",
+     "lines": 9,
+     "signals": [],
+     "empty": false
+    }
+   ],
+   "functionCount": 3
+  },
+  "Rechnungen": {
+   "file": "include/Rechnungen_events.php",
+   "lines": 329,
+   "hooks": [
+    {
+     "hook": "BeforeAdd",
+     "function": "BeforeAdd",
+     "params": "&$values, &$message, $inline, &$pageObject",
+     "lines": 13,
+     "signals": [
+      "sqlRead"
+     ],
+     "empty": false
+    },
+    {
+     "hook": "AfterAdd",
+     "function": "AfterAdd",
+     "params": "&$values, &$keys, $inline, &$pageObject",
+     "lines": 63,
+     "signals": [],
+     "empty": false
+    },
+    {
+     "hook": "BeforeProcessAdd",
+     "function": "BeforeProcessAdd",
+     "params": "&$pageObject",
+     "lines": 2,
+     "signals": [],
+     "empty": false
+    },
+    {
+     "hook": "BeforeEdit",
+     "function": "BeforeEdit",
+     "params": "&$values, $where, &$oldvalues, &$keys, &$message, $inline, &$pageObject",
+     "lines": 1,
+     "signals": [],
+     "empty": false
+    }
+   ],
+   "functionCount": 5
+  },
+  "Rechnungsdruck": {
+   "file": "include/Rechnungsdruck_events.php",
+   "lines": 125,
+   "hooks": [
+    {
+     "hook": "BeforeProcessReportPrint",
+     "function": "BeforeProcessReportPrint",
+     "params": "&$pageObject",
+     "lines": 31,
+     "signals": [],
+     "empty": false
+    }
+   ],
+   "functionCount": 5
+  },
+  "Ruecklagebuchungen": {
+   "file": "include/Ruecklagebuchungen_events.php",
+   "lines": 241,
+   "hooks": [
+    {
+     "hook": "BeforeAdd",
+     "function": "BeforeAdd",
+     "params": "&$values, &$message, $inline, &$pageObject",
+     "lines": 6,
+     "signals": [],
+     "empty": false
+    },
+    {
+     "hook": "BeforeEdit",
+     "function": "BeforeEdit",
+     "params": "&$values, $where, &$oldvalues, &$keys, &$message, $inline, &$pageObject",
+     "lines": 27,
+     "signals": [],
+     "empty": true
+    },
+    {
+     "hook": "BeforeInsert",
+     "function": "BeforeInsert",
+     "params": "&$rawvalues, &$values, &$pageObject, &$message",
+     "lines": 12,
+     "signals": [],
+     "empty": false
+    }
+   ],
+   "functionCount": 4
+  },
+  "Saldenliste": {
+   "file": "include/Saldenliste_events.php",
+   "lines": 95,
+   "hooks": [
+    {
+     "hook": "BeforeInsert",
+     "function": "BeforeInsert",
+     "params": "&$rawvalues, &$values, &$pageObject, &$message",
+     "lines": 1,
+     "signals": [],
+     "empty": false
+    }
+   ],
+   "functionCount": 2
+  },
+  "Schluessel": {
+   "file": "include/Schluessel_events.php",
+   "lines": 165,
+   "hooks": [
+    {
+     "hook": "BeforeAdd",
+     "function": "BeforeAdd",
+     "params": "&$values, &$message, $inline, &$pageObject",
+     "lines": 2,
+     "signals": [],
+     "empty": false
+    },
+    {
+     "hook": "BeforeEdit",
+     "function": "BeforeEdit",
+     "params": "&$values, $where, &$oldvalues, &$keys, &$message, $inline, &$pageObject",
+     "lines": 9,
+     "signals": [],
+     "empty": false
+    }
+   ],
+   "functionCount": 3
+  },
+  "Schnellbuchungen": {
+   "file": "include/Schnellbuchungen_events.php",
+   "lines": 247,
+   "hooks": [
+    {
+     "hook": "BeforeMoveNextList",
+     "function": "BeforeMoveNextList",
+     "params": "&$data, &$row, &$record, &$pageObject",
+     "lines": 9,
+     "signals": [],
+     "empty": false
+    },
+    {
+     "hook": "BeforeAdd",
+     "function": "BeforeAdd",
+     "params": "&$values, &$message, $inline, &$pageObject",
+     "lines": 21,
+     "signals": [],
+     "empty": false
+    }
+   ],
+   "functionCount": 4
+  },
+  "Serienbrief": {
+   "file": "include/Serienbrief_events.php",
+   "lines": 34,
+   "hooks": [],
+   "functionCount": 3
+  },
+  "Steckbrief": {
+   "file": "include/Steckbrief_events.php",
+   "lines": 269,
+   "hooks": [
+    {
+     "hook": "BeforeInsert",
+     "function": "BeforeInsert",
+     "params": "&$rawvalues, &$values, &$pageObject, &$message",
+     "lines": 4,
+     "signals": [],
+     "empty": false
+    },
+    {
+     "hook": "BeforeAdd",
+     "function": "BeforeAdd",
+     "params": "&$values, &$message, $inline, &$pageObject",
+     "lines": 34,
+     "signals": [],
+     "empty": false
+    },
+    {
+     "hook": "BeforeEdit",
+     "function": "BeforeEdit",
+     "params": "&$values, $where, &$oldvalues, &$keys, &$message, $inline, &$pageObject",
+     "lines": 43,
+     "signals": [
+      "defaults"
+     ],
+     "empty": false
+    }
+   ],
+   "functionCount": 4
+  },
+  "Termine_diese_Woche": {
+   "file": "include/Termine_diese_Woche_events.php",
+   "lines": 242,
+   "hooks": [
+    {
+     "hook": "BeforeMoveNextList",
+     "function": "BeforeMoveNextList",
+     "params": "&$data, &$row, &$record, &$pageObject",
+     "lines": 7,
+     "signals": [],
+     "empty": false
+    },
+    {
+     "hook": "BeforeAdd",
+     "function": "BeforeAdd",
+     "params": "&$values, &$message, $inline, &$pageObject",
+     "lines": 3,
+     "signals": [],
+     "empty": false
+    },
+    {
+     "hook": "BeforeEdit",
+     "function": "BeforeEdit",
+     "params": "&$values, $where, &$oldvalues, &$keys, &$message, $inline, &$pageObject",
+     "lines": 3,
+     "signals": [],
+     "empty": false
+    }
+   ],
+   "functionCount": 4
+  },
+  "Termine_dieser_Monat": {
+   "file": "include/Termine_dieser_Monat_events.php",
+   "lines": 242,
+   "hooks": [
+    {
+     "hook": "BeforeEdit",
+     "function": "BeforeEdit",
+     "params": "&$values, $where, &$oldvalues, &$keys, &$message, $inline, &$pageObject",
+     "lines": 1,
+     "signals": [],
+     "empty": false
+    },
+    {
+     "hook": "BeforeAdd",
+     "function": "BeforeAdd",
+     "params": "&$values, &$message, $inline, &$pageObject",
+     "lines": 25,
+     "signals": [],
+     "empty": false
+    },
+    {
+     "hook": "BeforeMoveNextList",
+     "function": "BeforeMoveNextList",
+     "params": "&$data, &$row, &$record, &$pageObject",
+     "lines": 11,
+     "signals": [],
+     "empty": false
+    }
+   ],
+   "functionCount": 4
+  },
+  "Termine": {
+   "file": "include/Termine_events.php",
+   "lines": 503,
+   "hooks": [
+    {
+     "hook": "BeforeEdit",
+     "function": "BeforeEdit",
+     "params": "&$values, $where, &$oldvalues, &$keys, &$message, $inline, &$pageObject",
+     "lines": 3,
+     "signals": [],
+     "empty": false
+    },
+    {
+     "hook": "BeforeAdd",
+     "function": "BeforeAdd",
+     "params": "&$values, &$message, $inline, &$pageObject",
+     "lines": 20,
+     "signals": [],
+     "empty": false
+    },
+    {
+     "hook": "BeforeMoveNextList",
+     "function": "BeforeMoveNextList",
+     "params": "&$data, &$row, &$record, &$pageObject",
+     "lines": 6,
+     "signals": [],
+     "empty": false
+    }
+   ],
+   "functionCount": 5
+  },
+  "Terminliste": {
+   "file": "include/Terminliste_events.php",
+   "lines": 242,
+   "hooks": [
+    {
+     "hook": "BeforeEdit",
+     "function": "BeforeEdit",
+     "params": "&$values, $where, &$oldvalues, &$keys, &$message, $inline, &$pageObject",
+     "lines": 1,
+     "signals": [],
+     "empty": false
+    },
+    {
+     "hook": "BeforeAdd",
+     "function": "BeforeAdd",
+     "params": "&$values, &$message, $inline, &$pageObject",
+     "lines": 25,
+     "signals": [],
+     "empty": false
+    },
+    {
+     "hook": "BeforeMoveNextList",
+     "function": "BeforeMoveNextList",
+     "params": "&$data, &$row, &$record, &$pageObject",
+     "lines": 11,
+     "signals": [],
+     "empty": false
+    }
+   ],
+   "functionCount": 4
+  },
+  "Verkauf_Serienbrief_Steuerdatei": {
+   "file": "include/Verkauf_Serienbrief_Steuerdatei_events.php",
+   "lines": 100,
+   "hooks": [
+    {
+     "hook": "BeforeAdd",
+     "function": "BeforeAdd",
+     "params": "&$values, &$message, $inline, &$pageObject",
+     "lines": 4,
+     "signals": [
+      "sqlRead"
+     ],
+     "empty": false
+    }
+   ],
+   "functionCount": 2
+  },
+  "Verkauf": {
+   "file": "include/Verkauf_events.php",
+   "lines": 100,
+   "hooks": [
+    {
+     "hook": "BeforeAdd",
+     "function": "BeforeAdd",
+     "params": "&$values, &$message, $inline, &$pageObject",
+     "lines": 4,
+     "signals": [
+      "sqlRead"
+     ],
+     "empty": false
+    }
+   ],
+   "functionCount": 2
+  },
+  "Vermietungskonditionen": {
+   "file": "include/Vermietungskonditionen_events.php",
+   "lines": 22,
+   "hooks": [],
+   "functionCount": 1
+  },
+  "Vertraege": {
+   "file": "include/Vertraege_events.php",
+   "lines": 22,
+   "hooks": [],
+   "functionCount": 1
+  },
+  "Vertraulich": {
+   "file": "include/Vertraulich_events.php",
+   "lines": 495,
+   "hooks": [
+    {
+     "hook": "BeforeInsert",
+     "function": "BeforeInsert",
+     "params": "&$rawvalues, &$values, &$pageObject, &$message",
+     "lines": 14,
+     "signals": [],
+     "empty": false
+    },
+    {
+     "hook": "BeforeAdd",
+     "function": "BeforeAdd",
+     "params": "&$values, &$message, $inline, &$pageObject",
+     "lines": 66,
+     "signals": [
+      "defaults",
+      "validation"
+     ],
+     "empty": false
+    },
+    {
+     "hook": "BeforeEdit",
+     "function": "BeforeEdit",
+     "params": "&$values, $where, &$oldvalues, &$keys, &$message, $inline, &$pageObject",
+     "lines": 87,
+     "signals": [
+      "defaults"
+     ],
+     "empty": false
+    }
+   ],
+   "functionCount": 6
+  },
+  "Vorauszahlungen": {
+   "file": "include/Vorauszahlungen_events.php",
+   "lines": 168,
+   "hooks": [
+    {
+     "hook": "BeforeAdd",
+     "function": "BeforeAdd",
+     "params": "&$values, &$message, $inline, &$pageObject",
+     "lines": 2,
+     "signals": [],
+     "empty": false
+    },
+    {
+     "hook": "BeforeEdit",
+     "function": "BeforeEdit",
+     "params": "&$values, $where, &$oldvalues, &$keys, &$message, $inline, &$pageObject",
+     "lines": 27,
+     "signals": [],
+     "empty": true
+    }
+   ],
+   "functionCount": 3
+  },
+  "WEG_Eigent_merliste": {
+   "file": "include/WEG_Eigent_merliste_events.php",
+   "lines": 22,
+   "hooks": [],
+   "functionCount": 1
+  },
+  "Zaehler": {
+   "file": "include/Zaehler_events.php",
+   "lines": 112,
+   "hooks": [
+    {
+     "hook": "BeforeInsert",
+     "function": "BeforeInsert",
+     "params": "&$rawvalues, &$values, &$pageObject, &$message",
+     "lines": 2,
+     "signals": [],
+     "empty": false
+    }
+   ],
+   "functionCount": 3
+  },
+  "Zaehlerstaende_melden": {
+   "file": "include/Zaehlerstaende_melden_events.php",
+   "lines": 112,
+   "hooks": [
+    {
+     "hook": "BeforeAdd",
+     "function": "BeforeAdd",
+     "params": "&$values, &$message, $inline, &$pageObject",
+     "lines": 4,
+     "signals": [],
+     "empty": false
+    }
+   ],
+   "functionCount": 3
+  },
+  "admin_users": {
+   "file": "include/admin_users_events.php",
+   "lines": 303,
+   "hooks": [
+    {
+     "hook": "BeforeQueryList",
+     "function": "BeforeQueryList",
+     "params": "&$strSQL, &$strWhereClause, &$strOrderBy, &$pageObject",
+     "lines": 1,
+     "signals": [],
+     "empty": false
+    },
+    {
+     "hook": "BeforeShowList",
+     "function": "BeforeShowList",
+     "params": "&$xt, &$templatefile, &$pageObject",
+     "lines": 36,
+     "signals": [],
+     "empty": false
+    },
+    {
+     "hook": "BeforeAdd",
+     "function": "BeforeAdd",
+     "params": "&$values, &$message, $inline, &$pageObject",
+     "lines": 6,
+     "signals": [],
+     "empty": false
+    }
+   ],
+   "functionCount": 4
+  },
+  "ics_Import": {
+   "file": "include/ics_Import_events.php",
+   "lines": 104,
+   "hooks": [
+    {
+     "hook": "AfterEdit",
+     "function": "AfterEdit",
+     "params": "&$values, $where, &$oldvalues, &$keys, $inline, &$pageObject",
+     "lines": 6,
+     "signals": [],
+     "empty": false
+    }
+   ],
+   "functionCount": 2
+  },
+  "vCard_Import": {
+   "file": "include/vCard_Import_events.php",
+   "lines": 22,
+   "hooks": [],
+   "functionCount": 1
+  }
+ }
+}

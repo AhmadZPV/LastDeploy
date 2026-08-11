@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="<%= typeof lang !== 'undefined' ? lang : 'de' %>">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title><%= typeof t === 'function' ? t('error') : 'Fehler' %> - <%= typeof t === 'function' ? t('app_name') : 'Erwin Property Mgmt' %></title>
+<script>document.documentElement.dataset.theme=localStorage.getItem('erwin-theme')||'light';</script>
+<link rel="stylesheet" href="/static/css/style.css?v=20260810-3">
+</head>
+<body class="login-page">
+<main class="auth-shell"><div class="auth-card error-card">
+<h1><%= typeof t === 'function' ? t('unexpected_error') : 'Es ist ein Fehler aufgetreten' %></h1>
+<p><%= typeof message !== 'undefined' ? (typeof tx === 'function' ? tx(message) : message) : t('unknown_error') %></p>
+<p><a href="/"><%= typeof t === 'function' ? t('back_home') : 'Zur Startseite' %></a></p>
+</div></main>
+</body>
+</html>

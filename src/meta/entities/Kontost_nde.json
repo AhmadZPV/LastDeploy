@@ -1,0 +1,423 @@
+{
+ "entity": "Kontost_nde",
+ "shortName": "Kontost_nde",
+ "baseTable": "Kontobuch",
+ "isVirtual": true,
+ "ownerField": "Team",
+ "sql": {
+  "strOrderBy": "ORDER BY `Datum`",
+  "sqlHead": "SELECT `ID`,  `Datum`,  @betrag := if (Art=\"Ausgabe\",-1*`Betrag`,Betrag) AS `Betrag`,  Concat(`Betreff`,\" - \",date_format(Datum,\"%m.%d.%Y\")) as Betreff,  `Kategorie`,  `Art`,  `Abrechnung`,  `Abrechnungskonto`,  Team",
+  "sqlFrom": "FROM `Kontobuch` AS `o`",
+  "sqlWhere": "",
+  "sqlTail": ""
+ },
+ "keys": [
+  "ID"
+ ],
+ "pageSize": 0,
+ "capabilities": {
+  "list": true,
+  "view": true,
+  "add": true,
+  "edit": true,
+  "export": true,
+  "print": true,
+  "search": true,
+  "masterList": true
+ },
+ "fieldSets": {
+  "list": [
+   "ID",
+   "Datum",
+   "Betrag",
+   "Betreff",
+   "Kategorie",
+   "Art",
+   "Abrechnung",
+   "Abrechnungskonto",
+   "Team"
+  ],
+  "view": [
+   "ID",
+   "Datum",
+   "Betrag",
+   "Betreff",
+   "Kategorie",
+   "Art",
+   "Abrechnung",
+   "Abrechnungskonto",
+   "Team"
+  ],
+  "add": [
+   "Datum",
+   "Betrag",
+   "Betreff",
+   "Kategorie",
+   "Art",
+   "Abrechnung",
+   "Abrechnungskonto"
+  ],
+  "edit": [
+   "Datum",
+   "Betrag",
+   "Betreff",
+   "Kategorie",
+   "Art",
+   "Abrechnung",
+   "Abrechnungskonto",
+   "Team"
+  ],
+  "export": [
+   "ID",
+   "Datum",
+   "Betrag",
+   "Betreff",
+   "Kategorie",
+   "Art",
+   "Abrechnung",
+   "Abrechnungskonto",
+   "Team"
+  ],
+  "print": [
+   "ID",
+   "Datum",
+   "Betrag",
+   "Betreff",
+   "Kategorie",
+   "Art",
+   "Abrechnung",
+   "Abrechnungskonto",
+   "Team"
+  ],
+  "search": [
+   "Datum",
+   "Betrag",
+   "Betreff",
+   "Kategorie",
+   "Art",
+   "Abrechnung",
+   "Abrechnungskonto"
+  ],
+  "masterList": [
+   "ID",
+   "Datum",
+   "Betrag",
+   "Betreff",
+   "Kategorie",
+   "Art",
+   "Abrechnung",
+   "Abrechnungskonto",
+   "Team"
+  ]
+ },
+ "export": {
+  "exportTo": null,
+  "exportDelimiter": null,
+  "exportFormatting": null
+ },
+ "print": {
+  "printerPageOrientation": 0,
+  "nPrinterPageScale": 100,
+  "nPrinterSplitRecords": 40,
+  "nPrinterPDFSplitRecords": 40
+ },
+ "tabs": [],
+ "labels": {
+  "German": {
+   "ID": "ID",
+   "Datum": "Datum",
+   "Betrag": "Betrag",
+   "Kategorie": "Kategorie",
+   "Betreff": "Betreff",
+   "Art": "Art",
+   "Abrechnung": "Abrechnung",
+   "Abrechnungskonto": "Abrechnungskonto",
+   "Team": "Team"
+  }
+ },
+ "fields": [
+  {
+   "name": "ID",
+   "type": 3,
+   "index": 1,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "AutoInc": true,
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Datum",
+   "type": 7,
+   "index": 2,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "DateEditType": 13,
+    "InitialYearFactor": 3,
+    "LastYearFactor": 10,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Betrag",
+   "type": 14,
+   "index": 3,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "DecimalDigits": 2,
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Betreff",
+   "type": 200,
+   "index": 4,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Kontobuch",
+    "freeInput": true,
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 1,
+    "LookupUnique": true,
+    "LinkField": "Betreff",
+    "LinkFieldType": 0,
+    "DisplayField": "Betreff",
+    "LookupOrderBy": "Betreff",
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Kategorie",
+   "type": 200,
+   "index": 5,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Kontobuch",
+    "freeInput": true,
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 1,
+    "LookupUnique": true,
+    "LinkField": "Kategorie",
+    "LinkFieldType": 0,
+    "DisplayField": "Kategorie",
+    "LookupOrderBy": "Kategorie",
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Art",
+   "type": 200,
+   "index": 6,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 0,
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 4,
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Abrechnung",
+   "type": 3,
+   "index": 7,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Abrechnungen",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 0,
+    "LinkField": "ID",
+    "LinkFieldType": 0,
+    "DisplayField": "Bezeichnung",
+    "LookupOrderBy": "Bezeichnung",
+    "SelectSize": 1,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Abrechnungskonto",
+   "type": 3,
+   "index": 8,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Abrechnungskonten",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 0,
+    "LinkField": "ID",
+    "LinkFieldType": 0,
+    "DisplayField": "Bezeichnung",
+    "LookupOrderBy": "Bezeichnung",
+    "UseCategory": true,
+    "SelectSize": 1,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Team",
+   "type": 200,
+   "index": 9,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  }
+ ]
+}

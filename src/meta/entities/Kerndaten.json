@@ -1,0 +1,1022 @@
+{
+ "entity": "Kerndaten",
+ "shortName": "Kerndaten",
+ "baseTable": "Adressen",
+ "isVirtual": true,
+ "ownerField": "Team",
+ "sql": {
+  "strOrderBy": "ORDER BY `Kurzname`",
+  "sqlHead": "SELECT `ID`,  `Kurzname`,  `Firma`,  `Abteilung`,  `Vorname`,  `Nachname`,  `Strasse`,  `PLZ`,  `Ort`,  `Bundesland`,  `Staat`,  `Telefon`,  `Handy`,  `Email`,  `Website`,  `Telefax`,    `Klassifikation`,    `Geschlecht`,  `Anrede`,  `Titel`,  `Stellung`,    `Kundennummer`,  `Anredeformat`,  `Etikett`,  `Favorit`,  Anschrift,  Team",
+  "sqlFrom": "FROM `Adressen`",
+  "sqlWhere": "",
+  "sqlTail": ""
+ },
+ "keys": [
+  "ID"
+ ],
+ "pageSize": 20,
+ "capabilities": {
+  "list": true,
+  "view": true,
+  "add": true,
+  "edit": true,
+  "export": false,
+  "print": false,
+  "search": true,
+  "masterList": true
+ },
+ "fieldSets": {
+  "list": [
+   "Kurzname",
+   "Klassifikation",
+   "Etikett",
+   "Firma",
+   "Vorname",
+   "Nachname",
+   "Strasse",
+   "PLZ",
+   "Ort"
+  ],
+  "view": [
+   "Kurzname",
+   "Klassifikation",
+   "Favorit",
+   "Etikett",
+   "Firma",
+   "Abteilung",
+   "Vorname",
+   "Nachname",
+   "Strasse",
+   "PLZ",
+   "Ort",
+   "Bundesland",
+   "Staat",
+   "Anschrift",
+   "Telefon",
+   "Handy",
+   "Email",
+   "Website",
+   "Telefax",
+   "Anrede",
+   "Titel",
+   "Stellung",
+   "Geschlecht",
+   "Kundennummer"
+  ],
+  "add": [
+   "Kurzname",
+   "Klassifikation",
+   "Favorit",
+   "Etikett",
+   "Firma",
+   "Abteilung",
+   "Vorname",
+   "Nachname",
+   "Strasse",
+   "PLZ",
+   "Ort",
+   "Bundesland",
+   "Staat",
+   "Telefon",
+   "Handy",
+   "Email",
+   "Website",
+   "Telefax",
+   "Anredeformat",
+   "Anrede",
+   "Titel",
+   "Stellung",
+   "Geschlecht",
+   "Kundennummer"
+  ],
+  "edit": [
+   "Kurzname",
+   "Klassifikation",
+   "Favorit",
+   "Etikett",
+   "Firma",
+   "Abteilung",
+   "Vorname",
+   "Nachname",
+   "Strasse",
+   "PLZ",
+   "Ort",
+   "Bundesland",
+   "Staat",
+   "Telefon",
+   "Handy",
+   "Email",
+   "Website",
+   "Telefax",
+   "Anredeformat",
+   "Anrede",
+   "Titel",
+   "Stellung",
+   "Geschlecht",
+   "Kundennummer"
+  ],
+  "search": [
+   "ID",
+   "Anschrift",
+   "Team",
+   "Kurzname",
+   "Klassifikation",
+   "Favorit",
+   "Etikett",
+   "Firma",
+   "Abteilung",
+   "Vorname",
+   "Nachname",
+   "Strasse",
+   "PLZ",
+   "Ort",
+   "Bundesland",
+   "Staat",
+   "Telefon",
+   "Handy",
+   "Email",
+   "Website",
+   "Telefax",
+   "Anredeformat",
+   "Anrede",
+   "Titel",
+   "Stellung",
+   "Geschlecht",
+   "Kundennummer"
+  ],
+  "masterList": [
+   "Anschrift",
+   "Kurzname",
+   "Klassifikation",
+   "Firma",
+   "Abteilung",
+   "Vorname",
+   "Nachname",
+   "Strasse",
+   "PLZ",
+   "Ort",
+   "Telefon",
+   "Handy",
+   "Email",
+   "Website"
+  ]
+ },
+ "export": {
+  "exportTo": null,
+  "exportDelimiter": null,
+  "exportFormatting": null
+ },
+ "print": {
+  "printerPageOrientation": 0,
+  "nPrinterPageScale": 100,
+  "nPrinterSplitRecords": 40,
+  "nPrinterPDFSplitRecords": 40
+ },
+ "tabs": [],
+ "labels": {
+  "German": {
+   "Kurzname": "Kurzname",
+   "Firma": "Firma",
+   "Abteilung": "Abteilung",
+   "Vorname": "Vorname",
+   "Nachname": "Nachname",
+   "Strasse": "Strasse",
+   "PLZ": "PLZ",
+   "Bundesland": "Bundesland",
+   "Staat": "Staat",
+   "Telefon": "Telefon",
+   "Handy": "Handy",
+   "Email": "Email",
+   "Website": "Website",
+   "Telefax": "Telefax",
+   "Klassifikation": "Klassifikation",
+   "Geschlecht": "Geschlecht",
+   "Anrede": "Anrede",
+   "Titel": "Titel",
+   "Stellung": "Stellung",
+   "ID": "ID",
+   "Kundennummer": "Kundennummer",
+   "Ort": "Ort",
+   "Anredeformat": "Anredeformat",
+   "Etikett": "Etikett",
+   "Favorit": "Favorit",
+   "Team": "Team",
+   "Anschrift": "Anschrift"
+  }
+ },
+ "fields": [
+  {
+   "name": "ID",
+   "type": 3,
+   "index": 1,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": false
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "number",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "AutoInc": true,
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Kurzname",
+   "type": 200,
+   "index": 2,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Firma",
+   "type": 200,
+   "index": 3,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 287
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Abteilung",
+   "type": 200,
+   "index": 4,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Wertelisten",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 0,
+    "LinkField": "Eintrag",
+    "LinkFieldType": 0,
+    "DisplayField": "Eintrag",
+    "LookupWhereCode": true,
+    "LookupOrderBy": "Eintrag",
+    "AllowToAdd": true,
+    "SelectSize": 1,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Vorname",
+   "type": 200,
+   "index": 5,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 287
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Nachname",
+   "type": 200,
+   "index": 6,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Strasse",
+   "type": 200,
+   "index": 7,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 287
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "PLZ",
+   "type": 200,
+   "index": 8,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "ViewFormat": "Custom"
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "PLZ",
+    "freeInput": true,
+    "autoCompleteFieldsOnEdit": 1,
+    "LCType": 1,
+    "LinkField": "PLZ",
+    "LinkFieldType": 0,
+    "DisplayField": "PLZ",
+    "LookupOrderBy": "PLZ",
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 50
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Ort",
+   "type": 200,
+   "index": 9,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 287
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Bundesland",
+   "type": 200,
+   "index": 10,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": false
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Wertelisten",
+    "freeInput": true,
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 1,
+    "LinkField": "Eintrag",
+    "LinkFieldType": 0,
+    "DisplayField": "Eintrag",
+    "LookupWhereCode": true,
+    "LookupOrderBy": "Eintrag",
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Staat",
+   "type": 200,
+   "index": 11,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": false
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Wertelisten",
+    "freeInput": true,
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 1,
+    "LinkField": "Eintrag",
+    "LinkFieldType": 0,
+    "DisplayField": "Eintrag",
+    "LookupWhereCode": true,
+    "LookupOrderBy": "Eintrag",
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 287
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Telefon",
+   "type": 200,
+   "index": 12,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "LinkPrefix": "tel:",
+    "hlType": 0,
+    "hlLinkWordNameType": "Text",
+    "hlLinkWordText": "Link",
+    "hlTitleField": ""
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "tel",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Handy",
+   "type": 200,
+   "index": 13,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "LinkPrefix": "tel:",
+    "hlType": 0,
+    "hlLinkWordNameType": "Text",
+    "hlLinkWordText": "Link",
+    "hlTitleField": ""
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "tel",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Email",
+   "type": 200,
+   "index": 14,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "ViewFormat": "Email Hyperlink"
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "email",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Website",
+   "type": 200,
+   "index": 15,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "hlNewWindow": true,
+    "hlType": 0,
+    "hlLinkWordNameType": "Text",
+    "hlLinkWordText": "Link",
+    "hlTitleField": ""
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "url",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Telefax",
+   "type": 200,
+   "index": 16,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": false
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Klassifikation",
+   "type": 200,
+   "index": 17,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Klassifikationen Adressen",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 0,
+    "LinkField": "Klassifikation",
+    "LinkFieldType": 0,
+    "DisplayField": "Klassifikation",
+    "LookupOrderBy": "Klassifikation",
+    "Multiselect": true,
+    "SelectSize": 1,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Geschlecht",
+   "type": 200,
+   "index": 18,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": false
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 0,
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 4,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Anrede",
+   "type": 200,
+   "index": 19,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": false
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Wertelisten",
+    "freeInput": true,
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 1,
+    "LinkField": "Eintrag",
+    "LinkFieldType": 0,
+    "DisplayField": "Eintrag",
+    "LookupWhereCode": true,
+    "LookupOrderBy": "Eintrag",
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Titel",
+   "type": 200,
+   "index": 20,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": false
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Wertelisten",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 0,
+    "LinkField": "Eintrag",
+    "LinkFieldType": 0,
+    "DisplayField": "Eintrag",
+    "LookupWhereCode": true,
+    "LookupOrderBy": "Eintrag",
+    "SelectSize": 1,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Stellung",
+   "type": 200,
+   "index": 21,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": false
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Wertelisten",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 0,
+    "LinkField": "Eintrag",
+    "LinkFieldType": 0,
+    "DisplayField": "Eintrag",
+    "LookupWhereCode": true,
+    "LookupOrderBy": "Eintrag",
+    "SelectSize": 1,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Kundennummer",
+   "type": 200,
+   "index": 22,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": false
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Anredeformat",
+   "type": 200,
+   "index": 23,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": false
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 0,
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 4,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Etikett",
+   "type": 200,
+   "index": 24,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": false
+   },
+   "view": {
+    "ViewFormat": "Custom"
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Farben",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 2,
+    "HorizontalLookup": true,
+    "LinkField": "Farbwert",
+    "LinkFieldType": 0,
+    "DisplayField": "Farbname",
+    "LookupOrderBy": "Farbwert",
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Favorit",
+   "type": 16,
+   "index": 25,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": false
+   },
+   "view": {
+    "ViewFormat": "Custom"
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Anschrift",
+   "type": 200,
+   "index": 26,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Team",
+   "type": 200,
+   "index": 27,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": false
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  }
+ ]
+}

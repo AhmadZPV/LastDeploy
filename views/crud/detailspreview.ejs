@@ -1,0 +1,49 @@
+<%#
+  Master/detail preview, the port of the 39 *_detailspreview.php pages.
+  Rendered standalone (AJAX fragment) and included from crud/view.ejs.
+  locals: relation, rows, total, columns, master, masterId, helpers
+%>
+<div class="detail-preview" data-detail="<%= relation.detailSlug %>">
+  <div class="detail-preview-head">
+    <h3>
+      <%= relation.detail %>
+      <% if (relation.dispChildCount) { %>
+        <span class="badge"><%= total %></span>
+      <% } %>
+    </h3>
+    <% if (!relation.viaMeta) { %>
+      <a class="btn btn-link"
+         href="/<%= relation.detailSlug %>?<%= relation.detailKeys[0] %>=<%= encodeURIComponent(masterId) %>">Alle anzeigen</a>
+    <% } %>
+  </div>
+
+  <% if (!rows.length) { %>
+    <p class="muted">Keine Datens&auml;tze.</p>
+  <% } else { %>
+    <div class="table-wrap detail-table-wrap"><table class="child-table">
+      <thead>
+        <tr>
+          <% for (const c of columns) { %><th><%= c %></th><% } %>
+        </tr>
+      </thead>
+      <tbody>
+        <% for (const r of rows) { %>
+          <tr>
+            <% for (const [i, c] of columns.entries()) { %>
+              <td>
+                <% if (i === 0 && !relation.viaMeta && r.ID != null) { %>
+                  <a href="/<%= relation.detailSlug %>/<%= r.ID %>"><%= helpers.display(relation.detailSlug, c, r[c]) %></a>
+                <% } else { %>
+                  <%= helpers.display(relation.detailSlug, c, r[c]) %>
+                <% } %>
+              </td>
+            <% } %>
+          </tr>
+        <% } %>
+      </tbody>
+    </table></div>
+    <% if (total > rows.length) { %>
+      <p class="muted">&hellip; <%= total - rows.length %> weitere</p>
+    <% } %>
+  <% } %>
+</div>

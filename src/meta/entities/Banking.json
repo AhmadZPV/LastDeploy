@@ -1,0 +1,595 @@
+{
+ "entity": "Banking",
+ "shortName": "Banking",
+ "baseTable": "Buchungen",
+ "isVirtual": true,
+ "ownerField": "Team",
+ "sql": {
+  "strOrderBy": "ORDER BY Belegnummer DESC",
+  "sqlHead": "SELECT Buchungen.ID,  Buchungen.Buchfuehrung AS Buchfuehrung,  Buchungen.Konto AS Konto,  Buchungen.Gegenkonto AS Gegenkonto,  Buchungen.Datum AS Datum,  Buchungen.Betrag AS Betrag,  Buchungen.Betreff AS Betreff,  Buchungen.Belegnummer AS Belegnummer,  Kontenrahmen.Bank AS Bank,  Kontenrahmen.BIC AS BIC,  Kontenrahmen.IBAN AS IBAN,  Kontenrahmen.Kontoinhaber AS Kontoinhaber,  Replace(CONCAT('bank://singlepayment?name=',`Kontenrahmen`.`Kontoinhaber`,'&account=',`Kontenrahmen`.`IBAN`,'&BNC=',`Kontenrahmen`.`BIC`,'&amount=',`Buchungen`.`Betrag`,'&reason=',`Buchungen`.`Betreff`), ' ', '+') AS Bezahlcode,  concat(\"BCD\", '\\n', \"001\", '\\n', \"1\", '\\n', \"SCT\", '\\n', cast(Kontenrahmen.BIC as Char(11)), '\\n', cast(Kontenrahmen.Kontoinhaber as char(70)), '\\n', cast(Kontenrahmen.IBAN as char(34)), '\\n', cast(concat(\"EUR\",Buchungen.Betrag) as char(12)), '\\n', \"    \", '\\n', space(35), '\\n', cast(Buchungen.Betreff as char(140))) AS girocode,  Buchungen.Team",
+  "sqlFrom": "FROM Buchungen  INNER JOIN Kontenrahmen ON Buchungen.Gegenkonto = Kontenrahmen.ID",
+  "sqlWhere": "",
+  "sqlTail": ""
+ },
+ "keys": [
+  "ID"
+ ],
+ "pageSize": 20,
+ "capabilities": {
+  "list": true,
+  "view": true,
+  "add": false,
+  "edit": false,
+  "export": true,
+  "print": true,
+  "search": true,
+  "masterList": true
+ },
+ "fieldSets": {
+  "list": [
+   "Buchfuehrung",
+   "Datum",
+   "Betreff",
+   "Betrag",
+   "Konto",
+   "Gegenkonto",
+   "Bank",
+   "BIC",
+   "IBAN",
+   "Kontoinhaber",
+   "Bezahlcode",
+   "girocode"
+  ],
+  "view": [
+   "Buchfuehrung",
+   "Bank",
+   "BIC",
+   "IBAN",
+   "Kontoinhaber",
+   "Konto",
+   "Gegenkonto",
+   "Datum",
+   "Betrag",
+   "Betreff",
+   "Belegnummer",
+   "Bezahlcode",
+   "girocode"
+  ],
+  "export": [
+   "ID",
+   "Buchfuehrung",
+   "Bank",
+   "BIC",
+   "IBAN",
+   "Kontoinhaber",
+   "Konto",
+   "Gegenkonto",
+   "Datum",
+   "Betrag",
+   "Betreff",
+   "Belegnummer"
+  ],
+  "print": [
+   "Buchfuehrung",
+   "girocode",
+   "Bank",
+   "BIC",
+   "IBAN",
+   "Kontoinhaber",
+   "Bezahlcode",
+   "Konto",
+   "Gegenkonto",
+   "Datum",
+   "Betrag",
+   "Betreff",
+   "Belegnummer"
+  ],
+  "search": [
+   "Buchfuehrung",
+   "ID",
+   "Bank",
+   "BIC",
+   "IBAN",
+   "Kontoinhaber",
+   "Konto",
+   "Gegenkonto",
+   "Datum",
+   "Betrag",
+   "Betreff",
+   "Belegnummer"
+  ],
+  "masterList": [
+   "ID",
+   "Buchfuehrung",
+   "Bank",
+   "BIC",
+   "IBAN",
+   "Kontoinhaber",
+   "Bezahlcode",
+   "girocode",
+   "Team",
+   "Konto",
+   "Gegenkonto",
+   "Datum",
+   "Betrag",
+   "Betreff",
+   "Belegnummer"
+  ]
+ },
+ "export": {
+  "exportTo": true,
+  "exportDelimiter": ",",
+  "exportFormatting": 2
+ },
+ "print": {
+  "printerPageOrientation": 0,
+  "nPrinterPageScale": 100,
+  "nPrinterSplitRecords": 40,
+  "nPrinterPDFSplitRecords": 40
+ },
+ "tabs": [],
+ "labels": {
+  "German": {
+   "ID": "ID",
+   "Konto": "Konto",
+   "Gegenkonto": "Gegenkonto",
+   "Datum": "Datum",
+   "Betrag": "Betrag",
+   "Betreff": "Betreff",
+   "Belegnummer": "Belegnummer",
+   "Bank": "Bank",
+   "BIC": "BIC",
+   "IBAN": "IBAN",
+   "Kontoinhaber": "Kontoinhaber",
+   "Bezahlcode": "Bezahlcode",
+   "Buchfuehrung": "Buchführung",
+   "girocode": "Girocode",
+   "Team": "Team"
+  }
+ },
+ "fields": [
+  {
+   "name": "ID",
+   "type": 3,
+   "index": 1,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "AutoInc": true,
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Buchfuehrung",
+   "type": 3,
+   "index": 2,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Buchfuehrungen",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 2,
+    "LinkField": "ID",
+    "LinkFieldType": 0,
+    "DisplayField": "Bezeichnung",
+    "LookupOrderBy": "Bezeichnung",
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Konto",
+   "type": 3,
+   "index": 3,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Kontenrahmen",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 2,
+    "LinkField": "ID",
+    "LinkFieldType": 0,
+    "DisplayField": "Concat(Nummer,' ',Kontobezeichnung)",
+    "CustomDisplay": "true",
+    "LookupOrderBy": "Nummer",
+    "UseCategory": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Gegenkonto",
+   "type": 3,
+   "index": 4,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Kontenrahmen",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 2,
+    "LinkField": "ID",
+    "LinkFieldType": 0,
+    "DisplayField": "Concat(Nummer,' ',Kontobezeichnung)",
+    "CustomDisplay": "true",
+    "LookupOrderBy": "Nummer",
+    "UseCategory": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Datum",
+   "type": 7,
+   "index": 5,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "DateEditType": 13,
+    "InitialYearFactor": 3,
+    "LastYearFactor": 10,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Betrag",
+   "type": 14,
+   "index": 6,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "DecimalDigits": 2,
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Betreff",
+   "type": 200,
+   "index": 7,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Buchungen",
+    "freeInput": true,
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 1,
+    "LookupUnique": true,
+    "LinkField": "Betreff",
+    "LinkFieldType": 0,
+    "DisplayField": "Betreff",
+    "LookupOrderBy": "Betreff",
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Belegnummer",
+   "type": 3,
+   "index": 8,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Bank",
+   "type": 200,
+   "index": 9,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "BIC",
+   "type": 200,
+   "index": 10,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "IBAN",
+   "type": 200,
+   "index": 11,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Kontoinhaber",
+   "type": 200,
+   "index": 12,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Bezahlcode",
+   "type": 200,
+   "index": 13,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": true,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "hlType": 1,
+    "hlLinkWordNameType": "Text",
+    "hlLinkWordText": "Bezahlcode",
+    "hlTitleField": ""
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "girocode",
+   "type": 200,
+   "index": 14,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": true,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Team",
+   "type": 200,
+   "index": 15,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  }
+ ]
+}

@@ -1,0 +1,784 @@
+{
+ "entity": "Inventar_Stapelverarbeitung",
+ "shortName": "Inventar_Stapelverarbeitung",
+ "baseTable": "Inventar",
+ "isVirtual": true,
+ "ownerField": "Team",
+ "sql": {
+  "strOrderBy": "ORDER BY Bezeichnung",
+  "sqlHead": "SELECT ID,  Bezeichnung,  Wiedervorlage,  Bearbeitungsstatus,  Zustaendigkeit,  Schlagwoerter,  Kategorie,  Unterkategorie,  Anzahl,  Zustand,  Raum,  Bewertung,  Favorit,  Kontrolliert,  Servicepartner,  Versicherer,  Kostenstelle,  Buchungskonto,  Etikett,  Nummer,  Team",
+  "sqlFrom": "FROM Inventar",
+  "sqlWhere": "",
+  "sqlTail": ""
+ },
+ "keys": [
+  "ID"
+ ],
+ "pageSize": 20,
+ "capabilities": {
+  "list": true,
+  "view": false,
+  "add": false,
+  "edit": true,
+  "export": false,
+  "print": false,
+  "search": true,
+  "masterList": true
+ },
+ "fieldSets": {
+  "list": [
+   "Raum",
+   "Nummer",
+   "Bezeichnung",
+   "Schlagwoerter",
+   "Kategorie",
+   "Unterkategorie"
+  ],
+  "edit": [
+   "Bezeichnung",
+   "Favorit",
+   "Schlagwoerter",
+   "Kategorie",
+   "Unterkategorie",
+   "Anzahl",
+   "Zustand",
+   "Bewertung",
+   "Kontrolliert",
+   "Etikett",
+   "Wiedervorlage",
+   "Bearbeitungsstatus",
+   "Zustaendigkeit",
+   "Kostenstelle",
+   "Buchungskonto",
+   "Versicherer",
+   "Servicepartner"
+  ],
+  "search": [
+   "Raum",
+   "ID",
+   "Nummer",
+   "Bezeichnung",
+   "Favorit",
+   "Schlagwoerter",
+   "Kategorie",
+   "Unterkategorie",
+   "Anzahl",
+   "Zustand",
+   "Bewertung",
+   "Kontrolliert",
+   "Etikett",
+   "Wiedervorlage",
+   "Bearbeitungsstatus",
+   "Zustaendigkeit",
+   "Kostenstelle",
+   "Buchungskonto",
+   "Versicherer",
+   "Servicepartner"
+  ],
+  "masterList": [
+   "Raum",
+   "Team",
+   "Nummer",
+   "Bezeichnung",
+   "Kategorie",
+   "Unterkategorie"
+  ]
+ },
+ "export": {
+  "exportTo": null,
+  "exportDelimiter": null,
+  "exportFormatting": null
+ },
+ "print": {
+  "printerPageOrientation": 1,
+  "nPrinterPageScale": 100,
+  "nPrinterSplitRecords": 40,
+  "nPrinterPDFSplitRecords": 40
+ },
+ "tabs": [],
+ "labels": {
+  "German": {
+   "ID": "ID",
+   "Wiedervorlage": "Wiedervorlage",
+   "Bearbeitungsstatus": "Bearbeitungsstatus",
+   "Zustaendigkeit": "Zuständigkeit",
+   "Bezeichnung": "Bezeichnung",
+   "Schlagwoerter": "Schlagwörter",
+   "Anzahl": "Anzahl",
+   "Zustand": "Zustand",
+   "Bewertung": "Bewertung",
+   "Favorit": "Favorit",
+   "Kontrolliert": "Kontrolliert",
+   "Servicepartner": "Servicepartner",
+   "Versicherer": "Versicherer",
+   "Kostenstelle": "Kostenstelle",
+   "Buchungskonto": "Buchungskonto",
+   "Etikett": "Etikett",
+   "Kategorie": "Kategorie",
+   "Unterkategorie": "Unterkategorie",
+   "Nummer": "Nummer",
+   "Raum": "Raum",
+   "Team": "Team"
+  }
+ },
+ "fields": [
+  {
+   "name": "ID",
+   "type": 3,
+   "index": 1,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": false
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "number",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "AutoInc": true,
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Bezeichnung",
+   "type": 200,
+   "index": 2,
+   "pages": {
+    "list": true,
+    "view": false,
+    "add": false,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Wiedervorlage",
+   "type": 7,
+   "index": 3,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": false,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": false
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "DateEditType": 13,
+    "InitialYearFactor": 3,
+    "LastYearFactor": 10,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Bearbeitungsstatus",
+   "type": 200,
+   "index": 4,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": false,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": false
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Wertelisten",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 0,
+    "LinkField": "Eintrag",
+    "LinkFieldType": 0,
+    "DisplayField": "Eintrag",
+    "LookupWhereCode": true,
+    "LookupOrderBy": "Eintrag",
+    "SelectSize": 1,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Zustaendigkeit",
+   "type": 3,
+   "index": 5,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": false,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": false
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Adressen",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 0,
+    "LinkField": "ID",
+    "LinkFieldType": 0,
+    "DisplayField": "Kurzname",
+    "LookupWhereCode": true,
+    "LookupOrderBy": "Kurzname",
+    "SelectSize": 1,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Schlagwoerter",
+   "type": 200,
+   "index": 6,
+   "pages": {
+    "list": true,
+    "view": false,
+    "add": false,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": false
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Schlagwoerter",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 0,
+    "LinkField": "Schlagwort",
+    "LinkFieldType": 0,
+    "DisplayField": "Schlagwort",
+    "LookupOrderBy": "Schlagwort",
+    "Multiselect": true,
+    "SelectSize": 1,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Kategorie",
+   "type": 200,
+   "index": 7,
+   "pages": {
+    "list": true,
+    "view": false,
+    "add": false,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Klassifikationen Inventar",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 0,
+    "LookupUnique": true,
+    "LinkField": "Hauptkategorie",
+    "LinkFieldType": 0,
+    "DisplayField": "Hauptkategorie",
+    "LookupOrderBy": "Hauptkategorie",
+    "SelectSize": 1,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Unterkategorie",
+   "type": 200,
+   "index": 8,
+   "pages": {
+    "list": true,
+    "view": false,
+    "add": false,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Klassifikationen Inventar",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 0,
+    "LinkField": "Unterkategorie",
+    "LinkFieldType": 0,
+    "DisplayField": "Unterkategorie",
+    "LookupOrderBy": "Unterkategorie",
+    "LookupDesc": true,
+    "UseCategory": true,
+    "SelectSize": 1,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Anzahl",
+   "type": 3,
+   "index": 9,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": false,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": false
+   },
+   "view": {
+    "DecimalDigits": 0,
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "number",
+    "EditParams": "",
+    "controlWidth": 100
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Zustand",
+   "type": 200,
+   "index": 10,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": false,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": false
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Wertelisten",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 0,
+    "LinkField": "Eintrag",
+    "LinkFieldType": 0,
+    "DisplayField": "Eintrag",
+    "LookupWhereCode": true,
+    "LookupOrderBy": "Eintrag",
+    "SelectSize": 1,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Raum",
+   "type": 3,
+   "index": 11,
+   "pages": {
+    "list": true,
+    "view": false,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Raeume",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 2,
+    "LinkField": "ID",
+    "LinkFieldType": 0,
+    "DisplayField": "Bezeichnung",
+    "LookupOrderBy": "Bezeichnung",
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Bewertung",
+   "type": 3,
+   "index": 12,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": false,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": false
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 0,
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 4,
+    "HorizontalLookup": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Favorit",
+   "type": 16,
+   "index": 13,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": false,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": false
+   },
+   "view": {
+    "ViewFormat": "Checkbox"
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Kontrolliert",
+   "type": 16,
+   "index": 14,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": false,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": false
+   },
+   "view": {
+    "ViewFormat": "Checkbox"
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Servicepartner",
+   "type": 3,
+   "index": 15,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": false,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": false
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Adressen",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 2,
+    "LinkField": "ID",
+    "LinkFieldType": 0,
+    "DisplayField": "Kurzname",
+    "LookupOrderBy": "Kurzname",
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Versicherer",
+   "type": 3,
+   "index": 16,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": false,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": false
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Adressen",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 2,
+    "LinkField": "ID",
+    "LinkFieldType": 0,
+    "DisplayField": "Kurzname",
+    "LookupOrderBy": "Kurzname",
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Kostenstelle",
+   "type": 200,
+   "index": 17,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": false,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": false
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Wertelisten",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 0,
+    "LinkField": "Eintrag",
+    "LinkFieldType": 0,
+    "DisplayField": "Eintrag",
+    "LookupWhereCode": true,
+    "LookupOrderBy": "Eintrag",
+    "SelectSize": 1,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Buchungskonto",
+   "type": 3,
+   "index": 18,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": false,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": false
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Wertelisten",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 0,
+    "LinkField": "Eintrag",
+    "LinkFieldType": 0,
+    "DisplayField": "Eintrag",
+    "LookupWhereCode": true,
+    "LookupOrderBy": "Eintrag",
+    "SelectSize": 1,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Etikett",
+   "type": 200,
+   "index": 19,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": false,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": false
+   },
+   "view": {
+    "ViewFormat": "Custom"
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Farben",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 2,
+    "LinkField": "Farbwert",
+    "LinkFieldType": 0,
+    "DisplayField": "Farbname",
+    "LookupOrderBy": "Farbname",
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Nummer",
+   "type": 3,
+   "index": 20,
+   "pages": {
+    "list": true,
+    "view": false,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Team",
+   "type": 200,
+   "index": 21,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  }
+ ]
+}

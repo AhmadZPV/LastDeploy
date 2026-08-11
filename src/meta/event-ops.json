@@ -1,0 +1,1521 @@
+{
+ "summary": {
+  "hooks": 134,
+  "compiled": 15,
+  "partial": 27,
+  "manual": 71,
+  "empty": 21,
+  "ops": 46
+ },
+ "entities": {
+  "Abrechnungen": {
+   "AfterAdd": {
+    "status": "manual",
+    "ops": [],
+    "statements": 11,
+    "lines": 19,
+    "function": "AfterAdd",
+    "signals": [
+     "defaults",
+     "session",
+     "sqlRead",
+     "sqlWrite"
+    ]
+   },
+   "BeforeProcessAdd": {
+    "status": "noop",
+    "ops": [],
+    "statements": 1,
+    "lines": 0,
+    "function": "BeforeProcessAdd",
+    "signals": [
+     "session"
+    ]
+   },
+   "BeforeInsert": {
+    "status": "compiled",
+    "ops": [
+     {
+      "op": "sessionCopy",
+      "field": "Team",
+      "sessionKey": "Team"
+     }
+    ],
+    "statements": 2,
+    "lines": 0,
+    "function": "BeforeInsert",
+    "signals": [
+     "defaults"
+    ]
+   }
+  },
+  "Abrechnungsdaten__bersicht": {
+   "BeforeEdit": {
+    "status": "manual",
+    "ops": [],
+    "statements": 2,
+    "lines": 1,
+    "function": "BeforeEdit",
+    "signals": []
+   },
+   "BeforeAdd": {
+    "status": "manual",
+    "ops": [],
+    "statements": 2,
+    "lines": 25,
+    "function": "BeforeAdd",
+    "signals": []
+   }
+  },
+  "Abrechnungskonten": {
+   "BeforeInsert": {
+    "status": "compiled",
+    "ops": [
+     {
+      "op": "sessionCopy",
+      "field": "Team",
+      "sessionKey": "Team"
+     }
+    ],
+    "statements": 2,
+    "lines": 1,
+    "function": "BeforeInsert",
+    "signals": []
+   }
+  },
+  "Adressen_Stapelverarbeitung": {
+   "BeforeInsert": {
+    "status": "manual",
+    "ops": [],
+    "statements": 2,
+    "lines": 1,
+    "function": "BeforeInsert",
+    "signals": []
+   }
+  },
+  "Adressen": {
+   "BeforeInsert": {
+    "status": "partial",
+    "ops": [
+     {
+      "op": "sessionCopy",
+      "field": "Team",
+      "sessionKey": "Team"
+     },
+     {
+      "op": "constant",
+      "field": "Anrede",
+      "value": "Sehr geehrte Damen und Herren,"
+     }
+    ],
+    "statements": 16,
+    "lines": 39,
+    "function": "BeforeInsert",
+    "signals": [
+     "defaults",
+     "session",
+     "validation"
+    ]
+   },
+   "BeforeAdd": {
+    "status": "partial",
+    "ops": [
+     {
+      "op": "constant",
+      "field": "Anrede",
+      "value": "Sehr geehrte Damen und Herren,"
+     }
+    ],
+    "statements": 14,
+    "lines": 37,
+    "function": "BeforeAdd",
+    "signals": [
+     "defaults"
+    ]
+   },
+   "BeforeEdit": {
+    "status": "partial",
+    "ops": [
+     {
+      "op": "constant",
+      "field": "Anrede",
+      "value": "Sehr geehrte Damen und Herren,"
+     }
+    ],
+    "statements": 14,
+    "lines": 17,
+    "function": "BeforeEdit",
+    "signals": [
+     "defaults"
+    ]
+   }
+  },
+  "Agenda_heute": {
+   "BeforeAdd": {
+    "status": "manual",
+    "ops": [],
+    "statements": 2,
+    "lines": 2,
+    "function": "BeforeAdd",
+    "signals": []
+   }
+  },
+  "Angebote": {
+   "BeforeProcessAdd": {
+    "status": "noop",
+    "ops": [],
+    "statements": 1,
+    "lines": 9,
+    "function": "BeforeProcessAdd",
+    "signals": []
+   },
+   "AfterAdd": {
+    "status": "manual",
+    "ops": [],
+    "statements": 5,
+    "lines": 58,
+    "function": "AfterAdd",
+    "signals": [
+     "session"
+    ]
+   }
+  },
+  "Angebotsdruck": {
+   "BeforeProcessReportPrint": {
+    "status": "manual",
+    "ops": [],
+    "statements": 7,
+    "lines": 30,
+    "function": "BeforeProcessReportPrint",
+    "signals": []
+   }
+  },
+  "Anmeldung": {
+   "BeforeInsert": {
+    "status": "manual",
+    "ops": [],
+    "statements": 2,
+    "lines": 4,
+    "function": "BeforeInsert",
+    "signals": []
+   },
+   "BeforeAdd": {
+    "status": "partial",
+    "ops": [
+     {
+      "op": "constant",
+      "field": "Team",
+      "value": "Team"
+     }
+    ],
+    "statements": 7,
+    "lines": 35,
+    "function": "BeforeAdd",
+    "signals": []
+   },
+   "BeforeEdit": {
+    "status": "manual",
+    "ops": [],
+    "statements": 6,
+    "lines": 44,
+    "function": "BeforeEdit",
+    "signals": [
+     "defaults"
+    ]
+   }
+  },
+  "Aufgaben": {
+   "BeforeProcessAdd": {
+    "status": "noop",
+    "ops": [],
+    "statements": 1,
+    "lines": 9,
+    "function": "BeforeProcessAdd",
+    "signals": []
+   },
+   "AfterAdd": {
+    "status": "manual",
+    "ops": [],
+    "statements": 5,
+    "lines": 55,
+    "function": "AfterAdd",
+    "signals": []
+   }
+  },
+  "Banking": {
+   "BeforeMoveNextList": {
+    "status": "manual",
+    "ops": [],
+    "statements": 2,
+    "lines": 3,
+    "function": "BeforeMoveNextList",
+    "signals": []
+   },
+   "BeforeAdd": {
+    "status": "partial",
+    "ops": [
+     {
+      "op": "nextNumber",
+      "field": "Belegnummer",
+      "table": "Buchungen",
+      "column": "Belegnummer",
+      "scopeTeam": false
+     }
+    ],
+    "statements": 6,
+    "lines": 25,
+    "function": "BeforeAdd",
+    "signals": []
+   }
+  },
+  "Bilder": {
+   "BeforeMoveNextList": {
+    "status": "manual",
+    "ops": [],
+    "statements": 3,
+    "lines": 4,
+    "function": "BeforeMoveNextList",
+    "signals": []
+   }
+  },
+  "Buchfuehrungen": {
+   "BeforeProcessAdd": {
+    "status": "noop",
+    "ops": [],
+    "statements": 1,
+    "lines": 8,
+    "function": "BeforeProcessAdd",
+    "signals": []
+   },
+   "AfterAdd": {
+    "status": "manual",
+    "ops": [],
+    "statements": 5,
+    "lines": 63,
+    "function": "AfterAdd",
+    "signals": [
+     "session",
+     "sqlRead"
+    ]
+   },
+   "BeforeInsert": {
+    "status": "compiled",
+    "ops": [
+     {
+      "op": "sessionCopy",
+      "field": "Team",
+      "sessionKey": "Team"
+     }
+    ],
+    "statements": 2,
+    "lines": 0,
+    "function": "BeforeInsert",
+    "signals": []
+   }
+  },
+  "Buchungen": {
+   "BeforeMoveNextList": {
+    "status": "manual",
+    "ops": [],
+    "statements": 3,
+    "lines": 6,
+    "function": "BeforeMoveNextList",
+    "signals": []
+   },
+   "BeforeAdd": {
+    "status": "partial",
+    "ops": [
+     {
+      "op": "nextNumber",
+      "field": "Belegnummer",
+      "table": "Buchungen",
+      "column": "Belegnummer",
+      "scopeTeam": false
+     }
+    ],
+    "statements": 6,
+    "lines": 17,
+    "function": "BeforeAdd",
+    "signals": []
+   }
+  },
+  "Buchungsassistent": {
+   "AfterAdd": {
+    "status": "manual",
+    "ops": [],
+    "statements": 23,
+    "lines": 61,
+    "function": "AfterAdd",
+    "signals": [
+     "defaults",
+     "session",
+     "sqlRead",
+     "sqlWrite"
+    ]
+   },
+   "AfterEdit": {
+    "status": "manual",
+    "ops": [],
+    "statements": 23,
+    "lines": 50,
+    "function": "AfterEdit",
+    "signals": [
+     "defaults",
+     "session",
+     "sqlRead",
+     "sqlWrite"
+    ]
+   },
+   "BeforeInsert": {
+    "status": "compiled",
+    "ops": [
+     {
+      "op": "sessionCopy",
+      "field": "Team",
+      "sessionKey": "Team"
+     }
+    ],
+    "statements": 2,
+    "lines": 0,
+    "function": "BeforeInsert",
+    "signals": []
+   }
+  },
+  "Buchungsimport": {
+   "BeforeInsert": {
+    "status": "partial",
+    "ops": [
+     {
+      "op": "sessionCopy",
+      "field": "Team",
+      "sessionKey": "Team"
+     }
+    ],
+    "statements": 23,
+    "lines": 25,
+    "function": "BeforeInsert",
+    "signals": [
+     "defaults",
+     "session",
+     "sqlRead"
+    ]
+   }
+  },
+  "DATEV_Export": {
+   "BeforeMoveNextList": {
+    "status": "noop",
+    "ops": [],
+    "statements": 1,
+    "lines": 3,
+    "function": "BeforeMoveNextList",
+    "signals": []
+   },
+   "BeforeAdd": {
+    "status": "partial",
+    "ops": [
+     {
+      "op": "nextNumber",
+      "field": "Belegnummer",
+      "table": "Buchungen",
+      "column": "Belegnummer",
+      "scopeTeam": false
+     }
+    ],
+    "statements": 6,
+    "lines": 30,
+    "function": "BeforeAdd",
+    "signals": []
+   }
+  },
+  "DirekteKosten": {
+   "BeforeAdd": {
+    "status": "manual",
+    "ops": [],
+    "statements": 2,
+    "lines": 6,
+    "function": "BeforeAdd",
+    "signals": []
+   },
+   "BeforeInsert": {
+    "status": "compiled",
+    "ops": [
+     {
+      "op": "sessionCopy",
+      "field": "Team",
+      "sessionKey": "Team"
+     }
+    ],
+    "statements": 2,
+    "lines": 12,
+    "function": "BeforeInsert",
+    "signals": []
+   }
+  },
+  "Dokumente_Fotos": {
+   "BeforeMoveNextList": {
+    "status": "manual",
+    "ops": [],
+    "statements": 3,
+    "lines": 4,
+    "function": "BeforeMoveNextList",
+    "signals": []
+   }
+  },
+  "Dokumente": {
+   "BeforeMoveNextList": {
+    "status": "manual",
+    "ops": [],
+    "statements": 3,
+    "lines": 10,
+    "function": "BeforeMoveNextList",
+    "signals": []
+   }
+  },
+  "Einstellungen": {
+   "AfterEdit": {
+    "status": "manual",
+    "ops": [],
+    "statements": 52,
+    "lines": 61,
+    "function": "AfterEdit",
+    "signals": [
+     "defaults",
+     "mail",
+     "session",
+     "sqlRead"
+    ]
+   },
+   "BeforeShowList": {
+    "status": "manual",
+    "ops": [],
+    "statements": 2,
+    "lines": 4,
+    "function": "BeforeShowList",
+    "signals": [
+     "session"
+    ]
+   },
+   "AfterAdd": {
+    "status": "manual",
+    "ops": [],
+    "statements": 4,
+    "lines": 2,
+    "function": "AfterAdd",
+    "signals": [
+     "session"
+    ]
+   }
+  },
+  "Gegenbuchungen": {
+   "BeforeAdd": {
+    "status": "partial",
+    "ops": [
+     {
+      "op": "nextNumber",
+      "field": "Belegnummer",
+      "table": "Buchungen",
+      "column": "Belegnummer",
+      "scopeTeam": false
+     }
+    ],
+    "statements": 6,
+    "lines": 8,
+    "function": "BeforeAdd",
+    "signals": [
+     "sqlRead"
+    ]
+   },
+   "BeforeMoveNextList": {
+    "status": "manual",
+    "ops": [],
+    "statements": 3,
+    "lines": 36,
+    "function": "BeforeMoveNextList",
+    "signals": []
+   }
+  },
+  "Heute": {
+   "BeforeProcessDashboard": {
+    "status": "manual",
+    "ops": [],
+    "statements": 2,
+    "lines": 8,
+    "function": "BeforeProcessDashboard",
+    "signals": []
+   }
+  },
+  "Inventar_Stapelverarbeitung": {
+   "BeforeAdd": {
+    "status": "partial",
+    "ops": [
+     {
+      "op": "nextNumber",
+      "field": "Nummer",
+      "table": "Inventar",
+      "column": "Nummer",
+      "scopeTeam": false
+     }
+    ],
+    "statements": 6,
+    "lines": 19,
+    "function": "BeforeAdd",
+    "signals": []
+   },
+   "BeforeProcessView": {
+    "status": "manual",
+    "ops": [],
+    "statements": 23,
+    "lines": 69,
+    "function": "BeforeProcessView",
+    "signals": []
+   },
+   "BeforeProcessAdd": {
+    "status": "manual",
+    "ops": [],
+    "statements": 23,
+    "lines": 61,
+    "function": "BeforeProcessAdd",
+    "signals": [
+     "session"
+    ]
+   },
+   "BeforeProcessEdit": {
+    "status": "manual",
+    "ops": [],
+    "statements": 23,
+    "lines": 23,
+    "function": "BeforeProcessEdit",
+    "signals": [
+     "session"
+    ]
+   }
+  },
+  "Inventar": {
+   "BeforeAdd": {
+    "status": "partial",
+    "ops": [
+     {
+      "op": "nextNumber",
+      "field": "Nummer",
+      "table": "Inventar",
+      "column": "Nummer",
+      "scopeTeam": true
+     }
+    ],
+    "statements": 7,
+    "lines": 4,
+    "function": "BeforeAdd",
+    "signals": []
+   },
+   "BeforeProcessView": {
+    "status": "manual",
+    "ops": [],
+    "statements": 22,
+    "lines": 30,
+    "function": "BeforeProcessView",
+    "signals": [
+     "session",
+     "sqlRead"
+    ]
+   },
+   "BeforeProcessAdd": {
+    "status": "manual",
+    "ops": [],
+    "statements": 22,
+    "lines": 31,
+    "function": "BeforeProcessAdd",
+    "signals": [
+     "sqlRead"
+    ]
+   },
+   "BeforeProcessEdit": {
+    "status": "manual",
+    "ops": [],
+    "statements": 22,
+    "lines": 72,
+    "function": "BeforeProcessEdit",
+    "signals": [
+     "session"
+    ]
+   },
+   "BeforeEdit": {
+    "status": "manual",
+    "ops": [],
+    "statements": 2,
+    "lines": 2,
+    "function": "BeforeEdit",
+    "signals": []
+   },
+   "BeforeInsert": {
+    "status": "compiled",
+    "ops": [
+     {
+      "op": "sessionCopy",
+      "field": "Team",
+      "sessionKey": "Team"
+     }
+    ],
+    "statements": 2,
+    "lines": 1,
+    "function": "BeforeInsert",
+    "signals": [
+     "session"
+    ]
+   }
+  },
+  "Journal": {
+   "BeforeAdd": {
+    "status": "partial",
+    "ops": [
+     {
+      "op": "nextNumber",
+      "field": "Belegnummer",
+      "table": "Buchungen",
+      "column": "Belegnummer",
+      "scopeTeam": true
+     }
+    ],
+    "statements": 6,
+    "lines": 18,
+    "function": "BeforeAdd",
+    "signals": []
+   },
+   "BeforeInsert": {
+    "status": "partial",
+    "ops": [
+     {
+      "op": "sessionCopy",
+      "field": "Erfasser",
+      "sessionKey": "UserName"
+     },
+     {
+      "op": "sessionCopy",
+      "field": "Team",
+      "sessionKey": "Team"
+     },
+     {
+      "op": "nextNumber",
+      "field": "Belegnummer",
+      "table": "Buchungen",
+      "column": "Belegnummer",
+      "scopeTeam": false
+     }
+    ],
+    "statements": 21,
+    "lines": 118,
+    "function": "BeforeInsert",
+    "signals": [
+     "defaults"
+    ]
+   }
+  },
+  "Kalender": {
+   "BeforeProcessList": {
+    "status": "manual",
+    "ops": [],
+    "statements": 20,
+    "lines": 36,
+    "function": "BeforeProcessList",
+    "signals": [
+     "sqlRead"
+    ]
+   }
+  },
+  "Kalenderwoche": {
+   "BeforeProcessList": {
+    "status": "manual",
+    "ops": [],
+    "statements": 19,
+    "lines": 34,
+    "function": "BeforeProcessList",
+    "signals": [
+     "sqlRead"
+    ]
+   }
+  },
+  "Kerndaten": {
+   "BeforeInsert": {
+    "status": "manual",
+    "ops": [],
+    "statements": 2,
+    "lines": 4,
+    "function": "BeforeInsert",
+    "signals": []
+   },
+   "BeforeAdd": {
+    "status": "partial",
+    "ops": [
+     {
+      "op": "constant",
+      "field": "Anrede",
+      "value": "Sehr geehrte Damen und Herren,"
+     }
+    ],
+    "statements": 14,
+    "lines": 56,
+    "function": "BeforeAdd",
+    "signals": [
+     "defaults"
+    ]
+   },
+   "BeforeEdit": {
+    "status": "partial",
+    "ops": [
+     {
+      "op": "constant",
+      "field": "Anrede",
+      "value": "Sehr geehrte Damen und Herren,"
+     }
+    ],
+    "statements": 14,
+    "lines": 79,
+    "function": "BeforeEdit",
+    "signals": [
+     "defaults"
+    ]
+   }
+  },
+  "Kontaktaufnahme": {
+   "BeforeAdd": {
+    "status": "compiled",
+    "ops": [
+     {
+      "op": "constant",
+      "field": "Team",
+      "value": "Team"
+     }
+    ],
+    "statements": 2,
+    "lines": 1,
+    "function": "BeforeAdd",
+    "signals": []
+   }
+  },
+  "Kontenrahmen": {
+   "BeforeInsert": {
+    "status": "compiled",
+    "ops": [
+     {
+      "op": "sessionCopy",
+      "field": "Team",
+      "sessionKey": "Team"
+     }
+    ],
+    "statements": 2,
+    "lines": 1,
+    "function": "BeforeInsert",
+    "signals": []
+   }
+  },
+  "Kontoauszuege2": {
+   "BeforeInsert": {
+    "status": "partial",
+    "ops": [
+     {
+      "op": "sessionCopy",
+      "field": "Team",
+      "sessionKey": "Team"
+     }
+    ],
+    "statements": 49,
+    "lines": 58,
+    "function": "BeforeInsert",
+    "signals": [
+     "defaults",
+     "session",
+     "sqlRead"
+    ]
+   }
+  },
+  "Kontoauszuege": {
+   "BeforeInsert": {
+    "status": "partial",
+    "ops": [
+     {
+      "op": "sessionCopy",
+      "field": "Team",
+      "sessionKey": "Team"
+     }
+    ],
+    "statements": 33,
+    "lines": 33,
+    "function": "BeforeInsert",
+    "signals": [
+     "defaults",
+     "session",
+     "sqlRead"
+    ]
+   }
+  },
+  "Kontobuch_Auszug": {
+   "BeforeProcessReport": {
+    "status": "noop",
+    "ops": [],
+    "statements": 1,
+    "lines": 8,
+    "function": "BeforeProcessReport",
+    "signals": []
+   }
+  },
+  "Kontobuch_Banking": {
+   "BeforeAdd": {
+    "status": "partial",
+    "ops": [
+     {
+      "op": "nextNumber",
+      "field": "Belegnummer",
+      "table": "Kontobuch",
+      "column": "Belegnummer",
+      "scopeTeam": false
+     }
+    ],
+    "statements": 6,
+    "lines": 13,
+    "function": "BeforeAdd",
+    "signals": []
+   }
+  },
+  "Kontobuch": {
+   "BeforeAdd": {
+    "status": "partial",
+    "ops": [
+     {
+      "op": "nextNumber",
+      "field": "Belegnummer",
+      "table": "Kontobuch",
+      "column": "Belegnummer",
+      "scopeTeam": true
+     }
+    ],
+    "statements": 6,
+    "lines": 16,
+    "function": "BeforeAdd",
+    "signals": []
+   },
+   "BeforeInsert": {
+    "status": "partial",
+    "ops": [
+     {
+      "op": "sessionCopy",
+      "field": "Team",
+      "sessionKey": "Team"
+     },
+     {
+      "op": "nextNumber",
+      "field": "Belegnummer",
+      "table": "Kontobuch",
+      "column": "Belegnummer",
+      "scopeTeam": true
+     }
+    ],
+    "statements": 34,
+    "lines": 132,
+    "function": "BeforeInsert",
+    "signals": [
+     "defaults",
+     "session",
+     "sqlRead"
+    ]
+   }
+  },
+  "Korrespondenz": {
+   "BeforeAdd": {
+    "status": "manual",
+    "ops": [],
+    "statements": 2,
+    "lines": 13,
+    "function": "BeforeAdd",
+    "signals": []
+   }
+  },
+  "Kosten": {
+   "BeforeEdit": {
+    "status": "manual",
+    "ops": [],
+    "statements": 4,
+    "lines": 6,
+    "function": "BeforeEdit",
+    "signals": [
+     "defaults"
+    ]
+   },
+   "BeforeAdd": {
+    "status": "manual",
+    "ops": [],
+    "statements": 4,
+    "lines": 51,
+    "function": "BeforeAdd",
+    "signals": []
+   },
+   "BeforeInsert": {
+    "status": "compiled",
+    "ops": [
+     {
+      "op": "sessionCopy",
+      "field": "Team",
+      "sessionKey": "Team"
+     }
+    ],
+    "statements": 2,
+    "lines": 4,
+    "function": "BeforeInsert",
+    "signals": []
+   }
+  },
+  "Leistungen": {
+   "BeforeInsert": {
+    "status": "compiled",
+    "ops": [
+     {
+      "op": "sessionCopy",
+      "field": "Team",
+      "sessionKey": "Team"
+     }
+    ],
+    "statements": 2,
+    "lines": 1,
+    "function": "BeforeInsert",
+    "signals": []
+   }
+  },
+  "Mieterkonten_Saldenliste": {
+   "BeforeAdd": {
+    "status": "partial",
+    "ops": [
+     {
+      "op": "nextNumber",
+      "field": "Belegnummer",
+      "table": "Kontobuch",
+      "column": "Belegnummer",
+      "scopeTeam": false
+     }
+    ],
+    "statements": 6,
+    "lines": 13,
+    "function": "BeforeAdd",
+    "signals": []
+   },
+   "BeforeProcessList": {
+    "status": "noop",
+    "ops": [],
+    "statements": 1,
+    "lines": 7,
+    "function": "BeforeProcessList",
+    "signals": []
+   },
+   "BeforeMoveNextList": {
+    "status": "manual",
+    "ops": [],
+    "statements": 3,
+    "lines": 41,
+    "function": "BeforeMoveNextList",
+    "signals": []
+   }
+  },
+  "Mitarbeiter": {
+   "BeforeInsert": {
+    "status": "manual",
+    "ops": [],
+    "statements": 2,
+    "lines": 4,
+    "function": "BeforeInsert",
+    "signals": []
+   },
+   "BeforeAdd": {
+    "status": "manual",
+    "ops": [],
+    "statements": 6,
+    "lines": 34,
+    "function": "BeforeAdd",
+    "signals": []
+   },
+   "BeforeEdit": {
+    "status": "manual",
+    "ops": [],
+    "statements": 6,
+    "lines": 43,
+    "function": "BeforeEdit",
+    "signals": [
+     "defaults"
+    ]
+   }
+  },
+  "Objekte": {
+   "AfterAdd": {
+    "status": "manual",
+    "ops": [],
+    "statements": 6,
+    "lines": 10,
+    "function": "AfterAdd",
+    "signals": [
+     "defaults"
+    ]
+   }
+  },
+  "P35aEStG": {
+   "BeforeInsert": {
+    "status": "compiled",
+    "ops": [
+     {
+      "op": "sessionCopy",
+      "field": "Team",
+      "sessionKey": "Team"
+     }
+    ],
+    "statements": 2,
+    "lines": 1,
+    "function": "BeforeInsert",
+    "signals": []
+   }
+  },
+  "Raeume": {
+   "BeforeAdd": {
+    "status": "manual",
+    "ops": [],
+    "statements": 2,
+    "lines": 2,
+    "function": "BeforeAdd",
+    "signals": []
+   },
+   "BeforeEdit": {
+    "status": "manual",
+    "ops": [],
+    "statements": 2,
+    "lines": 9,
+    "function": "BeforeEdit",
+    "signals": []
+   }
+  },
+  "Rechnungen": {
+   "BeforeAdd": {
+    "status": "partial",
+    "ops": [
+     {
+      "op": "nextNumber",
+      "field": "Nummer",
+      "table": "Verkauf",
+      "column": "Nummer",
+      "scopeTeam": false
+     }
+    ],
+    "statements": 7,
+    "lines": 13,
+    "function": "BeforeAdd",
+    "signals": [
+     "sqlRead"
+    ]
+   },
+   "AfterAdd": {
+    "status": "manual",
+    "ops": [],
+    "statements": 5,
+    "lines": 63,
+    "function": "AfterAdd",
+    "signals": []
+   },
+   "BeforeProcessAdd": {
+    "status": "noop",
+    "ops": [],
+    "statements": 1,
+    "lines": 2,
+    "function": "BeforeProcessAdd",
+    "signals": []
+   },
+   "BeforeEdit": {
+    "status": "manual",
+    "ops": [],
+    "statements": 2,
+    "lines": 1,
+    "function": "BeforeEdit",
+    "signals": []
+   }
+  },
+  "Rechnungsdruck": {
+   "BeforeProcessReportPrint": {
+    "status": "manual",
+    "ops": [],
+    "statements": 7,
+    "lines": 31,
+    "function": "BeforeProcessReportPrint",
+    "signals": []
+   }
+  },
+  "Ruecklagebuchungen": {
+   "BeforeAdd": {
+    "status": "manual",
+    "ops": [],
+    "statements": 2,
+    "lines": 6,
+    "function": "BeforeAdd",
+    "signals": []
+   },
+   "BeforeInsert": {
+    "status": "compiled",
+    "ops": [
+     {
+      "op": "sessionCopy",
+      "field": "Team",
+      "sessionKey": "Team"
+     }
+    ],
+    "statements": 2,
+    "lines": 12,
+    "function": "BeforeInsert",
+    "signals": []
+   }
+  },
+  "Saldenliste": {
+   "BeforeInsert": {
+    "status": "compiled",
+    "ops": [
+     {
+      "op": "sessionCopy",
+      "field": "Team",
+      "sessionKey": "Team"
+     }
+    ],
+    "statements": 2,
+    "lines": 1,
+    "function": "BeforeInsert",
+    "signals": []
+   }
+  },
+  "Schluessel": {
+   "BeforeAdd": {
+    "status": "manual",
+    "ops": [],
+    "statements": 2,
+    "lines": 2,
+    "function": "BeforeAdd",
+    "signals": []
+   },
+   "BeforeEdit": {
+    "status": "manual",
+    "ops": [],
+    "statements": 2,
+    "lines": 9,
+    "function": "BeforeEdit",
+    "signals": []
+   }
+  },
+  "Schnellbuchungen": {
+   "BeforeMoveNextList": {
+    "status": "manual",
+    "ops": [],
+    "statements": 3,
+    "lines": 9,
+    "function": "BeforeMoveNextList",
+    "signals": []
+   },
+   "BeforeAdd": {
+    "status": "partial",
+    "ops": [
+     {
+      "op": "nextNumber",
+      "field": "Belegnummer",
+      "table": "Buchungen",
+      "column": "Belegnummer",
+      "scopeTeam": true
+     }
+    ],
+    "statements": 6,
+    "lines": 21,
+    "function": "BeforeAdd",
+    "signals": []
+   }
+  },
+  "Steckbrief": {
+   "BeforeInsert": {
+    "status": "manual",
+    "ops": [],
+    "statements": 2,
+    "lines": 4,
+    "function": "BeforeInsert",
+    "signals": []
+   },
+   "BeforeAdd": {
+    "status": "manual",
+    "ops": [],
+    "statements": 6,
+    "lines": 34,
+    "function": "BeforeAdd",
+    "signals": []
+   },
+   "BeforeEdit": {
+    "status": "manual",
+    "ops": [],
+    "statements": 6,
+    "lines": 43,
+    "function": "BeforeEdit",
+    "signals": [
+     "defaults"
+    ]
+   }
+  },
+  "Termine_diese_Woche": {
+   "BeforeMoveNextList": {
+    "status": "manual",
+    "ops": [],
+    "statements": 2,
+    "lines": 7,
+    "function": "BeforeMoveNextList",
+    "signals": []
+   },
+   "BeforeAdd": {
+    "status": "manual",
+    "ops": [],
+    "statements": 2,
+    "lines": 3,
+    "function": "BeforeAdd",
+    "signals": []
+   },
+   "BeforeEdit": {
+    "status": "manual",
+    "ops": [],
+    "statements": 2,
+    "lines": 3,
+    "function": "BeforeEdit",
+    "signals": []
+   }
+  },
+  "Termine_dieser_Monat": {
+   "BeforeEdit": {
+    "status": "manual",
+    "ops": [],
+    "statements": 2,
+    "lines": 1,
+    "function": "BeforeEdit",
+    "signals": []
+   },
+   "BeforeAdd": {
+    "status": "manual",
+    "ops": [],
+    "statements": 2,
+    "lines": 25,
+    "function": "BeforeAdd",
+    "signals": []
+   },
+   "BeforeMoveNextList": {
+    "status": "manual",
+    "ops": [],
+    "statements": 2,
+    "lines": 11,
+    "function": "BeforeMoveNextList",
+    "signals": []
+   }
+  },
+  "Termine": {
+   "BeforeEdit": {
+    "status": "manual",
+    "ops": [],
+    "statements": 2,
+    "lines": 3,
+    "function": "BeforeEdit",
+    "signals": []
+   },
+   "BeforeAdd": {
+    "status": "manual",
+    "ops": [],
+    "statements": 2,
+    "lines": 20,
+    "function": "BeforeAdd",
+    "signals": []
+   },
+   "BeforeMoveNextList": {
+    "status": "manual",
+    "ops": [],
+    "statements": 2,
+    "lines": 6,
+    "function": "BeforeMoveNextList",
+    "signals": []
+   }
+  },
+  "Terminliste": {
+   "BeforeEdit": {
+    "status": "manual",
+    "ops": [],
+    "statements": 2,
+    "lines": 1,
+    "function": "BeforeEdit",
+    "signals": []
+   },
+   "BeforeAdd": {
+    "status": "manual",
+    "ops": [],
+    "statements": 2,
+    "lines": 25,
+    "function": "BeforeAdd",
+    "signals": []
+   },
+   "BeforeMoveNextList": {
+    "status": "manual",
+    "ops": [],
+    "statements": 2,
+    "lines": 11,
+    "function": "BeforeMoveNextList",
+    "signals": []
+   }
+  },
+  "Verkauf_Serienbrief_Steuerdatei": {
+   "BeforeAdd": {
+    "status": "partial",
+    "ops": [
+     {
+      "op": "nextNumber",
+      "field": "Nummer",
+      "table": "Verkauf",
+      "column": "Nummer",
+      "scopeTeam": false
+     }
+    ],
+    "statements": 6,
+    "lines": 4,
+    "function": "BeforeAdd",
+    "signals": [
+     "sqlRead"
+    ]
+   }
+  },
+  "Verkauf": {
+   "BeforeAdd": {
+    "status": "partial",
+    "ops": [
+     {
+      "op": "nextNumber",
+      "field": "Nummer",
+      "table": "Verkauf",
+      "column": "Nummer",
+      "scopeTeam": false
+     }
+    ],
+    "statements": 6,
+    "lines": 4,
+    "function": "BeforeAdd",
+    "signals": [
+     "sqlRead"
+    ]
+   }
+  },
+  "Vertraulich": {
+   "BeforeInsert": {
+    "status": "manual",
+    "ops": [],
+    "statements": 2,
+    "lines": 14,
+    "function": "BeforeInsert",
+    "signals": []
+   },
+   "BeforeAdd": {
+    "status": "partial",
+    "ops": [
+     {
+      "op": "constant",
+      "field": "Anrede",
+      "value": "Sehr geehrte Damen und Herren,"
+     }
+    ],
+    "statements": 21,
+    "lines": 66,
+    "function": "BeforeAdd",
+    "signals": [
+     "defaults",
+     "validation"
+    ]
+   },
+   "BeforeEdit": {
+    "status": "partial",
+    "ops": [
+     {
+      "op": "constant",
+      "field": "Anrede",
+      "value": "Sehr geehrte Damen und Herren,"
+     }
+    ],
+    "statements": 21,
+    "lines": 87,
+    "function": "BeforeEdit",
+    "signals": [
+     "defaults"
+    ]
+   }
+  },
+  "Vorauszahlungen": {
+   "BeforeAdd": {
+    "status": "manual",
+    "ops": [],
+    "statements": 2,
+    "lines": 2,
+    "function": "BeforeAdd",
+    "signals": []
+   }
+  },
+  "Zaehler": {
+   "BeforeInsert": {
+    "status": "compiled",
+    "ops": [
+     {
+      "op": "sessionCopy",
+      "field": "Team",
+      "sessionKey": "Team"
+     }
+    ],
+    "statements": 2,
+    "lines": 2,
+    "function": "BeforeInsert",
+    "signals": []
+   }
+  },
+  "Zaehlerstaende_melden": {
+   "BeforeAdd": {
+    "status": "compiled",
+    "ops": [
+     {
+      "op": "constant",
+      "field": "Team",
+      "value": "Team"
+     }
+    ],
+    "statements": 2,
+    "lines": 4,
+    "function": "BeforeAdd",
+    "signals": []
+   }
+  },
+  "admin_users": {
+   "BeforeQueryList": {
+    "status": "noop",
+    "ops": [],
+    "statements": 0,
+    "lines": 1,
+    "function": "BeforeQueryList",
+    "signals": []
+   },
+   "BeforeShowList": {
+    "status": "manual",
+    "ops": [],
+    "statements": 3,
+    "lines": 36,
+    "function": "BeforeShowList",
+    "signals": []
+   },
+   "BeforeAdd": {
+    "status": "manual",
+    "ops": [],
+    "statements": 4,
+    "lines": 6,
+    "function": "BeforeAdd",
+    "signals": []
+   }
+  },
+  "ics_Import": {
+   "AfterEdit": {
+    "status": "manual",
+    "ops": [],
+    "statements": 4,
+    "lines": 6,
+    "function": "AfterEdit",
+    "signals": []
+   }
+  }
+ }
+}

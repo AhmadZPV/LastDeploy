@@ -1,0 +1,494 @@
+{
+ "entity": "Protokolle",
+ "shortName": "Protokolle",
+ "baseTable": "Protokolle",
+ "isVirtual": false,
+ "ownerField": "Team",
+ "sql": {
+  "strOrderBy": "ORDER BY `Datum` DESC",
+  "sqlHead": "SELECT `ID`,  `Art`,  `Datum`,  `Objekt`,  `Einheit`,  `Maengel`,  `Bemerkungen`,  `Erfasser`,  `Erfassungsdatum`,  `Unterschrift`,  Adresse,  Team",
+  "sqlFrom": "FROM `Protokolle`",
+  "sqlWhere": "",
+  "sqlTail": ""
+ },
+ "keys": [
+  "ID"
+ ],
+ "pageSize": 20,
+ "capabilities": {
+  "list": true,
+  "view": true,
+  "add": true,
+  "edit": true,
+  "export": true,
+  "print": true,
+  "search": true,
+  "masterList": true
+ },
+ "fieldSets": {
+  "list": [
+   "Art",
+   "Datum",
+   "Objekt",
+   "Einheit",
+   "Adresse"
+  ],
+  "view": [
+   "Art",
+   "Datum",
+   "Objekt",
+   "Einheit",
+   "Adresse",
+   "Maengel",
+   "Bemerkungen",
+   "Unterschrift",
+   "Erfasser",
+   "Erfassungsdatum"
+  ],
+  "add": [
+   "Art",
+   "Datum",
+   "Objekt",
+   "Einheit",
+   "Adresse",
+   "Maengel",
+   "Bemerkungen",
+   "Unterschrift",
+   "Erfasser",
+   "Erfassungsdatum"
+  ],
+  "edit": [
+   "Art",
+   "Datum",
+   "Objekt",
+   "Einheit",
+   "Adresse",
+   "Maengel",
+   "Bemerkungen",
+   "Unterschrift",
+   "Erfasser",
+   "Erfassungsdatum"
+  ],
+  "export": [
+   "ID",
+   "Adresse",
+   "Art",
+   "Datum",
+   "Objekt",
+   "Einheit",
+   "Maengel",
+   "Bemerkungen",
+   "Unterschrift",
+   "Erfasser",
+   "Erfassungsdatum"
+  ],
+  "print": [
+   "Adresse",
+   "Art",
+   "Datum",
+   "Objekt",
+   "Einheit",
+   "Maengel",
+   "Bemerkungen",
+   "Unterschrift",
+   "Erfasser",
+   "Erfassungsdatum"
+  ],
+  "search": [
+   "ID",
+   "Art",
+   "Datum",
+   "Objekt",
+   "Einheit",
+   "Adresse",
+   "Maengel",
+   "Bemerkungen",
+   "Unterschrift",
+   "Erfasser",
+   "Erfassungsdatum"
+  ],
+  "masterList": [
+   "Adresse",
+   "Art",
+   "Datum",
+   "Objekt",
+   "Einheit"
+  ]
+ },
+ "export": {
+  "exportTo": true,
+  "exportDelimiter": ",",
+  "exportFormatting": 2
+ },
+ "print": {
+  "printerPageOrientation": 0,
+  "nPrinterPageScale": 100,
+  "nPrinterSplitRecords": 40,
+  "nPrinterPDFSplitRecords": 40
+ },
+ "tabs": [],
+ "labels": {
+  "German": {
+   "ID": "ID",
+   "Art": "Art",
+   "Datum": "Datum",
+   "Objekt": "Objekt",
+   "Einheit": "Einheit",
+   "Maengel": "Mängel",
+   "Bemerkungen": "Bemerkungen",
+   "Erfasser": "Erfasser",
+   "Erfassungsdatum": "Erfassungsdatum",
+   "Unterschrift": "Unterschrift",
+   "Adresse": "Adresse",
+   "Team": "Team"
+  }
+ },
+ "fields": [
+  {
+   "name": "ID",
+   "type": 3,
+   "index": 1,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": false,
+    "search": true,
+    "masterList": false
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "AutoInc": true,
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Art",
+   "type": 200,
+   "index": 2,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 0,
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 4,
+    "HorizontalLookup": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Datum",
+   "type": 7,
+   "index": 3,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "DateEditType": 13,
+    "InitialYearFactor": 3,
+    "LastYearFactor": 10,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Objekt",
+   "type": 3,
+   "index": 4,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Objekte",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 2,
+    "LinkField": "ID",
+    "LinkFieldType": 0,
+    "DisplayField": "Bezeichnung",
+    "LookupOrderBy": "Bezeichnung",
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Einheit",
+   "type": 3,
+   "index": 5,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Einheiten",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 0,
+    "LinkField": "ID",
+    "LinkFieldType": 0,
+    "DisplayField": "Bezeichnung",
+    "LookupOrderBy": "Bezeichnung",
+    "UseCategory": true,
+    "SelectSize": 1,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Maengel",
+   "type": 201,
+   "index": 6,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": false
+   },
+   "view": {
+    "ViewFormat": "HTML"
+   },
+   "edit": {
+    "UseRTE": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "nRows": 400,
+    "nCols": 600,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Bemerkungen",
+   "type": 201,
+   "index": 7,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": false
+   },
+   "view": {
+    "ViewFormat": "HTML"
+   },
+   "edit": {
+    "UseRTE": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "nRows": 400,
+    "nCols": 600,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Erfasser",
+   "type": 200,
+   "index": 8,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": false
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Erfassungsdatum",
+   "type": 7,
+   "index": 9,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": false
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Unterschrift",
+   "type": 200,
+   "index": 10,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": false
+   },
+   "view": {
+    "ImageWidth": 457,
+    "ImageHeight": 0
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Adresse",
+   "type": 3,
+   "index": 11,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Adressen",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 2,
+    "LinkField": "ID",
+    "LinkFieldType": 0,
+    "DisplayField": "Kurzname",
+    "LookupOrderBy": "Kurzname",
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Team",
+   "type": 200,
+   "index": 12,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": false
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  }
+ ]
+}

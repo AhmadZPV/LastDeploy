@@ -1,0 +1,1898 @@
+{
+ "Abrechnungen": [
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Abrechnungskonten",
+   "detailKeys": [
+    "Abrechnung"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Abrechnungskonten",
+   "previewOnAdd": false,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Abrechnungskonten"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Kosten",
+   "detailKeys": [
+    "Abrechnung"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Kosten",
+   "previewOnAdd": false,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Kosten"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "P35aEStG",
+   "detailKeys": [
+    "Abrechnung"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Kosten",
+   "previewOnAdd": false,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "P35aEStG"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Buchfuehrungen",
+   "detailKeys": [
+    "ID"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "Buchfuehrung"
+   ],
+   "originalTable": "Buchfuehrungen",
+   "previewOnAdd": false,
+   "previewOnEdit": false,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Buchfuehrungen"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Gesamtpersonen",
+   "detailKeys": [
+    "Abrechnung"
+   ],
+   "dispChildCount": true,
+   "hideChild": false,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Personen",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Gesamtpersonen"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Kontobuch",
+   "detailKeys": [
+    "Abrechnung"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Kontobuch",
+   "previewOnAdd": false,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Kontobuch"
+  }
+ ],
+ "Abrechnungskonten": [
+  {
+   "dType": "PAGE_LIST",
+   "detail": "DirekteKosten",
+   "detailKeys": [
+    "Abrechnungskonto"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Kosten",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "DirekteKosten"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Vorauszahlungen",
+   "detailKeys": [
+    "Abrechnungskonto"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Kosten",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Vorauszahlungen"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Ruecklagebuchungen",
+   "detailKeys": [
+    "Abrechnungskonto"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Kosten",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Ruecklagebuchungen"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Abrechnungsdaten Übersicht",
+   "detailKeys": [
+    "ID"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Kosten",
+   "previewOnAdd": false,
+   "previewOnEdit": false,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Abrechnungsdaten__bersicht"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Personen",
+   "detailKeys": [
+    "Abrechnungskonto"
+   ],
+   "dispChildCount": true,
+   "hideChild": false,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Personen",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Personen"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Kontobuch",
+   "detailKeys": [
+    "Abrechnungskonto"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Kontobuch",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Kontobuch"
+  }
+ ],
+ "Adressen": [
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Notizen",
+   "detailKeys": [
+    "Adresse"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Notizen",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Notizen"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Dokumente",
+   "detailKeys": [
+    "Adresse"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Dokumente",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Dokumente"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Aufgaben",
+   "detailKeys": [
+    "Adresse"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Aufgaben",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Aufgaben"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Terminliste",
+   "detailKeys": [
+    "Adresse"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Termine",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Terminliste"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Korrespondenz",
+   "detailKeys": [
+    "Adresse"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Korrespondenz",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Korrespondenz"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Inventar",
+   "detailKeys": [
+    "Adresse"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Inventar",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Inventar"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Ausleihen",
+   "detailKeys": [
+    "Adresse"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Ausleihen",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Ausleihen"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Verkauf",
+   "detailKeys": [
+    "Kunde"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Verkauf",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Verkauf"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Vertraege",
+   "detailKeys": [
+    "Adresse"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Vertraege",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Vertraege"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Objekte",
+   "detailKeys": [
+    "Besitzer"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Objekte",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Objekte"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Einheiten",
+   "detailKeys": [
+    "Besitzer"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Einheiten",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Einheiten"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Abrechnungskonten",
+   "detailKeys": [
+    "Adresse"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Abrechnungskonten",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Abrechnungskonten"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Kontenrahmen",
+   "detailKeys": [
+    "Adresse"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Kontenrahmen",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Kontenrahmen"
+  }
+ ],
+ "Angebote": [
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Positionen",
+   "detailKeys": [
+    "Verkaufsvorgang"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Positionen",
+   "previewOnAdd": false,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Positionen"
+  }
+ ],
+ "Aufgaben": [
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Checklisten",
+   "detailKeys": [
+    "Aufgabe"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Checklisten",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Checklisten"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Zeiten",
+   "detailKeys": [
+    "Aufgabe"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Zeiten",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Zeiten"
+  }
+ ],
+ "Buchfuehrungen": [
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Kontenrahmen",
+   "detailKeys": [
+    "Buchfuehrung"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Kontenrahmen",
+   "previewOnAdd": false,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Kontenrahmen"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Journal",
+   "detailKeys": [
+    "Buchfuehrung"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Buchungen",
+   "previewOnAdd": false,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Journal"
+  }
+ ],
+ "DirekteKosten": [
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Kontenrahmen",
+   "detailKeys": [
+    "ID"
+   ],
+   "dispChildCount": false,
+   "hideChild": false,
+   "masterKeys": [
+    "Buchfuehrungskonto"
+   ],
+   "originalTable": "Kontenrahmen",
+   "previewOnAdd": false,
+   "previewOnEdit": true,
+   "previewOnList": false,
+   "previewOnView": true,
+   "shortTable": "Kontenrahmen"
+  }
+ ],
+ "Einheiten": [
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Raeume",
+   "detailKeys": [
+    "Einheit"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Raeume",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Raeume"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Dokumente",
+   "detailKeys": [
+    "Einheit"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Dokumente",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Dokumente"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Aufgaben",
+   "detailKeys": [
+    "Einheit"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Aufgaben",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Aufgaben"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Notizen",
+   "detailKeys": [
+    "Einheit"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Notizen",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Notizen"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Verkauf",
+   "detailKeys": [
+    "Einheit"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Verkauf",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Verkauf"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Abrechnungskonten",
+   "detailKeys": [
+    "Einheit"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Abrechnungskonten",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Abrechnungskonten"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Protokolle",
+   "detailKeys": [
+    "Einheit"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Protokolle",
+   "previewOnAdd": false,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Protokolle"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Vertraege",
+   "detailKeys": [
+    "Einheit"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Vertraege",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Vertraege"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Korrespondenz",
+   "detailKeys": [
+    "Einheit"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Korrespondenz",
+   "previewOnAdd": false,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Korrespondenz"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Einheiten Historie",
+   "detailKeys": [
+    "Datensatz"
+   ],
+   "dispChildCount": true,
+   "hideChild": false,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "intex hausverwaltung_audit",
+   "previewOnAdd": false,
+   "previewOnEdit": false,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Einheiten_Historie"
+  }
+ ],
+ "Inventar": [
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Aufgaben",
+   "detailKeys": [
+    "Inventar"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Aufgaben",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Aufgaben"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Dokumente",
+   "detailKeys": [
+    "Inventar"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Dokumente",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Dokumente"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Notizen",
+   "detailKeys": [
+    "Inventar"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Notizen",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Notizen"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Terminliste",
+   "detailKeys": [
+    "Inventar"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Termine",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Terminliste"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Ausleihen",
+   "detailKeys": [
+    "Inventar"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Ausleihen",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Ausleihen"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Korrespondenz",
+   "detailKeys": [
+    "Inventar"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Korrespondenz",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Korrespondenz"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Vertraege",
+   "detailKeys": [
+    "Inventar"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Vertraege",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Vertraege"
+  }
+ ],
+ "Kalender": [
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Terminliste",
+   "detailKeys": [
+    "Datum"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "Tag"
+   ],
+   "originalTable": "Termine",
+   "previewOnAdd": false,
+   "previewOnEdit": false,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Terminliste"
+  }
+ ],
+ "Kalenderwoche": [
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Terminliste",
+   "detailKeys": [
+    "Datum"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "Tag"
+   ],
+   "originalTable": "Termine",
+   "previewOnAdd": false,
+   "previewOnEdit": false,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Terminliste"
+  }
+ ],
+ "Kontenrahmen": [
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Buchungen",
+   "detailKeys": [
+    "Konto"
+   ],
+   "dispChildCount": false,
+   "hideChild": false,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Buchungen",
+   "previewOnAdd": false,
+   "previewOnEdit": false,
+   "previewOnList": false,
+   "previewOnView": true,
+   "shortTable": "Buchungen"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Gegenbuchungen",
+   "detailKeys": [
+    "Gegenkonto"
+   ],
+   "dispChildCount": false,
+   "hideChild": false,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Buchungen",
+   "previewOnAdd": false,
+   "previewOnEdit": false,
+   "previewOnList": false,
+   "previewOnView": true,
+   "shortTable": "Gegenbuchungen"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Kontenblätter",
+   "detailKeys": [
+    "Buchfuehrung",
+    "Nummer"
+   ],
+   "dispChildCount": false,
+   "hideChild": false,
+   "masterKeys": [
+    "Buchfuehrung",
+    "Nummer"
+   ],
+   "originalTable": "Buchungen",
+   "previewOnAdd": false,
+   "previewOnEdit": false,
+   "previewOnList": false,
+   "previewOnView": true,
+   "shortTable": "Kontenbl_tter"
+  }
+ ],
+ "Kosten": [
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Kontenrahmen",
+   "detailKeys": [
+    "ID"
+   ],
+   "dispChildCount": false,
+   "hideChild": false,
+   "masterKeys": [
+    "Buchfuehrungskonto"
+   ],
+   "originalTable": "Kontenrahmen",
+   "previewOnAdd": false,
+   "previewOnEdit": true,
+   "previewOnList": false,
+   "previewOnView": true,
+   "shortTable": "Kontenrahmen"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Kostenbelege",
+   "detailKeys": [
+    "Kostenposition"
+   ],
+   "dispChildCount": false,
+   "hideChild": false,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Kostenbelege",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": false,
+   "previewOnView": true,
+   "shortTable": "Kostenbelege"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Kontobuch",
+   "detailKeys": [
+    "Abrechnung",
+    "Kategorie"
+   ],
+   "dispChildCount": false,
+   "hideChild": false,
+   "masterKeys": [
+    "Abrechnung",
+    "Bezeichnung"
+   ],
+   "originalTable": "Kontobuch",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": false,
+   "previewOnView": true,
+   "shortTable": "Kontobuch"
+  }
+ ],
+ "Objekte": [
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Einheiten",
+   "detailKeys": [
+    "Objekt"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Einheiten",
+   "previewOnAdd": false,
+   "previewOnEdit": false,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Einheiten"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Ansprechpartner",
+   "detailKeys": [
+    "Objekt"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Ansprechpartner",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Ansprechpartner"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Dokumente",
+   "detailKeys": [
+    "Objekt"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Dokumente",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Dokumente"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Aufgaben",
+   "detailKeys": [
+    "Objekt"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Aufgaben",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Aufgaben"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Notizen",
+   "detailKeys": [
+    "Objekt"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Notizen",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Notizen"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Verkauf",
+   "detailKeys": [
+    "Objekt"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Verkauf",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Verkauf"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Abrechnungen",
+   "detailKeys": [
+    "Objekt"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Abrechnungen",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Abrechnungen"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Buchfuehrungen",
+   "detailKeys": [
+    "Objekt"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Buchfuehrungen",
+   "previewOnAdd": false,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Buchfuehrungen"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Vertraege",
+   "detailKeys": [
+    "Objekt"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Vertraege",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Vertraege"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Korrespondenz",
+   "detailKeys": [
+    "Objekt"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Korrespondenz",
+   "previewOnAdd": false,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Korrespondenz"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Objekte Historie",
+   "detailKeys": [
+    "Datensatz"
+   ],
+   "dispChildCount": true,
+   "hideChild": false,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "intex hausverwaltung_audit",
+   "previewOnAdd": false,
+   "previewOnEdit": false,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Objekte_Historie"
+  }
+ ],
+ "Protokolle": [
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Zaehler",
+   "detailKeys": [
+    "Ablesedatum"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "Datum"
+   ],
+   "originalTable": "Zaehler",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Zaehler"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Schluessel",
+   "detailKeys": [
+    "Ausgabedatum"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "Datum"
+   ],
+   "originalTable": "Schluessel",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Schluessel"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Dokumente",
+   "detailKeys": [
+    "Datum",
+    "Objekt",
+    "Einheit"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "Datum",
+    "Objekt",
+    "Einheit"
+   ],
+   "originalTable": "Dokumente",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Dokumente"
+  }
+ ],
+ "Raeume": [
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Inventar",
+   "detailKeys": [
+    "Raum"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Inventar",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Inventar"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Schluessel",
+   "detailKeys": [
+    "Raum"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Schluessel",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Schluessel"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Zaehler",
+   "detailKeys": [
+    "Raum"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Zaehler",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Zaehler"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Flaechen",
+   "detailKeys": [
+    "Raum"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Flaechen",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Flaechen"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Dokumente",
+   "detailKeys": [
+    "Raum"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Dokumente",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Dokumente"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Aufgaben",
+   "detailKeys": [
+    "Raum"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Aufgaben",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Aufgaben"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Notizen",
+   "detailKeys": [
+    "Raum"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Notizen",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Notizen"
+  }
+ ],
+ "Rechnungen": [
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Positionen",
+   "detailKeys": [
+    "Verkaufsvorgang"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Positionen",
+   "previewOnAdd": false,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Positionen"
+  }
+ ],
+ "Ruecklagebuchungen": [
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Kontenrahmen",
+   "detailKeys": [
+    "ID"
+   ],
+   "dispChildCount": false,
+   "hideChild": false,
+   "masterKeys": [
+    "Buchfuehrungskonto"
+   ],
+   "originalTable": "Kontenrahmen",
+   "previewOnAdd": false,
+   "previewOnEdit": true,
+   "previewOnList": false,
+   "previewOnView": true,
+   "shortTable": "Kontenrahmen"
+  }
+ ],
+ "Sets": [
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Inventar",
+   "detailKeys": [
+    "Set"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Inventar",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Inventar"
+  }
+ ],
+ "Verkauf": [
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Positionen",
+   "detailKeys": [
+    "Verkaufsvorgang"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Positionen",
+   "previewOnAdd": false,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Positionen"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Dokumente",
+   "detailKeys": [
+    "Vorgang"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Dokumente",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Dokumente"
+  }
+ ],
+ "Vertraege": [
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Korrespondenz",
+   "detailKeys": [
+    "Vertrag"
+   ],
+   "dispChildCount": false,
+   "hideChild": false,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Korrespondenz",
+   "previewOnAdd": false,
+   "previewOnEdit": true,
+   "previewOnList": false,
+   "previewOnView": true,
+   "shortTable": "Korrespondenz"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Dokumente",
+   "detailKeys": [
+    "Vertrag"
+   ],
+   "dispChildCount": false,
+   "hideChild": false,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Dokumente",
+   "previewOnAdd": false,
+   "previewOnEdit": true,
+   "previewOnList": false,
+   "previewOnView": true,
+   "shortTable": "Dokumente"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Notizen",
+   "detailKeys": [
+    "Vertrag"
+   ],
+   "dispChildCount": false,
+   "hideChild": false,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Notizen",
+   "previewOnAdd": false,
+   "previewOnEdit": true,
+   "previewOnList": false,
+   "previewOnView": true,
+   "shortTable": "Notizen"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Aufgaben",
+   "detailKeys": [
+    "Vertrag"
+   ],
+   "dispChildCount": false,
+   "hideChild": false,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Aufgaben",
+   "previewOnAdd": false,
+   "previewOnEdit": true,
+   "previewOnList": false,
+   "previewOnView": true,
+   "shortTable": "Aufgaben"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Vertraege Historie",
+   "detailKeys": [
+    "Datensatz"
+   ],
+   "dispChildCount": false,
+   "hideChild": false,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "intex hausverwaltung_audit",
+   "previewOnAdd": false,
+   "previewOnEdit": false,
+   "previewOnList": false,
+   "previewOnView": true,
+   "shortTable": "Vertraege_Historie"
+  }
+ ],
+ "Vertraulich": [
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Adressen Historie",
+   "detailKeys": [
+    "Datensatz"
+   ],
+   "dispChildCount": false,
+   "hideChild": false,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "intex hausverwaltung_audit",
+   "previewOnAdd": false,
+   "previewOnEdit": false,
+   "previewOnList": false,
+   "previewOnView": true,
+   "shortTable": "Adressen_Historie"
+  }
+ ],
+ "Vorauszahlungen": [
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Kontenrahmen",
+   "detailKeys": [
+    "ID"
+   ],
+   "dispChildCount": false,
+   "hideChild": false,
+   "masterKeys": [
+    "Buchfuehrungskonto"
+   ],
+   "originalTable": "Kontenrahmen",
+   "previewOnAdd": false,
+   "previewOnEdit": true,
+   "previewOnList": false,
+   "previewOnView": true,
+   "shortTable": "Kontenrahmen"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Vorauszahlungsbelege",
+   "detailKeys": [
+    "Kostenposition"
+   ],
+   "dispChildCount": false,
+   "hideChild": false,
+   "masterKeys": [
+    "ID"
+   ],
+   "originalTable": "Kostenbelege",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": false,
+   "previewOnView": true,
+   "shortTable": "Vorauszahlungsbelege"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Kontobuch",
+   "detailKeys": [
+    "Abrechnung",
+    "Abrechnungskonto"
+   ],
+   "dispChildCount": false,
+   "hideChild": false,
+   "masterKeys": [
+    "Abrechnung",
+    "Abrechnungskonto"
+   ],
+   "originalTable": "Kontobuch",
+   "previewOnAdd": true,
+   "previewOnEdit": true,
+   "previewOnList": false,
+   "previewOnView": true,
+   "shortTable": "Kontobuch"
+  }
+ ],
+ "WV": [
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Adressen",
+   "detailKeys": [
+    "Wiedervorlage"
+   ],
+   "dispChildCount": true,
+   "hideChild": false,
+   "masterKeys": [
+    "Tag"
+   ],
+   "originalTable": "Adressen",
+   "previewOnAdd": false,
+   "previewOnEdit": false,
+   "previewOnList": true,
+   "previewOnView": false,
+   "shortTable": "Adressen"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Dokumente",
+   "detailKeys": [
+    "Wiedervorlage"
+   ],
+   "dispChildCount": true,
+   "hideChild": false,
+   "masterKeys": [
+    "Tag"
+   ],
+   "originalTable": "Dokumente",
+   "previewOnAdd": false,
+   "previewOnEdit": false,
+   "previewOnList": true,
+   "previewOnView": false,
+   "shortTable": "Dokumente"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Notizen",
+   "detailKeys": [
+    "Wiedervorlage"
+   ],
+   "dispChildCount": true,
+   "hideChild": false,
+   "masterKeys": [
+    "Tag"
+   ],
+   "originalTable": "Notizen",
+   "previewOnAdd": false,
+   "previewOnEdit": false,
+   "previewOnList": true,
+   "previewOnView": false,
+   "shortTable": "Notizen"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Korrespondenz",
+   "detailKeys": [
+    "Wiedervorlage"
+   ],
+   "dispChildCount": true,
+   "hideChild": false,
+   "masterKeys": [
+    "Tag"
+   ],
+   "originalTable": "Korrespondenz",
+   "previewOnAdd": false,
+   "previewOnEdit": false,
+   "previewOnList": true,
+   "previewOnView": false,
+   "shortTable": "Korrespondenz"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Termine",
+   "detailKeys": [
+    "Wiedervorlage"
+   ],
+   "dispChildCount": true,
+   "hideChild": false,
+   "masterKeys": [
+    "Tag"
+   ],
+   "originalTable": "Termine",
+   "previewOnAdd": false,
+   "previewOnEdit": false,
+   "previewOnList": true,
+   "previewOnView": false,
+   "shortTable": "Termine"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Aufgaben",
+   "detailKeys": [
+    "Wiedervorlage"
+   ],
+   "dispChildCount": true,
+   "hideChild": false,
+   "masterKeys": [
+    "Tag"
+   ],
+   "originalTable": "Aufgaben",
+   "previewOnAdd": false,
+   "previewOnEdit": false,
+   "previewOnList": true,
+   "previewOnView": false,
+   "shortTable": "Aufgaben"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Vertraege",
+   "detailKeys": [
+    "Wiedervorlage"
+   ],
+   "dispChildCount": true,
+   "hideChild": false,
+   "masterKeys": [
+    "Tag"
+   ],
+   "originalTable": "Vertraege",
+   "previewOnAdd": false,
+   "previewOnEdit": false,
+   "previewOnList": true,
+   "previewOnView": false,
+   "shortTable": "Vertraege"
+  }
+ ],
+ "admin_users": [
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Adressen",
+   "detailKeys": [
+    "Team"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "Team"
+   ],
+   "originalTable": "Adressen",
+   "previewOnAdd": false,
+   "previewOnEdit": false,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Adressen"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Objekte",
+   "detailKeys": [
+    "Team"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "Team"
+   ],
+   "originalTable": "Objekte",
+   "previewOnAdd": false,
+   "previewOnEdit": false,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Objekte"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Einheiten",
+   "detailKeys": [
+    "Team"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "Team"
+   ],
+   "originalTable": "Einheiten",
+   "previewOnAdd": false,
+   "previewOnEdit": false,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Einheiten"
+  },
+  {
+   "dType": "PAGE_LIST",
+   "detail": "Abrechnungen",
+   "detailKeys": [
+    "Team"
+   ],
+   "dispChildCount": true,
+   "hideChild": true,
+   "masterKeys": [
+    "Team"
+   ],
+   "originalTable": "Abrechnungen",
+   "previewOnAdd": false,
+   "previewOnEdit": false,
+   "previewOnList": true,
+   "previewOnView": true,
+   "shortTable": "Abrechnungen"
+  }
+ ]
+}

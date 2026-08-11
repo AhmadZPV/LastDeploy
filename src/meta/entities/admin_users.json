@@ -1,0 +1,366 @@
+{
+ "entity": "admin_users",
+ "shortName": "admin_users",
+ "baseTable": "Benutzer",
+ "isVirtual": true,
+ "ownerField": "Benutzername",
+ "sql": {
+  "strOrderBy": "ORDER BY Benutzername",
+  "sqlHead": "SELECT Benutzername,  Passwort,  Name,  Email,  Bild,  Team,  Art,  active,  Erstanmeldung",
+  "sqlFrom": "FROM Benutzer",
+  "sqlWhere": "",
+  "sqlTail": ""
+ },
+ "keys": [
+  "Benutzername"
+ ],
+ "pageSize": 20,
+ "capabilities": {
+  "list": true,
+  "view": true,
+  "add": true,
+  "edit": true,
+  "export": false,
+  "print": false,
+  "search": true,
+  "masterList": true
+ },
+ "fieldSets": {
+  "list": [
+   "Art",
+   "Benutzername",
+   "Name",
+   "Bild",
+   "Email",
+   "Team",
+   "Erstanmeldung"
+  ],
+  "view": [
+   "Art",
+   "Erstanmeldung",
+   "Benutzername",
+   "Passwort",
+   "Name",
+   "Bild",
+   "Email",
+   "Team",
+   "active"
+  ],
+  "add": [
+   "Art",
+   "Erstanmeldung",
+   "Benutzername",
+   "Passwort",
+   "Name",
+   "Bild",
+   "Email",
+   "Team",
+   "active"
+  ],
+  "edit": [
+   "Art",
+   "Erstanmeldung",
+   "Benutzername",
+   "Passwort",
+   "Name",
+   "Bild",
+   "Email",
+   "Team",
+   "active"
+  ],
+  "search": [
+   "Art",
+   "Erstanmeldung",
+   "Benutzername",
+   "Name",
+   "Email",
+   "Team",
+   "active"
+  ],
+  "masterList": [
+   "Art",
+   "Erstanmeldung",
+   "Benutzername",
+   "Passwort",
+   "Name",
+   "Bild",
+   "Email",
+   "Team",
+   "active"
+  ]
+ },
+ "export": {
+  "exportTo": null,
+  "exportDelimiter": null,
+  "exportFormatting": null
+ },
+ "print": {
+  "printerPageOrientation": 0,
+  "nPrinterPageScale": 100,
+  "nPrinterSplitRecords": 40,
+  "nPrinterPDFSplitRecords": 40
+ },
+ "tabs": [],
+ "labels": {
+  "German": {
+   "Benutzername": "Benutzername",
+   "Passwort": "Passwort",
+   "Name": "Name",
+   "Email": "Email",
+   "Bild": "Bild",
+   "Team": "Team",
+   "Art": "Art",
+   "active": "Aktiviert",
+   "Erstanmeldung": "Erstanmeldung"
+  }
+ },
+ "fields": [
+  {
+   "name": "Benutzername",
+   "type": 200,
+   "index": 1,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Passwort",
+   "type": 200,
+   "index": 2,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "ViewFormat": "Custom"
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Name",
+   "type": 200,
+   "index": 3,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Email",
+   "type": 200,
+   "index": 4,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "ViewFormat": "Email Hyperlink"
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "email",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Bild",
+   "type": 128,
+   "index": 5,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "ImageWidth": 72,
+    "ImageHeight": 72,
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200,
+    "ResizeImage": true,
+    "NewSize": 72
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Team",
+   "type": 200,
+   "index": 6,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Art",
+   "type": 200,
+   "index": 7,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 0,
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 4,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "active",
+   "type": 3,
+   "index": 8,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "ViewFormat": "Checkbox"
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Erstanmeldung",
+   "type": 7,
+   "index": 9,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "DateEditType": 13,
+    "InitialYearFactor": 3,
+    "LastYearFactor": 10,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  }
+ ]
+}

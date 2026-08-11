@@ -1,0 +1,582 @@
+{
+ "entity": "Steckbrief",
+ "shortName": "Steckbrief",
+ "baseTable": "Adressen",
+ "isVirtual": true,
+ "ownerField": "Team",
+ "sql": {
+  "strOrderBy": "ORDER BY `Kurzname`",
+  "sqlHead": "SELECT `ID`,  `Kurzname`,  `Telefon`,  `Handy`,  `Email`,  `Bild`,  `Klassifikation`,  `Kundennummer`,  `Telefonprivat`,  `Emailprivat`,  `Handyprivat`,  Concat(if(Adressen.Firma='','', Concat(Adressen.Firma, '\\n')), if(Adressen.Abteilung='','', Concat(Adressen.Abteilung, '\\n')), Adressen.Vorname, ' ', Adressen.Nachname, '\\n', Adressen.Strasse, '\\n', Adressen.PLZ, ' ', Adressen.Ort) AS `Karte`,  `Anschrift`,  `Miniatur`,  `Laengengrad`,  `Breitengrad`,  Team",
+  "sqlFrom": "FROM `Adressen`",
+  "sqlWhere": "",
+  "sqlTail": ""
+ },
+ "keys": [
+  "ID"
+ ],
+ "pageSize": 20,
+ "capabilities": {
+  "list": false,
+  "view": true,
+  "add": false,
+  "edit": false,
+  "export": false,
+  "print": false,
+  "search": false,
+  "masterList": true
+ },
+ "fieldSets": {
+  "view": [
+   "Bild",
+   "Kurzname",
+   "Kundennummer",
+   "Klassifikation",
+   "Anschrift",
+   "Karte",
+   "Telefon",
+   "Telefonprivat",
+   "Handy",
+   "Handyprivat",
+   "Email",
+   "Emailprivat"
+  ],
+  "masterList": [
+   "Laengengrad",
+   "Breitengrad",
+   "Team",
+   "Kurzname",
+   "Klassifikation",
+   "Telefon",
+   "Handy",
+   "Email"
+  ]
+ },
+ "export": {
+  "exportTo": null,
+  "exportDelimiter": null,
+  "exportFormatting": null
+ },
+ "print": {
+  "printerPageOrientation": 0,
+  "nPrinterPageScale": 100,
+  "nPrinterSplitRecords": 40,
+  "nPrinterPDFSplitRecords": 40
+ },
+ "tabs": [],
+ "labels": {
+  "German": {
+   "Kurzname": "Kurzname",
+   "Telefon": "Telefon",
+   "Handy": "Handy",
+   "Email": "Email",
+   "Bild": "Bild",
+   "Klassifikation": "Klassifikation",
+   "ID": "ID",
+   "Kundennummer": "Kundennummer",
+   "Telefonprivat": "Telefon privat",
+   "Emailprivat": "Email privat",
+   "Handyprivat": "Handy privat",
+   "Anschrift": "Anschrift",
+   "Karte": "Karte",
+   "Miniatur": "Miniatur",
+   "Laengengrad": "Laengengrad",
+   "Breitengrad": "Breitengrad",
+   "Team": "Team"
+  }
+ },
+ "fields": [
+  {
+   "name": "ID",
+   "type": 3,
+   "index": 1,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": false
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "number",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "AutoInc": true,
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Kurzname",
+   "type": 200,
+   "index": 2,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200,
+    "denyDuplicates": true
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Telefon",
+   "type": 200,
+   "index": 3,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "LinkPrefix": "tel:",
+    "hlType": 0,
+    "hlLinkWordNameType": "Text",
+    "hlLinkWordText": "Link",
+    "hlTitleField": ""
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "tel",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Handy",
+   "type": 200,
+   "index": 4,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "LinkPrefix": "tel:",
+    "hlType": 0,
+    "hlLinkWordNameType": "Text",
+    "hlLinkWordText": "Link",
+    "hlTitleField": ""
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "tel",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Email",
+   "type": 200,
+   "index": 5,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "ViewFormat": "Email Hyperlink"
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "email",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Bild",
+   "type": 128,
+   "index": 6,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": false
+   },
+   "view": {
+    "ShowThumbnail": true,
+    "ThumbWidth": 72,
+    "ThumbHeight": 72,
+    "ImageWidth": 400,
+    "ImageHeight": 300,
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 297,
+    "CreateThumbnail": true,
+    "StrThumbnail": "Miniatur",
+    "ThumbnailSize": 150,
+    "ResizeImage": true,
+    "NewSize": 600
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Klassifikation",
+   "type": 200,
+   "index": 7,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Klassifikationen Adressen",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 0,
+    "LinkField": "Klassifikation",
+    "LinkFieldType": 0,
+    "DisplayField": "Klassifikation",
+    "LookupOrderBy": "Klassifikation",
+    "Multiselect": true,
+    "SelectSize": 1,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Kundennummer",
+   "type": 200,
+   "index": 8,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": false
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Telefonprivat",
+   "type": 200,
+   "index": 9,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": false
+   },
+   "view": {
+    "LinkPrefix": "tel:",
+    "hlType": 0,
+    "hlLinkWordNameType": "Text",
+    "hlLinkWordText": "Link",
+    "hlTitleField": ""
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Emailprivat",
+   "type": 200,
+   "index": 10,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": false
+   },
+   "view": {
+    "ViewFormat": "Email Hyperlink"
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Handyprivat",
+   "type": 200,
+   "index": 11,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": false
+   },
+   "view": {
+    "LinkPrefix": "tel:",
+    "hlType": 0,
+    "hlLinkWordNameType": "Text",
+    "hlLinkWordText": "Link",
+    "hlTitleField": ""
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Karte",
+   "type": 200,
+   "index": 12,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": false
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Anschrift",
+   "type": 200,
+   "index": 13,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": false
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Miniatur",
+   "type": 128,
+   "index": 14,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": false
+   },
+   "view": {
+    "ImageWidth": 457,
+    "ImageHeight": 0,
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Laengengrad",
+   "type": 14,
+   "index": 15,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "DecimalDigits": 2,
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "number",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Breitengrad",
+   "type": 14,
+   "index": 16,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "DecimalDigits": 2,
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "number",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Team",
+   "type": 200,
+   "index": 17,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  }
+ ]
+}

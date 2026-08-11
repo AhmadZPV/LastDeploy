@@ -1,0 +1,170 @@
+{
+ "entity": "Objekte_nach_Art",
+ "shortName": "Objekte_nach_Art",
+ "baseTable": "Objekte",
+ "isVirtual": true,
+ "ownerField": "Team",
+ "sql": {
+  "strOrderBy": "",
+  "sqlHead": "SELECT Objektart,  COUNT(Objektart) AS Anteil,  Team",
+  "sqlFrom": "FROM Objekte",
+  "sqlWhere": "",
+  "sqlTail": ""
+ },
+ "keys": [],
+ "pageSize": 0,
+ "capabilities": {
+  "list": true,
+  "view": true,
+  "add": true,
+  "edit": true,
+  "export": true,
+  "print": true,
+  "search": false,
+  "masterList": true
+ },
+ "fieldSets": {
+  "list": [
+   "Objektart",
+   "Anteil",
+   "Team"
+  ],
+  "view": [
+   "Objektart",
+   "Anteil",
+   "Team"
+  ],
+  "add": [
+   "Objektart"
+  ],
+  "edit": [
+   "Objektart",
+   "Team"
+  ],
+  "export": [
+   "Objektart",
+   "Anteil",
+   "Team"
+  ],
+  "print": [
+   "Objektart",
+   "Anteil",
+   "Team"
+  ],
+  "masterList": [
+   "Objektart",
+   "Anteil",
+   "Team"
+  ]
+ },
+ "export": {
+  "exportTo": null,
+  "exportDelimiter": null,
+  "exportFormatting": null
+ },
+ "print": {
+  "printerPageOrientation": 0,
+  "nPrinterPageScale": 100,
+  "nPrinterSplitRecords": 40,
+  "nPrinterPDFSplitRecords": 40
+ },
+ "tabs": [],
+ "labels": {
+  "German": {
+   "Objektart": "Objektart",
+   "Team": "Team",
+   "Anteil": "Anteil"
+  }
+ },
+ "fields": [
+  {
+   "name": "Objektart",
+   "type": 200,
+   "index": 1,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Objektarten",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 0,
+    "LinkField": "Bezeichnung",
+    "LinkFieldType": 0,
+    "DisplayField": "Bezeichnung",
+    "LookupOrderBy": "Bezeichnung",
+    "SelectSize": 1,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Anteil",
+   "type": 3,
+   "index": 2,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Team",
+   "type": 200,
+   "index": 3,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  }
+ ]
+}

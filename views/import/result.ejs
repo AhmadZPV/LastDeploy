@@ -1,0 +1,6 @@
+<%- include('../partials/layout_top', { pageTitle: 'Importergebnis: ' + meta.title }) %>
+<section class="import-result"><div class="section-heading"><div><span class="eyebrow"><%= t('import_result') %></span><h2><%= tx(meta.title) %></h2></div><span class="badge"><%= report.errors.length ? 'Attention' : 'Complete' %></span></div>
+<div class="import-stats"><div><strong><%= report.created %></strong><span><%= t('created') %></span></div><div><strong><%= report.updated %></strong><span><%= t('updated') %></span></div><div><strong><%= report.skipped %></strong><span><%= t('skipped') %></span></div><div><strong><%= report.errors.length %></strong><span><%= t('error') %></span></div></div>
+<% if (report.errors.length) { %><div class="table-wrap"><table><thead><tr><th><%= t('row') %></th><th><%= t('error') %></th></tr></thead><tbody><% for (const e of report.errors) { %><tr><td><%= e.row %></td><td><%= e.error %></td></tr><% } %></tbody></table></div><% } %>
+<div class="form-actions"><a href="/<%= entity %>" class="btn btn-primary"><%= t('back_to_list') %></a><a href="/import/<%= entity %>" class="btn btn-link"><%= t('continue_import') %></a></div></section>
+<%- include('../partials/layout_bottom') %>

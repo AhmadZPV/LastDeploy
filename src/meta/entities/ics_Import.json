@@ -1,0 +1,147 @@
+{
+ "entity": "ics_Import",
+ "shortName": "ics_Import",
+ "baseTable": "Einstellungen",
+ "isVirtual": true,
+ "ownerField": null,
+ "sql": {
+  "strOrderBy": "",
+  "sqlHead": "SELECT `ID`,  `Import`,  `Importdateiname`",
+  "sqlFrom": "FROM `Einstellungen`",
+  "sqlWhere": "",
+  "sqlTail": ""
+ },
+ "keys": [
+  "ID"
+ ],
+ "pageSize": 20,
+ "capabilities": {
+  "list": false,
+  "view": true,
+  "add": false,
+  "edit": true,
+  "export": false,
+  "print": false,
+  "search": false,
+  "masterList": true
+ },
+ "fieldSets": {
+  "view": [
+   "Importdateiname"
+  ],
+  "edit": [
+   "Import"
+  ],
+  "masterList": [
+   "ID",
+   "Import",
+   "Importdateiname"
+  ]
+ },
+ "export": {
+  "exportTo": null,
+  "exportDelimiter": null,
+  "exportFormatting": null
+ },
+ "print": {
+  "printerPageOrientation": 0,
+  "nPrinterPageScale": 100,
+  "nPrinterSplitRecords": 40,
+  "nPrinterPDFSplitRecords": 40
+ },
+ "tabs": [],
+ "labels": {
+  "German": {
+   "ID": "ID",
+   "Import": "Import",
+   "Importdateiname": "Importdateiname"
+  }
+ },
+ "fields": [
+  {
+   "name": "ID",
+   "type": 3,
+   "index": 1,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "number",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "AutoInc": true,
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Import",
+   "type": 128,
+   "index": 2,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": false,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "Filename": "Importdateiname",
+    "ImageWidth": 457,
+    "ImageHeight": 0,
+    "strFilename": "Importdateiname",
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Importdateiname",
+   "type": 200,
+   "index": 3,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  }
+ ]
+}

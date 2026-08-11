@@ -1,0 +1,618 @@
+{
+ "entity": "Rechnungen",
+ "shortName": "Rechnungen",
+ "baseTable": "Verkauf",
+ "isVirtual": true,
+ "ownerField": "Team",
+ "sql": {
+  "strOrderBy": "ORDER BY Verkauf.Rechnungsdatum DESC",
+  "sqlHead": "SELECT Verkauf.ID,  Verkauf.Kunde,  Verkauf.Nummer,  Verkauf.Datum,  Verkauf.Zahlungsbedingungen,  Verkauf.Lieferbedingungen,  Verkauf.Rechnungsdatum,  Verkauf.Leistungsdatum,  Verkauf.Zahldatum,  if(Verkauf.Zahldatum IS Null, 'Offen', 'Bezahlt') AS Zahlstatus,  Concat(if(Adressen.Firma='','', Concat(Adressen.Firma, '<br>')), if(Adressen.Abteilung='','', Concat(Adressen.Abteilung, '<br>')), Adressen.Vorname, ' ', Adressen.Nachname, '<br>', Adressen.Strasse, '<br>', Adressen.PLZ, ' ', Adressen.Ort) AS Anschrift,  Verkauf.Art,  Verkauf.Bemerkungen,  Verkauf.Team,  Verkauf.Seriennummer,  '' as Nummernkreis",
+  "sqlFrom": "FROM Verkauf  LEFT OUTER JOIN Adressen ON Verkauf.Kunde = Adressen.ID",
+  "sqlWhere": "",
+  "sqlTail": ""
+ },
+ "keys": [
+  "ID"
+ ],
+ "pageSize": 20,
+ "capabilities": {
+  "list": true,
+  "view": true,
+  "add": true,
+  "edit": true,
+  "export": false,
+  "print": true,
+  "search": true,
+  "masterList": true
+ },
+ "fieldSets": {
+  "list": [
+   "Kunde",
+   "Nummer",
+   "Datum",
+   "Rechnungsdatum",
+   "Leistungsdatum",
+   "Zahldatum",
+   "Zahlstatus"
+  ],
+  "view": [
+   "Art",
+   "Kunde",
+   "Anschrift",
+   "Nummer",
+   "Seriennummer",
+   "Datum",
+   "Rechnungsdatum",
+   "Leistungsdatum",
+   "Zahlungsbedingungen",
+   "Zahldatum",
+   "Lieferbedingungen",
+   "Zahlstatus",
+   "Bemerkungen"
+  ],
+  "add": [
+   "Art",
+   "Kunde",
+   "Nummer",
+   "Nummernkreis",
+   "Seriennummer",
+   "Datum",
+   "Rechnungsdatum",
+   "Leistungsdatum",
+   "Zahlungsbedingungen",
+   "Lieferbedingungen",
+   "Bemerkungen"
+  ],
+  "edit": [
+   "Kunde",
+   "Nummer",
+   "Nummernkreis",
+   "Seriennummer",
+   "Datum",
+   "Rechnungsdatum",
+   "Leistungsdatum",
+   "Zahlungsbedingungen",
+   "Zahldatum",
+   "Lieferbedingungen",
+   "Bemerkungen"
+  ],
+  "print": [
+   "Seriennummer",
+   "Anschrift",
+   "Kunde",
+   "Nummer",
+   "Datum",
+   "Rechnungsdatum",
+   "Leistungsdatum",
+   "Zahlungsbedingungen",
+   "Zahldatum",
+   "Lieferbedingungen",
+   "Zahlstatus",
+   "Bemerkungen"
+  ],
+  "search": [
+   "ID",
+   "Kunde",
+   "Nummer",
+   "Art",
+   "Datum",
+   "Rechnungsdatum",
+   "Leistungsdatum",
+   "Zahlungsbedingungen",
+   "Zahldatum",
+   "Lieferbedingungen",
+   "Zahlstatus"
+  ],
+  "masterList": [
+   "Kunde",
+   "Nummer",
+   "Datum",
+   "Rechnungsdatum",
+   "Leistungsdatum",
+   "Zahldatum",
+   "Zahlstatus"
+  ]
+ },
+ "export": {
+  "exportTo": null,
+  "exportDelimiter": null,
+  "exportFormatting": null
+ },
+ "print": {
+  "printerPageOrientation": 0,
+  "nPrinterPageScale": 100,
+  "nPrinterSplitRecords": 40,
+  "nPrinterPDFSplitRecords": 40
+ },
+ "tabs": [],
+ "labels": {
+  "German": {
+   "ID": "ID",
+   "Kunde": "Kunde",
+   "Nummer": "Nummer",
+   "Datum": "Datum",
+   "Zahlungsbedingungen": "Zahlungsbedingungen",
+   "Lieferbedingungen": "Lieferbedingungen",
+   "Rechnungsdatum": "Rechnungsdatum",
+   "Leistungsdatum": "Leistungsdatum",
+   "Anschrift": "Anschrift",
+   "Art": "Art",
+   "Bemerkungen": "Bemerkungen",
+   "Zahldatum": "Zahldatum",
+   "Zahlstatus": "Zahlstatus",
+   "Team": "Team",
+   "Seriennummer": "Rechnungsnummer",
+   "Nummernkreis": "Nummernkreis"
+  }
+ },
+ "fields": [
+  {
+   "name": "ID",
+   "type": 3,
+   "index": 1,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": false
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "AutoInc": true,
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Kunde",
+   "type": 3,
+   "index": 2,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Adressen",
+    "autoCompleteFieldsOnEdit": 1,
+    "LCType": 2,
+    "LinkField": "ID",
+    "LinkFieldType": 0,
+    "DisplayField": "Kurzname",
+    "LookupOrderBy": "Kurzname",
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Nummer",
+   "type": 3,
+   "index": 3,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Datum",
+   "type": 7,
+   "index": 4,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "DateEditType": 13,
+    "InitialYearFactor": 3,
+    "LastYearFactor": 10,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Zahlungsbedingungen",
+   "type": 200,
+   "index": 5,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": true,
+    "search": true,
+    "masterList": false
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Verkauf",
+    "freeInput": true,
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 1,
+    "LookupUnique": true,
+    "LinkField": "Zahlungsbedingungen",
+    "LinkFieldType": 0,
+    "DisplayField": "Zahlungsbedingungen",
+    "LookupOrderBy": "Zahlungsbedingungen",
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Lieferbedingungen",
+   "type": 200,
+   "index": 6,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": true,
+    "search": true,
+    "masterList": false
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Verkauf",
+    "freeInput": true,
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 1,
+    "LookupUnique": true,
+    "LinkField": "Lieferbedingungen",
+    "LinkFieldType": 0,
+    "DisplayField": "Lieferbedingungen",
+    "LookupOrderBy": "Lieferbedingungen",
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Rechnungsdatum",
+   "type": 7,
+   "index": 7,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "DateEditType": 13,
+    "InitialYearFactor": 3,
+    "LastYearFactor": 10,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Leistungsdatum",
+   "type": 7,
+   "index": 8,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "DateEditType": 13,
+    "InitialYearFactor": 3,
+    "LastYearFactor": 10,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Zahldatum",
+   "type": 7,
+   "index": 9,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": true,
+    "export": false,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "DateEditType": 13,
+    "InitialYearFactor": 3,
+    "LastYearFactor": 10,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Zahlstatus",
+   "type": 200,
+   "index": 10,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Anschrift",
+   "type": 200,
+   "index": 11,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": true,
+    "search": false,
+    "masterList": false
+   },
+   "view": {
+    "ViewFormat": "Custom"
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Art",
+   "type": 200,
+   "index": 12,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": false
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Bemerkungen",
+   "type": 200,
+   "index": 13,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": true,
+    "search": false,
+    "masterList": false
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "nRows": 100,
+    "nCols": 200,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Team",
+   "type": 200,
+   "index": 14,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": false
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Seriennummer",
+   "type": 200,
+   "index": 15,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": true,
+    "search": false,
+    "masterList": false
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Nummernkreis",
+   "type": 200,
+   "index": 16,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": false
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "fieldEvents": [
+     null
+    ],
+    "LookupType": 2,
+    "LookupTable": "Seriennummern",
+    "autoCompleteFieldsOnEdit": 1,
+    "LCType": 0,
+    "LinkField": "ID",
+    "LinkFieldType": 0,
+    "DisplayField": "Nummernkreis",
+    "LookupOrderBy": "Nummernkreis",
+    "SelectSize": 1,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  }
+ ]
+}

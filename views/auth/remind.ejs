@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title><%= t('forgot_password') %> - <%= t('app_name') %></title>
+<script>document.documentElement.dataset.theme=localStorage.getItem('erwin-theme')||'light';</script>
+<link rel="stylesheet" href="/static/css/style.css?v=20260810-3"></head>
+<body class="login-page"><main class="auth-shell"><div class="auth-card">
+  <div class="auth-heading"><div class="login-brand-mark">E</div><div><h1><%= t('forgot_password') %></h1><p><%= t('app_name') %></p></div></div>
+  <% if (message) { %><div class="<%= sent ? 'form-info' : 'form-error' %>"><%= message %></div><% } %>
+  <% if (!sent) { %>
+  <form method="post" action="/remind">
+    <%- include('../partials/csrf') %>
+    <div class="form-group"><label><%= t('username_or_email') %></label>
+      <input type="text" name="username_email" required autofocus></div>
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary" style="width:100%"><%= t('send') %></button></div>
+  </form>
+  <% } %>
+  <p style="margin-top:15px"><a href="/login"><%= t('back_to_login') %></a></p>
+ </div></main><script src="/static/js/app.js?v=20260810-3"></script></body></html>

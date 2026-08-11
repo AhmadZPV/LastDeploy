@@ -1,0 +1,71 @@
+<%- include('../partials/layout_top', { pageTitle: meta.titleSingle + ' #' + item.ID }) %>
+<div class="header-actions">
+  <a href="/<%= module %>" class="btn btn-link">« <%= t('back_to_list') %></a>
+  <a href="/<%= module %>/<%= item.ID %>/edit" class="btn btn-primary"><%= t('edit') %></a>
+  <form method="post" action="/<%= module %>/<%= item.ID %>/delete" style="display:inline" onsubmit="return confirm('<%= t('confirm_delete') %>')">
+    <%- include('../partials/csrf') %>
+    <button class="btn btn-danger"><%= t('delete') %></button>
+  </form>
+</div>
+
+<section>
+  <h2>Details</h2>
+  <div class="table-wrap"><table class="detail-grid">
+    <% const vrows = (typeof vspec !== 'undefined' && vspec && vspec.fields && vspec.fields.length)
+        ? vspec.fields.map(f => [f.name, item[f.name], f.label])
+        : Object.entries(item).map(([k, v]) => [k, v, k]); %>
+    <% for (const [k, v, lbl] of vrows) { %>
+      <% const cat = helpers.fieldCategory(module, k); %>
+      <% if (cat === 'blob' && v != null) { continue; } %>
+      <tr>
+        <th><%= lbl %></th>
+        <td>
+          <% if (v == null) { %>
+            <span class="muted">—</span>
+          <% } else if (cat === 'date') { %>
+            <%= helpers.display(module, k, v) %>
+          <% } else if (cat === 'money') { %>
+            <%= helpers.display(module, k, v, locals.waehrung) %>
+          <% } else if (cat === 'bool') { %>
+            <%- helpers.display(module, k, v) %>
+          <% } else if (cat === 'color') { %>
+            <%- helpers.display(module, k, v) %>
+          <% } else if (cat === 'textarea') { %>
+            <pre class="pre-text"><%= String(v) %></pre>
+          <% } else { %>
+            <span><%= String(v) %></span>
+          <% } %>
+        </td>
+      </tr>
+    <% } %>
+  </table></div>
+</section>
+
+<% if (meta.blobs && meta.blobs.length) { %>
+<section>
+  <h2>Dokumente / Bilder</h2>
+  <% for (const f of meta.blobs || []) { %>
+    <% if (item[f]) { %>
+      <div class="blob-preview">
+        <% if (/Bild|Miniatur|Foto|Belegminiatur/i.test(f)) { %>
+          <img src="/media/<%= module %>/<%= item.ID %>/<%= f %>" alt="<%= f %>" class="thumb">
+        <% } else { %>
+          <a href="/file/get/<%= module %>/<%= item.ID %>/<%= f %>" target="_blank">▼ <%= f %></a>
+        <% } %>
+        <div class="muted"><%= f %></div>
+      </div>
+    <% } %>
+  <% } %>
+</section>
+<% } %>
+<%# master/detail previews (port of *_detailspreview.php) %>
+<% for (const d of (locals.details || [])) { %>
+  <section class="detail-section">
+    <%- include('detailspreview', {
+          relation: d.relation, rows: d.rows, total: d.total,
+          columns: d.columns, master: module, masterId: item.ID, helpers: helpers
+        }) %>
+  </section>
+<% } %>
+
+<%- include('../partials/layout_bottom') %>

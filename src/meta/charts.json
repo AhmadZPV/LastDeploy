@@ -1,0 +1,1340 @@
+{
+ "total": 18,
+ "byType": {
+  "bar": 2,
+  "doughnut": 15,
+  "column": 1
+ },
+ "needsSqlTranslation": [
+  "Abrechnungskonten_Zeitliche_Verteilung",
+  "Kontost_nde",
+  "Leerstandsquote",
+  "Verbrauchsanteile"
+ ],
+ "charts": {
+  "Abrechnungskonten_Zeitliche_Verteilung": {
+   "entity": "Abrechnungskonten_Zeitliche_Verteilung",
+   "displayName": "Abrechnungskonten Zeitliche Verteilung",
+   "shortTableName": "Abrechnungskonten_Zeitliche_Verteilung",
+   "baseTable": "Abrechnungskonten",
+   "chartType": "bar",
+   "rawChartType": "2DBar",
+   "xmlChartType": "2d_bar",
+   "category": "Bezeichnung",
+   "series": [
+    "Tage vorher",
+    "Abrechnungstage",
+    "Tage nachher"
+   ],
+   "sql": {
+    "head": "SELECT @anfang := concat(date_format(Von,\"%Y\"),\"-01-01\") as anfang,  @ende := concat(date_format(Bis,\"%Y\"),\"-12-31\") as ende,    `ID`,  `Bezeichnung`,  `Von`,  `Bis`,        case when (abs(Datediff(Von,@anfang))>0) then abs(Datediff(Von,@anfang)) end as 'Tage vorher',  Datediff(Bis,Von)+1 as Abrechnungstage,  case when (abs(Datediff(@ende,Bis))>0) then abs(Datediff(@ende,Bis)) end as 'Tage nachher',  `Abrechnung`,  `Einheit`,  `Objekt`,  Team",
+    "from": "FROM `Abrechnungskonten`",
+    "where": "",
+    "tail": "",
+    "orderBy": "$tstrOrderBy"
+   },
+   "groupBy": [],
+   "titles": {
+    "head": "Zeitliche Verteilung",
+    "foot": "Abrechnungskonto",
+    "yAxisLabel": "Tage"
+   },
+   "appearance": {
+    "legend": true,
+    "grid": true,
+    "showName": true,
+    "showValue": false,
+    "animate": true,
+    "stacked": true,
+    "is3d": false,
+    "logScale": false,
+    "autoUpdateSeconds": 0
+   },
+   "fields": [
+    {
+     "name": "anfang",
+     "label": "anfang"
+    },
+    {
+     "name": "ende",
+     "label": "ende"
+    },
+    {
+     "name": "ID",
+     "label": "ID"
+    },
+    {
+     "name": "Bezeichnung",
+     "label": "Bezeichnung"
+    },
+    {
+     "name": "Von",
+     "label": "Von"
+    },
+    {
+     "name": "Bis",
+     "label": "Bis"
+    },
+    {
+     "name": "Tage vorher",
+     "label": "Tage_vorher"
+    },
+    {
+     "name": "Abrechnungstage",
+     "label": "Abrechnungstage"
+    },
+    {
+     "name": "Tage nachher",
+     "label": "Tage_nachher"
+    },
+    {
+     "name": "Abrechnung",
+     "label": "Abrechnung"
+    },
+    {
+     "name": "Einheit",
+     "label": "Einheit"
+    },
+    {
+     "name": "Objekt",
+     "label": "Objekt"
+    },
+    {
+     "name": "Team",
+     "label": "Team"
+    }
+   ],
+   "pageSize": null,
+   "mysqlOnly": [
+    "session variables (@x := ...)",
+    "date_format()",
+    "datediff()",
+    "concat()"
+   ]
+  },
+  "Einheiten_nach_Art": {
+   "entity": "Einheiten_nach_Art",
+   "displayName": "Einheiten nach Art",
+   "shortTableName": "Einheiten_nach_Art",
+   "baseTable": "Einheiten",
+   "chartType": "doughnut",
+   "rawChartType": "2DDoughnut",
+   "xmlChartType": "2d_doughnut",
+   "category": "Einheitenart",
+   "series": [
+    "Anteil"
+   ],
+   "sql": {
+    "head": "SELECT Einheitenart,  COUNT(Einheitenart) AS Anteil,  Team",
+    "from": "FROM Einheiten",
+    "where": "",
+    "tail": "",
+    "orderBy": "$tstrOrderBy"
+   },
+   "groupBy": [
+    {
+     "name": "Einheitenart",
+     "table": "Einheiten",
+     "expression": false
+    }
+   ],
+   "titles": {
+    "head": "Einheiten nach Art",
+    "foot": "",
+    "yAxisLabel": "Nummer"
+   },
+   "appearance": {
+    "legend": true,
+    "grid": false,
+    "showName": true,
+    "showValue": true,
+    "animate": true,
+    "stacked": false,
+    "is3d": false,
+    "logScale": false,
+    "autoUpdateSeconds": 0
+   },
+   "fields": [
+    {
+     "name": "Einheitenart",
+     "label": "Einheitenart"
+    },
+    {
+     "name": "Anteil",
+     "label": "Anteil"
+    },
+    {
+     "name": "Team",
+     "label": "Team"
+    }
+   ],
+   "pageSize": null,
+   "mysqlOnly": []
+  },
+  "Einnahmeverteilung": {
+   "entity": "Einnahmeverteilung",
+   "displayName": "Einnahmeverteilung",
+   "shortTableName": "Einnahmeverteilung",
+   "baseTable": "Kontobuch",
+   "chartType": "doughnut",
+   "rawChartType": "2DDoughnut",
+   "xmlChartType": "2d_doughnut",
+   "category": "Betreff",
+   "series": [
+    "Einnahmen"
+   ],
+   "sql": {
+    "head": "SELECT `ID`,  \t`Datum`,  sum(`Betrag`) as Einnahmen,  \t`Betreff`,  \t`Kategorie`,  \t`Art`,    \t`Abrechnung`,  \t`Abrechnungskonto`,  \t`Belegnummer`,  Team",
+    "from": "FROM `Kontobuch`",
+    "where": "Art=\"Einnahme\"",
+    "tail": "",
+    "orderBy": "$tstrOrderBy"
+   },
+   "groupBy": [
+    {
+     "name": "Kategorie",
+     "table": "Kontobuch",
+     "expression": false
+    }
+   ],
+   "titles": {
+    "head": "Einnahmeverteilung",
+    "foot": "",
+    "yAxisLabel": "Betrag"
+   },
+   "appearance": {
+    "legend": true,
+    "grid": false,
+    "showName": true,
+    "showValue": true,
+    "animate": true,
+    "stacked": false,
+    "is3d": false,
+    "logScale": false,
+    "autoUpdateSeconds": 0
+   },
+   "fields": [
+    {
+     "name": "ID",
+     "label": "ID"
+    },
+    {
+     "name": "Datum",
+     "label": "Datum"
+    },
+    {
+     "name": "Einnahmen",
+     "label": "Einnahmen"
+    },
+    {
+     "name": "Betreff",
+     "label": "Betreff"
+    },
+    {
+     "name": "Kategorie",
+     "label": "Kategorie"
+    },
+    {
+     "name": "Art",
+     "label": "Art"
+    },
+    {
+     "name": "Abrechnung",
+     "label": "Abrechnung"
+    },
+    {
+     "name": "Abrechnungskonto",
+     "label": "Abrechnungskonto"
+    },
+    {
+     "name": "Belegnummer",
+     "label": "Belegnummer"
+    },
+    {
+     "name": "Team",
+     "label": "Team"
+    }
+   ],
+   "pageSize": null,
+   "mysqlOnly": []
+  },
+  "Inventar_nach_Aufbewahrungsort": {
+   "entity": "Inventar_nach_Aufbewahrungsort",
+   "displayName": "Inventar nach Aufbewahrungsort",
+   "shortTableName": "Inventar_nach_Aufbewahrungsort",
+   "baseTable": "Inventar",
+   "chartType": "doughnut",
+   "rawChartType": "2DDoughnut",
+   "xmlChartType": "2d_doughnut",
+   "category": "Aufbewahrungsort",
+   "series": [
+    "Anteil"
+   ],
+   "sql": {
+    "head": "SELECT Bezeichnung,  Raum,  COUNT(Raum) AS Anteil,  Team",
+    "from": "FROM Inventar",
+    "where": "",
+    "tail": "",
+    "orderBy": "$tstrOrderBy"
+   },
+   "groupBy": [
+    {
+     "name": "Raum",
+     "table": "Inventar",
+     "expression": false
+    }
+   ],
+   "titles": {
+    "head": "Inventar nach Aufbewahrungsort",
+    "foot": "",
+    "yAxisLabel": "Adresse"
+   },
+   "appearance": {
+    "legend": true,
+    "grid": false,
+    "showName": true,
+    "showValue": true,
+    "animate": true,
+    "stacked": false,
+    "is3d": true,
+    "logScale": false,
+    "autoUpdateSeconds": 0
+   },
+   "fields": [
+    {
+     "name": "Bezeichnung",
+     "label": "Bezeichnung"
+    },
+    {
+     "name": "Raum",
+     "label": "Raum"
+    },
+    {
+     "name": "Anteil",
+     "label": "Anteil"
+    },
+    {
+     "name": "Team",
+     "label": "Team"
+    }
+   ],
+   "pageSize": null,
+   "mysqlOnly": []
+  },
+  "Inventar_nach_Hersteller": {
+   "entity": "Inventar_nach_Hersteller",
+   "displayName": "Inventar nach Hersteller",
+   "shortTableName": "Inventar_nach_Hersteller",
+   "baseTable": "Inventar",
+   "chartType": "doughnut",
+   "rawChartType": "2DDoughnut",
+   "xmlChartType": "2d_doughnut",
+   "category": "Hersteller",
+   "series": [
+    "Anteil"
+   ],
+   "sql": {
+    "head": "SELECT Bezeichnung,  Hersteller,  Count(Hersteller) as Anteil,  Team",
+    "from": "FROM Inventar",
+    "where": "",
+    "tail": "",
+    "orderBy": "$tstrOrderBy"
+   },
+   "groupBy": [
+    {
+     "name": "Hersteller",
+     "table": "Inventar",
+     "expression": false
+    }
+   ],
+   "titles": {
+    "head": "Inventar nach Hersteller",
+    "foot": "",
+    "yAxisLabel": "Adresse"
+   },
+   "appearance": {
+    "legend": true,
+    "grid": false,
+    "showName": true,
+    "showValue": true,
+    "animate": true,
+    "stacked": false,
+    "is3d": true,
+    "logScale": false,
+    "autoUpdateSeconds": 0
+   },
+   "fields": [
+    {
+     "name": "Bezeichnung",
+     "label": "Bezeichnung"
+    },
+    {
+     "name": "Hersteller",
+     "label": "Hersteller"
+    },
+    {
+     "name": "Anteil",
+     "label": "Anteil"
+    },
+    {
+     "name": "Team",
+     "label": "Team"
+    }
+   ],
+   "pageSize": null,
+   "mysqlOnly": []
+  },
+  "Inventar_nach_Kategorien": {
+   "entity": "Inventar_nach_Kategorien",
+   "displayName": "Inventar nach Kategorien",
+   "shortTableName": "Inventar_nach_Kategorien",
+   "baseTable": "Inventar",
+   "chartType": "doughnut",
+   "rawChartType": "2DDoughnut",
+   "xmlChartType": "2d_doughnut",
+   "category": "Kategorie",
+   "series": [
+    "Anteil"
+   ],
+   "sql": {
+    "head": "SELECT Bezeichnung,  Kategorie,  Count(Kategorie) as Anteil,  Team",
+    "from": "FROM Inventar",
+    "where": "",
+    "tail": "",
+    "orderBy": "$tstrOrderBy"
+   },
+   "groupBy": [
+    {
+     "name": "Kategorie",
+     "table": "Inventar",
+     "expression": false
+    }
+   ],
+   "titles": {
+    "head": "Inventar nach Kategorien",
+    "foot": "",
+    "yAxisLabel": "Adresse"
+   },
+   "appearance": {
+    "legend": true,
+    "grid": false,
+    "showName": true,
+    "showValue": true,
+    "animate": true,
+    "stacked": false,
+    "is3d": true,
+    "logScale": false,
+    "autoUpdateSeconds": 0
+   },
+   "fields": [
+    {
+     "name": "Bezeichnung",
+     "label": "Bezeichnung"
+    },
+    {
+     "name": "Kategorie",
+     "label": "Kategorie"
+    },
+    {
+     "name": "Anteil",
+     "label": "Anteil"
+    },
+    {
+     "name": "Team",
+     "label": "Team"
+    }
+   ],
+   "pageSize": null,
+   "mysqlOnly": []
+  },
+  "Inventar_nach_Verk_ufer": {
+   "entity": "Inventar_nach_Verk_ufer",
+   "displayName": "Inventar nach Verkäufer",
+   "shortTableName": "Inventar_nach_Verk_ufer",
+   "baseTable": "Inventar",
+   "chartType": "doughnut",
+   "rawChartType": "2DDoughnut",
+   "xmlChartType": "2d_doughnut",
+   "category": "Verkaeufer",
+   "series": [
+    "Anteil"
+   ],
+   "sql": {
+    "head": "SELECT Bezeichnung,  Verkaeufer,  Count(Verkaeufer) as Anteil,  Team",
+    "from": "FROM Inventar",
+    "where": "",
+    "tail": "",
+    "orderBy": "$tstrOrderBy"
+   },
+   "groupBy": [
+    {
+     "name": "Verkaeufer",
+     "table": "Inventar",
+     "expression": false
+    }
+   ],
+   "titles": {
+    "head": "Inventar nach Verkäufer",
+    "foot": "",
+    "yAxisLabel": "Adresse"
+   },
+   "appearance": {
+    "legend": true,
+    "grid": false,
+    "showName": true,
+    "showValue": true,
+    "animate": true,
+    "stacked": false,
+    "is3d": true,
+    "logScale": false,
+    "autoUpdateSeconds": 0
+   },
+   "fields": [
+    {
+     "name": "Bezeichnung",
+     "label": "Bezeichnung"
+    },
+    {
+     "name": "Verkaeufer",
+     "label": "Verkaeufer"
+    },
+    {
+     "name": "Anteil",
+     "label": "Anteil"
+    },
+    {
+     "name": "Team",
+     "label": "Team"
+    }
+   ],
+   "pageSize": null,
+   "mysqlOnly": []
+  },
+  "Kontost_nde": {
+   "entity": "Kontost_nde",
+   "displayName": "Kontostände",
+   "shortTableName": "Kontost_nde",
+   "baseTable": "Kontobuch",
+   "chartType": "column",
+   "rawChartType": "2DColumn",
+   "xmlChartType": "2d_column",
+   "category": "Betreff",
+   "series": [
+    "Betrag"
+   ],
+   "sql": {
+    "head": "SELECT `ID`,  `Datum`,  @betrag := if (Art=\"Ausgabe\",-1*`Betrag`,Betrag) AS `Betrag`,  Concat(`Betreff`,\" - \",date_format(Datum,\"%m.%d.%Y\")) as Betreff,  `Kategorie`,  `Art`,  `Abrechnung`,  `Abrechnungskonto`,  Team",
+    "from": "FROM `Kontobuch` AS `o`",
+    "where": "(`Art` <>\"Sollstellung\")",
+    "tail": "",
+    "orderBy": "$tstrOrderBy"
+   },
+   "groupBy": [],
+   "titles": {
+    "head": "Einnahmen/Ausgaben",
+    "foot": "",
+    "yAxisLabel": "Betrag"
+   },
+   "appearance": {
+    "legend": true,
+    "grid": true,
+    "showName": true,
+    "showValue": true,
+    "animate": true,
+    "stacked": false,
+    "is3d": false,
+    "logScale": false,
+    "autoUpdateSeconds": 0
+   },
+   "fields": [
+    {
+     "name": "ID",
+     "label": "ID"
+    },
+    {
+     "name": "Datum",
+     "label": "Datum"
+    },
+    {
+     "name": "Betrag",
+     "label": "Betrag"
+    },
+    {
+     "name": "Betreff",
+     "label": "Betreff"
+    },
+    {
+     "name": "Kategorie",
+     "label": "Kategorie"
+    },
+    {
+     "name": "Art",
+     "label": "Art"
+    },
+    {
+     "name": "Abrechnung",
+     "label": "Abrechnung"
+    },
+    {
+     "name": "Abrechnungskonto",
+     "label": "Abrechnungskonto"
+    },
+    {
+     "name": "Team",
+     "label": "Team"
+    }
+   ],
+   "pageSize": null,
+   "mysqlOnly": [
+    "session variables (@x := ...)",
+    "date_format()",
+    "concat()",
+    "if()"
+   ]
+  },
+  "Kostenverteilung": {
+   "entity": "Kostenverteilung",
+   "displayName": "Kostenverteilung",
+   "shortTableName": "Kostenverteilung",
+   "baseTable": "Kontobuch",
+   "chartType": "doughnut",
+   "rawChartType": "2DDoughnut",
+   "xmlChartType": "2d_doughnut",
+   "category": "Kategorie",
+   "series": [
+    "Kosten"
+   ],
+   "sql": {
+    "head": "SELECT `ID`,  \t`Datum`,  sum(`Betrag`) as Kosten,  \t`Betreff`,  \t`Kategorie`,  \t`Art`,    \t`Abrechnung`,  \t`Abrechnungskonto`,  \t`Belegnummer`,  Team",
+    "from": "FROM `Kontobuch`",
+    "where": "Art=\"Ausgabe\"",
+    "tail": "",
+    "orderBy": "$tstrOrderBy"
+   },
+   "groupBy": [
+    {
+     "name": "Kategorie",
+     "table": "Kontobuch",
+     "expression": false
+    }
+   ],
+   "titles": {
+    "head": "Kostenverteilung",
+    "foot": "",
+    "yAxisLabel": "Betrag"
+   },
+   "appearance": {
+    "legend": true,
+    "grid": false,
+    "showName": true,
+    "showValue": true,
+    "animate": true,
+    "stacked": false,
+    "is3d": false,
+    "logScale": false,
+    "autoUpdateSeconds": 0
+   },
+   "fields": [
+    {
+     "name": "ID",
+     "label": "ID"
+    },
+    {
+     "name": "Datum",
+     "label": "Datum"
+    },
+    {
+     "name": "Kosten",
+     "label": "Kosten"
+    },
+    {
+     "name": "Betreff",
+     "label": "Betreff"
+    },
+    {
+     "name": "Kategorie",
+     "label": "Kategorie"
+    },
+    {
+     "name": "Art",
+     "label": "Art"
+    },
+    {
+     "name": "Abrechnung",
+     "label": "Abrechnung"
+    },
+    {
+     "name": "Abrechnungskonto",
+     "label": "Abrechnungskonto"
+    },
+    {
+     "name": "Belegnummer",
+     "label": "Belegnummer"
+    },
+    {
+     "name": "Team",
+     "label": "Team"
+    }
+   ],
+   "pageSize": null,
+   "mysqlOnly": []
+  },
+  "Leerstandsquote": {
+   "entity": "Leerstandsquote",
+   "displayName": "Leerstandsquote",
+   "shortTableName": "Leerstandsquote",
+   "baseTable": "Einheiten",
+   "chartType": "doughnut",
+   "rawChartType": "2DDoughnut",
+   "xmlChartType": "2d_doughnut",
+   "category": "Status",
+   "series": [
+    "Anteil"
+   ],
+   "sql": {
+    "head": "select Objekt,  if(Nutzer=\"\" or Nutzer is Null,\"Leerstand\",\"Vermietet\") as Status,  count(Bezeichnung) as Anteil,  Team",
+    "from": "from Einheiten",
+    "where": "",
+    "tail": "",
+    "orderBy": "$tstrOrderBy"
+   },
+   "groupBy": [
+    {
+     "name": "Objekt",
+     "table": "Einheiten",
+     "expression": false
+    },
+    {
+     "name": "Status",
+     "table": null,
+     "expression": true
+    }
+   ],
+   "titles": {
+    "head": "Leerstandsquote",
+    "foot": "",
+    "yAxisLabel": ""
+   },
+   "appearance": {
+    "legend": true,
+    "grid": false,
+    "showName": true,
+    "showValue": true,
+    "animate": true,
+    "stacked": true,
+    "is3d": true,
+    "logScale": false,
+    "autoUpdateSeconds": 0
+   },
+   "fields": [
+    {
+     "name": "Objekt",
+     "label": "Objekt"
+    },
+    {
+     "name": "Status",
+     "label": "Status"
+    },
+    {
+     "name": "Anteil",
+     "label": "Anteil"
+    },
+    {
+     "name": "Team",
+     "label": "Team"
+    }
+   ],
+   "pageSize": null,
+   "mysqlOnly": [
+    "if()"
+   ]
+  },
+  "Objekte_nach_Art": {
+   "entity": "Objekte_nach_Art",
+   "displayName": "Objekte nach Art",
+   "shortTableName": "Objekte_nach_Art",
+   "baseTable": "Objekte",
+   "chartType": "doughnut",
+   "rawChartType": "2DDoughnut",
+   "xmlChartType": "2d_doughnut",
+   "category": "Objektart",
+   "series": [
+    "Anteil"
+   ],
+   "sql": {
+    "head": "SELECT Objektart,  COUNT(Objektart) AS Anteil,  Team",
+    "from": "FROM Objekte",
+    "where": "",
+    "tail": "",
+    "orderBy": "$tstrOrderBy"
+   },
+   "groupBy": [
+    {
+     "name": "Objektart",
+     "table": "Objekte",
+     "expression": false
+    }
+   ],
+   "titles": {
+    "head": "Objekte nach Art",
+    "foot": "",
+    "yAxisLabel": "Nummer"
+   },
+   "appearance": {
+    "legend": true,
+    "grid": false,
+    "showName": true,
+    "showValue": true,
+    "animate": true,
+    "stacked": false,
+    "is3d": false,
+    "logScale": false,
+    "autoUpdateSeconds": 0
+   },
+   "fields": [
+    {
+     "name": "Objektart",
+     "label": "Objektart"
+    },
+    {
+     "name": "Anteil",
+     "label": "Anteil"
+    },
+    {
+     "name": "Team",
+     "label": "Team"
+    }
+   ],
+   "pageSize": null,
+   "mysqlOnly": []
+  },
+  "Objekte_nach_Flaeche": {
+   "entity": "Objekte_nach_Flaeche",
+   "displayName": "Objekte nach Flaeche",
+   "shortTableName": "Objekte_nach_Flaeche",
+   "baseTable": "Objekte",
+   "chartType": "doughnut",
+   "rawChartType": "2DDoughnut",
+   "xmlChartType": "2d_doughnut",
+   "category": "Bezeichnung",
+   "series": [
+    "Anteil"
+   ],
+   "sql": {
+    "head": "SELECT Bezeichnung,  sum(Wohnflaeche) AS Anteil,  Team",
+    "from": "FROM Objekte",
+    "where": "Wohnflaeche>0",
+    "tail": "",
+    "orderBy": "$tstrOrderBy"
+   },
+   "groupBy": [
+    {
+     "name": "Bezeichnung",
+     "table": "Objekte",
+     "expression": false
+    }
+   ],
+   "titles": {
+    "head": "Objekte nach Wohnfläche",
+    "foot": "",
+    "yAxisLabel": "Nummer"
+   },
+   "appearance": {
+    "legend": true,
+    "grid": false,
+    "showName": true,
+    "showValue": true,
+    "animate": true,
+    "stacked": false,
+    "is3d": false,
+    "logScale": false,
+    "autoUpdateSeconds": 0
+   },
+   "fields": [
+    {
+     "name": "Bezeichnung",
+     "label": "Bezeichnung"
+    },
+    {
+     "name": "Anteil",
+     "label": "Anteil"
+    },
+    {
+     "name": "Team",
+     "label": "Team"
+    }
+   ],
+   "pageSize": null,
+   "mysqlOnly": []
+  },
+  "Verbrauchsanteile": {
+   "entity": "Verbrauchsanteile",
+   "displayName": "Verbrauchsanteile",
+   "shortTableName": "Verbrauchsanteile",
+   "baseTable": "Abrechnungskonten",
+   "chartType": "bar",
+   "rawChartType": "2DBar",
+   "xmlChartType": "2d_bar",
+   "category": "Bezeichnung",
+   "series": [
+    "QM_Anteil",
+    "QM_Anteil2",
+    "Einheiten_Anteil",
+    "Einheiten_Anteil2",
+    "Muellverbrauch_Anteil",
+    "Wasserverbrauch_Anteil"
+   ],
+   "sql": {
+    "head": "Select `Abrechnungskonten`.`ID`,  `Abrechnungskonten`.`Bezeichnung`,  `Abrechnungskonten`.`Personen`,  `Abrechnungskonten`.`Einheit`,  `Abrechnungskonten`.`Adresse`,  `Abrechnungskonten`.`Objekt`,    `Abrechnungskonten`.`Abrechnung`,  `Abrechnungen`.`Von` AS `Abrechnung_Von`,  `Abrechnungen`.`Bis` AS `Abrechnung_Bis`,  `Abrechnungen`.`Quadratmeter` AS `Gesamt_Quadratmeter`,  `Abrechnungen`.`Einheiten` AS `Gesamt_Einheiten`,  (Abrechnungskonten.Quadratmeter*datediff(Abrechnungskonten.Bis,Abrechnungskonten.Von))/(Abrechnungen.Quadratmeter*datediff(Abrechnungen.Bis,Abrechnungen.Von)/100) AS `QM_Anteil`,  (1*datediff(Abrechnungskonten.Bis,Abrechnungskonten.Von))/(Abrechnungen.Einheiten*datediff(Abrechnungen.Bis,Abrechnungen.Von)/100) AS `Einheiten_Anteil`,  (Abrechnungskonten.Quadratmeter2*datediff(Abrechnungskonten.Bis,Abrechnungskonten.Von))/(Abrechnungen.Quadratmeter2*datediff(Abrechnungen.Bis,Abrechnungen.Von)/100) AS `QM_Anteil2`,  (Abrechnungskonten.Einheiten2*datediff(Abrechnungskonten.Bis,Abrechnungskonten.Von))/(Abrechnungen.Einheiten2*datediff(Abrechnungen.Bis,Abrechnungen.Von)/100) AS `Einheiten_Anteil2`,  (Abrechnungskonten.Miteigentumsanteil*datediff(Abrechnungskonten.Bis,Abrechnungskonten.Von))/(Abrechnungen.Miteigentumsanteile*datediff(Abrechnungen.Bis,Abrechnungen.Von)/100) AS `MEA_Anteil`,  (Abrechnungskonten.Wasserverbrauch*datediff(Abrechnungskonten.Bis,Abrechnungskonten.Von))/(Abrechnungen.Wasserverbrauch*datediff(Abrechnungen.Bis,Abrechnungen.Von)/100) AS `Wasserverbrauch_Anteil`,  (Abrechnungskonten.Muellverbrauch*datediff(Abrechnungskonten.Bis,Abrechnungskonten.Von))/(Abrechnungen.Muellverbrauch*datediff(Abrechnungen.Bis,Abrechnungen.Von)/100) AS `Muellverbrauch_Anteil`,  (Abrechnungskonten.Personen*datediff(Abrechnungskonten.Bis,Abrechnungskonten.Von))/(Abrechnungen.Personen*datediff(Abrechnungen.Bis,Abrechnungen.Von)/100) AS `Personen_Anteil`,  (Abrechnungskonten.Warmwasserverbrauch)/(Abrechnungen.Waermemengenzaehler/100) AS `Warmwasser_Anteil`,  (Abrechnungskonten.Waermeverbrauch)/(Abrechnungen.Waermeverbrauch/100) AS `Heizung_Anteil`,    Abrechnungskonten.Team",
+    "from": "FROM `Abrechnungskonten`  LEFT OUTER JOIN `Abrechnungen` ON `Abrechnungskonten`.`Abrechnung` = `Abrechnungen`.`ID`",
+    "where": "",
+    "tail": "",
+    "orderBy": "$tstrOrderBy"
+   },
+   "groupBy": [],
+   "titles": {
+    "head": "Verbrauchsanteile",
+    "foot": "",
+    "yAxisLabel": "Anteil in Prozent"
+   },
+   "appearance": {
+    "legend": true,
+    "grid": false,
+    "showName": true,
+    "showValue": true,
+    "animate": true,
+    "stacked": false,
+    "is3d": false,
+    "logScale": false,
+    "autoUpdateSeconds": 0
+   },
+   "fields": [
+    {
+     "name": "ID",
+     "label": "ID"
+    },
+    {
+     "name": "Bezeichnung",
+     "label": "Bezeichnung"
+    },
+    {
+     "name": "Personen",
+     "label": "Personen"
+    },
+    {
+     "name": "Einheit",
+     "label": "Einheit"
+    },
+    {
+     "name": "Adresse",
+     "label": "Adresse"
+    },
+    {
+     "name": "Objekt",
+     "label": "Objekt"
+    },
+    {
+     "name": "Abrechnung",
+     "label": "Abrechnung"
+    },
+    {
+     "name": "Abrechnung_Von",
+     "label": "Abrechnung_Von"
+    },
+    {
+     "name": "Abrechnung_Bis",
+     "label": "Abrechnung_Bis"
+    },
+    {
+     "name": "Gesamt_Quadratmeter",
+     "label": "Gesamt_Quadratmeter"
+    },
+    {
+     "name": "Gesamt_Einheiten",
+     "label": "Gesamt_Einheiten"
+    },
+    {
+     "name": "QM_Anteil",
+     "label": "QM_Anteil"
+    },
+    {
+     "name": "Einheiten_Anteil",
+     "label": "Einheiten_Anteil"
+    },
+    {
+     "name": "QM_Anteil2",
+     "label": "QM_Anteil2"
+    },
+    {
+     "name": "Einheiten_Anteil2",
+     "label": "Einheiten_Anteil2"
+    },
+    {
+     "name": "MEA_Anteil",
+     "label": "MEA_Anteil"
+    },
+    {
+     "name": "Wasserverbrauch_Anteil",
+     "label": "Wasserverbrauch_Anteil"
+    },
+    {
+     "name": "Muellverbrauch_Anteil",
+     "label": "Muellverbrauch_Anteil"
+    },
+    {
+     "name": "Personen_Anteil",
+     "label": "Personen_Anteil"
+    },
+    {
+     "name": "Warmwasser_Anteil",
+     "label": "Warmwasser_Anteil"
+    },
+    {
+     "name": "Heizung_Anteil",
+     "label": "Heizung_Anteil"
+    },
+    {
+     "name": "Team",
+     "label": "Team"
+    }
+   ],
+   "pageSize": null,
+   "mysqlOnly": [
+    "datediff()"
+   ]
+  },
+  "Verteilung_Umlegbare_Kosten": {
+   "entity": "Verteilung_Umlegbare_Kosten",
+   "displayName": "Verteilung Umlegbare Kosten",
+   "shortTableName": "Verteilung_Umlegbare_Kosten",
+   "baseTable": "Kosten",
+   "chartType": "doughnut",
+   "rawChartType": "2DDoughnut",
+   "xmlChartType": "2d_doughnut",
+   "category": "Bezeichnung",
+   "series": [
+    "Betrag"
+   ],
+   "sql": {
+    "head": "SELECT ID,  Bezeichnung,  Betrag,  Umlageart,  Abrechnung,  Art,  Team",
+    "from": "FROM Kosten",
+    "where": "(Art =\"Umlegbare Kosten\")",
+    "tail": "",
+    "orderBy": "$tstrOrderBy"
+   },
+   "groupBy": [],
+   "titles": {
+    "head": "Verteilung Umlegbare Kosten",
+    "foot": "",
+    "yAxisLabel": "Abrechnung"
+   },
+   "appearance": {
+    "legend": true,
+    "grid": false,
+    "showName": true,
+    "showValue": true,
+    "animate": true,
+    "stacked": false,
+    "is3d": false,
+    "logScale": false,
+    "autoUpdateSeconds": 0
+   },
+   "fields": [
+    {
+     "name": "ID",
+     "label": "ID"
+    },
+    {
+     "name": "Bezeichnung",
+     "label": "Bezeichnung"
+    },
+    {
+     "name": "Betrag",
+     "label": "Betrag"
+    },
+    {
+     "name": "Umlageart",
+     "label": "Umlageart"
+    },
+    {
+     "name": "Abrechnung",
+     "label": "Abrechnung"
+    },
+    {
+     "name": "Art",
+     "label": "Art"
+    },
+    {
+     "name": "Team",
+     "label": "Team"
+    }
+   ],
+   "pageSize": null,
+   "mysqlOnly": []
+  },
+  "Verteilung_nach_Bundesland": {
+   "entity": "Verteilung_nach_Bundesland",
+   "displayName": "Verteilung nach Bundesland",
+   "shortTableName": "Verteilung_nach_Bundesland",
+   "baseTable": "Adressen",
+   "chartType": "doughnut",
+   "rawChartType": "2DDoughnut",
+   "xmlChartType": "2d_doughnut",
+   "category": "Bundesland",
+   "series": [
+    "Anteil"
+   ],
+   "sql": {
+    "head": "SELECT Kurzname,  Bundesland,  COUNT(Bundesland) AS Anteil,  Klassifikation,  Team",
+    "from": "FROM Adressen",
+    "where": "",
+    "tail": "",
+    "orderBy": "$tstrOrderBy"
+   },
+   "groupBy": [
+    {
+     "name": "Bundesland",
+     "table": "Adressen",
+     "expression": false
+    }
+   ],
+   "titles": {
+    "head": "Verteilung nach Bundesland",
+    "foot": "Legend Title",
+    "yAxisLabel": "Laengengrad"
+   },
+   "appearance": {
+    "legend": true,
+    "grid": false,
+    "showName": true,
+    "showValue": true,
+    "animate": true,
+    "stacked": false,
+    "is3d": true,
+    "logScale": false,
+    "autoUpdateSeconds": 0
+   },
+   "fields": [
+    {
+     "name": "Kurzname",
+     "label": "Kurzname"
+    },
+    {
+     "name": "Bundesland",
+     "label": "Bundesland"
+    },
+    {
+     "name": "Anteil",
+     "label": "Anteil"
+    },
+    {
+     "name": "Klassifikation",
+     "label": "Klassifikation"
+    },
+    {
+     "name": "Team",
+     "label": "Team"
+    }
+   ],
+   "pageSize": null,
+   "mysqlOnly": []
+  },
+  "Verteilung_nach_Klassifikation": {
+   "entity": "Verteilung_nach_Klassifikation",
+   "displayName": "Verteilung nach Klassifikation",
+   "shortTableName": "Verteilung_nach_Klassifikation",
+   "baseTable": "Adressen",
+   "chartType": "doughnut",
+   "rawChartType": "2DDoughnut",
+   "xmlChartType": "2d_doughnut",
+   "category": "Klassifikation",
+   "series": [
+    "Anteil"
+   ],
+   "sql": {
+    "head": "SELECT Kurzname,  Klassifikation,  COUNT(Klassifikation) AS `Anteil`,  Team",
+    "from": "FROM Adressen",
+    "where": "",
+    "tail": "",
+    "orderBy": "$tstrOrderBy"
+   },
+   "groupBy": [
+    {
+     "name": "Klassifikation",
+     "table": "Adressen",
+     "expression": false
+    }
+   ],
+   "titles": {
+    "head": "Verteilung nach Klassifikation",
+    "foot": "",
+    "yAxisLabel": "Lat"
+   },
+   "appearance": {
+    "legend": true,
+    "grid": false,
+    "showName": true,
+    "showValue": true,
+    "animate": true,
+    "stacked": false,
+    "is3d": true,
+    "logScale": false,
+    "autoUpdateSeconds": 0
+   },
+   "fields": [
+    {
+     "name": "Kurzname",
+     "label": "Kurzname"
+    },
+    {
+     "name": "Klassifikation",
+     "label": "Klassifikation"
+    },
+    {
+     "name": "Anteil",
+     "label": "Anteil"
+    },
+    {
+     "name": "Team",
+     "label": "Team"
+    }
+   ],
+   "pageSize": null,
+   "mysqlOnly": []
+  },
+  "Verteilung_nach_Ort": {
+   "entity": "Verteilung_nach_Ort",
+   "displayName": "Verteilung nach Ort",
+   "shortTableName": "Verteilung_nach_Ort",
+   "baseTable": "Adressen",
+   "chartType": "doughnut",
+   "rawChartType": "2DDoughnut",
+   "xmlChartType": "2d_doughnut",
+   "category": "Ort",
+   "series": [
+    "Anteil"
+   ],
+   "sql": {
+    "head": "SELECT Kurzname,  Ort,  COUNT(Ort) AS Anteil,  Klassifikation,  Team",
+    "from": "FROM Adressen",
+    "where": "",
+    "tail": "",
+    "orderBy": "$tstrOrderBy"
+   },
+   "groupBy": [
+    {
+     "name": "Ort",
+     "table": "Adressen",
+     "expression": false
+    }
+   ],
+   "titles": {
+    "head": "Verteilung nach Ort",
+    "foot": "Legend Title",
+    "yAxisLabel": "Laengengrad"
+   },
+   "appearance": {
+    "legend": true,
+    "grid": false,
+    "showName": true,
+    "showValue": true,
+    "animate": true,
+    "stacked": false,
+    "is3d": true,
+    "logScale": false,
+    "autoUpdateSeconds": 0
+   },
+   "fields": [
+    {
+     "name": "Kurzname",
+     "label": "Kurzname"
+    },
+    {
+     "name": "Ort",
+     "label": "Ort"
+    },
+    {
+     "name": "Anteil",
+     "label": "Anteil"
+    },
+    {
+     "name": "Klassifikation",
+     "label": "Klassifikation"
+    },
+    {
+     "name": "Team",
+     "label": "Team"
+    }
+   ],
+   "pageSize": null,
+   "mysqlOnly": []
+  },
+  "Verteilung_nach_Staat": {
+   "entity": "Verteilung_nach_Staat",
+   "displayName": "Verteilung nach Staat",
+   "shortTableName": "Verteilung_nach_Staat",
+   "baseTable": "Adressen",
+   "chartType": "doughnut",
+   "rawChartType": "2DDoughnut",
+   "xmlChartType": "2d_doughnut",
+   "category": "Staat",
+   "series": [
+    "Anteil"
+   ],
+   "sql": {
+    "head": "SELECT Kurzname,  Staat,  COUNT(Staat) AS Anteil,  Klassifikation,  Team",
+    "from": "FROM Adressen",
+    "where": "",
+    "tail": "",
+    "orderBy": "$tstrOrderBy"
+   },
+   "groupBy": [
+    {
+     "name": "Staat",
+     "table": "Adressen",
+     "expression": false
+    }
+   ],
+   "titles": {
+    "head": "Verteilung nach Staat",
+    "foot": "Legend Title",
+    "yAxisLabel": "Laengengrad"
+   },
+   "appearance": {
+    "legend": true,
+    "grid": false,
+    "showName": true,
+    "showValue": true,
+    "animate": true,
+    "stacked": false,
+    "is3d": true,
+    "logScale": false,
+    "autoUpdateSeconds": 0
+   },
+   "fields": [
+    {
+     "name": "Kurzname",
+     "label": "Kurzname"
+    },
+    {
+     "name": "Staat",
+     "label": "Staat"
+    },
+    {
+     "name": "Anteil",
+     "label": "Anteil"
+    },
+    {
+     "name": "Klassifikation",
+     "label": "Klassifikation"
+    },
+    {
+     "name": "Team",
+     "label": "Team"
+    }
+   ],
+   "pageSize": null,
+   "mysqlOnly": []
+  }
+ }
+}

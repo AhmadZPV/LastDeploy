@@ -1,0 +1,9 @@
+<%- include('partials/layout_top', { pageTitle: 'Backup' }) %>
+<section>
+  <h2>Database and file backup</h2>
+  <p>This page documents the protected backup procedure. It does not expose a database download through the browser.</p>
+  <p><strong>Database:</strong> <%= databasePath %></p>
+  <p>Stop writes, copy the SQLite database together with the upload directory, then verify the archive on a separate system. Keep dated copies outside the application host.</p>
+  <div class="pre-text">Docker volumes: app-data and app-uploads<br>Local database: prisma/dev.db<br>Health check: /healthz</div>
+</section>
+<%- include('partials/layout_bottom') %>

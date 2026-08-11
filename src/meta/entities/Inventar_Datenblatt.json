@@ -1,0 +1,573 @@
+{
+ "entity": "Inventar_Datenblatt",
+ "shortName": "Inventar_Datenblatt",
+ "baseTable": "Inventar",
+ "isVirtual": true,
+ "ownerField": "Team",
+ "sql": {
+  "strOrderBy": "ORDER BY Bezeichnung",
+  "sqlHead": "SELECT EAN,  Bezeichnung,  Schlagwoerter,  Kategorie,  Unterkategorie,  Raum,  Nummer,  Beschreibung,  Bild1,  Bild2,  Bild3,  Bild4,  Team",
+  "sqlFrom": "FROM Inventar",
+  "sqlWhere": "",
+  "sqlTail": ""
+ },
+ "keys": [],
+ "pageSize": 20,
+ "capabilities": {
+  "list": true,
+  "view": true,
+  "add": true,
+  "edit": true,
+  "export": true,
+  "print": true,
+  "search": true,
+  "masterList": true
+ },
+ "fieldSets": {
+  "list": [
+   "EAN",
+   "Bezeichnung",
+   "Schlagwoerter",
+   "Kategorie",
+   "Unterkategorie",
+   "Raum",
+   "Nummer",
+   "Beschreibung",
+   "Bild1",
+   "Bild2",
+   "Bild3",
+   "Bild4",
+   "Team"
+  ],
+  "view": [
+   "EAN",
+   "Bezeichnung",
+   "Schlagwoerter",
+   "Kategorie",
+   "Unterkategorie",
+   "Raum",
+   "Nummer",
+   "Beschreibung",
+   "Bild1",
+   "Bild2",
+   "Bild3",
+   "Bild4",
+   "Team"
+  ],
+  "add": [
+   "EAN",
+   "Bezeichnung",
+   "Schlagwoerter",
+   "Kategorie",
+   "Unterkategorie",
+   "Raum",
+   "Nummer",
+   "Beschreibung",
+   "Bild1",
+   "Bild2",
+   "Bild3",
+   "Bild4"
+  ],
+  "edit": [
+   "EAN",
+   "Bezeichnung",
+   "Schlagwoerter",
+   "Kategorie",
+   "Unterkategorie",
+   "Raum",
+   "Nummer",
+   "Beschreibung",
+   "Bild1",
+   "Bild2",
+   "Bild3",
+   "Bild4",
+   "Team"
+  ],
+  "export": [
+   "EAN",
+   "Bezeichnung",
+   "Schlagwoerter",
+   "Kategorie",
+   "Unterkategorie",
+   "Raum",
+   "Nummer",
+   "Beschreibung",
+   "Team"
+  ],
+  "print": [
+   "EAN",
+   "Bezeichnung",
+   "Schlagwoerter",
+   "Kategorie",
+   "Unterkategorie",
+   "Raum",
+   "Nummer",
+   "Beschreibung",
+   "Bild1",
+   "Bild2",
+   "Bild3",
+   "Bild4",
+   "Team"
+  ],
+  "search": [
+   "EAN",
+   "Bezeichnung",
+   "Schlagwoerter",
+   "Kategorie",
+   "Unterkategorie",
+   "Raum",
+   "Nummer",
+   "Beschreibung"
+  ],
+  "masterList": [
+   "EAN",
+   "Bezeichnung",
+   "Schlagwoerter",
+   "Kategorie",
+   "Unterkategorie",
+   "Raum",
+   "Nummer",
+   "Beschreibung",
+   "Bild1",
+   "Bild2",
+   "Bild3",
+   "Bild4",
+   "Team"
+  ]
+ },
+ "export": {
+  "exportTo": true,
+  "exportDelimiter": ",",
+  "exportFormatting": 2
+ },
+ "print": {
+  "printerPageOrientation": 0,
+  "nPrinterPageScale": 100,
+  "nPrinterSplitRecords": 1,
+  "nPrinterPDFSplitRecords": 40
+ },
+ "tabs": [],
+ "labels": {
+  "German": {
+   "Bezeichnung": "Bezeichnung",
+   "Beschreibung": "Beschreibung",
+   "Schlagwoerter": "Schlagwörter",
+   "Kategorie": "Kategorie",
+   "EAN": "EAN",
+   "Bild1": "Bild1",
+   "Bild2": "Bild2",
+   "Bild3": "Bild3",
+   "Bild4": "Bild4",
+   "Nummer": "Nummer",
+   "Unterkategorie": "Unterkategorie",
+   "Raum": "Raum",
+   "Team": "Team"
+  }
+ },
+ "fields": [
+  {
+   "name": "EAN",
+   "type": 200,
+   "index": 1,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Bezeichnung",
+   "type": 200,
+   "index": 2,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Schlagwoerter",
+   "type": 200,
+   "index": 3,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Schlagwoerter",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 0,
+    "LinkField": "Schlagwort",
+    "LinkFieldType": 0,
+    "DisplayField": "Schlagwort",
+    "LookupOrderBy": "Schlagwort",
+    "AllowToAdd": true,
+    "Multiselect": true,
+    "SelectSize": 1,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Kategorie",
+   "type": 200,
+   "index": 4,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Klassifikationen Inventar",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 0,
+    "LookupUnique": true,
+    "LinkField": "Hauptkategorie",
+    "LinkFieldType": 0,
+    "DisplayField": "Hauptkategorie",
+    "LookupOrderBy": "Hauptkategorie",
+    "SelectSize": 1,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Unterkategorie",
+   "type": 200,
+   "index": 5,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Klassifikationen Inventar",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 0,
+    "LinkField": "Unterkategorie",
+    "LinkFieldType": 0,
+    "DisplayField": "Unterkategorie",
+    "LookupOrderBy": "Unterkategorie",
+    "LookupDesc": true,
+    "UseCategory": true,
+    "SelectSize": 1,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Raum",
+   "type": 3,
+   "index": 6,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Raeume",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 2,
+    "LinkField": "ID",
+    "LinkFieldType": 0,
+    "DisplayField": "Bezeichnung",
+    "LookupOrderBy": "Bezeichnung",
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Nummer",
+   "type": 3,
+   "index": 7,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Beschreibung",
+   "type": 201,
+   "index": 8,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {},
+   "edit": {
+    "UseRTE": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "nRows": 400,
+    "nCols": 600,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Bild1",
+   "type": 128,
+   "index": 9,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": true,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "ShowThumbnail": true,
+    "ThumbWidth": 72,
+    "ThumbHeight": 72,
+    "ImageWidth": 457,
+    "ImageHeight": 0,
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200,
+    "CreateThumbnail": true,
+    "StrThumbnail": "<Select column>",
+    "ThumbnailSize": 150
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Bild2",
+   "type": 128,
+   "index": 10,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": true,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "ShowThumbnail": true,
+    "ThumbWidth": 72,
+    "ThumbHeight": 72,
+    "ImageWidth": 457,
+    "ImageHeight": 0,
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200,
+    "CreateThumbnail": true,
+    "StrThumbnail": "<Select column>",
+    "ThumbnailSize": 150
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Bild3",
+   "type": 128,
+   "index": 11,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": true,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "ShowThumbnail": true,
+    "ThumbWidth": 72,
+    "ThumbHeight": 72,
+    "ImageWidth": 457,
+    "ImageHeight": 0,
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200,
+    "CreateThumbnail": true,
+    "StrThumbnail": "<Select column>",
+    "ThumbnailSize": 150
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Bild4",
+   "type": 128,
+   "index": 12,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": true,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "ShowThumbnail": true,
+    "ThumbWidth": 72,
+    "ThumbHeight": 72,
+    "ImageWidth": 457,
+    "ImageHeight": 0,
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200,
+    "CreateThumbnail": true,
+    "StrThumbnail": "<Select column>",
+    "ThumbnailSize": 150
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Team",
+   "type": 200,
+   "index": 13,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  }
+ ]
+}

@@ -1,0 +1,22 @@
+<%- include('../partials/layout_top', { pageTitle: t('import') + ': ' + tx(meta.title) }) %>
+<% if (error) { %><div class="form-error"><%= error %></div><% } %>
+<section>
+  <form method="post" action="/import/<%= entity %>/preview" enctype="multipart/form-data">
+    <%- include('../partials/csrf') %>
+    <div class="form-group"><label><%= t('file') %></label><input type="file" name="file" accept=".csv,.txt,.xlsx,.xlsm,.vcf,.ics" required></div>
+    <p class="muted"><%= t('csv_fields') %> <%= fields.map(tx).join(', ') %></p>
+    <button class="btn btn-primary"><%= t('preview') %></button>
+  </form>
+</section>
+<% if (preview) { %>
+<section><h2><%= t('preview') %> (<%= preview.total %> <%= t('rows') %>)</h2>
+  <div class="table-wrap"><table><thead><tr><% for (const key of Object.keys(preview.rows[0] || {})) { %><th><%= key %></th><% } %></tr></thead>
+  <tbody><% for (const row of preview.rows) { %><tr><% for (const value of Object.values(row)) { %><td><%= value %></td><% } %></tr><% } %></tbody></table></div>
+  <form method="post" action="/import/<%= entity %>/commit">
+    <%- include('../partials/csrf') %><input type="hidden" name="token" value="<%= preview.token %>">
+    <div class="form-group"><label><%= t('duplicates') %></label><select name="duplicates"><option value="skip"><%= t('skip_id') %></option><option value="id"><%= t('update_id') %></option></select></div>
+    <button class="btn btn-primary"><%= t('start_import') %></button>
+  </form>
+</section>
+<% } %>
+<%- include('../partials/layout_bottom') %>

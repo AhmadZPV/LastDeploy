@@ -1,0 +1,1295 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Abrechnungen {
+  ID                   Int       @id @default(autoincrement())
+  Bezeichnung          String?
+  Von                  DateTime?
+  Bis                  DateTime?
+  Quadratmeter         Decimal?
+  Einheiten            Int?
+  Miteigentumsanteile  Decimal?
+  Einheiten2           Int?
+  Quadratmeter2        Decimal?
+  Wasserverbrauch      Decimal?
+  Muellverbrauch       Decimal?
+  Personen             Decimal?
+  Objekt               Int?
+  Art                  String?
+  Waermemengenzaehler  Decimal?
+  Heizwert             Decimal?
+  Waermeverbrauch      Decimal?
+  Grundkostenanteil    Int?
+  Buchfuehrung         Int?
+  Anmerkungen          String?
+  Miteigentumsanteile2 Decimal?
+  Quadratmeter3        Decimal?
+  Team                 String?
+  Miteigentumsanteile3 Decimal?
+  Einheiten3           Int?
+  Stromverbrauch       Decimal?
+  Erledigt             Int?
+  rel_Abrechnungskonten_Abrechnung Abrechnungskonten[] @relation("rel_Abrechnungen_Abrechnungskonten_Abrechnung")
+  rel_Kosten_Abrechnung Kosten[] @relation("rel_Abrechnungen_Kosten_Abrechnung")
+  rel_Kontobuch_Abrechnung Kontobuch[] @relation("rel_Abrechnungen_Kontobuch_Abrechnung")
+  rel_Objekte_Objekt Objekte? @relation("rel_Objekte_Abrechnungen_Objekt", fields: [Objekt], references: [ID])
+
+}
+
+model Abrechnungskonten {
+  ID                  Int       @id @default(autoincrement())
+  Bezeichnung         String?
+  Von                 DateTime?
+  Bis                 DateTime?
+  Quadratmeter        Decimal?
+  Anschrift           String?
+  Abrechnung          Int?
+  Miteigentumsanteil  Decimal?
+  Einheiten2          Int?
+  Quadratmeter2       Decimal?
+  Wasserverbrauch     Decimal?
+  Muellverbrauch      Decimal?
+  Personen            Decimal?
+  Einheit             Int?
+  Adresse             Int?
+  Objekt              Int?
+  Warmwasserverbrauch Decimal?
+  Waermeverbrauch     Decimal?
+  Anmerkungen         String?
+  Anpassung           Decimal?
+  Neuemiete           Decimal?
+  Miteigentumsanteil2 Decimal?
+  Zaehlerinfo         String?
+  MwstSatz            Decimal?
+  Quadratmeter3       Decimal?
+  Team                String?
+  Miteigentumsanteil3 Decimal?
+  Einheiten3          Int?
+  Stromverbrauch      Decimal?
+  Erledigt            Int?
+  rel_Abrechnungen_Abrechnung Abrechnungen? @relation("rel_Abrechnungen_Abrechnungskonten_Abrechnung", fields: [Abrechnung], references: [ID])
+  rel_Kosten_Abrechnungskonto Kosten[] @relation("rel_Abrechnungskonten_Kosten_Abrechnungskonto")
+  rel_Kosten_ID Kosten[] @relation("rel_Abrechnungskonten_Kosten_ID")
+  rel_Personen_Abrechnungskonto Personen[] @relation("rel_Abrechnungskonten_Personen_Abrechnungskonto")
+  rel_Kontobuch_Abrechnungskonto Kontobuch[] @relation("rel_Abrechnungskonten_Kontobuch_Abrechnungskonto")
+  rel_Adressen_Adresse Adressen? @relation("rel_Adressen_Abrechnungskonten_Adresse", fields: [Adresse], references: [ID])
+  rel_Einheiten_Einheit Einheiten? @relation("rel_Einheiten_Abrechnungskonten_Einheit", fields: [Einheit], references: [ID])
+
+}
+
+model Adressen {
+  ID                  Int       @id @default(autoincrement())
+  Kurzname            String
+  Firma               String?
+  Abteilung           String?
+  Vorname             String?
+  Nachname            String?
+  Strasse             String?
+  PLZ                 String?
+  Ort                 String?
+  Bundesland          String?
+  Staat               String?   @default("Deutschland")
+  Benutzer            String?
+  Telefon             String?
+  Handy               String?
+  Email               String?
+  Website             String?
+  Telefax             String?
+  Bild                Bytes?
+  Bemerkungen         String?
+  Laengengrad         Decimal?
+  Breitengrad         Decimal?
+  Klassifikation      String
+  Geburtstag          DateTime?
+  Geschlecht          String?
+  Anrede              String?
+  Titel               String?
+  Stellung            String?
+  Strasse_Liefer      String?
+  PLZ_Liefer          String?
+  Ort_Liefer          String?
+  Staat_Liefer        String?
+  UIDNr               String?
+  Bank                String?
+  IBAN                String?
+  Kontoinhaber        String?
+  Debitorennummer     Int?
+  Kreditorennummer    Int?
+  Paypal              String?
+  Wiedervorlage       DateTime?
+  Skype               String?
+  Detailfeld1         String?
+  Detailfeld2         String?
+  Detailfeld3         String?
+  Detailfeld4         String?
+  Detailfeld5         String?
+  Bearbeitungsstatus  String?
+  Kundennummer        String?
+  Xing                String?
+  Linkedin            String?
+  Facebook            String?
+  Chat                String?
+  Telefonprivat       String?
+  Emailprivat         String?
+  Handyprivat         String?
+  Lieferbedingungen   String?
+  Zahlungsbedingungen String?
+  Anschrift           String?
+  BIC                 String?
+  Miniatur            Bytes?
+  Partner_Vorname     String?
+  Partner_Nachname    String?
+  Anredeformat        String?
+  Etikett             String?
+  Favorit             Int?
+  Team                String?
+  Vertraulich1        String?
+  Vertraulich2        String?
+  Vertraulich3        String?
+  Vertraulich4        String?
+  Vertraulich5        String?
+  Datenherkunft       String?
+  Erfassungsdatum     DateTime?
+  MailURL             String?
+  DokumentenURL       String?
+  Aktiv               Int?
+  rel_Notizen_Adresse Notizen[] @relation("rel_Adressen_Notizen_Adresse")
+  rel_Dokumente_Adresse Dokumente[] @relation("rel_Adressen_Dokumente_Adresse")
+  rel_Aufgaben_Adresse Aufgaben[] @relation("rel_Adressen_Aufgaben_Adresse")
+  rel_Termine_Adresse Termine[] @relation("rel_Adressen_Termine_Adresse")
+  rel_Korrespondenz_Adresse Korrespondenz[] @relation("rel_Adressen_Korrespondenz_Adresse")
+  rel_Inventar_Adresse Inventar[] @relation("rel_Adressen_Inventar_Adresse")
+  rel_Ausleihen_Adresse Ausleihen[] @relation("rel_Adressen_Ausleihen_Adresse")
+  rel_Verkauf_Kunde Verkauf[] @relation("rel_Adressen_Verkauf_Kunde")
+  rel_Vertraege_Adresse Vertraege[] @relation("rel_Adressen_Vertraege_Adresse")
+  rel_Objekte_Besitzer Objekte[] @relation("rel_Adressen_Objekte_Besitzer")
+  rel_Einheiten_Besitzer Einheiten[] @relation("rel_Adressen_Einheiten_Besitzer")
+  rel_Abrechnungskonten_Adresse Abrechnungskonten[] @relation("rel_Adressen_Abrechnungskonten_Adresse")
+  rel_Kontenrahmen_Adresse Kontenrahmen[] @relation("rel_Adressen_Kontenrahmen_Adresse")
+
+}
+
+model Ansprechpartner {
+  ID       Int     @id @default(autoincrement())
+  Objekt   Int?
+  Adresse  Int?
+  Funktion String?
+  Team     String?
+  rel_Objekte_Objekt Objekte? @relation("rel_Objekte_Ansprechpartner_Objekt", fields: [Objekt], references: [ID])
+
+}
+
+model Aufgaben {
+  ID                  Int       @id @default(autoincrement())
+  Titel               String
+  Datum               DateTime?
+  Wiedervorlage       DateTime?
+  Frist               DateTime?
+  Bearbeitungstatus   String?
+  Zustaendigkeit      Int?
+  Beschreibung        String?
+  Benutzer            String?
+  Prioritaet          Int
+  Adresse             Int?
+  Inventar            Int?
+  Objekt              Int?
+  Einheit             Int?
+  Raum                Int?
+  Fertigstellungsgrad Int?
+  Team                String?
+  Vertrag             Int?
+  Foto                Bytes?
+  Wiederholung        String?
+  Projekt             String?
+  rel_Adressen_Adresse Adressen? @relation("rel_Adressen_Aufgaben_Adresse", fields: [Adresse], references: [ID])
+  rel_Checklisten_Aufgabe Checklisten[] @relation("rel_Aufgaben_Checklisten_Aufgabe")
+  rel_Zeiten_Aufgabe Zeiten[] @relation("rel_Aufgaben_Zeiten_Aufgabe")
+  rel_Einheiten_Einheit Einheiten? @relation("rel_Einheiten_Aufgaben_Einheit", fields: [Einheit], references: [ID])
+  rel_Inventar_Inventar Inventar? @relation("rel_Inventar_Aufgaben_Inventar", fields: [Inventar], references: [ID])
+  rel_Objekte_Objekt Objekte? @relation("rel_Objekte_Aufgaben_Objekt", fields: [Objekt], references: [ID])
+  rel_Raeume_Raum Raeume? @relation("rel_Raeume_Aufgaben_Raum", fields: [Raum], references: [ID])
+  rel_Vertraege_Vertrag Vertraege? @relation("rel_Vertraege_Aufgaben_Vertrag", fields: [Vertrag], references: [ID])
+
+}
+
+model Aufteilungsassistent {
+  ID          Int       @id @default(autoincrement())
+  Von         DateTime?
+  Teilung     DateTime?
+  Bis         DateTime?
+  Betrag      Decimal?
+  Bezeichnung String?
+  Team        String?
+}
+
+model Ausleihen {
+  ID             Int       @id @default(autoincrement())
+  Titel          String?
+  Startdatum     DateTime
+  Startzeit      DateTime
+  Enddatum       DateTime?
+  Endzeit        DateTime?
+  Zustaendigkeit Int?
+  Adresse        Int?
+  Inventar       Int?
+  Benutzer       String?
+  Bemerkung      String?
+  Team           String?
+  rel_Adressen_Adresse Adressen? @relation("rel_Adressen_Ausleihen_Adresse", fields: [Adresse], references: [ID])
+  rel_Inventar_Inventar Inventar? @relation("rel_Inventar_Ausleihen_Inventar", fields: [Inventar], references: [ID])
+
+}
+
+model Benutzer {
+  ID            Int       @id @default(autoincrement())
+  Benutzername  String
+  Passwort      String
+  Name          String
+  Email         String
+  active        Int?      @default(1)
+  Bild          Bytes?
+  Gruppe        String?
+  Freigabe      String?
+  reset_token   String?
+  reset_date    DateTime?
+  Team          String?
+  Erstanmeldung DateTime?
+  Art           String?
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model Buchfuehrungen {
+  rowid        Int       @id @default(autoincrement())
+  ID           Int @unique
+  Bezeichnung  String?
+  Anfangsdatum DateTime?
+  Enddatum     DateTime?
+  Objekt       Int?
+  Bemerkungen  String?
+  Team         String?
+
+  @@map("Buchfuehrungen")
+  rel_Buchungen_Buchfuehrung Buchungen[] @relation("rel_Buchfuehrungen_Buchungen_Buchfuehrung")
+  rel_Objekte_Objekt Objekte? @relation("rel_Objekte_Buchfuehrungen_Objekt", fields: [Objekt], references: [ID])
+
+}
+
+model Buchungen {
+  ID                       Int       @id @default(autoincrement())
+  Buchfuehrung             Int?
+  Konto                    Int?
+  Gegenkonto               Int?
+  Datum                    DateTime?
+  Betrag                   Decimal?
+  Betreff                  String?
+  Belegnummer              Int?
+  Beleg                    Bytes?
+  Belegminiatur            Bytes?
+  Verbucht                 Int?
+  Erfasser                 String?
+  Bearbeiter               String?
+  Erfassungsdatum          DateTime?
+  Bearbeitungsdatum        DateTime?
+  Muster                   Int?
+  DATEV_Betragskennzeichen String?
+  DATEV_Steuerschluessel   String?
+  Kostenstelle             String?
+  Belegdokument            Bytes?
+  BelegURL                 String?
+  Belegdateiname           String?
+  Team                     String?
+  rel_Buchfuehrungen_Buchfuehrung Buchfuehrungen? @relation("rel_Buchfuehrungen_Buchungen_Buchfuehrung", fields: [Buchfuehrung], references: [ID])
+  rel_Kontenrahmen_Konto Kontenrahmen? @relation("rel_Kontenrahmen_Buchungen_Konto", fields: [Konto], references: [ID])
+  rel_Kontenrahmen_Gegenkonto Kontenrahmen? @relation("rel_Kontenrahmen_Buchungen_Gegenkonto", fields: [Gegenkonto], references: [ID])
+
+}
+
+model Buchungsassistent {
+  ID                   Int       @id @default(autoincrement())
+  Buchfuehrung         Int?
+  Konto                Int?
+  Gegenkonto           Int?
+  Datum                DateTime?
+  Betrag               Decimal?
+  Betreff              String?
+  Sollsplitt1_Konto    Int?
+  Sollsplitt1_Betrag   Decimal?
+  Habensplitt1_Konto   Int?
+  Habensplitt1_Betrag  Decimal?
+  Sollsplitt2_Konto    Int?
+  Sollsplitt2_Betrag   Decimal?
+  Habensplitt2_Konto   Int?
+  Habensplitt2_Betrag  Decimal?
+  Sollsplitt3_Konto    Int?
+  Sollsplitt3_Betrag   Decimal?
+  Habensplitt3_Konto   Int?
+  Habensplitt3_Betrag  Decimal?
+  Sollsplitt4_Konto    Int?
+  Sollsplitt4_Betrag   Decimal?
+  Habensplitt4_Konto   Int?
+  Habensplitt4_Betrag  Decimal?
+  Sollsplitt1_Betreff  String?
+  Sollsplitt2_Betreff  String?
+  Sollsplitt3_Betreff  String?
+  Sollsplitt4_Betreff  String?
+  Habensplitt1_Betreff String?
+  Habensplitt2_Betreff String?
+  Habensplitt3_Betreff String?
+  Habensplitt4_Betreff String?
+  Von_Datum            DateTime?
+  Bis_Datum            DateTime?
+  Buchungsart          String?
+  Team                 String?
+}
+
+model Buchungsimport {
+  ID           Int       @id @default(autoincrement())
+  Buchfuehrung Int?
+  Konto        String?
+  Gegenkonto   String?
+  Datum        DateTime?
+  Betrag       Decimal?
+  Betreff      String?
+  Team         String?
+}
+
+model Checklisten {
+  ID          Int     @id @default(autoincrement())
+  Erledigt    Int?
+  Bezeichnung String?
+  Aufgabe     Int?
+  Team        String?
+  rel_Aufgaben_Aufgabe Aufgaben? @relation("rel_Aufgaben_Checklisten_Aufgabe", fields: [Aufgabe], references: [ID])
+
+}
+
+model Dokumente {
+  ID                Int       @id @default(autoincrement())
+  Titel             String?
+  Datum             DateTime?
+  Wiedervorlage     DateTime?
+  Bearbeitungstatus String?
+  Zustaendigkeit    Int?
+  Beschreibung      String?
+  Benutzer          String?
+  Adresse           Int?
+  Dokument          Bytes?
+  Dokumentname      String?
+  Bild              Bytes?
+  Miniatur          Bytes?
+  Inventar          Int?
+  URL               String?
+  Dokumenttyp       String?
+  Objekt            Int?
+  Einheit           Int?
+  Raum              Int?
+  Vorgang           Int?
+  Schutz            Int?
+  Freigabe          String?
+  Team              String?
+  Vertrag           Int?
+  rel_Adressen_Adresse Adressen? @relation("rel_Adressen_Dokumente_Adresse", fields: [Adresse], references: [ID])
+  rel_Einheiten_Einheit Einheiten? @relation("rel_Einheiten_Dokumente_Einheit", fields: [Einheit], references: [ID])
+  rel_Inventar_Inventar Inventar? @relation("rel_Inventar_Dokumente_Inventar", fields: [Inventar], references: [ID])
+  rel_Objekte_Objekt Objekte? @relation("rel_Objekte_Dokumente_Objekt", fields: [Objekt], references: [ID])
+  rel_Raeume_Raum Raeume? @relation("rel_Raeume_Dokumente_Raum", fields: [Raum], references: [ID])
+  rel_Verkauf_Vorgang Verkauf? @relation("rel_Verkauf_Dokumente_Vorgang", fields: [Vorgang], references: [ID])
+  rel_Vertraege_Vertrag Vertraege? @relation("rel_Vertraege_Dokumente_Vertrag", fields: [Vertrag], references: [ID])
+
+}
+
+model Einheiten {
+  ID                 Int      @id @default(autoincrement())
+  Bezeichnung        String?
+  Nummer             Int?
+  Objekt             Int?
+  Besitzer           Int?
+  Nutzer             Int?
+  Bemerkungen        String?
+  Einheitenart       String?
+  Technik            String?
+  Ausstattung        String?
+  Etage              String?
+  Miteigentumsanteil String?
+  Eigenschaften      String?
+  Bild               Bytes?
+  Miniatur           Bytes?
+  Detailfeld1        String?
+  Detailfeld2        String?
+  Detailfeld3        String?
+  Detailfeld4        String?
+  Detailfeld5        String?
+  Kopfstimmen        Int?
+  Verkaufspreis      Decimal?
+  Kaufpreis          Decimal?
+  Bewertung          Decimal?
+  Kaltmiete          Decimal?
+  Nebenkosten        Decimal?
+  Heizkosten         Decimal?
+  MieteQM            Decimal?
+  EKQM               Decimal?
+  VKQM               Decimal?
+  Finanzierung       String?
+  Hausgeld           Decimal?
+  Etikett            String?
+  Favorit            Int?
+  Abrechnungsflaeche Decimal?
+  Wohnflaeche        Decimal?
+  Nutzflaeche        Decimal?
+  Heizflaeche        Decimal?
+  Zimmer             Int?
+  Team               String?
+  Vertragsart        String?
+  Aktiv              Int?
+  Vertrag            Int?
+  rel_Adressen_Besitzer Adressen? @relation("rel_Adressen_Einheiten_Besitzer", fields: [Besitzer], references: [ID])
+  rel_Raeume_Einheit Raeume[] @relation("rel_Einheiten_Raeume_Einheit")
+  rel_Dokumente_Einheit Dokumente[] @relation("rel_Einheiten_Dokumente_Einheit")
+  rel_Aufgaben_Einheit Aufgaben[] @relation("rel_Einheiten_Aufgaben_Einheit")
+  rel_Notizen_Einheit Notizen[] @relation("rel_Einheiten_Notizen_Einheit")
+  rel_Verkauf_Einheit Verkauf[] @relation("rel_Einheiten_Verkauf_Einheit")
+  rel_Abrechnungskonten_Einheit Abrechnungskonten[] @relation("rel_Einheiten_Abrechnungskonten_Einheit")
+  rel_Protokolle_Einheit Protokolle[] @relation("rel_Einheiten_Protokolle_Einheit")
+  rel_Vertraege_Einheit Vertraege[] @relation("rel_Einheiten_Vertraege_Einheit")
+  rel_Korrespondenz_Einheit Korrespondenz[] @relation("rel_Einheiten_Korrespondenz_Einheit")
+  rel_Objekte_Objekt Objekte? @relation("rel_Objekte_Einheiten_Objekt", fields: [Objekt], references: [ID])
+
+}
+
+model Einheitenarten {
+  ID          Int     @id @default(autoincrement())
+  Bezeichnung String?
+}
+
+model Einstellungen {
+  ID                Int     @id @default(autoincrement())
+  Absenderzeile     String?
+  Ort               String?
+  Grussformel       String?
+  Fussbereich       String?
+  Logo              Bytes?
+  LogoLink          String?
+  Feldname1         String?
+  Feldname2         String?
+  Feldname3         String?
+  Feldname4         String?
+  Feldname5         String?
+  Feldname6         String?
+  Feldname7         String?
+  Feldname8         String?
+  Feldname9         String?
+  Feldname10        String?
+  Waehrung          String?
+  Email             String?
+  SMTPUser          String?
+  SMTPServer        String?
+  SMTPPort          Int?
+  SMTPPasswort      String?
+  SMTPSicherheit    String?
+  CSS               String?
+  Brieflayout       String?
+  Rechnungslayout   String?
+  Angebotslayout    String?
+  Import            Bytes?
+  Importdateiname   String?
+  Serienbrief       String?
+  Team              String?
+  Abrechnungslayout String?
+  WebhookAdressen   String?
+  WebhookTermine    String?
+  WebhookNotizen    String?
+  WebhookAufgaben   String?
+  Revision          String?
+}
+
+model Farben {
+  ID       Int     @id @default(autoincrement())
+  Farbwert String?
+  Farbname String?
+  Team     String?
+}
+
+model Flaechen {
+  ID              Int      @id @default(autoincrement())
+  Bezeichnung     String?
+  Breite          Decimal?
+  Tiefe           Decimal?
+  Anrechenbarkeit Decimal?
+  Hoehe           Decimal?
+  Raum            Int?
+  Team            String?
+  rel_Raeume_Raum Raeume? @relation("rel_Raeume_Flaechen_Raum", fields: [Raum], references: [ID])
+
+}
+
+model INtex_Hausverwaltung_settings {
+  ID        Int     @id @default(autoincrement())
+  TYPE      Int?    @default(1)
+  NAME      String?
+  USERNAME  String?
+  COOKIE    String?
+  SEARCH    String?
+  TABLENAME String?
+
+  @@map("INtex Hausverwaltung_settings")
+}
+
+model Informationen {
+  ID        Int       @id @default(autoincrement())
+  Titel     String?
+  Datum     DateTime?
+  Text      String?
+  URL       String?
+  Benutzer  String?
+  Kategorie String?
+  Team      String?
+}
+
+model Inventar {
+  ID                       Int       @id @default(autoincrement())
+  Bezeichnung              String
+  Datum                    DateTime?
+  Wiedervorlage            DateTime?
+  Bearbeitungsstatus       String?
+  Zustaendigkeit           Int?
+  Beschreibung             String?
+  Benutzer                 String?
+  Adresse                  Int?
+  Schlagwoerter            String?
+  Kategorie                String?
+  Anzahl                   Int?
+  Zustand                  String?
+  Raum                     Int?
+  Bewertung                Int?
+  Favorit                  Int?
+  Kontrolliert             Int?
+  Hoehe                    Int?
+  Breite                   Int?
+  Tiefe                    Int?
+  Gewicht                  Int?
+  EAN                      String?
+  Einkaufspreis            Decimal?
+  Einkaufsdatum            DateTime?
+  Verkaeufer               Int?
+  Wert                     Decimal?
+  Verkaufspreis            Decimal?
+  Verkaufsdatum            DateTime?
+  Kaeufer                  Int?
+  Garantiegeber            Int?
+  Garantieablauf           DateTime?
+  Hersteller               Int?
+  Servicepartner           Int?
+  Servicebedingungen       String?
+  Garantiebedingungen      String?
+  Versicherer              Int?
+  Versicherungswert        Int?
+  Policennummer            String?
+  Versicherungsbedingungen String?
+  Versicherungsablauf      DateTime?
+  Kostenstelle             String?
+  Buchungskonto            Int?
+  Abschreibung             Int?
+  Etikett                  String?
+  Bild1                    Bytes?
+  Miniatur1                Bytes?
+  Titel1                   String?
+  Bild2                    Bytes?
+  Miniatur2                Bytes?
+  Titel2                   String?
+  Bild3                    Bytes?
+  Miniatur3                Bytes?
+  Titel3                   String?
+  Bild4                    Bytes?
+  Miniatur4                Bytes?
+  Titel4                   String?
+  Nummer                   Int?
+  Website                  String?
+  Unterkategorie           String?
+  Einheiten                String?
+  Detailfeld1              String?
+  Detailfeld2              String?
+  Detailfeld3              String?
+  Detailfeld4              String?
+  Detailfeld5              String?
+  Seriennummer             String?
+  Set                      Int?
+  Alternativen             String?
+  Zubeh_r                  String?   @map("Zubehör")
+  Detailfeld6              String?
+  Detailfeld7              String?
+  Detailfeld8              String?
+  Detailfeld9              String?
+  Detailfeld10             String?
+  QRCode                   String?
+  Einheit                  String?
+  Objekt                   String?
+  Team                     String?
+  rel_Adressen_Adresse Adressen? @relation("rel_Adressen_Inventar_Adresse", fields: [Adresse], references: [ID])
+  rel_Aufgaben_Inventar Aufgaben[] @relation("rel_Inventar_Aufgaben_Inventar")
+  rel_Dokumente_Inventar Dokumente[] @relation("rel_Inventar_Dokumente_Inventar")
+  rel_Notizen_Inventar Notizen[] @relation("rel_Inventar_Notizen_Inventar")
+  rel_Termine_Inventar Termine[] @relation("rel_Inventar_Termine_Inventar")
+  rel_Ausleihen_Inventar Ausleihen[] @relation("rel_Inventar_Ausleihen_Inventar")
+  rel_Korrespondenz_Inventar Korrespondenz[] @relation("rel_Inventar_Korrespondenz_Inventar")
+  rel_Vertraege_Inventar Vertraege[] @relation("rel_Inventar_Vertraege_Inventar")
+  rel_Raeume_Raum Raeume? @relation("rel_Raeume_Inventar_Raum", fields: [Raum], references: [ID])
+  rel_Sets_Set Sets? @relation("rel_Sets_Inventar_Set", fields: [Set], references: [ID])
+
+}
+
+model Kalender {
+  ID   Int       @id @default(autoincrement())
+  Tag  DateTime?
+  Team String?
+}
+
+model Kalenderwoche {
+  ID            Int       @id @default(autoincrement())
+  Kalenderwoche Int?
+  Jahr          Int?
+  Tag           DateTime?
+  Team          String?
+}
+
+model Klassifikationen_Adressen {
+  ID             Int     @id @default(autoincrement())
+  Klassifikation String
+  Team           String?
+
+  @@map("Klassifikationen Adressen")
+}
+
+model Klassifikationen_Inventar {
+  ID             Int     @id @default(autoincrement())
+  Hauptkategorie String?
+  Unterkategorie String?
+  Team           String?
+
+  @@map("Klassifikationen Inventar")
+}
+
+model KlassifikationenKontobuch {
+  ID           Int     @id @default(autoincrement())
+  Kategorieart String?
+  Bezeichnung  String?
+  Team         String?
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model Kontenrahmen {
+  rowid            Int     @id @default(autoincrement())
+  ID               Int @unique
+  Buchfuehrung     String?
+  Klasse           String?
+  Gruppe           String?
+  Nummer           String?
+  Kontobezeichnung String?
+  Bank             String?
+  BIC              String?
+  IBAN             String?
+  Kontoinhaber     String?
+  Guv              String?
+  Aktiva           String?
+  Passiva          String?
+  UStVA            String?
+  Adresse          Int?
+  BankingURL       String?
+  Team             String?
+
+  @@map("Kontenrahmen")
+  rel_Adressen_Adresse Adressen? @relation("rel_Adressen_Kontenrahmen_Adresse", fields: [Adresse], references: [ID])
+  rel_Buchungen_Konto Buchungen[] @relation("rel_Kontenrahmen_Buchungen_Konto")
+  rel_Buchungen_Gegenkonto Buchungen[] @relation("rel_Kontenrahmen_Buchungen_Gegenkonto")
+
+}
+
+model Kontoauszuege {
+  ID                Int       @id @default(autoincrement())
+  Kontonummer       String?
+  Buchungstag       DateTime?
+  Wertstellungstag  DateTime?
+  Auftraggeber      String?
+  Buchungstext      String?
+  Verwendungszweck1 String?
+  Verwendungszweck2 String?
+  Verwendungszweck3 String?
+  Verwendungszweck4 String?
+  Betrag            Decimal?
+  Kontostand        Decimal?
+  Waehrung          String?
+  IBAN              String?
+  BIC               String?
+  Kundenreferenz    String?
+  Mandatsreferenz   String?
+  GlaeubigerID      String?
+  Soll              Decimal?
+  Haben             Decimal?
+  Team              String?
+}
+
+model Kontobuch {
+  ID                Int       @id @default(autoincrement())
+  Datum             DateTime?
+  Betrag            Decimal?
+  Betreff           String?
+  Kategorie         String?
+  Art               String?
+  Miete             Decimal?
+  Nebenkosten       Decimal?
+  Heizkosten        Decimal?
+  Garagenmiete      Decimal?
+  Abrechnung        Int?
+  Abrechnungskonto  Int?
+  Belegnummer       Int?
+  BelegURL          String?
+  Beleg             Bytes?
+  Belegdokument     Bytes?
+  Ruecklage         Decimal?
+  P35a              Decimal?
+  Bemerkungen       String?
+  Verbucht          Int?
+  Belegdokumentname String?
+  Belegminiatur     Bytes?
+  Erfassungsdatum   DateTime?
+  Bearbeitungsdatum DateTime?
+  Team              String?
+  Zinsen            Decimal?
+  Tilgung           Decimal?
+  P35aArt           String?
+  Bank              String?
+  BIC               String?
+  IBAN              String?
+  Kontoinhaber      String?
+  MwstSatz          Decimal?
+  Wiederholung      Int?
+  Wiederholende     DateTime?
+  rel_Abrechnungen_Abrechnung Abrechnungen? @relation("rel_Abrechnungen_Kontobuch_Abrechnung", fields: [Abrechnung], references: [ID])
+  rel_Abrechnungskonten_Abrechnungskonto Abrechnungskonten? @relation("rel_Abrechnungskonten_Kontobuch_Abrechnungskonto", fields: [Abrechnungskonto], references: [ID])
+
+}
+
+model Korrespondenz {
+  ID             Int       @id @default(autoincrement())
+  Betreff        String
+  Datum          DateTime?
+  Wiedervorlage  DateTime?
+  Zustaendigkeit Int?
+  Text           String?
+  Benutzer       String?
+  Adresse        Int?
+  Inventar       Int?
+  Art            String?
+  Postkorb       String?
+  Ordner         String?
+  Gesendet       DateTime?
+  Anhang         Bytes?
+  Kopie          String?
+  Anhangname     String?
+  Absendermail   String?
+  Absendedatum   String?
+  Muster         Int?
+  IhrZeichen     String?
+  UnserZeichen   String?
+  Aktenzeichen   String?
+  Team           String?
+  Objekt         Int?
+  Einheit        Int?
+  Vertrag        Int?
+  rel_Adressen_Adresse Adressen? @relation("rel_Adressen_Korrespondenz_Adresse", fields: [Adresse], references: [ID])
+  rel_Einheiten_Einheit Einheiten? @relation("rel_Einheiten_Korrespondenz_Einheit", fields: [Einheit], references: [ID])
+  rel_Inventar_Inventar Inventar? @relation("rel_Inventar_Korrespondenz_Inventar", fields: [Inventar], references: [ID])
+  rel_Objekte_Objekt Objekte? @relation("rel_Objekte_Korrespondenz_Objekt", fields: [Objekt], references: [ID])
+  rel_Vertraege_Vertrag Vertraege? @relation("rel_Vertraege_Korrespondenz_Vertrag", fields: [Vertrag], references: [ID])
+
+}
+
+model Kosten {
+  ID                 Int      @id @default(autoincrement())
+  Abrechnung         Int?
+  Bezeichnung        String?
+  Betrag             Decimal?
+  Umlageart          String?
+  Art                String?
+  Abrechnungskonto   Int?
+  Mwstsatz           Decimal?
+  Nettobetrag        Decimal?
+  Buchfuehrung       Int?
+  Buchfuehrungskonto Int?
+  Materialanteil     Decimal?
+  Team               String?
+  rel_Abrechnungen_Abrechnung Abrechnungen? @relation("rel_Abrechnungen_Kosten_Abrechnung", fields: [Abrechnung], references: [ID])
+  rel_Abrechnungskonten_Abrechnungskonto Abrechnungskonten? @relation("rel_Abrechnungskonten_Kosten_Abrechnungskonto", fields: [Abrechnungskonto], references: [ID])
+  rel_Abrechnungskonten_ID Abrechnungskonten @relation("rel_Abrechnungskonten_Kosten_ID", fields: [ID], references: [ID])
+  rel_Kostenbelege_Kostenposition Kostenbelege[] @relation("rel_Kosten_Kostenbelege_Kostenposition")
+
+}
+
+model Kostenarten {
+  ID             Int      @id @default(autoincrement())
+  Bezeichnung    String?
+  Bemerkung      String?
+  Abrechnungsart String?
+  Team           String?
+  Umlageart      String?
+  Mwstsatz       Decimal?
+}
+
+model Kostenbelege {
+  ID             Int       @id @default(autoincrement())
+  Datum          DateTime?
+  Betreff        String?
+  Betrag         Decimal?
+  Kostenposition Int?
+  Team           String?
+  rel_Kosten_Kostenposition Kosten? @relation("rel_Kosten_Kostenbelege_Kostenposition", fields: [Kostenposition], references: [ID])
+
+}
+
+model Leistungen {
+  ID            Int      @id @default(autoincrement())
+  Bezeichnung   String?
+  Kategorie     String?
+  Beschreibung  String?
+  Einheit       String?
+  Preis         Decimal?
+  Leistungscode String?
+  Mwst_Satz     Int?     @default(0)
+  Team          String?
+}
+
+model Navigator {
+  ID           Int     @id @default(autoincrement())
+  Titel        String?
+  Beschreibung String?
+  Link         String?
+  Etikett      String?
+  Reihenfolge  Int?
+  Kategorie    String?
+  Team         String?
+}
+
+model Notizen {
+  ID                 Int       @id @default(autoincrement())
+  Titel              String
+  Datum              DateTime?
+  Wiedervorlage      DateTime?
+  Bearbeitungsstatus String?
+  Zustaendigkeit     Int?
+  Notiztext          String?
+  Benutzer           String
+  Adresse            Int?
+  Etikett            String?
+  Inventar           Int?
+  Objekt             Int?
+  Einheit            Int?
+  Raum               Int?
+  Team               String?
+  Vertrag            Int?
+  rel_Adressen_Adresse Adressen? @relation("rel_Adressen_Notizen_Adresse", fields: [Adresse], references: [ID])
+  rel_Einheiten_Einheit Einheiten? @relation("rel_Einheiten_Notizen_Einheit", fields: [Einheit], references: [ID])
+  rel_Inventar_Inventar Inventar? @relation("rel_Inventar_Notizen_Inventar", fields: [Inventar], references: [ID])
+  rel_Objekte_Objekt Objekte? @relation("rel_Objekte_Notizen_Objekt", fields: [Objekt], references: [ID])
+  rel_Raeume_Raum Raeume? @relation("rel_Raeume_Notizen_Raum", fields: [Raum], references: [ID])
+  rel_Vertraege_Vertrag Vertraege? @relation("rel_Vertraege_Notizen_Vertrag", fields: [Vertrag], references: [ID])
+
+}
+
+model Objektarten {
+  ID          Int     @id @default(autoincrement())
+  Bezeichnung String?
+  Team        String?
+}
+
+model Objekte {
+  ID                   Int       @id @default(autoincrement())
+  Bezeichnung          String?
+  Nummer               Int?
+  Anschrift            String?
+  Besitzer             Int?
+  Nutzer               Int?
+  Bemerkungen          String?
+  Objektart            String?
+  Baubeschreibung      String?
+  Lage                 String?
+  Verkehrsanbindung    String?
+  Infrastruktur        String?
+  Ausstattung          String?
+  Technik              String?
+  Anschaffungsdatum    DateTime?
+  Fertigstellungsdatum DateTime?
+  Einheitswert         String?
+  Grundbuch            String?
+  Grundstuecksgroesse  Int?
+  Bild                 Bytes?
+  Miniatur             Bytes?
+  Detailfeld1          String?
+  Detailfeld2          String?
+  Detailfeld3          String?
+  Detailfeld4          String?
+  Detailfeld5          String?
+  Laengengrad          Decimal?
+  Breitengrad          Decimal?
+  Verkaufspreis        Decimal?
+  Kaufpreis            Decimal?
+  Bewertung            Decimal?
+  Kaltmiete            Decimal?
+  Nebenkosten          Decimal?
+  Heizkosten           Decimal?
+  MieteQM              Decimal?
+  EKQM                 Decimal?
+  VKQM                 Decimal?
+  Finanzierung         String?
+  Hausgeld             Decimal?
+  Etikett              String?
+  Favorit              Int?
+  Einheiten            Int?
+  Abrechnungsflaeche   Decimal?
+  Wohnflaeche          Decimal?
+  Nutzflaeche          Decimal?
+  Heizflaeche          Decimal?
+  Team                 String?
+  Aktiv                Int?
+  rel_Adressen_Besitzer Adressen? @relation("rel_Adressen_Objekte_Besitzer", fields: [Besitzer], references: [ID])
+  rel_Einheiten_Objekt Einheiten[] @relation("rel_Objekte_Einheiten_Objekt")
+  rel_Ansprechpartner_Objekt Ansprechpartner[] @relation("rel_Objekte_Ansprechpartner_Objekt")
+  rel_Dokumente_Objekt Dokumente[] @relation("rel_Objekte_Dokumente_Objekt")
+  rel_Aufgaben_Objekt Aufgaben[] @relation("rel_Objekte_Aufgaben_Objekt")
+  rel_Notizen_Objekt Notizen[] @relation("rel_Objekte_Notizen_Objekt")
+  rel_Verkauf_Objekt Verkauf[] @relation("rel_Objekte_Verkauf_Objekt")
+  rel_Abrechnungen_Objekt Abrechnungen[] @relation("rel_Objekte_Abrechnungen_Objekt")
+  rel_Buchfuehrungen_Objekt Buchfuehrungen[] @relation("rel_Objekte_Buchfuehrungen_Objekt")
+  rel_Vertraege_Objekt Vertraege[] @relation("rel_Objekte_Vertraege_Objekt")
+  rel_Korrespondenz_Objekt Korrespondenz[] @relation("rel_Objekte_Korrespondenz_Objekt")
+
+}
+
+model PLZ {
+  ID         Int     @id @default(autoincrement())
+  PLZ        String?
+  Ort        String?
+  Vorwahl    String?
+  Bundesland String?
+  Staat      String?
+}
+
+model Personen {
+  ID               Int       @id @default(autoincrement())
+  Abrechnungskonto Int?
+  Anzahl           Int?
+  Von              DateTime?
+  Bis              DateTime?
+  Grund            String?
+  Team             String?
+  rel_Abrechnungskonten_Abrechnungskonto Abrechnungskonten? @relation("rel_Abrechnungskonten_Personen_Abrechnungskonto", fields: [Abrechnungskonto], references: [ID])
+
+}
+
+model Positionen {
+  ID              Int      @id @default(autoincrement())
+  Verkaufsvorgang Int?
+  Menge           Decimal?
+  Bezeichnung     String?
+  Einheit         String?
+  Listenpreis     Decimal?
+  Leistungscode   String?
+  Mwst_Satz       Int?
+  Bemerkungen     String?
+  Team            String?
+  rel_Verkauf_Verkaufsvorgang Verkauf? @relation("rel_Verkauf_Positionen_Verkaufsvorgang", fields: [Verkaufsvorgang], references: [ID])
+
+}
+
+model Protokolle {
+  ID              Int       @id @default(autoincrement())
+  Art             String?
+  Datum           DateTime?
+  Objekt          Int?
+  Einheit         Int?
+  Maengel         String?
+  Bemerkungen     String?
+  Erfasser        String?
+  Erfassungsdatum DateTime?
+  Unterschrift    String?
+  Team            String?
+  Adresse         Int?
+  rel_Einheiten_Einheit Einheiten? @relation("rel_Einheiten_Protokolle_Einheit", fields: [Einheit], references: [ID])
+
+}
+
+model Raeume {
+  ID          Int     @id @default(autoincrement())
+  Bezeichnung String?
+  Nummer      String?
+  Einheit     Int?
+  Nutzer      Int?
+  Bemerkungen String?
+  Raumart     String?
+  Technik     String?
+  Ausstattung String?
+  Boden       String?
+  Waende      String?
+  Objekt      Int?
+  Bild        Bytes?
+  Miniatur    Bytes?
+  Detailfeld1 String?
+  Detailfeld2 String?
+  Detailfeld3 String?
+  Detailfeld4 String?
+  Detailfeld5 String?
+  Team        String?
+  rel_Einheiten_Einheit Einheiten? @relation("rel_Einheiten_Raeume_Einheit", fields: [Einheit], references: [ID])
+  rel_Inventar_Raum Inventar[] @relation("rel_Raeume_Inventar_Raum")
+  rel_Schluessel_Raum Schluessel[] @relation("rel_Raeume_Schluessel_Raum")
+  rel_Zaehler_Raum Zaehler[] @relation("rel_Raeume_Zaehler_Raum")
+  rel_Flaechen_Raum Flaechen[] @relation("rel_Raeume_Flaechen_Raum")
+  rel_Dokumente_Raum Dokumente[] @relation("rel_Raeume_Dokumente_Raum")
+  rel_Aufgaben_Raum Aufgaben[] @relation("rel_Raeume_Aufgaben_Raum")
+  rel_Notizen_Raum Notizen[] @relation("rel_Raeume_Notizen_Raum")
+
+}
+
+model Raumarten {
+  ID          Int     @id @default(autoincrement())
+  Bezeichnung String?
+}
+
+model Schlagwoerter {
+  ID         Int     @id @default(autoincrement())
+  Schlagwort String?
+  Team       String?
+}
+
+model Schluessel {
+  ID           Int       @id @default(autoincrement())
+  Raum         Int?
+  Bezeichnung  String?
+  Art          String?
+  Nummer       String?
+  Ausgabe      Int?
+  Ausgabedatum DateTime?
+  Unterschrift String?
+  Team         String?
+  rel_Raeume_Raum Raeume? @relation("rel_Raeume_Schluessel_Raum", fields: [Raum], references: [ID])
+
+}
+
+model Seriennummern {
+  ID           Int     @id @default(autoincrement())
+  Nummernkreis String?
+  Anfangswert  Int?
+  Intervall    Int?
+  Codierung    String?
+  Textteil     String?
+  Stellen      Int?
+  Team         String?
+}
+
+model Sets {
+  ID        Int     @id @default(autoincrement())
+  Setname   String?
+  Bemerkung String?
+  Team      String?
+  rel_Inventar_Set Inventar[] @relation("rel_Sets_Inventar_Set")
+
+}
+
+model Termine {
+  ID             Int       @id @default(autoincrement())
+  Titel          String
+  Datum          DateTime
+  Uhrzeit        DateTime
+  Wiedervorlage  DateTime?
+  Zustaendigkeit Int?
+  Benutzer       String?
+  Adresse        Int?
+  Dauer          Int?
+  Ganztags       Int?      @default(0)
+  Bemerkungen    String?
+  Inventar       Int?
+  Kalender       String?
+  Etikett        String?
+  Kalenderwoche  Int?
+  Teilnehmer     String?
+  Team           String?
+  rel_Adressen_Adresse Adressen? @relation("rel_Adressen_Termine_Adresse", fields: [Adresse], references: [ID])
+  rel_Inventar_Inventar Inventar? @relation("rel_Inventar_Termine_Inventar", fields: [Inventar], references: [ID])
+
+}
+
+model Verkauf {
+  ID                  Int       @id @default(autoincrement())
+  Kunde               Int?
+  Nummer              Int?
+  Datum               DateTime?
+  Zahlungsbedingungen String?
+  Lieferbedingungen   String?
+  Rechnungsdatum      DateTime?
+  Leistungsdatum      DateTime?
+  Art                 String?
+  Bemerkungen         String?
+  Zahldatum           DateTime?
+  Bezeichnung         String?
+  Objekt              Int?
+  Einheit             Int?
+  Team                String?
+  Seriennummer        String?
+  rel_Adressen_Kunde Adressen? @relation("rel_Adressen_Verkauf_Kunde", fields: [Kunde], references: [ID])
+  rel_Positionen_Verkaufsvorgang Positionen[] @relation("rel_Verkauf_Positionen_Verkaufsvorgang")
+  rel_Einheiten_Einheit Einheiten? @relation("rel_Einheiten_Verkauf_Einheit", fields: [Einheit], references: [ID])
+  rel_Objekte_Objekt Objekte? @relation("rel_Objekte_Verkauf_Objekt", fields: [Objekt], references: [ID])
+  rel_Dokumente_Vorgang Dokumente[] @relation("rel_Verkauf_Dokumente_Vorgang")
+
+}
+
+model Vertraege {
+  ID                  Int       @id @default(autoincrement())
+  Datum               DateTime?
+  Bezeichnung         String?
+  Aktenzeichen        String?
+  Aufbewahrungsort    String?
+  Konditionen         String?
+  Kuendigung          String?
+  Dokument            Bytes?
+  DokumentURL         String?
+  Dokumentdateiname   String?
+  Bemerkungen         String?
+  Benutzer            String?
+  Objekt              Int?
+  Einheit             Int?
+  Raum                Int?
+  Inventar            Int?
+  Adresse             Int?
+  Abschlussdatum      DateTime?
+  Enddatum            DateTime?
+  Kaltmiete           Decimal?
+  NK_Vorauszahlung    Decimal?
+  HK_Vorauszahlung    Decimal?
+  Garagenmiete        Decimal?
+  Versicherungssumme  Decimal?
+  Selbstbehalt        Decimal?
+  Betrag              Decimal?
+  Abschlag            Decimal?
+  Art                 String?
+  Wiedervorlage       DateTime?
+  Team                String?
+  Kautionsbetrag      Decimal?
+  Kautionsanlage      String?
+  Kaution1            String?
+  Kaution2            String?
+  Kaution3            String?
+  Kautionsbemerkungen String?
+  rel_Adressen_Adresse Adressen? @relation("rel_Adressen_Vertraege_Adresse", fields: [Adresse], references: [ID])
+  rel_Einheiten_Einheit Einheiten? @relation("rel_Einheiten_Vertraege_Einheit", fields: [Einheit], references: [ID])
+  rel_Inventar_Inventar Inventar? @relation("rel_Inventar_Vertraege_Inventar", fields: [Inventar], references: [ID])
+  rel_Objekte_Objekt Objekte? @relation("rel_Objekte_Vertraege_Objekt", fields: [Objekt], references: [ID])
+  rel_Korrespondenz_Vertrag Korrespondenz[] @relation("rel_Vertraege_Korrespondenz_Vertrag")
+  rel_Dokumente_Vertrag Dokumente[] @relation("rel_Vertraege_Dokumente_Vertrag")
+  rel_Notizen_Vertrag Notizen[] @relation("rel_Vertraege_Notizen_Vertrag")
+  rel_Aufgaben_Vertrag Aufgaben[] @relation("rel_Vertraege_Aufgaben_Vertrag")
+
+}
+
+model Vorwegabzuege {
+  ID          Int      @id @default(autoincrement())
+  Anteil_1    Int?     @map("Anteil 1")
+  Anteil_2    Int?     @map("Anteil 2")
+  Anteil_3    Int?     @map("Anteil 3")
+  Anteil_4    Int?     @map("Anteil 4")
+  Betrag      Decimal?
+  Bezeichnung String?
+  Team        String?
+}
+
+model WV {
+  ID  Int       @id @default(autoincrement())
+  Tag DateTime?
+}
+
+model Wertelisten {
+  ID         Int     @id @default(autoincrement())
+  Werteliste String?
+  Eintrag    String?
+}
+
+model Zaehler {
+  ID            Int       @id @default(autoincrement())
+  Raum          Int?
+  Zaehlerart    String?
+  Zaehlernummer String?
+  Zaehlerstand  String?
+  Ablesedatum   DateTime?
+  Ableser       Int?
+  Unterschrift  String?
+  Team          String?
+  Eichung       String?
+  Einheit       String?
+  rel_Raeume_Raum Raeume? @relation("rel_Raeume_Zaehler_Raum", fields: [Raum], references: [ID])
+
+}
+
+model Zeiten {
+  ID           Int       @id @default(autoincrement())
+  Startzeit    DateTime?
+  Endzeit      DateTime?
+  Beschreibung String?
+  Mitarbeiter  String?
+  Aufgabe      Int?
+  Team         String?
+  rel_Aufgaben_Aufgabe Aufgaben? @relation("rel_Aufgaben_Zeiten_Aufgabe", fields: [Aufgabe], references: [ID])
+
+}
+
+model intex_hausverwaltung_audit {
+  id          Int      @id @default(autoincrement())
+  datetime    DateTime
+  ip          String
+  user        String?
+  table       String?
+  action      String
+  description String?
+
+  @@map("intex hausverwaltung_audit")
+}
+
+model intex_hausverwaltung_locking {
+  id              Int      @id @default(autoincrement())
+  table           String
+  startdatetime   DateTime
+  confirmdatetime DateTime
+  keys            String
+  sessionid       String
+  userid          String
+  action          Int?
+
+  @@map("intex hausverwaltung_locking")
+}
+
+model intex_hausverwaltung_uggroups {
+  GroupID Int     @id @default(autoincrement())
+  Label   String?
+
+  @@map("intex hausverwaltung_uggroups")
+}
+
+model intex_hausverwaltung_ugmembers {
+  UserName String
+  GroupID  Int
+
+  @@id([UserName, GroupID])
+  @@map("intex hausverwaltung_ugmembers")
+}
+
+model intex_hausverwaltung_ugrights {
+  TableName  String
+  GroupID    Int
+  AccessMask String?
+
+  @@id([TableName, GroupID])
+  @@map("intex hausverwaltung_ugrights")
+}

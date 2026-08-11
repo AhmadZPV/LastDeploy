@@ -1,0 +1,20 @@
+<%- include('partials/layout_top', { pageTitle: title }) %>
+<div class="settings-wrap">
+<% if (saved) { %><div class="saved">Einstellungen wurden gespeichert.</div><% } %>
+<form method="post" action="/settings">
+<%- include('partials/csrf') %>
+<% for (const group of groups) { %>
+<section class="settings-group">
+<h2><%= group.title %></h2>
+<% for (const field of group.fields) { %>
+<div class="form-group">
+<label for="<%= field %>"><%= tx(field) %></label>
+<input id="<%= field %>" name="<%= field %>" value="<%= row[field] == null ? '' : String(row[field]).replace(/"/g, '&quot;') %>">
+</div>
+<% } %>
+</section>
+<% } %>
+<div class="form-actions"><button type="submit"><%= t('save') %></button></div>
+</form>
+</div>
+<%- include('partials/layout_bottom') %>

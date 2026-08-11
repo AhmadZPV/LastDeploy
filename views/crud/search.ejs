@@ -1,0 +1,24 @@
+<%- include('../partials/layout_top', { pageTitle: (t('advanced') + ': ' + tx(meta.title)) }) %>
+<section class="search-page-card">
+  <div class="section-heading search-heading"><div><span class="eyebrow"><%= t('advanced') %></span><h2><%= tx(meta.title) %></h2><p>Use the filters below to narrow the records without losing the current context.</p></div><a href="/<%= module %>" class="btn btn-link"><%= t('cancel') %></a></div>
+  <form method="post" action="/<%= module %>/search" class="search-form">
+    <%- include('../partials/csrf') %>
+    <div class="search-query form-group"><label for="search-q"><%= t('search') %></label><input id="search-q" type="search" name="q" value="<%= sc.q || '' %>" placeholder="<%= t('search') %>" autocomplete="off"></div>
+    <fieldset class="search-fields"><legend><%= t('advanced') %> filters</legend>
+      <div class="search-filter-grid">
+      <% for (const f of (meta.searchFields || [])) { %>
+        <% const cat = helpers.fieldCategory(module, f); %>
+        <div class="search-filter form-group">
+          <label for="filter-<%= f %>"><%= tx(f) %></label>
+          <% if (cat === 'date') { %><div class="range-fields"><label>From<input type="date" name="<%= f %>_from" value="<%= sc.filters?.[f]?.from || '' %>"></label><label>To<input type="date" name="<%= f %>_to" value="<%= sc.filters?.[f]?.to || '' %>"></label></div>
+          <% } else if (cat === 'bool') { %><select id="filter-<%= f %>" name="<%= f %>"><option value="">—</option><option value="1">Yes</option><option value="0">No</option></select>
+          <% } else if (cat === 'lookup') { %><select id="filter-<%= f %>" name="<%= f %>"><option value="">—</option><% for (const o of (lookups[f] || [])) { %><option value="<%= o.ID %>" <%= String(sc.filters?.[f])===String(o.ID) ? 'selected' : '' %>><%= o.Kurzname || o.Bezeichnung || ('#'+o.ID) %></option><% } %></select>
+          <% } else { %><div class="operator-field"><select name="<%= f %>__op" aria-label="<%= tx(f) %> operator" class="search-op"><% const spec = helpers.searchSpec(f); for (const op of spec.options) { %><option value="<%= op %>" <%= ((sc.filters?.[f] && sc.filters[f].option) || spec.default) === op ? 'selected' : '' %>><%= op %></option><% } %></select><input id="filter-<%= f %>" type="text" name="<%= f %>" value="<%= (sc.filters?.[f] && typeof sc.filters[f] === 'object') ? (sc.filters[f].value || '') : (sc.filters?.[f] || '') %>"></div><% } %>
+        </div>
+      <% } %>
+      </div>
+    </fieldset>
+    <div class="form-actions"><button class="btn btn-primary" type="submit"><%= t('run_search') %></button><a href="/<%= module %>" class="btn btn-link"><%= t('cancel') %></a></div>
+  </form>
+</section>
+<%- include('../partials/layout_bottom') %>

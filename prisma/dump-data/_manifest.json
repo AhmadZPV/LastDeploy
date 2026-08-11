@@ -1,0 +1,250 @@
+{
+ "Abrechnungen": {
+  "file": "Abrechnungen.json",
+  "rows": 15
+ },
+ "Abrechnungskonten": {
+  "file": "Abrechnungskonten.json",
+  "rows": 57
+ },
+ "Adressen": {
+  "file": "Adressen.json",
+  "rows": 19
+ },
+ "Ansprechpartner": {
+  "file": "Ansprechpartner.json",
+  "rows": 0
+ },
+ "Aufgaben": {
+  "file": "Aufgaben.json",
+  "rows": 0
+ },
+ "Aufteilungsassistent": {
+  "file": "Aufteilungsassistent.json",
+  "rows": 0
+ },
+ "Ausleihen": {
+  "file": "Ausleihen.json",
+  "rows": 0
+ },
+ "Benutzer": {
+  "file": "Benutzer.json",
+  "rows": 3
+ },
+ "Buchfuehrungen": {
+  "file": "Buchfuehrungen.json",
+  "rows": 7
+ },
+ "Buchungen": {
+  "file": "Buchungen.json",
+  "rows": 0
+ },
+ "Buchungsassistent": {
+  "file": "Buchungsassistent.json",
+  "rows": 0
+ },
+ "Buchungsimport": {
+  "file": "Buchungsimport.json",
+  "rows": 0
+ },
+ "Checklisten": {
+  "file": "Checklisten.json",
+  "rows": 0
+ },
+ "Dokumente": {
+  "file": "Dokumente.json",
+  "rows": 0
+ },
+ "Einheiten": {
+  "file": "Einheiten.json",
+  "rows": 15
+ },
+ "Einheitenarten": {
+  "file": "Einheitenarten.json",
+  "rows": 11
+ },
+ "Einstellungen": {
+  "file": "Einstellungen.json",
+  "rows": 1
+ },
+ "Farben": {
+  "file": "Farben.json",
+  "rows": 11
+ },
+ "Flaechen": {
+  "file": "Flaechen.json",
+  "rows": 0
+ },
+ "Informationen": {
+  "file": "Informationen.json",
+  "rows": 6
+ },
+ "intex hausverwaltung_audit": {
+  "file": "intex_hausverwaltung_audit.json",
+  "rows": 203
+ },
+ "intex hausverwaltung_locking": {
+  "file": "intex_hausverwaltung_locking.json",
+  "rows": 6
+ },
+ "INtex Hausverwaltung_settings": {
+  "file": "INtex_Hausverwaltung_settings.json",
+  "rows": 70
+ },
+ "intex hausverwaltung_uggroups": {
+  "file": "intex_hausverwaltung_uggroups.json",
+  "rows": 5
+ },
+ "intex hausverwaltung_ugmembers": {
+  "file": "intex_hausverwaltung_ugmembers.json",
+  "rows": 5
+ },
+ "intex hausverwaltung_ugrights": {
+  "file": "intex_hausverwaltung_ugrights.json",
+  "rows": 966
+ },
+ "Inventar": {
+  "file": "Inventar.json",
+  "rows": 0
+ },
+ "Kalender": {
+  "file": "Kalender.json",
+  "rows": 42
+ },
+ "Kalenderwoche": {
+  "file": "Kalenderwoche.json",
+  "rows": 7
+ },
+ "Klassifikationen Adressen": {
+  "file": "Klassifikationen_Adressen.json",
+  "rows": 17
+ },
+ "Klassifikationen Inventar": {
+  "file": "Klassifikationen_Inventar.json",
+  "rows": 9
+ },
+ "KlassifikationenKontobuch": {
+  "file": "KlassifikationenKontobuch.json",
+  "rows": 5
+ },
+ "Kontenrahmen": {
+  "file": "Kontenrahmen.json",
+  "rows": 3157
+ },
+ "Kontoauszuege": {
+  "file": "Kontoauszuege.json",
+  "rows": 0
+ },
+ "Kontobuch": {
+  "file": "Kontobuch.json",
+  "rows": 0
+ },
+ "Korrespondenz": {
+  "file": "Korrespondenz.json",
+  "rows": 0
+ },
+ "Kosten": {
+  "file": "Kosten.json",
+  "rows": 78
+ },
+ "Kostenarten": {
+  "file": "Kostenarten.json",
+  "rows": 43
+ },
+ "Kostenbelege": {
+  "file": "Kostenbelege.json",
+  "rows": 0
+ },
+ "Leistungen": {
+  "file": "Leistungen.json",
+  "rows": 7
+ },
+ "Navigator": {
+  "file": "Navigator.json",
+  "rows": 5
+ },
+ "Notizen": {
+  "file": "Notizen.json",
+  "rows": 0
+ },
+ "Objektarten": {
+  "file": "Objektarten.json",
+  "rows": 18
+ },
+ "Objekte": {
+  "file": "Objekte.json",
+  "rows": 7
+ },
+ "Personen": {
+  "file": "Personen.json",
+  "rows": 0
+ },
+ "PLZ": {
+  "file": "PLZ.json",
+  "rows": 14823
+ },
+ "Positionen": {
+  "file": "Positionen.json",
+  "rows": 0
+ },
+ "Protokolle": {
+  "file": "Protokolle.json",
+  "rows": 0
+ },
+ "Raeume": {
+  "file": "Raeume.json",
+  "rows": 7
+ },
+ "Raumarten": {
+  "file": "Raumarten.json",
+  "rows": 27
+ },
+ "Schlagwoerter": {
+  "file": "Schlagwoerter.json",
+  "rows": 7
+ },
+ "Schluessel": {
+  "file": "Schluessel.json",
+  "rows": 1
+ },
+ "Seriennummern": {
+  "file": "Seriennummern.json",
+  "rows": 9
+ },
+ "Sets": {
+  "file": "Sets.json",
+  "rows": 1
+ },
+ "Termine": {
+  "file": "Termine.json",
+  "rows": 52
+ },
+ "Verkauf": {
+  "file": "Verkauf.json",
+  "rows": 0
+ },
+ "Vertraege": {
+  "file": "Vertraege.json",
+  "rows": 0
+ },
+ "Vorwegabzuege": {
+  "file": "Vorwegabzuege.json",
+  "rows": 0
+ },
+ "Wertelisten": {
+  "file": "Wertelisten.json",
+  "rows": 78
+ },
+ "WV": {
+  "file": "WV.json",
+  "rows": 1
+ },
+ "Zaehler": {
+  "file": "Zaehler.json",
+  "rows": 18
+ },
+ "Zeiten": {
+  "file": "Zeiten.json",
+  "rows": 0
+ }
+}

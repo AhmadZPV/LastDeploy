@@ -1,0 +1,268 @@
+{
+ "entity": "admin_members",
+ "shortName": "admin_members",
+ "baseTable": "Benutzer",
+ "isVirtual": true,
+ "ownerField": "Benutzername",
+ "sql": {
+  "strOrderBy": "ORDER BY Benutzername",
+  "sqlHead": "SELECT Benutzername,  Passwort,  Gruppe,  Name,  Email,  Bild",
+  "sqlFrom": "FROM Benutzer",
+  "sqlWhere": "",
+  "sqlTail": ""
+ },
+ "keys": [
+  "Benutzername"
+ ],
+ "pageSize": 20,
+ "capabilities": {
+  "list": true,
+  "view": true,
+  "add": true,
+  "edit": true,
+  "export": false,
+  "print": false,
+  "search": true,
+  "masterList": true
+ },
+ "fieldSets": {
+  "list": [
+   "Name",
+   "Bild",
+   "Email",
+   "Benutzername",
+   "Gruppe"
+  ],
+  "view": [
+   "Name",
+   "Bild",
+   "Email",
+   "Benutzername",
+   "Gruppe"
+  ],
+  "add": [
+   "Name",
+   "Bild",
+   "Email",
+   "Benutzername",
+   "Passwort",
+   "Gruppe"
+  ],
+  "edit": [
+   "Name",
+   "Bild",
+   "Email",
+   "Benutzername",
+   "Passwort",
+   "Gruppe"
+  ],
+  "search": [
+   "Name",
+   "Email",
+   "Benutzername",
+   "Gruppe"
+  ],
+  "masterList": [
+   "Name",
+   "Bild",
+   "Email",
+   "Benutzername",
+   "Passwort",
+   "Gruppe"
+  ]
+ },
+ "export": {
+  "exportTo": null,
+  "exportDelimiter": null,
+  "exportFormatting": null
+ },
+ "print": {
+  "printerPageOrientation": 0,
+  "nPrinterPageScale": 100,
+  "nPrinterSplitRecords": 40,
+  "nPrinterPDFSplitRecords": 40
+ },
+ "tabs": [],
+ "labels": {
+  "German": {
+   "Benutzername": "Benutzername",
+   "Passwort": "Passwort",
+   "Gruppe": "Gruppe",
+   "Name": "Name",
+   "Email": "Email",
+   "Bild": "Bild"
+  }
+ },
+ "fields": [
+  {
+   "name": "Benutzername",
+   "type": 200,
+   "index": 1,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200,
+    "denyDuplicates": true
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Passwort",
+   "type": 200,
+   "index": 2,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "ViewFormat": "Custom"
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Gruppe",
+   "type": 200,
+   "index": 3,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 0,
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 4,
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Name",
+   "type": 200,
+   "index": 4,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Email",
+   "type": 200,
+   "index": 5,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "ViewFormat": "Email Hyperlink"
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "email",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Bild",
+   "type": 128,
+   "index": 6,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "ImageWidth": 72,
+    "ImageHeight": 72,
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200,
+    "ResizeImage": true,
+    "NewSize": 72
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  }
+ ]
+}

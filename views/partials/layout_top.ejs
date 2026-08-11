@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="<%= typeof lang !== 'undefined' ? lang : 'de' %>">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><%= (typeof pageTitle !== 'undefined' ? pageTitle : (typeof title !== 'undefined' ? title : (typeof t === 'function' ? t('app_name') : 'Erwin Property Mgmt'))) %> - <%= typeof t === 'function' ? t('app_name') : 'Erwin Property Mgmt' %></title>
+  <script>document.documentElement.dataset.theme=localStorage.getItem('erwin-theme')||'light';</script>
+  <link rel="stylesheet" href="/static/css/style.css?v=20260811-9">
+  <%- include('pwa') %>
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar" id="sidebar">
+    <a class="logo" href="/"><span class="logo-mark">E</span>Erwin <span>Property Mgmt</span></a>
+    <nav>
+      <a href="/" class="<%= path === '/' ? 'active' : '' %>"><%= typeof t === 'function' ? t('dashboard') : 'Dashboard' %></a>
+      <% for (const section of (menu?.sections || [])) { %>
+        <% const sectionActive = (section.groups || []).some(group => (group.items || []).some(item => item.href && item.href !== '/' && path.startsWith(item.href))); %>
+        <div class="nav-section<%= sectionActive ? ' is-open has-active' : '' %>" data-nav-section="<%= section.id %>">
+          <% if (section.label) { %>
+            <button class="nav-section-trigger" type="button" aria-expanded="<%= sectionActive ? 'true' : 'false' %>" aria-controls="nav-panel-<%= section.id %>" data-nav-section-trigger>
+              <span><%= section.label %></span>
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" aria-hidden="true"><path d="m6 8 4 4 4-4"/></svg>
+            </button>
+          <% } %>
+          <div class="nav-section-panel" id="nav-panel-<%= section.id %>"<%= section.label && !sectionActive ? ' hidden' : '' %>>
+            <% for (const group of (section.groups || [])) { %>
+              <% if (group.parentLabel && group.label) { %><div class="nav-subsection-title"><%= group.label %></div><% } %>
+              <% for (const item of (group.items || [])) { %>
+                <% if (!item.special && item.href) { %><a href="<%= item.href %>" class="<%= item.href !== '/' && path.startsWith(item.href) ? 'active' : '' %>"<% if (item.external) { %> target="_blank" rel="noopener noreferrer"<% } %>><%= item.label %></a><% } %>
+              <% } %>
+            <% } %>
+          </div>
+        </div>
+      <% } %>
+      <% if (user?.isAdmin) { %><a href="/admin" class="<%= path.startsWith('/admin') ? 'active' : '' %>"><%= typeof t === 'function' ? t('administration') : 'Administration' %></a><% } %>
+    </nav>
+  </aside>
+  <button class="sidebar-scrim" type="button" aria-label="<%= typeof t === 'function' ? t('nav_close') : 'Navigation schließen' %>" data-nav-close></button>
+  <main class="main">
+    <header class="topbar">
+      <button class="menu-toggle" type="button" aria-label="<%= typeof t === 'function' ? t('nav_open') : 'Navigation öffnen' %>" aria-controls="sidebar" aria-expanded="false" data-nav-toggle>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <h1><%= typeof tx === 'function' ? tx(typeof pageTitle !== 'undefined' ? pageTitle : (typeof title !== 'undefined' ? title : t('app_name'))) : pageTitle %></h1>
+      <div class="user-menu">
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle color theme" title="Light / Dark mode">
+          <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5 8.5 8.5 0 1 0 20.5 14.2Z"/></svg>
+          <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"/></svg>
+        </button>
+        <div class="lang-toggle" role="group" aria-label="<%= typeof t === 'function' ? t('language') : 'Language' %>">
+          <a href="/lang/de" class="lang-btn<%= (typeof lang !== 'undefined' ? lang : 'de') === 'de' ? ' active' : '' %>" title="Deutsch">DE</a>
+          <a href="/lang/en" class="lang-btn<%= (typeof lang !== 'undefined' ? lang : 'de') === 'en' ? ' active' : '' %>" title="English">EN</a>
+        </div>
+        <% if (user) { %>
+          <strong><%= user.Name || user.Benutzername %></strong>
+          <% if (user.Gruppe) { %><span class="badge"><%= user.Gruppe %></span><% } %>
+          <a href="/changepwd"><%= typeof t === 'function' ? t('password') : 'Passwort' %></a>
+          <a href="/import/adressen"><%= typeof t === 'function' ? t('import') : 'Import' %></a>
+          <a href="/logout"><%= typeof t === 'function' ? t('logout') : 'Abmelden' %></a>
+        <% } %>
+      </div>
+    </header>
+    <div class="content">

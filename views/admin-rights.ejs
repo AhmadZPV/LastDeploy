@@ -1,0 +1,30 @@
+<%- include('partials/layout_top', { title: 'Rechte: ' + group.Label }) %>
+<h1>Rechte f&uuml;r Gruppe &laquo;<%= group.Label %>&raquo;</h1>
+<p><a href="/admin#groups">&larr; Zur&uuml;ck zur Verwaltung</a></p>
+<form method="post" action="/admin/rights/<%= group.GroupID %>/grant-all" style="margin-bottom:12px">
+  <%- include('partials/csrf') %>
+  <button type="submit" class="btn">Vollzugriff auf alle Tabellen</button>
+</form>
+<form method="post" action="/admin/rights/<%= group.GroupID %>">
+  <%- include('partials/csrf') %>
+  <div class="table-wrap"><table class="data-table">
+    <thead><tr><th>Tabelle</th>
+      <% maskLetters.forEach(function(L){ %><th title="<%= maskLabels[L] %>"><%= L %></th><% }) %>
+    </tr></thead>
+    <tbody>
+    <% matrix.forEach(function(row){ %>
+      <tr><td><%= row.table %></td>
+        <% maskLetters.forEach(function(L){ %>
+          <td><input type="checkbox" name="rights[<%= row.table %>][<%= L %>]"
+               <%= row.checked[L] ? 'checked' : '' %>></td>
+        <% }) %>
+      </tr>
+    <% }) %>
+    </tbody>
+  </table></div>
+  <p style="margin-top:12px"><button type="submit" class="btn btn-primary">Speichern</button></p>
+</form>
+<p style="font-size:13px;color:#7f8c8d">
+  <% maskLetters.forEach(function(L){ %><b><%= L %></b> = <%= maskLabels[L] %> &nbsp; <% }) %>
+</p>
+<%- include('partials/layout_bottom') %>

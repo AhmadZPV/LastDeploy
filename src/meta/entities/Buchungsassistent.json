@@ -1,0 +1,1448 @@
+{
+ "entity": "Buchungsassistent",
+ "shortName": "Buchungsassistent",
+ "baseTable": "Buchungsassistent",
+ "isVirtual": false,
+ "ownerField": "Team",
+ "sql": {
+  "strOrderBy": "",
+  "sqlHead": "SELECT `ID`,  `Buchfuehrung`,  `Konto`,  `Gegenkonto`,  `Datum`,  `Betrag`,  `Betreff`,  `Sollsplitt1_Konto`,  `Sollsplitt1_Betrag`,  `Habensplitt1_Konto`,  `Habensplitt1_Betrag`,  Coalesce(Sollsplitt4_Betrag,0)+Coalesce(Sollsplitt3_Betrag,0)+Coalesce(Sollsplitt2_Betrag,0)+Coalesce(Sollsplitt1_Betrag,0)+  Coalesce(Habensplitt4_Betrag,0)+Coalesce(Habensplitt3_Betrag,0)+Coalesce(Habensplitt2_Betrag,0)+Coalesce(Habensplitt1_Betrag,0)+Betrag AS `Gesamtbetrag`,  `Sollsplitt2_Konto`,  `Sollsplitt2_Betrag`,  `Habensplitt2_Konto`,  `Habensplitt2_Betrag`,  `Sollsplitt3_Konto`,  `Sollsplitt3_Betrag`,  `Habensplitt3_Konto`,  `Habensplitt3_Betrag`,  `Sollsplitt4_Konto`,  `Sollsplitt4_Betrag`,  `Habensplitt4_Konto`,  `Habensplitt4_Betrag`,  `Sollsplitt1_Betreff`,  `Sollsplitt2_Betreff`,  `Sollsplitt3_Betreff`,  `Sollsplitt4_Betreff`,  `Habensplitt1_Betreff`,  `Habensplitt3_Betreff`,  `Habensplitt2_Betreff`,  `Habensplitt4_Betreff`,  `Von_Datum`,  `Bis_Datum`,  if(curdate()>=Von_Datum and curdate()<=Bis_Datum, 1, 0) AS `Gueltig`,  `Buchungsart`,  Team",
+  "sqlFrom": "FROM `Buchungsassistent`",
+  "sqlWhere": "",
+  "sqlTail": ""
+ },
+ "keys": [
+  "ID"
+ ],
+ "pageSize": 20,
+ "capabilities": {
+  "list": true,
+  "view": true,
+  "add": true,
+  "edit": true,
+  "export": false,
+  "print": false,
+  "search": true,
+  "masterList": true
+ },
+ "fieldSets": {
+  "list": [
+   "Gesamtbetrag",
+   "Betreff",
+   "Datum",
+   "Buchfuehrung",
+   "Konto",
+   "Gegenkonto",
+   "Gueltig",
+   "Buchungsart"
+  ],
+  "view": [
+   "Betreff",
+   "Datum",
+   "Betrag",
+   "Gesamtbetrag",
+   "Buchfuehrung",
+   "Konto",
+   "Sollsplitt1_Konto",
+   "Sollsplitt1_Betreff",
+   "Sollsplitt1_Betrag",
+   "Sollsplitt2_Konto",
+   "Sollsplitt2_Betreff",
+   "Sollsplitt2_Betrag",
+   "Sollsplitt3_Konto",
+   "Sollsplitt3_Betreff",
+   "Sollsplitt3_Betrag",
+   "Sollsplitt4_Konto",
+   "Sollsplitt4_Betreff",
+   "Sollsplitt4_Betrag",
+   "Gegenkonto",
+   "Habensplitt1_Konto",
+   "Habensplitt1_Betreff",
+   "Habensplitt1_Betrag",
+   "Habensplitt2_Konto",
+   "Habensplitt2_Betreff",
+   "Habensplitt2_Betrag",
+   "Habensplitt3_Konto",
+   "Habensplitt3_Betreff",
+   "Habensplitt3_Betrag",
+   "Habensplitt4_Konto",
+   "Habensplitt4_Betreff",
+   "Habensplitt4_Betrag",
+   "Buchungsart",
+   "Gueltig",
+   "Von_Datum",
+   "Bis_Datum"
+  ],
+  "add": [
+   "Betreff",
+   "Datum",
+   "Betrag",
+   "Buchfuehrung",
+   "Konto",
+   "Sollsplitt1_Konto",
+   "Sollsplitt1_Betreff",
+   "Sollsplitt1_Betrag",
+   "Sollsplitt2_Konto",
+   "Sollsplitt2_Betreff",
+   "Sollsplitt2_Betrag",
+   "Sollsplitt3_Konto",
+   "Sollsplitt3_Betreff",
+   "Sollsplitt3_Betrag",
+   "Sollsplitt4_Konto",
+   "Sollsplitt4_Betreff",
+   "Sollsplitt4_Betrag",
+   "Gegenkonto",
+   "Habensplitt1_Konto",
+   "Habensplitt1_Betreff",
+   "Habensplitt1_Betrag",
+   "Habensplitt2_Konto",
+   "Habensplitt2_Betreff",
+   "Habensplitt2_Betrag",
+   "Habensplitt3_Konto",
+   "Habensplitt3_Betreff",
+   "Habensplitt3_Betrag",
+   "Habensplitt4_Konto",
+   "Habensplitt4_Betreff",
+   "Habensplitt4_Betrag",
+   "Buchungsart",
+   "Von_Datum",
+   "Bis_Datum"
+  ],
+  "edit": [
+   "Betreff",
+   "Datum",
+   "Betrag",
+   "Buchfuehrung",
+   "Konto",
+   "Sollsplitt1_Konto",
+   "Sollsplitt1_Betreff",
+   "Sollsplitt1_Betrag",
+   "Sollsplitt2_Konto",
+   "Sollsplitt2_Betreff",
+   "Sollsplitt2_Betrag",
+   "Sollsplitt3_Konto",
+   "Sollsplitt3_Betreff",
+   "Sollsplitt3_Betrag",
+   "Sollsplitt4_Konto",
+   "Sollsplitt4_Betreff",
+   "Sollsplitt4_Betrag",
+   "Gegenkonto",
+   "Habensplitt1_Konto",
+   "Habensplitt1_Betreff",
+   "Habensplitt1_Betrag",
+   "Habensplitt2_Konto",
+   "Habensplitt2_Betreff",
+   "Habensplitt2_Betrag",
+   "Habensplitt3_Konto",
+   "Habensplitt3_Betreff",
+   "Habensplitt3_Betrag",
+   "Habensplitt4_Konto",
+   "Habensplitt4_Betreff",
+   "Habensplitt4_Betrag",
+   "Buchungsart",
+   "Von_Datum",
+   "Bis_Datum"
+  ],
+  "search": [
+   "ID",
+   "Gesamtbetrag",
+   "Gueltig",
+   "Buchungsart",
+   "Betreff",
+   "Datum",
+   "Betrag",
+   "Buchfuehrung",
+   "Konto",
+   "Sollsplitt1_Konto",
+   "Sollsplitt1_Betreff",
+   "Sollsplitt1_Betrag",
+   "Sollsplitt2_Konto",
+   "Sollsplitt2_Betreff",
+   "Sollsplitt2_Betrag",
+   "Sollsplitt3_Konto",
+   "Sollsplitt3_Betreff",
+   "Sollsplitt3_Betrag",
+   "Sollsplitt4_Konto",
+   "Sollsplitt4_Betreff",
+   "Sollsplitt4_Betrag",
+   "Gegenkonto",
+   "Habensplitt1_Konto",
+   "Habensplitt1_Betreff",
+   "Habensplitt1_Betrag",
+   "Habensplitt2_Konto",
+   "Habensplitt2_Betreff",
+   "Habensplitt2_Betrag",
+   "Habensplitt3_Konto",
+   "Habensplitt3_Betreff",
+   "Habensplitt3_Betrag",
+   "Habensplitt4_Konto",
+   "Habensplitt4_Betreff",
+   "Habensplitt4_Betrag",
+   "Von_Datum",
+   "Bis_Datum"
+  ],
+  "masterList": [
+   "ID",
+   "Gesamtbetrag",
+   "Gueltig",
+   "Buchungsart",
+   "Team",
+   "Betreff",
+   "Datum",
+   "Betrag",
+   "Buchfuehrung",
+   "Konto",
+   "Sollsplitt1_Konto",
+   "Sollsplitt1_Betreff",
+   "Sollsplitt1_Betrag",
+   "Sollsplitt2_Konto",
+   "Sollsplitt2_Betreff",
+   "Sollsplitt2_Betrag",
+   "Sollsplitt3_Konto",
+   "Sollsplitt3_Betreff",
+   "Sollsplitt3_Betrag",
+   "Sollsplitt4_Konto",
+   "Sollsplitt4_Betreff",
+   "Sollsplitt4_Betrag",
+   "Gegenkonto",
+   "Habensplitt1_Konto",
+   "Habensplitt1_Betreff",
+   "Habensplitt1_Betrag",
+   "Habensplitt2_Konto",
+   "Habensplitt2_Betreff",
+   "Habensplitt2_Betrag",
+   "Habensplitt3_Konto",
+   "Habensplitt3_Betreff",
+   "Habensplitt3_Betrag",
+   "Habensplitt4_Konto",
+   "Habensplitt4_Betreff",
+   "Habensplitt4_Betrag",
+   "Von_Datum",
+   "Bis_Datum"
+  ]
+ },
+ "export": {
+  "exportTo": null,
+  "exportDelimiter": null,
+  "exportFormatting": null
+ },
+ "print": {
+  "printerPageOrientation": 0,
+  "nPrinterPageScale": 100,
+  "nPrinterSplitRecords": 40,
+  "nPrinterPDFSplitRecords": 40
+ },
+ "tabs": [],
+ "labels": {
+  "German": {
+   "ID": "ID",
+   "Buchfuehrung": "Buchführung",
+   "Konto": "Konto",
+   "Gegenkonto": "Gegenkonto",
+   "Datum": "Datum",
+   "Betrag": "Betrag",
+   "Betreff": "Betreff",
+   "Sollsplitt1_Konto": "Splitt Konto",
+   "Sollsplitt1_Betrag": "Splitt Betrag",
+   "Habensplitt1_Konto": "Splitt Konto",
+   "Habensplitt1_Betrag": "Splitt Betrag",
+   "Sollsplitt2_Konto": "Splitt 2 Konto",
+   "Sollsplitt2_Betrag": "Splitt 2 Betrag",
+   "Habensplitt2_Konto": "Splitt 2 Konto",
+   "Habensplitt2_Betrag": "Splitt 2 Betrag",
+   "Sollsplitt3_Konto": "Splitt 3 Konto",
+   "Sollsplitt3_Betrag": "Splitt 3 Betrag",
+   "Habensplitt3_Konto": "Splitt 3 Konto",
+   "Habensplitt3_Betrag": "Splitt 3 Betrag",
+   "Sollsplitt4_Konto": "Splitt 4 Konto",
+   "Sollsplitt4_Betrag": "Splitt 4 Betrag",
+   "Habensplitt4_Konto": "Splitt 4 Konto",
+   "Habensplitt4_Betrag": "Splitt 4 Betrag",
+   "Gesamtbetrag": "Betrag",
+   "Sollsplitt1_Betreff": "Splitt Betreff",
+   "Sollsplitt2_Betreff": "Splitt 2 Betreff",
+   "Sollsplitt3_Betreff": "Splitt 3 Betreff",
+   "Sollsplitt4_Betreff": "Splitt 4 Betreff",
+   "Habensplitt1_Betreff": "Splitt Betreff",
+   "Habensplitt3_Betreff": "Splitt 3 Betreff",
+   "Habensplitt2_Betreff": "Splitt 2 Betreff",
+   "Habensplitt4_Betreff": "Splitt 4 Betreff",
+   "Von_Datum": "Von Datum",
+   "Bis_Datum": "Bis Datum",
+   "Gueltig": "Gültig",
+   "Buchungsart": "Buchungsart",
+   "Team": "Team"
+  }
+ },
+ "fields": [
+  {
+   "name": "ID",
+   "type": 3,
+   "index": 1,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "AutoInc": true,
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Buchfuehrung",
+   "type": 3,
+   "index": 2,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Buchfuehrungen",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 2,
+    "LinkField": "ID",
+    "LinkFieldType": 0,
+    "DisplayField": "Bezeichnung",
+    "LookupOrderBy": "Bezeichnung",
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Konto",
+   "type": 3,
+   "index": 3,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Kontenrahmen",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 2,
+    "LinkField": "ID",
+    "LinkFieldType": 0,
+    "DisplayField": "concat(Nummer,' ', Kontobezeichnung)",
+    "CustomDisplay": "true",
+    "LookupOrderBy": "Kontobezeichnung",
+    "UseCategory": true,
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Gegenkonto",
+   "type": 3,
+   "index": 4,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Kontenrahmen",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 2,
+    "LinkField": "ID",
+    "LinkFieldType": 0,
+    "DisplayField": "concat(Nummer,' ', Kontobezeichnung)",
+    "CustomDisplay": "true",
+    "LookupOrderBy": "Kontobezeichnung",
+    "UseCategory": true,
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Datum",
+   "type": 7,
+   "index": 5,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "DateEditType": 13,
+    "InitialYearFactor": 3,
+    "LastYearFactor": 10,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Betrag",
+   "type": 14,
+   "index": 6,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "DecimalDigits": 2,
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Betreff",
+   "type": 200,
+   "index": 7,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Buchungsassistent",
+    "freeInput": true,
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 1,
+    "LinkField": "Betreff",
+    "LinkFieldType": 0,
+    "DisplayField": "Betreff",
+    "LookupOrderBy": "Betreff",
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Sollsplitt1_Konto",
+   "type": 3,
+   "index": 8,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Kontenrahmen",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 2,
+    "LinkField": "ID",
+    "LinkFieldType": 0,
+    "DisplayField": "concat(Nummer,' ', Kontobezeichnung)",
+    "CustomDisplay": "true",
+    "LookupOrderBy": "Kontobezeichnung",
+    "UseCategory": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Sollsplitt1_Betrag",
+   "type": 14,
+   "index": 9,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "DecimalDigits": 2,
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Habensplitt1_Konto",
+   "type": 3,
+   "index": 10,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Kontenrahmen",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 2,
+    "LinkField": "ID",
+    "LinkFieldType": 0,
+    "DisplayField": "concat(Nummer,' ', Kontobezeichnung)",
+    "CustomDisplay": "true",
+    "LookupOrderBy": "Kontobezeichnung",
+    "UseCategory": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Habensplitt1_Betrag",
+   "type": 14,
+   "index": 11,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "DecimalDigits": 2,
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Gesamtbetrag",
+   "type": 14,
+   "index": 12,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "DecimalDigits": 2,
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Sollsplitt2_Konto",
+   "type": 3,
+   "index": 13,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Kontenrahmen",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 2,
+    "LinkField": "ID",
+    "LinkFieldType": 0,
+    "DisplayField": "concat(Nummer,' ', Kontobezeichnung)",
+    "CustomDisplay": "true",
+    "LookupOrderBy": "Kontobezeichnung",
+    "UseCategory": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Sollsplitt2_Betrag",
+   "type": 14,
+   "index": 14,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "DecimalDigits": 2,
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Habensplitt2_Konto",
+   "type": 3,
+   "index": 15,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Kontenrahmen",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 2,
+    "LinkField": "ID",
+    "LinkFieldType": 0,
+    "DisplayField": "concat(Nummer,' ', Kontobezeichnung)",
+    "CustomDisplay": "true",
+    "LookupOrderBy": "Kontobezeichnung",
+    "UseCategory": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Habensplitt2_Betrag",
+   "type": 14,
+   "index": 16,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "DecimalDigits": 2,
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Sollsplitt3_Konto",
+   "type": 3,
+   "index": 17,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Kontenrahmen",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 2,
+    "LinkField": "ID",
+    "LinkFieldType": 0,
+    "DisplayField": "concat(Nummer,' ', Kontobezeichnung)",
+    "CustomDisplay": "true",
+    "LookupOrderBy": "Kontobezeichnung",
+    "UseCategory": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Sollsplitt3_Betrag",
+   "type": 14,
+   "index": 18,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "DecimalDigits": 2,
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Habensplitt3_Konto",
+   "type": 3,
+   "index": 19,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Kontenrahmen",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 2,
+    "LinkField": "ID",
+    "LinkFieldType": 0,
+    "DisplayField": "concat(Nummer,' ', Kontobezeichnung)",
+    "CustomDisplay": "true",
+    "LookupOrderBy": "Kontobezeichnung",
+    "UseCategory": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Habensplitt3_Betrag",
+   "type": 14,
+   "index": 20,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "DecimalDigits": 2,
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Sollsplitt4_Konto",
+   "type": 3,
+   "index": 21,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Kontenrahmen",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 2,
+    "LinkField": "ID",
+    "LinkFieldType": 0,
+    "DisplayField": "concat(Nummer,' ', Kontobezeichnung)",
+    "CustomDisplay": "true",
+    "LookupOrderBy": "Kontobezeichnung",
+    "UseCategory": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Sollsplitt4_Betrag",
+   "type": 14,
+   "index": 22,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "DecimalDigits": 2,
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Habensplitt4_Konto",
+   "type": 3,
+   "index": 23,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Kontenrahmen",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 2,
+    "LinkField": "ID",
+    "LinkFieldType": 0,
+    "DisplayField": "concat(Nummer,' ', Kontobezeichnung)",
+    "CustomDisplay": "true",
+    "LookupOrderBy": "Kontobezeichnung",
+    "UseCategory": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Habensplitt4_Betrag",
+   "type": 14,
+   "index": 24,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "DecimalDigits": 2,
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Sollsplitt1_Betreff",
+   "type": 200,
+   "index": 25,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Buchungsassistent",
+    "freeInput": true,
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 1,
+    "LinkField": "Betreff",
+    "LinkFieldType": 0,
+    "DisplayField": "Betreff",
+    "LookupOrderBy": "Betreff",
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Sollsplitt2_Betreff",
+   "type": 200,
+   "index": 26,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Buchungsassistent",
+    "freeInput": true,
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 1,
+    "LinkField": "Betreff",
+    "LinkFieldType": 0,
+    "DisplayField": "Betreff",
+    "LookupOrderBy": "Betreff",
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Sollsplitt3_Betreff",
+   "type": 200,
+   "index": 27,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Buchungsassistent",
+    "freeInput": true,
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 1,
+    "LinkField": "Betreff",
+    "LinkFieldType": 0,
+    "DisplayField": "Betreff",
+    "LookupOrderBy": "Betreff",
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Sollsplitt4_Betreff",
+   "type": 200,
+   "index": 28,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Buchungsassistent",
+    "freeInput": true,
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 1,
+    "LinkField": "Betreff",
+    "LinkFieldType": 0,
+    "DisplayField": "Betreff",
+    "LookupOrderBy": "Betreff",
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Habensplitt1_Betreff",
+   "type": 200,
+   "index": 29,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Buchungsassistent",
+    "freeInput": true,
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 1,
+    "LinkField": "Betreff",
+    "LinkFieldType": 0,
+    "DisplayField": "Betreff",
+    "LookupOrderBy": "Betreff",
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Habensplitt3_Betreff",
+   "type": 200,
+   "index": 30,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Buchungsassistent",
+    "freeInput": true,
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 1,
+    "LinkField": "Betreff",
+    "LinkFieldType": 0,
+    "DisplayField": "Betreff",
+    "LookupOrderBy": "Betreff",
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Habensplitt2_Betreff",
+   "type": 200,
+   "index": 31,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Buchungsassistent",
+    "freeInput": true,
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 1,
+    "LinkField": "Betreff",
+    "LinkFieldType": 0,
+    "DisplayField": "Betreff",
+    "LookupOrderBy": "Betreff",
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Habensplitt4_Betreff",
+   "type": 200,
+   "index": 32,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Buchungsassistent",
+    "freeInput": true,
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 1,
+    "LinkField": "Betreff",
+    "LinkFieldType": 0,
+    "DisplayField": "Betreff",
+    "LookupOrderBy": "Betreff",
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Von_Datum",
+   "type": 7,
+   "index": 33,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "DateEditType": 13,
+    "InitialYearFactor": 3,
+    "LastYearFactor": 10,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Bis_Datum",
+   "type": 7,
+   "index": 34,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "DateEditType": 13,
+    "InitialYearFactor": 3,
+    "LastYearFactor": 10,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Gueltig",
+   "type": 3,
+   "index": 35,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "ViewFormat": "Checkbox"
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Buchungsart",
+   "type": 200,
+   "index": 36,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 0,
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 0,
+    "SelectSize": 1,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Team",
+   "type": 200,
+   "index": 37,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  }
+ ]
+}

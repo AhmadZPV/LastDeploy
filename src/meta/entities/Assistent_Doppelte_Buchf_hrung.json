@@ -1,0 +1,59 @@
+{
+ "entity": "Assistent_Doppelte_Buchf_hrung",
+ "shortName": "Assistent_Doppelte_Buchf_hrung",
+ "baseTable": "Assistent_Doppelte_Buchf_hrung",
+ "isVirtual": true,
+ "ownerField": null,
+ "sql": {
+  "strOrderBy": "",
+  "sqlHead": "",
+  "sqlFrom": "",
+  "sqlWhere": "",
+  "sqlTail": ""
+ },
+ "keys": [],
+ "pageSize": 0,
+ "capabilities": {
+  "list": false,
+  "view": false,
+  "add": false,
+  "edit": false,
+  "export": false,
+  "print": false,
+  "search": true,
+  "masterList": false
+ },
+ "fieldSets": {
+  "search": [
+   "Buchfuehrungen_ID",
+   "Buchfuehrungen_Bezeichnung",
+   "Buchfuehrungen_Anfangsdatum",
+   "Buchfuehrungen_Enddatum",
+   "Buchfuehrungen_Objekt",
+   "Buchfuehrungen_Bemerkungen"
+  ]
+ },
+ "export": {
+  "exportTo": null,
+  "exportDelimiter": null,
+  "exportFormatting": null
+ },
+ "print": {
+  "printerPageOrientation": null,
+  "nPrinterPageScale": null,
+  "nPrinterSplitRecords": null,
+  "nPrinterPDFSplitRecords": null
+ },
+ "tabs": [],
+ "labels": {
+  "German": {
+   "Buchfuehrungen_ID": "Buchfuehrungen ID",
+   "Buchfuehrungen_Bezeichnung": "Buchfuehrungen Bezeichnung",
+   "Buchfuehrungen_Anfangsdatum": "Buchfuehrungen Anfangsdatum",
+   "Buchfuehrungen_Enddatum": "Buchfuehrungen Enddatum",
+   "Buchfuehrungen_Objekt": "Buchfuehrungen Objekt",
+   "Buchfuehrungen_Bemerkungen": "Buchfuehrungen Bemerkungen"
+  }
+ },
+ "fields": []
+}

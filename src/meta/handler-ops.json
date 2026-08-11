@@ -1,0 +1,1131 @@
+{
+ "generatedFrom": "buttonhandler.php",
+ "summary": {
+  "total": 139,
+  "automated": 120,
+  "manual": 11,
+  "unrecognised": 8
+ },
+ "specs": {
+  "vCard": {
+   "op": "vcard",
+   "table": "Adressen"
+  },
+  "_ics_Kalender": {
+   "op": "ical",
+   "table": "Termine"
+  },
+  "New_Button": {
+   "op": "unrecognised",
+   "table": "Korrespondenz"
+  },
+  "Notizen": {
+   "op": "masterDetailLink",
+   "table": "Adressen",
+   "page": "Notizen",
+   "masterTable": "Adressen",
+   "masterField": "ID"
+  },
+  "Notizen1": {
+   "op": "masterDetailLink",
+   "table": "Adressen",
+   "page": "Dokumente",
+   "masterTable": "Adressen",
+   "masterField": "ID"
+  },
+  "Notizen2": {
+   "op": "masterDetailLink",
+   "table": "Adressen",
+   "page": "Aufgaben",
+   "masterTable": "Adressen",
+   "masterField": "ID"
+  },
+  "Notizen3": {
+   "op": "masterDetailLink",
+   "table": "Adressen",
+   "page": "Terminliste",
+   "masterTable": "Adressen",
+   "masterField": "ID"
+  },
+  "Notizen4": {
+   "op": "masterDetailLink",
+   "table": "Adressen",
+   "page": "Zeiten",
+   "masterTable": "Adressen",
+   "masterField": "ID"
+  },
+  "Notizen41": {
+   "op": "masterDetailLink",
+   "table": "Adressen",
+   "page": "Korrespondenz",
+   "masterTable": "Adressen",
+   "masterField": "ID"
+  },
+  "_ics_Kalender4": {
+   "op": "ical",
+   "table": "Termine_dieser_Monat"
+  },
+  "Mails_ziehen1": {
+   "op": "manual",
+   "table": "Korrespondenz",
+   "source": "buttonhandler.php::Mails_ziehen1"
+  },
+  "Notizen41316": {
+   "op": "filterLink",
+   "table": "Ausleihen",
+   "page": "Adressen",
+   "pageType": "list"
+  },
+  "Notizen413161": {
+   "op": "filterLink",
+   "table": "Terminliste",
+   "page": "Adressen",
+   "pageType": "list"
+  },
+  "New_Button1": {
+   "op": "masterDetailLink",
+   "table": "Adressen",
+   "page": "Projekte",
+   "masterTable": "Adressen",
+   "masterField": "ID"
+  },
+  "Notizen23": {
+   "op": "masterDetailLink",
+   "table": "Inventar",
+   "page": "Aufgaben",
+   "masterTable": "Inventar",
+   "masterField": "ID"
+  },
+  "Notizen13": {
+   "op": "masterDetailLink",
+   "table": "Inventar",
+   "page": "Dokumente",
+   "masterTable": "Inventar",
+   "masterField": "ID"
+  },
+  "Notizen7": {
+   "op": "masterDetailLink",
+   "table": "Inventar",
+   "page": "Notizen",
+   "masterTable": "Inventar",
+   "masterField": "ID"
+  },
+  "Notizen33": {
+   "op": "masterDetailLink",
+   "table": "Inventar",
+   "page": "Terminliste",
+   "masterTable": "Inventar",
+   "masterField": "ID"
+  },
+  "Notizen44": {
+   "op": "masterDetailLink",
+   "table": "Inventar",
+   "page": "Ausleihen",
+   "masterTable": "Inventar",
+   "masterField": "ID"
+  },
+  "Notizen413": {
+   "op": "masterDetailLink",
+   "table": "Inventar",
+   "page": "Korrespondenz",
+   "masterTable": "Inventar",
+   "masterField": "ID"
+  },
+  "Projekt5": {
+   "op": "filterLink",
+   "table": "Terminliste",
+   "page": "Projekte",
+   "pageType": "list"
+  },
+  "Notizen413141": {
+   "op": "filterLink",
+   "table": "Inventar_Bilder",
+   "page": "Adressen",
+   "pageType": "list"
+  },
+  "Notizen231": {
+   "op": "masterDetailLink",
+   "table": "Inventar_Bilder",
+   "page": "Aufgaben",
+   "masterTable": "Inventar",
+   "masterField": "ID"
+  },
+  "Notizen131": {
+   "op": "masterDetailLink",
+   "table": "Inventar_Bilder",
+   "page": "Dokumente",
+   "masterTable": "Inventar",
+   "masterField": "ID"
+  },
+  "Notizen71": {
+   "op": "masterDetailLink",
+   "table": "Inventar_Bilder",
+   "page": "Notizen",
+   "masterTable": "Inventar",
+   "masterField": "ID"
+  },
+  "Notizen331": {
+   "op": "masterDetailLink",
+   "table": "Inventar_Bilder",
+   "page": "Terminliste",
+   "masterTable": "Inventar",
+   "masterField": "ID"
+  },
+  "Notizen441": {
+   "op": "masterDetailLink",
+   "table": "Inventar_Bilder",
+   "page": "Zeiten",
+   "masterTable": "Inventar",
+   "masterField": "ID"
+  },
+  "Notizen4132": {
+   "op": "masterDetailLink",
+   "table": "Inventar_Bilder",
+   "page": "Korrespondenz",
+   "masterTable": "Inventar",
+   "masterField": "ID"
+  },
+  "_span_class__glyphicon_glyphicon_chevron_right____span__Adresse5": {
+   "op": "filterLink",
+   "table": "Ausleihen",
+   "page": "Inventar",
+   "pageType": "list"
+  },
+  "Notizen413143": {
+   "op": "filterLink",
+   "table": "Inventar_Stapelverarbeitung",
+   "page": "Adressen",
+   "pageType": "list"
+  },
+  "Notizen233": {
+   "op": "masterDetailLink",
+   "table": "Inventar_Stapelverarbeitung",
+   "page": "Aufgaben",
+   "masterTable": "Inventar",
+   "masterField": "ID"
+  },
+  "Notizen133": {
+   "op": "masterDetailLink",
+   "table": "Inventar_Stapelverarbeitung",
+   "page": "Dokumente",
+   "masterTable": "Inventar",
+   "masterField": "ID"
+  },
+  "Notizen73": {
+   "op": "masterDetailLink",
+   "table": "Inventar_Stapelverarbeitung",
+   "page": "Notizen",
+   "masterTable": "Inventar",
+   "masterField": "ID"
+  },
+  "Notizen333": {
+   "op": "masterDetailLink",
+   "table": "Inventar_Stapelverarbeitung",
+   "page": "Terminliste",
+   "masterTable": "Inventar",
+   "masterField": "ID"
+  },
+  "Notizen443": {
+   "op": "masterDetailLink",
+   "table": "Inventar_Stapelverarbeitung",
+   "page": "Ausleihen",
+   "masterTable": "Inventar",
+   "masterField": "ID"
+  },
+  "Notizen4134": {
+   "op": "masterDetailLink",
+   "table": "Inventar_Stapelverarbeitung",
+   "page": "Korrespondenz",
+   "masterTable": "Inventar",
+   "masterField": "ID"
+  },
+  "vCard3": {
+   "op": "vcard",
+   "table": "Adressen_Stapelverarbeitung"
+  },
+  "New_Button12": {
+   "op": "masterDetailLink",
+   "table": "Adressen_Stapelverarbeitung",
+   "page": "Projekte",
+   "masterTable": "Adressen",
+   "masterField": "ID"
+  },
+  "Notizen24": {
+   "op": "masterDetailLink",
+   "table": "Adressen_Stapelverarbeitung",
+   "page": "Aufgaben",
+   "masterTable": "Adressen",
+   "masterField": "ID"
+  },
+  "Notizen14": {
+   "op": "masterDetailLink",
+   "table": "Adressen_Stapelverarbeitung",
+   "page": "Dokumente",
+   "masterTable": "Adressen",
+   "masterField": "ID"
+  },
+  "Notizen8": {
+   "op": "masterDetailLink",
+   "table": "Adressen_Stapelverarbeitung",
+   "page": "Notizen",
+   "masterTable": "Adressen",
+   "masterField": "ID"
+  },
+  "Notizen34": {
+   "op": "masterDetailLink",
+   "table": "Adressen_Stapelverarbeitung",
+   "page": "Terminliste",
+   "masterTable": "Adressen",
+   "masterField": "ID"
+  },
+  "Notizen45": {
+   "op": "masterDetailLink",
+   "table": "Adressen_Stapelverarbeitung",
+   "page": "Zeiten",
+   "masterTable": "Adressen",
+   "masterField": "ID"
+  },
+  "Notizen414": {
+   "op": "masterDetailLink",
+   "table": "Adressen_Stapelverarbeitung",
+   "page": "Korrespondenz",
+   "masterTable": "Adressen",
+   "masterField": "ID"
+  },
+  "Markierte_duplizieren1": {
+   "op": "unrecognised",
+   "table": "Journal"
+  },
+  "Markierte_buchen": {
+   "op": "manual",
+   "table": "Buchungsassistent",
+   "source": "buttonhandler.php::Markierte_buchen"
+  },
+  "vCard4": {
+   "op": "vcard",
+   "table": "Anmeldung"
+  },
+  "New_Button13": {
+   "op": "masterDetailLink",
+   "table": "Anmeldung",
+   "page": "Projekte",
+   "masterTable": "Adressen",
+   "masterField": "ID"
+  },
+  "Notizen25": {
+   "op": "masterDetailLink",
+   "table": "Anmeldung",
+   "page": "Aufgaben",
+   "masterTable": "Adressen",
+   "masterField": "ID"
+  },
+  "Notizen15": {
+   "op": "masterDetailLink",
+   "table": "Anmeldung",
+   "page": "Dokumente",
+   "masterTable": "Adressen",
+   "masterField": "ID"
+  },
+  "Notizen9": {
+   "op": "masterDetailLink",
+   "table": "Anmeldung",
+   "page": "Notizen",
+   "masterTable": "Adressen",
+   "masterField": "ID"
+  },
+  "Notizen35": {
+   "op": "masterDetailLink",
+   "table": "Anmeldung",
+   "page": "Terminliste",
+   "masterTable": "Adressen",
+   "masterField": "ID"
+  },
+  "Notizen46": {
+   "op": "masterDetailLink",
+   "table": "Anmeldung",
+   "page": "Zeiten",
+   "masterTable": "Adressen",
+   "masterField": "ID"
+  },
+  "Notizen415": {
+   "op": "masterDetailLink",
+   "table": "Anmeldung",
+   "page": "Korrespondenz",
+   "masterTable": "Adressen",
+   "masterField": "ID"
+  },
+  "Mails_ziehen11": {
+   "op": "manual",
+   "table": "Kontaktaufnahme",
+   "source": "buttonhandler.php::Mails_ziehen11"
+  },
+  "New_Button3": {
+   "op": "unrecognised",
+   "table": "Kontaktaufnahme"
+  },
+  "Kontoinfo": {
+   "op": "sqlScalar",
+   "table": "Buchungsassistent",
+   "sql": "select sum(Betrag) from\nBuchungen where Konto=?",
+   "binds": [
+    {
+     "from": "param",
+     "name": "Konto"
+    }
+   ]
+  },
+  "Kontoinfo1": {
+   "op": "sqlScalar",
+   "table": "Buchungsassistent",
+   "sql": "select sum(Betrag) from\nBuchungen where Konto=?",
+   "binds": [
+    {
+     "from": "param",
+     "name": "Konto"
+    }
+   ]
+  },
+  "QM_aus_Fl_chenberechnung": {
+   "op": "sqlScalar",
+   "table": "Abrechnungskonten",
+   "sql": "SELECT sum(round(Breite*Tiefe*Anrechenbarkeit, 2)) AS `Quadratmeter` FROM `Flaechen` LEFT OUTER JOIN `Raeume` ON `Flaechen`.`Raum` = `Raeume`.`ID` LEFT OUTER JOIN `Einheiten` ON `Raeume`.`Einheit` = `Einheiten`.`ID` LEFT OUTER JOIN `Objekte` ON `Einheiten`.`Objekt` = `Objekte`.`ID` where `Einheiten`.`ID`=? ORDER BY `Objekte`.`Bezeichnung`, `Einheiten`.`Bezeichnung`, `Flaechen`.`Raum`, `Flaechen`.`Bezeichnung`",
+   "binds": [
+    {
+     "from": "param",
+     "name": "Einheit"
+    }
+   ]
+  },
+  "Kontosaldo__bernehmen": {
+   "op": "sqlScalar",
+   "table": "Vorauszahlungen",
+   "sql": "select sum(Betrag) from\nBuchungen where Konto=?",
+   "binds": [
+    {
+     "from": "param",
+     "name": "Konto"
+    }
+   ]
+  },
+  "Kontosaldo__bernehmen1": {
+   "op": "sqlScalar",
+   "table": "DirekteKosten",
+   "sql": "select sum(Betrag) from\nBuchungen where Konto=?",
+   "binds": [
+    {
+     "from": "param",
+     "name": "Konto"
+    }
+   ]
+  },
+  "Kontosaldo__bernehmen6": {
+   "op": "sqlScalar",
+   "table": "Kosten",
+   "sql": "select sum(Betrag) from\nBuchungen where Konto=?",
+   "binds": [
+    {
+     "from": "param",
+     "name": "Konto"
+    }
+   ]
+  },
+  "Kontosaldo__bernehmen7": {
+   "op": "sqlScalar",
+   "table": "Ruecklagebuchungen",
+   "sql": "select sum(Betrag) from\nBuchungen where Konto=?",
+   "binds": [
+    {
+     "from": "param",
+     "name": "Konto"
+    }
+   ]
+  },
+  "QM_aus_Fl_chenberechnung4": {
+   "op": "sqlScalar",
+   "table": "Abrechnungen",
+   "sql": "SELECT sum(round(Breite*Tiefe*Anrechenbarkeit, 2)) AS `Quadratmeter` FROM `Flaechen` LEFT OUTER JOIN `Raeume` ON `Flaechen`.`Raum` = `Raeume`.`ID` LEFT OUTER JOIN `Einheiten` ON `Raeume`.`Einheit` = `Einheiten`.`ID` LEFT OUTER JOIN `Objekte` ON `Einheiten`.`Objekt` = `Objekte`.`ID` where `Objekte`.`ID`=? ORDER BY `Objekte`.`Bezeichnung`, `Einheiten`.`Bezeichnung`, `Flaechen`.`Raum`, `Flaechen`.`Bezeichnung`",
+   "binds": [
+    {
+     "from": "param",
+     "name": "Objekt"
+    }
+   ]
+  },
+  "Einheiten_aus_Objekt": {
+   "op": "sqlScalar",
+   "table": "Abrechnungen",
+   "sql": "SELECT count(ID) as einheiten FROM Einheiten where Objekt=?",
+   "binds": [
+    {
+     "from": "param",
+     "name": "objekt"
+    }
+   ]
+  },
+  "Z_hlerst_nde_einsehen": {
+   "op": "noop",
+   "table": "Abrechnungskonten"
+  },
+  "Z_hlerst_nde_einsehen1": {
+   "op": "noop",
+   "table": "Abrechnungskonten"
+  },
+  "Z_hlerst_nde_einsehen2": {
+   "op": "noop",
+   "table": "Abrechnungen"
+  },
+  "Z_hlerst_nde_einsehen3": {
+   "op": "noop",
+   "table": "Abrechnungen"
+  },
+  "Steckbrief": {
+   "op": "recordField",
+   "table": "Abrechnungskonten",
+   "resultKey": "Adresse",
+   "field": "Adresse"
+  },
+  "Steckbrief1": {
+   "op": "recordField",
+   "table": "Korrespondenz",
+   "resultKey": "Adresse",
+   "field": "Adresse"
+  },
+  "Steckbrief2": {
+   "op": "recordField",
+   "table": "Einheiten",
+   "resultKey": "Adresse",
+   "field": "Nutzer"
+  },
+  "Steckbrief3": {
+   "op": "recordField",
+   "table": "Einheiten",
+   "resultKey": "Adresse",
+   "field": "Besitzer"
+  },
+  "Steckbrief4": {
+   "op": "recordField",
+   "table": "Rechnungen",
+   "resultKey": "Adresse",
+   "field": "Kunde"
+  },
+  "Steckbrief5": {
+   "op": "recordField",
+   "table": "Angebote",
+   "resultKey": "Adresse",
+   "field": "Kunde"
+  },
+  "Steckbrief6": {
+   "op": "recordField",
+   "table": "Inventar",
+   "resultKey": "Adresse",
+   "field": "Adresse"
+  },
+  "Steckbrief7": {
+   "op": "recordField",
+   "table": "Inventar",
+   "resultKey": "Adresse",
+   "field": "Kaeufer"
+  },
+  "Steckbrief8": {
+   "op": "recordField",
+   "table": "Inventar",
+   "resultKey": "Adresse",
+   "field": "Verkaeufer"
+  },
+  "Steckbrief9": {
+   "op": "recordField",
+   "table": "Objekte",
+   "resultKey": "Adresse",
+   "field": "Besitzer"
+  },
+  "Steckbrief10": {
+   "op": "recordField",
+   "table": "Objekte",
+   "resultKey": "Adresse",
+   "field": "Nutzer"
+  },
+  "Ansicht": {
+   "op": "recordField",
+   "table": "Dokumente",
+   "resultKey": "Adresse",
+   "field": "URL"
+  },
+  "PDF_Ansicht": {
+   "op": "recordField",
+   "table": "Dokumente",
+   "resultKey": "Adresse",
+   "field": "Dokument"
+  },
+  "SEPA__berweisung": {
+   "op": "saveFile",
+   "table": "Journal",
+   "path": "files/",
+   "field": "Betrag"
+  },
+  "Steckbrief11": {
+   "op": "recordField",
+   "table": "Abrechnungsempf_nger",
+   "resultKey": "Adresse",
+   "field": "Adresse"
+  },
+  "Wie_letzte_Abrechnung": {
+   "op": "sqlScalar",
+   "table": "Kosten",
+   "sql": "select Abrechnung from Kosten where Art='Umlegbare Kosten' limit 1",
+   "binds": []
+  },
+  "Wie_letzte_Abrechnung1": {
+   "op": "sqlScalar",
+   "table": "DirekteKosten",
+   "sql": "select Abrechnung from Kosten where Art='Direkte Kosten' limit 1",
+   "binds": []
+  },
+  "Wie_letzte_Abrechnung2": {
+   "op": "sqlScalar",
+   "table": "Ruecklagebuchungen",
+   "sql": "select Abrechnung from Kosten where (Art='Rücklage Forderungen') or (Art='Rücklage Zahlungen') limit 1",
+   "binds": []
+  },
+  "Wie_letzte_Abrechnung3": {
+   "op": "sqlScalar",
+   "table": "Vorauszahlungen",
+   "sql": "select Abrechnung from Kosten where Art='Vorauszahlungen' limit 1",
+   "binds": []
+  },
+  "Steckbrief12": {
+   "op": "recordField",
+   "table": "Kontenrahmen",
+   "resultKey": "Adresse",
+   "field": "Adresse"
+  },
+  "Z_hlerst_nde_einlesen1": {
+   "op": "sqlScalar",
+   "table": "Abrechnungskonten",
+   "sql": "SELECT Raeume.Bezeichnung, `Zaehler`.`Zaehlerart`,`Zaehler`.`Zaehlernummer`,`Zaehler`.`Zaehlerstand`, date_format(`Zaehler`.`Ablesedatum`, '%d.%m.%Y') as Ablesedatum\nfrom Zaehler inner join Raeume on Zaehler.Raum=Raeume.ID where Raeume.Einheit=? and year(Zaehler.Ablesedatum)=year('?') order by Zaehlerart, Ablesedatum",
+   "binds": [
+    {
+     "from": "local",
+     "name": "einheit"
+    },
+    {
+     "from": "local",
+     "name": "jahr"
+    }
+   ]
+  },
+  "Exportieren": {
+   "op": "saveFile",
+   "table": "Einstellungen",
+   "path": "styles/custom/anwender.css",
+   "field": "CSS"
+  },
+  "New_Button16": {
+   "op": "sqlScalar",
+   "table": "Kalender",
+   "sql": "insert into Kalender (Tag) values ('?')",
+   "binds": [
+    {
+     "from": "local",
+     "name": "starttag"
+    }
+   ]
+  },
+  "New_Button121": {
+   "op": "sqlScalar",
+   "table": "Kalender",
+   "sql": "insert into Kalender (Tag) values ('?')",
+   "binds": [
+    {
+     "from": "local",
+     "name": "starttag"
+    }
+   ]
+  },
+  "New_Button31": {
+   "op": "sqlScalar",
+   "table": "Kalender",
+   "sql": "insert into Kalender (Tag) values ('?')",
+   "binds": [
+    {
+     "from": "local",
+     "name": "starttag"
+    }
+   ]
+  },
+  "New_Button17": {
+   "op": "sqlScalar",
+   "table": "Kalenderwoche",
+   "sql": "update Kalenderwoche set Tag= date_add(Tag, interval -1 week)",
+   "binds": []
+  },
+  "___": {
+   "op": "sqlScalar",
+   "table": "Kalenderwoche",
+   "sql": "insert into Kalenderwoche (Tag) values ('?')",
+   "binds": [
+    {
+     "from": "local",
+     "name": "starttag"
+    }
+   ]
+  },
+  "_SPAN_class__glyphicon_glyphic": {
+   "op": "sqlScalar",
+   "table": "Kalenderwoche",
+   "sql": "update Kalenderwoche set Tag= date_add(Tag, interval 1 week)",
+   "binds": []
+  },
+  "Aufteilungsassistent": {
+   "op": "noop",
+   "table": "Buchungsassistent"
+  },
+  "Splitt": {
+   "op": "sqlScalar",
+   "table": "Journal",
+   "sql": "Insert into Buchungen (Buchfuehrung,Konto,Gegenkonto,Betrag,Datum,Betreff,Belegnummer,Erfasser,Erfassungsdatum,DATEV_Betragskennzeichen,DATEV_Steuerschluessel, Team)\nvalues ('?','?','?','?','?','?','?','?','?','?','?','?')",
+   "binds": [
+    {
+     "from": "record",
+     "name": "Buchfuehrung"
+    },
+    {
+     "from": "record",
+     "name": "Konto"
+    },
+    {
+     "from": "record",
+     "name": "Gegenkonto"
+    },
+    {
+     "from": "record",
+     "name": "Betrag"
+    },
+    {
+     "from": "local",
+     "name": "datum"
+    },
+    {
+     "from": "record",
+     "name": "Betreff"
+    },
+    {
+     "from": "record",
+     "name": "Belegnummer"
+    },
+    {
+     "from": "local",
+     "name": "erfasser"
+    },
+    {
+     "from": "local",
+     "name": "datum"
+    },
+    {
+     "from": "record",
+     "name": "DATEV_Betragskennzeichen"
+    },
+    {
+     "from": "record",
+     "name": "DATEV_Steuerschluessel"
+    },
+    {
+     "from": "session",
+     "name": "Team"
+    }
+   ]
+  },
+  "Steuerbetrag": {
+   "op": "noop",
+   "table": "Buchungsassistent"
+  },
+  "Steuerbetrag1": {
+   "op": "noop",
+   "table": "Buchungsassistent"
+  },
+  "Markierte_duplizieren": {
+   "op": "unrecognised",
+   "table": "Kontobuch"
+  },
+  "vCard1": {
+   "op": "sqlScalar",
+   "table": "vCard_Import",
+   "sql": "Insert into Adressen (Kurzname, Klassifikation, Vorname, Nachname, Firma, Strasse, PLZ, Ort, Bundesland, Staat, Telefon, Email, Website, Team) values ('?FirstName ?LastName','vCard Import','?FirstName','?LastName','?Name','?StreetAddress','?PostalCode','?Locality','?Region','?Country','?Value','?Value','?Value','?')",
+   "binds": [
+    {
+     "from": "local",
+     "name": "name"
+    },
+    {
+     "from": "local",
+     "name": "name"
+    },
+    {
+     "from": "local",
+     "name": "name"
+    },
+    {
+     "from": "local",
+     "name": "name"
+    },
+    {
+     "from": "local",
+     "name": "firma"
+    },
+    {
+     "from": "local",
+     "name": "adresse"
+    },
+    {
+     "from": "local",
+     "name": "adresse"
+    },
+    {
+     "from": "local",
+     "name": "adresse"
+    },
+    {
+     "from": "local",
+     "name": "adresse"
+    },
+    {
+     "from": "local",
+     "name": "adresse"
+    },
+    {
+     "from": "local",
+     "name": "tel"
+    },
+    {
+     "from": "local",
+     "name": "email"
+    },
+    {
+     "from": "local",
+     "name": "web"
+    },
+    {
+     "from": "session",
+     "name": "Team"
+    }
+   ]
+  },
+  "ics": {
+   "op": "sqlScalar",
+   "table": "ics_Import",
+   "sql": "Insert into Termine (Titel, Datum, Uhrzeit, Bemerkungen, Team) values ('?','Y-m-d-/?','?','?','?')",
+   "binds": [
+    {
+     "from": "local",
+     "name": "titel"
+    },
+    {
+     "from": "local",
+     "name": "datum"
+    },
+    {
+     "from": "local",
+     "name": "zeit"
+    },
+    {
+     "from": "local",
+     "name": "bemerkungen"
+    },
+    {
+     "from": "session",
+     "name": "Team"
+    }
+   ]
+  },
+  "vCard7": {
+   "op": "vcard",
+   "table": "Kerndaten"
+  },
+  "vCard8": {
+   "op": "vcard",
+   "table": "Vertraulich"
+  },
+  "Abrechnung_drucken": {
+   "op": "noop",
+   "table": "Abrechnungskonten"
+  },
+  "Brief_drucken": {
+   "op": "noop",
+   "table": "Korrespondenz"
+  },
+  "Rechnung_drucken": {
+   "op": "noop",
+   "table": "Verkauf"
+  },
+  "Rechnung_drucken1": {
+   "op": "noop",
+   "table": "Rechnungen"
+  },
+  "Angebot_drucken": {
+   "op": "noop",
+   "table": "Angebote"
+  },
+  "Saldo": {
+   "op": "sqlScalar",
+   "table": "Kontenrahmen",
+   "sql": "select sum(Buchungen.Betrag) from Buchungen where Buchungen.Gegenkonto=?konto",
+   "binds": [
+    {
+     "from": "local",
+     "name": "result"
+    }
+   ]
+  },
+  "BKVo1": {
+   "op": "manual",
+   "table": "Abrechnungen",
+   "source": "buttonhandler.php::BKVo1"
+  },
+  "Personenschnitt": {
+   "op": "sqlScalar",
+   "table": "Abrechnungen",
+   "sql": "select sum(round(Anzahl * (datediff(Personen.Bis,Personen.Von)+1) / 365,1)) as Durchschnitt from Personen RIGHT OUTER JOIN `Abrechnungskonten` ON `Abrechnungskonten`.`ID` = `Personen`.`Abrechnungskonto` where Abrechnungskonten.Abrechnung=?",
+   "binds": [
+    {
+     "from": "record",
+     "name": "ID"
+    }
+   ]
+  },
+  "Info1": {
+   "op": "sqlScalar",
+   "table": "Abrechnungskonten",
+   "sql": "SELECT\nAbrechnungskonten.`Bezeichnung`,\n@tage := datediff(Abrechnungskonten.Bis,Abrechnungskonten.Von)+1 AS `Tage`,\n@konto:= Abrechnungskonten.ID as Konto,\n@anteilbrutto:=(select\nsum(CASE\nWHEN Kosten.Umlageart = 'Quadratmeter'\nTHEN ROUND((Kosten.Betrag * (Abrechnungskonten.Quadratmeter * @tage) / (Abrechnungen.Quadratmeter * (datediff(Abrechnungen.Bis,Abrechnungen.Von)+1)  / 100) / 100), 2)\nWHEN Kosten.Umlageart = 'Einheiten'\nTHEN ROUND((Kosten.Betrag * (1 * @tage) / (Abrechnungen.Einheiten * (datediff(Abrechnungen.Bis,Abrechnungen.Von)+1)  / 100) / 100), 2)\nWHEN Kosten.Umlageart = 'Quadratmeter 2'\nTHEN ROUND((Kosten.Betrag * (Abrechnungskonten.Quadratmeter2 * @tage) / (Abrechnungen.Quadratmeter2 * (datediff(Abrechnungen.Bis,Abrechnungen.Von)+1)  / 100) / 100), 2)\nWHEN Kosten.Umlageart = 'Einheiten 2'\nTHEN ROUND((Kosten.Betrag * (Abrechnungskonten.Einheiten2 * @tage) / (Abrechnungen.Einheiten2 * (datediff(Abrechnungen.Bis,Abrechnungen.Von)+1)  / 100) / 100), 2)\nWHEN Kosten.Umlageart = 'Einheiten 3'\nTHEN ROUND((Kosten.Betrag * (Abrechnungskonten.Einheiten3 * @tage) / (Abrechnungen.Einheiten3 * (datediff(Abrechnungen.Bis,Abrechnungen.Von)+1)  / 100) / 100), 2)\nWHEN Kosten.Umlageart = 'Wasserverbrauch'\nTHEN ROUND((Kosten.Betrag * (Abrechnungskonten.Wasserverbrauch) / (Abrechnungen.Wasserverbrauch / 100) / 100), 2)\nWHEN Kosten.Umlageart = 'Müllverbrauch'\nTHEN ROUND((Kosten.Betrag * (Abrechnungskonten.Muellverbrauch * @tage) / (Abrechnungen.Muellverbrauch * (datediff(Abrechnungen.Bis,Abrechnungen.Von)+1)  / 100) / 100), 2)\nWHEN Kosten.Umlageart = 'Miteigentumsanteile'\nTHEN ROUND((Kosten.Betrag * (Abrechnungskonten.Miteigentumsanteil * @tage) / (Abrechnungen.Miteigentumsanteile * (datediff(Abrechnungen.Bis,Abrechnungen.Von)+1)  / 100) / 100), 2)\nWHEN Kosten.Umlageart = 'Miteigentumsanteile 2'\nTHEN ROUND((Kosten.Betrag * (Abrechnungskonten.Miteigentumsanteil2 * @tage) / (Abrechnungen.Miteigentumsanteile2 * (datediff(Abrechnungen.Bis,Abrechnungen.Von)+1)  / 100) / 100), 2)\nWHEN Kosten.Umlageart = 'Miteigentumsanteile 3'\nTHEN ROUND((Kosten.Betrag * (Abrechnungskonten.Miteigentumsanteil3 * @tage) / (Abrechnungen.Miteigentumsanteile3 * (datediff(Abrechnungen.Bis,Abrechnungen.Von)+1)  / 100) / 100), 2)\nWHEN Kosten.Umlageart = 'Personen'\nTHEN ROUND((Kosten.Betrag * (Abrechnungskonten.Personen * @tage) / (Abrechnungen.Personen * (datediff(Abrechnungen.Bis,Abrechnungen.Von)+1)  / 100) / 100), 2)\nWHEN Kosten.Art = 'Direkte Kosten' AND Kosten.Abrechnungskonto = Abrechnungskonten.ID\nTHEN Kosten.Betrag * 1\nWHEN Kosten.Art = 'Vorauszahlungen' AND Kosten.Abrechnungskonto = Abrechnungskonten.ID\nTHEN Kosten.Betrag * - 1\nWHEN Kosten.Art = 'Rücklage Forderungen' AND Kosten.Abrechnungskonto = Abrechnungskonten.ID\nTHEN Kosten.Betrag * 1\nWHEN Kosten.Art = 'Rücklage Zahlungen' AND Kosten.Abrechnungskonto = Abrechnungskonten.ID\nTHEN Kosten.Betrag * - 1\nEND) as Anteil\nFROM `Kosten`\nLEFT OUTER JOIN `Abrechnungen` ON `Kosten`.`Abrechnung` = `Abrechnungen`.`ID`\nINNER JOIN `Abrechnungskonten` ON `Abrechnungen`.`ID` = `Abrechnungskonten`.`Abrechnung`\nWHERE (`Kosten`.`Art` <>'Haushaltsnahe Dienstleistungen') AND (`Abrechnungen`.`Art` ='Betriebskostenabrechnung') and Abrechnungskonten.ID=@konto)\nas Anteilbrutto,\nround(@anteilbrutto/12,2) as Anpassung\nFROM `Abrechnungskonten`\nwhere Abrechnungskonten.ID=? ORDER BY `Abrechnungskonten`.`Bezeichnung`",
+   "binds": [
+    {
+     "from": "local",
+     "name": "konto"
+    }
+   ]
+  },
+  "Immobilien": {
+   "op": "manual",
+   "table": "Buchfuehrungen",
+   "source": "buttonhandler.php::Immobilien"
+  },
+  "Wohnungswirtschaft": {
+   "op": "manual",
+   "table": "Buchfuehrungen",
+   "source": "buttonhandler.php::Wohnungswirtschaft"
+  },
+  "SKR03": {
+   "op": "manual",
+   "table": "Buchfuehrungen",
+   "source": "buttonhandler.php::SKR03"
+  },
+  "SKR04": {
+   "op": "manual",
+   "table": "Buchfuehrungen",
+   "source": "buttonhandler.php::SKR04"
+  },
+  "Webhook": {
+   "op": "manual",
+   "table": "Adressen",
+   "source": "buttonhandler.php::Webhook"
+  },
+  "Webhook1": {
+   "op": "sqlScalar",
+   "table": "Aufgaben",
+   "sql": "Select WebhookAufgaben from Einstellungen where Team='?'",
+   "binds": [
+    {
+     "from": "session",
+     "name": "Team"
+    }
+   ]
+  },
+  "Webhook2": {
+   "op": "sqlScalar",
+   "table": "Notizen",
+   "sql": "Select WebhookNotizen from Einstellungen where Team='?'",
+   "binds": [
+    {
+     "from": "session",
+     "name": "Team"
+    }
+   ]
+  },
+  "Webhook3": {
+   "op": "sqlScalar",
+   "table": "Termine",
+   "sql": "Select WebhookTermine from Einstellungen where Team='?'",
+   "binds": [
+    {
+     "from": "session",
+     "name": "Team"
+    }
+   ]
+  },
+  "Teilen": {
+   "op": "mailto",
+   "table": "Notizen",
+   "field": "ID"
+  },
+  "Teilen1": {
+   "op": "mailto",
+   "table": "Dokumente",
+   "field": "ID"
+  },
+  "Teilen2": {
+   "op": "mailto",
+   "table": "Aufgaben",
+   "field": "ID"
+  },
+  "Teilen3": {
+   "op": "mailto",
+   "table": "Termine",
+   "field": "ID"
+  },
+  "Teilen4": {
+   "op": "mailto",
+   "table": "Adressen",
+   "field": "ID"
+  },
+  "BKVo2": {
+   "op": "manual",
+   "table": "Kostenarten",
+   "source": "buttonhandler.php::BKVo2"
+  },
+  "Markierte_duplizieren4": {
+   "op": "unrecognised",
+   "table": "Kosten"
+  },
+  "Markierte_dupliziere": {
+   "op": "unrecognised",
+   "table": "Vorauszahlungen"
+  },
+  "Markierte_duplizieren5": {
+   "op": "unrecognised",
+   "table": "DirekteKosten"
+  },
+  "Markierte_duplizieren6": {
+   "op": "unrecognised",
+   "table": "Ruecklagebuchungen"
+  },
+  "Steckbrief31": {
+   "op": "recordField",
+   "table": "Vermietungskonditionen",
+   "resultKey": "Adresse",
+   "field": "Besitzer"
+  },
+  "Steckbrief21": {
+   "op": "recordField",
+   "table": "Vermietungskonditionen",
+   "resultKey": "Adresse",
+   "field": "Nutzer"
+  },
+  "Std_Farben": {
+   "op": "sqlScalar",
+   "table": "Farben",
+   "sql": "insert into Farben (Farbwert, Farbname, Team) VALUES ('#454545','dunkelgrau','?'),('#009933','dunkelgrün','?'),('#003366','dunkelblau','?'),('#000000','schwarz','?'),('#FE2EF7','pink','?'),('#58FAF5','hellblau','?'),('#01DF01','hellgrün','?'),('#FF0000','rot','?'),('#FFFF00','gelb','?'),('#FFBF00','orange','?'),('#D8E0C3','beige','?'),('#7608C4','lila','?')",
+   "binds": [
+    {
+     "from": "local",
+     "name": "team"
+    },
+    {
+     "from": "local",
+     "name": "team"
+    },
+    {
+     "from": "local",
+     "name": "team"
+    },
+    {
+     "from": "local",
+     "name": "team"
+    },
+    {
+     "from": "local",
+     "name": "team"
+    },
+    {
+     "from": "local",
+     "name": "team"
+    },
+    {
+     "from": "local",
+     "name": "team"
+    },
+    {
+     "from": "local",
+     "name": "team"
+    },
+    {
+     "from": "local",
+     "name": "team"
+    },
+    {
+     "from": "local",
+     "name": "team"
+    },
+    {
+     "from": "local",
+     "name": "team"
+    },
+    {
+     "from": "local",
+     "name": "team"
+    }
+   ]
+  },
+  "Kontrollsummen": {
+   "op": "manual",
+   "table": "Abrechnungen",
+   "source": "buttonhandler.php::Kontrollsummen"
+  },
+  "Saldo1": {
+   "op": "sqlScalar",
+   "table": "Saldenliste",
+   "sql": "select sum(Buchungen.Betrag) from Buchungen where Buchungen.Gegenkonto=?konto",
+   "binds": [
+    {
+     "from": "local",
+     "name": "result"
+    }
+   ]
+  },
+  "Hilfe": {
+   "op": "noop",
+   "table": null
+  }
+ },
+ "unrecognisedSamples": [
+  {
+   "buttId": "New_Button",
+   "sample": "$email=$data[\"Email\"];\n$message=$data[\"Text\"];\n$cc=$data[\"Kopie\"];\n$subject=$data[\"Betreff\"];\n$from=$data[\"Eigeneemail\"]"
+  },
+  {
+   "buttId": "Markierte_duplizieren1",
+   "sample": "global $dal;\nwhile ( $data = $button->getNextSelectedRecord() ) {\n$sqlnummer=\"select max(Belegnummer) as mx from Buchung"
+  },
+  {
+   "buttId": "New_Button3",
+   "sample": "$email=$data[\"Email\"];\n$message=$data[\"Text\"];\n$cc=$data[\"Kopie\"];\n$subject=$data[\"Betreff\"];\n$attach=$data[\"Anhang\"];\n$"
+  },
+  {
+   "buttId": "Markierte_duplizieren",
+   "sample": "global $dal;\nwhile ( $data = $button->getNextSelectedRecord() ) {\n$sqlnummer=\"select max(Belegnummer) as mx from Kontobu"
+  },
+  {
+   "buttId": "Markierte_duplizieren4",
+   "sample": "global $dal;\nwhile ( $data = $button->getNextSelectedRecord() ) {\n$mwstsatz=$data['Mwstsatz'];\nif($mwstsatz % $b==0)\n{$m"
+  },
+  {
+   "buttId": "Markierte_dupliziere",
+   "sample": "global $dal;\nwhile ( $data = $button->getNextSelectedRecord() ) {\n$mwstsatz=$data['Mwstsatz'];\nif($mwstsatz % $b==0)\n{$m"
+  },
+  {
+   "buttId": "Markierte_duplizieren5",
+   "sample": "global $dal;\nwhile ( $data = $button->getNextSelectedRecord() ) {\n$mwstsatz=$data['Mwstsatz'];\nif($mwstsatz % $b==0)\n{$m"
+  },
+  {
+   "buttId": "Markierte_duplizieren6",
+   "sample": "global $dal;\nwhile ( $data = $button->getNextSelectedRecord() ) {\n$mwstsatz=$data['Mwstsatz'];\nif($mwstsatz % $b==0)\n{$m"
+  }
+ ]
+}

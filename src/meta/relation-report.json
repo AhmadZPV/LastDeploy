@@ -1,0 +1,1349 @@
+{
+  "generatedFrom": "src/meta/relations.json",
+  "counts": {
+    "relations": 102,
+    "generated": 66,
+    "deduped": 6,
+    "skipped": 30,
+    "uniqueBusinessKeys": [
+      "Buchfuehrungen",
+      "Kontenrahmen"
+    ]
+  },
+  "generated": [
+    {
+      "master": "Abrechnungen",
+      "detail": "Abrechnungskonten",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Abrechnung"
+      ],
+      "relation": "rel_Abrechnungen_Abrechnungskonten_Abrechnung",
+      "masterModel": "Abrechnungen",
+      "detailModel": "Abrechnungskonten",
+      "fk": "Abrechnung"
+    },
+    {
+      "master": "Abrechnungen",
+      "detail": "Kosten",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Abrechnung"
+      ],
+      "relation": "rel_Abrechnungen_Kosten_Abrechnung",
+      "masterModel": "Abrechnungen",
+      "detailModel": "Kosten",
+      "fk": "Abrechnung"
+    },
+    {
+      "master": "Abrechnungen",
+      "detail": "Kontobuch",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Abrechnung"
+      ],
+      "relation": "rel_Abrechnungen_Kontobuch_Abrechnung",
+      "masterModel": "Abrechnungen",
+      "detailModel": "Kontobuch",
+      "fk": "Abrechnung"
+    },
+    {
+      "master": "Abrechnungskonten",
+      "detail": "DirekteKosten",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Abrechnungskonto"
+      ],
+      "relation": "rel_Abrechnungskonten_Kosten_Abrechnungskonto",
+      "masterModel": "Abrechnungskonten",
+      "detailModel": "Kosten",
+      "fk": "Abrechnungskonto"
+    },
+    {
+      "master": "Abrechnungskonten",
+      "detail": "Abrechnungsdaten Übersicht",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "ID"
+      ],
+      "relation": "rel_Abrechnungskonten_Kosten_ID",
+      "masterModel": "Abrechnungskonten",
+      "detailModel": "Kosten",
+      "fk": "ID"
+    },
+    {
+      "master": "Abrechnungskonten",
+      "detail": "Personen",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Abrechnungskonto"
+      ],
+      "relation": "rel_Abrechnungskonten_Personen_Abrechnungskonto",
+      "masterModel": "Abrechnungskonten",
+      "detailModel": "Personen",
+      "fk": "Abrechnungskonto"
+    },
+    {
+      "master": "Abrechnungskonten",
+      "detail": "Kontobuch",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Abrechnungskonto"
+      ],
+      "relation": "rel_Abrechnungskonten_Kontobuch_Abrechnungskonto",
+      "masterModel": "Abrechnungskonten",
+      "detailModel": "Kontobuch",
+      "fk": "Abrechnungskonto"
+    },
+    {
+      "master": "Adressen",
+      "detail": "Notizen",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Adresse"
+      ],
+      "relation": "rel_Adressen_Notizen_Adresse",
+      "masterModel": "Adressen",
+      "detailModel": "Notizen",
+      "fk": "Adresse"
+    },
+    {
+      "master": "Adressen",
+      "detail": "Dokumente",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Adresse"
+      ],
+      "relation": "rel_Adressen_Dokumente_Adresse",
+      "masterModel": "Adressen",
+      "detailModel": "Dokumente",
+      "fk": "Adresse"
+    },
+    {
+      "master": "Adressen",
+      "detail": "Aufgaben",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Adresse"
+      ],
+      "relation": "rel_Adressen_Aufgaben_Adresse",
+      "masterModel": "Adressen",
+      "detailModel": "Aufgaben",
+      "fk": "Adresse"
+    },
+    {
+      "master": "Adressen",
+      "detail": "Terminliste",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Adresse"
+      ],
+      "relation": "rel_Adressen_Termine_Adresse",
+      "masterModel": "Adressen",
+      "detailModel": "Termine",
+      "fk": "Adresse"
+    },
+    {
+      "master": "Adressen",
+      "detail": "Korrespondenz",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Adresse"
+      ],
+      "relation": "rel_Adressen_Korrespondenz_Adresse",
+      "masterModel": "Adressen",
+      "detailModel": "Korrespondenz",
+      "fk": "Adresse"
+    },
+    {
+      "master": "Adressen",
+      "detail": "Inventar",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Adresse"
+      ],
+      "relation": "rel_Adressen_Inventar_Adresse",
+      "masterModel": "Adressen",
+      "detailModel": "Inventar",
+      "fk": "Adresse"
+    },
+    {
+      "master": "Adressen",
+      "detail": "Ausleihen",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Adresse"
+      ],
+      "relation": "rel_Adressen_Ausleihen_Adresse",
+      "masterModel": "Adressen",
+      "detailModel": "Ausleihen",
+      "fk": "Adresse"
+    },
+    {
+      "master": "Adressen",
+      "detail": "Verkauf",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Kunde"
+      ],
+      "relation": "rel_Adressen_Verkauf_Kunde",
+      "masterModel": "Adressen",
+      "detailModel": "Verkauf",
+      "fk": "Kunde"
+    },
+    {
+      "master": "Adressen",
+      "detail": "Vertraege",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Adresse"
+      ],
+      "relation": "rel_Adressen_Vertraege_Adresse",
+      "masterModel": "Adressen",
+      "detailModel": "Vertraege",
+      "fk": "Adresse"
+    },
+    {
+      "master": "Adressen",
+      "detail": "Objekte",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Besitzer"
+      ],
+      "relation": "rel_Adressen_Objekte_Besitzer",
+      "masterModel": "Adressen",
+      "detailModel": "Objekte",
+      "fk": "Besitzer"
+    },
+    {
+      "master": "Adressen",
+      "detail": "Einheiten",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Besitzer"
+      ],
+      "relation": "rel_Adressen_Einheiten_Besitzer",
+      "masterModel": "Adressen",
+      "detailModel": "Einheiten",
+      "fk": "Besitzer"
+    },
+    {
+      "master": "Adressen",
+      "detail": "Abrechnungskonten",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Adresse"
+      ],
+      "relation": "rel_Adressen_Abrechnungskonten_Adresse",
+      "masterModel": "Adressen",
+      "detailModel": "Abrechnungskonten",
+      "fk": "Adresse"
+    },
+    {
+      "master": "Adressen",
+      "detail": "Kontenrahmen",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Adresse"
+      ],
+      "relation": "rel_Adressen_Kontenrahmen_Adresse",
+      "masterModel": "Adressen",
+      "detailModel": "Kontenrahmen",
+      "fk": "Adresse"
+    },
+    {
+      "master": "Angebote",
+      "detail": "Positionen",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Verkaufsvorgang"
+      ],
+      "relation": "rel_Verkauf_Positionen_Verkaufsvorgang",
+      "masterModel": "Verkauf",
+      "detailModel": "Positionen",
+      "fk": "Verkaufsvorgang"
+    },
+    {
+      "master": "Aufgaben",
+      "detail": "Checklisten",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Aufgabe"
+      ],
+      "relation": "rel_Aufgaben_Checklisten_Aufgabe",
+      "masterModel": "Aufgaben",
+      "detailModel": "Checklisten",
+      "fk": "Aufgabe"
+    },
+    {
+      "master": "Aufgaben",
+      "detail": "Zeiten",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Aufgabe"
+      ],
+      "relation": "rel_Aufgaben_Zeiten_Aufgabe",
+      "masterModel": "Aufgaben",
+      "detailModel": "Zeiten",
+      "fk": "Aufgabe"
+    },
+    {
+      "master": "Buchfuehrungen",
+      "detail": "Journal",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Buchfuehrung"
+      ],
+      "relation": "rel_Buchfuehrungen_Buchungen_Buchfuehrung",
+      "masterModel": "Buchfuehrungen",
+      "detailModel": "Buchungen",
+      "fk": "Buchfuehrung"
+    },
+    {
+      "master": "Einheiten",
+      "detail": "Raeume",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Einheit"
+      ],
+      "relation": "rel_Einheiten_Raeume_Einheit",
+      "masterModel": "Einheiten",
+      "detailModel": "Raeume",
+      "fk": "Einheit"
+    },
+    {
+      "master": "Einheiten",
+      "detail": "Dokumente",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Einheit"
+      ],
+      "relation": "rel_Einheiten_Dokumente_Einheit",
+      "masterModel": "Einheiten",
+      "detailModel": "Dokumente",
+      "fk": "Einheit"
+    },
+    {
+      "master": "Einheiten",
+      "detail": "Aufgaben",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Einheit"
+      ],
+      "relation": "rel_Einheiten_Aufgaben_Einheit",
+      "masterModel": "Einheiten",
+      "detailModel": "Aufgaben",
+      "fk": "Einheit"
+    },
+    {
+      "master": "Einheiten",
+      "detail": "Notizen",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Einheit"
+      ],
+      "relation": "rel_Einheiten_Notizen_Einheit",
+      "masterModel": "Einheiten",
+      "detailModel": "Notizen",
+      "fk": "Einheit"
+    },
+    {
+      "master": "Einheiten",
+      "detail": "Verkauf",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Einheit"
+      ],
+      "relation": "rel_Einheiten_Verkauf_Einheit",
+      "masterModel": "Einheiten",
+      "detailModel": "Verkauf",
+      "fk": "Einheit"
+    },
+    {
+      "master": "Einheiten",
+      "detail": "Abrechnungskonten",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Einheit"
+      ],
+      "relation": "rel_Einheiten_Abrechnungskonten_Einheit",
+      "masterModel": "Einheiten",
+      "detailModel": "Abrechnungskonten",
+      "fk": "Einheit"
+    },
+    {
+      "master": "Einheiten",
+      "detail": "Protokolle",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Einheit"
+      ],
+      "relation": "rel_Einheiten_Protokolle_Einheit",
+      "masterModel": "Einheiten",
+      "detailModel": "Protokolle",
+      "fk": "Einheit"
+    },
+    {
+      "master": "Einheiten",
+      "detail": "Vertraege",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Einheit"
+      ],
+      "relation": "rel_Einheiten_Vertraege_Einheit",
+      "masterModel": "Einheiten",
+      "detailModel": "Vertraege",
+      "fk": "Einheit"
+    },
+    {
+      "master": "Einheiten",
+      "detail": "Korrespondenz",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Einheit"
+      ],
+      "relation": "rel_Einheiten_Korrespondenz_Einheit",
+      "masterModel": "Einheiten",
+      "detailModel": "Korrespondenz",
+      "fk": "Einheit"
+    },
+    {
+      "master": "Inventar",
+      "detail": "Aufgaben",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Inventar"
+      ],
+      "relation": "rel_Inventar_Aufgaben_Inventar",
+      "masterModel": "Inventar",
+      "detailModel": "Aufgaben",
+      "fk": "Inventar"
+    },
+    {
+      "master": "Inventar",
+      "detail": "Dokumente",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Inventar"
+      ],
+      "relation": "rel_Inventar_Dokumente_Inventar",
+      "masterModel": "Inventar",
+      "detailModel": "Dokumente",
+      "fk": "Inventar"
+    },
+    {
+      "master": "Inventar",
+      "detail": "Notizen",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Inventar"
+      ],
+      "relation": "rel_Inventar_Notizen_Inventar",
+      "masterModel": "Inventar",
+      "detailModel": "Notizen",
+      "fk": "Inventar"
+    },
+    {
+      "master": "Inventar",
+      "detail": "Terminliste",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Inventar"
+      ],
+      "relation": "rel_Inventar_Termine_Inventar",
+      "masterModel": "Inventar",
+      "detailModel": "Termine",
+      "fk": "Inventar"
+    },
+    {
+      "master": "Inventar",
+      "detail": "Ausleihen",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Inventar"
+      ],
+      "relation": "rel_Inventar_Ausleihen_Inventar",
+      "masterModel": "Inventar",
+      "detailModel": "Ausleihen",
+      "fk": "Inventar"
+    },
+    {
+      "master": "Inventar",
+      "detail": "Korrespondenz",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Inventar"
+      ],
+      "relation": "rel_Inventar_Korrespondenz_Inventar",
+      "masterModel": "Inventar",
+      "detailModel": "Korrespondenz",
+      "fk": "Inventar"
+    },
+    {
+      "master": "Inventar",
+      "detail": "Vertraege",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Inventar"
+      ],
+      "relation": "rel_Inventar_Vertraege_Inventar",
+      "masterModel": "Inventar",
+      "detailModel": "Vertraege",
+      "fk": "Inventar"
+    },
+    {
+      "master": "Kontenrahmen",
+      "detail": "Buchungen",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Konto"
+      ],
+      "relation": "rel_Kontenrahmen_Buchungen_Konto",
+      "masterModel": "Kontenrahmen",
+      "detailModel": "Buchungen",
+      "fk": "Konto"
+    },
+    {
+      "master": "Kontenrahmen",
+      "detail": "Gegenbuchungen",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Gegenkonto"
+      ],
+      "relation": "rel_Kontenrahmen_Buchungen_Gegenkonto",
+      "masterModel": "Kontenrahmen",
+      "detailModel": "Buchungen",
+      "fk": "Gegenkonto"
+    },
+    {
+      "master": "Kosten",
+      "detail": "Kostenbelege",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Kostenposition"
+      ],
+      "relation": "rel_Kosten_Kostenbelege_Kostenposition",
+      "masterModel": "Kosten",
+      "detailModel": "Kostenbelege",
+      "fk": "Kostenposition"
+    },
+    {
+      "master": "Objekte",
+      "detail": "Einheiten",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Objekt"
+      ],
+      "relation": "rel_Objekte_Einheiten_Objekt",
+      "masterModel": "Objekte",
+      "detailModel": "Einheiten",
+      "fk": "Objekt"
+    },
+    {
+      "master": "Objekte",
+      "detail": "Ansprechpartner",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Objekt"
+      ],
+      "relation": "rel_Objekte_Ansprechpartner_Objekt",
+      "masterModel": "Objekte",
+      "detailModel": "Ansprechpartner",
+      "fk": "Objekt"
+    },
+    {
+      "master": "Objekte",
+      "detail": "Dokumente",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Objekt"
+      ],
+      "relation": "rel_Objekte_Dokumente_Objekt",
+      "masterModel": "Objekte",
+      "detailModel": "Dokumente",
+      "fk": "Objekt"
+    },
+    {
+      "master": "Objekte",
+      "detail": "Aufgaben",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Objekt"
+      ],
+      "relation": "rel_Objekte_Aufgaben_Objekt",
+      "masterModel": "Objekte",
+      "detailModel": "Aufgaben",
+      "fk": "Objekt"
+    },
+    {
+      "master": "Objekte",
+      "detail": "Notizen",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Objekt"
+      ],
+      "relation": "rel_Objekte_Notizen_Objekt",
+      "masterModel": "Objekte",
+      "detailModel": "Notizen",
+      "fk": "Objekt"
+    },
+    {
+      "master": "Objekte",
+      "detail": "Verkauf",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Objekt"
+      ],
+      "relation": "rel_Objekte_Verkauf_Objekt",
+      "masterModel": "Objekte",
+      "detailModel": "Verkauf",
+      "fk": "Objekt"
+    },
+    {
+      "master": "Objekte",
+      "detail": "Abrechnungen",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Objekt"
+      ],
+      "relation": "rel_Objekte_Abrechnungen_Objekt",
+      "masterModel": "Objekte",
+      "detailModel": "Abrechnungen",
+      "fk": "Objekt"
+    },
+    {
+      "master": "Objekte",
+      "detail": "Buchfuehrungen",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Objekt"
+      ],
+      "relation": "rel_Objekte_Buchfuehrungen_Objekt",
+      "masterModel": "Objekte",
+      "detailModel": "Buchfuehrungen",
+      "fk": "Objekt"
+    },
+    {
+      "master": "Objekte",
+      "detail": "Vertraege",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Objekt"
+      ],
+      "relation": "rel_Objekte_Vertraege_Objekt",
+      "masterModel": "Objekte",
+      "detailModel": "Vertraege",
+      "fk": "Objekt"
+    },
+    {
+      "master": "Objekte",
+      "detail": "Korrespondenz",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Objekt"
+      ],
+      "relation": "rel_Objekte_Korrespondenz_Objekt",
+      "masterModel": "Objekte",
+      "detailModel": "Korrespondenz",
+      "fk": "Objekt"
+    },
+    {
+      "master": "Raeume",
+      "detail": "Inventar",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Raum"
+      ],
+      "relation": "rel_Raeume_Inventar_Raum",
+      "masterModel": "Raeume",
+      "detailModel": "Inventar",
+      "fk": "Raum"
+    },
+    {
+      "master": "Raeume",
+      "detail": "Schluessel",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Raum"
+      ],
+      "relation": "rel_Raeume_Schluessel_Raum",
+      "masterModel": "Raeume",
+      "detailModel": "Schluessel",
+      "fk": "Raum"
+    },
+    {
+      "master": "Raeume",
+      "detail": "Zaehler",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Raum"
+      ],
+      "relation": "rel_Raeume_Zaehler_Raum",
+      "masterModel": "Raeume",
+      "detailModel": "Zaehler",
+      "fk": "Raum"
+    },
+    {
+      "master": "Raeume",
+      "detail": "Flaechen",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Raum"
+      ],
+      "relation": "rel_Raeume_Flaechen_Raum",
+      "masterModel": "Raeume",
+      "detailModel": "Flaechen",
+      "fk": "Raum"
+    },
+    {
+      "master": "Raeume",
+      "detail": "Dokumente",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Raum"
+      ],
+      "relation": "rel_Raeume_Dokumente_Raum",
+      "masterModel": "Raeume",
+      "detailModel": "Dokumente",
+      "fk": "Raum"
+    },
+    {
+      "master": "Raeume",
+      "detail": "Aufgaben",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Raum"
+      ],
+      "relation": "rel_Raeume_Aufgaben_Raum",
+      "masterModel": "Raeume",
+      "detailModel": "Aufgaben",
+      "fk": "Raum"
+    },
+    {
+      "master": "Raeume",
+      "detail": "Notizen",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Raum"
+      ],
+      "relation": "rel_Raeume_Notizen_Raum",
+      "masterModel": "Raeume",
+      "detailModel": "Notizen",
+      "fk": "Raum"
+    },
+    {
+      "master": "Sets",
+      "detail": "Inventar",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Set"
+      ],
+      "relation": "rel_Sets_Inventar_Set",
+      "masterModel": "Sets",
+      "detailModel": "Inventar",
+      "fk": "Set"
+    },
+    {
+      "master": "Verkauf",
+      "detail": "Dokumente",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Vorgang"
+      ],
+      "relation": "rel_Verkauf_Dokumente_Vorgang",
+      "masterModel": "Verkauf",
+      "detailModel": "Dokumente",
+      "fk": "Vorgang"
+    },
+    {
+      "master": "Vertraege",
+      "detail": "Korrespondenz",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Vertrag"
+      ],
+      "relation": "rel_Vertraege_Korrespondenz_Vertrag",
+      "masterModel": "Vertraege",
+      "detailModel": "Korrespondenz",
+      "fk": "Vertrag"
+    },
+    {
+      "master": "Vertraege",
+      "detail": "Dokumente",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Vertrag"
+      ],
+      "relation": "rel_Vertraege_Dokumente_Vertrag",
+      "masterModel": "Vertraege",
+      "detailModel": "Dokumente",
+      "fk": "Vertrag"
+    },
+    {
+      "master": "Vertraege",
+      "detail": "Notizen",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Vertrag"
+      ],
+      "relation": "rel_Vertraege_Notizen_Vertrag",
+      "masterModel": "Vertraege",
+      "detailModel": "Notizen",
+      "fk": "Vertrag"
+    },
+    {
+      "master": "Vertraege",
+      "detail": "Aufgaben",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Vertrag"
+      ],
+      "relation": "rel_Vertraege_Aufgaben_Vertrag",
+      "masterModel": "Vertraege",
+      "detailModel": "Aufgaben",
+      "fk": "Vertrag"
+    }
+  ],
+  "deduped": [
+    {
+      "master": "Abrechnungen",
+      "detail": "P35aEStG",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Abrechnung"
+      ],
+      "relation": "rel_Abrechnungen_Kosten_Abrechnung"
+    },
+    {
+      "master": "Abrechnungskonten",
+      "detail": "Vorauszahlungen",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Abrechnungskonto"
+      ],
+      "relation": "rel_Abrechnungskonten_Kosten_Abrechnungskonto"
+    },
+    {
+      "master": "Abrechnungskonten",
+      "detail": "Ruecklagebuchungen",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Abrechnungskonto"
+      ],
+      "relation": "rel_Abrechnungskonten_Kosten_Abrechnungskonto"
+    },
+    {
+      "master": "Rechnungen",
+      "detail": "Positionen",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Verkaufsvorgang"
+      ],
+      "relation": "rel_Verkauf_Positionen_Verkaufsvorgang"
+    },
+    {
+      "master": "Verkauf",
+      "detail": "Positionen",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Verkaufsvorgang"
+      ],
+      "relation": "rel_Verkauf_Positionen_Verkaufsvorgang"
+    },
+    {
+      "master": "Vorauszahlungen",
+      "detail": "Vorauszahlungsbelege",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Kostenposition"
+      ],
+      "relation": "rel_Kosten_Kostenbelege_Kostenposition"
+    }
+  ],
+  "skipped": [
+    {
+      "master": "Abrechnungen",
+      "detail": "Buchfuehrungen",
+      "masterKeys": [
+        "Buchfuehrung"
+      ],
+      "detailKeys": [
+        "ID"
+      ],
+      "reason": "non_unique_master_key"
+    },
+    {
+      "master": "Abrechnungen",
+      "detail": "Gesamtpersonen",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Abrechnung"
+      ],
+      "reason": "fk_column_missing"
+    },
+    {
+      "master": "Buchfuehrungen",
+      "detail": "Kontenrahmen",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Buchfuehrung"
+      ],
+      "reason": "fk_not_int"
+    },
+    {
+      "master": "DirekteKosten",
+      "detail": "Kontenrahmen",
+      "masterKeys": [
+        "Buchfuehrungskonto"
+      ],
+      "detailKeys": [
+        "ID"
+      ],
+      "reason": "non_unique_master_key"
+    },
+    {
+      "master": "Einheiten",
+      "detail": "Einheiten Historie",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Datensatz"
+      ],
+      "reason": "audit_detail"
+    },
+    {
+      "master": "Kalender",
+      "detail": "Terminliste",
+      "masterKeys": [
+        "Tag"
+      ],
+      "detailKeys": [
+        "Datum"
+      ],
+      "reason": "non_unique_master_key"
+    },
+    {
+      "master": "Kalenderwoche",
+      "detail": "Terminliste",
+      "masterKeys": [
+        "Tag"
+      ],
+      "detailKeys": [
+        "Datum"
+      ],
+      "reason": "non_unique_master_key"
+    },
+    {
+      "master": "Kontenrahmen",
+      "detail": "Kontenblätter",
+      "masterKeys": [
+        "Buchfuehrung",
+        "Nummer"
+      ],
+      "detailKeys": [
+        "Buchfuehrung",
+        "Nummer"
+      ],
+      "reason": "composite_key"
+    },
+    {
+      "master": "Kosten",
+      "detail": "Kontenrahmen",
+      "masterKeys": [
+        "Buchfuehrungskonto"
+      ],
+      "detailKeys": [
+        "ID"
+      ],
+      "reason": "non_unique_master_key"
+    },
+    {
+      "master": "Kosten",
+      "detail": "Kontobuch",
+      "masterKeys": [
+        "Abrechnung",
+        "Bezeichnung"
+      ],
+      "detailKeys": [
+        "Abrechnung",
+        "Kategorie"
+      ],
+      "reason": "composite_key"
+    },
+    {
+      "master": "Objekte",
+      "detail": "Objekte Historie",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Datensatz"
+      ],
+      "reason": "audit_detail"
+    },
+    {
+      "master": "Protokolle",
+      "detail": "Zaehler",
+      "masterKeys": [
+        "Datum"
+      ],
+      "detailKeys": [
+        "Ablesedatum"
+      ],
+      "reason": "non_unique_master_key"
+    },
+    {
+      "master": "Protokolle",
+      "detail": "Schluessel",
+      "masterKeys": [
+        "Datum"
+      ],
+      "detailKeys": [
+        "Ausgabedatum"
+      ],
+      "reason": "non_unique_master_key"
+    },
+    {
+      "master": "Protokolle",
+      "detail": "Dokumente",
+      "masterKeys": [
+        "Datum",
+        "Objekt",
+        "Einheit"
+      ],
+      "detailKeys": [
+        "Datum",
+        "Objekt",
+        "Einheit"
+      ],
+      "reason": "composite_key"
+    },
+    {
+      "master": "Ruecklagebuchungen",
+      "detail": "Kontenrahmen",
+      "masterKeys": [
+        "Buchfuehrungskonto"
+      ],
+      "detailKeys": [
+        "ID"
+      ],
+      "reason": "non_unique_master_key"
+    },
+    {
+      "master": "Vertraege",
+      "detail": "Vertraege Historie",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Datensatz"
+      ],
+      "reason": "audit_detail"
+    },
+    {
+      "master": "Vertraulich",
+      "detail": "Adressen Historie",
+      "masterKeys": [
+        "ID"
+      ],
+      "detailKeys": [
+        "Datensatz"
+      ],
+      "reason": "audit_detail"
+    },
+    {
+      "master": "Vorauszahlungen",
+      "detail": "Kontenrahmen",
+      "masterKeys": [
+        "Buchfuehrungskonto"
+      ],
+      "detailKeys": [
+        "ID"
+      ],
+      "reason": "non_unique_master_key"
+    },
+    {
+      "master": "Vorauszahlungen",
+      "detail": "Kontobuch",
+      "masterKeys": [
+        "Abrechnung",
+        "Abrechnungskonto"
+      ],
+      "detailKeys": [
+        "Abrechnung",
+        "Abrechnungskonto"
+      ],
+      "reason": "composite_key"
+    },
+    {
+      "master": "WV",
+      "detail": "Adressen",
+      "masterKeys": [
+        "Tag"
+      ],
+      "detailKeys": [
+        "Wiedervorlage"
+      ],
+      "reason": "non_unique_master_key"
+    },
+    {
+      "master": "WV",
+      "detail": "Dokumente",
+      "masterKeys": [
+        "Tag"
+      ],
+      "detailKeys": [
+        "Wiedervorlage"
+      ],
+      "reason": "non_unique_master_key"
+    },
+    {
+      "master": "WV",
+      "detail": "Notizen",
+      "masterKeys": [
+        "Tag"
+      ],
+      "detailKeys": [
+        "Wiedervorlage"
+      ],
+      "reason": "non_unique_master_key"
+    },
+    {
+      "master": "WV",
+      "detail": "Korrespondenz",
+      "masterKeys": [
+        "Tag"
+      ],
+      "detailKeys": [
+        "Wiedervorlage"
+      ],
+      "reason": "non_unique_master_key"
+    },
+    {
+      "master": "WV",
+      "detail": "Termine",
+      "masterKeys": [
+        "Tag"
+      ],
+      "detailKeys": [
+        "Wiedervorlage"
+      ],
+      "reason": "non_unique_master_key"
+    },
+    {
+      "master": "WV",
+      "detail": "Aufgaben",
+      "masterKeys": [
+        "Tag"
+      ],
+      "detailKeys": [
+        "Wiedervorlage"
+      ],
+      "reason": "non_unique_master_key"
+    },
+    {
+      "master": "WV",
+      "detail": "Vertraege",
+      "masterKeys": [
+        "Tag"
+      ],
+      "detailKeys": [
+        "Wiedervorlage"
+      ],
+      "reason": "non_unique_master_key"
+    },
+    {
+      "master": "admin_users",
+      "detail": "Adressen",
+      "masterKeys": [
+        "Team"
+      ],
+      "detailKeys": [
+        "Team"
+      ],
+      "reason": "non_unique_master_key"
+    },
+    {
+      "master": "admin_users",
+      "detail": "Objekte",
+      "masterKeys": [
+        "Team"
+      ],
+      "detailKeys": [
+        "Team"
+      ],
+      "reason": "non_unique_master_key"
+    },
+    {
+      "master": "admin_users",
+      "detail": "Einheiten",
+      "masterKeys": [
+        "Team"
+      ],
+      "detailKeys": [
+        "Team"
+      ],
+      "reason": "non_unique_master_key"
+    },
+    {
+      "master": "admin_users",
+      "detail": "Abrechnungen",
+      "masterKeys": [
+        "Team"
+      ],
+      "detailKeys": [
+        "Team"
+      ],
+      "reason": "non_unique_master_key"
+    }
+  ]
+}

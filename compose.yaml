@@ -1,0 +1,39 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ap-emlaki:1812
+    container_name: ap-emlaki
+    restart: unless-stopped
+    init: true
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      DATABASE_URL: file:/app/data/dev.db
+      SESSION_DIR: /app/data/sessions
+      SESSION_SECRET: ${SESSION_SECRET:-replace-this-before-public-deployment}
+      SESSION_COOKIE_SECURE: ${SESSION_COOKIE_SECURE:-false}
+      TRUST_PROXY: ${TRUST_PROXY:-0}
+      GEOCODING_PROVIDER: ${GEOCODING_PROVIDER:-nominatim}
+      GEOCODING_API_KEY: ${GEOCODING_API_KEY:-}
+    ports:
+      - "${APP_PORT:-3000}:3000"
+    volumes:
+      - app-data:/app/data
+      - app-uploads:/app/uploads
+    healthcheck:
+      test:
+        - CMD
+        - node
+        - -e
+        - fetch('http://127.0.0.1:3000/healthz').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    stop_grace_period: 20s
+
+volumes:
+  app-data:
+  app-uploads:

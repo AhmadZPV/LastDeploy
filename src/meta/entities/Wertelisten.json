@@ -1,0 +1,160 @@
+{
+ "entity": "Wertelisten",
+ "shortName": "Wertelisten",
+ "baseTable": "Wertelisten",
+ "isVirtual": false,
+ "ownerField": null,
+ "sql": {
+  "strOrderBy": "ORDER BY Werteliste, Eintrag",
+  "sqlHead": "SELECT Werteliste,  Eintrag,  ID",
+  "sqlFrom": "FROM Wertelisten",
+  "sqlWhere": "",
+  "sqlTail": ""
+ },
+ "keys": [
+  "ID"
+ ],
+ "pageSize": 20,
+ "capabilities": {
+  "list": true,
+  "view": false,
+  "add": true,
+  "edit": false,
+  "export": true,
+  "print": false,
+  "search": true,
+  "masterList": true
+ },
+ "fieldSets": {
+  "list": [
+   "Werteliste",
+   "Eintrag"
+  ],
+  "add": [
+   "Werteliste",
+   "Eintrag"
+  ],
+  "export": [
+   "Werteliste",
+   "Eintrag",
+   "ID"
+  ],
+  "search": [
+   "Werteliste",
+   "Eintrag"
+  ],
+  "masterList": [
+   "Werteliste",
+   "Eintrag",
+   "ID"
+  ]
+ },
+ "export": {
+  "exportTo": true,
+  "exportDelimiter": ",",
+  "exportFormatting": 2
+ },
+ "print": {
+  "printerPageOrientation": 0,
+  "nPrinterPageScale": 100,
+  "nPrinterSplitRecords": 40,
+  "nPrinterPDFSplitRecords": 40
+ },
+ "tabs": [],
+ "labels": {
+  "German": {
+   "Werteliste": "Werteliste",
+   "Eintrag": "Eintrag",
+   "ID": "ID"
+  }
+ },
+ "fields": [
+  {
+   "name": "Werteliste",
+   "type": 200,
+   "index": 1,
+   "pages": {
+    "list": true,
+    "view": false,
+    "add": true,
+    "edit": false,
+    "export": true,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 0,
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 0,
+    "SelectSize": 1,
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Eintrag",
+   "type": 200,
+   "index": 2,
+   "pages": {
+    "list": true,
+    "view": false,
+    "add": true,
+    "edit": false,
+    "export": true,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "ID",
+   "type": 3,
+   "index": 3,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": false,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "number",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "AutoInc": true,
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  }
+ ]
+}

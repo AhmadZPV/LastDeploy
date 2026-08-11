@@ -1,0 +1,42 @@
+{
+  "compares": "prisma/schema.prisma vs prisma/schema.mysql.prisma",
+  "models": {
+    "sqlite": 62,
+    "mysql": 62,
+    "onlySqlite": [],
+    "onlyMysql": []
+  },
+  "fields": {
+    "scalarCompared": 914,
+    "relationFieldsAdded": 132
+  },
+  "documentedExceptions": [
+    {
+      "model": "Buchfuehrungen",
+      "field": "rowid",
+      "reason": "SQLite identity shim: MyISAM tables without a PK need an INTEGER PRIMARY KEY for autoincrement"
+    },
+    {
+      "model": "Kontenrahmen",
+      "field": "rowid",
+      "reason": "SQLite identity shim: MyISAM tables without a PK need an INTEGER PRIMARY KEY for autoincrement"
+    },
+    {
+      "model": "Buchfuehrungen",
+      "field": "ID",
+      "reason": "business key marked @unique so Prisma relations can reference it (documented decision)"
+    },
+    {
+      "model": "Kontenrahmen",
+      "field": "ID",
+      "reason": "business key marked @unique so Prisma relations can reference it (documented decision)"
+    }
+  ],
+  "unexplained": {
+    "fields": [],
+    "types": [],
+    "keys": [],
+    "defaults": []
+  },
+  "unexplainedCount": 0
+}

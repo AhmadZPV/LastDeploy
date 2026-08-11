@@ -1,0 +1,1161 @@
+{
+ "entity": "Rechnungsdruck",
+ "shortName": "Rechnungsdruck",
+ "baseTable": "Verkauf",
+ "isVirtual": true,
+ "ownerField": "Team",
+ "sql": {
+  "strOrderBy": "ORDER BY Verkauf.ID DESC",
+  "sqlHead": "SELECT Verkauf.ID,  Verkauf.Kunde,  Verkauf.Nummer,  Verkauf.Datum,  Verkauf.Zahlungsbedingungen,  Verkauf.Lieferbedingungen,  Verkauf.Rechnungsdatum,  Verkauf.Leistungsdatum,  Verkauf.Art,  Adressen.Kundennummer,  Adressen.Anrede,  Positionen.Menge,  Positionen.Bezeichnung,  Positionen.Einheit,  Positionen.Listenpreis,  Positionen.Leistungscode,  Positionen.Mwst_Satz,  round(Menge*Listenpreis, 2) AS Netto,  Menge*Listenpreis*(1+Mwst_Satz/100) AS Brutto,  (Menge*Listenpreis*(1+Mwst_Satz/100))-(Menge*Listenpreis ) AS Mwst,  Concat(if(Adressen.Firma='','', Concat(Adressen.Firma, '<br>')), if(Adressen.Abteilung='','', Concat(Adressen.Abteilung, '<br>')), Adressen.Vorname, ' ', Adressen.Nachname, '<br>', Adressen.Strasse, '<br>', Adressen.PLZ, ' ', Adressen.Ort) AS Anschrift,  Verkauf.Bemerkungen AS Gesamtbemerkung,  Positionen.Bemerkungen AS Positionsbemerkung,  if(Positionen.Bemerkungen is null, Positionen.Bezeichnung, concat(Positionen.Bezeichnung,'<br>',Positionen.Bemerkungen)) AS Positionstext,  Einstellungen.Absenderzeile,  Einstellungen.Grussformel,  Einstellungen.Fussbereich,  Einstellungen.LogoLink,  Einstellungen.Rechnungslayout,  Verkauf.Team,  Verkauf.Seriennummer",
+  "sqlFrom": "FROM Verkauf  LEFT OUTER JOIN Adressen ON Verkauf.Kunde = Adressen.ID  LEFT OUTER JOIN Positionen ON Verkauf.ID = Positionen.Verkaufsvorgang  , Einstellungen",
+  "sqlWhere": "",
+  "sqlTail": ""
+ },
+ "keys": [
+  "ID"
+ ],
+ "pageSize": 1,
+ "capabilities": {
+  "list": true,
+  "view": true,
+  "add": true,
+  "edit": true,
+  "export": true,
+  "print": true,
+  "search": true,
+  "masterList": true
+ },
+ "fieldSets": {
+  "list": [
+   "ID",
+   "Kunde",
+   "Nummer",
+   "Datum",
+   "Zahlungsbedingungen",
+   "Lieferbedingungen",
+   "Rechnungsdatum",
+   "Leistungsdatum",
+   "Art",
+   "Kundennummer",
+   "Anrede",
+   "Menge",
+   "Bezeichnung",
+   "Einheit",
+   "Listenpreis",
+   "Leistungscode",
+   "Mwst_Satz",
+   "Netto",
+   "Brutto",
+   "Mwst",
+   "Anschrift",
+   "Gesamtbemerkung",
+   "Positionsbemerkung",
+   "Positionstext",
+   "Absenderzeile",
+   "Grussformel",
+   "Fussbereich",
+   "LogoLink",
+   "Rechnungslayout",
+   "Team",
+   "Seriennummer"
+  ],
+  "view": [
+   "ID",
+   "Kunde",
+   "Nummer",
+   "Datum",
+   "Zahlungsbedingungen",
+   "Lieferbedingungen",
+   "Rechnungsdatum",
+   "Leistungsdatum",
+   "Art",
+   "Kundennummer",
+   "Anrede",
+   "Menge",
+   "Bezeichnung",
+   "Einheit",
+   "Listenpreis",
+   "Leistungscode",
+   "Mwst_Satz",
+   "Netto",
+   "Brutto",
+   "Mwst",
+   "Anschrift",
+   "Gesamtbemerkung",
+   "Positionsbemerkung",
+   "Positionstext",
+   "Absenderzeile",
+   "Grussformel",
+   "Fussbereich",
+   "LogoLink",
+   "Rechnungslayout",
+   "Team",
+   "Seriennummer"
+  ],
+  "add": [
+   "Kunde",
+   "Nummer",
+   "Datum",
+   "Zahlungsbedingungen",
+   "Lieferbedingungen",
+   "Rechnungsdatum",
+   "Leistungsdatum",
+   "Art",
+   "Seriennummer"
+  ],
+  "edit": [
+   "Kunde",
+   "Nummer",
+   "Datum",
+   "Zahlungsbedingungen",
+   "Lieferbedingungen",
+   "Rechnungsdatum",
+   "Leistungsdatum",
+   "Art",
+   "Team",
+   "Seriennummer"
+  ],
+  "export": [
+   "ID",
+   "Kunde",
+   "Nummer",
+   "Datum",
+   "Zahlungsbedingungen",
+   "Lieferbedingungen",
+   "Rechnungsdatum",
+   "Leistungsdatum",
+   "Art",
+   "Kundennummer",
+   "Anrede",
+   "Menge",
+   "Bezeichnung",
+   "Einheit",
+   "Listenpreis",
+   "Leistungscode",
+   "Mwst_Satz",
+   "Netto",
+   "Brutto",
+   "Mwst",
+   "Anschrift",
+   "Gesamtbemerkung",
+   "Positionsbemerkung",
+   "Positionstext",
+   "Absenderzeile",
+   "Grussformel",
+   "Fussbereich",
+   "LogoLink",
+   "Rechnungslayout",
+   "Team",
+   "Seriennummer"
+  ],
+  "print": [
+   "ID",
+   "Kunde",
+   "Nummer",
+   "Datum",
+   "Zahlungsbedingungen",
+   "Lieferbedingungen",
+   "Rechnungsdatum",
+   "Leistungsdatum",
+   "Art",
+   "Kundennummer",
+   "Anrede",
+   "Menge",
+   "Bezeichnung",
+   "Einheit",
+   "Listenpreis",
+   "Leistungscode",
+   "Mwst_Satz",
+   "Netto",
+   "Brutto",
+   "Mwst",
+   "Anschrift",
+   "Gesamtbemerkung",
+   "Positionsbemerkung",
+   "Positionstext",
+   "Absenderzeile",
+   "Grussformel",
+   "Fussbereich",
+   "LogoLink",
+   "Rechnungslayout",
+   "Team",
+   "Seriennummer"
+  ],
+  "search": [
+   "ID",
+   "Kunde",
+   "Nummer",
+   "Datum",
+   "Zahlungsbedingungen",
+   "Lieferbedingungen",
+   "Rechnungsdatum",
+   "Leistungsdatum",
+   "Art",
+   "Kundennummer",
+   "Menge",
+   "Bezeichnung",
+   "Einheit",
+   "Listenpreis",
+   "Leistungscode",
+   "Mwst_Satz",
+   "Netto",
+   "Brutto",
+   "Mwst",
+   "Positionstext",
+   "Rechnungslayout",
+   "Seriennummer"
+  ],
+  "masterList": [
+   "ID",
+   "Kunde",
+   "Nummer",
+   "Datum",
+   "Zahlungsbedingungen",
+   "Lieferbedingungen",
+   "Rechnungsdatum",
+   "Leistungsdatum",
+   "Art",
+   "Kundennummer",
+   "Anrede",
+   "Menge",
+   "Bezeichnung",
+   "Einheit",
+   "Listenpreis",
+   "Leistungscode",
+   "Mwst_Satz",
+   "Netto",
+   "Brutto",
+   "Mwst",
+   "Anschrift",
+   "Gesamtbemerkung",
+   "Positionsbemerkung",
+   "Positionstext",
+   "Absenderzeile",
+   "Grussformel",
+   "Fussbereich",
+   "LogoLink",
+   "Rechnungslayout",
+   "Team",
+   "Seriennummer"
+  ]
+ },
+ "export": {
+  "exportTo": true,
+  "exportDelimiter": ",",
+  "exportFormatting": 2
+ },
+ "print": {
+  "printerPageOrientation": 0,
+  "nPrinterPageScale": 100,
+  "nPrinterSplitRecords": 40,
+  "nPrinterPDFSplitRecords": 40
+ },
+ "tabs": [],
+ "labels": {
+  "German": {
+   "ID": "ID",
+   "Kunde": "Kunde",
+   "Nummer": "Nummer",
+   "Datum": "Datum",
+   "Zahlungsbedingungen": "Zahlungsbedingungen",
+   "Lieferbedingungen": "Lieferbedingungen",
+   "Rechnungsdatum": "Rechnungsdatum",
+   "Leistungsdatum": "Leistungsdatum",
+   "Art": "Art",
+   "Kundennummer": "Kundennummer",
+   "Menge": "Menge",
+   "Bezeichnung": "Bezeichnung",
+   "Einheit": "Einheit",
+   "Listenpreis": "Listenpreis",
+   "Leistungscode": "Leistungscode",
+   "Mwst_Satz": "Mwst-Satz",
+   "Anschrift": "Anschrift",
+   "Netto": "Netto",
+   "Brutto": "Brutto",
+   "Mwst": "Mwst",
+   "Gesamtbemerkung": "Gesamtbemerkung",
+   "Positionsbemerkung": "Positionsbemerkung",
+   "Anrede": "Anrede",
+   "Absenderzeile": "Absenderzeile",
+   "Grussformel": "Grussformel",
+   "Fussbereich": "Fussbereich",
+   "LogoLink": "Logo Link",
+   "Positionstext": "Positionstext",
+   "Rechnungslayout": "Rechnungslayout",
+   "Team": "Team",
+   "Seriennummer": "Seriennummer"
+  }
+ },
+ "fields": [
+  {
+   "name": "ID",
+   "type": 3,
+   "index": 1,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "AutoInc": true,
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Kunde",
+   "type": 3,
+   "index": 2,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Adressen",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 2,
+    "LinkField": "ID",
+    "LinkFieldType": 0,
+    "DisplayField": "Kurzname",
+    "LookupOrderBy": "Kurzname",
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Nummer",
+   "type": 3,
+   "index": 3,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Datum",
+   "type": 7,
+   "index": 4,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "DateEditType": 13,
+    "InitialYearFactor": 3,
+    "LastYearFactor": 10,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Zahlungsbedingungen",
+   "type": 200,
+   "index": 5,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Verkauf",
+    "freeInput": true,
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 1,
+    "LinkField": "Zahlungsbedingungen",
+    "LinkFieldType": 0,
+    "DisplayField": "Zahlungsbedingungen",
+    "LookupOrderBy": "Zahlungsbedingungen",
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Lieferbedingungen",
+   "type": 200,
+   "index": 6,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Verkauf",
+    "freeInput": true,
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 1,
+    "LinkField": "Lieferbedingungen",
+    "LinkFieldType": 0,
+    "DisplayField": "Lieferbedingungen",
+    "LookupOrderBy": "Lieferbedingungen",
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Rechnungsdatum",
+   "type": 7,
+   "index": 7,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "DateEditType": 13,
+    "InitialYearFactor": 3,
+    "LastYearFactor": 10,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Leistungsdatum",
+   "type": 7,
+   "index": 8,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "DateEditType": 13,
+    "InitialYearFactor": 3,
+    "LastYearFactor": 10,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Art",
+   "type": 200,
+   "index": 9,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 0,
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 4,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Kundennummer",
+   "type": 200,
+   "index": 10,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Anrede",
+   "type": 200,
+   "index": 11,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Menge",
+   "type": 14,
+   "index": 12,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "DecimalDigits": 2,
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Bezeichnung",
+   "type": 200,
+   "index": 13,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Einheit",
+   "type": 200,
+   "index": 14,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Listenpreis",
+   "type": 14,
+   "index": 15,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "DecimalDigits": 2,
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Leistungscode",
+   "type": 200,
+   "index": 16,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Mwst_Satz",
+   "type": 3,
+   "index": 17,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Netto",
+   "type": 14,
+   "index": 18,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "DecimalDigits": 2,
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Brutto",
+   "type": 14,
+   "index": 19,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "DecimalDigits": 2,
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Mwst",
+   "type": 14,
+   "index": 20,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "DecimalDigits": 2,
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Anschrift",
+   "type": 200,
+   "index": 21,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": false,
+    "masterList": true
+   },
+   "view": {},
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Gesamtbemerkung",
+   "type": 200,
+   "index": 22,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": false,
+    "masterList": true
+   },
+   "view": {},
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Positionsbemerkung",
+   "type": 200,
+   "index": 23,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": false,
+    "masterList": true
+   },
+   "view": {},
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Positionstext",
+   "type": 200,
+   "index": 24,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {},
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Absenderzeile",
+   "type": 201,
+   "index": 25,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": false,
+    "masterList": true
+   },
+   "view": {},
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "nRows": 100,
+    "nCols": 200,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Grussformel",
+   "type": 201,
+   "index": 26,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": false,
+    "masterList": true
+   },
+   "view": {},
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "nRows": 100,
+    "nCols": 200,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Fussbereich",
+   "type": 201,
+   "index": 27,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "nRows": 100,
+    "nCols": 200,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "LogoLink",
+   "type": 200,
+   "index": 28,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": false,
+    "masterList": true
+   },
+   "view": {},
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Rechnungslayout",
+   "type": 201,
+   "index": 29,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {},
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "nRows": 100,
+    "nCols": 200,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Team",
+   "type": 200,
+   "index": 30,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Seriennummer",
+   "type": 200,
+   "index": 31,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  }
+ ]
+}

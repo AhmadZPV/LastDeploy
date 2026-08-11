@@ -1,0 +1,303 @@
+{
+ "entity": "Mengenbericht",
+ "shortName": "Mengenbericht",
+ "baseTable": "Inventar",
+ "isVirtual": true,
+ "ownerField": "Team",
+ "sql": {
+  "strOrderBy": "ORDER BY Kategorie, Unterkategorie, Bezeichnung",
+  "sqlHead": "SELECT Bezeichnung,  Kategorie,  Unterkategorie,  Anzahl,  Einheiten,  Team",
+  "sqlFrom": "FROM Inventar",
+  "sqlWhere": "",
+  "sqlTail": ""
+ },
+ "keys": [],
+ "pageSize": 5,
+ "capabilities": {
+  "list": true,
+  "view": true,
+  "add": true,
+  "edit": true,
+  "export": true,
+  "print": true,
+  "search": true,
+  "masterList": true
+ },
+ "fieldSets": {
+  "list": [
+   "Bezeichnung",
+   "Kategorie",
+   "Unterkategorie",
+   "Anzahl",
+   "Einheiten",
+   "Team"
+  ],
+  "view": [
+   "Bezeichnung",
+   "Kategorie",
+   "Unterkategorie",
+   "Anzahl",
+   "Einheiten",
+   "Team"
+  ],
+  "add": [
+   "Bezeichnung",
+   "Kategorie",
+   "Unterkategorie",
+   "Anzahl",
+   "Einheiten"
+  ],
+  "edit": [
+   "Bezeichnung",
+   "Kategorie",
+   "Unterkategorie",
+   "Anzahl",
+   "Einheiten",
+   "Team"
+  ],
+  "export": [
+   "Bezeichnung",
+   "Kategorie",
+   "Unterkategorie",
+   "Anzahl",
+   "Einheiten",
+   "Team"
+  ],
+  "print": [
+   "Bezeichnung",
+   "Kategorie",
+   "Unterkategorie",
+   "Anzahl",
+   "Einheiten",
+   "Team"
+  ],
+  "search": [
+   "Bezeichnung",
+   "Kategorie",
+   "Unterkategorie",
+   "Anzahl",
+   "Einheiten"
+  ],
+  "masterList": [
+   "Bezeichnung",
+   "Kategorie",
+   "Unterkategorie",
+   "Anzahl",
+   "Einheiten",
+   "Team"
+  ]
+ },
+ "export": {
+  "exportTo": true,
+  "exportDelimiter": ",",
+  "exportFormatting": 2
+ },
+ "print": {
+  "printerPageOrientation": 0,
+  "nPrinterPageScale": 100,
+  "nPrinterSplitRecords": 40,
+  "nPrinterPDFSplitRecords": 40
+ },
+ "tabs": [],
+ "labels": {
+  "German": {
+   "Bezeichnung": "Bezeichnung",
+   "Kategorie": "Kategorie",
+   "Anzahl": "Anzahl",
+   "Unterkategorie": "Unterkategorie",
+   "Einheiten": "Einheiten",
+   "Team": "Team"
+  }
+ },
+ "fields": [
+  {
+   "name": "Bezeichnung",
+   "type": 200,
+   "index": 1,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Kategorie",
+   "type": 200,
+   "index": 2,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Klassifikationen Inventar",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 0,
+    "LookupUnique": true,
+    "LinkField": "Hauptkategorie",
+    "LinkFieldType": 0,
+    "DisplayField": "Hauptkategorie",
+    "LookupOrderBy": "Hauptkategorie",
+    "SelectSize": 1,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Unterkategorie",
+   "type": 200,
+   "index": 3,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Klassifikationen Inventar",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 0,
+    "LinkField": "Unterkategorie",
+    "LinkFieldType": 0,
+    "DisplayField": "Unterkategorie",
+    "LookupOrderBy": "Unterkategorie",
+    "LookupDesc": true,
+    "UseCategory": true,
+    "SelectSize": 1,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Anzahl",
+   "type": 3,
+   "index": 4,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "DecimalDigits": 0,
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "number",
+    "EditParams": "",
+    "controlWidth": 100
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Einheiten",
+   "type": 200,
+   "index": 5,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Wertelisten",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 0,
+    "LinkField": "Eintrag",
+    "LinkFieldType": 0,
+    "DisplayField": "Eintrag",
+    "LookupWhereCode": true,
+    "LookupOrderBy": "Eintrag",
+    "SelectSize": 1,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Team",
+   "type": 200,
+   "index": 6,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  }
+ ]
+}

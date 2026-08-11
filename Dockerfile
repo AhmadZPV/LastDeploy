@@ -1,0 +1,39 @@
+FROM node:22-bookworm-slim AS dependencies
+WORKDIR /app
+COPY package.json package-lock.json ./
+RUN npm ci
+
+FROM node:22-bookworm-slim AS runtime
+ENV NODE_ENV=production \
+    PORT=3000 \
+    DATABASE_URL=file:/app/data/dev.db
+WORKDIR /app
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends openssl ca-certificates \
+    && rm -rf /var/lib/apt/lists/* \
+    && groupadd --system app \
+    && useradd --system --gid app --home-dir /app app
+
+COPY --from=dependencies /app/node_modules ./node_modules
+COPY package.json package-lock.json ./
+COPY prisma ./prisma
+COPY routes ./routes
+COPY src ./src
+COPY views ./views
+COPY public ./public
+COPY scripts ./scripts
+COPY tests/parity/fixtures ./tests/parity/fixtures
+COPY server.js ./server.js
+COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+
+RUN npx prisma generate \
+    && chmod +x /usr/local/bin/docker-entrypoint.sh \
+    && mkdir -p /app/data /app/uploads \
+    && chown -R app:app /app
+
+USER app
+EXPOSE 3000
+VOLUME ["/app/data", "/app/uploads"]
+ENTRYPOINT ["docker-entrypoint.sh"]
+CMD ["node", "server.js"]

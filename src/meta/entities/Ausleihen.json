@@ -1,0 +1,551 @@
+{
+ "entity": "Ausleihen",
+ "shortName": "Ausleihen",
+ "baseTable": "Ausleihen",
+ "isVirtual": false,
+ "ownerField": "Benutzer",
+ "sql": {
+  "strOrderBy": "ORDER BY Startdatum DESC, Startzeit DESC",
+  "sqlHead": "SELECT ID,  Titel,  Startdatum,  Startzeit,  Enddatum,  Endzeit,  Zustaendigkeit,  Adresse,  Inventar,  Benutzer,  Bemerkung,  Timediff(Concat (Enddatum,' ',Endzeit),Concat (Startdatum,' ',Startzeit)) as Zeit,  Team",
+  "sqlFrom": "FROM Ausleihen",
+  "sqlWhere": "",
+  "sqlTail": ""
+ },
+ "keys": [
+  "ID"
+ ],
+ "pageSize": 20,
+ "capabilities": {
+  "list": true,
+  "view": true,
+  "add": true,
+  "edit": true,
+  "export": true,
+  "print": true,
+  "search": true,
+  "masterList": true
+ },
+ "fieldSets": {
+  "list": [
+   "Zeit",
+   "Inventar",
+   "Titel",
+   "Startdatum",
+   "Startzeit",
+   "Zustaendigkeit",
+   "Adresse"
+  ],
+  "view": [
+   "Zeit",
+   "Inventar",
+   "Titel",
+   "Startdatum",
+   "Startzeit",
+   "Enddatum",
+   "Endzeit",
+   "Bemerkung",
+   "Zustaendigkeit",
+   "Adresse",
+   "Benutzer"
+  ],
+  "add": [
+   "Inventar",
+   "Titel",
+   "Startdatum",
+   "Startzeit",
+   "Enddatum",
+   "Endzeit",
+   "Bemerkung",
+   "Zustaendigkeit",
+   "Adresse"
+  ],
+  "edit": [
+   "Inventar",
+   "Titel",
+   "Startdatum",
+   "Startzeit",
+   "Enddatum",
+   "Endzeit",
+   "Bemerkung",
+   "Zustaendigkeit",
+   "Adresse",
+   "Benutzer"
+  ],
+  "export": [
+   "ID",
+   "Zeit",
+   "Team",
+   "Inventar",
+   "Titel",
+   "Startdatum",
+   "Startzeit",
+   "Enddatum",
+   "Endzeit",
+   "Bemerkung",
+   "Zustaendigkeit",
+   "Adresse",
+   "Benutzer"
+  ],
+  "print": [
+   "Zeit",
+   "Inventar",
+   "Titel",
+   "Startdatum",
+   "Startzeit",
+   "Enddatum",
+   "Endzeit",
+   "Bemerkung",
+   "Zustaendigkeit",
+   "Adresse",
+   "Benutzer"
+  ],
+  "search": [
+   "ID",
+   "Zeit",
+   "Inventar",
+   "Titel",
+   "Startdatum",
+   "Startzeit",
+   "Enddatum",
+   "Endzeit",
+   "Bemerkung",
+   "Zustaendigkeit",
+   "Adresse",
+   "Benutzer"
+  ],
+  "masterList": [
+   "ID",
+   "Zeit",
+   "Team",
+   "Inventar",
+   "Titel",
+   "Startdatum",
+   "Startzeit",
+   "Enddatum",
+   "Endzeit",
+   "Bemerkung",
+   "Zustaendigkeit",
+   "Adresse",
+   "Benutzer"
+  ]
+ },
+ "export": {
+  "exportTo": true,
+  "exportDelimiter": ",",
+  "exportFormatting": 2
+ },
+ "print": {
+  "printerPageOrientation": 0,
+  "nPrinterPageScale": 100,
+  "nPrinterSplitRecords": 40,
+  "nPrinterPDFSplitRecords": 40
+ },
+ "tabs": [],
+ "labels": {
+  "German": {
+   "ID": "ID",
+   "Titel": "Titel",
+   "Startdatum": "Startdatum",
+   "Startzeit": "Startzeit",
+   "Enddatum": "Enddatum",
+   "Endzeit": "Endzeit",
+   "Zustaendigkeit": "Zuständigkeit",
+   "Adresse": "Adresse",
+   "Benutzer": "Benutzer",
+   "Bemerkung": "Bemerkung",
+   "Zeit": "Zeit",
+   "Inventar": "Inventar",
+   "Team": "Team"
+  }
+ },
+ "fields": [
+  {
+   "name": "ID",
+   "type": 3,
+   "index": 1,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": false,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "number",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "AutoInc": true,
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Titel",
+   "type": 200,
+   "index": 2,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Startdatum",
+   "type": 7,
+   "index": 3,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "DateEditType": 13,
+    "InitialYearFactor": 3,
+    "LastYearFactor": 10,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Startzeit",
+   "type": 134,
+   "index": 4,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "ViewFormat": "Custom"
+   },
+   "edit": {
+    "EditFormat": "Time",
+    "useTimePicker": 1,
+    "minutes": 10,
+    "showSeconds": 0,
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Enddatum",
+   "type": 7,
+   "index": 5,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "DateEditType": 13,
+    "InitialYearFactor": 3,
+    "LastYearFactor": 10,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Endzeit",
+   "type": 134,
+   "index": 6,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "ViewFormat": "Custom"
+   },
+   "edit": {
+    "EditFormat": "Time",
+    "useTimePicker": 1,
+    "minutes": 10,
+    "showSeconds": 0,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Zustaendigkeit",
+   "type": 3,
+   "index": 7,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Adressen",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 0,
+    "LinkField": "ID",
+    "LinkFieldType": 0,
+    "DisplayField": "Kurzname",
+    "LookupWhereCode": true,
+    "LookupOrderBy": "Kurzname",
+    "SelectSize": 1,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Adresse",
+   "type": 3,
+   "index": 8,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Kerndaten",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 2,
+    "LinkField": "ID",
+    "LinkFieldType": 0,
+    "DisplayField": "Kurzname",
+    "LookupOrderBy": "Kurzname",
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Inventar",
+   "type": 3,
+   "index": 9,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "LookupType": 2,
+    "LookupTable": "Inventar",
+    "autoCompleteFieldsOnEdit": 0,
+    "LCType": 2,
+    "LinkField": "ID",
+    "LinkFieldType": 0,
+    "DisplayField": "Bezeichnung",
+    "LookupOrderBy": "Bezeichnung",
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Benutzer",
+   "type": 200,
+   "index": 10,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": false,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "controlWidth": 200,
+    "autoUpdatable": true
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Bemerkung",
+   "type": 201,
+   "index": 11,
+   "pages": {
+    "list": false,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "ViewFormat": "HTML"
+   },
+   "edit": {
+    "UseRTE": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "nRows": 200,
+    "nCols": 600,
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Zeit",
+   "type": 134,
+   "index": 12,
+   "pages": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+   },
+   "view": {
+    "ViewFormat": "Custom"
+   },
+   "edit": {
+    "EditFormat": "Time",
+    "useTimePicker": 0,
+    "minutes": 1,
+    "showSeconds": 0,
+    "IsRequired": true,
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  },
+  {
+   "name": "Team",
+   "type": 200,
+   "index": 13,
+   "pages": {
+    "list": false,
+    "view": false,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": false,
+    "search": false,
+    "masterList": true
+   },
+   "view": {
+    "NeedEncode": true
+   },
+   "edit": {
+    "acceptFileTypes": ".+$",
+    "maxNumberOfFiles": 1,
+    "HTML5InuptType": "text",
+    "EditParams": "",
+    "controlWidth": 200
+   },
+   "isSQLExpression": true,
+   "UploadFolder": "files"
+  }
+ ]
+}

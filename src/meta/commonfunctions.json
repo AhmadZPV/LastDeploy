@@ -1,0 +1,836 @@
+{
+  "source": "include/commonfunctions.php",
+  "total": 166,
+  "functions": [
+    {
+      "name": "RunnerApply",
+      "line": 10,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "GetImageFromDB",
+      "line": 19,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "redirectToLogin",
+      "line": 148,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "getDirectoryFromURI",
+      "line": 182,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "getFilenameFromURI",
+      "line": 193,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "getLangFileName",
+      "line": 208,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "GetGlobalData",
+      "line": 218,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "DisplayMap",
+      "line": 229,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "checkTableName",
+      "line": 267,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "GetPasswordField",
+      "line": 623,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "GetUserNameField",
+      "line": 633,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "GetDisplayNameField",
+      "line": 643,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "GetEmailField",
+      "line": 653,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "GetTablesList",
+      "line": 662,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "GetTablesListWithoutSecurity",
+      "line": 1531,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "GetFullFieldName",
+      "line": 1721,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "GetChartType",
+      "line": 1747,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "GetShorteningForLargeText",
+      "line": 1795,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "AddLinkPrefix",
+      "line": 1806,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "GetTotalsForTime",
+      "line": 1816,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "GetTotals",
+      "line": 1828,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "DisplayNoImage",
+      "line": 1911,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "DisplayFile",
+      "line": 1921,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "my_strrpos",
+      "line": 1936,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "jsreplace",
+      "line": 1949,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "LogInfo",
+      "line": 1958,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "CheckImageExtension",
+      "line": 1973,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "html_special_decode",
+      "line": 1986,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "whereAdd",
+      "line": 2006,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "combineSQLCriteria",
+      "line": 2019,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "sqlMoreThan",
+      "line": 2033,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "sqlLessThan",
+      "line": 2039,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "sqlEqual",
+      "line": 2047,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "AddWhere",
+      "line": 2059,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "KeyWhere",
+      "line": 2091,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "GetRowCount",
+      "line": 2131,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "AddTop",
+      "line": 2154,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "AddTopDB2",
+      "line": 2170,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "AddTopIfx",
+      "line": 2177,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "AddRowNumber",
+      "line": 2185,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "applyDBrecordLimit",
+      "line": 2197,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "NeedQuotesNumeric",
+      "line": 2224,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "IsNumberType",
+      "line": 2241,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "IsFloatType",
+      "line": 2254,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "NeedQuotes",
+      "line": 2265,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "IsBinaryType",
+      "line": 2273,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "IsDateFieldType",
+      "line": 2284,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "IsDateTimeFieldType",
+      "line": 2295,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "IsTimeType",
+      "line": 2305,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "IsCharType",
+      "line": 2315,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "IsTextType",
+      "line": 2325,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "IsGuid",
+      "line": 2335,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "IsBigInt",
+      "line": 2342,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "ReadUserPermissions",
+      "line": 2356,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "GetUserPermissionsDynamic",
+      "line": 2451,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "IsAdmin",
+      "line": 2481,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "GetUserPermissions",
+      "line": 2499,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "isLogged",
+      "line": 2526,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "guestHasPermissions",
+      "line": 2540,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "AfterFBLogIn",
+      "line": 2558,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "SetAuthSessionData",
+      "line": 2590,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "DoLogin",
+      "line": 2763,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "CheckSecurity",
+      "line": 2795,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "CheckTablePermissions",
+      "line": 3727,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "pagetypeToPermissions",
+      "line": 3735,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "SecuritySQL",
+      "line": 3759,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "make_db_value",
+      "line": 4399,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "add_db_quotes",
+      "line": 4416,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "prepare_for_db",
+      "line": 4479,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "DeleteUploadedFiles",
+      "line": 4586,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "combinevalues",
+      "line": 4627,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "splitvalues",
+      "line": 4650,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "GetLookupFieldsIndexes",
+      "line": 4686,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "getLacaleAmPmForTimePicker",
+      "line": 4723,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "getValForTimePicker",
+      "line": 4768,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "my_stripos",
+      "line": 4797,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "my_str_ireplace",
+      "line": 4807,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "in_assoc_array",
+      "line": 4819,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "xmlencode",
+      "line": 4832,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "print_inline_array",
+      "line": 4844,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "checkpassword",
+      "line": 4862,
+      "status": "tested"
+    },
+    {
+      "name": "GetChartXML",
+      "line": 4893,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "isSecureProtocol",
+      "line": 4900,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "GetSiteUrl",
+      "line": 4914,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "GetFullSiteUrl",
+      "line": 4930,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "GetAuditObject",
+      "line": 4939,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "GetLockingObject",
+      "line": 4966,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "isEnableSection508",
+      "line": 4989,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "getJsValidatorName",
+      "line": 5002,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "SetLangVars",
+      "line": 5048,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "GetTableCaption",
+      "line": 5079,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "GetFieldByLabel",
+      "line": 5088,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "GetFieldLabel",
+      "line": 5115,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "GetFieldToolTip",
+      "line": 5128,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "GetFieldPlaceHolder",
+      "line": 5142,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "GetCustomLabel",
+      "line": 5155,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "mlang_getcurrentlang",
+      "line": 5164,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "isRTL",
+      "line": 5174,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "mlang_getlanglist",
+      "line": 5185,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "getMountNames",
+      "line": 5194,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "displayDetailsOn",
+      "line": 5216,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "showDetailTable",
+      "line": 5240,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "DoUpdateRecordSQL",
+      "line": 5256,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "DoInsertRecordSQL",
+      "line": 5302,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "DoInsertRecordSQLOnAdd",
+      "line": 5347,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "tableEventExists",
+      "line": 5402,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "add_nocache_headers",
+      "line": 5413,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "IsGuidString",
+      "line": 5423,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "IsStoredProcedure",
+      "line": 5465,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "MobileDetected",
+      "line": 5486,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "isIE8",
+      "line": 5578,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "mobileDeviceDetected",
+      "line": 5589,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "detectMobileDevice",
+      "line": 5598,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "IsMobile",
+      "line": 5603,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "isPageLayoutMobile",
+      "line": 5636,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "extractStyle",
+      "line": 5644,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "injectStyle",
+      "line": 5664,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "isSingleSign",
+      "line": 5681,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "generateUserCode",
+      "line": 5694,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "generatePassword",
+      "line": 5708,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "securityCheckFileName",
+      "line": 5725,
+      "status": "tested"
+    },
+    {
+      "name": "getOptionsForMultiUpload",
+      "line": 5741,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "getContentTypeByExtension",
+      "line": 5774,
+      "status": "tested"
+    },
+    {
+      "name": "common_runner_sms",
+      "line": 5822,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "getLatLngByAddr",
+      "line": 5868,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "isLoggedAsGuest",
+      "line": 5914,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "isGuestLoginAvailable",
+      "line": 5923,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "func_Override",
+      "line": 5934,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "printMFHandlerHeaders",
+      "line": 5948,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "GetFieldType",
+      "line": 5960,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "Label",
+      "line": 5980,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "getIconByFileType",
+      "line": 6001,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "isImageType",
+      "line": 6111,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "initArray",
+      "line": 6125,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "GetKeysArray",
+      "line": 6140,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "GetBaseScriptsForPage",
+      "line": 6161,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "printJSON",
+      "line": 6187,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "getIntervalLimitsExprs",
+      "line": 6202,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "import_error_handler",
+      "line": 6208,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "PrepareForExcel",
+      "line": 6214,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "countTotals",
+      "line": 6223,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "XMLNameEncode",
+      "line": 6245,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "getFileExtension",
+      "line": 6259,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "getDefaultConnection",
+      "line": 6272,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "isIOS",
+      "line": 6278,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "getMapProvider",
+      "line": 6287,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "getBingMapsLang",
+      "line": 6291,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "getDefaultLanguage",
+      "line": 6317,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "xt_showchart",
+      "line": 6379,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "setHomePage",
+      "line": 6499,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "getHomePage",
+      "line": 6506,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "printHomeLink",
+      "line": 6529,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "setProjectLogo",
+      "line": 6535,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "getProjectLogo",
+      "line": 6543,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "printProjectLogo",
+      "line": 6551,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "xt_pagetitlelabel",
+      "line": 6557,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "xt_label",
+      "line": 6570,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "xt_tooltip",
+      "line": 6575,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "xt_custom",
+      "line": 6580,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "xt_caption",
+      "line": 6585,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "xt_displaytabs",
+      "line": 6591,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "xt_buildeditcontrol",
+      "line": 6601,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "getArrayElementNC",
+      "line": 6642,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "getSessionElementNC",
+      "line": 6659,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "prepareLookupWhere",
+      "line": 6680,
+      "status": "not-applicable-unreferenced"
+    },
+    {
+      "name": "verifyRecaptchaResponse",
+      "line": 6689,
+      "status": "not-applicable-unreferenced"
+    }
+  ]
+}

@@ -1,0 +1,1946 @@
+{
+  "generatedFrom": "include/*_settings.php",
+  "counts": {
+    "settingsFiles": 172,
+    "entitiesWithLinks": 73,
+    "fieldsWithLinks": 175,
+    "dependentLookups": 68,
+    "parentFilters": 73,
+    "dependentFilters": 73,
+    "lookupUnique": 60
+  },
+  "entities": {
+    "Abrechnungsbericht": {
+      "Abrechnung": {
+        "dependentFilters": [
+          "Abrechnungskonto"
+        ],
+        "dependentFilterName": "Abrechnungskonto",
+        "LookupTable": "Abrechnungen",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      },
+      "Abrechnungskonto": {
+        "parentFilters": [
+          "Abrechnung"
+        ],
+        "parentFilterField": "Abrechnung",
+        "LookupTable": "Abrechnungskonten",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2
+      }
+    },
+    "Abrechnungsdruck_HK_ohne_WW": {
+      "Abrechnung": {
+        "dependentFilters": [
+          "Abrechnungskonto"
+        ],
+        "dependentFilterName": "Abrechnungskonto",
+        "LookupTable": "Abrechnungen",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      },
+      "Abrechnungskonto": {
+        "parentFilters": [
+          "Abrechnung"
+        ],
+        "parentFilterField": "Abrechnung",
+        "LookupTable": "Abrechnungskonten",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2
+      }
+    },
+    "Abrechnungsdruck_HK": {
+      "Abrechnung": {
+        "dependentFilters": [
+          "Abrechnungskonto"
+        ],
+        "dependentFilterName": "Abrechnungskonto",
+        "LookupTable": "Abrechnungen",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      },
+      "Abrechnungskonto": {
+        "parentFilters": [
+          "Abrechnung"
+        ],
+        "parentFilterField": "Abrechnung",
+        "LookupTable": "Abrechnungskonten",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2
+      }
+    },
+    "Abrechnungsdruck_Netto": {
+      "Abrechnung": {
+        "dependentFilters": [
+          "Abrechnungskonto"
+        ],
+        "dependentFilterName": "Abrechnungskonto",
+        "LookupTable": "Abrechnungen",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      },
+      "Abrechnungskonto": {
+        "parentFilters": [
+          "Abrechnung"
+        ],
+        "parentFilterField": "Abrechnung",
+        "LookupTable": "Abrechnungskonten",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2
+      }
+    },
+    "Abrechnungsdruck_individuell": {
+      "Abrechnung": {
+        "dependentFilters": [
+          "Abrechnungskonto"
+        ],
+        "dependentFilterName": "Abrechnungskonto",
+        "LookupTable": "Abrechnungen",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      },
+      "Abrechnungskonto": {
+        "parentFilters": [
+          "Abrechnung"
+        ],
+        "parentFilterField": "Abrechnung",
+        "LookupTable": "Abrechnungskonten",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2
+      }
+    },
+    "Abrechnungsdruck": {
+      "Abrechnung": {
+        "dependentFilters": [
+          "Abrechnungskonto"
+        ],
+        "dependentFilterName": "Abrechnungskonto",
+        "LookupTable": "Abrechnungen",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      },
+      "Abrechnungskonto": {
+        "parentFilters": [
+          "Abrechnung"
+        ],
+        "parentFilterField": "Abrechnung",
+        "LookupTable": "Abrechnungskonten",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2
+      }
+    },
+    "Abrechnungsempf_nger": {
+      "Objekt": {
+        "DependentLookups": [
+          "Einheit"
+        ],
+        "LookupTable": "Objekte",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      }
+    },
+    "Abrechnungskonten_Zeitliche_Verteilung": {
+      "Objekt": {
+        "DependentLookups": [
+          "Einheit"
+        ],
+        "LookupTable": "Objekte",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      }
+    },
+    "Abrechnungskonten": {
+      "Objekt": {
+        "DependentLookups": [
+          "Einheit"
+        ],
+        "LookupTable": "Objekte",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      }
+    },
+    "Adressen": {
+      "Datenherkunft": {
+        "LookupUnique": true,
+        "LookupTable": "Adressen",
+        "LinkField": "Datenherkunft",
+        "DisplayField": "Datenherkunft",
+        "LookupType": 2,
+        "LCType": 1
+      }
+    },
+    "Agenda_heute": {
+      "Zustaendigkeit": {
+        "LookupUnique": true,
+        "LookupTable": "Adressen",
+        "LinkField": "ID",
+        "DisplayField": "Kurzname",
+        "LookupType": 2
+      }
+    },
+    "Angebote": {
+      "Zahlungsbedingungen": {
+        "LookupUnique": true,
+        "LookupTable": "Verkauf",
+        "LinkField": "Zahlungsbedingungen",
+        "DisplayField": "Zahlungsbedingungen",
+        "LookupType": 2,
+        "LCType": 1
+      },
+      "Lieferbedingungen": {
+        "LookupUnique": true,
+        "LookupTable": "Verkauf",
+        "LinkField": "Lieferbedingungen",
+        "DisplayField": "Lieferbedingungen",
+        "LookupType": 2,
+        "LCType": 1
+      }
+    },
+    "Angebotsdruck": {
+      "Zahlungsbedingungen": {
+        "LookupUnique": true,
+        "LookupTable": "Verkauf",
+        "LinkField": "Zahlungsbedingungen",
+        "DisplayField": "Zahlungsbedingungen",
+        "LookupType": 2,
+        "LCType": 1
+      },
+      "Lieferbedingungen": {
+        "LookupUnique": true,
+        "LookupTable": "Verkauf",
+        "LinkField": "Lieferbedingungen",
+        "DisplayField": "Lieferbedingungen",
+        "LookupType": 2,
+        "LCType": 1
+      }
+    },
+    "Aufgaben": {
+      "Zustaendigkeit": {
+        "LookupUnique": true,
+        "LookupTable": "Adressen",
+        "LinkField": "ID",
+        "DisplayField": "Kurzname",
+        "LookupType": 2
+      },
+      "Objekt": {
+        "DependentLookups": [
+          "Einheit"
+        ],
+        "dependentFilters": [
+          "Einheit",
+          "Raum"
+        ],
+        "dependentFilterName": "Einheit",
+        "LookupTable": "Objekte",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      },
+      "Einheit": {
+        "DependentLookups": [
+          "Raum"
+        ],
+        "parentFilters": [
+          "Objekt"
+        ],
+        "dependentFilters": [
+          "Raum"
+        ],
+        "parentFilterField": "Objekt",
+        "dependentFilterName": "Raum",
+        "LookupTable": "Einheiten",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      },
+      "Raum": {
+        "parentFilters": [
+          "Einheit",
+          "Objekt"
+        ],
+        "parentFilterField": "Einheit",
+        "LookupTable": "Raeume",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      },
+      "Projekt": {
+        "LookupUnique": true,
+        "LookupTable": "Aufgaben",
+        "LinkField": "Projekt",
+        "DisplayField": "Projekt",
+        "LookupType": 2,
+        "LCType": 1
+      }
+    },
+    "Banking": {
+      "Buchfuehrung": {
+        "DependentLookups": [
+          "Konto",
+          "Gegenkonto"
+        ],
+        "LookupTable": "Buchfuehrungen",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      },
+      "Betreff": {
+        "LookupUnique": true,
+        "LookupTable": "Buchungen",
+        "LinkField": "Betreff",
+        "DisplayField": "Betreff",
+        "LookupType": 2,
+        "LCType": 1
+      }
+    },
+    "Buchungen": {
+      "Buchfuehrung": {
+        "DependentLookups": [
+          "Konto",
+          "Gegenkonto"
+        ],
+        "LookupTable": "Buchfuehrungen",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      },
+      "Betreff": {
+        "LookupUnique": true,
+        "LookupTable": "Buchungen",
+        "LinkField": "Betreff",
+        "DisplayField": "Betreff",
+        "LookupType": 2,
+        "LCType": 1
+      }
+    },
+    "Buchungs_bersicht": {
+      "Buchfuehrung": {
+        "DependentLookups": [
+          "Konto",
+          "Gegenkonto"
+        ],
+        "LookupTable": "Buchfuehrungen",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      },
+      "Betreff": {
+        "LookupUnique": true,
+        "LookupTable": "Buchungen",
+        "LinkField": "Betreff",
+        "DisplayField": "Betreff",
+        "LookupType": 2,
+        "LCType": 1
+      }
+    },
+    "Buchungsassistent": {
+      "Buchfuehrung": {
+        "DependentLookups": [
+          "Konto",
+          "Gegenkonto",
+          "Sollsplitt1_Konto",
+          "Habensplitt1_Konto",
+          "Sollsplitt2_Konto",
+          "Habensplitt2_Konto",
+          "Sollsplitt3_Konto",
+          "Habensplitt3_Konto",
+          "Sollsplitt4_Konto",
+          "Habensplitt4_Konto"
+        ],
+        "LookupTable": "Buchfuehrungen",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      }
+    },
+    "Buchungsbericht_Mwst": {
+      "Betreff": {
+        "LookupUnique": true,
+        "LookupTable": "Kontobuch",
+        "LinkField": "Betreff",
+        "DisplayField": "Betreff",
+        "LookupType": 2,
+        "LCType": 1
+      },
+      "Kategorie": {
+        "LookupUnique": true,
+        "LookupTable": "Kontobuch",
+        "LinkField": "Kategorie",
+        "DisplayField": "Kategorie",
+        "LookupType": 2,
+        "LCType": 1
+      },
+      "Abrechnung": {
+        "DependentLookups": [
+          "Abrechnungskonto"
+        ],
+        "dependentFilters": [
+          "Abrechnungskonto"
+        ],
+        "dependentFilterName": "Abrechnungskonto",
+        "LookupTable": "Abrechnungen",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2
+      },
+      "Abrechnungskonto": {
+        "parentFilters": [
+          "Abrechnung"
+        ],
+        "parentFilterField": "Abrechnung",
+        "LookupTable": "Abrechnungskonten",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2
+      }
+    },
+    "Buchungsbericht_Objekte": {
+      "Betreff": {
+        "LookupUnique": true,
+        "LookupTable": "Kontobuch",
+        "LinkField": "Betreff",
+        "DisplayField": "Betreff",
+        "LookupType": 2,
+        "LCType": 1
+      },
+      "Kategorie": {
+        "LookupUnique": true,
+        "LookupTable": "Kontobuch",
+        "LinkField": "Kategorie",
+        "DisplayField": "Kategorie",
+        "LookupType": 2,
+        "LCType": 1
+      },
+      "Abrechnung": {
+        "DependentLookups": [
+          "Abrechnungskonto"
+        ],
+        "LookupTable": "Abrechnungen",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2
+      }
+    },
+    "Buchungsbericht": {
+      "Betreff": {
+        "LookupUnique": true,
+        "LookupTable": "Kontobuch",
+        "LinkField": "Betreff",
+        "DisplayField": "Betreff",
+        "LookupType": 2,
+        "LCType": 1
+      },
+      "Kategorie": {
+        "LookupUnique": true,
+        "LookupTable": "Kontobuch",
+        "LinkField": "Kategorie",
+        "DisplayField": "Kategorie",
+        "LookupType": 2,
+        "LCType": 1
+      },
+      "Abrechnung": {
+        "DependentLookups": [
+          "Abrechnungskonto"
+        ],
+        "dependentFilters": [
+          "Abrechnungskonto"
+        ],
+        "dependentFilterName": "Abrechnungskonto",
+        "LookupTable": "Abrechnungen",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2
+      },
+      "Abrechnungskonto": {
+        "parentFilters": [
+          "Abrechnung"
+        ],
+        "parentFilterField": "Abrechnung",
+        "LookupTable": "Abrechnungskonten",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2
+      }
+    },
+    "DATEV_Export": {
+      "Buchfuehrung": {
+        "DependentLookups": [
+          "Konto",
+          "Gegenkonto"
+        ],
+        "LookupTable": "Buchfuehrungen",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      },
+      "Betreff": {
+        "LookupUnique": true,
+        "LookupTable": "Buchungen",
+        "LinkField": "Betreff",
+        "DisplayField": "Betreff",
+        "LookupType": 2,
+        "LCType": 1
+      }
+    },
+    "DirekteKosten": {
+      "Abrechnungskonto": {
+        "parentFilters": [
+          "Abrechnung"
+        ],
+        "parentFilterField": "Abrechnung",
+        "LookupTable": "Abrechnungskonten",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2
+      },
+      "Abrechnung": {
+        "DependentLookups": [
+          "Abrechnungskonto"
+        ],
+        "dependentFilters": [
+          "Abrechnungskonto"
+        ],
+        "dependentFilterName": "Abrechnungskonto",
+        "LookupTable": "Abrechnungen",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      },
+      "Buchfuehrung": {
+        "DependentLookups": [
+          "Buchfuehrungskonto"
+        ],
+        "LookupTable": "Buchfuehrungen",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      }
+    },
+    "Dokumente_Fotos": {
+      "Zustaendigkeit": {
+        "LookupUnique": true,
+        "LookupTable": "Adressen",
+        "LinkField": "ID",
+        "DisplayField": "Kurzname",
+        "LookupType": 2
+      },
+      "Objekt": {
+        "DependentLookups": [
+          "Einheit"
+        ],
+        "dependentFilters": [
+          "Einheit",
+          "Raum"
+        ],
+        "dependentFilterName": "Einheit",
+        "LookupTable": "Objekte",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      },
+      "Einheit": {
+        "DependentLookups": [
+          "Raum"
+        ],
+        "parentFilters": [
+          "Objekt"
+        ],
+        "dependentFilters": [
+          "Raum"
+        ],
+        "parentFilterField": "Objekt",
+        "dependentFilterName": "Raum",
+        "LookupTable": "Einheiten",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      },
+      "Raum": {
+        "parentFilters": [
+          "Einheit",
+          "Objekt"
+        ],
+        "parentFilterField": "Einheit",
+        "LookupTable": "Raeume",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      }
+    },
+    "Dokumente": {
+      "Zustaendigkeit": {
+        "LookupUnique": true,
+        "LookupTable": "Adressen",
+        "LinkField": "ID",
+        "DisplayField": "Kurzname",
+        "LookupType": 2
+      },
+      "Objekt": {
+        "DependentLookups": [
+          "Einheit"
+        ],
+        "dependentFilters": [
+          "Einheit",
+          "Raum"
+        ],
+        "dependentFilterName": "Einheit",
+        "LookupTable": "Objekte",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      },
+      "Einheit": {
+        "DependentLookups": [
+          "Raum"
+        ],
+        "parentFilters": [
+          "Objekt"
+        ],
+        "dependentFilters": [
+          "Raum"
+        ],
+        "parentFilterField": "Objekt",
+        "dependentFilterName": "Raum",
+        "LookupTable": "Einheiten",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      },
+      "Raum": {
+        "parentFilters": [
+          "Einheit",
+          "Objekt"
+        ],
+        "parentFilterField": "Einheit",
+        "LookupTable": "Raeume",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      }
+    },
+    "Einnahmeverteilung": {
+      "Betreff": {
+        "LookupUnique": true,
+        "LookupTable": "Kontobuch",
+        "LinkField": "Betreff",
+        "DisplayField": "Betreff",
+        "LookupType": 2,
+        "LCType": 1
+      },
+      "Kategorie": {
+        "LookupUnique": true,
+        "LookupTable": "Kontobuch",
+        "LinkField": "Kategorie",
+        "DisplayField": "Kategorie",
+        "LookupType": 2,
+        "LCType": 1
+      },
+      "Abrechnung": {
+        "DependentLookups": [
+          "Abrechnungskonto"
+        ],
+        "dependentFilters": [
+          "Abrechnungskonto"
+        ],
+        "dependentFilterName": "Abrechnungskonto",
+        "LookupTable": "Abrechnungen",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2
+      },
+      "Abrechnungskonto": {
+        "parentFilters": [
+          "Abrechnung"
+        ],
+        "parentFilterField": "Abrechnung",
+        "LookupTable": "Abrechnungskonten",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2
+      }
+    },
+    "Finanzbericht": {
+      "Kategorie": {
+        "DependentLookups": [
+          "Unterkategorie"
+        ],
+        "dependentFilters": [
+          "Unterkategorie"
+        ],
+        "dependentFilterName": "Unterkategorie",
+        "LookupUnique": true,
+        "LookupTable": "Klassifikationen Inventar",
+        "LinkField": "Hauptkategorie",
+        "DisplayField": "Hauptkategorie",
+        "LookupType": 2
+      },
+      "Unterkategorie": {
+        "parentFilters": [
+          "Kategorie"
+        ],
+        "parentFilterField": "Kategorie",
+        "LookupTable": "Klassifikationen Inventar",
+        "LinkField": "Unterkategorie",
+        "DisplayField": "Unterkategorie",
+        "LookupType": 2
+      }
+    },
+    "Flaechen": {
+      "Raum": {
+        "parentFilters": [
+          "Einheit",
+          "Objekt"
+        ],
+        "parentFilterField": "Einheit",
+        "LookupTable": "Raeume",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      },
+      "Einheit": {
+        "parentFilters": [
+          "Objekt"
+        ],
+        "dependentFilters": [
+          "Raum"
+        ],
+        "parentFilterField": "Objekt",
+        "dependentFilterName": "Raum"
+      },
+      "Objekt": {
+        "dependentFilters": [
+          "Einheit",
+          "Raum"
+        ],
+        "dependentFilterName": "Einheit"
+      }
+    },
+    "Gegenbuchungen": {
+      "Buchfuehrung": {
+        "DependentLookups": [
+          "Konto",
+          "Gegenkonto"
+        ],
+        "LookupTable": "Buchfuehrungen",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      },
+      "Betreff": {
+        "LookupUnique": true,
+        "LookupTable": "Buchungen",
+        "LinkField": "Betreff",
+        "DisplayField": "Betreff",
+        "LookupType": 2,
+        "LCType": 1
+      }
+    },
+    "Inventar_Bilder": {
+      "Kategorie": {
+        "DependentLookups": [
+          "Unterkategorie"
+        ],
+        "dependentFilters": [
+          "Unterkategorie"
+        ],
+        "dependentFilterName": "Unterkategorie",
+        "LookupUnique": true,
+        "LookupTable": "Klassifikationen Inventar",
+        "LinkField": "Hauptkategorie",
+        "DisplayField": "Hauptkategorie",
+        "LookupType": 2
+      },
+      "Unterkategorie": {
+        "parentFilters": [
+          "Kategorie"
+        ],
+        "parentFilterField": "Kategorie",
+        "LookupTable": "Klassifikationen Inventar",
+        "LinkField": "Unterkategorie",
+        "DisplayField": "Unterkategorie",
+        "LookupType": 2
+      }
+    },
+    "Inventar_Datenblatt": {
+      "Kategorie": {
+        "DependentLookups": [
+          "Unterkategorie"
+        ],
+        "dependentFilters": [
+          "Unterkategorie"
+        ],
+        "dependentFilterName": "Unterkategorie",
+        "LookupUnique": true,
+        "LookupTable": "Klassifikationen Inventar",
+        "LinkField": "Hauptkategorie",
+        "DisplayField": "Hauptkategorie",
+        "LookupType": 2
+      },
+      "Unterkategorie": {
+        "parentFilters": [
+          "Kategorie"
+        ],
+        "parentFilterField": "Kategorie",
+        "LookupTable": "Klassifikationen Inventar",
+        "LinkField": "Unterkategorie",
+        "DisplayField": "Unterkategorie",
+        "LookupType": 2
+      }
+    },
+    "Inventar_Etiketten": {
+      "Kategorie": {
+        "DependentLookups": [
+          "Unterkategorie"
+        ],
+        "dependentFilters": [
+          "Unterkategorie"
+        ],
+        "dependentFilterName": "Unterkategorie",
+        "LookupUnique": true,
+        "LookupTable": "Klassifikationen Inventar",
+        "LinkField": "Hauptkategorie",
+        "DisplayField": "Hauptkategorie",
+        "LookupType": 2
+      },
+      "Unterkategorie": {
+        "parentFilters": [
+          "Kategorie"
+        ],
+        "parentFilterField": "Kategorie",
+        "LookupTable": "Klassifikationen Inventar",
+        "LinkField": "Unterkategorie",
+        "DisplayField": "Unterkategorie",
+        "LookupType": 2
+      }
+    },
+    "Inventar_Stapelverarbeitung": {
+      "Kategorie": {
+        "DependentLookups": [
+          "Unterkategorie"
+        ],
+        "dependentFilters": [
+          "Unterkategorie"
+        ],
+        "dependentFilterName": "Unterkategorie",
+        "LookupUnique": true,
+        "LookupTable": "Klassifikationen Inventar",
+        "LinkField": "Hauptkategorie",
+        "DisplayField": "Hauptkategorie",
+        "LookupType": 2
+      },
+      "Unterkategorie": {
+        "parentFilters": [
+          "Kategorie"
+        ],
+        "parentFilterField": "Kategorie",
+        "LookupTable": "Klassifikationen Inventar",
+        "LinkField": "Unterkategorie",
+        "DisplayField": "Unterkategorie",
+        "LookupType": 2
+      }
+    },
+    "Inventar_nach_Kategorien": {
+      "Kategorie": {
+        "LookupUnique": true,
+        "LookupTable": "Klassifikationen Inventar",
+        "LinkField": "Hauptkategorie",
+        "DisplayField": "Hauptkategorie",
+        "LookupType": 2
+      }
+    },
+    "Inventar": {
+      "Kategorie": {
+        "DependentLookups": [
+          "Unterkategorie"
+        ],
+        "dependentFilters": [
+          "Unterkategorie"
+        ],
+        "dependentFilterName": "Unterkategorie",
+        "LookupUnique": true,
+        "LookupTable": "Klassifikationen Inventar",
+        "LinkField": "Hauptkategorie",
+        "DisplayField": "Hauptkategorie",
+        "LookupType": 2
+      },
+      "Unterkategorie": {
+        "parentFilters": [
+          "Kategorie"
+        ],
+        "parentFilterField": "Kategorie",
+        "LookupTable": "Klassifikationen Inventar",
+        "LinkField": "Unterkategorie",
+        "DisplayField": "Unterkategorie",
+        "LookupType": 2
+      },
+      "Raum": {
+        "parentFilters": [
+          "Einheit",
+          "Objekt"
+        ],
+        "parentFilterField": "Einheit",
+        "LookupTable": "Raeume",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      },
+      "Einheit": {
+        "DependentLookups": [
+          "Raum"
+        ],
+        "parentFilters": [
+          "Objekt"
+        ],
+        "dependentFilters": [
+          "Raum"
+        ],
+        "parentFilterField": "Objekt",
+        "dependentFilterName": "Raum",
+        "LookupTable": "Einheiten",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      },
+      "Objekt": {
+        "DependentLookups": [
+          "Einheit"
+        ],
+        "dependentFilters": [
+          "Einheit",
+          "Raum"
+        ],
+        "dependentFilterName": "Einheit",
+        "LookupTable": "Objekte",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      }
+    },
+    "Journal": {
+      "Buchfuehrung": {
+        "DependentLookups": [
+          "Konto",
+          "Gegenkonto"
+        ],
+        "LookupTable": "Buchfuehrungen",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      },
+      "Betreff": {
+        "LookupUnique": true,
+        "LookupTable": "Buchungen",
+        "LinkField": "Betreff",
+        "DisplayField": "Betreff",
+        "LookupType": 2,
+        "LCType": 1
+      }
+    },
+    "Kontenbl_tter": {
+      "Buchfuehrung": {
+        "dependentFilters": [
+          "Klasse",
+          "Gruppe",
+          "Konto"
+        ],
+        "dependentFilterName": "Klasse",
+        "LookupTable": "Buchfuehrungen",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      },
+      "Klasse": {
+        "parentFilters": [
+          "Buchfuehrung"
+        ],
+        "dependentFilters": [
+          "Gruppe",
+          "Konto"
+        ],
+        "parentFilterField": "Buchfuehrung",
+        "dependentFilterName": "Gruppe"
+      },
+      "Gruppe": {
+        "parentFilters": [
+          "Klasse",
+          "Buchfuehrung"
+        ],
+        "dependentFilters": [
+          "Konto"
+        ],
+        "parentFilterField": "Klasse",
+        "dependentFilterName": "Konto"
+      },
+      "Konto": {
+        "parentFilters": [
+          "Gruppe",
+          "Klasse",
+          "Buchfuehrung"
+        ],
+        "parentFilterField": "Gruppe"
+      }
+    },
+    "Kontenrahmen": {
+      "Klasse": {
+        "dependentFilters": [
+          "Gruppe"
+        ],
+        "dependentFilterName": "Gruppe"
+      },
+      "Gruppe": {
+        "parentFilters": [
+          "Klasse"
+        ],
+        "parentFilterField": "Klasse"
+      }
+    },
+    "Kontobuch_Auszug": {
+      "Betreff": {
+        "LookupUnique": true,
+        "LookupTable": "Kontobuch",
+        "LinkField": "Betreff",
+        "DisplayField": "Betreff",
+        "LookupType": 2,
+        "LCType": 1
+      },
+      "Kategorie": {
+        "LookupUnique": true,
+        "LookupTable": "Kontobuch",
+        "LinkField": "Kategorie",
+        "DisplayField": "Kategorie",
+        "LookupType": 2,
+        "LCType": 1
+      },
+      "Abrechnung": {
+        "DependentLookups": [
+          "Abrechnungskonto"
+        ],
+        "LookupTable": "Abrechnungen",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2
+      }
+    },
+    "Kontobuch_Banking": {
+      "Betreff": {
+        "LookupUnique": true,
+        "LookupTable": "Kontobuch",
+        "LinkField": "Betreff",
+        "DisplayField": "Betreff",
+        "LookupType": 2,
+        "LCType": 1
+      },
+      "Kategorie": {
+        "LookupUnique": true,
+        "LookupTable": "KlassifikationenKontobuch",
+        "LinkField": "Bezeichnung",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2
+      }
+    },
+    "Kontobuch": {
+      "Betreff": {
+        "LookupUnique": true,
+        "LookupTable": "Kontobuch",
+        "LinkField": "Betreff",
+        "DisplayField": "Betreff",
+        "LookupType": 2,
+        "LCType": 1
+      },
+      "Kategorie": {
+        "LookupUnique": true,
+        "LookupTable": "KlassifikationenKontobuch",
+        "LinkField": "Bezeichnung",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2
+      },
+      "Abrechnung": {
+        "DependentLookups": [
+          "Abrechnungskonto"
+        ],
+        "dependentFilters": [
+          "Abrechnungskonto"
+        ],
+        "dependentFilterName": "Abrechnungskonto",
+        "LookupTable": "Abrechnungen",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2
+      },
+      "Abrechnungskonto": {
+        "parentFilters": [
+          "Abrechnung"
+        ],
+        "parentFilterField": "Abrechnung",
+        "LookupTable": "Abrechnungskonten",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2
+      }
+    },
+    "Kontost_nde": {
+      "Betreff": {
+        "LookupUnique": true,
+        "LookupTable": "Kontobuch",
+        "LinkField": "Betreff",
+        "DisplayField": "Betreff",
+        "LookupType": 2,
+        "LCType": 1
+      },
+      "Kategorie": {
+        "LookupUnique": true,
+        "LookupTable": "Kontobuch",
+        "LinkField": "Kategorie",
+        "DisplayField": "Kategorie",
+        "LookupType": 2,
+        "LCType": 1
+      },
+      "Abrechnung": {
+        "DependentLookups": [
+          "Abrechnungskonto"
+        ],
+        "LookupTable": "Abrechnungen",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2
+      }
+    },
+    "Korrespondenz": {
+      "Objekt": {
+        "DependentLookups": [
+          "Einheit"
+        ],
+        "dependentFilters": [
+          "Einheit"
+        ],
+        "dependentFilterName": "Einheit",
+        "LookupTable": "Objekte",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      },
+      "Einheit": {
+        "parentFilters": [
+          "Objekt"
+        ],
+        "parentFilterField": "Objekt",
+        "LookupTable": "Einheiten",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      }
+    },
+    "Kosten": {
+      "Buchfuehrung": {
+        "DependentLookups": [
+          "Buchfuehrungskonto"
+        ],
+        "LookupTable": "Buchfuehrungen",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      }
+    },
+    "Kostenverteilung": {
+      "Betreff": {
+        "LookupUnique": true,
+        "LookupTable": "Kontobuch",
+        "LinkField": "Betreff",
+        "DisplayField": "Betreff",
+        "LookupType": 2,
+        "LCType": 1
+      },
+      "Kategorie": {
+        "LookupUnique": true,
+        "LookupTable": "Kontobuch",
+        "LinkField": "Kategorie",
+        "DisplayField": "Kategorie",
+        "LookupType": 2,
+        "LCType": 1
+      },
+      "Abrechnung": {
+        "DependentLookups": [
+          "Abrechnungskonto"
+        ],
+        "LookupTable": "Abrechnungen",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2
+      }
+    },
+    "Leistungen": {
+      "Kategorie": {
+        "LookupUnique": true,
+        "LookupTable": "Leistungen",
+        "LinkField": "Kategorie",
+        "DisplayField": "Kategorie",
+        "LookupType": 2,
+        "LCType": 1
+      },
+      "Einheit": {
+        "LookupUnique": true,
+        "LookupTable": "Leistungen",
+        "LinkField": "Einheit",
+        "DisplayField": "Einheit",
+        "LookupType": 2,
+        "LCType": 1
+      }
+    },
+    "Mengenbericht": {
+      "Kategorie": {
+        "DependentLookups": [
+          "Unterkategorie"
+        ],
+        "dependentFilters": [
+          "Unterkategorie"
+        ],
+        "dependentFilterName": "Unterkategorie",
+        "LookupUnique": true,
+        "LookupTable": "Klassifikationen Inventar",
+        "LinkField": "Hauptkategorie",
+        "DisplayField": "Hauptkategorie",
+        "LookupType": 2
+      },
+      "Unterkategorie": {
+        "parentFilters": [
+          "Kategorie"
+        ],
+        "parentFilterField": "Kategorie",
+        "LookupTable": "Klassifikationen Inventar",
+        "LinkField": "Unterkategorie",
+        "DisplayField": "Unterkategorie",
+        "LookupType": 2
+      }
+    },
+    "Mieterkonten_Saldenliste": {
+      "Abrechnung": {
+        "DependentLookups": [
+          "Abrechnungskonto"
+        ],
+        "dependentFilters": [
+          "Abrechnungskonto"
+        ],
+        "dependentFilterName": "Abrechnungskonto",
+        "LookupTable": "Abrechnungen",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2
+      },
+      "Abrechnungskonto": {
+        "parentFilters": [
+          "Abrechnung"
+        ],
+        "parentFilterField": "Abrechnung",
+        "LookupTable": "Abrechnungskonten",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2
+      }
+    },
+    "Mieterkonten": {
+      "Betreff": {
+        "LookupUnique": true,
+        "LookupTable": "Kontobuch",
+        "LinkField": "Betreff",
+        "DisplayField": "Betreff",
+        "LookupType": 2,
+        "LCType": 1
+      },
+      "Kategorie": {
+        "LookupUnique": true,
+        "LookupTable": "Kontobuch",
+        "LinkField": "Kategorie",
+        "DisplayField": "Kategorie",
+        "LookupType": 2,
+        "LCType": 1
+      },
+      "Abrechnung": {
+        "DependentLookups": [
+          "Abrechnungskonto"
+        ],
+        "dependentFilters": [
+          "Abrechnungskonto"
+        ],
+        "dependentFilterName": "Abrechnungskonto",
+        "LookupTable": "Abrechnungen",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2
+      },
+      "Abrechnungskonto": {
+        "parentFilters": [
+          "Abrechnung"
+        ],
+        "parentFilterField": "Abrechnung",
+        "LookupTable": "Abrechnungskonten",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2
+      }
+    },
+    "Navigator": {
+      "Kategorie": {
+        "LookupUnique": true,
+        "LookupTable": "Navigator",
+        "LinkField": "Kategorie",
+        "DisplayField": "Kategorie",
+        "LookupType": 2,
+        "LCType": 1
+      }
+    },
+    "Notizen": {
+      "Zustaendigkeit": {
+        "LookupUnique": true,
+        "LookupTable": "Adressen",
+        "LinkField": "ID",
+        "DisplayField": "Kurzname",
+        "LookupType": 2
+      },
+      "Objekt": {
+        "DependentLookups": [
+          "Einheit"
+        ],
+        "dependentFilters": [
+          "Einheit",
+          "Raum"
+        ],
+        "dependentFilterName": "Einheit",
+        "LookupTable": "Objekte",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      },
+      "Einheit": {
+        "DependentLookups": [
+          "Raum"
+        ],
+        "parentFilters": [
+          "Objekt"
+        ],
+        "dependentFilters": [
+          "Raum"
+        ],
+        "parentFilterField": "Objekt",
+        "dependentFilterName": "Raum",
+        "LookupTable": "Einheiten",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      },
+      "Raum": {
+        "parentFilters": [
+          "Einheit",
+          "Objekt"
+        ],
+        "parentFilterField": "Einheit",
+        "LookupTable": "Raeume",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      }
+    },
+    "P35aEStG_Druck": {
+      "Abrechnung": {
+        "dependentFilters": [
+          "Abrechnungskonto"
+        ],
+        "dependentFilterName": "Abrechnungskonto",
+        "LookupTable": "Abrechnungen",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      },
+      "Abrechnungskonto": {
+        "parentFilters": [
+          "Abrechnung"
+        ],
+        "parentFilterField": "Abrechnung",
+        "LookupTable": "Abrechnungskonten",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2
+      }
+    },
+    "Protokolle": {
+      "Objekt": {
+        "DependentLookups": [
+          "Einheit"
+        ],
+        "dependentFilters": [
+          "Einheit"
+        ],
+        "dependentFilterName": "Einheit",
+        "LookupTable": "Objekte",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      },
+      "Einheit": {
+        "parentFilters": [
+          "Objekt"
+        ],
+        "parentFilterField": "Objekt",
+        "LookupTable": "Einheiten",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2
+      }
+    },
+    "Raeume": {
+      "Objekt": {
+        "DependentLookups": [
+          "Einheit"
+        ],
+        "dependentFilters": [
+          "Einheit"
+        ],
+        "dependentFilterName": "Einheit",
+        "LookupTable": "Objekte",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      },
+      "Einheit": {
+        "parentFilters": [
+          "Objekt"
+        ],
+        "parentFilterField": "Objekt",
+        "LookupTable": "Einheiten",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      }
+    },
+    "Rechnungen": {
+      "Zahlungsbedingungen": {
+        "LookupUnique": true,
+        "LookupTable": "Verkauf",
+        "LinkField": "Zahlungsbedingungen",
+        "DisplayField": "Zahlungsbedingungen",
+        "LookupType": 2,
+        "LCType": 1
+      },
+      "Lieferbedingungen": {
+        "LookupUnique": true,
+        "LookupTable": "Verkauf",
+        "LinkField": "Lieferbedingungen",
+        "DisplayField": "Lieferbedingungen",
+        "LookupType": 2,
+        "LCType": 1
+      }
+    },
+    "Ruecklagebuchungen": {
+      "Abrechnung": {
+        "DependentLookups": [
+          "Abrechnungskonto"
+        ],
+        "dependentFilters": [
+          "Abrechnungskonto"
+        ],
+        "dependentFilterName": "Abrechnungskonto",
+        "LookupTable": "Abrechnungen",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      },
+      "Abrechnungskonto": {
+        "parentFilters": [
+          "Abrechnung"
+        ],
+        "parentFilterField": "Abrechnung",
+        "LookupTable": "Abrechnungskonten",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2
+      },
+      "Buchfuehrung": {
+        "DependentLookups": [
+          "Buchfuehrungskonto"
+        ],
+        "LookupTable": "Buchfuehrungen",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      }
+    },
+    "Saldenliste": {
+      "Klasse": {
+        "dependentFilters": [
+          "Gruppe"
+        ],
+        "dependentFilterName": "Gruppe"
+      },
+      "Gruppe": {
+        "parentFilters": [
+          "Klasse"
+        ],
+        "parentFilterField": "Klasse"
+      }
+    },
+    "Schluessel": {
+      "Raum": {
+        "parentFilters": [
+          "Einheit",
+          "Objekt"
+        ],
+        "parentFilterField": "Einheit",
+        "LookupTable": "Raeume",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      },
+      "Einheit": {
+        "parentFilters": [
+          "Objekt"
+        ],
+        "dependentFilters": [
+          "Raum"
+        ],
+        "parentFilterField": "Objekt",
+        "dependentFilterName": "Raum"
+      },
+      "Objekt": {
+        "dependentFilters": [
+          "Einheit",
+          "Raum"
+        ],
+        "dependentFilterName": "Einheit"
+      }
+    },
+    "Schnellbuchungen": {
+      "Buchfuehrung": {
+        "DependentLookups": [
+          "Konto",
+          "Gegenkonto"
+        ],
+        "LookupTable": "Buchfuehrungen",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 1
+      },
+      "Betreff": {
+        "LookupUnique": true,
+        "LookupTable": "Buchungen",
+        "LinkField": "Betreff",
+        "DisplayField": "Betreff",
+        "LookupType": 2,
+        "LCType": 1
+      }
+    },
+    "Serienbrief": {
+      "Abrechnungskonto": {
+        "parentFilters": [
+          "Abrechnung"
+        ],
+        "parentFilterField": "Abrechnung"
+      },
+      "Abrechnung": {
+        "dependentFilters": [
+          "Abrechnungskonto"
+        ],
+        "dependentFilterName": "Abrechnungskonto",
+        "LookupTable": "Abrechnungen",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      },
+      "Einheit": {
+        "parentFilters": [
+          "Objekt"
+        ],
+        "parentFilterField": "Objekt"
+      },
+      "Objekt": {
+        "dependentFilters": [
+          "Einheit"
+        ],
+        "dependentFilterName": "Einheit"
+      }
+    },
+    "Summen_und_Salden_kurz": {
+      "Buchfuehrung": {
+        "dependentFilters": [
+          "Klasse",
+          "Konto"
+        ],
+        "dependentFilterName": "Klasse",
+        "LookupTable": "Buchfuehrungen",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      },
+      "Klasse": {
+        "parentFilters": [
+          "Buchfuehrung"
+        ],
+        "dependentFilters": [
+          "Konto"
+        ],
+        "parentFilterField": "Buchfuehrung",
+        "dependentFilterName": "Konto"
+      },
+      "Konto": {
+        "parentFilters": [
+          "Klasse",
+          "Buchfuehrung"
+        ],
+        "parentFilterField": "Klasse"
+      }
+    },
+    "Summen_und_Salden": {
+      "Buchfuehrung": {
+        "dependentFilters": [
+          "Klasse",
+          "Konto"
+        ],
+        "dependentFilterName": "Klasse",
+        "LookupTable": "Buchfuehrungen",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      },
+      "Klasse": {
+        "parentFilters": [
+          "Buchfuehrung"
+        ],
+        "dependentFilters": [
+          "Konto"
+        ],
+        "parentFilterField": "Buchfuehrung",
+        "dependentFilterName": "Konto"
+      },
+      "Konto": {
+        "parentFilters": [
+          "Klasse",
+          "Buchfuehrung"
+        ],
+        "parentFilterField": "Klasse"
+      }
+    },
+    "Termine_diese_Woche": {
+      "Zustaendigkeit": {
+        "LookupUnique": true,
+        "LookupTable": "Adressen",
+        "LinkField": "ID",
+        "DisplayField": "Kurzname",
+        "LookupType": 2
+      }
+    },
+    "Termine_dieser_Monat": {
+      "Zustaendigkeit": {
+        "LookupUnique": true,
+        "LookupTable": "Adressen",
+        "LinkField": "ID",
+        "DisplayField": "Kurzname",
+        "LookupType": 2
+      }
+    },
+    "Termine": {
+      "Zustaendigkeit": {
+        "LookupUnique": true,
+        "LookupTable": "Adressen",
+        "LinkField": "ID",
+        "DisplayField": "Kurzname",
+        "LookupType": 2
+      }
+    },
+    "Terminliste": {
+      "Zustaendigkeit": {
+        "LookupUnique": true,
+        "LookupTable": "Adressen",
+        "LinkField": "ID",
+        "DisplayField": "Kurzname",
+        "LookupType": 2
+      }
+    },
+    "Verbrauchsanteile": {
+      "Objekt": {
+        "DependentLookups": [
+          "Einheit"
+        ],
+        "LookupTable": "Objekte",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      }
+    },
+    "Verkauf_Serienbrief_Steuerdatei": {
+      "Zahlungsbedingungen": {
+        "LookupUnique": true,
+        "LookupTable": "Verkauf",
+        "LinkField": "Zahlungsbedingungen",
+        "DisplayField": "Zahlungsbedingungen",
+        "LookupType": 2,
+        "LCType": 1
+      },
+      "Lieferbedingungen": {
+        "LookupUnique": true,
+        "LookupTable": "Verkauf",
+        "LinkField": "Lieferbedingungen",
+        "DisplayField": "Lieferbedingungen",
+        "LookupType": 2,
+        "LCType": 1
+      }
+    },
+    "Verkauf": {
+      "Zahlungsbedingungen": {
+        "LookupUnique": true,
+        "LookupTable": "Verkauf",
+        "LinkField": "Zahlungsbedingungen",
+        "DisplayField": "Zahlungsbedingungen",
+        "LookupType": 2,
+        "LCType": 1
+      },
+      "Lieferbedingungen": {
+        "LookupUnique": true,
+        "LookupTable": "Verkauf",
+        "LinkField": "Lieferbedingungen",
+        "DisplayField": "Lieferbedingungen",
+        "LookupType": 2,
+        "LCType": 1
+      },
+      "Objekt": {
+        "DependentLookups": [
+          "Einheit"
+        ],
+        "dependentFilters": [
+          "Einheit"
+        ],
+        "dependentFilterName": "Einheit",
+        "LookupTable": "Objekte",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      },
+      "Einheit": {
+        "parentFilters": [
+          "Objekt"
+        ],
+        "parentFilterField": "Objekt",
+        "LookupTable": "Einheiten",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      }
+    },
+    "Vertraege": {
+      "Objekt": {
+        "DependentLookups": [
+          "Einheit"
+        ],
+        "dependentFilters": [
+          "Einheit",
+          "Raum"
+        ],
+        "dependentFilterName": "Einheit",
+        "LookupTable": "Objekte",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      },
+      "Einheit": {
+        "DependentLookups": [
+          "Raum"
+        ],
+        "parentFilters": [
+          "Objekt"
+        ],
+        "dependentFilters": [
+          "Raum"
+        ],
+        "parentFilterField": "Objekt",
+        "dependentFilterName": "Raum",
+        "LookupTable": "Einheiten",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2
+      },
+      "Raum": {
+        "parentFilters": [
+          "Einheit",
+          "Objekt"
+        ],
+        "parentFilterField": "Einheit",
+        "LookupTable": "Raeume",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2
+      },
+      "Art": {
+        "LookupUnique": true,
+        "LookupTable": "Vertraege",
+        "LinkField": "Art",
+        "DisplayField": "Art",
+        "LookupType": 2,
+        "LCType": 1
+      }
+    },
+    "Vorauszahlungen": {
+      "Abrechnung": {
+        "DependentLookups": [
+          "Abrechnungskonto"
+        ],
+        "dependentFilters": [
+          "Abrechnungskonto"
+        ],
+        "dependentFilterName": "Abrechnungskonto",
+        "LookupTable": "Abrechnungen",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      },
+      "Abrechnungskonto": {
+        "parentFilters": [
+          "Abrechnung"
+        ],
+        "parentFilterField": "Abrechnung",
+        "LookupTable": "Abrechnungskonten",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2
+      },
+      "Buchfuehrung": {
+        "DependentLookups": [
+          "Buchfuehrungskonto"
+        ],
+        "LookupTable": "Buchfuehrungen",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      }
+    },
+    "Zaehler": {
+      "Raum": {
+        "parentFilters": [
+          "Einheit",
+          "Objekt"
+        ],
+        "parentFilterField": "Einheit",
+        "LookupTable": "Raeume",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      },
+      "Einheit": {
+        "parentFilters": [
+          "Objekt"
+        ],
+        "dependentFilters": [
+          "Raum"
+        ],
+        "parentFilterField": "Objekt",
+        "dependentFilterName": "Raum"
+      },
+      "Objekt": {
+        "dependentFilters": [
+          "Einheit",
+          "Raum"
+        ],
+        "dependentFilterName": "Einheit"
+      }
+    },
+    "Zaehlerstaende_melden": {
+      "Raum": {
+        "parentFilters": [
+          "Einheit",
+          "Objekt"
+        ],
+        "parentFilterField": "Einheit",
+        "LookupTable": "Raeume",
+        "LinkField": "ID",
+        "DisplayField": "Bezeichnung",
+        "LookupType": 2,
+        "LCType": 2
+      },
+      "Einheit": {
+        "parentFilters": [
+          "Objekt"
+        ],
+        "dependentFilters": [
+          "Raum"
+        ],
+        "parentFilterField": "Objekt",
+        "dependentFilterName": "Raum"
+      },
+      "Objekt": {
+        "dependentFilters": [
+          "Einheit",
+          "Raum"
+        ],
+        "dependentFilterName": "Einheit"
+      }
+    }
+  }
+}
