@@ -28,14 +28,33 @@ export function checkPassword(pwd, policy = POLICY) {
   return true;
 }
 
-/** German messages from classes/changepwdpage.php:248-268 */
-export function passwordErrors(pwd, policy = POLICY) {
+/**
+ * Messages from classes/changepwdpage.php:248-268.
+ * `lang` selects the wording; the rules themselves are unchanged.
+ */
+const PWD_MSG = {
+  de: {
+    len: (n) => 'das Passwort mu\u00df mindestens ' + n + ' Zeichen lang sein',
+    uniq: (n) => 'das Passwort mu\u00df ' + n + ' eindeutige Zeichen enthalten',
+    digits: (n) => 'Passwort mu\u00df ' + n + ' Ziffern oder Sonderzeichen enthalten',
+    case: () => 'Passwort mu\u00df Buchstaben in Gro\u00df- und Kleinschrift enthalten',
+  },
+  en: {
+    len: (n) => 'The password must be at least ' + n + ' characters long',
+    uniq: (n) => 'The password must contain ' + n + ' unique characters',
+    digits: (n) => 'The password must contain ' + n + ' digits or special characters',
+    case: () => 'The password must contain both upper and lower case letters',
+  },
+};
+
+export function passwordErrors(pwd, policy = POLICY, lang = 'de') {
+  const m = PWD_MSG[lang === 'en' ? 'en' : 'de'];
   const s = String(pwd == null ? '' : pwd);
   const out = [];
   if (s.length < policy.pwdMinLength)
-    out.push('das Passwort mu\u00df mindestens ' + policy.pwdMinLength + ' Zeichen lang sein');
+    out.push(m.len(policy.pwdMinLength));
   if (policy.pwdUnique && new Set(s).size < policy.pwdUnique)
-    out.push('das Passwort mu\u00df ' + policy.pwdUnique + ' eindeutige Zeichen enthalten');
+    out.push(m.uniq(policy.pwdUnique));
   let lower = 0, upper = 0, digit = 0;
   for (const c of s) {
     if (c >= 'a' && c <= 'z') lower++;
@@ -43,9 +62,9 @@ export function passwordErrors(pwd, policy = POLICY) {
     else digit++;
   }
   if (policy.pwdDigits && digit < policy.pwdDigits)
-    out.push('Passwort mu\u00df ' + policy.pwdDigits + ' Ziffern oder Sonderzeichen enthalten');
+    out.push(m.digits(policy.pwdDigits));
   if (!lower || !upper)
-    out.push('Passwort mu\u00df Buchstaben in Gro\u00df- und Kleinschrift enthalten');
+    out.push(m.case());
   return out;
 }
 

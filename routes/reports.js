@@ -57,6 +57,7 @@ export default function createReportRouter({ prisma, canAccess, teamWhere } = {}
 
   router.get('/:entity/crosstab', async (req, res) => {
     try {
+      const lang = res.locals?.lang;
       const { meta, rows, error } = await loadRows(req, req.params.entity);
       if (error) return res.status(error.code).render('error', { message: error.message });
 
@@ -71,7 +72,7 @@ export default function createReportRouter({ prisma, canAccess, teamWhere } = {}
       }
 
       const cross = buildCrosstab(rows, rowField, colField, measure, agg);
-      const head = ['<th>' + esc(fieldLabel(meta, rowField)) + '</th>',
+      const head = ['<th>' + esc(fieldLabel(meta, rowField, lang)) + '</th>',
         ...cross.colKeys.map((c) => '<th>' + esc(c) + '</th>'),
         '<th>Summe</th>'].join('');
       const body = cross.matrix.map((m) =>
@@ -93,6 +94,7 @@ export default function createReportRouter({ prisma, canAccess, teamWhere } = {}
 
   router.get('/:entity', async (req, res) => {
     try {
+      const lang = res.locals?.lang;
       const { meta, columns, rows, error } = await loadRows(req, req.params.entity);
       if (error) return res.status(error.code).render('error', { message: error.message });
 
@@ -104,7 +106,7 @@ export default function createReportRouter({ prisma, canAccess, teamWhere } = {}
 
       if (!group) {
         // flat report: the plain table, no grouping requested
-        const head = columns.map((c) => '<th>' + esc(fieldLabel(meta, c.meta)) + '</th>').join('');
+        const head = columns.map((c) => '<th>' + esc(fieldLabel(meta, c.meta, lang)) + '</th>').join('');
         const body = rows.map((r) =>
           '<tr>' + columns.map((c) => '<td>' + esc(formatCell(r[c.prismaField], c.meta)) + '</td>').join('')
           + '</tr>').join('\n');
@@ -113,8 +115,8 @@ export default function createReportRouter({ prisma, canAccess, teamWhere } = {}
       }
 
       const grouped = buildGrouped(rows, [group], measures, agg);
-      const head = ['<th>' + esc(fieldLabel(meta, group)) + '</th>',
-        ...measures.map((m) => '<th>' + esc(fieldLabel(meta, m)) + '</th>')].join('');
+      const head = ['<th>' + esc(fieldLabel(meta, group, lang)) + '</th>',
+        ...measures.map((m) => '<th>' + esc(fieldLabel(meta, m, lang)) + '</th>')].join('');
       const body = grouped.groups.map((g) =>
         '<tr><td>' + esc(g.key) + '</td>'
         + measures.map((m) => '<td>' + (g.totals[m] == null ? '' : esc(formatCell(g.totals[m]))) + '</td>').join('')

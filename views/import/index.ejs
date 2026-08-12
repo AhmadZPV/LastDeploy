@@ -3,7 +3,9 @@
 <section>
   <form method="post" action="/import/<%= entity %>/preview" enctype="multipart/form-data">
     <%- include('../partials/csrf') %>
-    <div class="form-group"><label><%= t('file') %></label><input type="file" name="file" accept=".csv,.txt,.xlsx,.xlsm,.vcf,.ics" required></div>
+    <div class="form-stack">
+      <div class="form-group"><label for="import-file"><%= t('file') %></label><input id="import-file" type="file" name="file" accept=".csv,.txt,.xlsx,.xlsm,.vcf,.ics" required></div>
+    </div>
     <p class="muted"><%= t('csv_fields') %> <%= fields.map(tx).join(', ') %></p>
     <button class="btn btn-primary"><%= t('preview') %></button>
   </form>
@@ -14,7 +16,9 @@
   <tbody><% for (const row of preview.rows) { %><tr><% for (const value of Object.values(row)) { %><td><%= value %></td><% } %></tr><% } %></tbody></table></div>
   <form method="post" action="/import/<%= entity %>/commit">
     <%- include('../partials/csrf') %><input type="hidden" name="token" value="<%= preview.token %>">
-    <div class="form-group"><label><%= t('duplicates') %></label><select name="duplicates"><option value="skip"><%= t('skip_id') %></option><option value="id"><%= t('update_id') %></option></select></div>
+    <div class="form-stack">
+      <div class="form-group"><label for="import-duplicates"><%= t('duplicates') %></label><select id="import-duplicates" name="duplicates"><option value="skip"><%= t('skip_id') %></option><option value="id"><%= t('update_id') %></option></select></div>
+    </div>
     <button class="btn btn-primary"><%= t('start_import') %></button>
   </form>
 </section>

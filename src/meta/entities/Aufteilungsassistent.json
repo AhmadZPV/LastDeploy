@@ -1,500 +1,516 @@
 {
- "entity": "Aufteilungsassistent",
- "shortName": "Aufteilungsassistent",
- "baseTable": "Aufteilungsassistent",
- "isVirtual": false,
- "ownerField": "Team",
- "sql": {
-  "strOrderBy": "",
-  "sqlHead": "SELECT `ID`,  Bezeichnung,  \t`Von`,  \t`Teilung`,  \t`Bis`,  \t`Betrag`,  \t@Zeitraum1 := datediff(Teilung,Von) as Zeitraum1,    @Zeitraum2 := datediff(Bis, Teilung) as Zeitraum2,    @Gesamtzeitraum := datediff(Bis,Von) as Gesamtzeitraum,  @Anteil1 :=@Zeitraum1/@Gesamtzeitraum,  @Anteil2 :=@Zeitraum2/@Gesamtzeitraum,  round(Betrag*@Anteil1,2) as Betrag1,  round(Betrag*@Anteil2,2) as Betrag2,  Team",
-  "sqlFrom": "FROM `Aufteilungsassistent`",
-  "sqlWhere": "",
-  "sqlTail": ""
- },
- "keys": [
-  "ID"
- ],
- "pageSize": 20,
- "capabilities": {
-  "list": true,
-  "view": false,
-  "add": true,
-  "edit": true,
-  "export": false,
-  "print": false,
-  "search": false,
-  "masterList": true
- },
- "fieldSets": {
-  "list": [
-   "Bezeichnung",
-   "Von",
-   "Teilung",
-   "Bis",
-   "Betrag",
-   "Betrag1",
-   "Betrag2"
+  "entity": "Aufteilungsassistent",
+  "shortName": "Aufteilungsassistent",
+  "baseTable": "Aufteilungsassistent",
+  "isVirtual": false,
+  "ownerField": "Team",
+  "sql": {
+    "strOrderBy": "",
+    "sqlHead": "SELECT `ID`,  Bezeichnung,  \t`Von`,  \t`Teilung`,  \t`Bis`,  \t`Betrag`,  \t@Zeitraum1 := datediff(Teilung,Von) as Zeitraum1,    @Zeitraum2 := datediff(Bis, Teilung) as Zeitraum2,    @Gesamtzeitraum := datediff(Bis,Von) as Gesamtzeitraum,  @Anteil1 :=@Zeitraum1/@Gesamtzeitraum,  @Anteil2 :=@Zeitraum2/@Gesamtzeitraum,  round(Betrag*@Anteil1,2) as Betrag1,  round(Betrag*@Anteil2,2) as Betrag2,  Team",
+    "sqlFrom": "FROM `Aufteilungsassistent`",
+    "sqlWhere": "",
+    "sqlTail": ""
+  },
+  "keys": [
+    "ID"
   ],
-  "add": [
-   "Bezeichnung",
-   "Von",
-   "Teilung",
-   "Bis",
-   "Betrag"
-  ],
-  "edit": [
-   "Bezeichnung",
-   "Von",
-   "Teilung",
-   "Bis",
-   "Betrag"
-  ],
-  "masterList": [
-   "ID",
-   "Bezeichnung",
-   "Von",
-   "Teilung",
-   "Bis",
-   "Betrag",
-   "Zeitraum1",
-   "Zeitraum2",
-   "Gesamtzeitraum",
-   "@Anteil1 :=@Zeitraum1/@Gesamtzeitraum",
-   "@Anteil2 :=@Zeitraum2/@Gesamtzeitraum",
-   "Betrag1",
-   "Betrag2",
-   "Team"
+  "pageSize": 20,
+  "capabilities": {
+    "list": true,
+    "view": false,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": false,
+    "masterList": true
+  },
+  "fieldSets": {
+    "list": [
+      "Bezeichnung",
+      "Von",
+      "Teilung",
+      "Bis",
+      "Betrag",
+      "Betrag1",
+      "Betrag2"
+    ],
+    "add": [
+      "Bezeichnung",
+      "Von",
+      "Teilung",
+      "Bis",
+      "Betrag"
+    ],
+    "edit": [
+      "Bezeichnung",
+      "Von",
+      "Teilung",
+      "Bis",
+      "Betrag"
+    ],
+    "masterList": [
+      "ID",
+      "Bezeichnung",
+      "Von",
+      "Teilung",
+      "Bis",
+      "Betrag",
+      "Zeitraum1",
+      "Zeitraum2",
+      "Gesamtzeitraum",
+      "@Anteil1 :=@Zeitraum1/@Gesamtzeitraum",
+      "@Anteil2 :=@Zeitraum2/@Gesamtzeitraum",
+      "Betrag1",
+      "Betrag2",
+      "Team"
+    ]
+  },
+  "export": {
+    "exportTo": null,
+    "exportDelimiter": null,
+    "exportFormatting": null
+  },
+  "print": {
+    "printerPageOrientation": 0,
+    "nPrinterPageScale": 100,
+    "nPrinterSplitRecords": 40,
+    "nPrinterPDFSplitRecords": 40
+  },
+  "tabs": [],
+  "labels": {
+    "German": {
+      "ID": "ID",
+      "Von": "Von",
+      "Teilung": "Teilung",
+      "Bis": "Bis",
+      "Betrag": "Betrag",
+      "Zeitraum1": "Zeitraum1",
+      "Zeitraum2": "Zeitraum2",
+      "Gesamtzeitraum": "Gesamtzeitraum",
+      "_Anteil1____Zeitraum1__Gesamtzeitraum": "@Anteil1 :=@Zeitraum1/@Gesamtzeitraum",
+      "_Anteil2____Zeitraum2__Gesamtzeitraum": "@Anteil2 :=@Zeitraum2/@Gesamtzeitraum",
+      "Betrag1": "Betrag1",
+      "Betrag2": "Betrag2",
+      "Bezeichnung": "Bezeichnung",
+      "Team": "Team"
+    },
+    "English": {
+      "ID": "ID",
+      "Von": "From",
+      "Teilung": "Division",
+      "Bis": "To",
+      "Betrag": "Amount",
+      "Zeitraum1": "Period1",
+      "Zeitraum2": "Period2",
+      "Gesamtzeitraum": "Totalzeitraum",
+      "_Anteil1____Zeitraum1__Gesamtzeitraum": "@Anteil1 :=@Zeitraum1/@Gesamtzeitraum",
+      "_Anteil2____Zeitraum2__Gesamtzeitraum": "@Anteil2 :=@Zeitraum2/@Gesamtzeitraum",
+      "Betrag1": "Amount1",
+      "Betrag2": "Amount2",
+      "Bezeichnung": "Description",
+      "Team": "Team"
+    }
+  },
+  "fields": [
+    {
+      "name": "ID",
+      "type": 3,
+      "index": 1,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "AutoInc": true,
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Bezeichnung",
+      "type": 200,
+      "index": 2,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Von",
+      "type": 7,
+      "index": 3,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "DateEditType": 5,
+        "InitialYearFactor": 3,
+        "LastYearFactor": 10,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Teilung",
+      "type": 7,
+      "index": 4,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "DateEditType": 5,
+        "InitialYearFactor": 3,
+        "LastYearFactor": 10,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Bis",
+      "type": 7,
+      "index": 5,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "DateEditType": 5,
+        "InitialYearFactor": 3,
+        "LastYearFactor": 10,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Betrag",
+      "type": 14,
+      "index": 6,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Zeitraum1",
+      "type": 3,
+      "index": 7,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Zeitraum2",
+      "type": 3,
+      "index": 8,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Gesamtzeitraum",
+      "type": 3,
+      "index": 9,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "@Anteil1 :=@Zeitraum1/@Gesamtzeitraum",
+      "type": 5,
+      "index": 10,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "@Anteil2 :=@Zeitraum2/@Gesamtzeitraum",
+      "type": 5,
+      "index": 11,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Betrag1",
+      "type": 5,
+      "index": 12,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Betrag2",
+      "type": 5,
+      "index": 13,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Team",
+      "type": 200,
+      "index": 14,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    }
   ]
- },
- "export": {
-  "exportTo": null,
-  "exportDelimiter": null,
-  "exportFormatting": null
- },
- "print": {
-  "printerPageOrientation": 0,
-  "nPrinterPageScale": 100,
-  "nPrinterSplitRecords": 40,
-  "nPrinterPDFSplitRecords": 40
- },
- "tabs": [],
- "labels": {
-  "German": {
-   "ID": "ID",
-   "Von": "Von",
-   "Teilung": "Teilung",
-   "Bis": "Bis",
-   "Betrag": "Betrag",
-   "Zeitraum1": "Zeitraum1",
-   "Zeitraum2": "Zeitraum2",
-   "Gesamtzeitraum": "Gesamtzeitraum",
-   "_Anteil1____Zeitraum1__Gesamtzeitraum": "@Anteil1 :=@Zeitraum1/@Gesamtzeitraum",
-   "_Anteil2____Zeitraum2__Gesamtzeitraum": "@Anteil2 :=@Zeitraum2/@Gesamtzeitraum",
-   "Betrag1": "Betrag1",
-   "Betrag2": "Betrag2",
-   "Bezeichnung": "Bezeichnung",
-   "Team": "Team"
-  }
- },
- "fields": [
-  {
-   "name": "ID",
-   "type": 3,
-   "index": 1,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "AutoInc": true,
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Bezeichnung",
-   "type": 200,
-   "index": 2,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Von",
-   "type": 7,
-   "index": 3,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "DateEditType": 5,
-    "InitialYearFactor": 3,
-    "LastYearFactor": 10,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Teilung",
-   "type": 7,
-   "index": 4,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "DateEditType": 5,
-    "InitialYearFactor": 3,
-    "LastYearFactor": 10,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Bis",
-   "type": 7,
-   "index": 5,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "DateEditType": 5,
-    "InitialYearFactor": 3,
-    "LastYearFactor": 10,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Betrag",
-   "type": 14,
-   "index": 6,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Zeitraum1",
-   "type": 3,
-   "index": 7,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Zeitraum2",
-   "type": 3,
-   "index": 8,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Gesamtzeitraum",
-   "type": 3,
-   "index": 9,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "@Anteil1 :=@Zeitraum1/@Gesamtzeitraum",
-   "type": 5,
-   "index": 10,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "@Anteil2 :=@Zeitraum2/@Gesamtzeitraum",
-   "type": 5,
-   "index": 11,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Betrag1",
-   "type": 5,
-   "index": 12,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Betrag2",
-   "type": 5,
-   "index": 13,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Team",
-   "type": 200,
-   "index": 14,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  }
- ]
 }

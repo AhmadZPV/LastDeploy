@@ -158,6 +158,11 @@ async function populateSession(req) {
 app.use(async (req, res, next) => {
   if (req.session?.user) await populateSession(req);
   const i18n = createTranslator(langFromRequest(req));
+  req.notify = (type, key, params = {}) => {
+    if (req.session) req.session.notification = { type, key, params };
+  };
+  res.locals.notification = req.session?.notification || null;
+  if (req.session?.notification) delete req.session.notification;
   res.locals.lang = i18n.lang;
   res.locals.t = i18n.t;
   res.locals.tx = i18n.tx;
@@ -346,6 +351,7 @@ app.post('/login', async (req, res) => {
       ID: user.ID, Benutzername: user.Benutzername, Name: user.Name,
       Gruppe: user.Gruppe, Team: user.Team || 'Team',
     };
+    req.notify('success', 'welcome', { name: user.Name || user.Benutzername });
     res.redirect('/');
   });
 });

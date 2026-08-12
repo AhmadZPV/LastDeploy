@@ -1,401 +1,412 @@
 {
- "entity": "Leistungen",
- "shortName": "Leistungen",
- "baseTable": "Leistungen",
- "isVirtual": false,
- "ownerField": "Team",
- "sql": {
-  "strOrderBy": "ORDER BY Bezeichnung",
-  "sqlHead": "SELECT ID,  Bezeichnung,  Kategorie,  Beschreibung,  Einheit,  Preis,  Leistungscode,  Mwst_Satz,  Team",
-  "sqlFrom": "FROM Leistungen",
-  "sqlWhere": "",
-  "sqlTail": ""
- },
- "keys": [
-  "ID"
- ],
- "pageSize": 20,
- "capabilities": {
-  "list": true,
-  "view": true,
-  "add": true,
-  "edit": true,
-  "export": true,
-  "print": true,
-  "search": true,
-  "masterList": true
- },
- "fieldSets": {
-  "list": [
-   "Kategorie",
-   "Leistungscode",
-   "Bezeichnung",
-   "Einheit",
-   "Preis"
+  "entity": "Leistungen",
+  "shortName": "Leistungen",
+  "baseTable": "Leistungen",
+  "isVirtual": false,
+  "ownerField": "Team",
+  "sql": {
+    "strOrderBy": "ORDER BY Bezeichnung",
+    "sqlHead": "SELECT ID,  Bezeichnung,  Kategorie,  Beschreibung,  Einheit,  Preis,  Leistungscode,  Mwst_Satz,  Team",
+    "sqlFrom": "FROM Leistungen",
+    "sqlWhere": "",
+    "sqlTail": ""
+  },
+  "keys": [
+    "ID"
   ],
-  "view": [
-   "Kategorie",
-   "Leistungscode",
-   "Bezeichnung",
-   "Einheit",
-   "Mwst_Satz",
-   "Preis",
-   "Beschreibung"
-  ],
-  "add": [
-   "Kategorie",
-   "Leistungscode",
-   "Bezeichnung",
-   "Einheit",
-   "Mwst_Satz",
-   "Preis",
-   "Beschreibung"
-  ],
-  "edit": [
-   "Kategorie",
-   "Leistungscode",
-   "Bezeichnung",
-   "Einheit",
-   "Mwst_Satz",
-   "Preis",
-   "Beschreibung"
-  ],
-  "export": [
-   "ID",
-   "Kategorie",
-   "Leistungscode",
-   "Bezeichnung",
-   "Einheit",
-   "Mwst_Satz",
-   "Preis",
-   "Beschreibung"
-  ],
-  "print": [
-   "Kategorie",
-   "Leistungscode",
-   "Bezeichnung",
-   "Einheit",
-   "Mwst_Satz",
-   "Preis",
-   "Beschreibung"
-  ],
-  "search": [
-   "ID",
-   "Kategorie",
-   "Leistungscode",
-   "Bezeichnung",
-   "Einheit",
-   "Mwst_Satz",
-   "Preis",
-   "Beschreibung"
-  ],
-  "masterList": [
-   "ID",
-   "Team",
-   "Kategorie",
-   "Leistungscode",
-   "Bezeichnung",
-   "Einheit",
-   "Mwst_Satz",
-   "Preis",
-   "Beschreibung"
+  "pageSize": 20,
+  "capabilities": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+  },
+  "fieldSets": {
+    "list": [
+      "Kategorie",
+      "Leistungscode",
+      "Bezeichnung",
+      "Einheit",
+      "Preis"
+    ],
+    "view": [
+      "Kategorie",
+      "Leistungscode",
+      "Bezeichnung",
+      "Einheit",
+      "Mwst_Satz",
+      "Preis",
+      "Beschreibung"
+    ],
+    "add": [
+      "Kategorie",
+      "Leistungscode",
+      "Bezeichnung",
+      "Einheit",
+      "Mwst_Satz",
+      "Preis",
+      "Beschreibung"
+    ],
+    "edit": [
+      "Kategorie",
+      "Leistungscode",
+      "Bezeichnung",
+      "Einheit",
+      "Mwst_Satz",
+      "Preis",
+      "Beschreibung"
+    ],
+    "export": [
+      "ID",
+      "Kategorie",
+      "Leistungscode",
+      "Bezeichnung",
+      "Einheit",
+      "Mwst_Satz",
+      "Preis",
+      "Beschreibung"
+    ],
+    "print": [
+      "Kategorie",
+      "Leistungscode",
+      "Bezeichnung",
+      "Einheit",
+      "Mwst_Satz",
+      "Preis",
+      "Beschreibung"
+    ],
+    "search": [
+      "ID",
+      "Kategorie",
+      "Leistungscode",
+      "Bezeichnung",
+      "Einheit",
+      "Mwst_Satz",
+      "Preis",
+      "Beschreibung"
+    ],
+    "masterList": [
+      "ID",
+      "Team",
+      "Kategorie",
+      "Leistungscode",
+      "Bezeichnung",
+      "Einheit",
+      "Mwst_Satz",
+      "Preis",
+      "Beschreibung"
+    ]
+  },
+  "export": {
+    "exportTo": true,
+    "exportDelimiter": ",",
+    "exportFormatting": 2
+  },
+  "print": {
+    "printerPageOrientation": 1,
+    "nPrinterPageScale": 100,
+    "nPrinterSplitRecords": 40,
+    "nPrinterPDFSplitRecords": 40
+  },
+  "tabs": [],
+  "labels": {
+    "German": {
+      "ID": "ID",
+      "Bezeichnung": "Bezeichnung",
+      "Kategorie": "Kategorie",
+      "Beschreibung": "Beschreibung",
+      "Einheit": "Einheit",
+      "Preis": "Preis",
+      "Leistungscode": "Leistungscode",
+      "Mwst_Satz": "Mwst Satz",
+      "Team": "Team"
+    },
+    "English": {
+      "ID": "ID",
+      "Bezeichnung": "Description",
+      "Kategorie": "Category",
+      "Beschreibung": "Description",
+      "Einheit": "Unit",
+      "Preis": "Price",
+      "Leistungscode": "Servicescode",
+      "Mwst_Satz": "VAT Rate",
+      "Team": "Team"
+    }
+  },
+  "fields": [
+    {
+      "name": "ID",
+      "type": 3,
+      "index": 1,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "AutoInc": true,
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Bezeichnung",
+      "type": 200,
+      "index": 2,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Kategorie",
+      "type": 200,
+      "index": 3,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Leistungen",
+        "freeInput": true,
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 1,
+        "LookupUnique": true,
+        "LinkField": "Kategorie",
+        "LinkFieldType": 0,
+        "DisplayField": "Kategorie",
+        "LookupOrderBy": "Kategorie",
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Beschreibung",
+      "type": 201,
+      "index": 4,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "nRows": 100,
+        "nCols": 200,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Einheit",
+      "type": 200,
+      "index": 5,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Leistungen",
+        "freeInput": true,
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 1,
+        "LookupUnique": true,
+        "LinkField": "Einheit",
+        "LinkFieldType": 0,
+        "DisplayField": "Einheit",
+        "LookupOrderBy": "Einheit",
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Preis",
+      "type": 14,
+      "index": 6,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Leistungscode",
+      "type": 200,
+      "index": 7,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200,
+        "denyDuplicates": true
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Mwst_Satz",
+      "type": 3,
+      "index": 8,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Wertelisten",
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 4,
+        "HorizontalLookup": true,
+        "LinkField": "Eintrag",
+        "LinkFieldType": 0,
+        "DisplayField": "Eintrag",
+        "LookupWhereCode": true,
+        "LookupOrderBy": "Eintrag",
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Team",
+      "type": 200,
+      "index": 9,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    }
   ]
- },
- "export": {
-  "exportTo": true,
-  "exportDelimiter": ",",
-  "exportFormatting": 2
- },
- "print": {
-  "printerPageOrientation": 1,
-  "nPrinterPageScale": 100,
-  "nPrinterSplitRecords": 40,
-  "nPrinterPDFSplitRecords": 40
- },
- "tabs": [],
- "labels": {
-  "German": {
-   "ID": "ID",
-   "Bezeichnung": "Bezeichnung",
-   "Kategorie": "Kategorie",
-   "Beschreibung": "Beschreibung",
-   "Einheit": "Einheit",
-   "Preis": "Preis",
-   "Leistungscode": "Leistungscode",
-   "Mwst_Satz": "Mwst Satz",
-   "Team": "Team"
-  }
- },
- "fields": [
-  {
-   "name": "ID",
-   "type": 3,
-   "index": 1,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "AutoInc": true,
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Bezeichnung",
-   "type": 200,
-   "index": 2,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Kategorie",
-   "type": 200,
-   "index": 3,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Leistungen",
-    "freeInput": true,
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 1,
-    "LookupUnique": true,
-    "LinkField": "Kategorie",
-    "LinkFieldType": 0,
-    "DisplayField": "Kategorie",
-    "LookupOrderBy": "Kategorie",
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Beschreibung",
-   "type": 201,
-   "index": 4,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "nRows": 100,
-    "nCols": 200,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Einheit",
-   "type": 200,
-   "index": 5,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Leistungen",
-    "freeInput": true,
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 1,
-    "LookupUnique": true,
-    "LinkField": "Einheit",
-    "LinkFieldType": 0,
-    "DisplayField": "Einheit",
-    "LookupOrderBy": "Einheit",
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Preis",
-   "type": 14,
-   "index": 6,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Leistungscode",
-   "type": 200,
-   "index": 7,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200,
-    "denyDuplicates": true
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Mwst_Satz",
-   "type": 3,
-   "index": 8,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Wertelisten",
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 4,
-    "HorizontalLookup": true,
-    "LinkField": "Eintrag",
-    "LinkFieldType": 0,
-    "DisplayField": "Eintrag",
-    "LookupWhereCode": true,
-    "LookupOrderBy": "Eintrag",
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Team",
-   "type": 200,
-   "index": 9,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  }
- ]
 }

@@ -1,750 +1,771 @@
 {
- "entity": "Termine",
- "shortName": "Termine",
- "baseTable": "Termine",
- "isVirtual": false,
- "ownerField": "Team",
- "sql": {
-  "strOrderBy": "ORDER BY Concat(Datum, ' ', Uhrzeit) DESC",
-  "sqlHead": "SELECT Titel,  Datum,  Uhrzeit,  Wiedervorlage,  Zustaendigkeit,  Adresse,  Dauer,  Ganztags,  Concat(Datum, ' ', Uhrzeit) AS Termin,  Bemerkungen,  Benutzer,  ID,  Inventar,  Kalender,  Concat(Date_format(Datum, '%m')-1,Date_format(Datum,'%Y')) AS Monat,  Etikett,  Kalenderwoche,  Teilnehmer,  Team",
-  "sqlFrom": "FROM Termine",
-  "sqlWhere": "",
-  "sqlTail": ""
- },
- "keys": [
-  "ID"
- ],
- "pageSize": 20,
- "capabilities": {
-  "list": true,
-  "view": true,
-  "add": true,
-  "edit": true,
-  "export": true,
-  "print": false,
-  "search": true,
-  "masterList": true
- },
- "fieldSets": {
-  "list": [
-   "Titel",
-   "Kalender",
-   "Etikett",
-   "Datum",
-   "Kalenderwoche",
-   "Uhrzeit",
-   "Dauer",
-   "Ganztags",
-   "Adresse",
-   "Inventar",
-   "Zustaendigkeit"
+  "entity": "Termine",
+  "shortName": "Termine",
+  "baseTable": "Termine",
+  "isVirtual": false,
+  "ownerField": "Team",
+  "sql": {
+    "strOrderBy": "ORDER BY Concat(Datum, ' ', Uhrzeit) DESC",
+    "sqlHead": "SELECT Titel,  Datum,  Uhrzeit,  Wiedervorlage,  Zustaendigkeit,  Adresse,  Dauer,  Ganztags,  Concat(Datum, ' ', Uhrzeit) AS Termin,  Bemerkungen,  Benutzer,  ID,  Inventar,  Kalender,  Concat(Date_format(Datum, '%m')-1,Date_format(Datum,'%Y')) AS Monat,  Etikett,  Kalenderwoche,  Teilnehmer,  Team",
+    "sqlFrom": "FROM Termine",
+    "sqlWhere": "",
+    "sqlTail": ""
+  },
+  "keys": [
+    "ID"
   ],
-  "view": [
-   "Titel",
-   "Kalender",
-   "Etikett",
-   "Datum",
-   "Kalenderwoche",
-   "Uhrzeit",
-   "Dauer",
-   "Ganztags",
-   "Wiedervorlage",
-   "Adresse",
-   "Inventar",
-   "Zustaendigkeit",
-   "Teilnehmer",
-   "Bemerkungen",
-   "Benutzer"
-  ],
-  "add": [
-   "Titel",
-   "Kalender",
-   "Etikett",
-   "Datum",
-   "Kalenderwoche",
-   "Uhrzeit",
-   "Dauer",
-   "Ganztags",
-   "Wiedervorlage",
-   "Adresse",
-   "Inventar",
-   "Zustaendigkeit",
-   "Teilnehmer",
-   "Bemerkungen",
-   "Benutzer"
-  ],
-  "edit": [
-   "Titel",
-   "Kalender",
-   "Etikett",
-   "Datum",
-   "Kalenderwoche",
-   "Uhrzeit",
-   "Dauer",
-   "Ganztags",
-   "Wiedervorlage",
-   "Adresse",
-   "Inventar",
-   "Zustaendigkeit",
-   "Teilnehmer",
-   "Bemerkungen",
-   "Benutzer"
-  ],
-  "export": [
-   "ID",
-   "Titel",
-   "Kalender",
-   "Etikett",
-   "Datum",
-   "Kalenderwoche",
-   "Uhrzeit",
-   "Dauer",
-   "Ganztags",
-   "Wiedervorlage",
-   "Termin",
-   "Adresse",
-   "Inventar",
-   "Zustaendigkeit",
-   "Teilnehmer",
-   "Bemerkungen",
-   "Benutzer"
-  ],
-  "search": [
-   "Monat",
-   "Titel",
-   "Kalender",
-   "Datum",
-   "Kalenderwoche",
-   "Uhrzeit",
-   "Dauer",
-   "Ganztags",
-   "Wiedervorlage",
-   "Adresse",
-   "Inventar",
-   "Zustaendigkeit",
-   "Teilnehmer",
-   "Bemerkungen"
-  ],
-  "masterList": [
-   "ID",
-   "Monat",
-   "Team",
-   "Titel",
-   "Kalender",
-   "Etikett",
-   "Datum",
-   "Kalenderwoche",
-   "Uhrzeit",
-   "Dauer",
-   "Ganztags",
-   "Wiedervorlage",
-   "Termin",
-   "Adresse",
-   "Inventar",
-   "Zustaendigkeit",
-   "Teilnehmer",
-   "Bemerkungen",
-   "Benutzer"
+  "pageSize": 20,
+  "capabilities": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": false,
+    "search": true,
+    "masterList": true
+  },
+  "fieldSets": {
+    "list": [
+      "Titel",
+      "Kalender",
+      "Etikett",
+      "Datum",
+      "Kalenderwoche",
+      "Uhrzeit",
+      "Dauer",
+      "Ganztags",
+      "Adresse",
+      "Inventar",
+      "Zustaendigkeit"
+    ],
+    "view": [
+      "Titel",
+      "Kalender",
+      "Etikett",
+      "Datum",
+      "Kalenderwoche",
+      "Uhrzeit",
+      "Dauer",
+      "Ganztags",
+      "Wiedervorlage",
+      "Adresse",
+      "Inventar",
+      "Zustaendigkeit",
+      "Teilnehmer",
+      "Bemerkungen",
+      "Benutzer"
+    ],
+    "add": [
+      "Titel",
+      "Kalender",
+      "Etikett",
+      "Datum",
+      "Kalenderwoche",
+      "Uhrzeit",
+      "Dauer",
+      "Ganztags",
+      "Wiedervorlage",
+      "Adresse",
+      "Inventar",
+      "Zustaendigkeit",
+      "Teilnehmer",
+      "Bemerkungen",
+      "Benutzer"
+    ],
+    "edit": [
+      "Titel",
+      "Kalender",
+      "Etikett",
+      "Datum",
+      "Kalenderwoche",
+      "Uhrzeit",
+      "Dauer",
+      "Ganztags",
+      "Wiedervorlage",
+      "Adresse",
+      "Inventar",
+      "Zustaendigkeit",
+      "Teilnehmer",
+      "Bemerkungen",
+      "Benutzer"
+    ],
+    "export": [
+      "ID",
+      "Titel",
+      "Kalender",
+      "Etikett",
+      "Datum",
+      "Kalenderwoche",
+      "Uhrzeit",
+      "Dauer",
+      "Ganztags",
+      "Wiedervorlage",
+      "Termin",
+      "Adresse",
+      "Inventar",
+      "Zustaendigkeit",
+      "Teilnehmer",
+      "Bemerkungen",
+      "Benutzer"
+    ],
+    "search": [
+      "Monat",
+      "Titel",
+      "Kalender",
+      "Datum",
+      "Kalenderwoche",
+      "Uhrzeit",
+      "Dauer",
+      "Ganztags",
+      "Wiedervorlage",
+      "Adresse",
+      "Inventar",
+      "Zustaendigkeit",
+      "Teilnehmer",
+      "Bemerkungen"
+    ],
+    "masterList": [
+      "ID",
+      "Monat",
+      "Team",
+      "Titel",
+      "Kalender",
+      "Etikett",
+      "Datum",
+      "Kalenderwoche",
+      "Uhrzeit",
+      "Dauer",
+      "Ganztags",
+      "Wiedervorlage",
+      "Termin",
+      "Adresse",
+      "Inventar",
+      "Zustaendigkeit",
+      "Teilnehmer",
+      "Bemerkungen",
+      "Benutzer"
+    ]
+  },
+  "export": {
+    "exportTo": true,
+    "exportDelimiter": ",",
+    "exportFormatting": 2
+  },
+  "print": {
+    "printerPageOrientation": 1,
+    "nPrinterPageScale": 100,
+    "nPrinterSplitRecords": 40,
+    "nPrinterPDFSplitRecords": 40
+  },
+  "tabs": [],
+  "labels": {
+    "German": {
+      "Titel": "Titel",
+      "Datum": "Datum",
+      "Uhrzeit": "Uhrzeit",
+      "Wiedervorlage": "Wiedervorlage",
+      "Zustaendigkeit": "Zuständigkeit",
+      "Adresse": "Adresse",
+      "Dauer": "Dauer",
+      "Ganztags": "Ganztags",
+      "Termin": "Termin",
+      "Bemerkungen": "Bemerkungen",
+      "Benutzer": "Benutzer",
+      "ID": "ID",
+      "Kalender": "Kalender",
+      "Monat": "Monat",
+      "Etikett": "Etikett",
+      "Kalenderwoche": "KW",
+      "Teilnehmer": "Teilnehmer",
+      "Inventar": "Inventar",
+      "Team": "Team"
+    },
+    "English": {
+      "Titel": "Title",
+      "Datum": "Date",
+      "Uhrzeit": "Time",
+      "Wiedervorlage": "Follow-ups",
+      "Zustaendigkeit": "Responsibility",
+      "Adresse": "Address",
+      "Dauer": "Dauer",
+      "Ganztags": "Ganztags",
+      "Termin": "Appointment",
+      "Bemerkungen": "Notes",
+      "Benutzer": "Users",
+      "ID": "ID",
+      "Kalender": "Calendar",
+      "Monat": "Month",
+      "Etikett": "Etikett",
+      "Kalenderwoche": "KW",
+      "Teilnehmer": "Teilnehmer",
+      "Inventar": "Inventory",
+      "Team": "Team"
+    }
+  },
+  "fields": [
+    {
+      "name": "Titel",
+      "type": 200,
+      "index": 1,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Datum",
+      "type": 7,
+      "index": 2,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "DateEditType": 13,
+        "InitialYearFactor": 3,
+        "LastYearFactor": 10,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Uhrzeit",
+      "type": 134,
+      "index": 3,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "ViewFormat": "Custom"
+      },
+      "edit": {
+        "EditFormat": "Time",
+        "useTimePicker": 1,
+        "minutes": 1,
+        "showSeconds": 0,
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Wiedervorlage",
+      "type": 7,
+      "index": 4,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "DateEditType": 13,
+        "InitialYearFactor": 3,
+        "LastYearFactor": 10,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Zustaendigkeit",
+      "type": 3,
+      "index": 5,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Adressen",
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 0,
+        "LookupUnique": true,
+        "LinkField": "ID",
+        "LinkFieldType": 0,
+        "DisplayField": "Kurzname",
+        "LookupWhereCode": true,
+        "LookupOrderBy": "Kurzname",
+        "SelectSize": 1,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Adresse",
+      "type": 3,
+      "index": 6,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Kerndaten",
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 2,
+        "LinkField": "ID",
+        "LinkFieldType": 0,
+        "DisplayField": "Kurzname",
+        "LookupOrderBy": "Kurzname",
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Dauer",
+      "type": 3,
+      "index": 7,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 0,
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "number",
+        "EditParams": "",
+        "controlWidth": 120,
+        "autoUpdatable": true
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Ganztags",
+      "type": 16,
+      "index": 8,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "ViewFormat": "Checkbox"
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Termin",
+      "type": 200,
+      "index": 9,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Bemerkungen",
+      "type": 201,
+      "index": 10,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "ViewFormat": "HTML"
+      },
+      "edit": {
+        "UseRTE": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "nRows": 400,
+        "nCols": 600,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Benutzer",
+      "type": 200,
+      "index": 11,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200,
+        "autoUpdatable": true
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "ID",
+      "type": 3,
+      "index": 12,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "number",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "AutoInc": true,
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Inventar",
+      "type": 3,
+      "index": 13,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Inventar",
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 2,
+        "LinkField": "ID",
+        "LinkFieldType": 0,
+        "DisplayField": "Bezeichnung",
+        "LookupOrderBy": "Bezeichnung",
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Kalender",
+      "type": 200,
+      "index": 14,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Wertelisten",
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 0,
+        "LinkField": "Eintrag",
+        "LinkFieldType": 0,
+        "DisplayField": "Eintrag",
+        "LookupWhereCode": true,
+        "LookupOrderBy": "Eintrag",
+        "AllowToAdd": true,
+        "SelectSize": 1,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Monat",
+      "type": 200,
+      "index": 15,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Etikett",
+      "type": 200,
+      "index": 16,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "ViewFormat": "Custom"
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Farben",
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 2,
+        "LinkField": "Farbwert",
+        "LinkFieldType": 0,
+        "DisplayField": "Farbname",
+        "LookupOrderBy": "Farbwert",
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Kalenderwoche",
+      "type": 3,
+      "index": 17,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 0,
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Teilnehmer",
+      "type": 200,
+      "index": 18,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Kerndaten",
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 2,
+        "LinkField": "ID",
+        "LinkFieldType": 0,
+        "DisplayField": "Kurzname",
+        "LookupOrderBy": "Kurzname",
+        "Multiselect": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Team",
+      "type": 200,
+      "index": 19,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    }
   ]
- },
- "export": {
-  "exportTo": true,
-  "exportDelimiter": ",",
-  "exportFormatting": 2
- },
- "print": {
-  "printerPageOrientation": 1,
-  "nPrinterPageScale": 100,
-  "nPrinterSplitRecords": 40,
-  "nPrinterPDFSplitRecords": 40
- },
- "tabs": [],
- "labels": {
-  "German": {
-   "Titel": "Titel",
-   "Datum": "Datum",
-   "Uhrzeit": "Uhrzeit",
-   "Wiedervorlage": "Wiedervorlage",
-   "Zustaendigkeit": "Zuständigkeit",
-   "Adresse": "Adresse",
-   "Dauer": "Dauer",
-   "Ganztags": "Ganztags",
-   "Termin": "Termin",
-   "Bemerkungen": "Bemerkungen",
-   "Benutzer": "Benutzer",
-   "ID": "ID",
-   "Kalender": "Kalender",
-   "Monat": "Monat",
-   "Etikett": "Etikett",
-   "Kalenderwoche": "KW",
-   "Teilnehmer": "Teilnehmer",
-   "Inventar": "Inventar",
-   "Team": "Team"
-  }
- },
- "fields": [
-  {
-   "name": "Titel",
-   "type": 200,
-   "index": 1,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Datum",
-   "type": 7,
-   "index": 2,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "DateEditType": 13,
-    "InitialYearFactor": 3,
-    "LastYearFactor": 10,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Uhrzeit",
-   "type": 134,
-   "index": 3,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "ViewFormat": "Custom"
-   },
-   "edit": {
-    "EditFormat": "Time",
-    "useTimePicker": 1,
-    "minutes": 1,
-    "showSeconds": 0,
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Wiedervorlage",
-   "type": 7,
-   "index": 4,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "DateEditType": 13,
-    "InitialYearFactor": 3,
-    "LastYearFactor": 10,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Zustaendigkeit",
-   "type": 3,
-   "index": 5,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Adressen",
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 0,
-    "LookupUnique": true,
-    "LinkField": "ID",
-    "LinkFieldType": 0,
-    "DisplayField": "Kurzname",
-    "LookupWhereCode": true,
-    "LookupOrderBy": "Kurzname",
-    "SelectSize": 1,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Adresse",
-   "type": 3,
-   "index": 6,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Kerndaten",
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 2,
-    "LinkField": "ID",
-    "LinkFieldType": 0,
-    "DisplayField": "Kurzname",
-    "LookupOrderBy": "Kurzname",
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Dauer",
-   "type": 3,
-   "index": 7,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 0,
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "number",
-    "EditParams": "",
-    "controlWidth": 120,
-    "autoUpdatable": true
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Ganztags",
-   "type": 16,
-   "index": 8,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "ViewFormat": "Checkbox"
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Termin",
-   "type": 200,
-   "index": 9,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Bemerkungen",
-   "type": 201,
-   "index": 10,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "ViewFormat": "HTML"
-   },
-   "edit": {
-    "UseRTE": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "nRows": 400,
-    "nCols": 600,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Benutzer",
-   "type": 200,
-   "index": 11,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200,
-    "autoUpdatable": true
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "ID",
-   "type": 3,
-   "index": 12,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "number",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "AutoInc": true,
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Inventar",
-   "type": 3,
-   "index": 13,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Inventar",
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 2,
-    "LinkField": "ID",
-    "LinkFieldType": 0,
-    "DisplayField": "Bezeichnung",
-    "LookupOrderBy": "Bezeichnung",
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Kalender",
-   "type": 200,
-   "index": 14,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Wertelisten",
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 0,
-    "LinkField": "Eintrag",
-    "LinkFieldType": 0,
-    "DisplayField": "Eintrag",
-    "LookupWhereCode": true,
-    "LookupOrderBy": "Eintrag",
-    "AllowToAdd": true,
-    "SelectSize": 1,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Monat",
-   "type": 200,
-   "index": 15,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Etikett",
-   "type": 200,
-   "index": 16,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "ViewFormat": "Custom"
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Farben",
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 2,
-    "LinkField": "Farbwert",
-    "LinkFieldType": 0,
-    "DisplayField": "Farbname",
-    "LookupOrderBy": "Farbwert",
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Kalenderwoche",
-   "type": 3,
-   "index": 17,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 0,
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Teilnehmer",
-   "type": 200,
-   "index": 18,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Kerndaten",
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 2,
-    "LinkField": "ID",
-    "LinkFieldType": 0,
-    "DisplayField": "Kurzname",
-    "LookupOrderBy": "Kurzname",
-    "Multiselect": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Team",
-   "type": 200,
-   "index": 19,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  }
- ]
 }

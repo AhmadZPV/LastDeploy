@@ -1,1123 +1,1160 @@
 {
- "entity": "Objekte_Vermietung_Verkauf",
- "shortName": "Objekte_Vermietung_Verkauf",
- "baseTable": "Objekte",
- "isVirtual": true,
- "ownerField": "Team",
- "sql": {
-  "strOrderBy": "ORDER BY `Objekte`.`Bezeichnung`",
-  "sqlHead": "SELECT `Objekte`.`ID`,  `Objekte`.`Bezeichnung`,  `Objekte`.`Nummer`,  `Objekte`.`Anschrift`,  `Objekte`.`Besitzer`,  `Objekte`.`Nutzer`,  `Objekte`.`Bemerkungen`,  `Objekte`.`Objektart`,  `Objekte`.`Baubeschreibung`,  `Objekte`.`Lage`,  `Objekte`.`Verkehrsanbindung`,  `Objekte`.`Infrastruktur`,  `Objekte`.`Ausstattung`,  `Objekte`.`Technik`,  `Objekte`.`Anschaffungsdatum`,  `Objekte`.`Fertigstellungsdatum`,  `Objekte`.`Einheitswert`,  `Objekte`.`Grundbuch`,  `Objekte`.`Grundstuecksgroesse`,  `Objekte`.`Bild`,  `Objekte`.`Miniatur`,  `Objekte`.`Detailfeld1`,  `Objekte`.`Detailfeld2`,  `Objekte`.`Detailfeld3`,  `Objekte`.`Detailfeld4`,  `Objekte`.`Detailfeld5`,  `Objekte`.`Laengengrad`,  `Objekte`.`Breitengrad`,  `Objekte`.`Anschrift` AS `Karte`,  case   when `Objektart` like \"%Verkauf%\" then \"Verkauf\"  when`Objektart` like \"%Vermietung%\" then \"Vermietung\"  end AS `Vermarktung`,  `Flaechen`.`Breite`,  `Flaechen`.`Anrechenbarkeit`,  `Flaechen`.`Tiefe`,  sum(`Flaechen`.`Breite`*`Flaechen`.`Tiefe`*`Flaechen`.`Anrechenbarkeit`) as Quadratmeter,  Objekte.Team",
-  "sqlFrom": "FROM `Objekte`  LEFT OUTER JOIN `Einheiten` ON `Objekte`.`ID` = `Einheiten`.`Objekt`  LEFT OUTER JOIN `Raeume` ON `Einheiten`.`ID` = `Raeume`.`Einheit`  LEFT OUTER JOIN `Flaechen` ON `Raeume`.`ID` = `Flaechen`.`Raum`",
-  "sqlWhere": "",
-  "sqlTail": ""
- },
- "keys": [
-  "ID"
- ],
- "pageSize": 20,
- "capabilities": {
-  "list": true,
-  "view": true,
-  "add": false,
-  "edit": false,
-  "export": false,
-  "print": false,
-  "search": true,
-  "masterList": true
- },
- "fieldSets": {
-  "list": [
-   "Bezeichnung",
-   "Bild"
+  "entity": "Objekte_Vermietung_Verkauf",
+  "shortName": "Objekte_Vermietung_Verkauf",
+  "baseTable": "Objekte",
+  "isVirtual": true,
+  "ownerField": "Team",
+  "sql": {
+    "strOrderBy": "ORDER BY `Objekte`.`Bezeichnung`",
+    "sqlHead": "SELECT `Objekte`.`ID`,  `Objekte`.`Bezeichnung`,  `Objekte`.`Nummer`,  `Objekte`.`Anschrift`,  `Objekte`.`Besitzer`,  `Objekte`.`Nutzer`,  `Objekte`.`Bemerkungen`,  `Objekte`.`Objektart`,  `Objekte`.`Baubeschreibung`,  `Objekte`.`Lage`,  `Objekte`.`Verkehrsanbindung`,  `Objekte`.`Infrastruktur`,  `Objekte`.`Ausstattung`,  `Objekte`.`Technik`,  `Objekte`.`Anschaffungsdatum`,  `Objekte`.`Fertigstellungsdatum`,  `Objekte`.`Einheitswert`,  `Objekte`.`Grundbuch`,  `Objekte`.`Grundstuecksgroesse`,  `Objekte`.`Bild`,  `Objekte`.`Miniatur`,  `Objekte`.`Detailfeld1`,  `Objekte`.`Detailfeld2`,  `Objekte`.`Detailfeld3`,  `Objekte`.`Detailfeld4`,  `Objekte`.`Detailfeld5`,  `Objekte`.`Laengengrad`,  `Objekte`.`Breitengrad`,  `Objekte`.`Anschrift` AS `Karte`,  case   when `Objektart` like \"%Verkauf%\" then \"Verkauf\"  when`Objektart` like \"%Vermietung%\" then \"Vermietung\"  end AS `Vermarktung`,  `Flaechen`.`Breite`,  `Flaechen`.`Anrechenbarkeit`,  `Flaechen`.`Tiefe`,  sum(`Flaechen`.`Breite`*`Flaechen`.`Tiefe`*`Flaechen`.`Anrechenbarkeit`) as Quadratmeter,  Objekte.Team",
+    "sqlFrom": "FROM `Objekte`  LEFT OUTER JOIN `Einheiten` ON `Objekte`.`ID` = `Einheiten`.`Objekt`  LEFT OUTER JOIN `Raeume` ON `Einheiten`.`ID` = `Raeume`.`Einheit`  LEFT OUTER JOIN `Flaechen` ON `Raeume`.`ID` = `Flaechen`.`Raum`",
+    "sqlWhere": "",
+    "sqlTail": ""
+  },
+  "keys": [
+    "ID"
   ],
-  "view": [
-   "Bild",
-   "Bezeichnung",
-   "Bemerkungen",
-   "Quadratmeter",
-   "Anschrift",
-   "Karte",
-   "Lage",
-   "Grundstuecksgroesse",
-   "Verkehrsanbindung",
-   "Infrastruktur",
-   "Fertigstellungsdatum",
-   "Baubeschreibung",
-   "Technik",
-   "Ausstattung"
-  ],
-  "search": [
-   "ID",
-   "Vermarktung",
-   "Quadratmeter",
-   "Bezeichnung",
-   "Nummer",
-   "Anschrift",
-   "Grundstuecksgroesse",
-   "Lage",
-   "Verkehrsanbindung",
-   "Infrastruktur",
-   "Fertigstellungsdatum",
-   "Baubeschreibung",
-   "Technik",
-   "Ausstattung"
-  ],
-  "masterList": [
-   "Miniatur",
-   "Vermarktung",
-   "Breite",
-   "Anrechenbarkeit",
-   "Tiefe",
-   "Quadratmeter",
-   "Team",
-   "Bezeichnung",
-   "Objektart",
-   "Nummer",
-   "Besitzer",
-   "Nutzer"
+  "pageSize": 20,
+  "capabilities": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+  },
+  "fieldSets": {
+    "list": [
+      "Bezeichnung",
+      "Bild"
+    ],
+    "view": [
+      "Bild",
+      "Bezeichnung",
+      "Bemerkungen",
+      "Quadratmeter",
+      "Anschrift",
+      "Karte",
+      "Lage",
+      "Grundstuecksgroesse",
+      "Verkehrsanbindung",
+      "Infrastruktur",
+      "Fertigstellungsdatum",
+      "Baubeschreibung",
+      "Technik",
+      "Ausstattung"
+    ],
+    "search": [
+      "ID",
+      "Vermarktung",
+      "Quadratmeter",
+      "Bezeichnung",
+      "Nummer",
+      "Anschrift",
+      "Grundstuecksgroesse",
+      "Lage",
+      "Verkehrsanbindung",
+      "Infrastruktur",
+      "Fertigstellungsdatum",
+      "Baubeschreibung",
+      "Technik",
+      "Ausstattung"
+    ],
+    "masterList": [
+      "Miniatur",
+      "Vermarktung",
+      "Breite",
+      "Anrechenbarkeit",
+      "Tiefe",
+      "Quadratmeter",
+      "Team",
+      "Bezeichnung",
+      "Objektart",
+      "Nummer",
+      "Besitzer",
+      "Nutzer"
+    ]
+  },
+  "export": {
+    "exportTo": null,
+    "exportDelimiter": null,
+    "exportFormatting": null
+  },
+  "print": {
+    "printerPageOrientation": 1,
+    "nPrinterPageScale": 100,
+    "nPrinterSplitRecords": 40,
+    "nPrinterPDFSplitRecords": 40
+  },
+  "tabs": [],
+  "labels": {
+    "German": {
+      "ID": "ID",
+      "Bezeichnung": "Bezeichnung",
+      "Nummer": "Nummer",
+      "Anschrift": "Anschrift",
+      "Besitzer": "Besitzer",
+      "Nutzer": "Nutzer",
+      "Bemerkungen": "Angebot",
+      "Objektart": "Objektart",
+      "Baubeschreibung": "Baubeschreibung",
+      "Lage": "Lage",
+      "Verkehrsanbindung": "Verkehrsanbindung",
+      "Infrastruktur": "Infrastruktur",
+      "Ausstattung": "Ausstattung",
+      "Technik": "Technik",
+      "Anschaffungsdatum": "Anschaffungsdatum",
+      "Fertigstellungsdatum": "Baujahr",
+      "Einheitswert": "Einheitswert",
+      "Grundbuch": "Grundbuch",
+      "Grundstuecksgroesse": "Grundstücksgrösse",
+      "Bild": "Bild",
+      "Miniatur": "Miniatur",
+      "Detailfeld1": "Detailfeld1",
+      "Detailfeld2": "Detailfeld2",
+      "Detailfeld3": "Detailfeld3",
+      "Detailfeld4": "Detailfeld4",
+      "Detailfeld5": "Detailfeld5",
+      "Laengengrad": "Laengengrad",
+      "Breitengrad": "Breitengrad",
+      "Karte": "Karte",
+      "Vermarktung": "Vermarktung",
+      "Breite": "Breite",
+      "Anrechenbarkeit": "Anrechenbarkeit",
+      "Tiefe": "Tiefe",
+      "Quadratmeter": "Quadratmeter",
+      "Team": "Team"
+    },
+    "English": {
+      "ID": "ID",
+      "Bezeichnung": "Description",
+      "Nummer": "Number",
+      "Anschrift": "Anschrift",
+      "Besitzer": "Besitzer",
+      "Nutzer": "Nutzer",
+      "Bemerkungen": "Angebot",
+      "Objektart": "Propertyart",
+      "Baubeschreibung": "Building description",
+      "Lage": "Lage",
+      "Verkehrsanbindung": "Transport links",
+      "Infrastruktur": "Infrastruktur",
+      "Ausstattung": "Features",
+      "Technik": "Technik",
+      "Anschaffungsdatum": "Anschaffungsdatum",
+      "Fertigstellungsdatum": "Baujahr",
+      "Einheitswert": "Unitswert",
+      "Grundbuch": "Grundbuch",
+      "Grundstuecksgroesse": "Plot size",
+      "Bild": "Image",
+      "Miniatur": "Miniatur",
+      "Detailfeld1": "Detailfeld1",
+      "Detailfeld2": "Detailfeld2",
+      "Detailfeld3": "Detailfeld3",
+      "Detailfeld4": "Detailfeld4",
+      "Detailfeld5": "Detailfeld5",
+      "Laengengrad": "Laengengrad",
+      "Breitengrad": "Breitengrad",
+      "Karte": "Karte",
+      "Vermarktung": "Marketing",
+      "Breite": "Breite",
+      "Anrechenbarkeit": "Creditability",
+      "Tiefe": "Tiefe",
+      "Quadratmeter": "Square metres",
+      "Team": "Team"
+    }
+  },
+  "fields": [
+    {
+      "name": "ID",
+      "type": 3,
+      "index": 1,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "number",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "AutoInc": true,
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Bezeichnung",
+      "type": 200,
+      "index": 2,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200,
+        "denyDuplicates": true
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Nummer",
+      "type": 3,
+      "index": 3,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "number",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Anschrift",
+      "type": 200,
+      "index": 4,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Besitzer",
+      "type": 3,
+      "index": 5,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Adressen",
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 2,
+        "LinkField": "ID",
+        "LinkFieldType": 0,
+        "DisplayField": "Kurzname",
+        "LookupOrderBy": "Kurzname",
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Nutzer",
+      "type": 3,
+      "index": 6,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Adressen",
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 2,
+        "LinkField": "ID",
+        "LinkFieldType": 0,
+        "DisplayField": "Kurzname",
+        "LookupOrderBy": "Kurzname",
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Bemerkungen",
+      "type": 201,
+      "index": 7,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": false
+      },
+      "view": {
+        "ViewFormat": "HTML"
+      },
+      "edit": {
+        "UseRTE": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "nRows": 400,
+        "nCols": 600,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Objektart",
+      "type": 200,
+      "index": 8,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Objektarten",
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 0,
+        "LinkField": "Bezeichnung",
+        "LinkFieldType": 0,
+        "DisplayField": "Bezeichnung",
+        "LookupOrderBy": "Bezeichnung",
+        "SelectSize": 1,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true
+    },
+    {
+      "name": "Baubeschreibung",
+      "type": 201,
+      "index": 9,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "ViewFormat": "HTML"
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "nRows": 200,
+        "nCols": 600,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Lage",
+      "type": 201,
+      "index": 10,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "ViewFormat": "HTML"
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "nRows": 200,
+        "nCols": 600,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Verkehrsanbindung",
+      "type": 201,
+      "index": 11,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "ViewFormat": "HTML"
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "nRows": 200,
+        "nCols": 600,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Infrastruktur",
+      "type": 201,
+      "index": 12,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "nRows": 200,
+        "nCols": 600,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Ausstattung",
+      "type": 201,
+      "index": 13,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "nRows": 200,
+        "nCols": 600,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Technik",
+      "type": 201,
+      "index": 14,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "nRows": 200,
+        "nCols": 600,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Anschaffungsdatum",
+      "type": 7,
+      "index": 15,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "DateEditType": 11,
+        "InitialYearFactor": 3,
+        "LastYearFactor": 10,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Fertigstellungsdatum",
+      "type": 7,
+      "index": 16,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "DateEditType": 11,
+        "InitialYearFactor": 3,
+        "LastYearFactor": 10,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Einheitswert",
+      "type": 200,
+      "index": 17,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Grundbuch",
+      "type": 200,
+      "index": 18,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Grundstuecksgroesse",
+      "type": 3,
+      "index": 19,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "number",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Bild",
+      "type": 128,
+      "index": 20,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": false
+      },
+      "view": {
+        "ShowThumbnail": true,
+        "ThumbWidth": 72,
+        "ThumbHeight": 72,
+        "ImageWidth": 457,
+        "ImageHeight": 0,
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200,
+        "CreateThumbnail": true,
+        "StrThumbnail": "Miniatur",
+        "ThumbnailSize": 150,
+        "ResizeImage": true,
+        "NewSize": 600
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Miniatur",
+      "type": 128,
+      "index": 21,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "ImageWidth": 457,
+        "ImageHeight": 0,
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Detailfeld1",
+      "type": 200,
+      "index": 22,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Detailfeld2",
+      "type": 200,
+      "index": 23,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Detailfeld3",
+      "type": 200,
+      "index": 24,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Detailfeld4",
+      "type": 200,
+      "index": 25,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Detailfeld5",
+      "type": 200,
+      "index": 26,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Laengengrad",
+      "type": 14,
+      "index": 27,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": false
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Breitengrad",
+      "type": 14,
+      "index": 28,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": false
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Karte",
+      "type": 200,
+      "index": 29,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Vermarktung",
+      "type": 200,
+      "index": 30,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Breite",
+      "type": 14,
+      "index": 31,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Anrechenbarkeit",
+      "type": 14,
+      "index": 32,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Tiefe",
+      "type": 14,
+      "index": 33,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Quadratmeter",
+      "type": 14,
+      "index": 34,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Team",
+      "type": 200,
+      "index": 35,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    }
   ]
- },
- "export": {
-  "exportTo": null,
-  "exportDelimiter": null,
-  "exportFormatting": null
- },
- "print": {
-  "printerPageOrientation": 1,
-  "nPrinterPageScale": 100,
-  "nPrinterSplitRecords": 40,
-  "nPrinterPDFSplitRecords": 40
- },
- "tabs": [],
- "labels": {
-  "German": {
-   "ID": "ID",
-   "Bezeichnung": "Bezeichnung",
-   "Nummer": "Nummer",
-   "Anschrift": "Anschrift",
-   "Besitzer": "Besitzer",
-   "Nutzer": "Nutzer",
-   "Bemerkungen": "Angebot",
-   "Objektart": "Objektart",
-   "Baubeschreibung": "Baubeschreibung",
-   "Lage": "Lage",
-   "Verkehrsanbindung": "Verkehrsanbindung",
-   "Infrastruktur": "Infrastruktur",
-   "Ausstattung": "Ausstattung",
-   "Technik": "Technik",
-   "Anschaffungsdatum": "Anschaffungsdatum",
-   "Fertigstellungsdatum": "Baujahr",
-   "Einheitswert": "Einheitswert",
-   "Grundbuch": "Grundbuch",
-   "Grundstuecksgroesse": "Grundstücksgrösse",
-   "Bild": "Bild",
-   "Miniatur": "Miniatur",
-   "Detailfeld1": "Detailfeld1",
-   "Detailfeld2": "Detailfeld2",
-   "Detailfeld3": "Detailfeld3",
-   "Detailfeld4": "Detailfeld4",
-   "Detailfeld5": "Detailfeld5",
-   "Laengengrad": "Laengengrad",
-   "Breitengrad": "Breitengrad",
-   "Karte": "Karte",
-   "Vermarktung": "Vermarktung",
-   "Breite": "Breite",
-   "Anrechenbarkeit": "Anrechenbarkeit",
-   "Tiefe": "Tiefe",
-   "Quadratmeter": "Quadratmeter",
-   "Team": "Team"
-  }
- },
- "fields": [
-  {
-   "name": "ID",
-   "type": 3,
-   "index": 1,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "number",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "AutoInc": true,
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Bezeichnung",
-   "type": 200,
-   "index": 2,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200,
-    "denyDuplicates": true
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Nummer",
-   "type": 3,
-   "index": 3,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "number",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Anschrift",
-   "type": 200,
-   "index": 4,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Besitzer",
-   "type": 3,
-   "index": 5,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Adressen",
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 2,
-    "LinkField": "ID",
-    "LinkFieldType": 0,
-    "DisplayField": "Kurzname",
-    "LookupOrderBy": "Kurzname",
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Nutzer",
-   "type": 3,
-   "index": 6,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Adressen",
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 2,
-    "LinkField": "ID",
-    "LinkFieldType": 0,
-    "DisplayField": "Kurzname",
-    "LookupOrderBy": "Kurzname",
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Bemerkungen",
-   "type": 201,
-   "index": 7,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": false
-   },
-   "view": {
-    "ViewFormat": "HTML"
-   },
-   "edit": {
-    "UseRTE": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "nRows": 400,
-    "nCols": 600,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Objektart",
-   "type": 200,
-   "index": 8,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Objektarten",
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 0,
-    "LinkField": "Bezeichnung",
-    "LinkFieldType": 0,
-    "DisplayField": "Bezeichnung",
-    "LookupOrderBy": "Bezeichnung",
-    "SelectSize": 1,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true
-  },
-  {
-   "name": "Baubeschreibung",
-   "type": 201,
-   "index": 9,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "ViewFormat": "HTML"
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "nRows": 200,
-    "nCols": 600,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Lage",
-   "type": 201,
-   "index": 10,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "ViewFormat": "HTML"
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "nRows": 200,
-    "nCols": 600,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Verkehrsanbindung",
-   "type": 201,
-   "index": 11,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "ViewFormat": "HTML"
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "nRows": 200,
-    "nCols": 600,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Infrastruktur",
-   "type": 201,
-   "index": 12,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "nRows": 200,
-    "nCols": 600,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Ausstattung",
-   "type": 201,
-   "index": 13,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "nRows": 200,
-    "nCols": 600,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Technik",
-   "type": 201,
-   "index": 14,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "nRows": 200,
-    "nCols": 600,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Anschaffungsdatum",
-   "type": 7,
-   "index": 15,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "DateEditType": 11,
-    "InitialYearFactor": 3,
-    "LastYearFactor": 10,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Fertigstellungsdatum",
-   "type": 7,
-   "index": 16,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "DateEditType": 11,
-    "InitialYearFactor": 3,
-    "LastYearFactor": 10,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Einheitswert",
-   "type": 200,
-   "index": 17,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Grundbuch",
-   "type": 200,
-   "index": 18,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Grundstuecksgroesse",
-   "type": 3,
-   "index": 19,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "number",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Bild",
-   "type": 128,
-   "index": 20,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": false
-   },
-   "view": {
-    "ShowThumbnail": true,
-    "ThumbWidth": 72,
-    "ThumbHeight": 72,
-    "ImageWidth": 457,
-    "ImageHeight": 0,
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200,
-    "CreateThumbnail": true,
-    "StrThumbnail": "Miniatur",
-    "ThumbnailSize": 150,
-    "ResizeImage": true,
-    "NewSize": 600
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Miniatur",
-   "type": 128,
-   "index": 21,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "ImageWidth": 457,
-    "ImageHeight": 0,
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Detailfeld1",
-   "type": 200,
-   "index": 22,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Detailfeld2",
-   "type": 200,
-   "index": 23,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Detailfeld3",
-   "type": 200,
-   "index": 24,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Detailfeld4",
-   "type": 200,
-   "index": 25,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Detailfeld5",
-   "type": 200,
-   "index": 26,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Laengengrad",
-   "type": 14,
-   "index": 27,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": false
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Breitengrad",
-   "type": 14,
-   "index": 28,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": false
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Karte",
-   "type": 200,
-   "index": 29,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Vermarktung",
-   "type": 200,
-   "index": 30,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Breite",
-   "type": 14,
-   "index": 31,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Anrechenbarkeit",
-   "type": 14,
-   "index": 32,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Tiefe",
-   "type": 14,
-   "index": 33,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Quadratmeter",
-   "type": 14,
-   "index": 34,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Team",
-   "type": 200,
-   "index": 35,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  }
- ]
 }

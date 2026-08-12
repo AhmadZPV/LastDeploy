@@ -1,90 +1,19 @@
 {
- "entity": "Objekte_nach_Flaeche",
- "shortName": "Objekte_nach_Flaeche",
- "baseTable": "Objekte",
- "isVirtual": true,
- "ownerField": "Team",
- "sql": {
-  "strOrderBy": "",
-  "sqlHead": "SELECT Bezeichnung,  sum(Wohnflaeche) AS Anteil,  Team",
-  "sqlFrom": "FROM Objekte",
-  "sqlWhere": "",
-  "sqlTail": ""
- },
- "keys": [],
- "pageSize": 0,
- "capabilities": {
-  "list": true,
-  "view": true,
-  "add": true,
-  "edit": true,
-  "export": true,
-  "print": true,
-  "search": true,
-  "masterList": true
- },
- "fieldSets": {
-  "list": [
-   "Bezeichnung",
-   "Anteil",
-   "Team"
-  ],
-  "view": [
-   "Bezeichnung",
-   "Anteil",
-   "Team"
-  ],
-  "add": [
-   "Bezeichnung"
-  ],
-  "edit": [
-   "Bezeichnung",
-   "Team"
-  ],
-  "export": [
-   "Bezeichnung",
-   "Anteil",
-   "Team"
-  ],
-  "print": [
-   "Bezeichnung",
-   "Anteil",
-   "Team"
-  ],
-  "search": [
-   "Bezeichnung"
-  ],
-  "masterList": [
-   "Bezeichnung",
-   "Anteil",
-   "Team"
-  ]
- },
- "export": {
-  "exportTo": null,
-  "exportDelimiter": null,
-  "exportFormatting": null
- },
- "print": {
-  "printerPageOrientation": 0,
-  "nPrinterPageScale": 100,
-  "nPrinterSplitRecords": 40,
-  "nPrinterPDFSplitRecords": 40
- },
- "tabs": [],
- "labels": {
-  "German": {
-   "Team": "Team",
-   "Anteil": "Anteil",
-   "Bezeichnung": "Bezeichnung"
-  }
- },
- "fields": [
-  {
-   "name": "Bezeichnung",
-   "type": 200,
-   "index": 1,
-   "pages": {
+  "entity": "Objekte_nach_Flaeche",
+  "shortName": "Objekte_nach_Flaeche",
+  "baseTable": "Objekte",
+  "isVirtual": true,
+  "ownerField": "Team",
+  "sql": {
+    "strOrderBy": "",
+    "sqlHead": "SELECT Bezeichnung,  sum(Wohnflaeche) AS Anteil,  Team",
+    "sqlFrom": "FROM Objekte",
+    "sqlWhere": "",
+    "sqlTail": ""
+  },
+  "keys": [],
+  "pageSize": 0,
+  "capabilities": {
     "list": true,
     "view": true,
     "add": true,
@@ -93,77 +22,153 @@
     "print": true,
     "search": true,
     "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200,
-    "denyDuplicates": true
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
   },
-  {
-   "name": "Anteil",
-   "type": 14,
-   "index": 2,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
+  "fieldSets": {
+    "list": [
+      "Bezeichnung",
+      "Anteil",
+      "Team"
+    ],
+    "view": [
+      "Bezeichnung",
+      "Anteil",
+      "Team"
+    ],
+    "add": [
+      "Bezeichnung"
+    ],
+    "edit": [
+      "Bezeichnung",
+      "Team"
+    ],
+    "export": [
+      "Bezeichnung",
+      "Anteil",
+      "Team"
+    ],
+    "print": [
+      "Bezeichnung",
+      "Anteil",
+      "Team"
+    ],
+    "search": [
+      "Bezeichnung"
+    ],
+    "masterList": [
+      "Bezeichnung",
+      "Anteil",
+      "Team"
+    ]
   },
-  {
-   "name": "Team",
-   "type": 200,
-   "index": 3,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  }
- ]
+  "export": {
+    "exportTo": null,
+    "exportDelimiter": null,
+    "exportFormatting": null
+  },
+  "print": {
+    "printerPageOrientation": 0,
+    "nPrinterPageScale": 100,
+    "nPrinterSplitRecords": 40,
+    "nPrinterPDFSplitRecords": 40
+  },
+  "tabs": [],
+  "labels": {
+    "German": {
+      "Team": "Team",
+      "Anteil": "Anteil",
+      "Bezeichnung": "Bezeichnung"
+    },
+    "English": {
+      "Team": "Team",
+      "Anteil": "Share",
+      "Bezeichnung": "Description"
+    }
+  },
+  "fields": [
+    {
+      "name": "Bezeichnung",
+      "type": 200,
+      "index": 1,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200,
+        "denyDuplicates": true
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Anteil",
+      "type": 14,
+      "index": 2,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Team",
+      "type": 200,
+      "index": 3,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    }
+  ]
 }

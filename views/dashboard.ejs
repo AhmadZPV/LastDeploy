@@ -1,31 +1,112 @@
 <%- include('partials/layout_top', { pageTitle: typeof t === 'function' ? t('dashboard') : 'Dashboard' }) %>
 <% const _t = typeof t === 'function' ? t : (k) => k; %>
+<% const _fmtMoney = (v) => new Intl.NumberFormat(lang === 'en' ? 'en-GB' : 'de-DE', { style: 'currency', currency: 'EUR' }).format(v); %>
+<%# Presentational tone mapping for existing status values. %>
+<%
+  const statusTone = (value) => {
+    const s = String(value || '').toLowerCase();
+    if (/(erledigt|abgeschlossen|fertig|done|complete)/.test(s)) return 'is-done';
+    if (/(bearbeitung|laufend|progress|active)/.test(s)) return 'is-progress';
+    if (/(warte|pending|offen|open|neu|new)/.test(s)) return 'is-open';
+    if (/(dringend|hoch|high|überf|overdue)/.test(s)) return 'is-high';
+    return 'is-muted';
+  };
+  const tasks = userAufgaben || [];
+  const statusCounts = new Map();
+  for (const a of tasks) { const k = a.Bearbeitungstatus || '—'; statusCounts.set(k, (statusCounts.get(k) || 0) + 1); }
+  const statusRows = [...statusCounts.entries()];
+  const TONE_VARS = ['var(--accent)', 'var(--blue)', 'var(--purple)', 'var(--amber)', 'var(--green)'];
+  const RADIUS = 54;
+  const CIRC = 2 * Math.PI * RADIUS;
+%>
 <div class="grid">
-  <a href="/objekte" class="card"><span class="stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V10Z"/><path d="M9 21v-7h6v7"/></svg></span><div class="num"><%= counts.objekte %></div><div class="lbl"><%= _t('objects') %></div></a>
-  <a href="/einheiten" class="card"><span class="stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 20V8l8-4 8 4v12M8 20v-5h8v5M8 10h.01M12 10h.01M16 10h.01"/></svg></span><div class="num"><%= counts.einheiten %></div><div class="lbl"><%= _t('units') %></div></a>
-  <a href="/adressen" class="card"><span class="stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="8" r="3"/><path d="M5 20a7 7 0 0 1 14 0"/></svg></span><div class="num"><%= counts.adressen %></div><div class="lbl"><%= _t('addresses') %></div></a>
-  <a href="/abrechnungen" class="card"><span class="stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2V3Z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></span><div class="num"><%= counts.abrechnungen %></div><div class="lbl"><%= _t('settlements') %></div></a>
-  <a href="/aufgaben" class="card card-warn"><span class="stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 3 2.8 20h18.4L12 3Z"/><path d="M12 9v5M12 17h.01"/></svg></span><div class="num"><%= counts.aufgaben %></div><div class="lbl"><%= _t('open_tasks') %></div></a>
-  <a href="/kontobuch" class="card card-money"><span class="stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="9"/><path d="M15 8.5c-.7-.6-1.7-1-3-1-1.7 0-3 .8-3 2s1.2 1.7 3 2 3 .8 3 2-1.3 2-3 2c-1.3 0-2.3-.4-3-1M12 6v2M12 16v2"/></svg></span><div class="num" style="font-size:22px"><%= new Intl.NumberFormat(lang === 'en' ? 'en-GB' : 'de-DE',{style:'currency',currency:'EUR'}).format(mieteTotal) %></div><div class="lbl"><%= _t('cold_rent_sum') %></div></a>
-  <a href="/kontobuch" class="card"><span class="stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"/></svg></span><div class="num"><%= counts.kontobuch %></div><div class="lbl"><%= _t('ledger_entries') %></div></a>
-  <a href="/termine" class="card"><span class="stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16M8 14h3M8 17h2"/></svg></span><div class="num"><%= counts.termine %></div><div class="lbl"><%= _t('appointments_today') %></div></a>
+  <a href="/objekte" class="card card-teal">
+    <div class="card-head"><span class="stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 21V6l7-3v18M11 10h9v11M14 21v-4h3v4M14 13h.01M17 13h.01"/></svg></span></div>
+    <div><div class="num"><%= counts.objekte %></div><div class="lbl"><%= _t('objects') %></div></div>
+    <div class="card-foot"><span class="card-hint"><%= _t('view_all') %></span></div>
+  </a>
+  <a href="/einheiten" class="card card-blue">
+    <div class="card-head"><span class="stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 20V8l8-4 8 4v12M8 20v-5h8v5M8 10h.01M12 10h.01M16 10h.01"/></svg></span></div>
+    <div><div class="num"><%= counts.einheiten %></div><div class="lbl"><%= _t('units') %></div></div>
+    <div class="card-foot"><span class="card-hint"><%= _t('view_all') %></span></div>
+  </a>
+  <a href="/adressen" class="card card-purple">
+    <div class="card-head"><span class="stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="8" r="3"/><path d="M5 20a7 7 0 0 1 14 0"/></svg></span></div>
+    <div><div class="num"><%= counts.adressen %></div><div class="lbl"><%= _t('addresses') %></div></div>
+    <div class="card-foot"><span class="card-hint"><%= _t('view_all') %></span></div>
+  </a>
+  <a href="/abrechnungen" class="card card-teal">
+    <div class="card-head"><span class="stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2V3Z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></span></div>
+    <div><div class="num"><%= counts.abrechnungen %></div><div class="lbl"><%= _t('settlements') %></div></div>
+    <div class="card-foot"><span class="card-hint"><%= _t('view_all') %></span></div>
+  </a>
+  <a href="/aufgaben" class="card card-warn">
+    <div class="card-head"><span class="stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 3 2.8 20h18.4L12 3Z"/><path d="M12 9v5M12 17h.01"/></svg></span>
+      <% if (counts.aufgaben > 0) { %><span class="badge is-pending"><%= _t('open_tasks') %></span><% } %>
+    </div>
+    <div><div class="num"><%= counts.aufgaben %></div><div class="lbl"><%= _t('open_tasks') %></div></div>
+    <div class="card-foot"><span class="card-hint"><%= _t('view_all') %></span></div>
+  </a>
+  <a href="/kontobuch" class="card card-money">
+    <div class="card-head"><span class="stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="9"/><path d="M15 8.5c-.7-.6-1.7-1-3-1-1.7 0-3 .8-3 2s1.2 1.7 3 2 3 .8 3 2-1.3 2-3 2c-1.3 0-2.3-.4-3-1M12 6v2M12 16v2"/></svg></span></div>
+    <div><div class="num num-sm"><%= _fmtMoney(mieteTotal) %></div><div class="lbl"><%= _t('cold_rent_sum') %></div></div>
+    <div class="card-foot"><span class="card-hint"><%= _t('view_all') %></span></div>
+  </a>
+  <a href="/kontobuch" class="card card-green">
+    <div class="card-head"><span class="stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"/></svg></span></div>
+    <div><div class="num"><%= counts.kontobuch %></div><div class="lbl"><%= _t('ledger_entries') %></div></div>
+    <div class="card-foot"><span class="card-hint"><%= _t('view_all') %></span></div>
+  </a>
+  <a href="/termine" class="card card-blue">
+    <div class="card-head"><span class="stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16M8 14h3M8 17h2"/></svg></span></div>
+    <div><div class="num"><%= counts.termine %></div><div class="lbl"><%= _t('appointments_today') %></div></div>
+    <div class="card-foot"><span class="card-hint"><%= _t('view_all') %></span></div>
+  </a>
 </div>
 
+<% if (tasks.length > 0) { %>
 <section>
-  <h2><%= _t('my_tasks') %> <% if (user) { %>(<%= user.Benutzername %>)<% } %></h2>
-  <% if (!userAufgaben || userAufgaben.length === 0) { %>
-    <p class="muted"><%= _t('no_open_tasks') %></p>
+  <h2><%= _t('status_overview') %></h2>
+  <div class="chart-split">
+    <div class="donut" role="img" aria-label="<%= _t('status_overview') %>">
+      <svg viewBox="0 0 140 140">
+        <circle class="donut-track" cx="70" cy="70" r="<%= RADIUS %>"></circle>
+        <% let _offset = 0; %>
+        <% statusRows.forEach(([label, count], i) => { %>
+          <% const len = CIRC * (count / tasks.length); %>
+          <circle cx="70" cy="70" r="<%= RADIUS %>" stroke="<%= TONE_VARS[i % TONE_VARS.length] %>" stroke-dasharray="<%= len.toFixed(2) %> <%= (CIRC - len).toFixed(2) %>" stroke-dashoffset="<%= (-_offset).toFixed(2) %>"></circle>
+          <% _offset += len; %>
+        <% }) %>
+      </svg>
+      <div class="donut-center"><strong><%= tasks.length %></strong><span><%= _t('my_tasks') %></span></div>
+    </div>
+    <div class="chart-legend">
+      <% statusRows.forEach(([label, count], i) => { %>
+        <span class="chart-legend-item"><span class="chart-legend-dot" style="--legend-color: <%= TONE_VARS[i % TONE_VARS.length] %>"></span><%= label %><strong><%= count %> (<%= Math.round(count / tasks.length * 100) %>%)</strong></span>
+      <% }) %>
+    </div>
+  </div>
+</section>
+<% } %>
+
+<section>
+  <div class="section-heading"><div><h2><%= _t('my_tasks') %></h2><% if (user) { %><p><%= user.Benutzername %></p><% } %></div><a class="btn btn-ghost btn-sm" href="/aufgaben"><%= _t('view_all') %></a></div>
+  <% if (tasks.length === 0) { %>
+    <div class="empty-state">
+      <span class="empty-state-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="m8.5 12.5 2.5 2.5 4.5-5"/></svg></span>
+      <h3><%= _t('no_open_tasks') %></h3>
+    </div>
   <% } else { %>
   <div class="table-wrap dashboard-table-wrap"><table class="dashboard-task-table">
     <thead><tr><th><%= _t('title') %></th><th><%= _t('description') %></th><th><%= _t('date') %></th><th><%= _t('status') %></th><th></th></tr></thead>
     <tbody>
-    <% userAufgaben.forEach(a => { %>
+    <% tasks.forEach(a => { %>
       <tr>
         <td><a href="/aufgaben/<%= a.ID %>"><%= a.Titel %></a></td>
         <td><%= String(a.Beschreibung || '').slice(0, 60) %></td>
         <td><%= a.Datum ? new Date(a.Datum).toLocaleDateString(lang === 'en' ? 'en-GB' : 'de-DE') : '' %></td>
-        <td><span class="badge bg-warn"><%= a.Bearbeitungstatus %></span></td>
-        <td><a href="/aufgaben/<%= a.ID %>/edit" class="btn btn-link btn-sm"><%= _t('complete') %></a></td>
+        <td><span class="badge <%= statusTone(a.Bearbeitungstatus) %>"><%= a.Bearbeitungstatus %></span></td>
+        <td><div class="row-actions"><a href="/aufgaben/<%= a.ID %>/edit" class="btn btn-ghost btn-sm"><%= _t('complete') %></a></div></td>
       </tr>
     <% }) %>
     </tbody>

@@ -114,10 +114,16 @@ export function pageFields(meta, kind) {
     .sort((a, b) => (a.index || 0) - (b.index || 0));
 }
 
-/** The German label of a field; accepts a field object or a name. */
-export function fieldLabel(meta, field) {
+/**
+ * The label of a field; accepts a field object or a name.
+ * `lang` picks the bag: 'en' prefers labels.English and falls back to German.
+ */
+export function fieldLabel(meta, field, lang) {
   const name = typeof field === 'string' ? field : field && field.name;
-  const german = meta && meta.labels && (meta.labels.German || meta.labels.german);
+  const bags = meta && meta.labels;
+  const german = bags && (bags.German || bags.german);
+  const english = bags && (bags.English || bags.english);
+  if (lang === 'en' && english && english[name]) return english[name];
   return (german && german[name]) || name || '';
 }
 

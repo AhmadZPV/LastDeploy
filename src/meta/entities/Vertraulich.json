@@ -1,460 +1,21 @@
 {
- "entity": "Vertraulich",
- "shortName": "Vertraulich",
- "baseTable": "Adressen",
- "isVirtual": true,
- "ownerField": "Team",
- "sql": {
-  "strOrderBy": "ORDER BY `Kurzname`",
-  "sqlHead": "SELECT `ID`,  `Kurzname`,  `Firma`,  `Abteilung`,  `Vorname`,  `Nachname`,  `Strasse`,  `PLZ`,  `Ort`,  `Bundesland`,  `Staat`,  `Benutzer`,  `Telefon`,  `Handy`,  `Email`,  `Website`,  `Telefax`,  `Bild`,  `Bemerkungen`,  `Laengengrad`,  `Breitengrad`,  `Klassifikation`,  `Geburtstag`,  `Geschlecht`,  `Anrede`,  `Titel`,  `Stellung`,  `Strasse_Liefer`,  `PLZ_Liefer`,  `Ort_Liefer`,  `Staat_Liefer`,  `UIDNr`,  `Bank`,  `IBAN`,  `Kontoinhaber`,  `Debitorennummer`,  `Kreditorennummer`,  `Paypal`,  `Wiedervorlage`,  `Skype`,  `Detailfeld1`,  `Detailfeld2`,  `Detailfeld3`,  `Detailfeld4`,  `Detailfeld5`,  `Bearbeitungsstatus`,  `Kundennummer`,  `Xing`,  `Linkedin`,  `Facebook`,  `Chat`,  `Telefonprivat`,  `Emailprivat`,  `Handyprivat`,  `Lieferbedingungen`,  `Zahlungsbedingungen`,  Concat(if(Adressen.Firma='','', Concat(Adressen.Firma, '\\n')), Adressen.Vorname, ' ', Adressen.Nachname, '\\n', Adressen.Strasse, '\\n', Adressen.PLZ, ' ', Adressen.Ort) AS `Karte`,  `Anschrift`,  `BIC`,  `Miniatur`,  `Partner_Vorname`,  `Partner_Nachname`,  `Anredeformat`,  `Etikett`,  `Favorit`,  '' AS `Nummernkreis`,  `Aktiv`,  `Team`,  `Vertraulich1`,  `Vertraulich2`,  `Vertraulich3`,  `Vertraulich4`,  `Vertraulich5`",
-  "sqlFrom": "FROM `Adressen`",
-  "sqlWhere": "",
-  "sqlTail": ""
- },
- "keys": [
-  "ID"
- ],
- "pageSize": 20,
- "capabilities": {
-  "list": true,
-  "view": true,
-  "add": true,
-  "edit": true,
-  "export": false,
-  "print": false,
-  "search": true,
-  "masterList": true
- },
- "fieldSets": {
-  "list": [
-   "Kurzname",
-   "Klassifikation",
-   "Etikett",
-   "Firma",
-   "Vorname",
-   "Nachname",
-   "Strasse",
-   "PLZ",
-   "Ort",
-   "Bild"
+  "entity": "Vertraulich",
+  "shortName": "Vertraulich",
+  "baseTable": "Adressen",
+  "isVirtual": true,
+  "ownerField": "Team",
+  "sql": {
+    "strOrderBy": "ORDER BY `Kurzname`",
+    "sqlHead": "SELECT `ID`,  `Kurzname`,  `Firma`,  `Abteilung`,  `Vorname`,  `Nachname`,  `Strasse`,  `PLZ`,  `Ort`,  `Bundesland`,  `Staat`,  `Benutzer`,  `Telefon`,  `Handy`,  `Email`,  `Website`,  `Telefax`,  `Bild`,  `Bemerkungen`,  `Laengengrad`,  `Breitengrad`,  `Klassifikation`,  `Geburtstag`,  `Geschlecht`,  `Anrede`,  `Titel`,  `Stellung`,  `Strasse_Liefer`,  `PLZ_Liefer`,  `Ort_Liefer`,  `Staat_Liefer`,  `UIDNr`,  `Bank`,  `IBAN`,  `Kontoinhaber`,  `Debitorennummer`,  `Kreditorennummer`,  `Paypal`,  `Wiedervorlage`,  `Skype`,  `Detailfeld1`,  `Detailfeld2`,  `Detailfeld3`,  `Detailfeld4`,  `Detailfeld5`,  `Bearbeitungsstatus`,  `Kundennummer`,  `Xing`,  `Linkedin`,  `Facebook`,  `Chat`,  `Telefonprivat`,  `Emailprivat`,  `Handyprivat`,  `Lieferbedingungen`,  `Zahlungsbedingungen`,  Concat(if(Adressen.Firma='','', Concat(Adressen.Firma, '\\n')), Adressen.Vorname, ' ', Adressen.Nachname, '\\n', Adressen.Strasse, '\\n', Adressen.PLZ, ' ', Adressen.Ort) AS `Karte`,  `Anschrift`,  `BIC`,  `Miniatur`,  `Partner_Vorname`,  `Partner_Nachname`,  `Anredeformat`,  `Etikett`,  `Favorit`,  '' AS `Nummernkreis`,  `Aktiv`,  `Team`,  `Vertraulich1`,  `Vertraulich2`,  `Vertraulich3`,  `Vertraulich4`,  `Vertraulich5`",
+    "sqlFrom": "FROM `Adressen`",
+    "sqlWhere": "",
+    "sqlTail": ""
+  },
+  "keys": [
+    "ID"
   ],
-  "view": [
-   "Karte",
-   "Kurzname",
-   "Klassifikation",
-   "Favorit",
-   "Etikett",
-   "Firma",
-   "Abteilung",
-   "Vorname",
-   "Nachname",
-   "Aktiv",
-   "Strasse",
-   "PLZ",
-   "Ort",
-   "Bundesland",
-   "Staat",
-   "Anschrift",
-   "Strasse_Liefer",
-   "PLZ_Liefer",
-   "Ort_Liefer",
-   "Staat_Liefer",
-   "Telefon",
-   "Handy",
-   "Email",
-   "Skype",
-   "Website",
-   "Telefax",
-   "Telefonprivat",
-   "Handyprivat",
-   "Emailprivat",
-   "Xing",
-   "Linkedin",
-   "Facebook",
-   "Chat",
-   "Anrede",
-   "Titel",
-   "Stellung",
-   "Geburtstag",
-   "Geschlecht",
-   "Partner_Vorname",
-   "Partner_Nachname",
-   "Zahlungsbedingungen",
-   "Lieferbedingungen",
-   "Bank",
-   "Kontoinhaber",
-   "IBAN",
-   "BIC",
-   "UIDNr",
-   "Paypal",
-   "Kreditorennummer",
-   "Debitorennummer",
-   "Kundennummer",
-   "Bild",
-   "Bemerkungen",
-   "Detailfeld1",
-   "Detailfeld2",
-   "Detailfeld3",
-   "Detailfeld4",
-   "Detailfeld5",
-   "Vertraulich1",
-   "Vertraulich2",
-   "Vertraulich3",
-   "Vertraulich4",
-   "Vertraulich5",
-   "Bearbeitungsstatus",
-   "Benutzer",
-   "Wiedervorlage"
-  ],
-  "add": [
-   "Kurzname",
-   "Klassifikation",
-   "Favorit",
-   "Etikett",
-   "Firma",
-   "Abteilung",
-   "Vorname",
-   "Nachname",
-   "Strasse",
-   "PLZ",
-   "Ort",
-   "Bundesland",
-   "Staat",
-   "Anschrift",
-   "Strasse_Liefer",
-   "PLZ_Liefer",
-   "Ort_Liefer",
-   "Staat_Liefer",
-   "Telefon",
-   "Handy",
-   "Email",
-   "Skype",
-   "Website",
-   "Telefax",
-   "Telefonprivat",
-   "Handyprivat",
-   "Emailprivat",
-   "Xing",
-   "Linkedin",
-   "Facebook",
-   "Chat",
-   "Anredeformat",
-   "Anrede",
-   "Titel",
-   "Stellung",
-   "Geburtstag",
-   "Geschlecht",
-   "Partner_Vorname",
-   "Partner_Nachname",
-   "Zahlungsbedingungen",
-   "Lieferbedingungen",
-   "Bank",
-   "Kontoinhaber",
-   "IBAN",
-   "BIC",
-   "UIDNr",
-   "Paypal",
-   "Kreditorennummer",
-   "Debitorennummer",
-   "Nummernkreis",
-   "Kundennummer",
-   "Bild",
-   "Bemerkungen",
-   "Detailfeld1",
-   "Detailfeld2",
-   "Detailfeld3",
-   "Detailfeld4",
-   "Detailfeld5",
-   "Vertraulich1",
-   "Vertraulich2",
-   "Vertraulich3",
-   "Vertraulich4",
-   "Vertraulich5",
-   "Bearbeitungsstatus",
-   "Benutzer",
-   "Wiedervorlage"
-  ],
-  "edit": [
-   "Kurzname",
-   "Klassifikation",
-   "Favorit",
-   "Etikett",
-   "Firma",
-   "Abteilung",
-   "Vorname",
-   "Nachname",
-   "Aktiv",
-   "Strasse",
-   "PLZ",
-   "Ort",
-   "Bundesland",
-   "Staat",
-   "Anschrift",
-   "Strasse_Liefer",
-   "PLZ_Liefer",
-   "Ort_Liefer",
-   "Staat_Liefer",
-   "Telefon",
-   "Handy",
-   "Email",
-   "Skype",
-   "Website",
-   "Telefax",
-   "Telefonprivat",
-   "Handyprivat",
-   "Emailprivat",
-   "Xing",
-   "Linkedin",
-   "Facebook",
-   "Chat",
-   "Anredeformat",
-   "Anrede",
-   "Titel",
-   "Stellung",
-   "Geburtstag",
-   "Geschlecht",
-   "Partner_Vorname",
-   "Partner_Nachname",
-   "Zahlungsbedingungen",
-   "Lieferbedingungen",
-   "Bank",
-   "Kontoinhaber",
-   "IBAN",
-   "BIC",
-   "UIDNr",
-   "Paypal",
-   "Kreditorennummer",
-   "Debitorennummer",
-   "Nummernkreis",
-   "Kundennummer",
-   "Bild",
-   "Bemerkungen",
-   "Detailfeld1",
-   "Detailfeld2",
-   "Detailfeld3",
-   "Detailfeld4",
-   "Detailfeld5",
-   "Vertraulich1",
-   "Vertraulich2",
-   "Vertraulich3",
-   "Vertraulich4",
-   "Vertraulich5",
-   "Bearbeitungsstatus",
-   "Benutzer",
-   "Wiedervorlage"
-  ],
-  "search": [
-   "ID",
-   "Laengengrad",
-   "Breitengrad",
-   "Karte",
-   "Kurzname",
-   "Klassifikation",
-   "Favorit",
-   "Etikett",
-   "Firma",
-   "Abteilung",
-   "Vorname",
-   "Nachname",
-   "Aktiv",
-   "Strasse",
-   "PLZ",
-   "Ort",
-   "Bundesland",
-   "Staat",
-   "Anschrift",
-   "Strasse_Liefer",
-   "PLZ_Liefer",
-   "Ort_Liefer",
-   "Staat_Liefer",
-   "Telefon",
-   "Handy",
-   "Email",
-   "Skype",
-   "Website",
-   "Telefax",
-   "Telefonprivat",
-   "Handyprivat",
-   "Emailprivat",
-   "Xing",
-   "Linkedin",
-   "Facebook",
-   "Chat",
-   "Anredeformat",
-   "Anrede",
-   "Titel",
-   "Stellung",
-   "Geburtstag",
-   "Geschlecht",
-   "Partner_Vorname",
-   "Partner_Nachname",
-   "Zahlungsbedingungen",
-   "Lieferbedingungen",
-   "Bank",
-   "Kontoinhaber",
-   "IBAN",
-   "BIC",
-   "UIDNr",
-   "Paypal",
-   "Kreditorennummer",
-   "Debitorennummer",
-   "Nummernkreis",
-   "Kundennummer",
-   "Bemerkungen",
-   "Detailfeld1",
-   "Detailfeld2",
-   "Detailfeld3",
-   "Detailfeld4",
-   "Detailfeld5",
-   "Bearbeitungsstatus",
-   "Benutzer",
-   "Wiedervorlage"
-  ],
-  "masterList": [
-   "Kurzname",
-   "Klassifikation",
-   "Firma",
-   "Abteilung",
-   "Vorname",
-   "Nachname",
-   "Strasse",
-   "PLZ",
-   "Ort",
-   "Telefon",
-   "Handy",
-   "Email",
-   "Website",
-   "Vertraulich1",
-   "Vertraulich2",
-   "Vertraulich3",
-   "Vertraulich4",
-   "Vertraulich5"
-  ]
- },
- "export": {
-  "exportTo": null,
-  "exportDelimiter": null,
-  "exportFormatting": null
- },
- "print": {
-  "printerPageOrientation": 0,
-  "nPrinterPageScale": 100,
-  "nPrinterSplitRecords": 40,
-  "nPrinterPDFSplitRecords": 40
- },
- "tabs": [],
- "labels": {
-  "German": {
-   "Kurzname": "Kurzname",
-   "Firma": "Firma",
-   "Abteilung": "Abteilung",
-   "Vorname": "Vorname",
-   "Nachname": "Nachname",
-   "Strasse": "Strasse",
-   "PLZ": "PLZ",
-   "Bundesland": "Bundesland",
-   "Staat": "Staat",
-   "Benutzer": "Benutzer",
-   "Telefon": "Telefon",
-   "Handy": "Handy",
-   "Email": "Email",
-   "Website": "Website",
-   "Telefax": "Telefax",
-   "Bild": "Bild",
-   "Bemerkungen": "Bemerkungen",
-   "Klassifikation": "Klassifikation",
-   "Geburtstag": "Geburtstag",
-   "Geschlecht": "Geschlecht",
-   "Laengengrad": "Laengengrad",
-   "Breitengrad": "Breitengrad",
-   "Anrede": "Anrede",
-   "Titel": "Titel",
-   "Stellung": "Stellung",
-   "UIDNr": "UIDNr",
-   "Bank": "Bank",
-   "IBAN": "IBAN",
-   "Kontoinhaber": "Kontoinhaber",
-   "Debitorennummer": "Debitorennummer",
-   "Kreditorennummer": "Kreditorennummer",
-   "Paypal": "Paypal",
-   "Wiedervorlage": "Wiedervorlage",
-   "Skype": "Skype",
-   "ID": "ID",
-   "Detailfeld1": "Detailfeld1",
-   "Detailfeld2": "Detailfeld2",
-   "Detailfeld3": "Detailfeld3",
-   "Detailfeld4": "Detailfeld4",
-   "Detailfeld5": "Detailfeld5",
-   "Bearbeitungsstatus": "Bearbeitungsstatus",
-   "Strasse_Liefer": "Strasse Liefer",
-   "PLZ_Liefer": "PLZ Liefer",
-   "Staat_Liefer": "Staat Liefer",
-   "Kundennummer": "Kundennummer",
-   "Xing": "Xing",
-   "Linkedin": "Linkedin",
-   "Facebook": "Facebook",
-   "Chat": "Chat",
-   "Telefonprivat": "Telefon privat",
-   "Emailprivat": "Email privat",
-   "Handyprivat": "Handy privat",
-   "Ort": "Ort",
-   "Ort_Liefer": "Ort Liefer",
-   "Lieferbedingungen": "Lieferbedingungen",
-   "Zahlungsbedingungen": "Zahlungsbedingungen",
-   "Anschrift": "Anschrift",
-   "Karte": "Karte",
-   "BIC": "BIC",
-   "Miniatur": "Miniatur",
-   "Partner_Vorname": "Partner Vorname",
-   "Partner_Nachname": "Partner Nachname",
-   "Anredeformat": "Anredeformat",
-   "Etikett": "Etikett",
-   "Favorit": "Favorit",
-   "Nummernkreis": "Nummernkreis",
-   "Aktiv": "Inaktiv",
-   "Team": "Team",
-   "Vertraulich1": "Vertraulich1",
-   "Vertraulich2": "Vertraulich2",
-   "Vertraulich3": "Vertraulich3",
-   "Vertraulich4": "Vertraulich4",
-   "Vertraulich5": "Vertraulich5"
-  }
- },
- "fields": [
-  {
-   "name": "ID",
-   "type": 3,
-   "index": 1,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "number",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "AutoInc": true,
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Kurzname",
-   "type": 200,
-   "index": 2,
-   "pages": {
+  "pageSize": 20,
+  "capabilities": {
     "list": true,
     "view": true,
     "add": true,
@@ -463,2073 +24,2587 @@
     "print": false,
     "search": true,
     "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
   },
-  {
-   "name": "Firma",
-   "type": 200,
-   "index": 3,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 287
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Abteilung",
-   "type": 200,
-   "index": 4,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Wertelisten",
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 0,
-    "LinkField": "Eintrag",
-    "LinkFieldType": 0,
-    "DisplayField": "Eintrag",
-    "LookupWhereCode": true,
-    "LookupOrderBy": "Eintrag",
-    "AllowToAdd": true,
-    "SelectSize": 1,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Vorname",
-   "type": 200,
-   "index": 5,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 287
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Nachname",
-   "type": 200,
-   "index": 6,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Strasse",
-   "type": 200,
-   "index": 7,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 287
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "PLZ",
-   "type": 200,
-   "index": 8,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "ViewFormat": "Custom"
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "PLZ",
-    "freeInput": true,
-    "autoCompleteFieldsOnEdit": 1,
-    "LCType": 1,
-    "LinkField": "PLZ",
-    "LinkFieldType": 0,
-    "DisplayField": "PLZ",
-    "LookupOrderBy": "PLZ",
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 50
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Ort",
-   "type": 200,
-   "index": 9,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 287
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Bundesland",
-   "type": 200,
-   "index": 10,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Wertelisten",
-    "freeInput": true,
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 1,
-    "LinkField": "Eintrag",
-    "LinkFieldType": 0,
-    "DisplayField": "Eintrag",
-    "LookupWhereCode": true,
-    "LookupOrderBy": "Eintrag",
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Staat",
-   "type": 200,
-   "index": 11,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Wertelisten",
-    "freeInput": true,
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 1,
-    "LinkField": "Eintrag",
-    "LinkFieldType": 0,
-    "DisplayField": "Eintrag",
-    "LookupWhereCode": true,
-    "LookupOrderBy": "Eintrag",
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 287
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Benutzer",
-   "type": 200,
-   "index": 12,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200,
-    "autoUpdatable": true
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Telefon",
-   "type": 200,
-   "index": 13,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "LinkPrefix": "tel:",
-    "hlType": 0,
-    "hlLinkWordNameType": "Text",
-    "hlLinkWordText": "Link",
-    "hlTitleField": ""
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "tel",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Handy",
-   "type": 200,
-   "index": 14,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "LinkPrefix": "tel:",
-    "hlType": 0,
-    "hlLinkWordNameType": "Text",
-    "hlLinkWordText": "Link",
-    "hlTitleField": ""
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "tel",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Email",
-   "type": 200,
-   "index": 15,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "ViewFormat": "Email Hyperlink"
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "email",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Website",
-   "type": 200,
-   "index": 16,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "hlNewWindow": true,
-    "hlType": 0,
-    "hlLinkWordNameType": "Text",
-    "hlLinkWordText": "Link",
-    "hlTitleField": ""
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "url",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Telefax",
-   "type": 200,
-   "index": 17,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Bild",
-   "type": 128,
-   "index": 18,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": false
-   },
-   "view": {
-    "ShowThumbnail": true,
-    "ThumbWidth": 72,
-    "ThumbHeight": 72,
-    "ImageWidth": 400,
-    "ImageHeight": 300,
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 297,
-    "CreateThumbnail": true,
-    "StrThumbnail": "Miniatur",
-    "ThumbnailSize": 150,
-    "ResizeImage": true,
-    "NewSize": 600
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Bemerkungen",
-   "type": 201,
-   "index": 19,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "ViewFormat": "HTML"
-   },
-   "edit": {
-    "UseRTE": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "nRows": 200,
-    "nCols": 600,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Laengengrad",
-   "type": 14,
-   "index": 20,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "number",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Breitengrad",
-   "type": 14,
-   "index": 21,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "number",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Klassifikation",
-   "type": 200,
-   "index": 22,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Klassifikationen Adressen",
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 0,
-    "LinkField": "Klassifikation",
-    "LinkFieldType": 0,
-    "DisplayField": "Klassifikation",
-    "LookupOrderBy": "Klassifikation",
-    "Multiselect": true,
-    "SelectSize": 1,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Geburtstag",
-   "type": 7,
-   "index": 23,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "DateEditType": 0,
-    "InitialYearFactor": 3,
-    "LastYearFactor": 10,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Geschlecht",
-   "type": 200,
-   "index": 24,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 0,
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 4,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Anrede",
-   "type": 200,
-   "index": 25,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Wertelisten",
-    "freeInput": true,
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 1,
-    "LinkField": "Eintrag",
-    "LinkFieldType": 0,
-    "DisplayField": "Eintrag",
-    "LookupWhereCode": true,
-    "LookupOrderBy": "Eintrag",
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Titel",
-   "type": 200,
-   "index": 26,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Wertelisten",
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 0,
-    "LinkField": "Eintrag",
-    "LinkFieldType": 0,
-    "DisplayField": "Eintrag",
-    "LookupWhereCode": true,
-    "LookupOrderBy": "Eintrag",
-    "SelectSize": 1,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Stellung",
-   "type": 200,
-   "index": 27,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Wertelisten",
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 0,
-    "LinkField": "Eintrag",
-    "LinkFieldType": 0,
-    "DisplayField": "Eintrag",
-    "LookupWhereCode": true,
-    "LookupOrderBy": "Eintrag",
-    "SelectSize": 1,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Strasse_Liefer",
-   "type": 200,
-   "index": 28,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "PLZ_Liefer",
-   "type": 200,
-   "index": 29,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Ort_Liefer",
-   "type": 200,
-   "index": 30,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Staat_Liefer",
-   "type": 200,
-   "index": 31,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Wertelisten",
-    "freeInput": true,
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 1,
-    "LinkField": "Eintrag",
-    "LinkFieldType": 0,
-    "DisplayField": "Eintrag",
-    "LookupWhereCode": true,
-    "LookupOrderBy": "Eintrag",
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 287
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "UIDNr",
-   "type": 200,
-   "index": 32,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Bank",
-   "type": 200,
-   "index": 33,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "IBAN",
-   "type": 200,
-   "index": 34,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Kontoinhaber",
-   "type": 200,
-   "index": 35,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Debitorennummer",
-   "type": 3,
-   "index": 36,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "number",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Kreditorennummer",
-   "type": 3,
-   "index": 37,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "number",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Paypal",
-   "type": 200,
-   "index": 38,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "email",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Wiedervorlage",
-   "type": 7,
-   "index": 39,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "DateEditType": 13,
-    "InitialYearFactor": 3,
-    "LastYearFactor": 10,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Skype",
-   "type": 200,
-   "index": 40,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "hlType": 0,
-    "hlLinkWordNameType": "Text",
-    "hlLinkWordText": "Link",
-    "hlTitleField": ""
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Detailfeld1",
-   "type": 200,
-   "index": 41,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Detailfeld2",
-   "type": 200,
-   "index": 42,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Detailfeld3",
-   "type": 200,
-   "index": 43,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Detailfeld4",
-   "type": 200,
-   "index": 44,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Detailfeld5",
-   "type": 200,
-   "index": 45,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Bearbeitungsstatus",
-   "type": 200,
-   "index": 46,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Wertelisten",
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 0,
-    "LinkField": "Eintrag",
-    "LinkFieldType": 0,
-    "DisplayField": "Eintrag",
-    "LookupWhereCode": true,
-    "LookupOrderBy": "Eintrag",
-    "SelectSize": 1,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Kundennummer",
-   "type": 200,
-   "index": 47,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Xing",
-   "type": 200,
-   "index": 48,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "hlType": 1,
-    "hlLinkWordNameType": "Text",
-    "hlLinkWordText": "Xing",
-    "hlTitleField": ""
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Linkedin",
-   "type": 200,
-   "index": 49,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "hlType": 1,
-    "hlLinkWordNameType": "Text",
-    "hlLinkWordText": "LinkedIn",
-    "hlTitleField": ""
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Facebook",
-   "type": 200,
-   "index": 50,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "hlType": 1,
-    "hlLinkWordNameType": "Text",
-    "hlLinkWordText": "Facebook",
-    "hlTitleField": ""
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Chat",
-   "type": 200,
-   "index": 51,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Telefonprivat",
-   "type": 200,
-   "index": 52,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "LinkPrefix": "tel:",
-    "hlType": 0,
-    "hlLinkWordNameType": "Text",
-    "hlLinkWordText": "Link",
-    "hlTitleField": ""
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Emailprivat",
-   "type": 200,
-   "index": 53,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "ViewFormat": "Email Hyperlink"
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Handyprivat",
-   "type": 200,
-   "index": 54,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "LinkPrefix": "tel:",
-    "hlType": 0,
-    "hlLinkWordNameType": "Text",
-    "hlLinkWordText": "Link",
-    "hlTitleField": ""
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Lieferbedingungen",
-   "type": 200,
-   "index": 55,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Zahlungsbedingungen",
-   "type": 200,
-   "index": 56,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Karte",
-   "type": 200,
-   "index": 57,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Anschrift",
-   "type": 200,
-   "index": 58,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "BIC",
-   "type": 200,
-   "index": 59,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Miniatur",
-   "type": 128,
-   "index": 60,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": false
-   },
-   "view": {
-    "ImageWidth": 457,
-    "ImageHeight": 0,
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Partner_Vorname",
-   "type": 200,
-   "index": 61,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Partner_Nachname",
-   "type": 200,
-   "index": 62,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Anredeformat",
-   "type": 200,
-   "index": 63,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 0,
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 4,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Etikett",
-   "type": 200,
-   "index": 64,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "ViewFormat": "Custom"
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Farben",
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 2,
-    "HorizontalLookup": true,
-    "LinkField": "Farbwert",
-    "LinkFieldType": 0,
-    "DisplayField": "Farbname",
-    "LookupOrderBy": "Farbwert",
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Favorit",
-   "type": 16,
-   "index": 65,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "ViewFormat": "Custom"
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Nummernkreis",
-   "type": 200,
-   "index": 66,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "fieldEvents": [
-     null
+  "fieldSets": {
+    "list": [
+      "Kurzname",
+      "Klassifikation",
+      "Etikett",
+      "Firma",
+      "Vorname",
+      "Nachname",
+      "Strasse",
+      "PLZ",
+      "Ort",
+      "Bild"
     ],
-    "LookupType": 2,
-    "LookupTable": "Seriennummern",
-    "autoCompleteFieldsOnEdit": 1,
-    "LCType": 0,
-    "LinkField": "ID",
-    "LinkFieldType": 0,
-    "DisplayField": "Nummernkreis",
-    "LookupOrderBy": "Nummernkreis",
-    "SelectSize": 1,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
+    "view": [
+      "Karte",
+      "Kurzname",
+      "Klassifikation",
+      "Favorit",
+      "Etikett",
+      "Firma",
+      "Abteilung",
+      "Vorname",
+      "Nachname",
+      "Aktiv",
+      "Strasse",
+      "PLZ",
+      "Ort",
+      "Bundesland",
+      "Staat",
+      "Anschrift",
+      "Strasse_Liefer",
+      "PLZ_Liefer",
+      "Ort_Liefer",
+      "Staat_Liefer",
+      "Telefon",
+      "Handy",
+      "Email",
+      "Skype",
+      "Website",
+      "Telefax",
+      "Telefonprivat",
+      "Handyprivat",
+      "Emailprivat",
+      "Xing",
+      "Linkedin",
+      "Facebook",
+      "Chat",
+      "Anrede",
+      "Titel",
+      "Stellung",
+      "Geburtstag",
+      "Geschlecht",
+      "Partner_Vorname",
+      "Partner_Nachname",
+      "Zahlungsbedingungen",
+      "Lieferbedingungen",
+      "Bank",
+      "Kontoinhaber",
+      "IBAN",
+      "BIC",
+      "UIDNr",
+      "Paypal",
+      "Kreditorennummer",
+      "Debitorennummer",
+      "Kundennummer",
+      "Bild",
+      "Bemerkungen",
+      "Detailfeld1",
+      "Detailfeld2",
+      "Detailfeld3",
+      "Detailfeld4",
+      "Detailfeld5",
+      "Vertraulich1",
+      "Vertraulich2",
+      "Vertraulich3",
+      "Vertraulich4",
+      "Vertraulich5",
+      "Bearbeitungsstatus",
+      "Benutzer",
+      "Wiedervorlage"
+    ],
+    "add": [
+      "Kurzname",
+      "Klassifikation",
+      "Favorit",
+      "Etikett",
+      "Firma",
+      "Abteilung",
+      "Vorname",
+      "Nachname",
+      "Strasse",
+      "PLZ",
+      "Ort",
+      "Bundesland",
+      "Staat",
+      "Anschrift",
+      "Strasse_Liefer",
+      "PLZ_Liefer",
+      "Ort_Liefer",
+      "Staat_Liefer",
+      "Telefon",
+      "Handy",
+      "Email",
+      "Skype",
+      "Website",
+      "Telefax",
+      "Telefonprivat",
+      "Handyprivat",
+      "Emailprivat",
+      "Xing",
+      "Linkedin",
+      "Facebook",
+      "Chat",
+      "Anredeformat",
+      "Anrede",
+      "Titel",
+      "Stellung",
+      "Geburtstag",
+      "Geschlecht",
+      "Partner_Vorname",
+      "Partner_Nachname",
+      "Zahlungsbedingungen",
+      "Lieferbedingungen",
+      "Bank",
+      "Kontoinhaber",
+      "IBAN",
+      "BIC",
+      "UIDNr",
+      "Paypal",
+      "Kreditorennummer",
+      "Debitorennummer",
+      "Nummernkreis",
+      "Kundennummer",
+      "Bild",
+      "Bemerkungen",
+      "Detailfeld1",
+      "Detailfeld2",
+      "Detailfeld3",
+      "Detailfeld4",
+      "Detailfeld5",
+      "Vertraulich1",
+      "Vertraulich2",
+      "Vertraulich3",
+      "Vertraulich4",
+      "Vertraulich5",
+      "Bearbeitungsstatus",
+      "Benutzer",
+      "Wiedervorlage"
+    ],
+    "edit": [
+      "Kurzname",
+      "Klassifikation",
+      "Favorit",
+      "Etikett",
+      "Firma",
+      "Abteilung",
+      "Vorname",
+      "Nachname",
+      "Aktiv",
+      "Strasse",
+      "PLZ",
+      "Ort",
+      "Bundesland",
+      "Staat",
+      "Anschrift",
+      "Strasse_Liefer",
+      "PLZ_Liefer",
+      "Ort_Liefer",
+      "Staat_Liefer",
+      "Telefon",
+      "Handy",
+      "Email",
+      "Skype",
+      "Website",
+      "Telefax",
+      "Telefonprivat",
+      "Handyprivat",
+      "Emailprivat",
+      "Xing",
+      "Linkedin",
+      "Facebook",
+      "Chat",
+      "Anredeformat",
+      "Anrede",
+      "Titel",
+      "Stellung",
+      "Geburtstag",
+      "Geschlecht",
+      "Partner_Vorname",
+      "Partner_Nachname",
+      "Zahlungsbedingungen",
+      "Lieferbedingungen",
+      "Bank",
+      "Kontoinhaber",
+      "IBAN",
+      "BIC",
+      "UIDNr",
+      "Paypal",
+      "Kreditorennummer",
+      "Debitorennummer",
+      "Nummernkreis",
+      "Kundennummer",
+      "Bild",
+      "Bemerkungen",
+      "Detailfeld1",
+      "Detailfeld2",
+      "Detailfeld3",
+      "Detailfeld4",
+      "Detailfeld5",
+      "Vertraulich1",
+      "Vertraulich2",
+      "Vertraulich3",
+      "Vertraulich4",
+      "Vertraulich5",
+      "Bearbeitungsstatus",
+      "Benutzer",
+      "Wiedervorlage"
+    ],
+    "search": [
+      "ID",
+      "Laengengrad",
+      "Breitengrad",
+      "Karte",
+      "Kurzname",
+      "Klassifikation",
+      "Favorit",
+      "Etikett",
+      "Firma",
+      "Abteilung",
+      "Vorname",
+      "Nachname",
+      "Aktiv",
+      "Strasse",
+      "PLZ",
+      "Ort",
+      "Bundesland",
+      "Staat",
+      "Anschrift",
+      "Strasse_Liefer",
+      "PLZ_Liefer",
+      "Ort_Liefer",
+      "Staat_Liefer",
+      "Telefon",
+      "Handy",
+      "Email",
+      "Skype",
+      "Website",
+      "Telefax",
+      "Telefonprivat",
+      "Handyprivat",
+      "Emailprivat",
+      "Xing",
+      "Linkedin",
+      "Facebook",
+      "Chat",
+      "Anredeformat",
+      "Anrede",
+      "Titel",
+      "Stellung",
+      "Geburtstag",
+      "Geschlecht",
+      "Partner_Vorname",
+      "Partner_Nachname",
+      "Zahlungsbedingungen",
+      "Lieferbedingungen",
+      "Bank",
+      "Kontoinhaber",
+      "IBAN",
+      "BIC",
+      "UIDNr",
+      "Paypal",
+      "Kreditorennummer",
+      "Debitorennummer",
+      "Nummernkreis",
+      "Kundennummer",
+      "Bemerkungen",
+      "Detailfeld1",
+      "Detailfeld2",
+      "Detailfeld3",
+      "Detailfeld4",
+      "Detailfeld5",
+      "Bearbeitungsstatus",
+      "Benutzer",
+      "Wiedervorlage"
+    ],
+    "masterList": [
+      "Kurzname",
+      "Klassifikation",
+      "Firma",
+      "Abteilung",
+      "Vorname",
+      "Nachname",
+      "Strasse",
+      "PLZ",
+      "Ort",
+      "Telefon",
+      "Handy",
+      "Email",
+      "Website",
+      "Vertraulich1",
+      "Vertraulich2",
+      "Vertraulich3",
+      "Vertraulich4",
+      "Vertraulich5"
+    ]
   },
-  {
-   "name": "Aktiv",
-   "type": 16,
-   "index": 67,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": false,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "ViewFormat": "Checkbox"
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
+  "export": {
+    "exportTo": null,
+    "exportDelimiter": null,
+    "exportFormatting": null
   },
-  {
-   "name": "Team",
-   "type": 200,
-   "index": 68,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
+  "print": {
+    "printerPageOrientation": 0,
+    "nPrinterPageScale": 100,
+    "nPrinterSplitRecords": 40,
+    "nPrinterPDFSplitRecords": 40
   },
-  {
-   "name": "Vertraulich1",
-   "type": 200,
-   "index": 69,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
+  "tabs": [],
+  "labels": {
+    "German": {
+      "Kurzname": "Kurzname",
+      "Firma": "Firma",
+      "Abteilung": "Abteilung",
+      "Vorname": "Vorname",
+      "Nachname": "Nachname",
+      "Strasse": "Strasse",
+      "PLZ": "PLZ",
+      "Bundesland": "Bundesland",
+      "Staat": "Staat",
+      "Benutzer": "Benutzer",
+      "Telefon": "Telefon",
+      "Handy": "Handy",
+      "Email": "Email",
+      "Website": "Website",
+      "Telefax": "Telefax",
+      "Bild": "Bild",
+      "Bemerkungen": "Bemerkungen",
+      "Klassifikation": "Klassifikation",
+      "Geburtstag": "Geburtstag",
+      "Geschlecht": "Geschlecht",
+      "Laengengrad": "Laengengrad",
+      "Breitengrad": "Breitengrad",
+      "Anrede": "Anrede",
+      "Titel": "Titel",
+      "Stellung": "Stellung",
+      "UIDNr": "UIDNr",
+      "Bank": "Bank",
+      "IBAN": "IBAN",
+      "Kontoinhaber": "Kontoinhaber",
+      "Debitorennummer": "Debitorennummer",
+      "Kreditorennummer": "Kreditorennummer",
+      "Paypal": "Paypal",
+      "Wiedervorlage": "Wiedervorlage",
+      "Skype": "Skype",
+      "ID": "ID",
+      "Detailfeld1": "Detailfeld1",
+      "Detailfeld2": "Detailfeld2",
+      "Detailfeld3": "Detailfeld3",
+      "Detailfeld4": "Detailfeld4",
+      "Detailfeld5": "Detailfeld5",
+      "Bearbeitungsstatus": "Bearbeitungsstatus",
+      "Strasse_Liefer": "Strasse Liefer",
+      "PLZ_Liefer": "PLZ Liefer",
+      "Staat_Liefer": "Staat Liefer",
+      "Kundennummer": "Kundennummer",
+      "Xing": "Xing",
+      "Linkedin": "Linkedin",
+      "Facebook": "Facebook",
+      "Chat": "Chat",
+      "Telefonprivat": "Telefon privat",
+      "Emailprivat": "Email privat",
+      "Handyprivat": "Handy privat",
+      "Ort": "Ort",
+      "Ort_Liefer": "Ort Liefer",
+      "Lieferbedingungen": "Lieferbedingungen",
+      "Zahlungsbedingungen": "Zahlungsbedingungen",
+      "Anschrift": "Anschrift",
+      "Karte": "Karte",
+      "BIC": "BIC",
+      "Miniatur": "Miniatur",
+      "Partner_Vorname": "Partner Vorname",
+      "Partner_Nachname": "Partner Nachname",
+      "Anredeformat": "Anredeformat",
+      "Etikett": "Etikett",
+      "Favorit": "Favorit",
+      "Nummernkreis": "Nummernkreis",
+      "Aktiv": "Inaktiv",
+      "Team": "Team",
+      "Vertraulich1": "Vertraulich1",
+      "Vertraulich2": "Vertraulich2",
+      "Vertraulich3": "Vertraulich3",
+      "Vertraulich4": "Vertraulich4",
+      "Vertraulich5": "Vertraulich5"
+    },
+    "English": {
+      "Kurzname": "Short name",
+      "Firma": "Company",
+      "Abteilung": "Department",
+      "Vorname": "First name",
+      "Nachname": "Last name",
+      "Strasse": "Street",
+      "PLZ": "Postal codes",
+      "Bundesland": "State",
+      "Staat": "Country",
+      "Benutzer": "Users",
+      "Telefon": "Phone",
+      "Handy": "Mobile",
+      "Email": "Email",
+      "Website": "Website",
+      "Telefax": "Fax",
+      "Bild": "Image",
+      "Bemerkungen": "Notes",
+      "Klassifikation": "Classification",
+      "Geburtstag": "Date of birth",
+      "Geschlecht": "Gender",
+      "Laengengrad": "Laengengrad",
+      "Breitengrad": "Breitengrad",
+      "Anrede": "Salutation",
+      "Titel": "Title",
+      "Stellung": "Position",
+      "UIDNr": "UIDNr",
+      "Bank": "Bank",
+      "IBAN": "IBAN",
+      "Kontoinhaber": "Account holder",
+      "Debitorennummer": "Debtor number",
+      "Kreditorennummer": "Creditor number",
+      "Paypal": "Paypal",
+      "Wiedervorlage": "Follow-ups",
+      "Skype": "Skype",
+      "ID": "ID",
+      "Detailfeld1": "Detailfeld1",
+      "Detailfeld2": "Detailfeld2",
+      "Detailfeld3": "Detailfeld3",
+      "Detailfeld4": "Detailfeld4",
+      "Detailfeld5": "Detailfeld5",
+      "Bearbeitungsstatus": "Processing status",
+      "Strasse_Liefer": "Street Delivery",
+      "PLZ_Liefer": "Postal codes Delivery",
+      "Staat_Liefer": "Country Delivery",
+      "Kundennummer": "Customer number",
+      "Xing": "Xing",
+      "Linkedin": "Linkedin",
+      "Facebook": "Facebook",
+      "Chat": "Chat",
+      "Telefonprivat": "Phone private",
+      "Emailprivat": "Email private",
+      "Handyprivat": "Mobile private",
+      "Ort": "City",
+      "Ort_Liefer": "City Delivery",
+      "Lieferbedingungen": "Delivery terms",
+      "Zahlungsbedingungen": "Payment terms",
+      "Anschrift": "Anschrift",
+      "Karte": "Karte",
+      "BIC": "BIC",
+      "Miniatur": "Miniatur",
+      "Partner_Vorname": "Partner First name",
+      "Partner_Nachname": "Partner Last name",
+      "Anredeformat": "Salutation format",
+      "Etikett": "Etikett",
+      "Favorit": "Favourite",
+      "Nummernkreis": "Numbernkreis",
+      "Aktiv": "Inactive",
+      "Team": "Team",
+      "Vertraulich1": "Vertraulich1",
+      "Vertraulich2": "Vertraulich2",
+      "Vertraulich3": "Vertraulich3",
+      "Vertraulich4": "Vertraulich4",
+      "Vertraulich5": "Vertraulich5"
+    }
   },
-  {
-   "name": "Vertraulich2",
-   "type": 200,
-   "index": 70,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Vertraulich3",
-   "type": 200,
-   "index": 71,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Vertraulich4",
-   "type": 200,
-   "index": 72,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Vertraulich5",
-   "type": 200,
-   "index": 73,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  }
- ]
+  "fields": [
+    {
+      "name": "ID",
+      "type": 3,
+      "index": 1,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "number",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "AutoInc": true,
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Kurzname",
+      "type": 200,
+      "index": 2,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Firma",
+      "type": 200,
+      "index": 3,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 287
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Abteilung",
+      "type": 200,
+      "index": 4,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Wertelisten",
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 0,
+        "LinkField": "Eintrag",
+        "LinkFieldType": 0,
+        "DisplayField": "Eintrag",
+        "LookupWhereCode": true,
+        "LookupOrderBy": "Eintrag",
+        "AllowToAdd": true,
+        "SelectSize": 1,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Vorname",
+      "type": 200,
+      "index": 5,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 287
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Nachname",
+      "type": 200,
+      "index": 6,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Strasse",
+      "type": 200,
+      "index": 7,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 287
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "PLZ",
+      "type": 200,
+      "index": 8,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "ViewFormat": "Custom"
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "PLZ",
+        "freeInput": true,
+        "autoCompleteFieldsOnEdit": 1,
+        "LCType": 1,
+        "LinkField": "PLZ",
+        "LinkFieldType": 0,
+        "DisplayField": "PLZ",
+        "LookupOrderBy": "PLZ",
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 50
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Ort",
+      "type": 200,
+      "index": 9,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 287
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Bundesland",
+      "type": 200,
+      "index": 10,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Wertelisten",
+        "freeInput": true,
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 1,
+        "LinkField": "Eintrag",
+        "LinkFieldType": 0,
+        "DisplayField": "Eintrag",
+        "LookupWhereCode": true,
+        "LookupOrderBy": "Eintrag",
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Staat",
+      "type": 200,
+      "index": 11,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Wertelisten",
+        "freeInput": true,
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 1,
+        "LinkField": "Eintrag",
+        "LinkFieldType": 0,
+        "DisplayField": "Eintrag",
+        "LookupWhereCode": true,
+        "LookupOrderBy": "Eintrag",
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 287
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Benutzer",
+      "type": 200,
+      "index": 12,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200,
+        "autoUpdatable": true
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Telefon",
+      "type": 200,
+      "index": 13,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "LinkPrefix": "tel:",
+        "hlType": 0,
+        "hlLinkWordNameType": "Text",
+        "hlLinkWordText": "Link",
+        "hlTitleField": ""
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "tel",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Handy",
+      "type": 200,
+      "index": 14,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "LinkPrefix": "tel:",
+        "hlType": 0,
+        "hlLinkWordNameType": "Text",
+        "hlLinkWordText": "Link",
+        "hlTitleField": ""
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "tel",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Email",
+      "type": 200,
+      "index": 15,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "ViewFormat": "Email Hyperlink"
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "email",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Website",
+      "type": 200,
+      "index": 16,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "hlNewWindow": true,
+        "hlType": 0,
+        "hlLinkWordNameType": "Text",
+        "hlLinkWordText": "Link",
+        "hlTitleField": ""
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "url",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Telefax",
+      "type": 200,
+      "index": 17,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Bild",
+      "type": 128,
+      "index": 18,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": false
+      },
+      "view": {
+        "ShowThumbnail": true,
+        "ThumbWidth": 72,
+        "ThumbHeight": 72,
+        "ImageWidth": 400,
+        "ImageHeight": 300,
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 297,
+        "CreateThumbnail": true,
+        "StrThumbnail": "Miniatur",
+        "ThumbnailSize": 150,
+        "ResizeImage": true,
+        "NewSize": 600
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Bemerkungen",
+      "type": 201,
+      "index": 19,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "ViewFormat": "HTML"
+      },
+      "edit": {
+        "UseRTE": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "nRows": 200,
+        "nCols": 600,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Laengengrad",
+      "type": 14,
+      "index": 20,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "number",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Breitengrad",
+      "type": 14,
+      "index": 21,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "number",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Klassifikation",
+      "type": 200,
+      "index": 22,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Klassifikationen Adressen",
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 0,
+        "LinkField": "Klassifikation",
+        "LinkFieldType": 0,
+        "DisplayField": "Klassifikation",
+        "LookupOrderBy": "Klassifikation",
+        "Multiselect": true,
+        "SelectSize": 1,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Geburtstag",
+      "type": 7,
+      "index": 23,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "DateEditType": 0,
+        "InitialYearFactor": 3,
+        "LastYearFactor": 10,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Geschlecht",
+      "type": 200,
+      "index": 24,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 0,
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 4,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Anrede",
+      "type": 200,
+      "index": 25,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Wertelisten",
+        "freeInput": true,
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 1,
+        "LinkField": "Eintrag",
+        "LinkFieldType": 0,
+        "DisplayField": "Eintrag",
+        "LookupWhereCode": true,
+        "LookupOrderBy": "Eintrag",
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Titel",
+      "type": 200,
+      "index": 26,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Wertelisten",
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 0,
+        "LinkField": "Eintrag",
+        "LinkFieldType": 0,
+        "DisplayField": "Eintrag",
+        "LookupWhereCode": true,
+        "LookupOrderBy": "Eintrag",
+        "SelectSize": 1,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Stellung",
+      "type": 200,
+      "index": 27,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Wertelisten",
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 0,
+        "LinkField": "Eintrag",
+        "LinkFieldType": 0,
+        "DisplayField": "Eintrag",
+        "LookupWhereCode": true,
+        "LookupOrderBy": "Eintrag",
+        "SelectSize": 1,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Strasse_Liefer",
+      "type": 200,
+      "index": 28,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "PLZ_Liefer",
+      "type": 200,
+      "index": 29,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Ort_Liefer",
+      "type": 200,
+      "index": 30,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Staat_Liefer",
+      "type": 200,
+      "index": 31,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Wertelisten",
+        "freeInput": true,
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 1,
+        "LinkField": "Eintrag",
+        "LinkFieldType": 0,
+        "DisplayField": "Eintrag",
+        "LookupWhereCode": true,
+        "LookupOrderBy": "Eintrag",
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 287
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "UIDNr",
+      "type": 200,
+      "index": 32,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Bank",
+      "type": 200,
+      "index": 33,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "IBAN",
+      "type": 200,
+      "index": 34,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Kontoinhaber",
+      "type": 200,
+      "index": 35,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Debitorennummer",
+      "type": 3,
+      "index": 36,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "number",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Kreditorennummer",
+      "type": 3,
+      "index": 37,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "number",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Paypal",
+      "type": 200,
+      "index": 38,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "email",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Wiedervorlage",
+      "type": 7,
+      "index": 39,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "DateEditType": 13,
+        "InitialYearFactor": 3,
+        "LastYearFactor": 10,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Skype",
+      "type": 200,
+      "index": 40,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "hlType": 0,
+        "hlLinkWordNameType": "Text",
+        "hlLinkWordText": "Link",
+        "hlTitleField": ""
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Detailfeld1",
+      "type": 200,
+      "index": 41,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Detailfeld2",
+      "type": 200,
+      "index": 42,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Detailfeld3",
+      "type": 200,
+      "index": 43,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Detailfeld4",
+      "type": 200,
+      "index": 44,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Detailfeld5",
+      "type": 200,
+      "index": 45,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Bearbeitungsstatus",
+      "type": 200,
+      "index": 46,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Wertelisten",
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 0,
+        "LinkField": "Eintrag",
+        "LinkFieldType": 0,
+        "DisplayField": "Eintrag",
+        "LookupWhereCode": true,
+        "LookupOrderBy": "Eintrag",
+        "SelectSize": 1,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Kundennummer",
+      "type": 200,
+      "index": 47,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Xing",
+      "type": 200,
+      "index": 48,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "hlType": 1,
+        "hlLinkWordNameType": "Text",
+        "hlLinkWordText": "Xing",
+        "hlTitleField": ""
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Linkedin",
+      "type": 200,
+      "index": 49,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "hlType": 1,
+        "hlLinkWordNameType": "Text",
+        "hlLinkWordText": "LinkedIn",
+        "hlTitleField": ""
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Facebook",
+      "type": 200,
+      "index": 50,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "hlType": 1,
+        "hlLinkWordNameType": "Text",
+        "hlLinkWordText": "Facebook",
+        "hlTitleField": ""
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Chat",
+      "type": 200,
+      "index": 51,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Telefonprivat",
+      "type": 200,
+      "index": 52,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "LinkPrefix": "tel:",
+        "hlType": 0,
+        "hlLinkWordNameType": "Text",
+        "hlLinkWordText": "Link",
+        "hlTitleField": ""
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Emailprivat",
+      "type": 200,
+      "index": 53,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "ViewFormat": "Email Hyperlink"
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Handyprivat",
+      "type": 200,
+      "index": 54,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "LinkPrefix": "tel:",
+        "hlType": 0,
+        "hlLinkWordNameType": "Text",
+        "hlLinkWordText": "Link",
+        "hlTitleField": ""
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Lieferbedingungen",
+      "type": 200,
+      "index": 55,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Zahlungsbedingungen",
+      "type": 200,
+      "index": 56,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Karte",
+      "type": 200,
+      "index": 57,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Anschrift",
+      "type": 200,
+      "index": 58,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "BIC",
+      "type": 200,
+      "index": 59,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Miniatur",
+      "type": 128,
+      "index": 60,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": false
+      },
+      "view": {
+        "ImageWidth": 457,
+        "ImageHeight": 0,
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Partner_Vorname",
+      "type": 200,
+      "index": 61,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Partner_Nachname",
+      "type": 200,
+      "index": 62,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Anredeformat",
+      "type": 200,
+      "index": 63,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 0,
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 4,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Etikett",
+      "type": 200,
+      "index": 64,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "ViewFormat": "Custom"
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Farben",
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 2,
+        "HorizontalLookup": true,
+        "LinkField": "Farbwert",
+        "LinkFieldType": 0,
+        "DisplayField": "Farbname",
+        "LookupOrderBy": "Farbwert",
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Favorit",
+      "type": 16,
+      "index": 65,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "ViewFormat": "Custom"
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Nummernkreis",
+      "type": 200,
+      "index": 66,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "fieldEvents": [
+          null
+        ],
+        "LookupType": 2,
+        "LookupTable": "Seriennummern",
+        "autoCompleteFieldsOnEdit": 1,
+        "LCType": 0,
+        "LinkField": "ID",
+        "LinkFieldType": 0,
+        "DisplayField": "Nummernkreis",
+        "LookupOrderBy": "Nummernkreis",
+        "SelectSize": 1,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Aktiv",
+      "type": 16,
+      "index": 67,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": false,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "ViewFormat": "Checkbox"
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Team",
+      "type": 200,
+      "index": 68,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Vertraulich1",
+      "type": 200,
+      "index": 69,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Vertraulich2",
+      "type": 200,
+      "index": 70,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Vertraulich3",
+      "type": 200,
+      "index": 71,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Vertraulich4",
+      "type": 200,
+      "index": 72,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Vertraulich5",
+      "type": 200,
+      "index": 73,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    }
+  ]
 }

@@ -1,1362 +1,1400 @@
 {
- "entity": "Vertraege",
- "shortName": "Vertraege",
- "baseTable": "Vertraege",
- "isVirtual": false,
- "ownerField": "Team",
- "sql": {
-  "strOrderBy": "",
-  "sqlHead": "SELECT `ID`,  \t`Datum`,  \t`Bezeichnung`,  \t`Aktenzeichen`,  \t`Aufbewahrungsort`,  \t`Konditionen`,  \t`Kuendigung`,  \t`Dokument`,  \t`DokumentURL`,  \t`Dokumentdateiname`,  \t`Bemerkungen`,  \t`Benutzer`,  \t`Objekt`,  \t`Einheit`,  \t`Raum`,  \t`Inventar`,  \t`Adresse`,  \t`Abschlussdatum`,  \t`Enddatum`,  \t`Kaltmiete`,  \t`NK_Vorauszahlung`,  \t`HK_Vorauszahlung`,  \t`Garagenmiete`,  \t`Versicherungssumme`,  \t`Selbstbehalt`,  \t`Betrag`,  \t`Abschlag`,  \t`Art`,  \t`Wiedervorlage`,  \t`Kautionsbetrag`,  \t`Kautionsanlage`,  \t`Kaution1`,  \t`Kaution2`,  \t`Kaution3`,  \t`Kautionsbemerkungen`,  \t`Team`",
-  "sqlFrom": "FROM `Vertraege`",
-  "sqlWhere": "",
-  "sqlTail": ""
- },
- "keys": [
-  "ID"
- ],
- "pageSize": 20,
- "capabilities": {
-  "list": true,
-  "view": true,
-  "add": true,
-  "edit": true,
-  "export": true,
-  "print": true,
-  "search": true,
-  "masterList": true
- },
- "fieldSets": {
-  "list": [
-   "Art",
-   "Bezeichnung",
-   "Aktenzeichen",
-   "Aufbewahrungsort",
-   "Abschlussdatum",
-   "Datum",
-   "Enddatum",
-   "Objekt",
-   "Einheit",
-   "Raum",
-   "Inventar",
-   "Adresse"
+  "entity": "Vertraege",
+  "shortName": "Vertraege",
+  "baseTable": "Vertraege",
+  "isVirtual": false,
+  "ownerField": "Team",
+  "sql": {
+    "strOrderBy": "",
+    "sqlHead": "SELECT `ID`,  \t`Datum`,  \t`Bezeichnung`,  \t`Aktenzeichen`,  \t`Aufbewahrungsort`,  \t`Konditionen`,  \t`Kuendigung`,  \t`Dokument`,  \t`DokumentURL`,  \t`Dokumentdateiname`,  \t`Bemerkungen`,  \t`Benutzer`,  \t`Objekt`,  \t`Einheit`,  \t`Raum`,  \t`Inventar`,  \t`Adresse`,  \t`Abschlussdatum`,  \t`Enddatum`,  \t`Kaltmiete`,  \t`NK_Vorauszahlung`,  \t`HK_Vorauszahlung`,  \t`Garagenmiete`,  \t`Versicherungssumme`,  \t`Selbstbehalt`,  \t`Betrag`,  \t`Abschlag`,  \t`Art`,  \t`Wiedervorlage`,  \t`Kautionsbetrag`,  \t`Kautionsanlage`,  \t`Kaution1`,  \t`Kaution2`,  \t`Kaution3`,  \t`Kautionsbemerkungen`,  \t`Team`",
+    "sqlFrom": "FROM `Vertraege`",
+    "sqlWhere": "",
+    "sqlTail": ""
+  },
+  "keys": [
+    "ID"
   ],
-  "view": [
-   "Art",
-   "Bezeichnung",
-   "Aktenzeichen",
-   "Aufbewahrungsort",
-   "Abschlussdatum",
-   "Datum",
-   "Wiedervorlage",
-   "Enddatum",
-   "Objekt",
-   "Einheit",
-   "Raum",
-   "Inventar",
-   "Adresse",
-   "Konditionen",
-   "Kuendigung",
-   "Kaltmiete",
-   "NK_Vorauszahlung",
-   "HK_Vorauszahlung",
-   "Garagenmiete",
-   "Versicherungssumme",
-   "Selbstbehalt",
-   "Betrag",
-   "Abschlag",
-   "Kautionsbetrag",
-   "Kautionsanlage",
-   "Kaution1",
-   "Kaution2",
-   "Kaution3",
-   "Kautionsbemerkungen",
-   "Dokument",
-   "DokumentURL",
-   "Dokumentdateiname",
-   "Bemerkungen",
-   "Benutzer"
-  ],
-  "add": [
-   "Art",
-   "Bezeichnung",
-   "Aktenzeichen",
-   "Aufbewahrungsort",
-   "Abschlussdatum",
-   "Datum",
-   "Wiedervorlage",
-   "Enddatum",
-   "Objekt",
-   "Einheit",
-   "Raum",
-   "Inventar",
-   "Adresse",
-   "Konditionen",
-   "Kuendigung",
-   "Kaltmiete",
-   "NK_Vorauszahlung",
-   "HK_Vorauszahlung",
-   "Garagenmiete",
-   "Versicherungssumme",
-   "Selbstbehalt",
-   "Betrag",
-   "Abschlag",
-   "Kautionsbetrag",
-   "Kautionsanlage",
-   "Kaution1",
-   "Kaution2",
-   "Kaution3",
-   "Kautionsbemerkungen",
-   "Dokument",
-   "DokumentURL",
-   "Dokumentdateiname",
-   "Bemerkungen",
-   "Benutzer"
-  ],
-  "edit": [
-   "Art",
-   "Bezeichnung",
-   "Aktenzeichen",
-   "Aufbewahrungsort",
-   "Abschlussdatum",
-   "Datum",
-   "Wiedervorlage",
-   "Enddatum",
-   "Objekt",
-   "Einheit",
-   "Raum",
-   "Inventar",
-   "Adresse",
-   "Konditionen",
-   "Kuendigung",
-   "Kaltmiete",
-   "NK_Vorauszahlung",
-   "HK_Vorauszahlung",
-   "Garagenmiete",
-   "Versicherungssumme",
-   "Selbstbehalt",
-   "Betrag",
-   "Abschlag",
-   "Kautionsbetrag",
-   "Kautionsanlage",
-   "Kaution1",
-   "Kaution2",
-   "Kaution3",
-   "Kautionsbemerkungen",
-   "Dokument",
-   "DokumentURL",
-   "Dokumentdateiname",
-   "Bemerkungen",
-   "Benutzer"
-  ],
-  "export": [
-   "ID",
-   "Art",
-   "Bezeichnung",
-   "Aktenzeichen",
-   "Aufbewahrungsort",
-   "Abschlussdatum",
-   "Datum",
-   "Wiedervorlage",
-   "Enddatum",
-   "Objekt",
-   "Einheit",
-   "Raum",
-   "Inventar",
-   "Adresse",
-   "Konditionen",
-   "Kuendigung",
-   "Kaltmiete",
-   "NK_Vorauszahlung",
-   "HK_Vorauszahlung",
-   "Garagenmiete",
-   "Versicherungssumme",
-   "Selbstbehalt",
-   "Betrag",
-   "Abschlag",
-   "Kautionsbetrag",
-   "Kautionsanlage",
-   "Kaution1",
-   "Kaution2",
-   "Kaution3",
-   "Kautionsbemerkungen",
-   "DokumentURL",
-   "Dokumentdateiname",
-   "Bemerkungen",
-   "Benutzer"
-  ],
-  "print": [
-   "Art",
-   "Bezeichnung",
-   "Aktenzeichen",
-   "Aufbewahrungsort",
-   "Abschlussdatum",
-   "Datum",
-   "Wiedervorlage",
-   "Enddatum",
-   "Objekt",
-   "Einheit",
-   "Raum",
-   "Inventar",
-   "Adresse"
-  ],
-  "search": [
-   "ID",
-   "Team",
-   "Art",
-   "Bezeichnung",
-   "Aktenzeichen",
-   "Aufbewahrungsort",
-   "Abschlussdatum",
-   "Datum",
-   "Wiedervorlage",
-   "Enddatum",
-   "Objekt",
-   "Einheit",
-   "Raum",
-   "Inventar",
-   "Adresse",
-   "Konditionen",
-   "Kuendigung",
-   "Kaltmiete",
-   "NK_Vorauszahlung",
-   "HK_Vorauszahlung",
-   "Garagenmiete",
-   "Versicherungssumme",
-   "Selbstbehalt",
-   "Betrag",
-   "Abschlag",
-   "Kautionsbetrag",
-   "Kautionsanlage",
-   "Kaution1",
-   "Kaution2",
-   "Kaution3",
-   "Kautionsbemerkungen",
-   "DokumentURL",
-   "Dokumentdateiname",
-   "Bemerkungen",
-   "Benutzer"
-  ],
-  "masterList": [
-   "ID",
-   "Team",
-   "Art",
-   "Bezeichnung",
-   "Aktenzeichen",
-   "Aufbewahrungsort",
-   "Abschlussdatum",
-   "Datum",
-   "Wiedervorlage",
-   "Enddatum",
-   "Objekt",
-   "Einheit",
-   "Raum",
-   "Inventar",
-   "Adresse",
-   "Konditionen",
-   "Kuendigung",
-   "Kaltmiete",
-   "NK_Vorauszahlung",
-   "HK_Vorauszahlung",
-   "Garagenmiete",
-   "Versicherungssumme",
-   "Selbstbehalt",
-   "Betrag",
-   "Abschlag",
-   "Kautionsbetrag",
-   "Kautionsanlage",
-   "Kaution1",
-   "Kaution2",
-   "Kaution3",
-   "Kautionsbemerkungen",
-   "Dokument",
-   "DokumentURL",
-   "Dokumentdateiname",
-   "Bemerkungen",
-   "Benutzer"
+  "pageSize": 20,
+  "capabilities": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+  },
+  "fieldSets": {
+    "list": [
+      "Art",
+      "Bezeichnung",
+      "Aktenzeichen",
+      "Aufbewahrungsort",
+      "Abschlussdatum",
+      "Datum",
+      "Enddatum",
+      "Objekt",
+      "Einheit",
+      "Raum",
+      "Inventar",
+      "Adresse"
+    ],
+    "view": [
+      "Art",
+      "Bezeichnung",
+      "Aktenzeichen",
+      "Aufbewahrungsort",
+      "Abschlussdatum",
+      "Datum",
+      "Wiedervorlage",
+      "Enddatum",
+      "Objekt",
+      "Einheit",
+      "Raum",
+      "Inventar",
+      "Adresse",
+      "Konditionen",
+      "Kuendigung",
+      "Kaltmiete",
+      "NK_Vorauszahlung",
+      "HK_Vorauszahlung",
+      "Garagenmiete",
+      "Versicherungssumme",
+      "Selbstbehalt",
+      "Betrag",
+      "Abschlag",
+      "Kautionsbetrag",
+      "Kautionsanlage",
+      "Kaution1",
+      "Kaution2",
+      "Kaution3",
+      "Kautionsbemerkungen",
+      "Dokument",
+      "DokumentURL",
+      "Dokumentdateiname",
+      "Bemerkungen",
+      "Benutzer"
+    ],
+    "add": [
+      "Art",
+      "Bezeichnung",
+      "Aktenzeichen",
+      "Aufbewahrungsort",
+      "Abschlussdatum",
+      "Datum",
+      "Wiedervorlage",
+      "Enddatum",
+      "Objekt",
+      "Einheit",
+      "Raum",
+      "Inventar",
+      "Adresse",
+      "Konditionen",
+      "Kuendigung",
+      "Kaltmiete",
+      "NK_Vorauszahlung",
+      "HK_Vorauszahlung",
+      "Garagenmiete",
+      "Versicherungssumme",
+      "Selbstbehalt",
+      "Betrag",
+      "Abschlag",
+      "Kautionsbetrag",
+      "Kautionsanlage",
+      "Kaution1",
+      "Kaution2",
+      "Kaution3",
+      "Kautionsbemerkungen",
+      "Dokument",
+      "DokumentURL",
+      "Dokumentdateiname",
+      "Bemerkungen",
+      "Benutzer"
+    ],
+    "edit": [
+      "Art",
+      "Bezeichnung",
+      "Aktenzeichen",
+      "Aufbewahrungsort",
+      "Abschlussdatum",
+      "Datum",
+      "Wiedervorlage",
+      "Enddatum",
+      "Objekt",
+      "Einheit",
+      "Raum",
+      "Inventar",
+      "Adresse",
+      "Konditionen",
+      "Kuendigung",
+      "Kaltmiete",
+      "NK_Vorauszahlung",
+      "HK_Vorauszahlung",
+      "Garagenmiete",
+      "Versicherungssumme",
+      "Selbstbehalt",
+      "Betrag",
+      "Abschlag",
+      "Kautionsbetrag",
+      "Kautionsanlage",
+      "Kaution1",
+      "Kaution2",
+      "Kaution3",
+      "Kautionsbemerkungen",
+      "Dokument",
+      "DokumentURL",
+      "Dokumentdateiname",
+      "Bemerkungen",
+      "Benutzer"
+    ],
+    "export": [
+      "ID",
+      "Art",
+      "Bezeichnung",
+      "Aktenzeichen",
+      "Aufbewahrungsort",
+      "Abschlussdatum",
+      "Datum",
+      "Wiedervorlage",
+      "Enddatum",
+      "Objekt",
+      "Einheit",
+      "Raum",
+      "Inventar",
+      "Adresse",
+      "Konditionen",
+      "Kuendigung",
+      "Kaltmiete",
+      "NK_Vorauszahlung",
+      "HK_Vorauszahlung",
+      "Garagenmiete",
+      "Versicherungssumme",
+      "Selbstbehalt",
+      "Betrag",
+      "Abschlag",
+      "Kautionsbetrag",
+      "Kautionsanlage",
+      "Kaution1",
+      "Kaution2",
+      "Kaution3",
+      "Kautionsbemerkungen",
+      "DokumentURL",
+      "Dokumentdateiname",
+      "Bemerkungen",
+      "Benutzer"
+    ],
+    "print": [
+      "Art",
+      "Bezeichnung",
+      "Aktenzeichen",
+      "Aufbewahrungsort",
+      "Abschlussdatum",
+      "Datum",
+      "Wiedervorlage",
+      "Enddatum",
+      "Objekt",
+      "Einheit",
+      "Raum",
+      "Inventar",
+      "Adresse"
+    ],
+    "search": [
+      "ID",
+      "Team",
+      "Art",
+      "Bezeichnung",
+      "Aktenzeichen",
+      "Aufbewahrungsort",
+      "Abschlussdatum",
+      "Datum",
+      "Wiedervorlage",
+      "Enddatum",
+      "Objekt",
+      "Einheit",
+      "Raum",
+      "Inventar",
+      "Adresse",
+      "Konditionen",
+      "Kuendigung",
+      "Kaltmiete",
+      "NK_Vorauszahlung",
+      "HK_Vorauszahlung",
+      "Garagenmiete",
+      "Versicherungssumme",
+      "Selbstbehalt",
+      "Betrag",
+      "Abschlag",
+      "Kautionsbetrag",
+      "Kautionsanlage",
+      "Kaution1",
+      "Kaution2",
+      "Kaution3",
+      "Kautionsbemerkungen",
+      "DokumentURL",
+      "Dokumentdateiname",
+      "Bemerkungen",
+      "Benutzer"
+    ],
+    "masterList": [
+      "ID",
+      "Team",
+      "Art",
+      "Bezeichnung",
+      "Aktenzeichen",
+      "Aufbewahrungsort",
+      "Abschlussdatum",
+      "Datum",
+      "Wiedervorlage",
+      "Enddatum",
+      "Objekt",
+      "Einheit",
+      "Raum",
+      "Inventar",
+      "Adresse",
+      "Konditionen",
+      "Kuendigung",
+      "Kaltmiete",
+      "NK_Vorauszahlung",
+      "HK_Vorauszahlung",
+      "Garagenmiete",
+      "Versicherungssumme",
+      "Selbstbehalt",
+      "Betrag",
+      "Abschlag",
+      "Kautionsbetrag",
+      "Kautionsanlage",
+      "Kaution1",
+      "Kaution2",
+      "Kaution3",
+      "Kautionsbemerkungen",
+      "Dokument",
+      "DokumentURL",
+      "Dokumentdateiname",
+      "Bemerkungen",
+      "Benutzer"
+    ]
+  },
+  "export": {
+    "exportTo": true,
+    "exportDelimiter": ",",
+    "exportFormatting": 2
+  },
+  "print": {
+    "printerPageOrientation": 1,
+    "nPrinterPageScale": 100,
+    "nPrinterSplitRecords": 40,
+    "nPrinterPDFSplitRecords": 40
+  },
+  "tabs": [],
+  "labels": {
+    "German": {
+      "ID": "ID",
+      "Datum": "Datum",
+      "Bezeichnung": "Bezeichnung",
+      "Aktenzeichen": "Aktenzeichen",
+      "Aufbewahrungsort": "Aufbewahrungsort",
+      "Konditionen": "Konditionen",
+      "Kuendigung": "Kündigung",
+      "Dokument": "Dokument",
+      "DokumentURL": "Dokument URL",
+      "Dokumentdateiname": "Dokumentdateiname",
+      "Bemerkungen": "Bemerkungen",
+      "Benutzer": "Benutzer",
+      "Objekt": "Objekt",
+      "Einheit": "Einheit",
+      "Raum": "Raum",
+      "Inventar": "Inventar",
+      "Adresse": "Adresse",
+      "Abschlussdatum": "Abschlussdatum",
+      "Enddatum": "Enddatum",
+      "Kaltmiete": "Kaltmiete",
+      "NK_Vorauszahlung": "NK Vorauszahlung",
+      "HK_Vorauszahlung": "HK Vorauszahlung",
+      "Garagenmiete": "Garagenmiete",
+      "Versicherungssumme": "Versicherungssumme",
+      "Selbstbehalt": "Selbstbehalt",
+      "Betrag": "Betrag",
+      "Abschlag": "Abschlag",
+      "Art": "Art",
+      "Wiedervorlage": "Wiedervorlage",
+      "Kautionsbetrag": "Kautionsbetrag",
+      "Kautionsanlage": "Kautionsanlage",
+      "Kaution1": "Kaution 1. Drittel",
+      "Kaution2": "Kaution 2. Drittel",
+      "Kaution3": "Kaution 3. Drittel",
+      "Kautionsbemerkungen": "Kautionsbemerkungen",
+      "Team": "Team"
+    },
+    "English": {
+      "ID": "ID",
+      "Datum": "Date",
+      "Bezeichnung": "Description",
+      "Aktenzeichen": "Aktenzeichen",
+      "Aufbewahrungsort": "Aufbewahrungsort",
+      "Konditionen": "Konditionen",
+      "Kuendigung": "Termination",
+      "Dokument": "Document",
+      "DokumentURL": "Document URL",
+      "Dokumentdateiname": "Documentdateiname",
+      "Bemerkungen": "Notes",
+      "Benutzer": "Users",
+      "Objekt": "Property",
+      "Einheit": "Unit",
+      "Raum": "Raum",
+      "Inventar": "Inventory",
+      "Adresse": "Address",
+      "Abschlussdatum": "Closing date",
+      "Enddatum": "End date",
+      "Kaltmiete": "Base rent",
+      "NK_Vorauszahlung": "NK Advance payment",
+      "HK_Vorauszahlung": "HK Advance payment",
+      "Garagenmiete": "Garagenmiete",
+      "Versicherungssumme": "Insurancessumme",
+      "Selbstbehalt": "Selbstbehalt",
+      "Betrag": "Amount",
+      "Abschlag": "Instalment",
+      "Art": "Type",
+      "Wiedervorlage": "Follow-ups",
+      "Kautionsbetrag": "Depositsbetrag",
+      "Kautionsanlage": "Depositsanlage",
+      "Kaution1": "Deposit 1. Third",
+      "Kaution2": "Deposit 2. Third",
+      "Kaution3": "Deposit 3. Third",
+      "Kautionsbemerkungen": "Depositsbemerkungen",
+      "Team": "Team"
+    }
+  },
+  "fields": [
+    {
+      "name": "ID",
+      "type": 3,
+      "index": 1,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "AutoInc": true,
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Datum",
+      "type": 7,
+      "index": 2,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "DateEditType": 13,
+        "InitialYearFactor": 30,
+        "LastYearFactor": 10,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Bezeichnung",
+      "type": 200,
+      "index": 3,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Aktenzeichen",
+      "type": 200,
+      "index": 4,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Aufbewahrungsort",
+      "type": 200,
+      "index": 5,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Konditionen",
+      "type": 201,
+      "index": 6,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "ViewFormat": "HTML"
+      },
+      "edit": {
+        "UseRTE": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "nRows": 400,
+        "nCols": 600,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Kuendigung",
+      "type": 201,
+      "index": 7,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "ViewFormat": "HTML"
+      },
+      "edit": {
+        "UseRTE": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "nRows": 400,
+        "nCols": 600,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Dokument",
+      "type": 128,
+      "index": 8,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "Filename": "Dokumentdateiname",
+        "strFilename": "Dokumentdateiname",
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "DokumentURL",
+      "type": 200,
+      "index": 9,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Dokumentdateiname",
+      "type": 200,
+      "index": 10,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Bemerkungen",
+      "type": 201,
+      "index": 11,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "ViewFormat": "HTML"
+      },
+      "edit": {
+        "UseRTE": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "nRows": 400,
+        "nCols": 600,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Benutzer",
+      "type": 200,
+      "index": 12,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Objekt",
+      "type": 3,
+      "index": 13,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Objekte",
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 2,
+        "LinkField": "ID",
+        "LinkFieldType": 0,
+        "DisplayField": "Bezeichnung",
+        "LookupOrderBy": "Bezeichnung",
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Einheit",
+      "type": 3,
+      "index": 14,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Einheiten",
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 0,
+        "LinkField": "ID",
+        "LinkFieldType": 0,
+        "DisplayField": "Bezeichnung",
+        "LookupOrderBy": "Bezeichnung",
+        "UseCategory": true,
+        "SelectSize": 1,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Raum",
+      "type": 3,
+      "index": 15,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Raeume",
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 0,
+        "LinkField": "ID",
+        "LinkFieldType": 0,
+        "DisplayField": "Bezeichnung",
+        "LookupOrderBy": "Bezeichnung",
+        "UseCategory": true,
+        "SelectSize": 1,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Inventar",
+      "type": 3,
+      "index": 16,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Inventar",
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 2,
+        "LinkField": "ID",
+        "LinkFieldType": 0,
+        "DisplayField": "Bezeichnung",
+        "LookupOrderBy": "Bezeichnung",
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Adresse",
+      "type": 3,
+      "index": 17,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Kerndaten",
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 2,
+        "LinkField": "ID",
+        "LinkFieldType": 0,
+        "DisplayField": "Kurzname",
+        "LookupOrderBy": "Kurzname",
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Abschlussdatum",
+      "type": 7,
+      "index": 18,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "DateEditType": 13,
+        "InitialYearFactor": 30,
+        "LastYearFactor": 10,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Enddatum",
+      "type": 7,
+      "index": 19,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "DateEditType": 13,
+        "InitialYearFactor": 30,
+        "LastYearFactor": 30,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Kaltmiete",
+      "type": 14,
+      "index": 20,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "NK_Vorauszahlung",
+      "type": 14,
+      "index": 21,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "HK_Vorauszahlung",
+      "type": 14,
+      "index": 22,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Garagenmiete",
+      "type": 14,
+      "index": 23,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Versicherungssumme",
+      "type": 14,
+      "index": 24,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Selbstbehalt",
+      "type": 14,
+      "index": 25,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Betrag",
+      "type": 14,
+      "index": 26,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Abschlag",
+      "type": 14,
+      "index": 27,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Art",
+      "type": 200,
+      "index": 28,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Vertraege",
+        "freeInput": true,
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 1,
+        "LookupUnique": true,
+        "LinkField": "Art",
+        "LinkFieldType": 0,
+        "DisplayField": "Art",
+        "LookupOrderBy": "Art",
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Wiedervorlage",
+      "type": 7,
+      "index": 29,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "DateEditType": 13,
+        "InitialYearFactor": 3,
+        "LastYearFactor": 10,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Kautionsbetrag",
+      "type": 14,
+      "index": 30,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Kautionsanlage",
+      "type": 200,
+      "index": 31,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Kaution1",
+      "type": 200,
+      "index": 32,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Kaution2",
+      "type": 200,
+      "index": 33,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Kaution3",
+      "type": 200,
+      "index": 34,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Kautionsbemerkungen",
+      "type": 201,
+      "index": 35,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "ViewFormat": "HTML"
+      },
+      "edit": {
+        "UseRTE": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "nRows": 400,
+        "nCols": 600,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Team",
+      "type": 200,
+      "index": 36,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    }
   ]
- },
- "export": {
-  "exportTo": true,
-  "exportDelimiter": ",",
-  "exportFormatting": 2
- },
- "print": {
-  "printerPageOrientation": 1,
-  "nPrinterPageScale": 100,
-  "nPrinterSplitRecords": 40,
-  "nPrinterPDFSplitRecords": 40
- },
- "tabs": [],
- "labels": {
-  "German": {
-   "ID": "ID",
-   "Datum": "Datum",
-   "Bezeichnung": "Bezeichnung",
-   "Aktenzeichen": "Aktenzeichen",
-   "Aufbewahrungsort": "Aufbewahrungsort",
-   "Konditionen": "Konditionen",
-   "Kuendigung": "Kündigung",
-   "Dokument": "Dokument",
-   "DokumentURL": "Dokument URL",
-   "Dokumentdateiname": "Dokumentdateiname",
-   "Bemerkungen": "Bemerkungen",
-   "Benutzer": "Benutzer",
-   "Objekt": "Objekt",
-   "Einheit": "Einheit",
-   "Raum": "Raum",
-   "Inventar": "Inventar",
-   "Adresse": "Adresse",
-   "Abschlussdatum": "Abschlussdatum",
-   "Enddatum": "Enddatum",
-   "Kaltmiete": "Kaltmiete",
-   "NK_Vorauszahlung": "NK Vorauszahlung",
-   "HK_Vorauszahlung": "HK Vorauszahlung",
-   "Garagenmiete": "Garagenmiete",
-   "Versicherungssumme": "Versicherungssumme",
-   "Selbstbehalt": "Selbstbehalt",
-   "Betrag": "Betrag",
-   "Abschlag": "Abschlag",
-   "Art": "Art",
-   "Wiedervorlage": "Wiedervorlage",
-   "Kautionsbetrag": "Kautionsbetrag",
-   "Kautionsanlage": "Kautionsanlage",
-   "Kaution1": "Kaution 1. Drittel",
-   "Kaution2": "Kaution 2. Drittel",
-   "Kaution3": "Kaution 3. Drittel",
-   "Kautionsbemerkungen": "Kautionsbemerkungen",
-   "Team": "Team"
-  }
- },
- "fields": [
-  {
-   "name": "ID",
-   "type": 3,
-   "index": 1,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "AutoInc": true,
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Datum",
-   "type": 7,
-   "index": 2,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "DateEditType": 13,
-    "InitialYearFactor": 30,
-    "LastYearFactor": 10,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Bezeichnung",
-   "type": 200,
-   "index": 3,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Aktenzeichen",
-   "type": 200,
-   "index": 4,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Aufbewahrungsort",
-   "type": 200,
-   "index": 5,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Konditionen",
-   "type": 201,
-   "index": 6,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "ViewFormat": "HTML"
-   },
-   "edit": {
-    "UseRTE": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "nRows": 400,
-    "nCols": 600,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Kuendigung",
-   "type": 201,
-   "index": 7,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "ViewFormat": "HTML"
-   },
-   "edit": {
-    "UseRTE": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "nRows": 400,
-    "nCols": 600,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Dokument",
-   "type": 128,
-   "index": 8,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "Filename": "Dokumentdateiname",
-    "strFilename": "Dokumentdateiname",
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "DokumentURL",
-   "type": 200,
-   "index": 9,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Dokumentdateiname",
-   "type": 200,
-   "index": 10,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Bemerkungen",
-   "type": 201,
-   "index": 11,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "ViewFormat": "HTML"
-   },
-   "edit": {
-    "UseRTE": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "nRows": 400,
-    "nCols": 600,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Benutzer",
-   "type": 200,
-   "index": 12,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Objekt",
-   "type": 3,
-   "index": 13,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Objekte",
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 2,
-    "LinkField": "ID",
-    "LinkFieldType": 0,
-    "DisplayField": "Bezeichnung",
-    "LookupOrderBy": "Bezeichnung",
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Einheit",
-   "type": 3,
-   "index": 14,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Einheiten",
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 0,
-    "LinkField": "ID",
-    "LinkFieldType": 0,
-    "DisplayField": "Bezeichnung",
-    "LookupOrderBy": "Bezeichnung",
-    "UseCategory": true,
-    "SelectSize": 1,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Raum",
-   "type": 3,
-   "index": 15,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Raeume",
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 0,
-    "LinkField": "ID",
-    "LinkFieldType": 0,
-    "DisplayField": "Bezeichnung",
-    "LookupOrderBy": "Bezeichnung",
-    "UseCategory": true,
-    "SelectSize": 1,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Inventar",
-   "type": 3,
-   "index": 16,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Inventar",
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 2,
-    "LinkField": "ID",
-    "LinkFieldType": 0,
-    "DisplayField": "Bezeichnung",
-    "LookupOrderBy": "Bezeichnung",
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Adresse",
-   "type": 3,
-   "index": 17,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Kerndaten",
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 2,
-    "LinkField": "ID",
-    "LinkFieldType": 0,
-    "DisplayField": "Kurzname",
-    "LookupOrderBy": "Kurzname",
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Abschlussdatum",
-   "type": 7,
-   "index": 18,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "DateEditType": 13,
-    "InitialYearFactor": 30,
-    "LastYearFactor": 10,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Enddatum",
-   "type": 7,
-   "index": 19,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "DateEditType": 13,
-    "InitialYearFactor": 30,
-    "LastYearFactor": 30,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Kaltmiete",
-   "type": 14,
-   "index": 20,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "NK_Vorauszahlung",
-   "type": 14,
-   "index": 21,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "HK_Vorauszahlung",
-   "type": 14,
-   "index": 22,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Garagenmiete",
-   "type": 14,
-   "index": 23,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Versicherungssumme",
-   "type": 14,
-   "index": 24,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Selbstbehalt",
-   "type": 14,
-   "index": 25,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Betrag",
-   "type": 14,
-   "index": 26,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Abschlag",
-   "type": 14,
-   "index": 27,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Art",
-   "type": 200,
-   "index": 28,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Vertraege",
-    "freeInput": true,
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 1,
-    "LookupUnique": true,
-    "LinkField": "Art",
-    "LinkFieldType": 0,
-    "DisplayField": "Art",
-    "LookupOrderBy": "Art",
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Wiedervorlage",
-   "type": 7,
-   "index": 29,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "DateEditType": 13,
-    "InitialYearFactor": 3,
-    "LastYearFactor": 10,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Kautionsbetrag",
-   "type": 14,
-   "index": 30,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Kautionsanlage",
-   "type": 200,
-   "index": 31,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Kaution1",
-   "type": 200,
-   "index": 32,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Kaution2",
-   "type": 200,
-   "index": 33,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Kaution3",
-   "type": 200,
-   "index": 34,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Kautionsbemerkungen",
-   "type": 201,
-   "index": 35,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "ViewFormat": "HTML"
-   },
-   "edit": {
-    "UseRTE": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "nRows": 400,
-    "nCols": 600,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Team",
-   "type": 200,
-   "index": 36,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  }
- ]
 }

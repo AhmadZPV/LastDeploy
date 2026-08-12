@@ -1,472 +1,485 @@
 {
- "entity": "Vorauszahlungen",
- "shortName": "Vorauszahlungen",
- "baseTable": "Kosten",
- "isVirtual": true,
- "ownerField": "Team",
- "sql": {
-  "strOrderBy": "ORDER BY `Abrechnung`, `Bezeichnung`",
-  "sqlHead": "SELECT `ID`,  `Bezeichnung`,  `Betrag`,  `Abrechnung`,  `Art`,  `Abrechnungskonto`,  `Mwstsatz`,  `Nettobetrag`,  `Buchfuehrung`,  `Buchfuehrungskonto`,  Team",
-  "sqlFrom": "FROM `Kosten`",
-  "sqlWhere": "",
-  "sqlTail": ""
- },
- "keys": [
-  "ID"
- ],
- "pageSize": 20,
- "capabilities": {
-  "list": true,
-  "view": true,
-  "add": true,
-  "edit": true,
-  "export": true,
-  "print": true,
-  "search": true,
-  "masterList": true
- },
- "fieldSets": {
-  "list": [
-   "Abrechnung",
-   "Abrechnungskonto",
-   "Bezeichnung",
-   "Betrag",
-   "Mwstsatz",
-   "Nettobetrag"
+  "entity": "Vorauszahlungen",
+  "shortName": "Vorauszahlungen",
+  "baseTable": "Kosten",
+  "isVirtual": true,
+  "ownerField": "Team",
+  "sql": {
+    "strOrderBy": "ORDER BY `Abrechnung`, `Bezeichnung`",
+    "sqlHead": "SELECT `ID`,  `Bezeichnung`,  `Betrag`,  `Abrechnung`,  `Art`,  `Abrechnungskonto`,  `Mwstsatz`,  `Nettobetrag`,  `Buchfuehrung`,  `Buchfuehrungskonto`,  Team",
+    "sqlFrom": "FROM `Kosten`",
+    "sqlWhere": "",
+    "sqlTail": ""
+  },
+  "keys": [
+    "ID"
   ],
-  "view": [
-   "Art",
-   "Abrechnung",
-   "Abrechnungskonto",
-   "Bezeichnung",
-   "Betrag",
-   "Mwstsatz",
-   "Nettobetrag"
-  ],
-  "add": [
-   "Art",
-   "Abrechnung",
-   "Abrechnungskonto",
-   "Bezeichnung",
-   "Betrag",
-   "Mwstsatz",
-   "Nettobetrag",
-   "Buchfuehrung",
-   "Buchfuehrungskonto"
-  ],
-  "edit": [
-   "Art",
-   "Abrechnung",
-   "Abrechnungskonto",
-   "Bezeichnung",
-   "Betrag",
-   "Mwstsatz",
-   "Nettobetrag",
-   "Buchfuehrung",
-   "Buchfuehrungskonto"
-  ],
-  "export": [
-   "ID",
-   "Art",
-   "Abrechnung",
-   "Abrechnungskonto",
-   "Bezeichnung",
-   "Betrag",
-   "Mwstsatz",
-   "Nettobetrag",
-   "Buchfuehrung",
-   "Buchfuehrungskonto"
-  ],
-  "print": [
-   "Abrechnung",
-   "Abrechnungskonto",
-   "Bezeichnung",
-   "Betrag",
-   "Mwstsatz",
-   "Nettobetrag"
-  ],
-  "search": [
-   "ID",
-   "Art",
-   "Abrechnung",
-   "Abrechnungskonto",
-   "Bezeichnung",
-   "Betrag",
-   "Mwstsatz",
-   "Nettobetrag",
-   "Buchfuehrung",
-   "Buchfuehrungskonto"
-  ],
-  "masterList": [
-   "Abrechnung",
-   "Abrechnungskonto",
-   "Bezeichnung",
-   "Betrag",
-   "Mwstsatz",
-   "Nettobetrag"
+  "pageSize": 20,
+  "capabilities": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+  },
+  "fieldSets": {
+    "list": [
+      "Abrechnung",
+      "Abrechnungskonto",
+      "Bezeichnung",
+      "Betrag",
+      "Mwstsatz",
+      "Nettobetrag"
+    ],
+    "view": [
+      "Art",
+      "Abrechnung",
+      "Abrechnungskonto",
+      "Bezeichnung",
+      "Betrag",
+      "Mwstsatz",
+      "Nettobetrag"
+    ],
+    "add": [
+      "Art",
+      "Abrechnung",
+      "Abrechnungskonto",
+      "Bezeichnung",
+      "Betrag",
+      "Mwstsatz",
+      "Nettobetrag",
+      "Buchfuehrung",
+      "Buchfuehrungskonto"
+    ],
+    "edit": [
+      "Art",
+      "Abrechnung",
+      "Abrechnungskonto",
+      "Bezeichnung",
+      "Betrag",
+      "Mwstsatz",
+      "Nettobetrag",
+      "Buchfuehrung",
+      "Buchfuehrungskonto"
+    ],
+    "export": [
+      "ID",
+      "Art",
+      "Abrechnung",
+      "Abrechnungskonto",
+      "Bezeichnung",
+      "Betrag",
+      "Mwstsatz",
+      "Nettobetrag",
+      "Buchfuehrung",
+      "Buchfuehrungskonto"
+    ],
+    "print": [
+      "Abrechnung",
+      "Abrechnungskonto",
+      "Bezeichnung",
+      "Betrag",
+      "Mwstsatz",
+      "Nettobetrag"
+    ],
+    "search": [
+      "ID",
+      "Art",
+      "Abrechnung",
+      "Abrechnungskonto",
+      "Bezeichnung",
+      "Betrag",
+      "Mwstsatz",
+      "Nettobetrag",
+      "Buchfuehrung",
+      "Buchfuehrungskonto"
+    ],
+    "masterList": [
+      "Abrechnung",
+      "Abrechnungskonto",
+      "Bezeichnung",
+      "Betrag",
+      "Mwstsatz",
+      "Nettobetrag"
+    ]
+  },
+  "export": {
+    "exportTo": true,
+    "exportDelimiter": ",",
+    "exportFormatting": 2
+  },
+  "print": {
+    "printerPageOrientation": 0,
+    "nPrinterPageScale": 100,
+    "nPrinterSplitRecords": 40,
+    "nPrinterPDFSplitRecords": 40
+  },
+  "tabs": [],
+  "labels": {
+    "German": {
+      "ID": "ID",
+      "Bezeichnung": "Bezeichnung",
+      "Betrag": "Betrag",
+      "Abrechnung": "Abrechnung",
+      "Art": "Art",
+      "Abrechnungskonto": "Abrechnungskonto",
+      "Mwstsatz": "Mwstsatz",
+      "Nettobetrag": "Nettobetrag",
+      "Buchfuehrung": "Buchführung",
+      "Buchfuehrungskonto": "Buchführungskonto",
+      "Team": "Team"
+    },
+    "English": {
+      "ID": "ID",
+      "Bezeichnung": "Description",
+      "Betrag": "Amount",
+      "Abrechnung": "Settlement",
+      "Art": "Type",
+      "Abrechnungskonto": "Settlement account",
+      "Mwstsatz": "VATsatz",
+      "Nettobetrag": "Netbetrag",
+      "Buchfuehrung": "Bookkeeping",
+      "Buchfuehrungskonto": "Bookkeepingskonto",
+      "Team": "Team"
+    }
+  },
+  "fields": [
+    {
+      "name": "ID",
+      "type": 3,
+      "index": 1,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "AutoInc": true,
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Bezeichnung",
+      "type": 200,
+      "index": 2,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Betrag",
+      "type": 14,
+      "index": 3,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Abrechnung",
+      "type": 3,
+      "index": 4,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Abrechnungen",
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 2,
+        "LinkField": "ID",
+        "LinkFieldType": 0,
+        "DisplayField": "Bezeichnung",
+        "LookupOrderBy": "Bezeichnung",
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Art",
+      "type": 200,
+      "index": 5,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Abrechnungskonto",
+      "type": 3,
+      "index": 6,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Abrechnungskonten",
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 0,
+        "LinkField": "ID",
+        "LinkFieldType": 0,
+        "DisplayField": "Bezeichnung",
+        "LookupOrderBy": "Bezeichnung",
+        "UseCategory": true,
+        "SelectSize": 1,
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Mwstsatz",
+      "type": 14,
+      "index": 7,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Wertelisten",
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 4,
+        "HorizontalLookup": true,
+        "LinkField": "Eintrag",
+        "LinkFieldType": 0,
+        "DisplayField": "Eintrag",
+        "LookupWhereCode": true,
+        "LookupOrderBy": "Eintrag",
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Nettobetrag",
+      "type": 14,
+      "index": 8,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Buchfuehrung",
+      "type": 3,
+      "index": 9,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Buchfuehrungen",
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 2,
+        "LinkField": "ID",
+        "LinkFieldType": 0,
+        "DisplayField": "Bezeichnung",
+        "LookupOrderBy": "Bezeichnung",
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Buchfuehrungskonto",
+      "type": 3,
+      "index": 10,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Kontenrahmen",
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 2,
+        "LinkField": "ID",
+        "LinkFieldType": 0,
+        "DisplayField": "Kontobezeichnung",
+        "LookupOrderBy": "Kontobezeichnung",
+        "UseCategory": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Team",
+      "type": 200,
+      "index": 11,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    }
   ]
- },
- "export": {
-  "exportTo": true,
-  "exportDelimiter": ",",
-  "exportFormatting": 2
- },
- "print": {
-  "printerPageOrientation": 0,
-  "nPrinterPageScale": 100,
-  "nPrinterSplitRecords": 40,
-  "nPrinterPDFSplitRecords": 40
- },
- "tabs": [],
- "labels": {
-  "German": {
-   "ID": "ID",
-   "Bezeichnung": "Bezeichnung",
-   "Betrag": "Betrag",
-   "Abrechnung": "Abrechnung",
-   "Art": "Art",
-   "Abrechnungskonto": "Abrechnungskonto",
-   "Mwstsatz": "Mwstsatz",
-   "Nettobetrag": "Nettobetrag",
-   "Buchfuehrung": "Buchführung",
-   "Buchfuehrungskonto": "Buchführungskonto",
-   "Team": "Team"
-  }
- },
- "fields": [
-  {
-   "name": "ID",
-   "type": 3,
-   "index": 1,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "AutoInc": true,
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Bezeichnung",
-   "type": 200,
-   "index": 2,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Betrag",
-   "type": 14,
-   "index": 3,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Abrechnung",
-   "type": 3,
-   "index": 4,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Abrechnungen",
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 2,
-    "LinkField": "ID",
-    "LinkFieldType": 0,
-    "DisplayField": "Bezeichnung",
-    "LookupOrderBy": "Bezeichnung",
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Art",
-   "type": 200,
-   "index": 5,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Abrechnungskonto",
-   "type": 3,
-   "index": 6,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Abrechnungskonten",
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 0,
-    "LinkField": "ID",
-    "LinkFieldType": 0,
-    "DisplayField": "Bezeichnung",
-    "LookupOrderBy": "Bezeichnung",
-    "UseCategory": true,
-    "SelectSize": 1,
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Mwstsatz",
-   "type": 14,
-   "index": 7,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Wertelisten",
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 4,
-    "HorizontalLookup": true,
-    "LinkField": "Eintrag",
-    "LinkFieldType": 0,
-    "DisplayField": "Eintrag",
-    "LookupWhereCode": true,
-    "LookupOrderBy": "Eintrag",
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Nettobetrag",
-   "type": 14,
-   "index": 8,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Buchfuehrung",
-   "type": 3,
-   "index": 9,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Buchfuehrungen",
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 2,
-    "LinkField": "ID",
-    "LinkFieldType": 0,
-    "DisplayField": "Bezeichnung",
-    "LookupOrderBy": "Bezeichnung",
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Buchfuehrungskonto",
-   "type": 3,
-   "index": 10,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Kontenrahmen",
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 2,
-    "LinkField": "ID",
-    "LinkFieldType": 0,
-    "DisplayField": "Kontobezeichnung",
-    "LookupOrderBy": "Kontobezeichnung",
-    "UseCategory": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Team",
-   "type": 200,
-   "index": 11,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  }
- ]
 }

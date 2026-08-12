@@ -2,9 +2,17 @@
 <% if (typeof error === 'string' && error) { %><div class="form-error"><%= error %></div><% } %>
 
 <%
+  const SECRET_RE = /(passwort|password|passwd|kennwort|secret|token|apikey|api_key)/i;
+
   function inputFor(field, val) {
     const cat = helpers.fieldCategory(module, field);
     const nm = field, val4 = (val != null && val !== '') ? val : '';
+    // Credentials: never echo the stored hash back into the page. An empty
+    // value is skipped by the POST handler, so the password stays unchanged.
+    if (SECRET_RE.test(field)) {
+      const hint = isEdit ? ' placeholder="' + t('leave_blank_unchanged') + '"' : '';
+      return `<input type="password" name="${nm}" value="" autocomplete="new-password"${hint}>`;
+    }
     if (cat === 'lookup') {
       const opts = lookups[field] || [];
       const cur = String(val4);
@@ -27,7 +35,7 @@
     }
     if (cat === 'bool') {
       const checked = (val4 === 1 || val4 === '1' || val4 === true) ? ' checked' : '';
-      return `<input type="checkbox" name="${nm}" value="1"${checked}>`;
+      return `<div class="control-shell"><input type="checkbox" name="${nm}" value="1"${checked}></div>`;
     }
     if (cat === 'color') {
       const cv = val4 || '#cccccc';
@@ -40,7 +48,7 @@
     }
     if (cat === 'blob') {
       const has = val4 != null && val4 !== '';
-      return `<input type="file" name="${nm}">` + (has ? `<span class="muted"> (${t('present_replace')})</span>` : '');
+      return `<input type="file" name="${nm}">` + (has ? `<small class="muted">${t('present_replace')}</small>` : '');
     }
     // plain text
     const fid = meta.fields?.[field] || {};
@@ -55,14 +63,17 @@
 
 <form class="entity-form<%= module === 'benutzer' ? ' user-edit-form' : '' %>" method="post" action="/<%= module %><%= isEdit ? '/' + item.ID : '' %>" enctype="multipart/form-data">
   <%- include('../partials/csrf') %>
-  <div class="form-group form-id-field">
-    <label>ID</label>
-    <input type="number" name="ID" value="<%= item.ID || '' %>" <%= isEdit ? 'readonly' : '' %>>
-  </div>
   <% const specFields = (typeof spec !== 'undefined' && spec && spec.fields && spec.fields.length) ? spec.fields : null; %>
-  <% const formFields = specFields ? spec.fields.map(f => [f.name, f.label, f.required]) : (meta.listColumns || []).map(c => [c, c, false]); %>
-  <div class="entity-form-grid"><% for (const [fn, flabel, freq] of formFields) { %>
-    <div class="form-group">
+  <% const formFields = (specFields ? spec.fields.map(f => [f.name, f.label, f.required]) : (meta.listColumns || []).map(c => [c, c, false])).filter(([name]) => name !== 'ID'); %>
+  <div class="form-grid">
+    <div class="form-group form-id-field" hidden>
+      <label for="field-ID">ID</label>
+      <input id="field-ID" type="number" name="ID" value="<%= item.ID || '' %>" <%= isEdit ? 'readonly' : '' %>>
+    </div>
+  <% for (const [fn, flabel, freq] of formFields) { %>
+    <% const fcat = helpers.fieldCategory(module, fn); %>
+    <% const wide = fcat === 'textarea' || fcat === 'richtext'; %>
+    <div class="form-group<%= wide ? ' field-span-all' : '' %>">
       <label><%= tx(flabel) %><% if (freq) { %> <span class="req">*</span><% } %></label>
       <%- inputFor(fn, isEdit ? item[fn] : undefined) %>
     </div>
@@ -73,13 +84,16 @@
   <% if (extra.length) { %>
   <details class="form-extra">
     <summary><%= t('more_fields') %> (<%= extra.length %>)</summary>
+    <div class="form-grid">
     <% for (const c of extra) { %>
       <% const cat = helpers.fieldCategory(module, c); if (cat === 'blob') continue; %>
-      <div class="form-group">
+      <% const wide = cat === 'textarea' || cat === 'richtext'; %>
+      <div class="form-group<%= wide ? ' field-span-all' : '' %>">
         <label><%= tx(c) %></label>
         <%- inputFor(c, isEdit ? item[c] : undefined) %>
       </div>
     <% } %>
+    </div>
   </details>
   <% } %>
 

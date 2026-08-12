@@ -1,654 +1,673 @@
 {
- "entity": "Zaehler",
- "shortName": "Zaehler",
- "baseTable": "Zaehler",
- "isVirtual": false,
- "ownerField": "Team",
- "sql": {
-  "strOrderBy": "ORDER BY Zaehler.Ablesedatum DESC",
-  "sqlHead": "SELECT @Zaehler := Zaehler.ID as ID,  Zaehler.Raum,  Zaehler.Zaehlerart,  @Zaehlernummer := Zaehler.Zaehlernummer as Zaehlernummer,  @Zaehlerstand := Zaehler.Zaehlerstand as Zaehlerstand,  Zaehler.Ablesedatum,  Einheiten.Bezeichnung AS Einheit,  Objekte.Bezeichnung AS Objekt,  Zaehler.Ableser,  Zaehler.Unterschrift,  Einheiten.ID AS EinheitenID,  Objekte.ID AS ObjekteID,  Zaehler.Eichung,  Zaehler.Einheit as Masseinheit,  Zaehler.Team,  @Alterzaehlerstand := (select Zaehlerstand from Zaehler where Zaehlernummer=@Zaehlernummer and ID<@Zaehler order by ID desc limit 1 ) as Alterzaehlerstand,  @Zaehlerstand-@Alterzaehlerstand as Verbrauch",
-  "sqlFrom": "FROM Zaehler  LEFT OUTER JOIN Raeume ON Zaehler.Raum = Raeume.ID  LEFT OUTER JOIN Einheiten ON Raeume.Einheit = Einheiten.ID  LEFT OUTER JOIN Objekte ON Einheiten.Objekt = Objekte.ID",
-  "sqlWhere": "",
-  "sqlTail": ""
- },
- "keys": [
-  "ID"
- ],
- "pageSize": 20,
- "capabilities": {
-  "list": true,
-  "view": true,
-  "add": true,
-  "edit": true,
-  "export": true,
-  "print": true,
-  "search": true,
-  "masterList": true
- },
- "fieldSets": {
-  "list": [
-   "Objekt",
-   "Einheit",
-   "Raum",
-   "Zaehlerart",
-   "Zaehlernummer",
-   "Zaehlerstand",
-   "Ablesedatum",
-   "Verbrauch"
+  "entity": "Zaehler",
+  "shortName": "Zaehler",
+  "baseTable": "Zaehler",
+  "isVirtual": false,
+  "ownerField": "Team",
+  "sql": {
+    "strOrderBy": "ORDER BY Zaehler.Ablesedatum DESC",
+    "sqlHead": "SELECT @Zaehler := Zaehler.ID as ID,  Zaehler.Raum,  Zaehler.Zaehlerart,  @Zaehlernummer := Zaehler.Zaehlernummer as Zaehlernummer,  @Zaehlerstand := Zaehler.Zaehlerstand as Zaehlerstand,  Zaehler.Ablesedatum,  Einheiten.Bezeichnung AS Einheit,  Objekte.Bezeichnung AS Objekt,  Zaehler.Ableser,  Zaehler.Unterschrift,  Einheiten.ID AS EinheitenID,  Objekte.ID AS ObjekteID,  Zaehler.Eichung,  Zaehler.Einheit as Masseinheit,  Zaehler.Team,  @Alterzaehlerstand := (select Zaehlerstand from Zaehler where Zaehlernummer=@Zaehlernummer and ID<@Zaehler order by ID desc limit 1 ) as Alterzaehlerstand,  @Zaehlerstand-@Alterzaehlerstand as Verbrauch",
+    "sqlFrom": "FROM Zaehler  LEFT OUTER JOIN Raeume ON Zaehler.Raum = Raeume.ID  LEFT OUTER JOIN Einheiten ON Raeume.Einheit = Einheiten.ID  LEFT OUTER JOIN Objekte ON Einheiten.Objekt = Objekte.ID",
+    "sqlWhere": "",
+    "sqlTail": ""
+  },
+  "keys": [
+    "ID"
   ],
-  "view": [
-   "Raum",
-   "Zaehlerart",
-   "Einheit",
-   "Zaehlernummer",
-   "Objekt",
-   "Alterzaehlerstand",
-   "Zaehlerstand",
-   "Verbrauch",
-   "Masseinheit",
-   "Ablesedatum",
-   "Unterschrift",
-   "Ableser",
-   "Eichung"
-  ],
-  "add": [
-   "Raum",
-   "Zaehlerart",
-   "Zaehlernummer",
-   "Zaehlerstand",
-   "Masseinheit",
-   "Ablesedatum",
-   "Unterschrift",
-   "Ableser",
-   "Eichung"
-  ],
-  "edit": [
-   "Raum",
-   "Zaehlerart",
-   "Zaehlernummer",
-   "Zaehlerstand",
-   "Masseinheit",
-   "Ablesedatum",
-   "Ableser",
-   "Eichung"
-  ],
-  "export": [
-   "Masseinheit",
-   "Alterzaehlerstand",
-   "Verbrauch",
-   "ID",
-   "EinheitenID",
-   "ObjekteID",
-   "Eichung",
-   "Raum",
-   "Zaehlerart",
-   "Einheit",
-   "Zaehlernummer",
-   "Objekt",
-   "Zaehlerstand",
-   "Ablesedatum",
-   "Ableser"
-  ],
-  "print": [
-   "Masseinheit",
-   "Objekt",
-   "Einheit",
-   "Raum",
-   "Zaehlerart",
-   "Zaehlernummer",
-   "Zaehlerstand",
-   "Ablesedatum",
-   "Ableser",
-   "Eichung"
-  ],
-  "search": [
-   "ID",
-   "Raum",
-   "Zaehlerart",
-   "Zaehlernummer",
-   "Zaehlerstand",
-   "Ablesedatum",
-   "Ableser",
-   "Eichung"
-  ],
-  "masterList": [
-   "ID",
-   "Unterschrift",
-   "EinheitenID",
-   "ObjekteID",
-   "Eichung",
-   "Masseinheit",
-   "Team",
-   "Alterzaehlerstand",
-   "Verbrauch",
-   "Raum",
-   "Zaehlerart",
-   "Einheit",
-   "Zaehlernummer",
-   "Objekt",
-   "Zaehlerstand",
-   "Ablesedatum",
-   "Ableser"
+  "pageSize": 20,
+  "capabilities": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+  },
+  "fieldSets": {
+    "list": [
+      "Objekt",
+      "Einheit",
+      "Raum",
+      "Zaehlerart",
+      "Zaehlernummer",
+      "Zaehlerstand",
+      "Ablesedatum",
+      "Verbrauch"
+    ],
+    "view": [
+      "Raum",
+      "Zaehlerart",
+      "Einheit",
+      "Zaehlernummer",
+      "Objekt",
+      "Alterzaehlerstand",
+      "Zaehlerstand",
+      "Verbrauch",
+      "Masseinheit",
+      "Ablesedatum",
+      "Unterschrift",
+      "Ableser",
+      "Eichung"
+    ],
+    "add": [
+      "Raum",
+      "Zaehlerart",
+      "Zaehlernummer",
+      "Zaehlerstand",
+      "Masseinheit",
+      "Ablesedatum",
+      "Unterschrift",
+      "Ableser",
+      "Eichung"
+    ],
+    "edit": [
+      "Raum",
+      "Zaehlerart",
+      "Zaehlernummer",
+      "Zaehlerstand",
+      "Masseinheit",
+      "Ablesedatum",
+      "Ableser",
+      "Eichung"
+    ],
+    "export": [
+      "Masseinheit",
+      "Alterzaehlerstand",
+      "Verbrauch",
+      "ID",
+      "EinheitenID",
+      "ObjekteID",
+      "Eichung",
+      "Raum",
+      "Zaehlerart",
+      "Einheit",
+      "Zaehlernummer",
+      "Objekt",
+      "Zaehlerstand",
+      "Ablesedatum",
+      "Ableser"
+    ],
+    "print": [
+      "Masseinheit",
+      "Objekt",
+      "Einheit",
+      "Raum",
+      "Zaehlerart",
+      "Zaehlernummer",
+      "Zaehlerstand",
+      "Ablesedatum",
+      "Ableser",
+      "Eichung"
+    ],
+    "search": [
+      "ID",
+      "Raum",
+      "Zaehlerart",
+      "Zaehlernummer",
+      "Zaehlerstand",
+      "Ablesedatum",
+      "Ableser",
+      "Eichung"
+    ],
+    "masterList": [
+      "ID",
+      "Unterschrift",
+      "EinheitenID",
+      "ObjekteID",
+      "Eichung",
+      "Masseinheit",
+      "Team",
+      "Alterzaehlerstand",
+      "Verbrauch",
+      "Raum",
+      "Zaehlerart",
+      "Einheit",
+      "Zaehlernummer",
+      "Objekt",
+      "Zaehlerstand",
+      "Ablesedatum",
+      "Ableser"
+    ]
+  },
+  "export": {
+    "exportTo": true,
+    "exportDelimiter": ",",
+    "exportFormatting": 2
+  },
+  "print": {
+    "printerPageOrientation": 1,
+    "nPrinterPageScale": 100,
+    "nPrinterSplitRecords": 40,
+    "nPrinterPDFSplitRecords": 40
+  },
+  "tabs": [],
+  "labels": {
+    "German": {
+      "ID": "ID",
+      "Raum": "Raum",
+      "Einheit": "Einheit",
+      "Objekt": "Objekt",
+      "Zaehlerart": "Zählerart",
+      "Zaehlernummer": "Zählernummer",
+      "Zaehlerstand": "Zählerstand",
+      "Ablesedatum": "Ablesedatum",
+      "Ableser": "Ableser",
+      "Unterschrift": "Unterschrift",
+      "EinheitenID": "Einheiten ID",
+      "ObjekteID": "Objekte ID",
+      "Team": "Team",
+      "Eichung": "Eichung",
+      "Masseinheit": "Maßeinheit",
+      "Alterzaehlerstand": "Alter Zählerstand",
+      "Verbrauch": "Verbrauch"
+    },
+    "English": {
+      "ID": "ID",
+      "Raum": "Raum",
+      "Einheit": "Unit",
+      "Objekt": "Property",
+      "Zaehlerart": "Metersart",
+      "Zaehlernummer": "Metersnummer",
+      "Zaehlerstand": "Meter reading",
+      "Ablesedatum": "Reading date",
+      "Ableser": "Meter reader",
+      "Unterschrift": "Signature",
+      "EinheitenID": "Units ID",
+      "ObjekteID": "Properties ID",
+      "Team": "Team",
+      "Eichung": "Calibration",
+      "Masseinheit": "Unit of measure",
+      "Alterzaehlerstand": "Alter Meter reading",
+      "Verbrauch": "Consumption"
+    }
+  },
+  "fields": [
+    {
+      "name": "ID",
+      "type": 3,
+      "index": 1,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "number",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "AutoInc": true,
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Raum",
+      "type": 3,
+      "index": 2,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Raeume",
+        "autoCompleteFieldsOnEdit": 1,
+        "LCType": 2,
+        "LinkField": "ID",
+        "LinkFieldType": 0,
+        "DisplayField": "Bezeichnung",
+        "LookupOrderBy": "Bezeichnung",
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Zaehlerart",
+      "type": 200,
+      "index": 3,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 0,
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 0,
+        "SelectSize": 1,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Zaehlernummer",
+      "type": 200,
+      "index": 4,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Zaehlerstand",
+      "type": 200,
+      "index": 5,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Ablesedatum",
+      "type": 7,
+      "index": 6,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "DateEditType": 13,
+        "InitialYearFactor": 3,
+        "LastYearFactor": 10,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Einheit",
+      "type": 200,
+      "index": 7,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Objekt",
+      "type": 200,
+      "index": 8,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Ableser",
+      "type": 3,
+      "index": 9,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Adressen",
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 2,
+        "LinkField": "ID",
+        "LinkFieldType": 0,
+        "DisplayField": "Kurzname",
+        "LookupOrderBy": "Kurzname",
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Unterschrift",
+      "type": 200,
+      "index": 10,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "ImageWidth": 457,
+        "ImageHeight": 0
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "EinheitenID",
+      "type": 3,
+      "index": 11,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "AutoInc": true,
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "ObjekteID",
+      "type": 3,
+      "index": 12,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "AutoInc": true,
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Eichung",
+      "type": 200,
+      "index": 13,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Masseinheit",
+      "type": 200,
+      "index": 14,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Zaehler",
+        "freeInput": true,
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 1,
+        "LinkField": "Masseinheit",
+        "LinkFieldType": 0,
+        "DisplayField": "Masseinheit",
+        "LookupOrderBy": "Masseinheit",
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Team",
+      "type": 200,
+      "index": 15,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Alterzaehlerstand",
+      "type": 200,
+      "index": 16,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Verbrauch",
+      "type": 5,
+      "index": 17,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    }
   ]
- },
- "export": {
-  "exportTo": true,
-  "exportDelimiter": ",",
-  "exportFormatting": 2
- },
- "print": {
-  "printerPageOrientation": 1,
-  "nPrinterPageScale": 100,
-  "nPrinterSplitRecords": 40,
-  "nPrinterPDFSplitRecords": 40
- },
- "tabs": [],
- "labels": {
-  "German": {
-   "ID": "ID",
-   "Raum": "Raum",
-   "Einheit": "Einheit",
-   "Objekt": "Objekt",
-   "Zaehlerart": "Zählerart",
-   "Zaehlernummer": "Zählernummer",
-   "Zaehlerstand": "Zählerstand",
-   "Ablesedatum": "Ablesedatum",
-   "Ableser": "Ableser",
-   "Unterschrift": "Unterschrift",
-   "EinheitenID": "Einheiten ID",
-   "ObjekteID": "Objekte ID",
-   "Team": "Team",
-   "Eichung": "Eichung",
-   "Masseinheit": "Maßeinheit",
-   "Alterzaehlerstand": "Alter Zählerstand",
-   "Verbrauch": "Verbrauch"
-  }
- },
- "fields": [
-  {
-   "name": "ID",
-   "type": 3,
-   "index": 1,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "number",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "AutoInc": true,
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Raum",
-   "type": 3,
-   "index": 2,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Raeume",
-    "autoCompleteFieldsOnEdit": 1,
-    "LCType": 2,
-    "LinkField": "ID",
-    "LinkFieldType": 0,
-    "DisplayField": "Bezeichnung",
-    "LookupOrderBy": "Bezeichnung",
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Zaehlerart",
-   "type": 200,
-   "index": 3,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 0,
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 0,
-    "SelectSize": 1,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Zaehlernummer",
-   "type": 200,
-   "index": 4,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Zaehlerstand",
-   "type": 200,
-   "index": 5,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Ablesedatum",
-   "type": 7,
-   "index": 6,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "DateEditType": 13,
-    "InitialYearFactor": 3,
-    "LastYearFactor": 10,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Einheit",
-   "type": 200,
-   "index": 7,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Objekt",
-   "type": 200,
-   "index": 8,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Ableser",
-   "type": 3,
-   "index": 9,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Adressen",
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 2,
-    "LinkField": "ID",
-    "LinkFieldType": 0,
-    "DisplayField": "Kurzname",
-    "LookupOrderBy": "Kurzname",
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Unterschrift",
-   "type": 200,
-   "index": 10,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "ImageWidth": 457,
-    "ImageHeight": 0
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "EinheitenID",
-   "type": 3,
-   "index": 11,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "AutoInc": true,
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "ObjekteID",
-   "type": 3,
-   "index": 12,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "AutoInc": true,
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Eichung",
-   "type": 200,
-   "index": 13,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Masseinheit",
-   "type": 200,
-   "index": 14,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Zaehler",
-    "freeInput": true,
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 1,
-    "LinkField": "Masseinheit",
-    "LinkFieldType": 0,
-    "DisplayField": "Masseinheit",
-    "LookupOrderBy": "Masseinheit",
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Team",
-   "type": 200,
-   "index": 15,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Alterzaehlerstand",
-   "type": 200,
-   "index": 16,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Verbrauch",
-   "type": 5,
-   "index": 17,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  }
- ]
 }

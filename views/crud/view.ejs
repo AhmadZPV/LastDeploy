@@ -1,27 +1,31 @@
-<%- include('../partials/layout_top', { pageTitle: meta.titleSingle + ' #' + item.ID }) %>
+<%- include('../partials/layout_top', { pageTitle: meta.titleSingle }) %>
 <div class="header-actions">
   <a href="/<%= module %>" class="btn btn-link">« <%= t('back_to_list') %></a>
   <a href="/<%= module %>/<%= item.ID %>/edit" class="btn btn-primary"><%= t('edit') %></a>
-  <form method="post" action="/<%= module %>/<%= item.ID %>/delete" style="display:inline" onsubmit="return confirm('<%= t('confirm_delete') %>')">
+  <form class="inline-form" method="post" action="/<%= module %>/<%= item.ID %>/delete" onsubmit="return confirm('<%= t('confirm_delete') %>')">
     <%- include('../partials/csrf') %>
     <button class="btn btn-danger"><%= t('delete') %></button>
   </form>
 </div>
 
 <section>
-  <h2>Details</h2>
+  <h2><%= t('details') %></h2>
   <div class="table-wrap"><table class="detail-grid">
     <% const vrows = (typeof vspec !== 'undefined' && vspec && vspec.fields && vspec.fields.length)
         ? vspec.fields.map(f => [f.name, item[f.name], f.label])
         : Object.entries(item).map(([k, v]) => [k, v, k]); %>
     <% for (const [k, v, lbl] of vrows) { %>
+      <% if (k === 'ID') { continue; } %>
       <% const cat = helpers.fieldCategory(module, k); %>
       <% if (cat === 'blob' && v != null) { continue; } %>
+      <% const secret = /(passwort|password|passwd|kennwort|secret|token|apikey|api_key)/i.test(k); %>
       <tr>
         <th><%= lbl %></th>
         <td>
           <% if (v == null) { %>
             <span class="muted">—</span>
+          <% } else if (secret) { %>
+            <span class="muted secret-mask">••••••••</span>
           <% } else if (cat === 'date') { %>
             <%= helpers.display(module, k, v) %>
           <% } else if (cat === 'money') { %>
@@ -43,7 +47,7 @@
 
 <% if (meta.blobs && meta.blobs.length) { %>
 <section>
-  <h2>Dokumente / Bilder</h2>
+  <h2><%= t('documents_images') %></h2>
   <% for (const f of meta.blobs || []) { %>
     <% if (item[f]) { %>
       <div class="blob-preview">

@@ -25,6 +25,13 @@
 
 export const DEFAULT_DECIMALS = 2;
 
+/** Credential columns are masked on every read-only surface. */
+const SECRET_NAME = /(passwort|password|passwd|kennwort|secret|token|apikey|api_key)/i;
+export const SECRET_MASK = '\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022';
+export function isSecretField(name) {
+  return SECRET_NAME.test(String(name || ''));
+}
+
 /** Lookup control types used by PHPRunner (LookupType / LCType). */
 export const LOOKUP_TYPES = {
   1: 'text',
@@ -168,6 +175,7 @@ export function displayCategory(meta, name, value, fallback = 'text') {
  */
 export function renderView(meta, name, value, opts = {}) {
   const { entitySlug = '', id = '', thumbSize = 80 } = opts;
+  if (isSecretField(name)) return value == null || value === '' ? '' : SECRET_MASK;
   const view = viewSettings(meta, name);
   const category = displayCategory(meta, name, value, opts.fallback || 'text');
   const encode = (v) => (view.needEncode ? escapeHtml(v) : String(v == null ? '' : v));

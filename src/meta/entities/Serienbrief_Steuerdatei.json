@@ -1,741 +1,764 @@
 {
- "entity": "Serienbrief_Steuerdatei",
- "shortName": "Serienbrief_Steuerdatei",
- "baseTable": "Abrechnungen",
- "isVirtual": true,
- "ownerField": "Team",
- "sql": {
-  "strOrderBy": "ORDER BY `Eindeutiger Bezeichner`",
-  "sqlHead": "SELECT Kurzname AS `Eindeutiger Bezeichner`,  Firma,  Abteilung,  Vorname,  Nachname,  Strasse AS `Adresse 1`,  PLZ,  Ort,  Bundesland AS `Bundesland/Kanton`,  Staat AS `Land/Region`,  Telefon AS `Telefon Büro`,  Handy AS `Telefon (privat)`,  Email AS `E-Mail-Adresse`,  Website AS Webseite,  Telefax AS `Fax Büro`,  Anrede,  Titel,  Stellung AS `Position`,  Kundennummer,  Team,  Klassifikation",
-  "sqlFrom": "FROM Adressen",
-  "sqlWhere": "",
-  "sqlTail": ""
- },
- "keys": [],
- "pageSize": 20,
- "capabilities": {
-  "list": true,
-  "view": false,
-  "add": false,
-  "edit": false,
-  "export": true,
-  "print": false,
-  "search": true,
-  "masterList": true
- },
- "fieldSets": {
-  "list": [
-   "Eindeutiger Bezeichner",
-   "Firma",
-   "Abteilung",
-   "Vorname",
-   "Nachname",
-   "Adresse 1",
-   "PLZ",
-   "Ort",
-   "Bundesland/Kanton",
-   "Land/Region",
-   "Telefon Büro",
-   "Telefon (privat)",
-   "E-Mail-Adresse",
-   "Webseite",
-   "Fax Büro",
-   "Anrede",
-   "Titel",
-   "Position",
-   "Kundennummer",
-   "Klassifikation"
-  ],
-  "export": [
-   "Eindeutiger Bezeichner",
-   "Firma",
-   "Abteilung",
-   "Vorname",
-   "Nachname",
-   "Adresse 1",
-   "PLZ",
-   "Ort",
-   "Bundesland/Kanton",
-   "Land/Region",
-   "Telefon Büro",
-   "Telefon (privat)",
-   "E-Mail-Adresse",
-   "Webseite",
-   "Fax Büro",
-   "Anrede",
-   "Titel",
-   "Position",
-   "Kundennummer"
-  ],
-  "search": [
-   "Eindeutiger Bezeichner",
-   "Firma",
-   "Abteilung",
-   "Vorname",
-   "Nachname",
-   "Adresse 1",
-   "PLZ",
-   "Ort",
-   "Bundesland/Kanton",
-   "Land/Region",
-   "Telefon Büro",
-   "Telefon (privat)",
-   "E-Mail-Adresse",
-   "Webseite",
-   "Fax Büro",
-   "Anrede",
-   "Titel",
-   "Position",
-   "Kundennummer",
-   "Klassifikation"
-  ],
-  "masterList": [
-   "Eindeutiger Bezeichner",
-   "Firma",
-   "Abteilung",
-   "Vorname",
-   "Nachname",
-   "Adresse 1",
-   "PLZ",
-   "Ort",
-   "Bundesland/Kanton",
-   "Land/Region",
-   "Telefon Büro",
-   "Telefon (privat)",
-   "E-Mail-Adresse",
-   "Webseite",
-   "Fax Büro",
-   "Anrede",
-   "Titel",
-   "Position",
-   "Kundennummer",
-   "Team",
-   "Klassifikation"
+  "entity": "Serienbrief_Steuerdatei",
+  "shortName": "Serienbrief_Steuerdatei",
+  "baseTable": "Abrechnungen",
+  "isVirtual": true,
+  "ownerField": "Team",
+  "sql": {
+    "strOrderBy": "ORDER BY `Eindeutiger Bezeichner`",
+    "sqlHead": "SELECT Kurzname AS `Eindeutiger Bezeichner`,  Firma,  Abteilung,  Vorname,  Nachname,  Strasse AS `Adresse 1`,  PLZ,  Ort,  Bundesland AS `Bundesland/Kanton`,  Staat AS `Land/Region`,  Telefon AS `Telefon Büro`,  Handy AS `Telefon (privat)`,  Email AS `E-Mail-Adresse`,  Website AS Webseite,  Telefax AS `Fax Büro`,  Anrede,  Titel,  Stellung AS `Position`,  Kundennummer,  Team,  Klassifikation",
+    "sqlFrom": "FROM Adressen",
+    "sqlWhere": "",
+    "sqlTail": ""
+  },
+  "keys": [],
+  "pageSize": 20,
+  "capabilities": {
+    "list": true,
+    "view": false,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": false,
+    "search": true,
+    "masterList": true
+  },
+  "fieldSets": {
+    "list": [
+      "Eindeutiger Bezeichner",
+      "Firma",
+      "Abteilung",
+      "Vorname",
+      "Nachname",
+      "Adresse 1",
+      "PLZ",
+      "Ort",
+      "Bundesland/Kanton",
+      "Land/Region",
+      "Telefon Büro",
+      "Telefon (privat)",
+      "E-Mail-Adresse",
+      "Webseite",
+      "Fax Büro",
+      "Anrede",
+      "Titel",
+      "Position",
+      "Kundennummer",
+      "Klassifikation"
+    ],
+    "export": [
+      "Eindeutiger Bezeichner",
+      "Firma",
+      "Abteilung",
+      "Vorname",
+      "Nachname",
+      "Adresse 1",
+      "PLZ",
+      "Ort",
+      "Bundesland/Kanton",
+      "Land/Region",
+      "Telefon Büro",
+      "Telefon (privat)",
+      "E-Mail-Adresse",
+      "Webseite",
+      "Fax Büro",
+      "Anrede",
+      "Titel",
+      "Position",
+      "Kundennummer"
+    ],
+    "search": [
+      "Eindeutiger Bezeichner",
+      "Firma",
+      "Abteilung",
+      "Vorname",
+      "Nachname",
+      "Adresse 1",
+      "PLZ",
+      "Ort",
+      "Bundesland/Kanton",
+      "Land/Region",
+      "Telefon Büro",
+      "Telefon (privat)",
+      "E-Mail-Adresse",
+      "Webseite",
+      "Fax Büro",
+      "Anrede",
+      "Titel",
+      "Position",
+      "Kundennummer",
+      "Klassifikation"
+    ],
+    "masterList": [
+      "Eindeutiger Bezeichner",
+      "Firma",
+      "Abteilung",
+      "Vorname",
+      "Nachname",
+      "Adresse 1",
+      "PLZ",
+      "Ort",
+      "Bundesland/Kanton",
+      "Land/Region",
+      "Telefon Büro",
+      "Telefon (privat)",
+      "E-Mail-Adresse",
+      "Webseite",
+      "Fax Büro",
+      "Anrede",
+      "Titel",
+      "Position",
+      "Kundennummer",
+      "Team",
+      "Klassifikation"
+    ]
+  },
+  "export": {
+    "exportTo": true,
+    "exportDelimiter": ",",
+    "exportFormatting": 2
+  },
+  "print": {
+    "printerPageOrientation": 0,
+    "nPrinterPageScale": 100,
+    "nPrinterSplitRecords": 40,
+    "nPrinterPDFSplitRecords": 40
+  },
+  "tabs": [],
+  "labels": {
+    "German": {
+      "Eindeutiger_Bezeichner": "Eindeutiger Bezeichner",
+      "Firma": "Firma",
+      "Abteilung": "Abteilung",
+      "Vorname": "Vorname",
+      "Nachname": "Nachname",
+      "Adresse_1": "Adresse 1",
+      "PLZ": "PLZ",
+      "Ort": "Ort",
+      "Bundesland_Kanton": "Bundesland/Kanton",
+      "Land_Region": "Land/Region",
+      "Telefon_B_ro": "Telefon Büro",
+      "Telefon__privat_": "Telefon (privat)",
+      "E_Mail_Adresse": "E-Mail-Adresse",
+      "Webseite": "Webseite",
+      "Fax_B_ro": "Fax Büro",
+      "Anrede": "Anrede",
+      "Titel": "Titel",
+      "Position": "Position",
+      "Kundennummer": "Kundennummer",
+      "Team": "Team",
+      "Klassifikation": "Klassifikation"
+    },
+    "English": {
+      "Eindeutiger_Bezeichner": "Eindeutiger Bezeichner",
+      "Firma": "Company",
+      "Abteilung": "Department",
+      "Vorname": "First name",
+      "Nachname": "Last name",
+      "Adresse_1": "Address 1",
+      "PLZ": "Postal codes",
+      "Ort": "City",
+      "Bundesland_Kanton": "State/Kanton",
+      "Land_Region": "Country/Region",
+      "Telefon_B_ro": "Phone Office",
+      "Telefon__privat_": "Telefon (privat)",
+      "E_Mail_Adresse": "E-Mail-Address",
+      "Webseite": "Webseite",
+      "Fax_B_ro": "Fax Office",
+      "Anrede": "Salutation",
+      "Titel": "Title",
+      "Position": "Position",
+      "Kundennummer": "Customer number",
+      "Team": "Team",
+      "Klassifikation": "Classification"
+    }
+  },
+  "fields": [
+    {
+      "name": "Eindeutiger Bezeichner",
+      "type": 200,
+      "index": 1,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Firma",
+      "type": 200,
+      "index": 2,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Abteilung",
+      "type": 200,
+      "index": 3,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Vorname",
+      "type": 200,
+      "index": 4,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Nachname",
+      "type": 200,
+      "index": 5,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Adresse 1",
+      "type": 200,
+      "index": 6,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "PLZ",
+      "type": 200,
+      "index": 7,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Ort",
+      "type": 200,
+      "index": 8,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Bundesland/Kanton",
+      "type": 200,
+      "index": 9,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Land/Region",
+      "type": 200,
+      "index": 10,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Telefon Büro",
+      "type": 200,
+      "index": 11,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Telefon (privat)",
+      "type": 200,
+      "index": 12,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "E-Mail-Adresse",
+      "type": 200,
+      "index": 13,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Webseite",
+      "type": 200,
+      "index": 14,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Fax Büro",
+      "type": 200,
+      "index": 15,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Anrede",
+      "type": 200,
+      "index": 16,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Titel",
+      "type": 200,
+      "index": 17,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Position",
+      "type": 200,
+      "index": 18,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Kundennummer",
+      "type": 200,
+      "index": 19,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Team",
+      "type": 200,
+      "index": 20,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Klassifikation",
+      "type": 200,
+      "index": 21,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    }
   ]
- },
- "export": {
-  "exportTo": true,
-  "exportDelimiter": ",",
-  "exportFormatting": 2
- },
- "print": {
-  "printerPageOrientation": 0,
-  "nPrinterPageScale": 100,
-  "nPrinterSplitRecords": 40,
-  "nPrinterPDFSplitRecords": 40
- },
- "tabs": [],
- "labels": {
-  "German": {
-   "Eindeutiger_Bezeichner": "Eindeutiger Bezeichner",
-   "Firma": "Firma",
-   "Abteilung": "Abteilung",
-   "Vorname": "Vorname",
-   "Nachname": "Nachname",
-   "Adresse_1": "Adresse 1",
-   "PLZ": "PLZ",
-   "Ort": "Ort",
-   "Bundesland_Kanton": "Bundesland/Kanton",
-   "Land_Region": "Land/Region",
-   "Telefon_B_ro": "Telefon Büro",
-   "Telefon__privat_": "Telefon (privat)",
-   "E_Mail_Adresse": "E-Mail-Adresse",
-   "Webseite": "Webseite",
-   "Fax_B_ro": "Fax Büro",
-   "Anrede": "Anrede",
-   "Titel": "Titel",
-   "Position": "Position",
-   "Kundennummer": "Kundennummer",
-   "Team": "Team",
-   "Klassifikation": "Klassifikation"
-  }
- },
- "fields": [
-  {
-   "name": "Eindeutiger Bezeichner",
-   "type": 200,
-   "index": 1,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Firma",
-   "type": 200,
-   "index": 2,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Abteilung",
-   "type": 200,
-   "index": 3,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Vorname",
-   "type": 200,
-   "index": 4,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Nachname",
-   "type": 200,
-   "index": 5,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Adresse 1",
-   "type": 200,
-   "index": 6,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "PLZ",
-   "type": 200,
-   "index": 7,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Ort",
-   "type": 200,
-   "index": 8,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Bundesland/Kanton",
-   "type": 200,
-   "index": 9,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Land/Region",
-   "type": 200,
-   "index": 10,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Telefon Büro",
-   "type": 200,
-   "index": 11,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Telefon (privat)",
-   "type": 200,
-   "index": 12,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "E-Mail-Adresse",
-   "type": 200,
-   "index": 13,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Webseite",
-   "type": 200,
-   "index": 14,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Fax Büro",
-   "type": 200,
-   "index": 15,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Anrede",
-   "type": 200,
-   "index": 16,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Titel",
-   "type": 200,
-   "index": 17,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Position",
-   "type": 200,
-   "index": 18,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Kundennummer",
-   "type": 200,
-   "index": 19,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Team",
-   "type": 200,
-   "index": 20,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Klassifikation",
-   "type": 200,
-   "index": 21,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  }
- ]
 }

@@ -1,77 +1,21 @@
 {
- "entity": "Bilder",
- "shortName": "Bilder",
- "baseTable": "Dokumente",
- "isVirtual": true,
- "ownerField": "Team",
- "sql": {
-  "strOrderBy": "ORDER BY Titel",
-  "sqlHead": "SELECT Titel,  Bild,  Team",
-  "sqlFrom": "FROM Dokumente",
-  "sqlWhere": "",
-  "sqlTail": ""
- },
- "keys": [
-  "Titel"
- ],
- "pageSize": 20,
- "capabilities": {
-  "list": true,
-  "view": true,
-  "add": false,
-  "edit": false,
-  "export": false,
-  "print": true,
-  "search": true,
-  "masterList": true
- },
- "fieldSets": {
-  "list": [
-   "Titel",
-   "Bild"
+  "entity": "Bilder",
+  "shortName": "Bilder",
+  "baseTable": "Dokumente",
+  "isVirtual": true,
+  "ownerField": "Team",
+  "sql": {
+    "strOrderBy": "ORDER BY Titel",
+    "sqlHead": "SELECT Titel,  Bild,  Team",
+    "sqlFrom": "FROM Dokumente",
+    "sqlWhere": "",
+    "sqlTail": ""
+  },
+  "keys": [
+    "Titel"
   ],
-  "view": [
-   "Titel",
-   "Bild"
-  ],
-  "print": [
-   "Titel",
-   "Bild"
-  ],
-  "search": [
-   "Titel"
-  ],
-  "masterList": [
-   "Titel",
-   "Bild",
-   "Team"
-  ]
- },
- "export": {
-  "exportTo": null,
-  "exportDelimiter": null,
-  "exportFormatting": null
- },
- "print": {
-  "printerPageOrientation": 0,
-  "nPrinterPageScale": 100,
-  "nPrinterSplitRecords": 40,
-  "nPrinterPDFSplitRecords": 40
- },
- "tabs": [],
- "labels": {
-  "German": {
-   "Titel": "Titel",
-   "Bild": "Bild",
-   "Team": "Team"
-  }
- },
- "fields": [
-  {
-   "name": "Titel",
-   "type": 200,
-   "index": 1,
-   "pages": {
+  "pageSize": 20,
+  "capabilities": {
     "list": true,
     "view": true,
     "add": false,
@@ -80,75 +24,136 @@
     "print": true,
     "search": true,
     "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
   },
-  {
-   "name": "Bild",
-   "type": 128,
-   "index": 2,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": true,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "ImageWidth": 457,
-    "ImageHeight": 0,
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200,
-    "ResizeImage": true,
-    "NewSize": 600
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
+  "fieldSets": {
+    "list": [
+      "Titel",
+      "Bild"
+    ],
+    "view": [
+      "Titel",
+      "Bild"
+    ],
+    "print": [
+      "Titel",
+      "Bild"
+    ],
+    "search": [
+      "Titel"
+    ],
+    "masterList": [
+      "Titel",
+      "Bild",
+      "Team"
+    ]
   },
-  {
-   "name": "Team",
-   "type": 200,
-   "index": 3,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  }
- ]
+  "export": {
+    "exportTo": null,
+    "exportDelimiter": null,
+    "exportFormatting": null
+  },
+  "print": {
+    "printerPageOrientation": 0,
+    "nPrinterPageScale": 100,
+    "nPrinterSplitRecords": 40,
+    "nPrinterPDFSplitRecords": 40
+  },
+  "tabs": [],
+  "labels": {
+    "German": {
+      "Titel": "Titel",
+      "Bild": "Bild",
+      "Team": "Team"
+    },
+    "English": {
+      "Titel": "Title",
+      "Bild": "Image",
+      "Team": "Team"
+    }
+  },
+  "fields": [
+    {
+      "name": "Titel",
+      "type": 200,
+      "index": 1,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Bild",
+      "type": 128,
+      "index": 2,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": true,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "ImageWidth": 457,
+        "ImageHeight": 0,
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200,
+        "ResizeImage": true,
+        "NewSize": 600
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Team",
+      "type": 200,
+      "index": 3,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    }
+  ]
 }

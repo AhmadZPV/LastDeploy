@@ -1,1422 +1,1462 @@
 {
- "entity": "Kontobuch",
- "shortName": "Kontobuch",
- "baseTable": "Kontobuch",
- "isVirtual": false,
- "ownerField": "Team",
- "sql": {
-  "strOrderBy": "ORDER BY Datum DESC",
-  "sqlHead": "SELECT ID,  Datum,  Betrag,  @rechenbetrag := if(Art=\"Ausgabe\", Betrag*-1, if(Art=\"Sollstellung\",0,Betrag)) AS Rechenbetrag,  Betreff,  Kategorie,  Art,  Miete,  Nebenkosten,  Heizkosten,  Garagenmiete,  Abrechnung,  Abrechnungskonto,  Belegnummer,  BelegURL,  Beleg,  Belegdokument,  Ruecklage,  P35a,  P35aArt,  Bemerkungen,  Verbucht,  Belegdokumentname,  Belegminiatur,  Erfassungsdatum,  Bearbeitungsdatum,  Zinsen,  Tilgung,  Team,  Bank,  BIC,  IBAN,  Kontoinhaber,  MwstSatz,  @netto := round(Betrag/(1+(MwstSatz/100)),2) AS Netto,  Betrag-@netto AS Mwst,  Wiederholung,  Wiederholende",
-  "sqlFrom": "FROM Kontobuch",
-  "sqlWhere": "",
-  "sqlTail": ""
- },
- "keys": [
-  "ID"
- ],
- "pageSize": 20,
- "capabilities": {
-  "list": true,
-  "view": true,
-  "add": true,
-  "edit": true,
-  "export": true,
-  "print": true,
-  "search": true,
-  "masterList": true
- },
- "fieldSets": {
-  "list": [
-   "Datum",
-   "Betrag",
-   "Rechenbetrag",
-   "Betreff",
-   "Art",
-   "Kategorie",
-   "Abrechnung",
-   "Abrechnungskonto",
-   "Miete",
-   "Nebenkosten",
-   "Heizkosten",
-   "Garagenmiete",
-   "Ruecklage",
-   "P35a"
+  "entity": "Kontobuch",
+  "shortName": "Kontobuch",
+  "baseTable": "Kontobuch",
+  "isVirtual": false,
+  "ownerField": "Team",
+  "sql": {
+    "strOrderBy": "ORDER BY Datum DESC",
+    "sqlHead": "SELECT ID,  Datum,  Betrag,  @rechenbetrag := if(Art=\"Ausgabe\", Betrag*-1, if(Art=\"Sollstellung\",0,Betrag)) AS Rechenbetrag,  Betreff,  Kategorie,  Art,  Miete,  Nebenkosten,  Heizkosten,  Garagenmiete,  Abrechnung,  Abrechnungskonto,  Belegnummer,  BelegURL,  Beleg,  Belegdokument,  Ruecklage,  P35a,  P35aArt,  Bemerkungen,  Verbucht,  Belegdokumentname,  Belegminiatur,  Erfassungsdatum,  Bearbeitungsdatum,  Zinsen,  Tilgung,  Team,  Bank,  BIC,  IBAN,  Kontoinhaber,  MwstSatz,  @netto := round(Betrag/(1+(MwstSatz/100)),2) AS Netto,  Betrag-@netto AS Mwst,  Wiederholung,  Wiederholende",
+    "sqlFrom": "FROM Kontobuch",
+    "sqlWhere": "",
+    "sqlTail": ""
+  },
+  "keys": [
+    "ID"
   ],
-  "view": [
-   "Datum",
-   "Betrag",
-   "Rechenbetrag",
-   "Betreff",
-   "Art",
-   "Kategorie",
-   "Abrechnung",
-   "Abrechnungskonto",
-   "Verbucht",
-   "Miete",
-   "Nebenkosten",
-   "Heizkosten",
-   "Garagenmiete",
-   "Ruecklage",
-   "P35a",
-   "P35aArt",
-   "Zinsen",
-   "Tilgung",
-   "Beleg",
-   "Belegnummer",
-   "BelegURL",
-   "Belegdokument",
-   "Belegdokumentname",
-   "IBAN",
-   "BIC",
-   "Bank",
-   "Kontoinhaber",
-   "Bemerkungen",
-   "Erfassungsdatum",
-   "Bearbeitungsdatum",
-   "Mwst",
-   "Netto",
-   "MwstSatz",
-   "Wiederholung",
-   "Wiederholende"
-  ],
-  "add": [
-   "Datum",
-   "Betrag",
-   "Betreff",
-   "Art",
-   "Kategorie",
-   "Abrechnung",
-   "Abrechnungskonto",
-   "Verbucht",
-   "Miete",
-   "Nebenkosten",
-   "Heizkosten",
-   "Garagenmiete",
-   "Ruecklage",
-   "P35a",
-   "P35aArt",
-   "Zinsen",
-   "Tilgung",
-   "Belegnummer",
-   "BelegURL",
-   "Beleg",
-   "Belegdokument",
-   "IBAN",
-   "BIC",
-   "Bank",
-   "Kontoinhaber",
-   "Bemerkungen",
-   "Erfassungsdatum",
-   "Bearbeitungsdatum",
-   "MwstSatz",
-   "Wiederholung",
-   "Wiederholende"
-  ],
-  "edit": [
-   "Datum",
-   "Betrag",
-   "Betreff",
-   "Art",
-   "Kategorie",
-   "Abrechnung",
-   "Abrechnungskonto",
-   "Verbucht",
-   "Miete",
-   "Nebenkosten",
-   "Heizkosten",
-   "Garagenmiete",
-   "Ruecklage",
-   "P35a",
-   "P35aArt",
-   "Zinsen",
-   "Tilgung",
-   "Belegnummer",
-   "BelegURL",
-   "Beleg",
-   "Belegdokument",
-   "IBAN",
-   "BIC",
-   "Bank",
-   "Kontoinhaber",
-   "Bemerkungen",
-   "Erfassungsdatum",
-   "Bearbeitungsdatum",
-   "MwstSatz",
-   "Wiederholung",
-   "Wiederholende"
-  ],
-  "export": [
-   "ID",
-   "Rechenbetrag",
-   "Belegdokumentname",
-   "Netto",
-   "Mwst",
-   "Datum",
-   "Betrag",
-   "Betreff",
-   "Art",
-   "Kategorie",
-   "Abrechnung",
-   "Abrechnungskonto",
-   "Verbucht",
-   "Miete",
-   "Nebenkosten",
-   "Heizkosten",
-   "Garagenmiete",
-   "Ruecklage",
-   "P35a",
-   "P35aArt",
-   "Zinsen",
-   "Tilgung",
-   "Belegnummer",
-   "BelegURL",
-   "IBAN",
-   "BIC",
-   "Bank",
-   "Kontoinhaber",
-   "Bemerkungen",
-   "Erfassungsdatum",
-   "Bearbeitungsdatum",
-   "MwstSatz",
-   "Wiederholung",
-   "Wiederholende"
-  ],
-  "print": [
-   "Netto",
-   "Mwst",
-   "Datum",
-   "Betrag",
-   "Betreff",
-   "Art",
-   "Kategorie",
-   "Abrechnung",
-   "Abrechnungskonto",
-   "Miete",
-   "Nebenkosten",
-   "Heizkosten",
-   "Garagenmiete",
-   "Ruecklage",
-   "P35a",
-   "P35aArt",
-   "Zinsen",
-   "Tilgung",
-   "Belegnummer",
-   "MwstSatz"
-  ],
-  "search": [
-   "ID",
-   "Belegdokumentname",
-   "Datum",
-   "Betrag",
-   "Betreff",
-   "Art",
-   "Kategorie",
-   "Abrechnung",
-   "Abrechnungskonto",
-   "Verbucht",
-   "Miete",
-   "Nebenkosten",
-   "Heizkosten",
-   "Garagenmiete",
-   "Ruecklage",
-   "P35a",
-   "P35aArt",
-   "Zinsen",
-   "Tilgung",
-   "Belegnummer",
-   "BelegURL",
-   "Bemerkungen",
-   "Wiederholung",
-   "Wiederholende"
-  ],
-  "masterList": [
-   "ID",
-   "Rechenbetrag",
-   "Belegdokumentname",
-   "Belegminiatur",
-   "Team",
-   "Netto",
-   "Mwst",
-   "Datum",
-   "Betrag",
-   "Betreff",
-   "Art",
-   "Kategorie",
-   "Abrechnung",
-   "Abrechnungskonto",
-   "Verbucht",
-   "Miete",
-   "Nebenkosten",
-   "Heizkosten",
-   "Garagenmiete",
-   "Ruecklage",
-   "P35a",
-   "P35aArt",
-   "Zinsen",
-   "Tilgung",
-   "Belegnummer",
-   "BelegURL",
-   "Beleg",
-   "Belegdokument",
-   "IBAN",
-   "BIC",
-   "Bank",
-   "Kontoinhaber",
-   "Bemerkungen",
-   "Erfassungsdatum",
-   "Bearbeitungsdatum",
-   "MwstSatz",
-   "Wiederholung",
-   "Wiederholende"
+  "pageSize": 20,
+  "capabilities": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+  },
+  "fieldSets": {
+    "list": [
+      "Datum",
+      "Betrag",
+      "Rechenbetrag",
+      "Betreff",
+      "Art",
+      "Kategorie",
+      "Abrechnung",
+      "Abrechnungskonto",
+      "Miete",
+      "Nebenkosten",
+      "Heizkosten",
+      "Garagenmiete",
+      "Ruecklage",
+      "P35a"
+    ],
+    "view": [
+      "Datum",
+      "Betrag",
+      "Rechenbetrag",
+      "Betreff",
+      "Art",
+      "Kategorie",
+      "Abrechnung",
+      "Abrechnungskonto",
+      "Verbucht",
+      "Miete",
+      "Nebenkosten",
+      "Heizkosten",
+      "Garagenmiete",
+      "Ruecklage",
+      "P35a",
+      "P35aArt",
+      "Zinsen",
+      "Tilgung",
+      "Beleg",
+      "Belegnummer",
+      "BelegURL",
+      "Belegdokument",
+      "Belegdokumentname",
+      "IBAN",
+      "BIC",
+      "Bank",
+      "Kontoinhaber",
+      "Bemerkungen",
+      "Erfassungsdatum",
+      "Bearbeitungsdatum",
+      "Mwst",
+      "Netto",
+      "MwstSatz",
+      "Wiederholung",
+      "Wiederholende"
+    ],
+    "add": [
+      "Datum",
+      "Betrag",
+      "Betreff",
+      "Art",
+      "Kategorie",
+      "Abrechnung",
+      "Abrechnungskonto",
+      "Verbucht",
+      "Miete",
+      "Nebenkosten",
+      "Heizkosten",
+      "Garagenmiete",
+      "Ruecklage",
+      "P35a",
+      "P35aArt",
+      "Zinsen",
+      "Tilgung",
+      "Belegnummer",
+      "BelegURL",
+      "Beleg",
+      "Belegdokument",
+      "IBAN",
+      "BIC",
+      "Bank",
+      "Kontoinhaber",
+      "Bemerkungen",
+      "Erfassungsdatum",
+      "Bearbeitungsdatum",
+      "MwstSatz",
+      "Wiederholung",
+      "Wiederholende"
+    ],
+    "edit": [
+      "Datum",
+      "Betrag",
+      "Betreff",
+      "Art",
+      "Kategorie",
+      "Abrechnung",
+      "Abrechnungskonto",
+      "Verbucht",
+      "Miete",
+      "Nebenkosten",
+      "Heizkosten",
+      "Garagenmiete",
+      "Ruecklage",
+      "P35a",
+      "P35aArt",
+      "Zinsen",
+      "Tilgung",
+      "Belegnummer",
+      "BelegURL",
+      "Beleg",
+      "Belegdokument",
+      "IBAN",
+      "BIC",
+      "Bank",
+      "Kontoinhaber",
+      "Bemerkungen",
+      "Erfassungsdatum",
+      "Bearbeitungsdatum",
+      "MwstSatz",
+      "Wiederholung",
+      "Wiederholende"
+    ],
+    "export": [
+      "ID",
+      "Rechenbetrag",
+      "Belegdokumentname",
+      "Netto",
+      "Mwst",
+      "Datum",
+      "Betrag",
+      "Betreff",
+      "Art",
+      "Kategorie",
+      "Abrechnung",
+      "Abrechnungskonto",
+      "Verbucht",
+      "Miete",
+      "Nebenkosten",
+      "Heizkosten",
+      "Garagenmiete",
+      "Ruecklage",
+      "P35a",
+      "P35aArt",
+      "Zinsen",
+      "Tilgung",
+      "Belegnummer",
+      "BelegURL",
+      "IBAN",
+      "BIC",
+      "Bank",
+      "Kontoinhaber",
+      "Bemerkungen",
+      "Erfassungsdatum",
+      "Bearbeitungsdatum",
+      "MwstSatz",
+      "Wiederholung",
+      "Wiederholende"
+    ],
+    "print": [
+      "Netto",
+      "Mwst",
+      "Datum",
+      "Betrag",
+      "Betreff",
+      "Art",
+      "Kategorie",
+      "Abrechnung",
+      "Abrechnungskonto",
+      "Miete",
+      "Nebenkosten",
+      "Heizkosten",
+      "Garagenmiete",
+      "Ruecklage",
+      "P35a",
+      "P35aArt",
+      "Zinsen",
+      "Tilgung",
+      "Belegnummer",
+      "MwstSatz"
+    ],
+    "search": [
+      "ID",
+      "Belegdokumentname",
+      "Datum",
+      "Betrag",
+      "Betreff",
+      "Art",
+      "Kategorie",
+      "Abrechnung",
+      "Abrechnungskonto",
+      "Verbucht",
+      "Miete",
+      "Nebenkosten",
+      "Heizkosten",
+      "Garagenmiete",
+      "Ruecklage",
+      "P35a",
+      "P35aArt",
+      "Zinsen",
+      "Tilgung",
+      "Belegnummer",
+      "BelegURL",
+      "Bemerkungen",
+      "Wiederholung",
+      "Wiederholende"
+    ],
+    "masterList": [
+      "ID",
+      "Rechenbetrag",
+      "Belegdokumentname",
+      "Belegminiatur",
+      "Team",
+      "Netto",
+      "Mwst",
+      "Datum",
+      "Betrag",
+      "Betreff",
+      "Art",
+      "Kategorie",
+      "Abrechnung",
+      "Abrechnungskonto",
+      "Verbucht",
+      "Miete",
+      "Nebenkosten",
+      "Heizkosten",
+      "Garagenmiete",
+      "Ruecklage",
+      "P35a",
+      "P35aArt",
+      "Zinsen",
+      "Tilgung",
+      "Belegnummer",
+      "BelegURL",
+      "Beleg",
+      "Belegdokument",
+      "IBAN",
+      "BIC",
+      "Bank",
+      "Kontoinhaber",
+      "Bemerkungen",
+      "Erfassungsdatum",
+      "Bearbeitungsdatum",
+      "MwstSatz",
+      "Wiederholung",
+      "Wiederholende"
+    ]
+  },
+  "export": {
+    "exportTo": true,
+    "exportDelimiter": ",",
+    "exportFormatting": 2
+  },
+  "print": {
+    "printerPageOrientation": 1,
+    "nPrinterPageScale": 100,
+    "nPrinterSplitRecords": 40,
+    "nPrinterPDFSplitRecords": 40
+  },
+  "tabs": [],
+  "labels": {
+    "German": {
+      "ID": "ID",
+      "Datum": "Datum",
+      "Betrag": "Betrag",
+      "Betreff": "Betreff",
+      "Kategorie": "Kategorie",
+      "Art": "Art",
+      "Miete": "Miete",
+      "Nebenkosten": "Nebenkosten",
+      "Heizkosten": "Heizkosten",
+      "Garagenmiete": "Garagenmiete",
+      "Abrechnung": "Abrechnung",
+      "Abrechnungskonto": "Abrechnungskonto",
+      "Belegnummer": "Belegnummer",
+      "BelegURL": "Beleg URL",
+      "Beleg": "Beleg",
+      "Belegdokument": "Belegdokument",
+      "Ruecklage": "Rücklage",
+      "P35a": "§35a EStG",
+      "Bemerkungen": "Bemerkungen",
+      "Verbucht": "Verbucht",
+      "Belegdokumentname": "Dokumentname",
+      "Belegminiatur": "Miniatur",
+      "Erfassungsdatum": "Erfassungsdatum",
+      "Bearbeitungsdatum": "Bearbeitungsdatum",
+      "Rechenbetrag": "Rechenbetrag",
+      "Team": "Team",
+      "P35aArt": "§35a EStG Absatz",
+      "Zinsen": "Zinsen",
+      "Tilgung": "Tilgung",
+      "Bank": "Bank",
+      "BIC": "BIC",
+      "IBAN": "IBAN",
+      "Kontoinhaber": "Kontoinhaber",
+      "MwstSatz": "Mwst Satz",
+      "Netto": "Netto",
+      "Mwst": "Mwst",
+      "Wiederholung": "Wiederholung",
+      "Wiederholende": "Wiederholende"
+    },
+    "English": {
+      "ID": "ID",
+      "Datum": "Date",
+      "Betrag": "Amount",
+      "Betreff": "Subject",
+      "Kategorie": "Category",
+      "Art": "Type",
+      "Miete": "Rent",
+      "Nebenkosten": "Service charges",
+      "Heizkosten": "Heating costs",
+      "Garagenmiete": "Garagenmiete",
+      "Abrechnung": "Settlement",
+      "Abrechnungskonto": "Settlement account",
+      "Belegnummer": "Receipt number",
+      "BelegURL": "Receipt URL",
+      "Beleg": "Receipt",
+      "Belegdokument": "Receiptdokument",
+      "Ruecklage": "Reserve",
+      "P35a": "§35a EStG",
+      "Bemerkungen": "Notes",
+      "Verbucht": "Verbucht",
+      "Belegdokumentname": "Documentname",
+      "Belegminiatur": "Miniatur",
+      "Erfassungsdatum": "Data entrysdatum",
+      "Bearbeitungsdatum": "Bearbeitungsdatum",
+      "Rechenbetrag": "Rechenbetrag",
+      "Team": "Team",
+      "P35aArt": "§35a EStG Absatz",
+      "Zinsen": "Zinsen",
+      "Tilgung": "Repayment",
+      "Bank": "Bank",
+      "BIC": "BIC",
+      "IBAN": "IBAN",
+      "Kontoinhaber": "Account holder",
+      "MwstSatz": "VAT Rate",
+      "Netto": "Net",
+      "Mwst": "VAT",
+      "Wiederholung": "Repetition",
+      "Wiederholende": "Wiederholende"
+    }
+  },
+  "fields": [
+    {
+      "name": "ID",
+      "type": 3,
+      "index": 1,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "AutoInc": true,
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Datum",
+      "type": 7,
+      "index": 2,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "DateEditType": 13,
+        "InitialYearFactor": 3,
+        "LastYearFactor": 10,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Betrag",
+      "type": 14,
+      "index": 3,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Rechenbetrag",
+      "type": 14,
+      "index": 4,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "ViewFormat": "Custom"
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Betreff",
+      "type": 200,
+      "index": 5,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Kontobuch",
+        "freeInput": true,
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 1,
+        "LookupUnique": true,
+        "LinkField": "Betreff",
+        "LinkFieldType": 0,
+        "DisplayField": "Betreff",
+        "LookupOrderBy": "Betreff",
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Kategorie",
+      "type": 200,
+      "index": 6,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "KlassifikationenKontobuch",
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 0,
+        "LookupUnique": true,
+        "LinkField": "Bezeichnung",
+        "LinkFieldType": 0,
+        "DisplayField": "Bezeichnung",
+        "LookupOrderBy": "Bezeichnung",
+        "UseCategory": true,
+        "AllowToAdd": true,
+        "SelectSize": 1,
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Art",
+      "type": 200,
+      "index": 7,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 0,
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 4,
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Miete",
+      "type": 14,
+      "index": 8,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Nebenkosten",
+      "type": 14,
+      "index": 9,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Heizkosten",
+      "type": 14,
+      "index": 10,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Garagenmiete",
+      "type": 14,
+      "index": 11,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Abrechnung",
+      "type": 3,
+      "index": 12,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Abrechnungen",
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 0,
+        "LinkField": "ID",
+        "LinkFieldType": 0,
+        "DisplayField": "Bezeichnung",
+        "LookupWhere": "Erledigt is null or Erledigt=0",
+        "LookupOrderBy": "Bezeichnung",
+        "SelectSize": 1,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Abrechnungskonto",
+      "type": 3,
+      "index": 13,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Abrechnungskonten",
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 0,
+        "LinkField": "ID",
+        "LinkFieldType": 0,
+        "DisplayField": "Bezeichnung",
+        "LookupOrderBy": "Bezeichnung",
+        "UseCategory": true,
+        "SelectSize": 1,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Belegnummer",
+      "type": 3,
+      "index": 14,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "BelegURL",
+      "type": 200,
+      "index": 15,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Beleg",
+      "type": 128,
+      "index": 16,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "ImageWidth": 457,
+        "ImageHeight": 0,
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200,
+        "CreateThumbnail": true,
+        "StrThumbnail": "Belegminiatur",
+        "ThumbnailSize": 150,
+        "ResizeImage": true,
+        "NewSize": 600
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Belegdokument",
+      "type": 128,
+      "index": 17,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "Filename": "Belegdokumentname",
+        "ImageWidth": 457,
+        "ImageHeight": 0,
+        "strFilename": "Belegdokumentname",
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Ruecklage",
+      "type": 14,
+      "index": 18,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "P35a",
+      "type": 14,
+      "index": 19,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "P35aArt",
+      "type": 200,
+      "index": 20,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 0,
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 4,
+        "HorizontalLookup": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Bemerkungen",
+      "type": 201,
+      "index": 21,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "ViewFormat": "HTML"
+      },
+      "edit": {
+        "UseRTE": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "nRows": 400,
+        "nCols": 600,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Verbucht",
+      "type": 16,
+      "index": 22,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "ViewFormat": "Checkbox"
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Belegdokumentname",
+      "type": 200,
+      "index": 23,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Belegminiatur",
+      "type": 128,
+      "index": 24,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "ImageWidth": 457,
+        "ImageHeight": 0,
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Erfassungsdatum",
+      "type": 7,
+      "index": 25,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Bearbeitungsdatum",
+      "type": 7,
+      "index": 26,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200,
+        "autoUpdatable": true
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Zinsen",
+      "type": 14,
+      "index": 27,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Tilgung",
+      "type": 14,
+      "index": 28,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Team",
+      "type": 200,
+      "index": 29,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Bank",
+      "type": 200,
+      "index": 30,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "BIC",
+      "type": 200,
+      "index": 31,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "IBAN",
+      "type": 200,
+      "index": 32,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Kontoinhaber",
+      "type": 200,
+      "index": 33,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "MwstSatz",
+      "type": 14,
+      "index": 34,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Wertelisten",
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 0,
+        "LinkField": "Eintrag",
+        "LinkFieldType": 0,
+        "DisplayField": "Eintrag",
+        "LookupWhere": "Werteliste='Mwst-Sätze'",
+        "LookupOrderBy": "Eintrag",
+        "SelectSize": 1,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Netto",
+      "type": 14,
+      "index": 35,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Mwst",
+      "type": 5,
+      "index": 36,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Wiederholung",
+      "type": 16,
+      "index": 37,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "ViewFormat": "Checkbox"
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Wiederholende",
+      "type": 7,
+      "index": 38,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "DateEditType": 13,
+        "InitialYearFactor": 0,
+        "LastYearFactor": 10,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    }
   ]
- },
- "export": {
-  "exportTo": true,
-  "exportDelimiter": ",",
-  "exportFormatting": 2
- },
- "print": {
-  "printerPageOrientation": 1,
-  "nPrinterPageScale": 100,
-  "nPrinterSplitRecords": 40,
-  "nPrinterPDFSplitRecords": 40
- },
- "tabs": [],
- "labels": {
-  "German": {
-   "ID": "ID",
-   "Datum": "Datum",
-   "Betrag": "Betrag",
-   "Betreff": "Betreff",
-   "Kategorie": "Kategorie",
-   "Art": "Art",
-   "Miete": "Miete",
-   "Nebenkosten": "Nebenkosten",
-   "Heizkosten": "Heizkosten",
-   "Garagenmiete": "Garagenmiete",
-   "Abrechnung": "Abrechnung",
-   "Abrechnungskonto": "Abrechnungskonto",
-   "Belegnummer": "Belegnummer",
-   "BelegURL": "Beleg URL",
-   "Beleg": "Beleg",
-   "Belegdokument": "Belegdokument",
-   "Ruecklage": "Rücklage",
-   "P35a": "§35a EStG",
-   "Bemerkungen": "Bemerkungen",
-   "Verbucht": "Verbucht",
-   "Belegdokumentname": "Dokumentname",
-   "Belegminiatur": "Miniatur",
-   "Erfassungsdatum": "Erfassungsdatum",
-   "Bearbeitungsdatum": "Bearbeitungsdatum",
-   "Rechenbetrag": "Rechenbetrag",
-   "Team": "Team",
-   "P35aArt": "§35a EStG Absatz",
-   "Zinsen": "Zinsen",
-   "Tilgung": "Tilgung",
-   "Bank": "Bank",
-   "BIC": "BIC",
-   "IBAN": "IBAN",
-   "Kontoinhaber": "Kontoinhaber",
-   "MwstSatz": "Mwst Satz",
-   "Netto": "Netto",
-   "Mwst": "Mwst",
-   "Wiederholung": "Wiederholung",
-   "Wiederholende": "Wiederholende"
-  }
- },
- "fields": [
-  {
-   "name": "ID",
-   "type": 3,
-   "index": 1,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "AutoInc": true,
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Datum",
-   "type": 7,
-   "index": 2,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "DateEditType": 13,
-    "InitialYearFactor": 3,
-    "LastYearFactor": 10,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Betrag",
-   "type": 14,
-   "index": 3,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Rechenbetrag",
-   "type": 14,
-   "index": 4,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "ViewFormat": "Custom"
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Betreff",
-   "type": 200,
-   "index": 5,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Kontobuch",
-    "freeInput": true,
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 1,
-    "LookupUnique": true,
-    "LinkField": "Betreff",
-    "LinkFieldType": 0,
-    "DisplayField": "Betreff",
-    "LookupOrderBy": "Betreff",
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Kategorie",
-   "type": 200,
-   "index": 6,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "KlassifikationenKontobuch",
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 0,
-    "LookupUnique": true,
-    "LinkField": "Bezeichnung",
-    "LinkFieldType": 0,
-    "DisplayField": "Bezeichnung",
-    "LookupOrderBy": "Bezeichnung",
-    "UseCategory": true,
-    "AllowToAdd": true,
-    "SelectSize": 1,
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Art",
-   "type": 200,
-   "index": 7,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 0,
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 4,
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Miete",
-   "type": 14,
-   "index": 8,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Nebenkosten",
-   "type": 14,
-   "index": 9,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Heizkosten",
-   "type": 14,
-   "index": 10,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Garagenmiete",
-   "type": 14,
-   "index": 11,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Abrechnung",
-   "type": 3,
-   "index": 12,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Abrechnungen",
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 0,
-    "LinkField": "ID",
-    "LinkFieldType": 0,
-    "DisplayField": "Bezeichnung",
-    "LookupWhere": "Erledigt is null or Erledigt=0",
-    "LookupOrderBy": "Bezeichnung",
-    "SelectSize": 1,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Abrechnungskonto",
-   "type": 3,
-   "index": 13,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Abrechnungskonten",
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 0,
-    "LinkField": "ID",
-    "LinkFieldType": 0,
-    "DisplayField": "Bezeichnung",
-    "LookupOrderBy": "Bezeichnung",
-    "UseCategory": true,
-    "SelectSize": 1,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Belegnummer",
-   "type": 3,
-   "index": 14,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "BelegURL",
-   "type": 200,
-   "index": 15,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Beleg",
-   "type": 128,
-   "index": 16,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "ImageWidth": 457,
-    "ImageHeight": 0,
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200,
-    "CreateThumbnail": true,
-    "StrThumbnail": "Belegminiatur",
-    "ThumbnailSize": 150,
-    "ResizeImage": true,
-    "NewSize": 600
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Belegdokument",
-   "type": 128,
-   "index": 17,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "Filename": "Belegdokumentname",
-    "ImageWidth": 457,
-    "ImageHeight": 0,
-    "strFilename": "Belegdokumentname",
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Ruecklage",
-   "type": 14,
-   "index": 18,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "P35a",
-   "type": 14,
-   "index": 19,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "P35aArt",
-   "type": 200,
-   "index": 20,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 0,
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 4,
-    "HorizontalLookup": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Bemerkungen",
-   "type": 201,
-   "index": 21,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "ViewFormat": "HTML"
-   },
-   "edit": {
-    "UseRTE": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "nRows": 400,
-    "nCols": 600,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Verbucht",
-   "type": 16,
-   "index": 22,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "ViewFormat": "Checkbox"
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Belegdokumentname",
-   "type": 200,
-   "index": 23,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Belegminiatur",
-   "type": 128,
-   "index": 24,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "ImageWidth": 457,
-    "ImageHeight": 0,
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Erfassungsdatum",
-   "type": 7,
-   "index": 25,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Bearbeitungsdatum",
-   "type": 7,
-   "index": 26,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200,
-    "autoUpdatable": true
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Zinsen",
-   "type": 14,
-   "index": 27,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Tilgung",
-   "type": 14,
-   "index": 28,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Team",
-   "type": 200,
-   "index": 29,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Bank",
-   "type": 200,
-   "index": 30,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "BIC",
-   "type": 200,
-   "index": 31,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "IBAN",
-   "type": 200,
-   "index": 32,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Kontoinhaber",
-   "type": 200,
-   "index": 33,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "MwstSatz",
-   "type": 14,
-   "index": 34,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Wertelisten",
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 0,
-    "LinkField": "Eintrag",
-    "LinkFieldType": 0,
-    "DisplayField": "Eintrag",
-    "LookupWhere": "Werteliste='Mwst-Sätze'",
-    "LookupOrderBy": "Eintrag",
-    "SelectSize": 1,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Netto",
-   "type": 14,
-   "index": 35,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Mwst",
-   "type": 5,
-   "index": 36,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Wiederholung",
-   "type": 16,
-   "index": 37,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "ViewFormat": "Checkbox"
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Wiederholende",
-   "type": 7,
-   "index": 38,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "DateEditType": 13,
-    "InitialYearFactor": 0,
-    "LastYearFactor": 10,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  }
- ]
 }

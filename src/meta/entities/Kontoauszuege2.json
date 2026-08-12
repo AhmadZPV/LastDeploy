@@ -1,731 +1,754 @@
 {
- "entity": "Kontoauszuege2",
- "shortName": "Kontoauszuege2",
- "baseTable": "Kontoauszuege",
- "isVirtual": true,
- "ownerField": "Team",
- "sql": {
-  "strOrderBy": "ORDER BY `Wertstellungstag` DESC",
-  "sqlHead": "SELECT `ID`,  `Kontonummer`,  `Buchungstag`,  `Wertstellungstag`,  `Auftraggeber`,  `Buchungstext`,  `Verwendungszweck1`,  `Verwendungszweck2`,  `Verwendungszweck3`,  `Verwendungszweck4`,  `Betrag`,  `Kontostand`,  `Waehrung`,  `IBAN`,  `BIC`,  `Kundenreferenz`,  `Mandatsreferenz`,  `GlaeubigerID`,  `Soll`,  `Haben`,  Team",
-  "sqlFrom": "FROM `Kontoauszuege`",
-  "sqlWhere": "",
-  "sqlTail": ""
- },
- "keys": [
-  "ID"
- ],
- "pageSize": 20,
- "capabilities": {
-  "list": true,
-  "view": false,
-  "add": false,
-  "edit": false,
-  "export": false,
-  "print": true,
-  "search": true,
-  "masterList": true
- },
- "fieldSets": {
-  "list": [
-   "Kontonummer",
-   "Buchungstag",
-   "Wertstellungstag",
-   "Auftraggeber",
-   "Buchungstext",
-   "Verwendungszweck1",
-   "Verwendungszweck2",
-   "Verwendungszweck3",
-   "Verwendungszweck4",
-   "Betrag",
-   "Soll",
-   "Haben",
-   "Kontostand",
-   "Waehrung",
-   "IBAN",
-   "BIC",
-   "Kundenreferenz",
-   "Mandatsreferenz",
-   "GlaeubigerID"
+  "entity": "Kontoauszuege2",
+  "shortName": "Kontoauszuege2",
+  "baseTable": "Kontoauszuege",
+  "isVirtual": true,
+  "ownerField": "Team",
+  "sql": {
+    "strOrderBy": "ORDER BY `Wertstellungstag` DESC",
+    "sqlHead": "SELECT `ID`,  `Kontonummer`,  `Buchungstag`,  `Wertstellungstag`,  `Auftraggeber`,  `Buchungstext`,  `Verwendungszweck1`,  `Verwendungszweck2`,  `Verwendungszweck3`,  `Verwendungszweck4`,  `Betrag`,  `Kontostand`,  `Waehrung`,  `IBAN`,  `BIC`,  `Kundenreferenz`,  `Mandatsreferenz`,  `GlaeubigerID`,  `Soll`,  `Haben`,  Team",
+    "sqlFrom": "FROM `Kontoauszuege`",
+    "sqlWhere": "",
+    "sqlTail": ""
+  },
+  "keys": [
+    "ID"
   ],
-  "print": [
-   "Kontonummer",
-   "Buchungstag",
-   "Wertstellungstag",
-   "Auftraggeber",
-   "Buchungstext",
-   "Verwendungszweck1",
-   "Verwendungszweck2",
-   "Verwendungszweck3",
-   "Verwendungszweck4",
-   "Betrag",
-   "Kontostand",
-   "Waehrung",
-   "IBAN",
-   "BIC",
-   "Kundenreferenz",
-   "Mandatsreferenz",
-   "GlaeubigerID",
-   "Soll",
-   "Haben"
-  ],
-  "search": [
-   "ID",
-   "Kontonummer",
-   "Buchungstag",
-   "Wertstellungstag",
-   "Auftraggeber",
-   "Buchungstext",
-   "Verwendungszweck1",
-   "Verwendungszweck2",
-   "Verwendungszweck3",
-   "Verwendungszweck4",
-   "Betrag",
-   "Kontostand",
-   "Waehrung",
-   "IBAN",
-   "BIC",
-   "Kundenreferenz",
-   "Mandatsreferenz",
-   "GlaeubigerID",
-   "Soll",
-   "Haben"
-  ],
-  "masterList": [
-   "ID",
-   "Kontonummer",
-   "Buchungstag",
-   "Wertstellungstag",
-   "Auftraggeber",
-   "Buchungstext",
-   "Verwendungszweck1",
-   "Verwendungszweck2",
-   "Verwendungszweck3",
-   "Verwendungszweck4",
-   "Betrag",
-   "Kontostand",
-   "Waehrung",
-   "IBAN",
-   "BIC",
-   "Kundenreferenz",
-   "Mandatsreferenz",
-   "GlaeubigerID",
-   "Soll",
-   "Haben",
-   "Team"
+  "pageSize": 20,
+  "capabilities": {
+    "list": true,
+    "view": false,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": true,
+    "search": true,
+    "masterList": true
+  },
+  "fieldSets": {
+    "list": [
+      "Kontonummer",
+      "Buchungstag",
+      "Wertstellungstag",
+      "Auftraggeber",
+      "Buchungstext",
+      "Verwendungszweck1",
+      "Verwendungszweck2",
+      "Verwendungszweck3",
+      "Verwendungszweck4",
+      "Betrag",
+      "Soll",
+      "Haben",
+      "Kontostand",
+      "Waehrung",
+      "IBAN",
+      "BIC",
+      "Kundenreferenz",
+      "Mandatsreferenz",
+      "GlaeubigerID"
+    ],
+    "print": [
+      "Kontonummer",
+      "Buchungstag",
+      "Wertstellungstag",
+      "Auftraggeber",
+      "Buchungstext",
+      "Verwendungszweck1",
+      "Verwendungszweck2",
+      "Verwendungszweck3",
+      "Verwendungszweck4",
+      "Betrag",
+      "Kontostand",
+      "Waehrung",
+      "IBAN",
+      "BIC",
+      "Kundenreferenz",
+      "Mandatsreferenz",
+      "GlaeubigerID",
+      "Soll",
+      "Haben"
+    ],
+    "search": [
+      "ID",
+      "Kontonummer",
+      "Buchungstag",
+      "Wertstellungstag",
+      "Auftraggeber",
+      "Buchungstext",
+      "Verwendungszweck1",
+      "Verwendungszweck2",
+      "Verwendungszweck3",
+      "Verwendungszweck4",
+      "Betrag",
+      "Kontostand",
+      "Waehrung",
+      "IBAN",
+      "BIC",
+      "Kundenreferenz",
+      "Mandatsreferenz",
+      "GlaeubigerID",
+      "Soll",
+      "Haben"
+    ],
+    "masterList": [
+      "ID",
+      "Kontonummer",
+      "Buchungstag",
+      "Wertstellungstag",
+      "Auftraggeber",
+      "Buchungstext",
+      "Verwendungszweck1",
+      "Verwendungszweck2",
+      "Verwendungszweck3",
+      "Verwendungszweck4",
+      "Betrag",
+      "Kontostand",
+      "Waehrung",
+      "IBAN",
+      "BIC",
+      "Kundenreferenz",
+      "Mandatsreferenz",
+      "GlaeubigerID",
+      "Soll",
+      "Haben",
+      "Team"
+    ]
+  },
+  "export": {
+    "exportTo": null,
+    "exportDelimiter": null,
+    "exportFormatting": null
+  },
+  "print": {
+    "printerPageOrientation": 0,
+    "nPrinterPageScale": 100,
+    "nPrinterSplitRecords": 40,
+    "nPrinterPDFSplitRecords": 40
+  },
+  "tabs": [],
+  "labels": {
+    "German": {
+      "ID": "ID",
+      "Kontonummer": "Kontonummer",
+      "Buchungstag": "Buchungstag",
+      "Wertstellungstag": "Wertstellungstag",
+      "Auftraggeber": "Auftraggeber",
+      "Buchungstext": "Buchungstext",
+      "Verwendungszweck1": "Verwendungszweck",
+      "Verwendungszweck2": "Verwendungszweck2",
+      "Verwendungszweck3": "Verwendungszweck3",
+      "Verwendungszweck4": "Verwendungszweck4",
+      "Betrag": "Betrag",
+      "Kontostand": "Kontostand",
+      "IBAN": "IBAN",
+      "BIC": "BIC",
+      "Kundenreferenz": "Kundenreferenz",
+      "Mandatsreferenz": "Mandatsreferenz",
+      "GlaeubigerID": "Gläubiger ID",
+      "Soll": "Soll",
+      "Haben": "Haben",
+      "Waehrung": "Währung",
+      "Team": "Team"
+    },
+    "English": {
+      "ID": "ID",
+      "Kontonummer": "Account number",
+      "Buchungstag": "Postingstag",
+      "Wertstellungstag": "Wertstellungstag",
+      "Auftraggeber": "Auftraggeber",
+      "Buchungstext": "Postingstext",
+      "Verwendungszweck1": "Reference",
+      "Verwendungszweck2": "Reference2",
+      "Verwendungszweck3": "Reference3",
+      "Verwendungszweck4": "Reference4",
+      "Betrag": "Amount",
+      "Kontostand": "Accountstand",
+      "IBAN": "IBAN",
+      "BIC": "BIC",
+      "Kundenreferenz": "Kundenreferenz",
+      "Mandatsreferenz": "Mandatsreferenz",
+      "GlaeubigerID": "Creditor ID",
+      "Soll": "Debit",
+      "Haben": "Credit",
+      "Waehrung": "Currency",
+      "Team": "Team"
+    }
+  },
+  "fields": [
+    {
+      "name": "ID",
+      "type": 3,
+      "index": 1,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "AutoInc": true,
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Kontonummer",
+      "type": 200,
+      "index": 2,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Buchungstag",
+      "type": 7,
+      "index": 3,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "DateEditType": 13,
+        "InitialYearFactor": 3,
+        "LastYearFactor": 10,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Wertstellungstag",
+      "type": 7,
+      "index": 4,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "DateEditType": 13,
+        "InitialYearFactor": 3,
+        "LastYearFactor": 10,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Auftraggeber",
+      "type": 200,
+      "index": 5,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Buchungstext",
+      "type": 200,
+      "index": 6,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Verwendungszweck1",
+      "type": 200,
+      "index": 7,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Verwendungszweck2",
+      "type": 200,
+      "index": 8,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Verwendungszweck3",
+      "type": 200,
+      "index": 9,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Verwendungszweck4",
+      "type": 200,
+      "index": 10,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Betrag",
+      "type": 14,
+      "index": 11,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Kontostand",
+      "type": 14,
+      "index": 12,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Waehrung",
+      "type": 200,
+      "index": 13,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "IBAN",
+      "type": 200,
+      "index": 14,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "BIC",
+      "type": 200,
+      "index": 15,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Kundenreferenz",
+      "type": 200,
+      "index": 16,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Mandatsreferenz",
+      "type": 200,
+      "index": 17,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "GlaeubigerID",
+      "type": 200,
+      "index": 18,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Soll",
+      "type": 14,
+      "index": 19,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Haben",
+      "type": 14,
+      "index": 20,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Team",
+      "type": 200,
+      "index": 21,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    }
   ]
- },
- "export": {
-  "exportTo": null,
-  "exportDelimiter": null,
-  "exportFormatting": null
- },
- "print": {
-  "printerPageOrientation": 0,
-  "nPrinterPageScale": 100,
-  "nPrinterSplitRecords": 40,
-  "nPrinterPDFSplitRecords": 40
- },
- "tabs": [],
- "labels": {
-  "German": {
-   "ID": "ID",
-   "Kontonummer": "Kontonummer",
-   "Buchungstag": "Buchungstag",
-   "Wertstellungstag": "Wertstellungstag",
-   "Auftraggeber": "Auftraggeber",
-   "Buchungstext": "Buchungstext",
-   "Verwendungszweck1": "Verwendungszweck",
-   "Verwendungszweck2": "Verwendungszweck2",
-   "Verwendungszweck3": "Verwendungszweck3",
-   "Verwendungszweck4": "Verwendungszweck4",
-   "Betrag": "Betrag",
-   "Kontostand": "Kontostand",
-   "IBAN": "IBAN",
-   "BIC": "BIC",
-   "Kundenreferenz": "Kundenreferenz",
-   "Mandatsreferenz": "Mandatsreferenz",
-   "GlaeubigerID": "Gläubiger ID",
-   "Soll": "Soll",
-   "Haben": "Haben",
-   "Waehrung": "Währung",
-   "Team": "Team"
-  }
- },
- "fields": [
-  {
-   "name": "ID",
-   "type": 3,
-   "index": 1,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "AutoInc": true,
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Kontonummer",
-   "type": 200,
-   "index": 2,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Buchungstag",
-   "type": 7,
-   "index": 3,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "DateEditType": 13,
-    "InitialYearFactor": 3,
-    "LastYearFactor": 10,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Wertstellungstag",
-   "type": 7,
-   "index": 4,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "DateEditType": 13,
-    "InitialYearFactor": 3,
-    "LastYearFactor": 10,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Auftraggeber",
-   "type": 200,
-   "index": 5,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Buchungstext",
-   "type": 200,
-   "index": 6,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Verwendungszweck1",
-   "type": 200,
-   "index": 7,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Verwendungszweck2",
-   "type": 200,
-   "index": 8,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Verwendungszweck3",
-   "type": 200,
-   "index": 9,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Verwendungszweck4",
-   "type": 200,
-   "index": 10,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Betrag",
-   "type": 14,
-   "index": 11,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Kontostand",
-   "type": 14,
-   "index": 12,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Waehrung",
-   "type": 200,
-   "index": 13,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "IBAN",
-   "type": 200,
-   "index": 14,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "BIC",
-   "type": 200,
-   "index": 15,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Kundenreferenz",
-   "type": 200,
-   "index": 16,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Mandatsreferenz",
-   "type": 200,
-   "index": 17,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "GlaeubigerID",
-   "type": 200,
-   "index": 18,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Soll",
-   "type": 14,
-   "index": 19,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Haben",
-   "type": 14,
-   "index": 20,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Team",
-   "type": 200,
-   "index": 21,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  }
- ]
 }

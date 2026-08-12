@@ -1,480 +1,495 @@
 {
- "entity": "Vorwegabzuege",
- "shortName": "Vorwegabzuege",
- "baseTable": "Vorwegabzuege",
- "isVirtual": false,
- "ownerField": "Team",
- "sql": {
-  "strOrderBy": "",
-  "sqlHead": "SELECT ID,  \t`Anteil 1`,  \t`Anteil 2`,  \t`Anteil 3`,  \t`Anteil 4`,  \tBetrag,  \tBezeichnung,  \tTeam,  \t@Gesamt := `Anteil 1`+coalesce(`Anteil 2`,0)+coalesce(`Anteil 3`,0)+coalesce(`Anteil 4`,0) as Gesamt,  \t@Betrag1 := round(Betrag * (`Anteil 1`/@Gesamt),2) as Betrag1,  \t@Betrag2 := round(Betrag * (`Anteil 2`/@Gesamt),2) as Betrag2,  \t@Betrag3 := round(Betrag * (`Anteil 3`/@Gesamt),2) as Betrag3,  \t@Betrag4 := round(Betrag * (`Anteil 4`/@Gesamt),2) as Betrag4",
-  "sqlFrom": "FROM Vorwegabzuege",
-  "sqlWhere": "",
-  "sqlTail": ""
- },
- "keys": [
-  "ID"
- ],
- "pageSize": 20,
- "capabilities": {
-  "list": true,
-  "view": false,
-  "add": true,
-  "edit": true,
-  "export": false,
-  "print": false,
-  "search": true,
-  "masterList": true
- },
- "fieldSets": {
-  "list": [
-   "Anteil 1",
-   "Anteil 2",
-   "Anteil 3",
-   "Anteil 4",
-   "Gesamt",
-   "Bezeichnung",
-   "Betrag",
-   "Betrag1",
-   "Betrag2",
-   "Betrag3",
-   "Betrag4"
+  "entity": "Vorwegabzuege",
+  "shortName": "Vorwegabzuege",
+  "baseTable": "Vorwegabzuege",
+  "isVirtual": false,
+  "ownerField": "Team",
+  "sql": {
+    "strOrderBy": "",
+    "sqlHead": "SELECT ID,  \t`Anteil 1`,  \t`Anteil 2`,  \t`Anteil 3`,  \t`Anteil 4`,  \tBetrag,  \tBezeichnung,  \tTeam,  \t@Gesamt := `Anteil 1`+coalesce(`Anteil 2`,0)+coalesce(`Anteil 3`,0)+coalesce(`Anteil 4`,0) as Gesamt,  \t@Betrag1 := round(Betrag * (`Anteil 1`/@Gesamt),2) as Betrag1,  \t@Betrag2 := round(Betrag * (`Anteil 2`/@Gesamt),2) as Betrag2,  \t@Betrag3 := round(Betrag * (`Anteil 3`/@Gesamt),2) as Betrag3,  \t@Betrag4 := round(Betrag * (`Anteil 4`/@Gesamt),2) as Betrag4",
+    "sqlFrom": "FROM Vorwegabzuege",
+    "sqlWhere": "",
+    "sqlTail": ""
+  },
+  "keys": [
+    "ID"
   ],
-  "add": [
-   "Anteil 1",
-   "Anteil 2",
-   "Anteil 3",
-   "Anteil 4",
-   "Betrag",
-   "Bezeichnung"
-  ],
-  "edit": [
-   "Anteil 1",
-   "Anteil 2",
-   "Anteil 3",
-   "Anteil 4",
-   "Betrag",
-   "Bezeichnung"
-  ],
-  "search": [
-   "Anteil 1",
-   "Anteil 2",
-   "Anteil 3",
-   "Anteil 4",
-   "Betrag",
-   "Bezeichnung",
-   "Betrag2",
-   "Betrag3",
-   "Betrag4"
-  ],
-  "masterList": [
-   "ID",
-   "Anteil 1",
-   "Anteil 2",
-   "Anteil 3",
-   "Anteil 4",
-   "Betrag",
-   "Bezeichnung",
-   "Team",
-   "Gesamt",
-   "Betrag1",
-   "Betrag2",
-   "Betrag3",
-   "Betrag4"
+  "pageSize": 20,
+  "capabilities": {
+    "list": true,
+    "view": false,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+  },
+  "fieldSets": {
+    "list": [
+      "Anteil 1",
+      "Anteil 2",
+      "Anteil 3",
+      "Anteil 4",
+      "Gesamt",
+      "Bezeichnung",
+      "Betrag",
+      "Betrag1",
+      "Betrag2",
+      "Betrag3",
+      "Betrag4"
+    ],
+    "add": [
+      "Anteil 1",
+      "Anteil 2",
+      "Anteil 3",
+      "Anteil 4",
+      "Betrag",
+      "Bezeichnung"
+    ],
+    "edit": [
+      "Anteil 1",
+      "Anteil 2",
+      "Anteil 3",
+      "Anteil 4",
+      "Betrag",
+      "Bezeichnung"
+    ],
+    "search": [
+      "Anteil 1",
+      "Anteil 2",
+      "Anteil 3",
+      "Anteil 4",
+      "Betrag",
+      "Bezeichnung",
+      "Betrag2",
+      "Betrag3",
+      "Betrag4"
+    ],
+    "masterList": [
+      "ID",
+      "Anteil 1",
+      "Anteil 2",
+      "Anteil 3",
+      "Anteil 4",
+      "Betrag",
+      "Bezeichnung",
+      "Team",
+      "Gesamt",
+      "Betrag1",
+      "Betrag2",
+      "Betrag3",
+      "Betrag4"
+    ]
+  },
+  "export": {
+    "exportTo": null,
+    "exportDelimiter": null,
+    "exportFormatting": null
+  },
+  "print": {
+    "printerPageOrientation": 0,
+    "nPrinterPageScale": 100,
+    "nPrinterSplitRecords": 40,
+    "nPrinterPDFSplitRecords": 40
+  },
+  "tabs": [],
+  "labels": {
+    "German": {
+      "Anteil_1": "Anteil 1",
+      "Anteil_2": "Anteil 2",
+      "Anteil_3": "Anteil 3",
+      "Anteil_4": "Anteil 4",
+      "Betrag": "Betrag",
+      "Bezeichnung": "Bezeichnung",
+      "ID": "ID",
+      "Gesamt": "Gesamt",
+      "Betrag1": "Betrag 1",
+      "Team": "Team",
+      "Betrag2": "Betrag 2",
+      "Betrag3": "Betrag 3",
+      "Betrag4": "Betrag 4"
+    },
+    "English": {
+      "Anteil_1": "Share 1",
+      "Anteil_2": "Share 2",
+      "Anteil_3": "Share 3",
+      "Anteil_4": "Share 4",
+      "Betrag": "Amount",
+      "Bezeichnung": "Description",
+      "ID": "ID",
+      "Gesamt": "Total",
+      "Betrag1": "Amount 1",
+      "Team": "Team",
+      "Betrag2": "Amount 2",
+      "Betrag3": "Amount 3",
+      "Betrag4": "Amount 4"
+    }
+  },
+  "fields": [
+    {
+      "name": "ID",
+      "type": 3,
+      "index": 1,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "AutoInc": true,
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Anteil 1",
+      "type": 3,
+      "index": 2,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Anteil 2",
+      "type": 3,
+      "index": 3,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Anteil 3",
+      "type": 3,
+      "index": 4,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Anteil 4",
+      "type": 3,
+      "index": 5,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Betrag",
+      "type": 14,
+      "index": 6,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Bezeichnung",
+      "type": 200,
+      "index": 7,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Team",
+      "type": 200,
+      "index": 8,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Gesamt",
+      "type": 3,
+      "index": 9,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Betrag1",
+      "type": 5,
+      "index": 10,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Betrag2",
+      "type": 5,
+      "index": 11,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Betrag3",
+      "type": 5,
+      "index": 12,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Betrag4",
+      "type": 5,
+      "index": 13,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    }
   ]
- },
- "export": {
-  "exportTo": null,
-  "exportDelimiter": null,
-  "exportFormatting": null
- },
- "print": {
-  "printerPageOrientation": 0,
-  "nPrinterPageScale": 100,
-  "nPrinterSplitRecords": 40,
-  "nPrinterPDFSplitRecords": 40
- },
- "tabs": [],
- "labels": {
-  "German": {
-   "Anteil_1": "Anteil 1",
-   "Anteil_2": "Anteil 2",
-   "Anteil_3": "Anteil 3",
-   "Anteil_4": "Anteil 4",
-   "Betrag": "Betrag",
-   "Bezeichnung": "Bezeichnung",
-   "ID": "ID",
-   "Gesamt": "Gesamt",
-   "Betrag1": "Betrag 1",
-   "Team": "Team",
-   "Betrag2": "Betrag 2",
-   "Betrag3": "Betrag 3",
-   "Betrag4": "Betrag 4"
-  }
- },
- "fields": [
-  {
-   "name": "ID",
-   "type": 3,
-   "index": 1,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "AutoInc": true,
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Anteil 1",
-   "type": 3,
-   "index": 2,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Anteil 2",
-   "type": 3,
-   "index": 3,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Anteil 3",
-   "type": 3,
-   "index": 4,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Anteil 4",
-   "type": 3,
-   "index": 5,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Betrag",
-   "type": 14,
-   "index": 6,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Bezeichnung",
-   "type": 200,
-   "index": 7,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Team",
-   "type": 200,
-   "index": 8,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Gesamt",
-   "type": 3,
-   "index": 9,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Betrag1",
-   "type": 5,
-   "index": 10,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Betrag2",
-   "type": 5,
-   "index": 11,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Betrag3",
-   "type": 5,
-   "index": 12,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Betrag4",
-   "type": 5,
-   "index": 13,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  }
- ]
 }

@@ -83,3 +83,12 @@ for (const section of navSections) {
 document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape') closeNavigation();
 });
+
+for (const notification of document.querySelectorAll('[data-notification]')) {
+  const dismiss = () => {
+    notification.classList.add('is-leaving');
+    notification.addEventListener('animationend', () => notification.remove(), { once: true });
+  };
+  notification.querySelector('[data-notification-close]')?.addEventListener('click', dismiss);
+  if (notification.classList.contains('notification-success')) setTimeout(dismiss, 5000);
+}

@@ -4,17 +4,19 @@
   <form class="dash-search" method="get" action="<%= dashboard.elements && dashboard.elements[0] && dashboard.elements[0].href ? dashboard.elements[0].href : '#' %>">
     <fieldset>
       <legend><%= _t('search_dashboard') %></legend>
+      <div class="form-grid">
       <% for (const [key, field] of Object.entries(dashboard.searchFields)) {
            const f = Array.isArray(field) ? field[0] : field;
            const tableLabel = f && f.table ? f.table : key;
            const fieldLabel = f && f.field ? f.field : key;
       %>
-        <label class="form-group">
-          <span><%= typeof tx === 'function' ? tx(tableLabel) : tableLabel %>.<%= fieldLabel %></span>
-          <input type="search" name="<%= key %>" placeholder="<%= _t('search') %>">
-        </label>
+        <div class="form-group">
+          <label for="dash-<%= key %>"><%= typeof tx === 'function' ? tx(tableLabel) : tableLabel %>.<%= fieldLabel %></label>
+          <input id="dash-<%= key %>" type="search" name="<%= key %>" placeholder="<%= _t('search') %>">
+        </div>
       <% } %>
-      <button type="submit" class="btn btn-primary"><%= _t('search') %></button>
+      <div class="form-grid-actions"><button type="submit" class="btn btn-primary"><%= _t('search') %></button></div>
+      </div>
     </fieldset>
   </form>
 <% } %>

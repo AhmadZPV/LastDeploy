@@ -1,388 +1,400 @@
 {
- "entity": "Seriennummern",
- "shortName": "Seriennummern",
- "baseTable": "Seriennummern",
- "isVirtual": false,
- "ownerField": "Team",
- "sql": {
-  "strOrderBy": "order by Nummernkreis",
-  "sqlHead": "SELECT `ID`,  \t`Nummernkreis`,  \t`Anfangswert`,  \tStellen,  \t`Intervall`,  \t@next := lpad(Anfangswert+Intervall,Stellen,'0'),  \t`Codierung`,  \t`Textteil`,  \treplace(replace(replace(replace(replace(Codierung,'#NR#',@next),'#T#',Textteil),'#JJJJ#',year(now())),'#MM#',lpad(month(now()),2,'0')),'#TT#',lpad(day(now()),2,'0')) as Seriennummer,  Team",
-  "sqlFrom": "FROM `Seriennummern`",
-  "sqlWhere": "",
-  "sqlTail": ""
- },
- "keys": [
-  "ID"
- ],
- "pageSize": 20,
- "capabilities": {
-  "list": true,
-  "view": true,
-  "add": true,
-  "edit": true,
-  "export": true,
-  "print": false,
-  "search": false,
-  "masterList": true
- },
- "fieldSets": {
-  "list": [
-   "Nummernkreis",
-   "Anfangswert",
-   "Stellen",
-   "Intervall",
-   "Textteil",
-   "Codierung",
-   "Seriennummer"
+  "entity": "Seriennummern",
+  "shortName": "Seriennummern",
+  "baseTable": "Seriennummern",
+  "isVirtual": false,
+  "ownerField": "Team",
+  "sql": {
+    "strOrderBy": "order by Nummernkreis",
+    "sqlHead": "SELECT `ID`,  \t`Nummernkreis`,  \t`Anfangswert`,  \tStellen,  \t`Intervall`,  \t@next := lpad(Anfangswert+Intervall,Stellen,'0'),  \t`Codierung`,  \t`Textteil`,  \treplace(replace(replace(replace(replace(Codierung,'#NR#',@next),'#T#',Textteil),'#JJJJ#',year(now())),'#MM#',lpad(month(now()),2,'0')),'#TT#',lpad(day(now()),2,'0')) as Seriennummer,  Team",
+    "sqlFrom": "FROM `Seriennummern`",
+    "sqlWhere": "",
+    "sqlTail": ""
+  },
+  "keys": [
+    "ID"
   ],
-  "view": [
-   "Nummernkreis",
-   "Anfangswert",
-   "Stellen",
-   "Intervall",
-   "Textteil",
-   "Codierung",
-   "Seriennummer"
-  ],
-  "add": [
-   "Nummernkreis",
-   "Anfangswert",
-   "Stellen",
-   "Intervall",
-   "Textteil",
-   "Codierung"
-  ],
-  "edit": [
-   "Nummernkreis",
-   "Anfangswert",
-   "Stellen",
-   "Intervall",
-   "Textteil",
-   "Codierung"
-  ],
-  "export": [
-   "ID",
-   "Nummernkreis",
-   "Anfangswert",
-   "Stellen",
-   "Intervall",
-   "Codierung",
-   "Textteil",
-   "Seriennummer"
-  ],
-  "masterList": [
-   "ID",
-   "Nummernkreis",
-   "Anfangswert",
-   "Stellen",
-   "Intervall",
-   "@next := lpad(Anfangswert+Intervall,Stellen,'0')",
-   "Codierung",
-   "Textteil",
-   "Seriennummer",
-   "Team"
+  "pageSize": 20,
+  "capabilities": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": false,
+    "search": false,
+    "masterList": true
+  },
+  "fieldSets": {
+    "list": [
+      "Nummernkreis",
+      "Anfangswert",
+      "Stellen",
+      "Intervall",
+      "Textteil",
+      "Codierung",
+      "Seriennummer"
+    ],
+    "view": [
+      "Nummernkreis",
+      "Anfangswert",
+      "Stellen",
+      "Intervall",
+      "Textteil",
+      "Codierung",
+      "Seriennummer"
+    ],
+    "add": [
+      "Nummernkreis",
+      "Anfangswert",
+      "Stellen",
+      "Intervall",
+      "Textteil",
+      "Codierung"
+    ],
+    "edit": [
+      "Nummernkreis",
+      "Anfangswert",
+      "Stellen",
+      "Intervall",
+      "Textteil",
+      "Codierung"
+    ],
+    "export": [
+      "ID",
+      "Nummernkreis",
+      "Anfangswert",
+      "Stellen",
+      "Intervall",
+      "Codierung",
+      "Textteil",
+      "Seriennummer"
+    ],
+    "masterList": [
+      "ID",
+      "Nummernkreis",
+      "Anfangswert",
+      "Stellen",
+      "Intervall",
+      "@next := lpad(Anfangswert+Intervall,Stellen,'0')",
+      "Codierung",
+      "Textteil",
+      "Seriennummer",
+      "Team"
+    ]
+  },
+  "export": {
+    "exportTo": true,
+    "exportDelimiter": ",",
+    "exportFormatting": 2
+  },
+  "print": {
+    "printerPageOrientation": 0,
+    "nPrinterPageScale": 100,
+    "nPrinterSplitRecords": 40,
+    "nPrinterPDFSplitRecords": 40
+  },
+  "tabs": [],
+  "labels": {
+    "German": {
+      "ID": "ID",
+      "Nummernkreis": "Nummernkreis",
+      "Anfangswert": "Anfangswert",
+      "Intervall": "Intervall",
+      "Codierung": "Codierung",
+      "Textteil": "Textteil",
+      "Stellen": "Stellen",
+      "_next____lpad_Anfangswert_Intervall_Stellen__0__": "@next := lpad(Anfangswert+Intervall,Stellen,'0')",
+      "Seriennummer": "Seriennummer",
+      "Team": "Team"
+    },
+    "English": {
+      "ID": "ID",
+      "Nummernkreis": "Numbernkreis",
+      "Anfangswert": "Anfangswert",
+      "Intervall": "Intervall",
+      "Codierung": "Encoding",
+      "Textteil": "Textteil",
+      "Stellen": "Stellen",
+      "_next____lpad_Anfangswert_Intervall_Stellen__0__": "@next := lpad(Anfangswert+Intervall,Stellen,'0')",
+      "Seriennummer": "Seriennummer",
+      "Team": "Team"
+    }
+  },
+  "fields": [
+    {
+      "name": "ID",
+      "type": 3,
+      "index": 1,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "AutoInc": true,
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Nummernkreis",
+      "type": 200,
+      "index": 2,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Anfangswert",
+      "type": 3,
+      "index": 3,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Stellen",
+      "type": 3,
+      "index": 4,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Intervall",
+      "type": 3,
+      "index": 5,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "@next := lpad(Anfangswert+Intervall,Stellen,'0')",
+      "type": 201,
+      "index": 6,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "nRows": 100,
+        "nCols": 200,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Codierung",
+      "type": 200,
+      "index": 7,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Textteil",
+      "type": 200,
+      "index": 8,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Seriennummer",
+      "type": 201,
+      "index": 9,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "nRows": 100,
+        "nCols": 200,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Team",
+      "type": 200,
+      "index": 10,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    }
   ]
- },
- "export": {
-  "exportTo": true,
-  "exportDelimiter": ",",
-  "exportFormatting": 2
- },
- "print": {
-  "printerPageOrientation": 0,
-  "nPrinterPageScale": 100,
-  "nPrinterSplitRecords": 40,
-  "nPrinterPDFSplitRecords": 40
- },
- "tabs": [],
- "labels": {
-  "German": {
-   "ID": "ID",
-   "Nummernkreis": "Nummernkreis",
-   "Anfangswert": "Anfangswert",
-   "Intervall": "Intervall",
-   "Codierung": "Codierung",
-   "Textteil": "Textteil",
-   "Stellen": "Stellen",
-   "_next____lpad_Anfangswert_Intervall_Stellen__0__": "@next := lpad(Anfangswert+Intervall,Stellen,'0')",
-   "Seriennummer": "Seriennummer",
-   "Team": "Team"
-  }
- },
- "fields": [
-  {
-   "name": "ID",
-   "type": 3,
-   "index": 1,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "AutoInc": true,
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Nummernkreis",
-   "type": 200,
-   "index": 2,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Anfangswert",
-   "type": 3,
-   "index": 3,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Stellen",
-   "type": 3,
-   "index": 4,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Intervall",
-   "type": 3,
-   "index": 5,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "@next := lpad(Anfangswert+Intervall,Stellen,'0')",
-   "type": 201,
-   "index": 6,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "nRows": 100,
-    "nCols": 200,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Codierung",
-   "type": 200,
-   "index": 7,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Textteil",
-   "type": 200,
-   "index": 8,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Seriennummer",
-   "type": 201,
-   "index": 9,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "nRows": 100,
-    "nCols": 200,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Team",
-   "type": 200,
-   "index": 10,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  }
- ]
 }

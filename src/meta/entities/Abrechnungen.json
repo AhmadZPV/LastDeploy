@@ -1,1149 +1,1182 @@
 {
- "entity": "Abrechnungen",
- "shortName": "Abrechnungen",
- "baseTable": "Abrechnungen",
- "isVirtual": false,
- "ownerField": "Team",
- "sql": {
-  "strOrderBy": "ORDER BY `Bezeichnung`",
-  "sqlHead": "SELECT `ID`,  `Bezeichnung`,  `Von`,  `Bis`,  @Tage := DateDiff(Bis, Von)+1 as Tage,  `Quadratmeter`,  Quadratmeter*@Tage as Gesamtquadratmetertage,  `Einheiten`,  `Miteigentumsanteile`,  `Einheiten2`,  Einheiten3,  `Quadratmeter2`,  `Quadratmeter3`,  `Wasserverbrauch`,  `Muellverbrauch`,  `Stromverbrauch`,  `Personen`,  Personen*@Tage as Gesamtpersonentage,  `Objekt`,  `Art`,  `Heizwert`,  `Waermemengenzaehler`,  `Waermeverbrauch`,  `Grundkostenanteil`,  round(100/(Waermeverbrauch/Waermemengenzaehler), 2) AS `Warmwasser_Anteil`,  `Buchfuehrung`,  `Anmerkungen`,  `Miteigentumsanteile2`,  `Miteigentumsanteile3`,  `Erledigt`,  Team",
-  "sqlFrom": "FROM `Abrechnungen`",
-  "sqlWhere": "",
-  "sqlTail": ""
- },
- "keys": [
-  "ID"
- ],
- "pageSize": 20,
- "capabilities": {
-  "list": true,
-  "view": true,
-  "add": true,
-  "edit": true,
-  "export": true,
-  "print": true,
-  "search": true,
-  "masterList": true
- },
- "fieldSets": {
-  "list": [
-   "Art",
-   "Bezeichnung",
-   "Objekt",
-   "Von",
-   "Bis",
-   "Quadratmeter",
-   "Einheiten"
+  "entity": "Abrechnungen",
+  "shortName": "Abrechnungen",
+  "baseTable": "Abrechnungen",
+  "isVirtual": false,
+  "ownerField": "Team",
+  "sql": {
+    "strOrderBy": "ORDER BY `Bezeichnung`",
+    "sqlHead": "SELECT `ID`,  `Bezeichnung`,  `Von`,  `Bis`,  @Tage := DateDiff(Bis, Von)+1 as Tage,  `Quadratmeter`,  Quadratmeter*@Tage as Gesamtquadratmetertage,  `Einheiten`,  `Miteigentumsanteile`,  `Einheiten2`,  Einheiten3,  `Quadratmeter2`,  `Quadratmeter3`,  `Wasserverbrauch`,  `Muellverbrauch`,  `Stromverbrauch`,  `Personen`,  Personen*@Tage as Gesamtpersonentage,  `Objekt`,  `Art`,  `Heizwert`,  `Waermemengenzaehler`,  `Waermeverbrauch`,  `Grundkostenanteil`,  round(100/(Waermeverbrauch/Waermemengenzaehler), 2) AS `Warmwasser_Anteil`,  `Buchfuehrung`,  `Anmerkungen`,  `Miteigentumsanteile2`,  `Miteigentumsanteile3`,  `Erledigt`,  Team",
+    "sqlFrom": "FROM `Abrechnungen`",
+    "sqlWhere": "",
+    "sqlTail": ""
+  },
+  "keys": [
+    "ID"
   ],
-  "view": [
-   "Art",
-   "Bezeichnung",
-   "Objekt",
-   "Von",
-   "Bis",
-   "Tage",
-   "Erledigt",
-   "Quadratmeter",
-   "Gesamtquadratmetertage",
-   "Quadratmeter2",
-   "Quadratmeter3",
-   "Einheiten",
-   "Einheiten2",
-   "Einheiten3",
-   "Muellverbrauch",
-   "Wasserverbrauch",
-   "Stromverbrauch",
-   "Miteigentumsanteile",
-   "Miteigentumsanteile2",
-   "Miteigentumsanteile3",
-   "Personen",
-   "Gesamtpersonentage",
-   "Heizwert",
-   "Waermemengenzaehler",
-   "Warmwasser_Anteil",
-   "Waermeverbrauch",
-   "Grundkostenanteil",
-   "Anmerkungen"
-  ],
-  "add": [
-   "Art",
-   "Objekt",
-   "Von",
-   "Bis",
-   "Bezeichnung",
-   "Buchfuehrung",
-   "Quadratmeter",
-   "Quadratmeter2",
-   "Quadratmeter3",
-   "Einheiten",
-   "Einheiten2",
-   "Einheiten3",
-   "Muellverbrauch",
-   "Wasserverbrauch",
-   "Stromverbrauch",
-   "Miteigentumsanteile",
-   "Miteigentumsanteile2",
-   "Miteigentumsanteile3",
-   "Personen",
-   "Heizwert",
-   "Waermemengenzaehler",
-   "Waermeverbrauch",
-   "Grundkostenanteil",
-   "Anmerkungen"
-  ],
-  "edit": [
-   "Art",
-   "Objekt",
-   "Von",
-   "Bis",
-   "Bezeichnung",
-   "Erledigt",
-   "Quadratmeter",
-   "Quadratmeter2",
-   "Quadratmeter3",
-   "Einheiten",
-   "Einheiten2",
-   "Einheiten3",
-   "Muellverbrauch",
-   "Wasserverbrauch",
-   "Stromverbrauch",
-   "Miteigentumsanteile",
-   "Miteigentumsanteile2",
-   "Miteigentumsanteile3",
-   "Personen",
-   "Heizwert",
-   "Waermemengenzaehler",
-   "Waermeverbrauch",
-   "Grundkostenanteil",
-   "Anmerkungen",
-   "Buchfuehrung"
-  ],
-  "export": [
-   "Einheiten3",
-   "Stromverbrauch",
-   "Miteigentumsanteile3",
-   "ID",
-   "Art",
-   "Bezeichnung",
-   "Objekt",
-   "Von",
-   "Bis",
-   "Tage",
-   "Buchfuehrung",
-   "Quadratmeter",
-   "Gesamtquadratmetertage",
-   "Quadratmeter2",
-   "Quadratmeter3",
-   "Einheiten",
-   "Einheiten2",
-   "Muellverbrauch",
-   "Wasserverbrauch",
-   "Personen",
-   "Gesamtpersonentage",
-   "Miteigentumsanteile",
-   "Miteigentumsanteile2",
-   "Heizwert",
-   "Waermemengenzaehler",
-   "Warmwasser_Anteil",
-   "Waermeverbrauch",
-   "Grundkostenanteil",
-   "Anmerkungen"
-  ],
-  "print": [
-   "Tage",
-   "Einheiten3",
-   "Stromverbrauch",
-   "Art",
-   "Bezeichnung",
-   "Objekt",
-   "Von",
-   "Bis",
-   "Quadratmeter",
-   "Quadratmeter2",
-   "Einheiten",
-   "Einheiten2",
-   "Muellverbrauch",
-   "Wasserverbrauch",
-   "Personen",
-   "Miteigentumsanteile"
-  ],
-  "search": [
-   "Team",
-   "Tage",
-   "Gesamtquadratmetertage",
-   "Einheiten3",
-   "Quadratmeter3",
-   "Gesamtpersonentage",
-   "Miteigentumsanteile3",
-   "Erledigt",
-   "ID",
-   "Art",
-   "Bezeichnung",
-   "Objekt",
-   "Von",
-   "Bis",
-   "Buchfuehrung",
-   "Quadratmeter",
-   "Quadratmeter2",
-   "Einheiten",
-   "Einheiten2",
-   "Muellverbrauch",
-   "Wasserverbrauch",
-   "Stromverbrauch",
-   "Personen",
-   "Miteigentumsanteile",
-   "Miteigentumsanteile2",
-   "Heizwert",
-   "Waermemengenzaehler",
-   "Warmwasser_Anteil",
-   "Waermeverbrauch",
-   "Grundkostenanteil",
-   "Anmerkungen"
-  ],
-  "masterList": [
-   "Art",
-   "Bezeichnung",
-   "Objekt",
-   "Von",
-   "Bis",
-   "Quadratmeter",
-   "Einheiten"
+  "pageSize": 20,
+  "capabilities": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+  },
+  "fieldSets": {
+    "list": [
+      "Art",
+      "Bezeichnung",
+      "Objekt",
+      "Von",
+      "Bis",
+      "Quadratmeter",
+      "Einheiten"
+    ],
+    "view": [
+      "Art",
+      "Bezeichnung",
+      "Objekt",
+      "Von",
+      "Bis",
+      "Tage",
+      "Erledigt",
+      "Quadratmeter",
+      "Gesamtquadratmetertage",
+      "Quadratmeter2",
+      "Quadratmeter3",
+      "Einheiten",
+      "Einheiten2",
+      "Einheiten3",
+      "Muellverbrauch",
+      "Wasserverbrauch",
+      "Stromverbrauch",
+      "Miteigentumsanteile",
+      "Miteigentumsanteile2",
+      "Miteigentumsanteile3",
+      "Personen",
+      "Gesamtpersonentage",
+      "Heizwert",
+      "Waermemengenzaehler",
+      "Warmwasser_Anteil",
+      "Waermeverbrauch",
+      "Grundkostenanteil",
+      "Anmerkungen"
+    ],
+    "add": [
+      "Art",
+      "Objekt",
+      "Von",
+      "Bis",
+      "Bezeichnung",
+      "Buchfuehrung",
+      "Quadratmeter",
+      "Quadratmeter2",
+      "Quadratmeter3",
+      "Einheiten",
+      "Einheiten2",
+      "Einheiten3",
+      "Muellverbrauch",
+      "Wasserverbrauch",
+      "Stromverbrauch",
+      "Miteigentumsanteile",
+      "Miteigentumsanteile2",
+      "Miteigentumsanteile3",
+      "Personen",
+      "Heizwert",
+      "Waermemengenzaehler",
+      "Waermeverbrauch",
+      "Grundkostenanteil",
+      "Anmerkungen"
+    ],
+    "edit": [
+      "Art",
+      "Objekt",
+      "Von",
+      "Bis",
+      "Bezeichnung",
+      "Erledigt",
+      "Quadratmeter",
+      "Quadratmeter2",
+      "Quadratmeter3",
+      "Einheiten",
+      "Einheiten2",
+      "Einheiten3",
+      "Muellverbrauch",
+      "Wasserverbrauch",
+      "Stromverbrauch",
+      "Miteigentumsanteile",
+      "Miteigentumsanteile2",
+      "Miteigentumsanteile3",
+      "Personen",
+      "Heizwert",
+      "Waermemengenzaehler",
+      "Waermeverbrauch",
+      "Grundkostenanteil",
+      "Anmerkungen",
+      "Buchfuehrung"
+    ],
+    "export": [
+      "Einheiten3",
+      "Stromverbrauch",
+      "Miteigentumsanteile3",
+      "ID",
+      "Art",
+      "Bezeichnung",
+      "Objekt",
+      "Von",
+      "Bis",
+      "Tage",
+      "Buchfuehrung",
+      "Quadratmeter",
+      "Gesamtquadratmetertage",
+      "Quadratmeter2",
+      "Quadratmeter3",
+      "Einheiten",
+      "Einheiten2",
+      "Muellverbrauch",
+      "Wasserverbrauch",
+      "Personen",
+      "Gesamtpersonentage",
+      "Miteigentumsanteile",
+      "Miteigentumsanteile2",
+      "Heizwert",
+      "Waermemengenzaehler",
+      "Warmwasser_Anteil",
+      "Waermeverbrauch",
+      "Grundkostenanteil",
+      "Anmerkungen"
+    ],
+    "print": [
+      "Tage",
+      "Einheiten3",
+      "Stromverbrauch",
+      "Art",
+      "Bezeichnung",
+      "Objekt",
+      "Von",
+      "Bis",
+      "Quadratmeter",
+      "Quadratmeter2",
+      "Einheiten",
+      "Einheiten2",
+      "Muellverbrauch",
+      "Wasserverbrauch",
+      "Personen",
+      "Miteigentumsanteile"
+    ],
+    "search": [
+      "Team",
+      "Tage",
+      "Gesamtquadratmetertage",
+      "Einheiten3",
+      "Quadratmeter3",
+      "Gesamtpersonentage",
+      "Miteigentumsanteile3",
+      "Erledigt",
+      "ID",
+      "Art",
+      "Bezeichnung",
+      "Objekt",
+      "Von",
+      "Bis",
+      "Buchfuehrung",
+      "Quadratmeter",
+      "Quadratmeter2",
+      "Einheiten",
+      "Einheiten2",
+      "Muellverbrauch",
+      "Wasserverbrauch",
+      "Stromverbrauch",
+      "Personen",
+      "Miteigentumsanteile",
+      "Miteigentumsanteile2",
+      "Heizwert",
+      "Waermemengenzaehler",
+      "Warmwasser_Anteil",
+      "Waermeverbrauch",
+      "Grundkostenanteil",
+      "Anmerkungen"
+    ],
+    "masterList": [
+      "Art",
+      "Bezeichnung",
+      "Objekt",
+      "Von",
+      "Bis",
+      "Quadratmeter",
+      "Einheiten"
+    ]
+  },
+  "export": {
+    "exportTo": true,
+    "exportDelimiter": ",",
+    "exportFormatting": 2
+  },
+  "print": {
+    "printerPageOrientation": 0,
+    "nPrinterPageScale": 100,
+    "nPrinterSplitRecords": 40,
+    "nPrinterPDFSplitRecords": 40
+  },
+  "tabs": [],
+  "labels": {
+    "German": {
+      "ID": "ID",
+      "Bezeichnung": "Bezeichnung",
+      "Von": "Von",
+      "Bis": "Bis",
+      "Quadratmeter": "Quadratmeter",
+      "Einheiten": "Einheiten",
+      "Miteigentumsanteile": "Miteigentumsanteile",
+      "Einheiten2": "Einheiten 2",
+      "Quadratmeter2": "Quadratmeter 2",
+      "Wasserverbrauch": "Wasserverbrauch",
+      "Muellverbrauch": "Müllverbrauch",
+      "Personen": "Personen",
+      "Objekt": "Objekt",
+      "Art": "Art",
+      "Heizwert": "Heizwert",
+      "Waermemengenzaehler": "Wärmemengenzähler",
+      "Waermeverbrauch": "Wärmeverbrauch",
+      "Grundkostenanteil": "Grundkostenanteil",
+      "Warmwasser_Anteil": "Warmwasser Anteil",
+      "Buchfuehrung": "Buchführung",
+      "Anmerkungen": "Anmerkungen",
+      "Miteigentumsanteile2": "Miteigentumsanteile 2",
+      "Quadratmeter3": "Quadratmeter 3",
+      "Erledigt": "Erledigt",
+      "Gesamtpersonentage": "Gesamtpersonentage",
+      "Gesamtquadratmetertage": "Gesamtquadratmetertage",
+      "Tage": "Tage",
+      "Team": "Team",
+      "Miteigentumsanteile3": "Miteigentumsanteile 3",
+      "Einheiten3": "Einheiten 3",
+      "Stromverbrauch": "Stromverbrauch"
+    },
+    "English": {
+      "ID": "ID",
+      "Bezeichnung": "Description",
+      "Von": "From",
+      "Bis": "To",
+      "Quadratmeter": "Square metres",
+      "Einheiten": "Units",
+      "Miteigentumsanteile": "Co-ownership shares",
+      "Einheiten2": "Units 2",
+      "Quadratmeter2": "Square metres 2",
+      "Wasserverbrauch": "Water consumption",
+      "Muellverbrauch": "Waste volume",
+      "Personen": "People",
+      "Objekt": "Property",
+      "Art": "Type",
+      "Heizwert": "Heating value",
+      "Waermemengenzaehler": "Heat meter",
+      "Waermeverbrauch": "Heat consumption",
+      "Grundkostenanteil": "Base cost share",
+      "Warmwasser_Anteil": "Hot water Share",
+      "Buchfuehrung": "Bookkeeping",
+      "Anmerkungen": "Anmerkungen",
+      "Miteigentumsanteile2": "Co-ownership shares 2",
+      "Quadratmeter3": "Square metres 3",
+      "Erledigt": "Completed",
+      "Gesamtpersonentage": "Totalpersonentage",
+      "Gesamtquadratmetertage": "Totalquadratmetertage",
+      "Tage": "Days",
+      "Team": "Team",
+      "Miteigentumsanteile3": "Co-ownership shares 3",
+      "Einheiten3": "Units 3",
+      "Stromverbrauch": "Electricity consumption"
+    }
+  },
+  "fields": [
+    {
+      "name": "ID",
+      "type": 3,
+      "index": 1,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "AutoInc": true,
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Bezeichnung",
+      "type": 200,
+      "index": 2,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200,
+        "denyDuplicates": true
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Von",
+      "type": 7,
+      "index": 3,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "fieldEvents": [
+          null
+        ],
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "DateEditType": 13,
+        "InitialYearFactor": 3,
+        "LastYearFactor": 10,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Bis",
+      "type": 7,
+      "index": 4,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "DateEditType": 13,
+        "InitialYearFactor": 3,
+        "LastYearFactor": 10,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Tage",
+      "type": 3,
+      "index": 5,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Quadratmeter",
+      "type": 14,
+      "index": 6,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Gesamtquadratmetertage",
+      "type": 5,
+      "index": 7,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Einheiten",
+      "type": 3,
+      "index": 8,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Miteigentumsanteile",
+      "type": 14,
+      "index": 9,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Einheiten2",
+      "type": 3,
+      "index": 10,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Einheiten3",
+      "type": 3,
+      "index": 11,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Quadratmeter2",
+      "type": 14,
+      "index": 12,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Quadratmeter3",
+      "type": 14,
+      "index": 13,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Wasserverbrauch",
+      "type": 14,
+      "index": 14,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Muellverbrauch",
+      "type": 14,
+      "index": 15,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Stromverbrauch",
+      "type": 14,
+      "index": 16,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Personen",
+      "type": 14,
+      "index": 17,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Gesamtpersonentage",
+      "type": 5,
+      "index": 18,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Objekt",
+      "type": 3,
+      "index": 19,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "fieldEvents": [
+          null
+        ],
+        "LookupType": 2,
+        "LookupTable": "Objekte",
+        "autoCompleteFieldsOnEdit": 1,
+        "LCType": 2,
+        "LinkField": "ID",
+        "LinkFieldType": 0,
+        "DisplayField": "Bezeichnung",
+        "LookupWhere": "Aktiv is null or Aktiv=0",
+        "LookupOrderBy": "Bezeichnung",
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Art",
+      "type": 200,
+      "index": 20,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "fieldEvents": [
+          null
+        ],
+        "LookupType": 0,
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 4,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Heizwert",
+      "type": 14,
+      "index": 21,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Waermemengenzaehler",
+      "type": 14,
+      "index": 22,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Waermeverbrauch",
+      "type": 14,
+      "index": 23,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Grundkostenanteil",
+      "type": 3,
+      "index": 24,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Warmwasser_Anteil",
+      "type": 14,
+      "index": 25,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Buchfuehrung",
+      "type": 3,
+      "index": 26,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Buchfuehrungen",
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 2,
+        "LinkField": "ID",
+        "LinkFieldType": 0,
+        "DisplayField": "Bezeichnung",
+        "LookupOrderBy": "Bezeichnung",
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Anmerkungen",
+      "type": 201,
+      "index": 27,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "ViewFormat": "Custom"
+      },
+      "edit": {
+        "UseRTE": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "nRows": 400,
+        "nCols": 500,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Miteigentumsanteile2",
+      "type": 14,
+      "index": 28,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Miteigentumsanteile3",
+      "type": 14,
+      "index": 29,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Erledigt",
+      "type": 16,
+      "index": 30,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": false,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "ViewFormat": "Checkbox"
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Team",
+      "type": 200,
+      "index": 31,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    }
   ]
- },
- "export": {
-  "exportTo": true,
-  "exportDelimiter": ",",
-  "exportFormatting": 2
- },
- "print": {
-  "printerPageOrientation": 0,
-  "nPrinterPageScale": 100,
-  "nPrinterSplitRecords": 40,
-  "nPrinterPDFSplitRecords": 40
- },
- "tabs": [],
- "labels": {
-  "German": {
-   "ID": "ID",
-   "Bezeichnung": "Bezeichnung",
-   "Von": "Von",
-   "Bis": "Bis",
-   "Quadratmeter": "Quadratmeter",
-   "Einheiten": "Einheiten",
-   "Miteigentumsanteile": "Miteigentumsanteile",
-   "Einheiten2": "Einheiten 2",
-   "Quadratmeter2": "Quadratmeter 2",
-   "Wasserverbrauch": "Wasserverbrauch",
-   "Muellverbrauch": "Müllverbrauch",
-   "Personen": "Personen",
-   "Objekt": "Objekt",
-   "Art": "Art",
-   "Heizwert": "Heizwert",
-   "Waermemengenzaehler": "Wärmemengenzähler",
-   "Waermeverbrauch": "Wärmeverbrauch",
-   "Grundkostenanteil": "Grundkostenanteil",
-   "Warmwasser_Anteil": "Warmwasser Anteil",
-   "Buchfuehrung": "Buchführung",
-   "Anmerkungen": "Anmerkungen",
-   "Miteigentumsanteile2": "Miteigentumsanteile 2",
-   "Quadratmeter3": "Quadratmeter 3",
-   "Erledigt": "Erledigt",
-   "Gesamtpersonentage": "Gesamtpersonentage",
-   "Gesamtquadratmetertage": "Gesamtquadratmetertage",
-   "Tage": "Tage",
-   "Team": "Team",
-   "Miteigentumsanteile3": "Miteigentumsanteile 3",
-   "Einheiten3": "Einheiten 3",
-   "Stromverbrauch": "Stromverbrauch"
-  }
- },
- "fields": [
-  {
-   "name": "ID",
-   "type": 3,
-   "index": 1,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "AutoInc": true,
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Bezeichnung",
-   "type": 200,
-   "index": 2,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200,
-    "denyDuplicates": true
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Von",
-   "type": 7,
-   "index": 3,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "fieldEvents": [
-     null
-    ],
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "DateEditType": 13,
-    "InitialYearFactor": 3,
-    "LastYearFactor": 10,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Bis",
-   "type": 7,
-   "index": 4,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "DateEditType": 13,
-    "InitialYearFactor": 3,
-    "LastYearFactor": 10,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Tage",
-   "type": 3,
-   "index": 5,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Quadratmeter",
-   "type": 14,
-   "index": 6,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Gesamtquadratmetertage",
-   "type": 5,
-   "index": 7,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Einheiten",
-   "type": 3,
-   "index": 8,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Miteigentumsanteile",
-   "type": 14,
-   "index": 9,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Einheiten2",
-   "type": 3,
-   "index": 10,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Einheiten3",
-   "type": 3,
-   "index": 11,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Quadratmeter2",
-   "type": 14,
-   "index": 12,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Quadratmeter3",
-   "type": 14,
-   "index": 13,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Wasserverbrauch",
-   "type": 14,
-   "index": 14,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Muellverbrauch",
-   "type": 14,
-   "index": 15,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Stromverbrauch",
-   "type": 14,
-   "index": 16,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Personen",
-   "type": 14,
-   "index": 17,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Gesamtpersonentage",
-   "type": 5,
-   "index": 18,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Objekt",
-   "type": 3,
-   "index": 19,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "fieldEvents": [
-     null
-    ],
-    "LookupType": 2,
-    "LookupTable": "Objekte",
-    "autoCompleteFieldsOnEdit": 1,
-    "LCType": 2,
-    "LinkField": "ID",
-    "LinkFieldType": 0,
-    "DisplayField": "Bezeichnung",
-    "LookupWhere": "Aktiv is null or Aktiv=0",
-    "LookupOrderBy": "Bezeichnung",
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Art",
-   "type": 200,
-   "index": 20,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "fieldEvents": [
-     null
-    ],
-    "LookupType": 0,
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 4,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Heizwert",
-   "type": 14,
-   "index": 21,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Waermemengenzaehler",
-   "type": 14,
-   "index": 22,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Waermeverbrauch",
-   "type": 14,
-   "index": 23,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Grundkostenanteil",
-   "type": 3,
-   "index": 24,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Warmwasser_Anteil",
-   "type": 14,
-   "index": 25,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Buchfuehrung",
-   "type": 3,
-   "index": 26,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Buchfuehrungen",
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 2,
-    "LinkField": "ID",
-    "LinkFieldType": 0,
-    "DisplayField": "Bezeichnung",
-    "LookupOrderBy": "Bezeichnung",
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Anmerkungen",
-   "type": 201,
-   "index": 27,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "ViewFormat": "Custom"
-   },
-   "edit": {
-    "UseRTE": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "nRows": 400,
-    "nCols": 500,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Miteigentumsanteile2",
-   "type": 14,
-   "index": 28,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Miteigentumsanteile3",
-   "type": 14,
-   "index": 29,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Erledigt",
-   "type": 16,
-   "index": 30,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": false,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "ViewFormat": "Checkbox"
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Team",
-   "type": 200,
-   "index": 31,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  }
- ]
 }

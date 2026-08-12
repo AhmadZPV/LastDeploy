@@ -62,7 +62,7 @@ export default function createExportRouter({ prisma, canAccess, teamWhere }) {
     // plus 'P' for the printable/PDF variants.
     const needed = req.params.format === 'pdf' ? 'SP' : 'S';
     if (canAccess && !canAccess(req, slug, needed)) {
-      return res.status(403).render('error', { message: 'Keine Export-Berechtigung für ' + slug });
+      return res.status(403).render('error', { message: (res.locals?.t ? res.locals.t('no_export_permission') : 'Keine Export-Berechtigung') + ': ' + slug });
     }
 
     const declared = String(meta.export?.exportTo || '').toLowerCase();
@@ -102,7 +102,7 @@ export default function createExportRouter({ prisma, canAccess, teamWhere }) {
       const cell = (value, field) => (raw ? rawCell(value) : formatCell(value, field));
 
       const headers = usable.map((c) => ({
-        key: c.prismaField, label: fieldLabel(meta, c.meta),
+        key: c.prismaField, label: fieldLabel(meta, c.meta, res.locals?.lang),
       }));
       const table = {
         title: slug,

@@ -6,15 +6,17 @@
 <% for (const group of groups) { %>
 <section class="settings-group">
 <h2><%= group.title %></h2>
+<div class="form-grid">
 <% for (const field of group.fields) { %>
 <div class="form-group">
 <label for="<%= field %>"><%= tx(field) %></label>
 <input id="<%= field %>" name="<%= field %>" value="<%= row[field] == null ? '' : String(row[field]).replace(/"/g, '&quot;') %>">
 </div>
 <% } %>
+</div>
 </section>
 <% } %>
-<div class="form-actions"><button type="submit"><%= t('save') %></button></div>
+<div class="form-actions"><button class="btn btn-primary" type="submit"><%= t('save') %></button></div>
 </form>
 </div>
 <%- include('partials/layout_bottom') %>

@@ -5,6 +5,7 @@ import {
   fieldCategory, display, coerce, toNum, inputDate, fmtNum
 } from '../src/formatters.js';
 import { runHook } from '../src/events/runtime.js';
+import { hashPasswordFields } from '../src/auth/password-guard.js';
 import { auditLog } from '../src/audit.js';
 import { acquireLock, releaseLock } from '../src/locking.js';
 import {
@@ -36,9 +37,9 @@ export default function createCrudRouter(name, meta) {
       if (!u) return res.redirect('/login');
       if (u.isAdmin) return next();
       const mask = (u.rights?.[ent] || '').toUpperCase();
-      if (!mask) return res.status(403).render('error', { message: 'Keine Berechtigung für ' + name });
+      if (!mask) return res.status(403).render('error', { message: (res.locals?.t ? res.locals.t('no_permission_table', { name }) : 'Keine Berechtigung für ' + name) });
       if (!mask.includes(letter.toUpperCase())) {
-        return res.status(403).render('error', { message: 'Keine ' + letter + '-Berechtigung für ' + name });
+        return res.status(403).render('error', { message: (res.locals?.t ? res.locals.t('no_letter_permission', { letter, name }) : 'Keine ' + letter + '-Berechtigung für ' + name) });
       }
       next();
     };
@@ -159,12 +160,12 @@ export default function createCrudRouter(name, meta) {
   // otherwise whatever scalar keys the rows actually carry.
   function detailColumns(relation, rows) {
     const cm = registry[relation.detailSlug];
-    const declared = (cm?.listColumns || []).filter(Boolean);
+    const declared = (cm?.listColumns || []).filter((column) => column && column !== 'ID');
     if (declared.length) return declared.slice(0, 6);
     const first = rows[0];
     if (!first) return [];
     return Object.keys(first)
-      .filter((k) => first[k] === null || typeof first[k] !== 'object')
+      .filter((k) => k !== 'ID' && (first[k] === null || typeof first[k] !== 'object'))
       .slice(0, 6);
   }
 
@@ -232,7 +233,7 @@ export default function createCrudRouter(name, meta) {
         lookups: {}, helpers: { display, fieldCategory }, error: null
       });
     } catch (e) {
-      res.status(500).render('error', { message: 'List error: ' + e.message });
+      res.status(500).render('error', { message: (res.locals?.t ? res.locals.t('list_error') : 'List error') + ': ' + e.message });
     }
   });
 
@@ -292,7 +293,7 @@ export default function createCrudRouter(name, meta) {
       for (const r of rows) lines.push([r.ID, ...cols.map(c => esc(display(name, c, r[c])))].join(','));
       res.send('\ufeff' + lines.join('\n'));
     } catch (e) {
-      res.status(500).render('error', { message: 'Export error: ' + e.message });
+      res.status(500).render('error', { message: (res.locals?.t ? res.locals.t('export_error') : 'Export error') + ': ' + e.message });
     }
   });
 
@@ -302,7 +303,7 @@ export default function createCrudRouter(name, meta) {
     const manifest = manifestFor(name);
     res.render('crud/form', {
       item: {}, module: name, meta, registry, lookups, isEdit: false,
-      spec: manifest ? formSpec(manifest, manifest.entity || name, 'add') : null,
+      spec: manifest ? formSpec(manifest, manifest.entity || name, 'add', res.locals?.lang) : null,
       helpers: { fieldCategory, inputDate, fmtNum, coerce }, error: null
     });
   });
@@ -311,7 +312,7 @@ export default function createCrudRouter(name, meta) {
   router.get('/:id/edit', gate('E'), async (req, res) => {
     try {
       const item = await Model.findFirst({ where: teamWhere(req, { ID: +req.params.id }, name) });
-      if (!item) return res.status(404).render('error', { message: 'Nicht gefunden' });
+      if (!item) return res.status(404).render('error', { message: (res.locals?.t ? res.locals.t('not_found') : 'Nicht gefunden') });
       const lookups = await loadLookups(req);
       const manifest = manifestFor(name);
       // Phase 10: record locking — opening the edit page takes the lock, and a
@@ -323,13 +324,13 @@ export default function createCrudRouter(name, meta) {
       });
       res.render('crud/form', {
         item, module: name, meta, registry, lookups, isEdit: true,
-        spec: manifest ? formSpec(manifest, manifest.entity || name, 'edit') : null,
+        spec: manifest ? formSpec(manifest, manifest.entity || name, 'edit', res.locals?.lang) : null,
         helpers: { fieldCategory, inputDate, fmtNum, coerce },
         lock, error: lock.locked && !lock.own
           ? 'Gesperrt durch ' + (lock.by || '?') : null
       });
     } catch (e) {
-      res.status(500).render('error', { message: 'Edit error: ' + e.message });
+      res.status(500).render('error', { message: (res.locals?.t ? res.locals.t('edit_error') : 'Edit error') + ': ' + e.message });
     }
   });
 
@@ -337,7 +338,7 @@ export default function createCrudRouter(name, meta) {
   router.get('/:id', gate('S'), async (req, res) => {
     try {
       const item = await Model.findFirst({ where: teamWhere(req, { ID: +req.params.id }, name) });
-      if (!item) return res.status(404).render('error', { message: 'Nicht gefunden' });
+      if (!item) return res.status(404).render('error', { message: (res.locals?.t ? res.locals.t('not_found') : 'Nicht gefunden') });
       // master/detail previews the original showed under the record
       const details = [];
       for (const relation of relationsForPage(name, 'view')) {
@@ -349,11 +350,11 @@ export default function createCrudRouter(name, meta) {
       const manifest = manifestFor(name);
       res.render('crud/view', {
         item, module: name, meta, registry, details,
-        vspec: manifest ? viewSpec(manifest, manifest.entity || name) : null,
+        vspec: manifest ? viewSpec(manifest, manifest.entity || name, res.locals?.lang) : null,
         helpers: { display, fieldCategory },
       });
     } catch (e) {
-      res.status(500).render('error', { message: 'View error: ' + e.message });
+      res.status(500).render('error', { message: (res.locals?.t ? res.locals.t('view_error') : 'View error') + ': ' + e.message });
     }
   });
 
@@ -380,9 +381,9 @@ export default function createCrudRouter(name, meta) {
         const lookups = await loadLookups(req);
         return res.render('crud/form', {
           item: req.body, module: name, meta, registry, lookups, isEdit: false,
-          spec: manifest ? formSpec(manifest, manifest.entity || name, 'add') : null,
+          spec: manifest ? formSpec(manifest, manifest.entity || name, 'add', res.locals?.lang) : null,
           helpers: { fieldCategory, inputDate, fmtNum, coerce },
-          error: 'Bitte ausfüllen: ' + check.missing.map((m) => m.label).join(', ')
+          error: (res.locals?.t ? res.locals.t('please_fill') : 'Bitte ausfüllen') + ': ' + check.missing.map((m) => (res.locals.tx ? res.locals.tx(m.label) : m.label)).join(', ')
         });
       }
       // multi-tenant default
@@ -391,9 +392,12 @@ export default function createCrudRouter(name, meta) {
       const addCtx = { values: data, rawValues: { ...req.body }, session: req.session?.user || {}, prisma };
       await runHook(name, 'BeforeAdd', addCtx);
       await runHook(name, 'BeforeInsert', addCtx);
+      // never persist a credential in clear text, whichever entity this is
+      await hashPasswordFields(addCtx.values);
       await Model.create({ data: addCtx.values });
       // Phase 10: audit trail
       await auditLog({ prisma, req, table: name, action: 'add', recordId: addCtx.values.ID, newData: addCtx.values });
+      req.notify?.('success', 'record_created', { name: res.locals.tx?.(meta.label || name) || meta.label || name });
       res.redirect('/' + name);
     } catch (e) {
       const lookups = await loadLookups(req);
@@ -421,6 +425,7 @@ export default function createCrudRouter(name, meta) {
         await auditLog({ prisma, req, table: name, action: 'delete', recordId: id });
       } catch {}
     }
+    req.notify?.('success', 'records_deleted', { count: deleted });
     res.redirect('/' + name + (deleted ? '?deleted=' + deleted : ''));
   });
 
@@ -443,16 +448,18 @@ export default function createCrudRouter(name, meta) {
         const lookups = await loadLookups(req);
         return res.render('crud/form', {
           item: { ...req.body, ID: req.params.id }, module: name, meta, registry, lookups, isEdit: true,
-          spec: manifest ? formSpec(manifest, manifest.entity || name, 'edit') : null,
+          spec: manifest ? formSpec(manifest, manifest.entity || name, 'edit', res.locals?.lang) : null,
           helpers: { fieldCategory, inputDate, fmtNum, coerce },
-          error: 'Bitte ausfüllen: ' + check.missing.map((m) => m.label).join(', ')
+          error: (res.locals?.t ? res.locals.t('please_fill') : 'Bitte ausfüllen') + ': ' + check.missing.map((m) => (res.locals.tx ? res.locals.tx(m.label) : m.label)).join(', ')
         });
       }
       // Phase 1: BeforeEdit hook.
       const editCtx = { values: data, rawValues: { ...req.body }, session: req.session?.user || {}, prisma };
       await runHook(name, 'BeforeEdit', editCtx);
+      // never persist a credential in clear text, whichever entity this is
+      await hashPasswordFields(editCtx.values);
       const before = await safe(Model.findFirst({ where: teamWhere(req, { ID: +req.params.id }, name) }), null);
-      if (!before) return res.status(404).render('error', { message: 'Nicht gefunden' });
+      if (!before) return res.status(404).render('error', { message: (res.locals?.t ? res.locals.t('not_found') : 'Nicht gefunden') });
       await Model.update({ where: { ID: before.ID }, data: editCtx.values });
       // Phase 10: audit trail + release the edit lock
       await auditLog({ prisma, req, table: name, action: 'edit', recordId: +req.params.id, oldData: before, newData: editCtx.values });
@@ -460,9 +467,10 @@ export default function createCrudRouter(name, meta) {
         prisma, table: name, keys: { ID: +req.params.id },
         sessionId: req.sessionID || req.session?.id || '',
       });
+      req.notify?.('success', 'record_updated', { name: res.locals.tx?.(meta.label || name) || meta.label || name });
       res.redirect('/' + name + '/' + req.params.id);
     } catch (e) {
-      res.status(500).render('error', { message: 'Update error: ' + e.message });
+      res.status(500).render('error', { message: (res.locals?.t ? res.locals.t('update_error') : 'Update error') + ': ' + e.message });
     }
   });
 
@@ -472,7 +480,10 @@ export default function createCrudRouter(name, meta) {
       const before = await safe(Model.findFirst({ where: teamWhere(req, { ID: +req.params.id }, name) }), null);
       if (before) await Model.delete({ where: { ID: before.ID } });
       await auditLog({ prisma, req, table: name, action: 'delete', recordId: +req.params.id, oldData: before });
-    } catch {}
+      req.notify?.('success', 'record_deleted', { name: res.locals.tx?.(meta.label || name) || meta.label || name });
+    } catch {
+      req.notify?.('error', 'delete_failed');
+    }
     res.redirect('/' + name);
   });
 

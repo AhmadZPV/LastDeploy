@@ -23,6 +23,7 @@
     "docker:schema": "docker compose run --rm app npx prisma db push --skip-generate",
     "docs:pdf": "node scripts/generate-client-pdf.mjs",
     "docs:sidebar": "node scripts/generate-sidebar-guide.mjs",
+    "smoke:routes": "node tests/smoke-routes.mjs",
     "test": "node --test tests/run-tests.mjs"
   },
   "dependencies": {

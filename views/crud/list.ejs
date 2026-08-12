@@ -11,15 +11,23 @@
   </div>
 </div>
 <section>
-  <% if (!items || items.length === 0) { %><p class="muted"><%= t('no_entries_found') %></p><% } else { %>
+  <% if (!items || items.length === 0) { %>
+    <div class="empty-state">
+      <span class="empty-state-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span>
+      <h3><%= t('no_entries_found') %></h3>
+      <% if (meta.capabilities?.add !== false) { %><a href="/<%= module %>/new" class="btn btn-primary btn-sm"><%= t('new') %></a><% } %>
+    </div>
+  <% } else { %>
   <div class="table-wrap"><table>
-    <thead><tr><th>ID</th><% for (const c of (meta.listColumns || [])) { %><th><%= tx(c) %></th><% } %><% if (meta.capabilities?.view !== false || meta.capabilities?.edit !== false) { %><th><%= t('actions') %></th><% } %></tr></thead>
+    <% const visibleColumns = (meta.listColumns || []).filter(c => c !== 'ID'); %>
+    <thead><tr><% for (const c of visibleColumns) { %><th><%= tx(c) %></th><% } %><% if (meta.capabilities?.view !== false || meta.capabilities?.edit !== false) { %><th class="num-cell"><%= t('actions') %></th><% } %></tr></thead>
     <tbody><% for (const item of items) { %><tr>
-      <td><%= item.ID %></td>
-      <% for (const c of (meta.listColumns || [])) { %><td><%- helpers.display(module, c, item[c], locals.waehrung) %></td><% } %>
+      <% for (const c of visibleColumns) { %><td><%- helpers.display(module, c, item[c], locals.waehrung) %></td><% } %>
       <% if (meta.capabilities?.view !== false || meta.capabilities?.edit !== false) { %><td>
-        <% if (meta.capabilities?.view !== false) { %><a href="/<%= module %>/<%= item.ID %>"><%= t('show') %></a><% } %>
-        <% if (meta.capabilities?.edit !== false) { %><a href="/<%= module %>/<%= item.ID %>/edit"><%= t('edit') %></a><% } %>
+        <div class="row-actions">
+        <% if (meta.capabilities?.view !== false) { %><a class="btn btn-ghost btn-sm" href="/<%= module %>/<%= item.ID %>"><%= t('show') %></a><% } %>
+        <% if (meta.capabilities?.edit !== false) { %><a class="btn btn-ghost btn-sm" href="/<%= module %>/<%= item.ID %>/edit"><%= t('edit') %></a><% } %>
+        </div>
       </td><% } %>
     </tr><% } %></tbody>
   </table></div>

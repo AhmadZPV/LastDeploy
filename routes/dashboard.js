@@ -286,7 +286,7 @@ export function createDashboardRouter({ prisma, canAccess, teamWhere }) {
       const view = await buildDashboardView({ prisma, req, teamWhere, canAccess, dashboard });
       const tx = res.locals.tx || ((s) => s);
       const title = dashboard.slug === 'heute' || req.params.slug === 'heute'
-        ? (res.locals.t ? res.locals.t('follow_up') : 'Wiedervorlage')
+        ? (res.locals?.t ? res.locals.t('follow_up') : 'Wiedervorlage')
         : tx(dashboard.entity.replace(/_/g, ' '));
       res.render('dashboard-page', {
         title,

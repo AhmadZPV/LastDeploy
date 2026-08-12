@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title><%= t('change_password') %> - <%= t('app_name') %></title>
 <script>document.documentElement.dataset.theme=localStorage.getItem('erwin-theme')||'light';</script>
-<link rel="stylesheet" href="/static/css/style.css?v=20260810-3"></head>
+<link rel="stylesheet" href="/static/css/style.css?v=20260811-ui2"></head>
 <body class="login-page"><main class="auth-shell"><div class="auth-card">
   <div class="auth-heading"><div class="login-brand-mark">E</div><div><h1><%= t('change_password') %></h1><p><%= t('app_name') %></p></div></div>
   <% if (errors && errors.length) { %>
@@ -21,7 +21,7 @@
     <div class="form-group"><label><%= t('repeat_password') %></label>
       <input type="password" name="confirm" required></div>
     <div class="form-actions">
-      <button type="submit" class="btn btn-primary" style="width:100%"><%= t('change') %></button></div>
+      <button type="submit" class="btn btn-primary"><%= t('change') %></button></div>
   </form>
-  <p style="margin-top:15px"><a href="/login"><%= t('back_to_login') %></a></p>
- </div></main><script src="/static/js/app.js?v=20260810-3"></script></body></html>
+  <p class="auth-footnote"><a href="/login"><%= t('back_to_login') %></a></p>
+ </div></main><script src="/static/js/app.js?v=20260811-ui2"></script></body></html>

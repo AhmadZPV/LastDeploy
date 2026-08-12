@@ -1,433 +1,445 @@
 {
- "entity": "Telefonliste",
- "shortName": "Telefonliste",
- "baseTable": "Adressen",
- "isVirtual": true,
- "ownerField": "Team",
- "sql": {
-  "strOrderBy": "ORDER BY Kurzname",
-  "sqlHead": "SELECT Kurzname,  Klassifikation,  if (Firma!=\"\" and Abteilung !=\"\",Concat(Firma, '\\n', Abteilung),Firma) AS Firma,  Concat(Vorname, ' ', Nachname) AS Name,  Telefon,  Handy,  Telefax,  Skype,  Team,  Ort",
-  "sqlFrom": "FROM Adressen",
-  "sqlWhere": "",
-  "sqlTail": ""
- },
- "keys": [],
- "pageSize": 5,
- "capabilities": {
-  "list": true,
-  "view": true,
-  "add": true,
-  "edit": true,
-  "export": true,
-  "print": true,
-  "search": true,
-  "masterList": true
- },
- "fieldSets": {
-  "list": [
-   "Kurzname",
-   "Klassifikation",
-   "Firma",
-   "Name",
-   "Telefon",
-   "Handy",
-   "Telefax",
-   "Skype",
-   "Team",
-   "Ort"
-  ],
-  "view": [
-   "Kurzname",
-   "Klassifikation",
-   "Firma",
-   "Name",
-   "Telefon",
-   "Handy",
-   "Telefax",
-   "Skype",
-   "Team",
-   "Ort"
-  ],
-  "add": [
-   "Kurzname",
-   "Klassifikation",
-   "Firma",
-   "Telefon",
-   "Handy",
-   "Telefax",
-   "Skype",
-   "Ort"
-  ],
-  "edit": [
-   "Kurzname",
-   "Klassifikation",
-   "Firma",
-   "Telefon",
-   "Handy",
-   "Telefax",
-   "Skype",
-   "Team",
-   "Ort"
-  ],
-  "export": [
-   "Kurzname",
-   "Klassifikation",
-   "Firma",
-   "Name",
-   "Telefon",
-   "Handy",
-   "Telefax",
-   "Skype",
-   "Team",
-   "Ort"
-  ],
-  "print": [
-   "Kurzname",
-   "Klassifikation",
-   "Firma",
-   "Name",
-   "Telefon",
-   "Handy",
-   "Telefax",
-   "Skype",
-   "Team",
-   "Ort"
-  ],
-  "search": [
-   "Kurzname",
-   "Klassifikation",
-   "Firma",
-   "Name",
-   "Telefon",
-   "Handy",
-   "Telefax",
-   "Skype",
-   "Ort"
-  ],
-  "masterList": [
-   "Kurzname",
-   "Klassifikation",
-   "Firma",
-   "Name",
-   "Telefon",
-   "Handy",
-   "Telefax",
-   "Skype",
-   "Team",
-   "Ort"
+  "entity": "Telefonliste",
+  "shortName": "Telefonliste",
+  "baseTable": "Adressen",
+  "isVirtual": true,
+  "ownerField": "Team",
+  "sql": {
+    "strOrderBy": "ORDER BY Kurzname",
+    "sqlHead": "SELECT Kurzname,  Klassifikation,  if (Firma!=\"\" and Abteilung !=\"\",Concat(Firma, '\\n', Abteilung),Firma) AS Firma,  Concat(Vorname, ' ', Nachname) AS Name,  Telefon,  Handy,  Telefax,  Skype,  Team,  Ort",
+    "sqlFrom": "FROM Adressen",
+    "sqlWhere": "",
+    "sqlTail": ""
+  },
+  "keys": [],
+  "pageSize": 5,
+  "capabilities": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+  },
+  "fieldSets": {
+    "list": [
+      "Kurzname",
+      "Klassifikation",
+      "Firma",
+      "Name",
+      "Telefon",
+      "Handy",
+      "Telefax",
+      "Skype",
+      "Team",
+      "Ort"
+    ],
+    "view": [
+      "Kurzname",
+      "Klassifikation",
+      "Firma",
+      "Name",
+      "Telefon",
+      "Handy",
+      "Telefax",
+      "Skype",
+      "Team",
+      "Ort"
+    ],
+    "add": [
+      "Kurzname",
+      "Klassifikation",
+      "Firma",
+      "Telefon",
+      "Handy",
+      "Telefax",
+      "Skype",
+      "Ort"
+    ],
+    "edit": [
+      "Kurzname",
+      "Klassifikation",
+      "Firma",
+      "Telefon",
+      "Handy",
+      "Telefax",
+      "Skype",
+      "Team",
+      "Ort"
+    ],
+    "export": [
+      "Kurzname",
+      "Klassifikation",
+      "Firma",
+      "Name",
+      "Telefon",
+      "Handy",
+      "Telefax",
+      "Skype",
+      "Team",
+      "Ort"
+    ],
+    "print": [
+      "Kurzname",
+      "Klassifikation",
+      "Firma",
+      "Name",
+      "Telefon",
+      "Handy",
+      "Telefax",
+      "Skype",
+      "Team",
+      "Ort"
+    ],
+    "search": [
+      "Kurzname",
+      "Klassifikation",
+      "Firma",
+      "Name",
+      "Telefon",
+      "Handy",
+      "Telefax",
+      "Skype",
+      "Ort"
+    ],
+    "masterList": [
+      "Kurzname",
+      "Klassifikation",
+      "Firma",
+      "Name",
+      "Telefon",
+      "Handy",
+      "Telefax",
+      "Skype",
+      "Team",
+      "Ort"
+    ]
+  },
+  "export": {
+    "exportTo": true,
+    "exportDelimiter": ",",
+    "exportFormatting": 2
+  },
+  "print": {
+    "printerPageOrientation": 1,
+    "nPrinterPageScale": 100,
+    "nPrinterSplitRecords": 40,
+    "nPrinterPDFSplitRecords": 40
+  },
+  "tabs": [],
+  "labels": {
+    "German": {
+      "Kurzname": "Kurzname",
+      "Firma": "Firma",
+      "Telefon": "Telefon",
+      "Handy": "Handy",
+      "Telefax": "Telefax",
+      "Klassifikation": "Klassifikation",
+      "Skype": "Skype",
+      "Name": "Name",
+      "Team": "Team",
+      "Ort": "Ort"
+    },
+    "English": {
+      "Kurzname": "Short name",
+      "Firma": "Company",
+      "Telefon": "Phone",
+      "Handy": "Mobile",
+      "Telefax": "Fax",
+      "Klassifikation": "Classification",
+      "Skype": "Skype",
+      "Name": "Name",
+      "Team": "Team",
+      "Ort": "City"
+    }
+  },
+  "fields": [
+    {
+      "name": "Kurzname",
+      "type": 200,
+      "index": 1,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200,
+        "denyDuplicates": true
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Klassifikation",
+      "type": 200,
+      "index": 2,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Firma",
+      "type": 200,
+      "index": 3,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 287
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Name",
+      "type": 200,
+      "index": 4,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Telefon",
+      "type": 200,
+      "index": 5,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "LinkPrefix": "tel:",
+        "hlType": 0,
+        "hlLinkWordNameType": "Text",
+        "hlLinkWordText": "Link",
+        "hlTitleField": "",
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Handy",
+      "type": 200,
+      "index": 6,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "LinkPrefix": "tel:",
+        "hlType": 0,
+        "hlLinkWordNameType": "Text",
+        "hlLinkWordText": "Link",
+        "hlTitleField": "",
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Telefax",
+      "type": 200,
+      "index": 7,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Skype",
+      "type": 200,
+      "index": 8,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "hlType": 0,
+        "hlLinkWordNameType": "Text",
+        "hlLinkWordText": "Link",
+        "hlTitleField": "",
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Team",
+      "type": 200,
+      "index": 9,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Ort",
+      "type": 200,
+      "index": 10,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 287
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    }
   ]
- },
- "export": {
-  "exportTo": true,
-  "exportDelimiter": ",",
-  "exportFormatting": 2
- },
- "print": {
-  "printerPageOrientation": 1,
-  "nPrinterPageScale": 100,
-  "nPrinterSplitRecords": 40,
-  "nPrinterPDFSplitRecords": 40
- },
- "tabs": [],
- "labels": {
-  "German": {
-   "Kurzname": "Kurzname",
-   "Firma": "Firma",
-   "Telefon": "Telefon",
-   "Handy": "Handy",
-   "Telefax": "Telefax",
-   "Klassifikation": "Klassifikation",
-   "Skype": "Skype",
-   "Name": "Name",
-   "Team": "Team",
-   "Ort": "Ort"
-  }
- },
- "fields": [
-  {
-   "name": "Kurzname",
-   "type": 200,
-   "index": 1,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200,
-    "denyDuplicates": true
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Klassifikation",
-   "type": 200,
-   "index": 2,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Firma",
-   "type": 200,
-   "index": 3,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 287
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Name",
-   "type": 200,
-   "index": 4,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Telefon",
-   "type": 200,
-   "index": 5,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "LinkPrefix": "tel:",
-    "hlType": 0,
-    "hlLinkWordNameType": "Text",
-    "hlLinkWordText": "Link",
-    "hlTitleField": "",
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Handy",
-   "type": 200,
-   "index": 6,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "LinkPrefix": "tel:",
-    "hlType": 0,
-    "hlLinkWordNameType": "Text",
-    "hlLinkWordText": "Link",
-    "hlTitleField": "",
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Telefax",
-   "type": 200,
-   "index": 7,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Skype",
-   "type": 200,
-   "index": 8,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "hlType": 0,
-    "hlLinkWordNameType": "Text",
-    "hlLinkWordText": "Link",
-    "hlTitleField": "",
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Team",
-   "type": 200,
-   "index": 9,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Ort",
-   "type": 200,
-   "index": 10,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 287
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  }
- ]
 }

@@ -8,6 +8,8 @@
  */
 import { Router } from 'express';
 import bcrypt from 'bcryptjs';
+import { hashPassword } from '../src/auth/password-guard.js';
+import { POLICY, checkPassword, passwordErrors } from '../src/auth/policy.js';
 import { MASK_LETTERS, MASK_LABELS, FULL_MASK, normalizeMask, maskToMap }
   from '../src/auth/rights.js';
 import { runAutoBookings } from '../src/jobs/autobuchungen.js';
@@ -23,7 +25,10 @@ export default function createAdminRouter(deps = {}) {
   const members = () => P().intex_hausverwaltung_ugmembers;
   const rightsTbl = () => P().intex_hausverwaltung_ugrights;
 
-  const back = (res, hash) => res.redirect('/admin' + (hash ? '#' + hash : ''));
+  const back = (res, hash, err) =>
+    res.redirect('/admin' + (err ? '?err=' + encodeURIComponent(err) : '') + (hash ? '#' + hash : ''));
+
+  const notify = (req, type, key, params) => req.notify?.(type, key, params);
 
   // ------------------------------------------------------------- overview
   router.get('/', async (req, res) => {
@@ -39,6 +44,7 @@ export default function createAdminRouter(deps = {}) {
         (membersByGroup[m.GroupID] = membersByGroup[m.GroupID] || []).push(m.UserName);
       }
       res.render('admin', {
+        adminError: typeof req.query.err === 'string' ? req.query.err : null,
         users: userRows, groups: groupRows, members: memberRows,
         rights: rightRows, membersByGroup,
         maskLetters: MASK_LETTERS, maskLabels: MASK_LABELS,
@@ -50,16 +56,24 @@ export default function createAdminRouter(deps = {}) {
 
   // ---------------------------------------------------------------- users
   router.post('/users', async (req, res) => {
+    const { Benutzername, Passwort, Name, Email, active, Gruppe } = req.body || {};
+    const login = String(Benutzername || '').trim();
+    const pwd = String(Passwort || '');
+    // Report the reason instead of redirecting silently: an empty catch here
+    // made a duplicate username look like 'the button does nothing'.
+    if (!login) return back(res, 'users', 'user_name_required');
+    if (!pwd) return back(res, 'users', 'user_password_required');
+    if (POLICY.pwdStrong && !checkPassword(pwd)) return back(res, 'users', 'user_password_weak');
     try {
-      const { Benutzername, Passwort, Name, Email, active, Gruppe } = req.body || {};
-      if (!Benutzername || !Passwort) return back(res, 'users');
+      const dup = await users().findFirst({ where: { Benutzername: login } });
+      if (dup) return back(res, 'users', 'user_exists');
       const max = await users().aggregate({ _max: { ID: true } });
       await users().create({
         data: {
           ID: (max?._max?.ID || 0) + 1,
-          Benutzername,
+          Benutzername: login,
           // never store an admin-created password in clear text
-          Passwort: await bcrypt.hash(String(Passwort), 10),
+          Passwort: await hashPassword(pwd),
           Name: Name || '', Email: Email || '',
           active: active === undefined ? 1 : (active ? 1 : 0),
           Gruppe: Gruppe || null, Team: req.session?.user?.Team || 'Team',
@@ -67,10 +81,15 @@ export default function createAdminRouter(deps = {}) {
       });
       if (Gruppe) {
         const g = await groups().findFirst({ where: { Label: Gruppe } });
-        if (g) await members().create({ data: { UserName: Benutzername, GroupID: g.GroupID } }).catch(() => {});
+        // a missing group used to drop the membership without a word
+        if (!g) return back(res, 'users', 'user_added_group_missing');
+        await members().create({ data: { UserName: login, GroupID: g.GroupID } }).catch(() => {});
       }
-    } catch {}
-    back(res, 'users');
+    } catch (e) {
+      return back(res, 'users', 'user_save_failed');
+    }
+    notify(req, 'success', 'user_added');
+    back(res, 'users', 'user_added');
   });
 
   router.post('/users/:id/delete', async (req, res) => {
@@ -79,7 +98,10 @@ export default function createAdminRouter(deps = {}) {
       await users().delete({ where: { ID: +req.params.id } });
       // keep membership rows from dangling
       if (u) await members().deleteMany({ where: { UserName: u.Benutzername } }).catch(() => {});
-    } catch {}
+      notify(req, 'success', 'user_deleted');
+    } catch {
+      notify(req, 'error', 'user_delete_failed');
+    }
     back(res, 'users');
   });
 
@@ -87,8 +109,14 @@ export default function createAdminRouter(deps = {}) {
   router.post('/users/:id/active', async (req, res) => {
     try {
       const u = await users().findFirst({ where: { ID: +req.params.id } });
-      if (u) await users().update({ where: { ID: u.ID }, data: { active: u.active ? 0 : 1 } });
-    } catch {}
+      if (u) {
+        const active = u.active ? 0 : 1;
+        await users().update({ where: { ID: u.ID }, data: { active } });
+        notify(req, 'success', active ? 'user_activated' : 'user_deactivated');
+      }
+    } catch {
+      notify(req, 'error', 'user_save_failed');
+    }
     back(res, 'users');
   });
 
@@ -96,14 +124,17 @@ export default function createAdminRouter(deps = {}) {
   router.post('/users/:id/password', async (req, res) => {
     try {
       const pwd = String(req.body?.Passwort || '');
-      if (pwd) {
-        await users().update({
-          where: { ID: +req.params.id },
-          data: { Passwort: await bcrypt.hash(pwd, 10), reset_token: null },
-        });
-      }
-    } catch {}
-    back(res, 'users');
+      if (!pwd) return back(res, 'users', 'user_password_required');
+      if (POLICY.pwdStrong && !checkPassword(pwd)) return back(res, 'users', 'user_password_weak');
+      await users().update({
+        where: { ID: +req.params.id },
+        data: { Passwort: await hashPassword(pwd), reset_token: null },
+      });
+    } catch {
+      return back(res, 'users', 'user_save_failed');
+    }
+    notify(req, 'success', 'password_updated');
+    back(res, 'users', 'password_updated');
   });
 
   // --------------------------------------------------------------- groups

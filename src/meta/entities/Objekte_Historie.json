@@ -1,209 +1,216 @@
 {
- "entity": "Objekte_Historie",
- "shortName": "Objekte_Historie",
- "baseTable": "intex hausverwaltung_audit",
- "isVirtual": true,
- "ownerField": null,
- "sql": {
-  "strOrderBy": "order by Datensatz, Zeitpunkt Desc",
-  "sqlHead": "select `datetime` as Zeitpunkt,  `ip` as IPAdresse,  `user` as Benutzer,  replace(replace(replace(substr(description,locate(\"---Fields\\r\\n\",description)+11),\"[old]\",\"[alt]\"),\"[new]\",\"[neu]\"),\"\\r\\n\",\"<br>\") as Aenderungen,  cast(substr(description from locate(\"---Keys ID:\",description)+15 for locate(\"---Fields\",description)-15) as unsigned) as Datensatz",
-  "sqlFrom": "from `intex hausverwaltung_audit`",
-  "sqlWhere": "",
-  "sqlTail": ""
- },
- "keys": [],
- "pageSize": 20,
- "capabilities": {
-  "list": true,
-  "view": false,
-  "add": false,
-  "edit": false,
-  "export": false,
-  "print": false,
-  "search": true,
-  "masterList": true
- },
- "fieldSets": {
-  "list": [
-   "Zeitpunkt",
-   "IPAdresse",
-   "Benutzer",
-   "Aenderungen"
-  ],
-  "search": [
-   "Zeitpunkt",
-   "IPAdresse",
-   "Benutzer",
-   "Aenderungen"
-  ],
-  "masterList": [
-   "Zeitpunkt",
-   "IPAdresse",
-   "Benutzer",
-   "Aenderungen",
-   "Datensatz"
+  "entity": "Objekte_Historie",
+  "shortName": "Objekte_Historie",
+  "baseTable": "intex hausverwaltung_audit",
+  "isVirtual": true,
+  "ownerField": null,
+  "sql": {
+    "strOrderBy": "order by Datensatz, Zeitpunkt Desc",
+    "sqlHead": "select `datetime` as Zeitpunkt,  `ip` as IPAdresse,  `user` as Benutzer,  replace(replace(replace(substr(description,locate(\"---Fields\\r\\n\",description)+11),\"[old]\",\"[alt]\"),\"[new]\",\"[neu]\"),\"\\r\\n\",\"<br>\") as Aenderungen,  cast(substr(description from locate(\"---Keys ID:\",description)+15 for locate(\"---Fields\",description)-15) as unsigned) as Datensatz",
+    "sqlFrom": "from `intex hausverwaltung_audit`",
+    "sqlWhere": "",
+    "sqlTail": ""
+  },
+  "keys": [],
+  "pageSize": 20,
+  "capabilities": {
+    "list": true,
+    "view": false,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+  },
+  "fieldSets": {
+    "list": [
+      "Zeitpunkt",
+      "IPAdresse",
+      "Benutzer",
+      "Aenderungen"
+    ],
+    "search": [
+      "Zeitpunkt",
+      "IPAdresse",
+      "Benutzer",
+      "Aenderungen"
+    ],
+    "masterList": [
+      "Zeitpunkt",
+      "IPAdresse",
+      "Benutzer",
+      "Aenderungen",
+      "Datensatz"
+    ]
+  },
+  "export": {
+    "exportTo": null,
+    "exportDelimiter": null,
+    "exportFormatting": null
+  },
+  "print": {
+    "printerPageOrientation": 0,
+    "nPrinterPageScale": 100,
+    "nPrinterSplitRecords": 40,
+    "nPrinterPDFSplitRecords": 40
+  },
+  "tabs": [],
+  "labels": {
+    "German": {
+      "Zeitpunkt": "Zeitpunkt",
+      "IPAdresse": "IP-Adresse",
+      "Benutzer": "Benutzer",
+      "Aenderungen": "Änderungen",
+      "Datensatz": "Datensatz"
+    },
+    "English": {
+      "Zeitpunkt": "Zeitpunkt",
+      "IPAdresse": "IP-Address",
+      "Benutzer": "Users",
+      "Aenderungen": "Changes",
+      "Datensatz": "Datensatz"
+    }
+  },
+  "fields": [
+    {
+      "name": "Zeitpunkt",
+      "type": 135,
+      "index": 1,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "ShowTime": true,
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "DateEditType": 13,
+        "InitialYearFactor": 3,
+        "LastYearFactor": 10,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "IPAdresse",
+      "type": 200,
+      "index": 2,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Benutzer",
+      "type": 200,
+      "index": 3,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Aenderungen",
+      "type": 201,
+      "index": 4,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "ViewFormat": "HTML"
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "nRows": 100,
+        "nCols": 200,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Datensatz",
+      "type": 3,
+      "index": 5,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    }
   ]
- },
- "export": {
-  "exportTo": null,
-  "exportDelimiter": null,
-  "exportFormatting": null
- },
- "print": {
-  "printerPageOrientation": 0,
-  "nPrinterPageScale": 100,
-  "nPrinterSplitRecords": 40,
-  "nPrinterPDFSplitRecords": 40
- },
- "tabs": [],
- "labels": {
-  "German": {
-   "Zeitpunkt": "Zeitpunkt",
-   "IPAdresse": "IP-Adresse",
-   "Benutzer": "Benutzer",
-   "Aenderungen": "Änderungen",
-   "Datensatz": "Datensatz"
-  }
- },
- "fields": [
-  {
-   "name": "Zeitpunkt",
-   "type": 135,
-   "index": 1,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "ShowTime": true,
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "DateEditType": 13,
-    "InitialYearFactor": 3,
-    "LastYearFactor": 10,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "IPAdresse",
-   "type": 200,
-   "index": 2,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Benutzer",
-   "type": 200,
-   "index": 3,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Aenderungen",
-   "type": 201,
-   "index": 4,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "ViewFormat": "HTML"
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "nRows": 100,
-    "nCols": 200,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Datensatz",
-   "type": 3,
-   "index": 5,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  }
- ]
 }

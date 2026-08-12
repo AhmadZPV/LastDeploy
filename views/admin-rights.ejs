@@ -1,7 +1,7 @@
 <%- include('partials/layout_top', { title: 'Rechte: ' + group.Label }) %>
 <h1>Rechte f&uuml;r Gruppe &laquo;<%= group.Label %>&raquo;</h1>
-<p><a href="/admin#groups">&larr; Zur&uuml;ck zur Verwaltung</a></p>
-<form method="post" action="/admin/rights/<%= group.GroupID %>/grant-all" style="margin-bottom:12px">
+<p><a href="/admin#groups">&larr; <%= t('back_to_admin') %></a></p>
+<form class="stacked-actions" method="post" action="/admin/rights/<%= group.GroupID %>/grant-all">
   <%- include('partials/csrf') %>
   <button type="submit" class="btn">Vollzugriff auf alle Tabellen</button>
 </form>
@@ -22,9 +22,9 @@
     <% }) %>
     </tbody>
   </table></div>
-  <p style="margin-top:12px"><button type="submit" class="btn btn-primary">Speichern</button></p>
+  <div class="form-actions"><button type="submit" class="btn btn-primary"><%= t('save') %></button></div>
 </form>
-<p style="font-size:13px;color:#7f8c8d">
+<p class="muted legend-note">
   <% maskLetters.forEach(function(L){ %><b><%= L %></b> = <%= maskLabels[L] %> &nbsp; <% }) %>
 </p>
 <%- include('partials/layout_bottom') %>

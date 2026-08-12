@@ -53,7 +53,7 @@ export default function createSettingsRouter({ prisma, canAccess, teamWhere } = 
 
   router.get('/', async (req, res) => {
     if (!allowed(req)) {
-      return res.status(403).render('error', { message: 'Keine Berechtigung für die Einstellungen' });
+      return res.status(403).render('error', { message: (res.locals?.t ? res.locals.t('no_settings_permission') : 'Keine Berechtigung für die Einstellungen') });
     }
     const row = await loadRow(req);
     res.render('settings', {
@@ -66,7 +66,7 @@ export default function createSettingsRouter({ prisma, canAccess, teamWhere } = 
 
   router.post('/', async (req, res) => {
     if (!allowed(req)) {
-      return res.status(403).render('error', { message: 'Keine Berechtigung für die Einstellungen' });
+      return res.status(403).render('error', { message: (res.locals?.t ? res.locals.t('no_settings_permission') : 'Keine Berechtigung für die Einstellungen') });
     }
     const delegate = prisma?.einstellungen;
     const before = await loadRow(req);

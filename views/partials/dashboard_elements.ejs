@@ -17,7 +17,10 @@
       <% if (!el.available) { %>
         <p class="muted"><%= _t('table_unavailable') %><% if (el.error) { %> <span class="muted">(<%= el.error %>)</span><% } %></p>
       <% } else if (!el.rows || el.rows.length === 0) { %>
-        <p class="muted"><%= _t('no_entries') %></p>
+        <div class="empty-state">
+          <span class="empty-state-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 7h16M4 12h16M4 17h9"/></svg></span>
+          <h3><%= _t('no_entries') %></h3>
+        </div>
       <% } else { %>
         <div class="table-wrap dash-table-wrap"><table class="dash-data-table">
           <tbody>
@@ -44,7 +47,7 @@
 
     <% } else if (el.typeName === 'chart') { %>
       <% if (el.chartHtml) { %>
-        <%- el.chartHtml %>
+        <div class="dash-chart"><%- el.chartHtml %></div>
       <% } else { %>
         <p><a class="btn btn-link" href="<%= el.href %>"><%= _t('open_chart') %></a><% if (el.chartError) { %> <span class="muted">(<%= el.chartError %>)</span><% } %></p>
       <% } %>

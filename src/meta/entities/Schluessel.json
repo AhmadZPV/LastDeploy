@@ -1,180 +1,21 @@
 {
- "entity": "Schluessel",
- "shortName": "Schluessel",
- "baseTable": "Schluessel",
- "isVirtual": false,
- "ownerField": "Team",
- "sql": {
-  "strOrderBy": "ORDER BY Schluessel.Bezeichnung",
-  "sqlHead": "SELECT Schluessel.ID,  Schluessel.Raum,  Schluessel.Bezeichnung,  Schluessel.Art,  Schluessel.Nummer,  Schluessel.Ausgabe,  Schluessel.Ausgabedatum,  Einheiten.Bezeichnung AS Einheit,  Objekte.Bezeichnung AS Objekt,  Schluessel.Unterschrift,   '' as Nummernkreis,  Schluessel.Team",
-  "sqlFrom": "FROM Schluessel  LEFT OUTER JOIN Raeume ON Schluessel.Raum = Raeume.ID  LEFT OUTER JOIN Einheiten ON Raeume.Einheit = Einheiten.ID  LEFT OUTER JOIN Objekte ON Einheiten.Objekt = Objekte.ID",
-  "sqlWhere": "",
-  "sqlTail": ""
- },
- "keys": [
-  "ID"
- ],
- "pageSize": 20,
- "capabilities": {
-  "list": true,
-  "view": true,
-  "add": true,
-  "edit": true,
-  "export": true,
-  "print": true,
-  "search": true,
-  "masterList": true
- },
- "fieldSets": {
-  "list": [
-   "Raum",
-   "Bezeichnung",
-   "Einheit",
-   "Art",
-   "Objekt",
-   "Nummer",
-   "Ausgabe",
-   "Ausgabedatum"
-  ],
-  "view": [
-   "Raum",
-   "Bezeichnung",
-   "Einheit",
-   "Art",
-   "Objekt",
-   "Nummer",
-   "Ausgabe",
-   "Ausgabedatum",
-   "Unterschrift"
-  ],
-  "add": [
-   "Raum",
-   "Bezeichnung",
-   "Art",
-   "Nummernkreis",
-   "Nummer",
-   "Ausgabe",
-   "Ausgabedatum",
-   "Unterschrift"
-  ],
-  "edit": [
-   "Raum",
-   "Bezeichnung",
-   "Art",
-   "Nummernkreis",
-   "Nummer",
-   "Ausgabe",
-   "Ausgabedatum",
-   "Unterschrift"
-  ],
-  "export": [
-   "ID",
-   "Raum",
-   "Bezeichnung",
-   "Einheit",
-   "Art",
-   "Objekt",
-   "Nummer",
-   "Ausgabe",
-   "Ausgabedatum"
-  ],
-  "print": [
-   "Raum",
-   "Bezeichnung",
-   "Einheit",
-   "Art",
-   "Objekt",
-   "Nummer",
-   "Ausgabe",
-   "Ausgabedatum"
-  ],
-  "search": [
-   "ID",
-   "Raum",
-   "Bezeichnung",
-   "Art",
-   "Nummer",
-   "Ausgabe",
-   "Ausgabedatum"
-  ],
-  "masterList": [
-   "ID",
-   "Nummernkreis",
-   "Team",
-   "Raum",
-   "Bezeichnung",
-   "Einheit",
-   "Art",
-   "Objekt",
-   "Nummer",
-   "Ausgabe",
-   "Ausgabedatum",
-   "Unterschrift"
-  ]
- },
- "export": {
-  "exportTo": true,
-  "exportDelimiter": ",",
-  "exportFormatting": 2
- },
- "print": {
-  "printerPageOrientation": 1,
-  "nPrinterPageScale": 100,
-  "nPrinterSplitRecords": 40,
-  "nPrinterPDFSplitRecords": 40
- },
- "tabs": [],
- "labels": {
-  "German": {
-   "ID": "ID",
-   "Raum": "Raum",
-   "Einheit": "Einheit",
-   "Objekt": "Objekt",
-   "Bezeichnung": "Bezeichnung",
-   "Art": "Art",
-   "Nummer": "Nummer",
-   "Ausgabe": "Ausgabe an",
-   "Ausgabedatum": "Ausgabedatum",
-   "Unterschrift": "Unterschrift",
-   "Nummernkreis": "Nummernkreis",
-   "Team": "Team"
-  }
- },
- "fields": [
-  {
-   "name": "ID",
-   "type": 3,
-   "index": 1,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "number",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "AutoInc": true,
-   "isSQLExpression": true,
-   "UploadFolder": "files"
+  "entity": "Schluessel",
+  "shortName": "Schluessel",
+  "baseTable": "Schluessel",
+  "isVirtual": false,
+  "ownerField": "Team",
+  "sql": {
+    "strOrderBy": "ORDER BY Schluessel.Bezeichnung",
+    "sqlHead": "SELECT Schluessel.ID,  Schluessel.Raum,  Schluessel.Bezeichnung,  Schluessel.Art,  Schluessel.Nummer,  Schluessel.Ausgabe,  Schluessel.Ausgabedatum,  Einheiten.Bezeichnung AS Einheit,  Objekte.Bezeichnung AS Objekt,  Schluessel.Unterschrift,   '' as Nummernkreis,  Schluessel.Team",
+    "sqlFrom": "FROM Schluessel  LEFT OUTER JOIN Raeume ON Schluessel.Raum = Raeume.ID  LEFT OUTER JOIN Einheiten ON Raeume.Einheit = Einheiten.ID  LEFT OUTER JOIN Objekte ON Einheiten.Objekt = Objekte.ID",
+    "sqlWhere": "",
+    "sqlTail": ""
   },
-  {
-   "name": "Raum",
-   "type": 3,
-   "index": 2,
-   "pages": {
+  "keys": [
+    "ID"
+  ],
+  "pageSize": 20,
+  "capabilities": {
     "list": true,
     "view": true,
     "add": true,
@@ -183,309 +24,482 @@
     "print": true,
     "search": true,
     "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Raeume",
-    "autoCompleteFieldsOnEdit": 1,
-    "LCType": 2,
-    "LinkField": "ID",
-    "LinkFieldType": 0,
-    "DisplayField": "Bezeichnung",
-    "LookupOrderBy": "Bezeichnung",
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
   },
-  {
-   "name": "Bezeichnung",
-   "type": 200,
-   "index": 3,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Art",
-   "type": 200,
-   "index": 4,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 0,
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 0,
-    "SelectSize": 1,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Nummer",
-   "type": 200,
-   "index": 5,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Ausgabe",
-   "type": 3,
-   "index": 6,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Adressen",
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 2,
-    "LinkField": "ID",
-    "LinkFieldType": 0,
-    "DisplayField": "Kurzname",
-    "LookupOrderBy": "Kurzname",
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Ausgabedatum",
-   "type": 7,
-   "index": 7,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "DateEditType": 13,
-    "InitialYearFactor": 10,
-    "LastYearFactor": 10,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Einheit",
-   "type": 200,
-   "index": 8,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Objekt",
-   "type": 200,
-   "index": 9,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Unterschrift",
-   "type": 200,
-   "index": 10,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "ImageWidth": 457,
-    "ImageHeight": 0
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Nummernkreis",
-   "type": 200,
-   "index": 11,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "fieldEvents": [
-     null
+  "fieldSets": {
+    "list": [
+      "Raum",
+      "Bezeichnung",
+      "Einheit",
+      "Art",
+      "Objekt",
+      "Nummer",
+      "Ausgabe",
+      "Ausgabedatum"
     ],
-    "LookupType": 2,
-    "LookupTable": "Seriennummern",
-    "autoCompleteFieldsOnEdit": 1,
-    "LCType": 0,
-    "LinkField": "ID",
-    "LinkFieldType": 0,
-    "DisplayField": "Nummernkreis",
-    "LookupOrderBy": "Nummernkreis",
-    "SelectSize": 1,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
+    "view": [
+      "Raum",
+      "Bezeichnung",
+      "Einheit",
+      "Art",
+      "Objekt",
+      "Nummer",
+      "Ausgabe",
+      "Ausgabedatum",
+      "Unterschrift"
+    ],
+    "add": [
+      "Raum",
+      "Bezeichnung",
+      "Art",
+      "Nummernkreis",
+      "Nummer",
+      "Ausgabe",
+      "Ausgabedatum",
+      "Unterschrift"
+    ],
+    "edit": [
+      "Raum",
+      "Bezeichnung",
+      "Art",
+      "Nummernkreis",
+      "Nummer",
+      "Ausgabe",
+      "Ausgabedatum",
+      "Unterschrift"
+    ],
+    "export": [
+      "ID",
+      "Raum",
+      "Bezeichnung",
+      "Einheit",
+      "Art",
+      "Objekt",
+      "Nummer",
+      "Ausgabe",
+      "Ausgabedatum"
+    ],
+    "print": [
+      "Raum",
+      "Bezeichnung",
+      "Einheit",
+      "Art",
+      "Objekt",
+      "Nummer",
+      "Ausgabe",
+      "Ausgabedatum"
+    ],
+    "search": [
+      "ID",
+      "Raum",
+      "Bezeichnung",
+      "Art",
+      "Nummer",
+      "Ausgabe",
+      "Ausgabedatum"
+    ],
+    "masterList": [
+      "ID",
+      "Nummernkreis",
+      "Team",
+      "Raum",
+      "Bezeichnung",
+      "Einheit",
+      "Art",
+      "Objekt",
+      "Nummer",
+      "Ausgabe",
+      "Ausgabedatum",
+      "Unterschrift"
+    ]
   },
-  {
-   "name": "Team",
-   "type": 200,
-   "index": 12,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  }
- ]
+  "export": {
+    "exportTo": true,
+    "exportDelimiter": ",",
+    "exportFormatting": 2
+  },
+  "print": {
+    "printerPageOrientation": 1,
+    "nPrinterPageScale": 100,
+    "nPrinterSplitRecords": 40,
+    "nPrinterPDFSplitRecords": 40
+  },
+  "tabs": [],
+  "labels": {
+    "German": {
+      "ID": "ID",
+      "Raum": "Raum",
+      "Einheit": "Einheit",
+      "Objekt": "Objekt",
+      "Bezeichnung": "Bezeichnung",
+      "Art": "Art",
+      "Nummer": "Nummer",
+      "Ausgabe": "Ausgabe an",
+      "Ausgabedatum": "Ausgabedatum",
+      "Unterschrift": "Unterschrift",
+      "Nummernkreis": "Nummernkreis",
+      "Team": "Team"
+    },
+    "English": {
+      "ID": "ID",
+      "Raum": "Raum",
+      "Einheit": "Unit",
+      "Objekt": "Property",
+      "Bezeichnung": "Description",
+      "Art": "Type",
+      "Nummer": "Number",
+      "Ausgabe": "Ausgabe an",
+      "Ausgabedatum": "Ausgabedatum",
+      "Unterschrift": "Signature",
+      "Nummernkreis": "Numbernkreis",
+      "Team": "Team"
+    }
+  },
+  "fields": [
+    {
+      "name": "ID",
+      "type": 3,
+      "index": 1,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "number",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "AutoInc": true,
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Raum",
+      "type": 3,
+      "index": 2,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Raeume",
+        "autoCompleteFieldsOnEdit": 1,
+        "LCType": 2,
+        "LinkField": "ID",
+        "LinkFieldType": 0,
+        "DisplayField": "Bezeichnung",
+        "LookupOrderBy": "Bezeichnung",
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Bezeichnung",
+      "type": 200,
+      "index": 3,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Art",
+      "type": 200,
+      "index": 4,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 0,
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 0,
+        "SelectSize": 1,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Nummer",
+      "type": 200,
+      "index": 5,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Ausgabe",
+      "type": 3,
+      "index": 6,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Adressen",
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 2,
+        "LinkField": "ID",
+        "LinkFieldType": 0,
+        "DisplayField": "Kurzname",
+        "LookupOrderBy": "Kurzname",
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Ausgabedatum",
+      "type": 7,
+      "index": 7,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "DateEditType": 13,
+        "InitialYearFactor": 10,
+        "LastYearFactor": 10,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Einheit",
+      "type": 200,
+      "index": 8,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Objekt",
+      "type": 200,
+      "index": 9,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Unterschrift",
+      "type": 200,
+      "index": 10,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "ImageWidth": 457,
+        "ImageHeight": 0
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Nummernkreis",
+      "type": 200,
+      "index": 11,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "fieldEvents": [
+          null
+        ],
+        "LookupType": 2,
+        "LookupTable": "Seriennummern",
+        "autoCompleteFieldsOnEdit": 1,
+        "LCType": 0,
+        "LinkField": "ID",
+        "LinkFieldType": 0,
+        "DisplayField": "Nummernkreis",
+        "LookupOrderBy": "Nummernkreis",
+        "SelectSize": 1,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Team",
+      "type": 200,
+      "index": 12,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    }
+  ]
 }

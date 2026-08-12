@@ -1,2209 +1,2271 @@
 {
- "entity": "Abrechnungsbericht",
- "shortName": "Abrechnungsbericht",
- "baseTable": "Kosten",
- "isVirtual": true,
- "ownerField": "Team",
- "sql": {
-  "strOrderBy": "ORDER BY Kosten.Bezeichnung",
-  "sqlHead": "SELECT @tage := datediff(Abrechnungskonten.Bis,Abrechnungskonten.Von)+1 AS Tage,  @gesamttage := datediff(Abrechnungen.Bis,Abrechnungen.Von)+1 AS Gesamttage,  Kosten.Bezeichnung,  Kosten.Betrag,  Kosten.Umlageart,  Kosten.Art,  Abrechnungen.ID AS Abrechnung,  Abrechnungen.Von AS Abrechnung_Von,  Abrechnungen.Bis AS Abrechnung_Bis,  Abrechnungskonten.ID AS Abrechnungskonto,  @qmanteil:=(Abrechnungskonten.Quadratmeter*@tage)/(Abrechnungen.Quadratmeter*@gesamttage/100) AS QM_Anteil,  @ehanteil:=(1*@tage)/(Abrechnungen.Einheiten*(@gesamttage)/100) AS Einheiten_Anteil,  @qmanteil2:=(Abrechnungskonten.Quadratmeter2*@tage)/(Abrechnungen.Quadratmeter2*@gesamttage/100) AS QM_Anteil2,  @ehanteil2:=(Abrechnungskonten.Einheiten2*@tage)/(Abrechnungen.Einheiten2*@gesamttage/100) AS Einheiten_Anteil2,  @meaanteil:=(Abrechnungskonten.Miteigentumsanteil*@tage)/(Abrechnungen.Miteigentumsanteile*@gesamttage/100) AS MEA_Anteil,  @meaanteil2:=(Abrechnungskonten.Miteigentumsanteil2*@tage)/(Abrechnungen.Miteigentumsanteile2*@gesamttage/100) AS MEA_Anteil2,  @wsanteil:=(Abrechnungskonten.Wasserverbrauch)/(Abrechnungen.Wasserverbrauch/100) AS Wasserverbrauch_Anteil,  @muanteil:=(Abrechnungskonten.Muellverbrauch*@tage)/(Abrechnungen.Muellverbrauch*@gesamttage/100) AS Muellverbrauch_Anteil,  @stromanteil:=(Abrechnungskonten.Stromverbrauch*@tage)/(Abrechnungen.Stromverbrauch*@gesamttage/100) AS Stromverbrauch_Anteil,  @peanteil:=(Abrechnungskonten.Personen*@tage)/(Abrechnungen.Personen*@gesamttage/100) AS Personen_Anteil,  @anteil:=CASE  WHEN Kosten.Umlageart = 'Quadratmeter'  \t\t\t\t THEN ROUND((Kosten.Betrag * @qmanteil/ 100), 2)  WHEN Kosten.Umlageart = 'Einheiten'          THEN ROUND((Kosten.Betrag * @ehanteil / 100), 2)  WHEN Kosten.Umlageart = 'Quadratmeter 2'          THEN ROUND((Kosten.Betrag * @qmanteil2 / 100), 2)  WHEN Kosten.Umlageart = 'Einheiten 2'          THEN ROUND((Kosten.Betrag * @ehanteil2 / 100), 2)  WHEN Kosten.Umlageart = 'Wasserverbrauch'          THEN ROUND((Kosten.Betrag * @wsanteil / 100), 2)  WHEN Kosten.Umlageart = 'Müllverbrauch'          THEN ROUND((Kosten.Betrag * @muanteil / 100), 2)  WHEN Kosten.Umlageart = 'Stromverbrauch'          THEN ROUND((Kosten.Betrag * @stromanteil / 100), 2)  WHEN Kosten.Umlageart = 'Miteigentumsanteile'          THEN ROUND((Kosten.Betrag * @meaanteil / 100), 2)  WHEN Kosten.Umlageart = 'Miteigentumsanteile 2'          THEN ROUND((Kosten.Betrag * @meaanteil2 / 100), 2)  WHEN Kosten.Umlageart = 'Personen'          THEN ROUND((Kosten.Betrag * @peanteil / 100), 2)  WHEN Kosten.Art = 'Direkte Kosten' AND Kosten.Abrechnungskonto = Abrechnungskonten.ID          THEN Kosten.Betrag * 1  WHEN Kosten.Art = 'Vorauszahlungen' AND Kosten.Abrechnungskonto = Abrechnungskonten.ID          THEN Kosten.Betrag * - 1  WHEN Kosten.Art = 'Rücklage Forderungen' AND Kosten.Abrechnungskonto = Abrechnungskonten.ID          THEN Kosten.Betrag * 1  WHEN Kosten.Art = 'Rücklage Zahlungen' AND Kosten.Abrechnungskonto = Abrechnungskonten.ID          THEN Kosten.Betrag * - 1  END AS Anteil,  @gqm:=`Abrechnungen`.`Quadratmeter` AS Gesamt_Quadratmeter,  @geh:=`Abrechnungen`.`Einheiten` AS Gesamt_Einheiten,  Abrechnungskonten.Von,  Abrechnungskonten.Bis,  @qm:=`Abrechnungskonten`.`Quadratmeter` AS Quadratmeter,  Abrechnungskonten.Anschrift,  @gpe:=`Abrechnungen`.`Personen` AS Personenschnitt,  @pe:=`Abrechnungskonten`.`Personen` AS Personen,  @gws:=`Abrechnungen`.`Wasserverbrauch` AS Gesamt_Wasser,  @gmu:=`Abrechnungen`.`Muellverbrauch` AS Gesamt_Muell,  @gstrom:=`Abrechnungen`.`Stromverbrauch` AS Gesamt_Strom,  @ws:=`Abrechnungskonten`.`Wasserverbrauch`,  @mu:=`Abrechnungskonten`.`Muellverbrauch`,  @strom:=`Abrechnungskonten`.`Stromverbrauch`,  @geh2:=`Abrechnungen`.`Einheiten2` AS Gesamt_Einheiten2,  @gqm2:=`Abrechnungen`.`Quadratmeter2` AS Gesamt_Quadratmeter2,  @eh2:=`Abrechnungskonten`.`Einheiten2` AS Einheiten2,  @qm2:=`Abrechnungskonten`.`Quadratmeter2` AS Quadratmeter2,  @mea:=`Abrechnungskonten`.`Miteigentumsanteil`,  @gmea:=`Abrechnungen`.`Miteigentumsanteile`,  @mea2:=`Abrechnungskonten`.`Miteigentumsanteil2`,  @gmea2:=`Abrechnungen`.`Miteigentumsanteile2`,  Abrechnungen.Anmerkungen,  Abrechnungskonten.Anmerkungen AS Anmerkungen1,  Abrechnungskonten.Zaehlerinfo,  Abrechnungskonten.Anpassung,  Abrechnungskonten.Neuemiete,  @QMFormel:=Concat(\"<tr><td>Quadratmeter</td><td>(\",@qm,\" QM * \",@tage,\" Tage) / (\",@gqm,\" Gesamt-QM * \",@gesamttage,\" Gesamt-Tage)</td><td align='right'> \",round(@qmanteil,2),\" %</td></tr>\") AS QMFormel,  @EHFormel:=Concat(\"<tr><td>Einheiten</td><td>(1 Einheit * \",@tage,\" Tage) / (\",@geh,\" Gesamt-Einheiten * \",@gesamttage,\" Gesamt-Tage)</td><td align='right'> \",round(@ehanteil,2),\" %</td></tr>\") AS EhFormel,  @PEFormel:=if(@gpe is not null,Concat(\"<tr><td>Personen</td><td>(\",@pe,\" Personen * \",@tage,\" Tage) / (\",@gpe,\" Gesamt-Personen * \",@gesamttage,\" Gesamt-Tage)</td><td align='right'> \",round(@peanteil,2),\" %</td></tr>\"),\"\") AS PEFormel,  @WSFormel:=if(@gws is not null,Concat(\"<tr><td>Wasser</td><td>(\",@ws,\" m3 Wasserverbrauch)  / (\",@gws,\" m3 Gesamt-Wasserverbrauch)</td><td align='right'> \",round(@wsanteil,2),\" %</td></tr>\"),\"\") AS WSFormel,  @MUFormel:=if(@gmu is not null,Concat(\"<tr><td>Müll</td><td>(\",@mu,\" Müllverbrauch * \",@tage,\" Tage) / (\",@gmu,\" Gesamt-Müllverbrauch * \",@gesamttage,\" Gesamt-Tage)</td><td align='right'> \",round(@muanteil,2),\" %</td></tr>\"),\"\") AS MUFormel,  @StromFormel:=if(@gstrom is not null,Concat(\"<tr><td>Müll</td><td>(\",@strom,\" Stromverbrauch * \",@tage,\" Tage) / (\",@gmu,\" Gesamt-Stromverbrauch * \",@gesamttage,\" Gesamt-Tage)</td><td align='right'> \",round(@stromanteil,2),\" %</td></tr>\"),\"\") AS StromFormel,  @QMFormel2:=if(@gqm2 is not null,Concat(\"<tr><td>Quadratmeter2</td><td>(\",@qm2,\" QM * \",@tage,\" Tage) / (\",@gqm2,\" Gesamt-QM * \",@gesamttage,\" Gesamt-Tage)</td><td align='right'> \",round(@qmanteil2,2),\" %</td></tr>\"),\"\") AS QMFormel2,  @EHFormel2:=if(@geh2 is not null,Concat(\"<tr><td>Einheiten2</td><td>(\",@eh2 ,\" Einheit * \",@tage,\" Tage) / (\",@geh2,\" Gesamt-Einheiten * \",@gesamttage,\" Gesamt-Tage)</td><td align='right'> \",round(@ehanteil2,2),\" %</td></tr>\"),\"\") AS EhFormel2,  @MEAFormel:=if(@gmea is not null,Concat(\"<tr><td>MEA</td><td>(\",@mea ,\" Eigentumsanteile * \",@tage,\" Tage) / (\",@gmea,\" Gesamt-Eigentumsanteile * \",@gesamttage,\" Gesamt-Tage)</td><td align='right'> \",round(@meaanteil,2),\" %</td></tr>\"),\"\") AS MEAFormel,  @MEAFormel2:=if(@gmea2 is not null,Concat(\"<tr><td>MEA2</td><td>(\",@mea2 ,\" Eigentumsanteile * \",@tage,\" Tage) / (\",@gmea2,\" Gesamt-Eigentumsanteile * \",@gesamttage,\" Gesamt-Tage)</td><td align='right'> \",round(@meaanteil2,2),\" %</td></tr>\"),\"\") AS MEAFormel2,  Concat(\"<table style='white-space: normal; background-color: rgb(255, 255, 255); font-size:80% !important;' ><tr><td>Umlageart</td><td>Berechnung</td><td align='right'>Anteil</td></tr>\", coalesce(@QMFormel,\"\"), coalesce(@EHFormel,\"\"), coalesce(@PEFormel,\"\"), coalesce(@WSFormel,\"\"), coalesce(@MUFormel,\"\"), coalesce(@StromFormel,\"\"), coalesce(@QMFormel2,\"\"), coalesce(@EhFormel2,\"\"), coalesce(@MEAFormel,\"\"), coalesce(@MEAFormel2,\"\"), \"</table>\") AS Umlagefaktoren,  Kosten.Team",
-  "sqlFrom": "FROM Kosten  LEFT OUTER JOIN Abrechnungen ON Kosten.Abrechnung = Abrechnungen.ID  INNER JOIN Abrechnungskonten ON Abrechnungen.ID = Abrechnungskonten.Abrechnung",
-  "sqlWhere": "",
-  "sqlTail": ""
- },
- "keys": [],
- "pageSize": 1,
- "capabilities": {
-  "list": true,
-  "view": true,
-  "add": true,
-  "edit": true,
-  "export": true,
-  "print": true,
-  "search": true,
-  "masterList": true
- },
- "fieldSets": {
-  "list": [
-   "Tage",
-   "Gesamttage",
-   "Bezeichnung",
-   "Betrag",
-   "Umlageart",
-   "Art",
-   "Abrechnung",
-   "Abrechnung_Von",
-   "Abrechnung_Bis",
-   "Abrechnungskonto",
-   "QM_Anteil",
-   "Einheiten_Anteil",
-   "QM_Anteil2",
-   "Einheiten_Anteil2",
-   "MEA_Anteil",
-   "MEA_Anteil2",
-   "Wasserverbrauch_Anteil",
-   "Muellverbrauch_Anteil",
-   "Stromverbrauch_Anteil",
-   "Personen_Anteil",
-   "Anteil",
-   "Gesamt_Quadratmeter",
-   "Gesamt_Einheiten",
-   "Von",
-   "Bis",
-   "Quadratmeter",
-   "Anschrift",
-   "Personenschnitt",
-   "Personen",
-   "Gesamt_Wasser",
-   "Gesamt_Muell",
-   "Gesamt_Strom",
-   "@ws:=`Abrechnungskonten`.`Wasserverbrauch`",
-   "@mu:=`Abrechnungskonten`.`Muellverbrauch`",
-   "@strom:=`Abrechnungskonten`.`Stromverbrauch`",
-   "Gesamt_Einheiten2",
-   "Gesamt_Quadratmeter2",
-   "Einheiten2",
-   "Quadratmeter2",
-   "@mea:=`Abrechnungskonten`.`Miteigentumsanteil`",
-   "@gmea:=`Abrechnungen`.`Miteigentumsanteile`",
-   "@mea2:=`Abrechnungskonten`.`Miteigentumsanteil2`",
-   "@gmea2:=`Abrechnungen`.`Miteigentumsanteile2`",
-   "Anmerkungen",
-   "Anmerkungen1",
-   "Zaehlerinfo",
-   "Anpassung",
-   "Neuemiete",
-   "QMFormel",
-   "EhFormel",
-   "PEFormel",
-   "WSFormel",
-   "MUFormel",
-   "StromFormel",
-   "QMFormel2",
-   "EhFormel2",
-   "MEAFormel",
-   "MEAFormel2",
-   "Umlagefaktoren",
-   "Team"
-  ],
-  "view": [
-   "Tage",
-   "Gesamttage",
-   "Bezeichnung",
-   "Betrag",
-   "Umlageart",
-   "Art",
-   "Abrechnung",
-   "Abrechnung_Von",
-   "Abrechnung_Bis",
-   "Abrechnungskonto",
-   "QM_Anteil",
-   "Einheiten_Anteil",
-   "QM_Anteil2",
-   "Einheiten_Anteil2",
-   "MEA_Anteil",
-   "MEA_Anteil2",
-   "Wasserverbrauch_Anteil",
-   "Muellverbrauch_Anteil",
-   "Stromverbrauch_Anteil",
-   "Personen_Anteil",
-   "Anteil",
-   "Gesamt_Quadratmeter",
-   "Gesamt_Einheiten",
-   "Von",
-   "Bis",
-   "Quadratmeter",
-   "Anschrift",
-   "Personenschnitt",
-   "Personen",
-   "Gesamt_Wasser",
-   "Gesamt_Muell",
-   "Gesamt_Strom",
-   "@ws:=`Abrechnungskonten`.`Wasserverbrauch`",
-   "@mu:=`Abrechnungskonten`.`Muellverbrauch`",
-   "@strom:=`Abrechnungskonten`.`Stromverbrauch`",
-   "Gesamt_Einheiten2",
-   "Gesamt_Quadratmeter2",
-   "Einheiten2",
-   "Quadratmeter2",
-   "@mea:=`Abrechnungskonten`.`Miteigentumsanteil`",
-   "@gmea:=`Abrechnungen`.`Miteigentumsanteile`",
-   "@mea2:=`Abrechnungskonten`.`Miteigentumsanteil2`",
-   "@gmea2:=`Abrechnungen`.`Miteigentumsanteile2`",
-   "Anmerkungen",
-   "Anmerkungen1",
-   "Zaehlerinfo",
-   "Anpassung",
-   "Neuemiete",
-   "QMFormel",
-   "EhFormel",
-   "PEFormel",
-   "WSFormel",
-   "MUFormel",
-   "StromFormel",
-   "QMFormel2",
-   "EhFormel2",
-   "MEAFormel",
-   "MEAFormel2",
-   "Umlagefaktoren",
-   "Team"
-  ],
-  "add": [
-   "Bezeichnung",
-   "Betrag",
-   "Umlageart",
-   "Art",
-   "Abrechnung"
-  ],
-  "edit": [
-   "Bezeichnung",
-   "Betrag",
-   "Umlageart",
-   "Art",
-   "Abrechnung",
-   "Team"
-  ],
-  "export": [
-   "Tage",
-   "Gesamttage",
-   "Bezeichnung",
-   "Betrag",
-   "Umlageart",
-   "Art",
-   "Abrechnung",
-   "Abrechnung_Von",
-   "Abrechnung_Bis",
-   "Abrechnungskonto",
-   "QM_Anteil",
-   "Einheiten_Anteil",
-   "QM_Anteil2",
-   "Einheiten_Anteil2",
-   "MEA_Anteil",
-   "MEA_Anteil2",
-   "Wasserverbrauch_Anteil",
-   "Muellverbrauch_Anteil",
-   "Stromverbrauch_Anteil",
-   "Personen_Anteil",
-   "Anteil",
-   "Gesamt_Quadratmeter",
-   "Gesamt_Einheiten",
-   "Von",
-   "Bis",
-   "Quadratmeter",
-   "Anschrift",
-   "Personenschnitt",
-   "Personen",
-   "Gesamt_Wasser",
-   "Gesamt_Muell",
-   "Gesamt_Strom",
-   "@ws:=`Abrechnungskonten`.`Wasserverbrauch`",
-   "@mu:=`Abrechnungskonten`.`Muellverbrauch`",
-   "@strom:=`Abrechnungskonten`.`Stromverbrauch`",
-   "Gesamt_Einheiten2",
-   "Gesamt_Quadratmeter2",
-   "Einheiten2",
-   "Quadratmeter2",
-   "@mea:=`Abrechnungskonten`.`Miteigentumsanteil`",
-   "@gmea:=`Abrechnungen`.`Miteigentumsanteile`",
-   "@mea2:=`Abrechnungskonten`.`Miteigentumsanteil2`",
-   "@gmea2:=`Abrechnungen`.`Miteigentumsanteile2`",
-   "Anmerkungen",
-   "Anmerkungen1",
-   "Zaehlerinfo",
-   "Anpassung",
-   "Neuemiete",
-   "QMFormel",
-   "EhFormel",
-   "PEFormel",
-   "WSFormel",
-   "MUFormel",
-   "StromFormel",
-   "QMFormel2",
-   "EhFormel2",
-   "MEAFormel",
-   "MEAFormel2",
-   "Umlagefaktoren",
-   "Team"
-  ],
-  "print": [
-   "Tage",
-   "Gesamttage",
-   "Bezeichnung",
-   "Betrag",
-   "Umlageart",
-   "Art",
-   "Abrechnung",
-   "Abrechnung_Von",
-   "Abrechnung_Bis",
-   "Abrechnungskonto",
-   "QM_Anteil",
-   "Einheiten_Anteil",
-   "QM_Anteil2",
-   "Einheiten_Anteil2",
-   "MEA_Anteil",
-   "MEA_Anteil2",
-   "Wasserverbrauch_Anteil",
-   "Muellverbrauch_Anteil",
-   "Stromverbrauch_Anteil",
-   "Personen_Anteil",
-   "Anteil",
-   "Gesamt_Quadratmeter",
-   "Gesamt_Einheiten",
-   "Von",
-   "Bis",
-   "Quadratmeter",
-   "Anschrift",
-   "Personenschnitt",
-   "Personen",
-   "Gesamt_Wasser",
-   "Gesamt_Muell",
-   "Gesamt_Strom",
-   "@ws:=`Abrechnungskonten`.`Wasserverbrauch`",
-   "@mu:=`Abrechnungskonten`.`Muellverbrauch`",
-   "@strom:=`Abrechnungskonten`.`Stromverbrauch`",
-   "Gesamt_Einheiten2",
-   "Gesamt_Quadratmeter2",
-   "Einheiten2",
-   "Quadratmeter2",
-   "@mea:=`Abrechnungskonten`.`Miteigentumsanteil`",
-   "@gmea:=`Abrechnungen`.`Miteigentumsanteile`",
-   "@mea2:=`Abrechnungskonten`.`Miteigentumsanteil2`",
-   "@gmea2:=`Abrechnungen`.`Miteigentumsanteile2`",
-   "Anmerkungen",
-   "Anmerkungen1",
-   "Zaehlerinfo",
-   "Anpassung",
-   "Neuemiete",
-   "QMFormel",
-   "EhFormel",
-   "PEFormel",
-   "WSFormel",
-   "MUFormel",
-   "StromFormel",
-   "QMFormel2",
-   "EhFormel2",
-   "MEAFormel",
-   "MEAFormel2",
-   "Umlagefaktoren",
-   "Team"
-  ],
-  "search": [
-   "Tage",
-   "Gesamttage",
-   "Bezeichnung",
-   "Betrag",
-   "Umlageart",
-   "Art",
-   "Abrechnung",
-   "Abrechnung_Von",
-   "Abrechnung_Bis",
-   "Abrechnungskonto",
-   "QM_Anteil",
-   "Einheiten_Anteil",
-   "QM_Anteil2",
-   "Einheiten_Anteil2",
-   "MEA_Anteil",
-   "MEA_Anteil2",
-   "Wasserverbrauch_Anteil",
-   "Muellverbrauch_Anteil",
-   "Stromverbrauch_Anteil",
-   "Personen_Anteil",
-   "Anteil",
-   "Gesamt_Quadratmeter",
-   "Gesamt_Einheiten",
-   "Von",
-   "Bis",
-   "Quadratmeter",
-   "Anschrift",
-   "Personenschnitt",
-   "Personen",
-   "Gesamt_Wasser",
-   "Gesamt_Muell",
-   "Gesamt_Strom",
-   "@ws:=`Abrechnungskonten`.`Wasserverbrauch`",
-   "@mu:=`Abrechnungskonten`.`Muellverbrauch`",
-   "@strom:=`Abrechnungskonten`.`Stromverbrauch`",
-   "Gesamt_Einheiten2",
-   "Gesamt_Quadratmeter2",
-   "Einheiten2",
-   "Quadratmeter2",
-   "@mea:=`Abrechnungskonten`.`Miteigentumsanteil`",
-   "@gmea:=`Abrechnungen`.`Miteigentumsanteile`",
-   "@mea2:=`Abrechnungskonten`.`Miteigentumsanteil2`",
-   "@gmea2:=`Abrechnungen`.`Miteigentumsanteile2`",
-   "Anmerkungen",
-   "Anmerkungen1",
-   "Zaehlerinfo",
-   "Anpassung",
-   "Neuemiete",
-   "QMFormel",
-   "EhFormel",
-   "PEFormel",
-   "WSFormel",
-   "MUFormel",
-   "StromFormel",
-   "QMFormel2",
-   "EhFormel2",
-   "MEAFormel",
-   "MEAFormel2",
-   "Umlagefaktoren"
-  ],
-  "masterList": [
-   "Tage",
-   "Gesamttage",
-   "Bezeichnung",
-   "Betrag",
-   "Umlageart",
-   "Art",
-   "Abrechnung",
-   "Abrechnung_Von",
-   "Abrechnung_Bis",
-   "Abrechnungskonto",
-   "QM_Anteil",
-   "Einheiten_Anteil",
-   "QM_Anteil2",
-   "Einheiten_Anteil2",
-   "MEA_Anteil",
-   "MEA_Anteil2",
-   "Wasserverbrauch_Anteil",
-   "Muellverbrauch_Anteil",
-   "Stromverbrauch_Anteil",
-   "Personen_Anteil",
-   "Anteil",
-   "Gesamt_Quadratmeter",
-   "Gesamt_Einheiten",
-   "Von",
-   "Bis",
-   "Quadratmeter",
-   "Anschrift",
-   "Personenschnitt",
-   "Personen",
-   "Gesamt_Wasser",
-   "Gesamt_Muell",
-   "Gesamt_Strom",
-   "@ws:=`Abrechnungskonten`.`Wasserverbrauch`",
-   "@mu:=`Abrechnungskonten`.`Muellverbrauch`",
-   "@strom:=`Abrechnungskonten`.`Stromverbrauch`",
-   "Gesamt_Einheiten2",
-   "Gesamt_Quadratmeter2",
-   "Einheiten2",
-   "Quadratmeter2",
-   "@mea:=`Abrechnungskonten`.`Miteigentumsanteil`",
-   "@gmea:=`Abrechnungen`.`Miteigentumsanteile`",
-   "@mea2:=`Abrechnungskonten`.`Miteigentumsanteil2`",
-   "@gmea2:=`Abrechnungen`.`Miteigentumsanteile2`",
-   "Anmerkungen",
-   "Anmerkungen1",
-   "Zaehlerinfo",
-   "Anpassung",
-   "Neuemiete",
-   "QMFormel",
-   "EhFormel",
-   "PEFormel",
-   "WSFormel",
-   "MUFormel",
-   "StromFormel",
-   "QMFormel2",
-   "EhFormel2",
-   "MEAFormel",
-   "MEAFormel2",
-   "Umlagefaktoren",
-   "Team"
+  "entity": "Abrechnungsbericht",
+  "shortName": "Abrechnungsbericht",
+  "baseTable": "Kosten",
+  "isVirtual": true,
+  "ownerField": "Team",
+  "sql": {
+    "strOrderBy": "ORDER BY Kosten.Bezeichnung",
+    "sqlHead": "SELECT @tage := datediff(Abrechnungskonten.Bis,Abrechnungskonten.Von)+1 AS Tage,  @gesamttage := datediff(Abrechnungen.Bis,Abrechnungen.Von)+1 AS Gesamttage,  Kosten.Bezeichnung,  Kosten.Betrag,  Kosten.Umlageart,  Kosten.Art,  Abrechnungen.ID AS Abrechnung,  Abrechnungen.Von AS Abrechnung_Von,  Abrechnungen.Bis AS Abrechnung_Bis,  Abrechnungskonten.ID AS Abrechnungskonto,  @qmanteil:=(Abrechnungskonten.Quadratmeter*@tage)/(Abrechnungen.Quadratmeter*@gesamttage/100) AS QM_Anteil,  @ehanteil:=(1*@tage)/(Abrechnungen.Einheiten*(@gesamttage)/100) AS Einheiten_Anteil,  @qmanteil2:=(Abrechnungskonten.Quadratmeter2*@tage)/(Abrechnungen.Quadratmeter2*@gesamttage/100) AS QM_Anteil2,  @ehanteil2:=(Abrechnungskonten.Einheiten2*@tage)/(Abrechnungen.Einheiten2*@gesamttage/100) AS Einheiten_Anteil2,  @meaanteil:=(Abrechnungskonten.Miteigentumsanteil*@tage)/(Abrechnungen.Miteigentumsanteile*@gesamttage/100) AS MEA_Anteil,  @meaanteil2:=(Abrechnungskonten.Miteigentumsanteil2*@tage)/(Abrechnungen.Miteigentumsanteile2*@gesamttage/100) AS MEA_Anteil2,  @wsanteil:=(Abrechnungskonten.Wasserverbrauch)/(Abrechnungen.Wasserverbrauch/100) AS Wasserverbrauch_Anteil,  @muanteil:=(Abrechnungskonten.Muellverbrauch*@tage)/(Abrechnungen.Muellverbrauch*@gesamttage/100) AS Muellverbrauch_Anteil,  @stromanteil:=(Abrechnungskonten.Stromverbrauch*@tage)/(Abrechnungen.Stromverbrauch*@gesamttage/100) AS Stromverbrauch_Anteil,  @peanteil:=(Abrechnungskonten.Personen*@tage)/(Abrechnungen.Personen*@gesamttage/100) AS Personen_Anteil,  @anteil:=CASE  WHEN Kosten.Umlageart = 'Quadratmeter'  \t\t\t\t THEN ROUND((Kosten.Betrag * @qmanteil/ 100), 2)  WHEN Kosten.Umlageart = 'Einheiten'          THEN ROUND((Kosten.Betrag * @ehanteil / 100), 2)  WHEN Kosten.Umlageart = 'Quadratmeter 2'          THEN ROUND((Kosten.Betrag * @qmanteil2 / 100), 2)  WHEN Kosten.Umlageart = 'Einheiten 2'          THEN ROUND((Kosten.Betrag * @ehanteil2 / 100), 2)  WHEN Kosten.Umlageart = 'Wasserverbrauch'          THEN ROUND((Kosten.Betrag * @wsanteil / 100), 2)  WHEN Kosten.Umlageart = 'Müllverbrauch'          THEN ROUND((Kosten.Betrag * @muanteil / 100), 2)  WHEN Kosten.Umlageart = 'Stromverbrauch'          THEN ROUND((Kosten.Betrag * @stromanteil / 100), 2)  WHEN Kosten.Umlageart = 'Miteigentumsanteile'          THEN ROUND((Kosten.Betrag * @meaanteil / 100), 2)  WHEN Kosten.Umlageart = 'Miteigentumsanteile 2'          THEN ROUND((Kosten.Betrag * @meaanteil2 / 100), 2)  WHEN Kosten.Umlageart = 'Personen'          THEN ROUND((Kosten.Betrag * @peanteil / 100), 2)  WHEN Kosten.Art = 'Direkte Kosten' AND Kosten.Abrechnungskonto = Abrechnungskonten.ID          THEN Kosten.Betrag * 1  WHEN Kosten.Art = 'Vorauszahlungen' AND Kosten.Abrechnungskonto = Abrechnungskonten.ID          THEN Kosten.Betrag * - 1  WHEN Kosten.Art = 'Rücklage Forderungen' AND Kosten.Abrechnungskonto = Abrechnungskonten.ID          THEN Kosten.Betrag * 1  WHEN Kosten.Art = 'Rücklage Zahlungen' AND Kosten.Abrechnungskonto = Abrechnungskonten.ID          THEN Kosten.Betrag * - 1  END AS Anteil,  @gqm:=`Abrechnungen`.`Quadratmeter` AS Gesamt_Quadratmeter,  @geh:=`Abrechnungen`.`Einheiten` AS Gesamt_Einheiten,  Abrechnungskonten.Von,  Abrechnungskonten.Bis,  @qm:=`Abrechnungskonten`.`Quadratmeter` AS Quadratmeter,  Abrechnungskonten.Anschrift,  @gpe:=`Abrechnungen`.`Personen` AS Personenschnitt,  @pe:=`Abrechnungskonten`.`Personen` AS Personen,  @gws:=`Abrechnungen`.`Wasserverbrauch` AS Gesamt_Wasser,  @gmu:=`Abrechnungen`.`Muellverbrauch` AS Gesamt_Muell,  @gstrom:=`Abrechnungen`.`Stromverbrauch` AS Gesamt_Strom,  @ws:=`Abrechnungskonten`.`Wasserverbrauch`,  @mu:=`Abrechnungskonten`.`Muellverbrauch`,  @strom:=`Abrechnungskonten`.`Stromverbrauch`,  @geh2:=`Abrechnungen`.`Einheiten2` AS Gesamt_Einheiten2,  @gqm2:=`Abrechnungen`.`Quadratmeter2` AS Gesamt_Quadratmeter2,  @eh2:=`Abrechnungskonten`.`Einheiten2` AS Einheiten2,  @qm2:=`Abrechnungskonten`.`Quadratmeter2` AS Quadratmeter2,  @mea:=`Abrechnungskonten`.`Miteigentumsanteil`,  @gmea:=`Abrechnungen`.`Miteigentumsanteile`,  @mea2:=`Abrechnungskonten`.`Miteigentumsanteil2`,  @gmea2:=`Abrechnungen`.`Miteigentumsanteile2`,  Abrechnungen.Anmerkungen,  Abrechnungskonten.Anmerkungen AS Anmerkungen1,  Abrechnungskonten.Zaehlerinfo,  Abrechnungskonten.Anpassung,  Abrechnungskonten.Neuemiete,  @QMFormel:=Concat(\"<tr><td>Quadratmeter</td><td>(\",@qm,\" QM * \",@tage,\" Tage) / (\",@gqm,\" Gesamt-QM * \",@gesamttage,\" Gesamt-Tage)</td><td align='right'> \",round(@qmanteil,2),\" %</td></tr>\") AS QMFormel,  @EHFormel:=Concat(\"<tr><td>Einheiten</td><td>(1 Einheit * \",@tage,\" Tage) / (\",@geh,\" Gesamt-Einheiten * \",@gesamttage,\" Gesamt-Tage)</td><td align='right'> \",round(@ehanteil,2),\" %</td></tr>\") AS EhFormel,  @PEFormel:=if(@gpe is not null,Concat(\"<tr><td>Personen</td><td>(\",@pe,\" Personen * \",@tage,\" Tage) / (\",@gpe,\" Gesamt-Personen * \",@gesamttage,\" Gesamt-Tage)</td><td align='right'> \",round(@peanteil,2),\" %</td></tr>\"),\"\") AS PEFormel,  @WSFormel:=if(@gws is not null,Concat(\"<tr><td>Wasser</td><td>(\",@ws,\" m3 Wasserverbrauch)  / (\",@gws,\" m3 Gesamt-Wasserverbrauch)</td><td align='right'> \",round(@wsanteil,2),\" %</td></tr>\"),\"\") AS WSFormel,  @MUFormel:=if(@gmu is not null,Concat(\"<tr><td>Müll</td><td>(\",@mu,\" Müllverbrauch * \",@tage,\" Tage) / (\",@gmu,\" Gesamt-Müllverbrauch * \",@gesamttage,\" Gesamt-Tage)</td><td align='right'> \",round(@muanteil,2),\" %</td></tr>\"),\"\") AS MUFormel,  @StromFormel:=if(@gstrom is not null,Concat(\"<tr><td>Müll</td><td>(\",@strom,\" Stromverbrauch * \",@tage,\" Tage) / (\",@gmu,\" Gesamt-Stromverbrauch * \",@gesamttage,\" Gesamt-Tage)</td><td align='right'> \",round(@stromanteil,2),\" %</td></tr>\"),\"\") AS StromFormel,  @QMFormel2:=if(@gqm2 is not null,Concat(\"<tr><td>Quadratmeter2</td><td>(\",@qm2,\" QM * \",@tage,\" Tage) / (\",@gqm2,\" Gesamt-QM * \",@gesamttage,\" Gesamt-Tage)</td><td align='right'> \",round(@qmanteil2,2),\" %</td></tr>\"),\"\") AS QMFormel2,  @EHFormel2:=if(@geh2 is not null,Concat(\"<tr><td>Einheiten2</td><td>(\",@eh2 ,\" Einheit * \",@tage,\" Tage) / (\",@geh2,\" Gesamt-Einheiten * \",@gesamttage,\" Gesamt-Tage)</td><td align='right'> \",round(@ehanteil2,2),\" %</td></tr>\"),\"\") AS EhFormel2,  @MEAFormel:=if(@gmea is not null,Concat(\"<tr><td>MEA</td><td>(\",@mea ,\" Eigentumsanteile * \",@tage,\" Tage) / (\",@gmea,\" Gesamt-Eigentumsanteile * \",@gesamttage,\" Gesamt-Tage)</td><td align='right'> \",round(@meaanteil,2),\" %</td></tr>\"),\"\") AS MEAFormel,  @MEAFormel2:=if(@gmea2 is not null,Concat(\"<tr><td>MEA2</td><td>(\",@mea2 ,\" Eigentumsanteile * \",@tage,\" Tage) / (\",@gmea2,\" Gesamt-Eigentumsanteile * \",@gesamttage,\" Gesamt-Tage)</td><td align='right'> \",round(@meaanteil2,2),\" %</td></tr>\"),\"\") AS MEAFormel2,  Concat(\"<table style='white-space: normal; background-color: rgb(255, 255, 255); font-size:80% !important;' ><tr><td>Umlageart</td><td>Berechnung</td><td align='right'>Anteil</td></tr>\", coalesce(@QMFormel,\"\"), coalesce(@EHFormel,\"\"), coalesce(@PEFormel,\"\"), coalesce(@WSFormel,\"\"), coalesce(@MUFormel,\"\"), coalesce(@StromFormel,\"\"), coalesce(@QMFormel2,\"\"), coalesce(@EhFormel2,\"\"), coalesce(@MEAFormel,\"\"), coalesce(@MEAFormel2,\"\"), \"</table>\") AS Umlagefaktoren,  Kosten.Team",
+    "sqlFrom": "FROM Kosten  LEFT OUTER JOIN Abrechnungen ON Kosten.Abrechnung = Abrechnungen.ID  INNER JOIN Abrechnungskonten ON Abrechnungen.ID = Abrechnungskonten.Abrechnung",
+    "sqlWhere": "",
+    "sqlTail": ""
+  },
+  "keys": [],
+  "pageSize": 1,
+  "capabilities": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+  },
+  "fieldSets": {
+    "list": [
+      "Tage",
+      "Gesamttage",
+      "Bezeichnung",
+      "Betrag",
+      "Umlageart",
+      "Art",
+      "Abrechnung",
+      "Abrechnung_Von",
+      "Abrechnung_Bis",
+      "Abrechnungskonto",
+      "QM_Anteil",
+      "Einheiten_Anteil",
+      "QM_Anteil2",
+      "Einheiten_Anteil2",
+      "MEA_Anteil",
+      "MEA_Anteil2",
+      "Wasserverbrauch_Anteil",
+      "Muellverbrauch_Anteil",
+      "Stromverbrauch_Anteil",
+      "Personen_Anteil",
+      "Anteil",
+      "Gesamt_Quadratmeter",
+      "Gesamt_Einheiten",
+      "Von",
+      "Bis",
+      "Quadratmeter",
+      "Anschrift",
+      "Personenschnitt",
+      "Personen",
+      "Gesamt_Wasser",
+      "Gesamt_Muell",
+      "Gesamt_Strom",
+      "@ws:=`Abrechnungskonten`.`Wasserverbrauch`",
+      "@mu:=`Abrechnungskonten`.`Muellverbrauch`",
+      "@strom:=`Abrechnungskonten`.`Stromverbrauch`",
+      "Gesamt_Einheiten2",
+      "Gesamt_Quadratmeter2",
+      "Einheiten2",
+      "Quadratmeter2",
+      "@mea:=`Abrechnungskonten`.`Miteigentumsanteil`",
+      "@gmea:=`Abrechnungen`.`Miteigentumsanteile`",
+      "@mea2:=`Abrechnungskonten`.`Miteigentumsanteil2`",
+      "@gmea2:=`Abrechnungen`.`Miteigentumsanteile2`",
+      "Anmerkungen",
+      "Anmerkungen1",
+      "Zaehlerinfo",
+      "Anpassung",
+      "Neuemiete",
+      "QMFormel",
+      "EhFormel",
+      "PEFormel",
+      "WSFormel",
+      "MUFormel",
+      "StromFormel",
+      "QMFormel2",
+      "EhFormel2",
+      "MEAFormel",
+      "MEAFormel2",
+      "Umlagefaktoren",
+      "Team"
+    ],
+    "view": [
+      "Tage",
+      "Gesamttage",
+      "Bezeichnung",
+      "Betrag",
+      "Umlageart",
+      "Art",
+      "Abrechnung",
+      "Abrechnung_Von",
+      "Abrechnung_Bis",
+      "Abrechnungskonto",
+      "QM_Anteil",
+      "Einheiten_Anteil",
+      "QM_Anteil2",
+      "Einheiten_Anteil2",
+      "MEA_Anteil",
+      "MEA_Anteil2",
+      "Wasserverbrauch_Anteil",
+      "Muellverbrauch_Anteil",
+      "Stromverbrauch_Anteil",
+      "Personen_Anteil",
+      "Anteil",
+      "Gesamt_Quadratmeter",
+      "Gesamt_Einheiten",
+      "Von",
+      "Bis",
+      "Quadratmeter",
+      "Anschrift",
+      "Personenschnitt",
+      "Personen",
+      "Gesamt_Wasser",
+      "Gesamt_Muell",
+      "Gesamt_Strom",
+      "@ws:=`Abrechnungskonten`.`Wasserverbrauch`",
+      "@mu:=`Abrechnungskonten`.`Muellverbrauch`",
+      "@strom:=`Abrechnungskonten`.`Stromverbrauch`",
+      "Gesamt_Einheiten2",
+      "Gesamt_Quadratmeter2",
+      "Einheiten2",
+      "Quadratmeter2",
+      "@mea:=`Abrechnungskonten`.`Miteigentumsanteil`",
+      "@gmea:=`Abrechnungen`.`Miteigentumsanteile`",
+      "@mea2:=`Abrechnungskonten`.`Miteigentumsanteil2`",
+      "@gmea2:=`Abrechnungen`.`Miteigentumsanteile2`",
+      "Anmerkungen",
+      "Anmerkungen1",
+      "Zaehlerinfo",
+      "Anpassung",
+      "Neuemiete",
+      "QMFormel",
+      "EhFormel",
+      "PEFormel",
+      "WSFormel",
+      "MUFormel",
+      "StromFormel",
+      "QMFormel2",
+      "EhFormel2",
+      "MEAFormel",
+      "MEAFormel2",
+      "Umlagefaktoren",
+      "Team"
+    ],
+    "add": [
+      "Bezeichnung",
+      "Betrag",
+      "Umlageart",
+      "Art",
+      "Abrechnung"
+    ],
+    "edit": [
+      "Bezeichnung",
+      "Betrag",
+      "Umlageart",
+      "Art",
+      "Abrechnung",
+      "Team"
+    ],
+    "export": [
+      "Tage",
+      "Gesamttage",
+      "Bezeichnung",
+      "Betrag",
+      "Umlageart",
+      "Art",
+      "Abrechnung",
+      "Abrechnung_Von",
+      "Abrechnung_Bis",
+      "Abrechnungskonto",
+      "QM_Anteil",
+      "Einheiten_Anteil",
+      "QM_Anteil2",
+      "Einheiten_Anteil2",
+      "MEA_Anteil",
+      "MEA_Anteil2",
+      "Wasserverbrauch_Anteil",
+      "Muellverbrauch_Anteil",
+      "Stromverbrauch_Anteil",
+      "Personen_Anteil",
+      "Anteil",
+      "Gesamt_Quadratmeter",
+      "Gesamt_Einheiten",
+      "Von",
+      "Bis",
+      "Quadratmeter",
+      "Anschrift",
+      "Personenschnitt",
+      "Personen",
+      "Gesamt_Wasser",
+      "Gesamt_Muell",
+      "Gesamt_Strom",
+      "@ws:=`Abrechnungskonten`.`Wasserverbrauch`",
+      "@mu:=`Abrechnungskonten`.`Muellverbrauch`",
+      "@strom:=`Abrechnungskonten`.`Stromverbrauch`",
+      "Gesamt_Einheiten2",
+      "Gesamt_Quadratmeter2",
+      "Einheiten2",
+      "Quadratmeter2",
+      "@mea:=`Abrechnungskonten`.`Miteigentumsanteil`",
+      "@gmea:=`Abrechnungen`.`Miteigentumsanteile`",
+      "@mea2:=`Abrechnungskonten`.`Miteigentumsanteil2`",
+      "@gmea2:=`Abrechnungen`.`Miteigentumsanteile2`",
+      "Anmerkungen",
+      "Anmerkungen1",
+      "Zaehlerinfo",
+      "Anpassung",
+      "Neuemiete",
+      "QMFormel",
+      "EhFormel",
+      "PEFormel",
+      "WSFormel",
+      "MUFormel",
+      "StromFormel",
+      "QMFormel2",
+      "EhFormel2",
+      "MEAFormel",
+      "MEAFormel2",
+      "Umlagefaktoren",
+      "Team"
+    ],
+    "print": [
+      "Tage",
+      "Gesamttage",
+      "Bezeichnung",
+      "Betrag",
+      "Umlageart",
+      "Art",
+      "Abrechnung",
+      "Abrechnung_Von",
+      "Abrechnung_Bis",
+      "Abrechnungskonto",
+      "QM_Anteil",
+      "Einheiten_Anteil",
+      "QM_Anteil2",
+      "Einheiten_Anteil2",
+      "MEA_Anteil",
+      "MEA_Anteil2",
+      "Wasserverbrauch_Anteil",
+      "Muellverbrauch_Anteil",
+      "Stromverbrauch_Anteil",
+      "Personen_Anteil",
+      "Anteil",
+      "Gesamt_Quadratmeter",
+      "Gesamt_Einheiten",
+      "Von",
+      "Bis",
+      "Quadratmeter",
+      "Anschrift",
+      "Personenschnitt",
+      "Personen",
+      "Gesamt_Wasser",
+      "Gesamt_Muell",
+      "Gesamt_Strom",
+      "@ws:=`Abrechnungskonten`.`Wasserverbrauch`",
+      "@mu:=`Abrechnungskonten`.`Muellverbrauch`",
+      "@strom:=`Abrechnungskonten`.`Stromverbrauch`",
+      "Gesamt_Einheiten2",
+      "Gesamt_Quadratmeter2",
+      "Einheiten2",
+      "Quadratmeter2",
+      "@mea:=`Abrechnungskonten`.`Miteigentumsanteil`",
+      "@gmea:=`Abrechnungen`.`Miteigentumsanteile`",
+      "@mea2:=`Abrechnungskonten`.`Miteigentumsanteil2`",
+      "@gmea2:=`Abrechnungen`.`Miteigentumsanteile2`",
+      "Anmerkungen",
+      "Anmerkungen1",
+      "Zaehlerinfo",
+      "Anpassung",
+      "Neuemiete",
+      "QMFormel",
+      "EhFormel",
+      "PEFormel",
+      "WSFormel",
+      "MUFormel",
+      "StromFormel",
+      "QMFormel2",
+      "EhFormel2",
+      "MEAFormel",
+      "MEAFormel2",
+      "Umlagefaktoren",
+      "Team"
+    ],
+    "search": [
+      "Tage",
+      "Gesamttage",
+      "Bezeichnung",
+      "Betrag",
+      "Umlageart",
+      "Art",
+      "Abrechnung",
+      "Abrechnung_Von",
+      "Abrechnung_Bis",
+      "Abrechnungskonto",
+      "QM_Anteil",
+      "Einheiten_Anteil",
+      "QM_Anteil2",
+      "Einheiten_Anteil2",
+      "MEA_Anteil",
+      "MEA_Anteil2",
+      "Wasserverbrauch_Anteil",
+      "Muellverbrauch_Anteil",
+      "Stromverbrauch_Anteil",
+      "Personen_Anteil",
+      "Anteil",
+      "Gesamt_Quadratmeter",
+      "Gesamt_Einheiten",
+      "Von",
+      "Bis",
+      "Quadratmeter",
+      "Anschrift",
+      "Personenschnitt",
+      "Personen",
+      "Gesamt_Wasser",
+      "Gesamt_Muell",
+      "Gesamt_Strom",
+      "@ws:=`Abrechnungskonten`.`Wasserverbrauch`",
+      "@mu:=`Abrechnungskonten`.`Muellverbrauch`",
+      "@strom:=`Abrechnungskonten`.`Stromverbrauch`",
+      "Gesamt_Einheiten2",
+      "Gesamt_Quadratmeter2",
+      "Einheiten2",
+      "Quadratmeter2",
+      "@mea:=`Abrechnungskonten`.`Miteigentumsanteil`",
+      "@gmea:=`Abrechnungen`.`Miteigentumsanteile`",
+      "@mea2:=`Abrechnungskonten`.`Miteigentumsanteil2`",
+      "@gmea2:=`Abrechnungen`.`Miteigentumsanteile2`",
+      "Anmerkungen",
+      "Anmerkungen1",
+      "Zaehlerinfo",
+      "Anpassung",
+      "Neuemiete",
+      "QMFormel",
+      "EhFormel",
+      "PEFormel",
+      "WSFormel",
+      "MUFormel",
+      "StromFormel",
+      "QMFormel2",
+      "EhFormel2",
+      "MEAFormel",
+      "MEAFormel2",
+      "Umlagefaktoren"
+    ],
+    "masterList": [
+      "Tage",
+      "Gesamttage",
+      "Bezeichnung",
+      "Betrag",
+      "Umlageart",
+      "Art",
+      "Abrechnung",
+      "Abrechnung_Von",
+      "Abrechnung_Bis",
+      "Abrechnungskonto",
+      "QM_Anteil",
+      "Einheiten_Anteil",
+      "QM_Anteil2",
+      "Einheiten_Anteil2",
+      "MEA_Anteil",
+      "MEA_Anteil2",
+      "Wasserverbrauch_Anteil",
+      "Muellverbrauch_Anteil",
+      "Stromverbrauch_Anteil",
+      "Personen_Anteil",
+      "Anteil",
+      "Gesamt_Quadratmeter",
+      "Gesamt_Einheiten",
+      "Von",
+      "Bis",
+      "Quadratmeter",
+      "Anschrift",
+      "Personenschnitt",
+      "Personen",
+      "Gesamt_Wasser",
+      "Gesamt_Muell",
+      "Gesamt_Strom",
+      "@ws:=`Abrechnungskonten`.`Wasserverbrauch`",
+      "@mu:=`Abrechnungskonten`.`Muellverbrauch`",
+      "@strom:=`Abrechnungskonten`.`Stromverbrauch`",
+      "Gesamt_Einheiten2",
+      "Gesamt_Quadratmeter2",
+      "Einheiten2",
+      "Quadratmeter2",
+      "@mea:=`Abrechnungskonten`.`Miteigentumsanteil`",
+      "@gmea:=`Abrechnungen`.`Miteigentumsanteile`",
+      "@mea2:=`Abrechnungskonten`.`Miteigentumsanteil2`",
+      "@gmea2:=`Abrechnungen`.`Miteigentumsanteile2`",
+      "Anmerkungen",
+      "Anmerkungen1",
+      "Zaehlerinfo",
+      "Anpassung",
+      "Neuemiete",
+      "QMFormel",
+      "EhFormel",
+      "PEFormel",
+      "WSFormel",
+      "MUFormel",
+      "StromFormel",
+      "QMFormel2",
+      "EhFormel2",
+      "MEAFormel",
+      "MEAFormel2",
+      "Umlagefaktoren",
+      "Team"
+    ]
+  },
+  "export": {
+    "exportTo": true,
+    "exportDelimiter": ",",
+    "exportFormatting": 2
+  },
+  "print": {
+    "printerPageOrientation": 0,
+    "nPrinterPageScale": 100,
+    "nPrinterSplitRecords": 40,
+    "nPrinterPDFSplitRecords": 40
+  },
+  "tabs": [],
+  "labels": {
+    "German": {
+      "Abrechnung": "Abrechnung",
+      "Bezeichnung": "Bezeichnung",
+      "Betrag": "Betrag",
+      "Umlageart": "Umlageart",
+      "Von": "Von",
+      "Bis": "Bis",
+      "Abrechnungskonto": "Abrechnungskonto",
+      "Abrechnung_Von": "Abrechnung Von",
+      "Abrechnung_Bis": "Abrechnung Bis",
+      "Anteil": "Anteil",
+      "Gesamt_Quadratmeter": "Gesamt Quadratmeter",
+      "Quadratmeter": "Quadratmeter",
+      "Anschrift": "Anschrift",
+      "QM_Anteil": "QM Anteil",
+      "Einheiten_Anteil": "Einheiten Anteil",
+      "MEA_Anteil": "MEA Anteil",
+      "QM_Anteil2": "QM Anteil2",
+      "Einheiten_Anteil2": "Einheiten Anteil2",
+      "Wasserverbrauch_Anteil": "Wasserverbrauch Anteil",
+      "Muellverbrauch_Anteil": "Muellverbrauch Anteil",
+      "Personen_Anteil": "Personen Anteil",
+      "Art": "Art",
+      "Personenschnitt": "Personenschnitt",
+      "Personen": "Personen",
+      "Gesamt_Einheiten": "Gesamt Einheiten",
+      "Gesamt_Wasser": "Gesamt Wasser",
+      "Gesamt_Muell": "Gesamt Muell",
+      "Gesamt_Einheiten2": "Gesamt Einheiten2",
+      "Gesamt_Quadratmeter2": "Gesamt Quadratmeter2",
+      "Einheiten2": "Einheiten2",
+      "Quadratmeter2": "Quadratmeter2",
+      "Tage": "Tage",
+      "Anmerkungen": "Anmerkungen",
+      "Anmerkungen1": "Anmerkungen1",
+      "Anpassung": "Anpassung",
+      "Neuemiete": "Neue Miete",
+      "Gesamttage": "Gesamttage",
+      "MEA_Anteil2": "MEA Anteil2",
+      "QMFormel": "QMFormel",
+      "EhFormel": "Eh Formel",
+      "Umlagefaktoren": "Umlagefaktoren",
+      "PEFormel": "PEFormel",
+      "_ws___Abrechnungskonten___Wasserverbrauch_": "@ws:=`Abrechnungskonten`.`Wasserverbrauch`",
+      "WSFormel": "WSFormel",
+      "_mu___Abrechnungskonten___Muellverbrauch_": "@mu:=`Abrechnungskonten`.`Muellverbrauch`",
+      "MUFormel": "MUFormel",
+      "QMFormel2": "QMFormel2",
+      "EhFormel2": "Eh Formel2",
+      "_mea___Abrechnungskonten___Miteigentumsanteil_": "@mea:=`Abrechnungskonten`.`Miteigentumsanteil`",
+      "_gmea___Abrechnungen___Miteigentumsanteile_": "@gmea:=`Abrechnungen`.`Miteigentumsanteile`",
+      "_mea2___Abrechnungskonten___Miteigentumsanteil2_": "@mea2:=`Abrechnungskonten`.`Miteigentumsanteil2`",
+      "_gmea2___Abrechnungen___Miteigentumsanteile2_": "@gmea2:=`Abrechnungen`.`Miteigentumsanteile2`",
+      "MEAFormel": "MEAFormel",
+      "MEAFormel2": "MEAFormel2",
+      "Zaehlerinfo": "Zaehlerinfo",
+      "Team": "Team",
+      "Stromverbrauch_Anteil": "Stromverbrauch Anteil",
+      "Gesamt_Strom": "Gesamt Strom",
+      "_strom___Abrechnungskonten___Stromverbrauch_": "@strom:=`Abrechnungskonten`.`Stromverbrauch`",
+      "StromFormel": "Strom Formel"
+    },
+    "English": {
+      "Abrechnung": "Settlement",
+      "Bezeichnung": "Description",
+      "Betrag": "Amount",
+      "Umlageart": "Apportionmentart",
+      "Von": "From",
+      "Bis": "To",
+      "Abrechnungskonto": "Settlement account",
+      "Abrechnung_Von": "Settlement From",
+      "Abrechnung_Bis": "Settlement To",
+      "Anteil": "Share",
+      "Gesamt_Quadratmeter": "Total Square metres",
+      "Quadratmeter": "Square metres",
+      "Anschrift": "Anschrift",
+      "QM_Anteil": "QM Share",
+      "Einheiten_Anteil": "Units Share",
+      "MEA_Anteil": "MEA Share",
+      "QM_Anteil2": "QM Share2",
+      "Einheiten_Anteil2": "Units Share2",
+      "Wasserverbrauch_Anteil": "Water consumption Share",
+      "Muellverbrauch_Anteil": "Waste volume Share",
+      "Personen_Anteil": "People Share",
+      "Art": "Type",
+      "Personenschnitt": "Peopleschnitt",
+      "Personen": "People",
+      "Gesamt_Einheiten": "Total Units",
+      "Gesamt_Wasser": "Total Wasser",
+      "Gesamt_Muell": "Total Muell",
+      "Gesamt_Einheiten2": "Total Units2",
+      "Gesamt_Quadratmeter2": "Total Square metres2",
+      "Einheiten2": "Units2",
+      "Quadratmeter2": "Square metres2",
+      "Tage": "Days",
+      "Anmerkungen": "Anmerkungen",
+      "Anmerkungen1": "Anmerkungen1",
+      "Anpassung": "Adjustment",
+      "Neuemiete": "New Rent",
+      "Gesamttage": "Totaltage",
+      "MEA_Anteil2": "MEA Share2",
+      "QMFormel": "QMFormula",
+      "EhFormel": "Eh Formula",
+      "Umlagefaktoren": "Apportionmentfaktoren",
+      "PEFormel": "PEFormula",
+      "_ws___Abrechnungskonten___Wasserverbrauch_": "@ws:=`Abrechnungskonten`.`Wasserverbrauch`",
+      "WSFormel": "WSFormula",
+      "_mu___Abrechnungskonten___Muellverbrauch_": "@mu:=`Abrechnungskonten`.`Muellverbrauch`",
+      "MUFormel": "MUFormula",
+      "QMFormel2": "QMFormula2",
+      "EhFormel2": "Eh Formula2",
+      "_mea___Abrechnungskonten___Miteigentumsanteil_": "@mea:=`Abrechnungskonten`.`Miteigentumsanteil`",
+      "_gmea___Abrechnungen___Miteigentumsanteile_": "@gmea:=`Abrechnungen`.`Miteigentumsanteile`",
+      "_mea2___Abrechnungskonten___Miteigentumsanteil2_": "@mea2:=`Abrechnungskonten`.`Miteigentumsanteil2`",
+      "_gmea2___Abrechnungen___Miteigentumsanteile2_": "@gmea2:=`Abrechnungen`.`Miteigentumsanteile2`",
+      "MEAFormel": "MEAFormula",
+      "MEAFormel2": "MEAFormula2",
+      "Zaehlerinfo": "Metersinfo",
+      "Team": "Team",
+      "Stromverbrauch_Anteil": "Electricity consumption Share",
+      "Gesamt_Strom": "Total Electricity",
+      "_strom___Abrechnungskonten___Stromverbrauch_": "@strom:=`Abrechnungskonten`.`Stromverbrauch`",
+      "StromFormel": "Electricity Formula"
+    }
+  },
+  "fields": [
+    {
+      "name": "Tage",
+      "type": 3,
+      "index": 1,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Gesamttage",
+      "type": 3,
+      "index": 2,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Bezeichnung",
+      "type": 200,
+      "index": 3,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 0,
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 0,
+        "SelectSize": 1,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Betrag",
+      "type": 14,
+      "index": 4,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Umlageart",
+      "type": 200,
+      "index": 5,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 0,
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 4,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Art",
+      "type": 200,
+      "index": 6,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Abrechnung",
+      "type": 3,
+      "index": 7,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Abrechnungen",
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 2,
+        "LinkField": "ID",
+        "LinkFieldType": 0,
+        "DisplayField": "Bezeichnung",
+        "LookupOrderBy": "Bezeichnung",
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "AutoInc": true,
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Abrechnung_Von",
+      "type": 7,
+      "index": 8,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "DateEditType": 13,
+        "InitialYearFactor": 3,
+        "LastYearFactor": 10,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Abrechnung_Bis",
+      "type": 7,
+      "index": 9,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "DateEditType": 13,
+        "InitialYearFactor": 3,
+        "LastYearFactor": 10,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Abrechnungskonto",
+      "type": 3,
+      "index": 10,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Abrechnungskonten",
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 0,
+        "LinkField": "ID",
+        "LinkFieldType": 0,
+        "DisplayField": "Bezeichnung",
+        "LookupOrderBy": "Bezeichnung",
+        "SelectSize": 1,
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "AutoInc": true,
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "QM_Anteil",
+      "type": 5,
+      "index": 11,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Einheiten_Anteil",
+      "type": 5,
+      "index": 12,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "QM_Anteil2",
+      "type": 5,
+      "index": 13,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Einheiten_Anteil2",
+      "type": 5,
+      "index": 14,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "MEA_Anteil",
+      "type": 5,
+      "index": 15,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "MEA_Anteil2",
+      "type": 5,
+      "index": 16,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Wasserverbrauch_Anteil",
+      "type": 14,
+      "index": 17,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Muellverbrauch_Anteil",
+      "type": 5,
+      "index": 18,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Stromverbrauch_Anteil",
+      "type": 5,
+      "index": 19,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Personen_Anteil",
+      "type": 5,
+      "index": 20,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Anteil",
+      "type": 5,
+      "index": 21,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Gesamt_Quadratmeter",
+      "type": 14,
+      "index": 22,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Gesamt_Einheiten",
+      "type": 3,
+      "index": 23,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Von",
+      "type": 7,
+      "index": 24,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "DateEditType": 13,
+        "InitialYearFactor": 3,
+        "LastYearFactor": 10,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Bis",
+      "type": 7,
+      "index": 25,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "DateEditType": 13,
+        "InitialYearFactor": 3,
+        "LastYearFactor": 10,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Quadratmeter",
+      "type": 14,
+      "index": 26,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Anschrift",
+      "type": 200,
+      "index": 27,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Personenschnitt",
+      "type": 14,
+      "index": 28,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Personen",
+      "type": 14,
+      "index": 29,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Gesamt_Wasser",
+      "type": 14,
+      "index": 30,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Gesamt_Muell",
+      "type": 14,
+      "index": 31,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Gesamt_Strom",
+      "type": 14,
+      "index": 32,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "@ws:=`Abrechnungskonten`.`Wasserverbrauch`",
+      "type": 14,
+      "index": 33,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "@mu:=`Abrechnungskonten`.`Muellverbrauch`",
+      "type": 14,
+      "index": 34,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "@strom:=`Abrechnungskonten`.`Stromverbrauch`",
+      "type": 14,
+      "index": 35,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Gesamt_Einheiten2",
+      "type": 3,
+      "index": 36,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Gesamt_Quadratmeter2",
+      "type": 14,
+      "index": 37,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Einheiten2",
+      "type": 3,
+      "index": 38,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Quadratmeter2",
+      "type": 14,
+      "index": 39,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "@mea:=`Abrechnungskonten`.`Miteigentumsanteil`",
+      "type": 14,
+      "index": 40,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "@gmea:=`Abrechnungen`.`Miteigentumsanteile`",
+      "type": 14,
+      "index": 41,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "@mea2:=`Abrechnungskonten`.`Miteigentumsanteil2`",
+      "type": 14,
+      "index": 42,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "@gmea2:=`Abrechnungen`.`Miteigentumsanteile2`",
+      "type": 14,
+      "index": 43,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Anmerkungen",
+      "type": 201,
+      "index": 44,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {},
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "nRows": 100,
+        "nCols": 200,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Anmerkungen1",
+      "type": 201,
+      "index": 45,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {},
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Zaehlerinfo",
+      "type": 201,
+      "index": 46,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {},
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "nRows": 100,
+        "nCols": 200,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Anpassung",
+      "type": 14,
+      "index": 47,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Neuemiete",
+      "type": 14,
+      "index": 48,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "QMFormel",
+      "type": 201,
+      "index": 49,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "nRows": 100,
+        "nCols": 200,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "EhFormel",
+      "type": 201,
+      "index": 50,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "nRows": 100,
+        "nCols": 200,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "PEFormel",
+      "type": 201,
+      "index": 51,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "nRows": 100,
+        "nCols": 200,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "WSFormel",
+      "type": 201,
+      "index": 52,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "nRows": 100,
+        "nCols": 200,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "MUFormel",
+      "type": 201,
+      "index": 53,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "nRows": 100,
+        "nCols": 200,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "StromFormel",
+      "type": 201,
+      "index": 54,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "nRows": 100,
+        "nCols": 200,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "QMFormel2",
+      "type": 201,
+      "index": 55,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "nRows": 100,
+        "nCols": 200,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "EhFormel2",
+      "type": 201,
+      "index": 56,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "nRows": 100,
+        "nCols": 200,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "MEAFormel",
+      "type": 201,
+      "index": 57,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "nRows": 100,
+        "nCols": 200,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "MEAFormel2",
+      "type": 201,
+      "index": 58,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "nRows": 100,
+        "nCols": 200,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Umlagefaktoren",
+      "type": 201,
+      "index": 59,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {},
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "nRows": 100,
+        "nCols": 200,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Team",
+      "type": 200,
+      "index": 60,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    }
   ]
- },
- "export": {
-  "exportTo": true,
-  "exportDelimiter": ",",
-  "exportFormatting": 2
- },
- "print": {
-  "printerPageOrientation": 0,
-  "nPrinterPageScale": 100,
-  "nPrinterSplitRecords": 40,
-  "nPrinterPDFSplitRecords": 40
- },
- "tabs": [],
- "labels": {
-  "German": {
-   "Abrechnung": "Abrechnung",
-   "Bezeichnung": "Bezeichnung",
-   "Betrag": "Betrag",
-   "Umlageart": "Umlageart",
-   "Von": "Von",
-   "Bis": "Bis",
-   "Abrechnungskonto": "Abrechnungskonto",
-   "Abrechnung_Von": "Abrechnung Von",
-   "Abrechnung_Bis": "Abrechnung Bis",
-   "Anteil": "Anteil",
-   "Gesamt_Quadratmeter": "Gesamt Quadratmeter",
-   "Quadratmeter": "Quadratmeter",
-   "Anschrift": "Anschrift",
-   "QM_Anteil": "QM Anteil",
-   "Einheiten_Anteil": "Einheiten Anteil",
-   "MEA_Anteil": "MEA Anteil",
-   "QM_Anteil2": "QM Anteil2",
-   "Einheiten_Anteil2": "Einheiten Anteil2",
-   "Wasserverbrauch_Anteil": "Wasserverbrauch Anteil",
-   "Muellverbrauch_Anteil": "Muellverbrauch Anteil",
-   "Personen_Anteil": "Personen Anteil",
-   "Art": "Art",
-   "Personenschnitt": "Personenschnitt",
-   "Personen": "Personen",
-   "Gesamt_Einheiten": "Gesamt Einheiten",
-   "Gesamt_Wasser": "Gesamt Wasser",
-   "Gesamt_Muell": "Gesamt Muell",
-   "Gesamt_Einheiten2": "Gesamt Einheiten2",
-   "Gesamt_Quadratmeter2": "Gesamt Quadratmeter2",
-   "Einheiten2": "Einheiten2",
-   "Quadratmeter2": "Quadratmeter2",
-   "Tage": "Tage",
-   "Anmerkungen": "Anmerkungen",
-   "Anmerkungen1": "Anmerkungen1",
-   "Anpassung": "Anpassung",
-   "Neuemiete": "Neue Miete",
-   "Gesamttage": "Gesamttage",
-   "MEA_Anteil2": "MEA Anteil2",
-   "QMFormel": "QMFormel",
-   "EhFormel": "Eh Formel",
-   "Umlagefaktoren": "Umlagefaktoren",
-   "PEFormel": "PEFormel",
-   "_ws___Abrechnungskonten___Wasserverbrauch_": "@ws:=`Abrechnungskonten`.`Wasserverbrauch`",
-   "WSFormel": "WSFormel",
-   "_mu___Abrechnungskonten___Muellverbrauch_": "@mu:=`Abrechnungskonten`.`Muellverbrauch`",
-   "MUFormel": "MUFormel",
-   "QMFormel2": "QMFormel2",
-   "EhFormel2": "Eh Formel2",
-   "_mea___Abrechnungskonten___Miteigentumsanteil_": "@mea:=`Abrechnungskonten`.`Miteigentumsanteil`",
-   "_gmea___Abrechnungen___Miteigentumsanteile_": "@gmea:=`Abrechnungen`.`Miteigentumsanteile`",
-   "_mea2___Abrechnungskonten___Miteigentumsanteil2_": "@mea2:=`Abrechnungskonten`.`Miteigentumsanteil2`",
-   "_gmea2___Abrechnungen___Miteigentumsanteile2_": "@gmea2:=`Abrechnungen`.`Miteigentumsanteile2`",
-   "MEAFormel": "MEAFormel",
-   "MEAFormel2": "MEAFormel2",
-   "Zaehlerinfo": "Zaehlerinfo",
-   "Team": "Team",
-   "Stromverbrauch_Anteil": "Stromverbrauch Anteil",
-   "Gesamt_Strom": "Gesamt Strom",
-   "_strom___Abrechnungskonten___Stromverbrauch_": "@strom:=`Abrechnungskonten`.`Stromverbrauch`",
-   "StromFormel": "Strom Formel"
-  }
- },
- "fields": [
-  {
-   "name": "Tage",
-   "type": 3,
-   "index": 1,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Gesamttage",
-   "type": 3,
-   "index": 2,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Bezeichnung",
-   "type": 200,
-   "index": 3,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 0,
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 0,
-    "SelectSize": 1,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Betrag",
-   "type": 14,
-   "index": 4,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Umlageart",
-   "type": 200,
-   "index": 5,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 0,
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 4,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Art",
-   "type": 200,
-   "index": 6,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Abrechnung",
-   "type": 3,
-   "index": 7,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Abrechnungen",
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 2,
-    "LinkField": "ID",
-    "LinkFieldType": 0,
-    "DisplayField": "Bezeichnung",
-    "LookupOrderBy": "Bezeichnung",
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "AutoInc": true,
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Abrechnung_Von",
-   "type": 7,
-   "index": 8,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "DateEditType": 13,
-    "InitialYearFactor": 3,
-    "LastYearFactor": 10,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Abrechnung_Bis",
-   "type": 7,
-   "index": 9,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "DateEditType": 13,
-    "InitialYearFactor": 3,
-    "LastYearFactor": 10,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Abrechnungskonto",
-   "type": 3,
-   "index": 10,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Abrechnungskonten",
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 0,
-    "LinkField": "ID",
-    "LinkFieldType": 0,
-    "DisplayField": "Bezeichnung",
-    "LookupOrderBy": "Bezeichnung",
-    "SelectSize": 1,
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "AutoInc": true,
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "QM_Anteil",
-   "type": 5,
-   "index": 11,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Einheiten_Anteil",
-   "type": 5,
-   "index": 12,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "QM_Anteil2",
-   "type": 5,
-   "index": 13,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Einheiten_Anteil2",
-   "type": 5,
-   "index": 14,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "MEA_Anteil",
-   "type": 5,
-   "index": 15,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "MEA_Anteil2",
-   "type": 5,
-   "index": 16,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Wasserverbrauch_Anteil",
-   "type": 14,
-   "index": 17,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Muellverbrauch_Anteil",
-   "type": 5,
-   "index": 18,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Stromverbrauch_Anteil",
-   "type": 5,
-   "index": 19,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Personen_Anteil",
-   "type": 5,
-   "index": 20,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Anteil",
-   "type": 5,
-   "index": 21,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Gesamt_Quadratmeter",
-   "type": 14,
-   "index": 22,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Gesamt_Einheiten",
-   "type": 3,
-   "index": 23,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Von",
-   "type": 7,
-   "index": 24,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "DateEditType": 13,
-    "InitialYearFactor": 3,
-    "LastYearFactor": 10,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Bis",
-   "type": 7,
-   "index": 25,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "DateEditType": 13,
-    "InitialYearFactor": 3,
-    "LastYearFactor": 10,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Quadratmeter",
-   "type": 14,
-   "index": 26,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Anschrift",
-   "type": 200,
-   "index": 27,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Personenschnitt",
-   "type": 14,
-   "index": 28,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Personen",
-   "type": 14,
-   "index": 29,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Gesamt_Wasser",
-   "type": 14,
-   "index": 30,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Gesamt_Muell",
-   "type": 14,
-   "index": 31,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Gesamt_Strom",
-   "type": 14,
-   "index": 32,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "@ws:=`Abrechnungskonten`.`Wasserverbrauch`",
-   "type": 14,
-   "index": 33,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "@mu:=`Abrechnungskonten`.`Muellverbrauch`",
-   "type": 14,
-   "index": 34,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "@strom:=`Abrechnungskonten`.`Stromverbrauch`",
-   "type": 14,
-   "index": 35,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Gesamt_Einheiten2",
-   "type": 3,
-   "index": 36,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Gesamt_Quadratmeter2",
-   "type": 14,
-   "index": 37,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Einheiten2",
-   "type": 3,
-   "index": 38,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Quadratmeter2",
-   "type": 14,
-   "index": 39,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "@mea:=`Abrechnungskonten`.`Miteigentumsanteil`",
-   "type": 14,
-   "index": 40,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "@gmea:=`Abrechnungen`.`Miteigentumsanteile`",
-   "type": 14,
-   "index": 41,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "@mea2:=`Abrechnungskonten`.`Miteigentumsanteil2`",
-   "type": 14,
-   "index": 42,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "@gmea2:=`Abrechnungen`.`Miteigentumsanteile2`",
-   "type": 14,
-   "index": 43,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Anmerkungen",
-   "type": 201,
-   "index": 44,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {},
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "nRows": 100,
-    "nCols": 200,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Anmerkungen1",
-   "type": 201,
-   "index": 45,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {},
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Zaehlerinfo",
-   "type": 201,
-   "index": 46,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {},
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "nRows": 100,
-    "nCols": 200,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Anpassung",
-   "type": 14,
-   "index": 47,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Neuemiete",
-   "type": 14,
-   "index": 48,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "QMFormel",
-   "type": 201,
-   "index": 49,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "nRows": 100,
-    "nCols": 200,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "EhFormel",
-   "type": 201,
-   "index": 50,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "nRows": 100,
-    "nCols": 200,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "PEFormel",
-   "type": 201,
-   "index": 51,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "nRows": 100,
-    "nCols": 200,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "WSFormel",
-   "type": 201,
-   "index": 52,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "nRows": 100,
-    "nCols": 200,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "MUFormel",
-   "type": 201,
-   "index": 53,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "nRows": 100,
-    "nCols": 200,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "StromFormel",
-   "type": 201,
-   "index": 54,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "nRows": 100,
-    "nCols": 200,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "QMFormel2",
-   "type": 201,
-   "index": 55,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "nRows": 100,
-    "nCols": 200,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "EhFormel2",
-   "type": 201,
-   "index": 56,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "nRows": 100,
-    "nCols": 200,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "MEAFormel",
-   "type": 201,
-   "index": 57,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "nRows": 100,
-    "nCols": 200,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "MEAFormel2",
-   "type": 201,
-   "index": 58,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "nRows": 100,
-    "nCols": 200,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Umlagefaktoren",
-   "type": 201,
-   "index": 59,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {},
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "nRows": 100,
-    "nCols": 200,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Team",
-   "type": 200,
-   "index": 60,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  }
- ]
 }

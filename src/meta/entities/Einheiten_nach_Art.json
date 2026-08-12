@@ -1,92 +1,19 @@
 {
- "entity": "Einheiten_nach_Art",
- "shortName": "Einheiten_nach_Art",
- "baseTable": "Einheiten",
- "isVirtual": true,
- "ownerField": "Team",
- "sql": {
-  "strOrderBy": "",
-  "sqlHead": "SELECT Einheitenart,  COUNT(Einheitenart) AS Anteil,  Team",
-  "sqlFrom": "FROM Einheiten",
-  "sqlWhere": "",
-  "sqlTail": ""
- },
- "keys": [],
- "pageSize": 0,
- "capabilities": {
-  "list": true,
-  "view": true,
-  "add": true,
-  "edit": true,
-  "export": true,
-  "print": true,
-  "search": true,
-  "masterList": true
- },
- "fieldSets": {
-  "list": [
-   "Einheitenart",
-   "Anteil",
-   "Team"
-  ],
-  "view": [
-   "Einheitenart",
-   "Anteil",
-   "Team"
-  ],
-  "add": [
-   "Einheitenart"
-  ],
-  "edit": [
-   "Einheitenart",
-   "Team"
-  ],
-  "export": [
-   "Einheitenart",
-   "Anteil",
-   "Team"
-  ],
-  "print": [
-   "Einheitenart",
-   "Anteil",
-   "Team"
-  ],
-  "search": [
-   "Einheitenart",
-   "Anteil",
-   "Team"
-  ],
-  "masterList": [
-   "Einheitenart",
-   "Anteil",
-   "Team"
-  ]
- },
- "export": {
-  "exportTo": null,
-  "exportDelimiter": null,
-  "exportFormatting": null
- },
- "print": {
-  "printerPageOrientation": 0,
-  "nPrinterPageScale": 100,
-  "nPrinterSplitRecords": 40,
-  "nPrinterPDFSplitRecords": 40
- },
- "tabs": [],
- "labels": {
-  "German": {
-   "Einheitenart": "Einheitenart",
-   "Team": "Team",
-   "Anteil": "Anteil"
-  }
- },
- "fields": [
-  {
-   "name": "Einheitenart",
-   "type": 200,
-   "index": 1,
-   "pages": {
+  "entity": "Einheiten_nach_Art",
+  "shortName": "Einheiten_nach_Art",
+  "baseTable": "Einheiten",
+  "isVirtual": true,
+  "ownerField": "Team",
+  "sql": {
+    "strOrderBy": "",
+    "sqlHead": "SELECT Einheitenart,  COUNT(Einheitenart) AS Anteil,  Team",
+    "sqlFrom": "FROM Einheiten",
+    "sqlWhere": "",
+    "sqlTail": ""
+  },
+  "keys": [],
+  "pageSize": 0,
+  "capabilities": {
     "list": true,
     "view": true,
     "add": true,
@@ -95,81 +22,159 @@
     "print": true,
     "search": true,
     "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Einheitenarten",
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 0,
-    "LinkField": "Bezeichnung",
-    "LinkFieldType": 0,
-    "DisplayField": "Bezeichnung",
-    "LookupOrderBy": "Bezeichnung",
-    "SelectSize": 1,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
   },
-  {
-   "name": "Anteil",
-   "type": 3,
-   "index": 2,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
+  "fieldSets": {
+    "list": [
+      "Einheitenart",
+      "Anteil",
+      "Team"
+    ],
+    "view": [
+      "Einheitenart",
+      "Anteil",
+      "Team"
+    ],
+    "add": [
+      "Einheitenart"
+    ],
+    "edit": [
+      "Einheitenart",
+      "Team"
+    ],
+    "export": [
+      "Einheitenart",
+      "Anteil",
+      "Team"
+    ],
+    "print": [
+      "Einheitenart",
+      "Anteil",
+      "Team"
+    ],
+    "search": [
+      "Einheitenart",
+      "Anteil",
+      "Team"
+    ],
+    "masterList": [
+      "Einheitenart",
+      "Anteil",
+      "Team"
+    ]
   },
-  {
-   "name": "Team",
-   "type": 200,
-   "index": 3,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  }
- ]
+  "export": {
+    "exportTo": null,
+    "exportDelimiter": null,
+    "exportFormatting": null
+  },
+  "print": {
+    "printerPageOrientation": 0,
+    "nPrinterPageScale": 100,
+    "nPrinterSplitRecords": 40,
+    "nPrinterPDFSplitRecords": 40
+  },
+  "tabs": [],
+  "labels": {
+    "German": {
+      "Einheitenart": "Einheitenart",
+      "Team": "Team",
+      "Anteil": "Anteil"
+    },
+    "English": {
+      "Einheitenart": "Unitsart",
+      "Team": "Team",
+      "Anteil": "Share"
+    }
+  },
+  "fields": [
+    {
+      "name": "Einheitenart",
+      "type": 200,
+      "index": 1,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Einheitenarten",
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 0,
+        "LinkField": "Bezeichnung",
+        "LinkFieldType": 0,
+        "DisplayField": "Bezeichnung",
+        "LookupOrderBy": "Bezeichnung",
+        "SelectSize": 1,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Anteil",
+      "type": 3,
+      "index": 2,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Team",
+      "type": 200,
+      "index": 3,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    }
+  ]
 }

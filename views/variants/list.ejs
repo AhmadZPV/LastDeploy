@@ -1,4 +1,5 @@
 <%- include('../partials/layout_top', { pageTitle: title }) %>
-<section class="variant-list"><div class="section-heading"><div><span class="eyebrow">Records</span><h2><%= tx(title) %></h2></div></div><div class="table-wrap"><table><thead><tr><th>ID</th><% for (const field of (meta.listColumns || []).slice(0, 12)) { %><th><%= tx(field) %></th><% } %></tr></thead>
-<tbody><% for (const row of rows) { %><tr><td><%= row.ID %></td><% for (const field of (meta.listColumns || []).slice(0, 12)) { %><td><%- helpers.display(module, field, row[field]) %></td><% } %></tr><% } %></tbody></table></div></section>
+<% const visibleColumns = (meta.listColumns || []).filter(field => field !== 'ID').slice(0, 12); %>
+<section class="variant-list"><div class="section-heading"><div><span class="eyebrow">Records</span><h2><%= tx(title) %></h2></div></div><div class="table-wrap"><table><thead><tr><% for (const field of visibleColumns) { %><th><%= tx(field) %></th><% } %></tr></thead>
+<tbody><% for (const row of rows) { %><tr><% for (const field of visibleColumns) { %><td><%- helpers.display(module, field, row[field]) %></td><% } %></tr><% } %></tbody></table></div></section>
 <%- include('../partials/layout_bottom') %>

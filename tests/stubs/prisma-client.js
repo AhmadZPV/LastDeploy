@@ -213,4 +213,39 @@ function rawQuery(store, sql, binds) {
   return filtered;
 }
 
-export default { mkClient };
+/**
+ * Class-style entry point. The real @prisma/client exports `PrismaClient`,
+ * and several scripts import it by name, so the stub must provide it too.
+ * Constructing it returns the same proxy-backed client mkClient() builds,
+ * plus no-op lifecycle helpers ($connect/$disconnect/$on/$use).
+ */
+export class PrismaClient {
+  constructor(options = {}) {
+    const seed = (options && options.__seed) || {};
+    const client = mkClient(seed);
+    return new Proxy(client, {
+      get(target, prop) {
+        if (prop === '$connect' || prop === '$disconnect') return async () => {};
+        if (prop === '$on' || prop === '$use') return () => {};
+        return target[prop];
+      },
+    });
+  }
+}
+
+/** Minimal `Prisma` namespace for code that touches error types or raw sql. */
+export const Prisma = {
+  PrismaClientKnownRequestError: class PrismaClientKnownRequestError extends Error {
+    constructor(message, meta = {}) {
+      super(message);
+      this.name = 'PrismaClientKnownRequestError';
+      Object.assign(this, meta);
+    }
+  },
+  PrismaClientValidationError: class PrismaClientValidationError extends Error {},
+  sql: (strings, ...values) => ({ strings, values }),
+  raw: (value) => value,
+  join: (values) => values,
+};
+
+export default { mkClient, PrismaClient, Prisma };

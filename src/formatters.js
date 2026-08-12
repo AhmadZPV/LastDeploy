@@ -106,8 +106,20 @@ export function inputDate(value) {
  * The display string of one cell in a generic list/view. Never HTML-escapes:
  * callers (EJS templates, fulltext.php port) escape at their own boundary.
  */
+/**
+ * Columns that hold a credential. Their stored value (a bcrypt hash or an
+ * SMTP password) must never reach a rendered page.
+ */
+const SECRET_NAME = /(passwort|password|passwd|kennwort|secret|token|apikey|api_key)/i;
+export const SECRET_MASK = '\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022';
+export function isSecretField(field) {
+  return SECRET_NAME.test(String(field || ''));
+}
+
 export function display(entity, field, value) {
   if (value == null) return '';
+  // Masked before any type handling so no branch can leak the hash.
+  if (isSecretField(field)) return value === '' ? '' : SECRET_MASK;
   if (Buffer.isBuffer(value)) return `[${value.length} bytes]`;
   const cat = fieldCategory(entity, field);
   if (cat === 'richtext') return sanitizeRichText(value);

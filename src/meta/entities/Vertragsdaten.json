@@ -1,358 +1,369 @@
 {
- "entity": "Vertragsdaten",
- "shortName": "Vertragsdaten",
- "baseTable": "Benutzer",
- "isVirtual": true,
- "ownerField": "Team",
- "sql": {
-  "strOrderBy": "ORDER BY Benutzername",
-  "sqlHead": "SELECT Team,  Benutzername,  Name,  Email,  Erstanmeldung,  @vertragsende := if(Art=\"Vertrag\",DATE_ADD(Erstanmeldung, INTERVAL 1 YEAR),if (Art=\"Vertrag 3\",DATE_ADD(Erstanmeldung, INTERVAL 3 YEAR),\"\")) AS Vertragsende,  datediff(@vertragsende, now()) AS Restlaufzeit,  ID,  Art",
-  "sqlFrom": "FROM Benutzer",
-  "sqlWhere": "",
-  "sqlTail": ""
- },
- "keys": [
-  "Benutzername"
- ],
- "pageSize": 20,
- "capabilities": {
-  "list": true,
-  "view": true,
-  "add": false,
-  "edit": true,
-  "export": false,
-  "print": false,
-  "search": true,
-  "masterList": true
- },
- "fieldSets": {
-  "list": [
-   "Art",
-   "Team",
-   "Benutzername",
-   "Erstanmeldung",
-   "Vertragsende",
-   "Restlaufzeit",
-   "Name",
-   "Email"
+  "entity": "Vertragsdaten",
+  "shortName": "Vertragsdaten",
+  "baseTable": "Benutzer",
+  "isVirtual": true,
+  "ownerField": "Team",
+  "sql": {
+    "strOrderBy": "ORDER BY Benutzername",
+    "sqlHead": "SELECT Team,  Benutzername,  Name,  Email,  Erstanmeldung,  @vertragsende := if(Art=\"Vertrag\",DATE_ADD(Erstanmeldung, INTERVAL 1 YEAR),if (Art=\"Vertrag 3\",DATE_ADD(Erstanmeldung, INTERVAL 3 YEAR),\"\")) AS Vertragsende,  datediff(@vertragsende, now()) AS Restlaufzeit,  ID,  Art",
+    "sqlFrom": "FROM Benutzer",
+    "sqlWhere": "",
+    "sqlTail": ""
+  },
+  "keys": [
+    "Benutzername"
   ],
-  "view": [
-   "Team",
-   "Art",
-   "Erstanmeldung",
-   "Vertragsende",
-   "Restlaufzeit",
-   "Benutzername",
-   "Name",
-   "Email"
-  ],
-  "edit": [
-   "Team",
-   "Art",
-   "Erstanmeldung",
-   "Name",
-   "Email"
-  ],
-  "search": [
-   "Team",
-   "Erstanmeldung",
-   "Vertragsende",
-   "Restlaufzeit",
-   "ID",
-   "Art",
-   "Name",
-   "Email",
-   "Benutzername"
-  ],
-  "masterList": [
-   "Team",
-   "Erstanmeldung",
-   "Vertragsende",
-   "Restlaufzeit",
-   "ID",
-   "Art",
-   "Name",
-   "Email",
-   "Benutzername"
+  "pageSize": 20,
+  "capabilities": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+  },
+  "fieldSets": {
+    "list": [
+      "Art",
+      "Team",
+      "Benutzername",
+      "Erstanmeldung",
+      "Vertragsende",
+      "Restlaufzeit",
+      "Name",
+      "Email"
+    ],
+    "view": [
+      "Team",
+      "Art",
+      "Erstanmeldung",
+      "Vertragsende",
+      "Restlaufzeit",
+      "Benutzername",
+      "Name",
+      "Email"
+    ],
+    "edit": [
+      "Team",
+      "Art",
+      "Erstanmeldung",
+      "Name",
+      "Email"
+    ],
+    "search": [
+      "Team",
+      "Erstanmeldung",
+      "Vertragsende",
+      "Restlaufzeit",
+      "ID",
+      "Art",
+      "Name",
+      "Email",
+      "Benutzername"
+    ],
+    "masterList": [
+      "Team",
+      "Erstanmeldung",
+      "Vertragsende",
+      "Restlaufzeit",
+      "ID",
+      "Art",
+      "Name",
+      "Email",
+      "Benutzername"
+    ]
+  },
+  "export": {
+    "exportTo": null,
+    "exportDelimiter": null,
+    "exportFormatting": null
+  },
+  "print": {
+    "printerPageOrientation": 0,
+    "nPrinterPageScale": 100,
+    "nPrinterSplitRecords": 40,
+    "nPrinterPDFSplitRecords": 40
+  },
+  "tabs": [],
+  "labels": {
+    "German": {
+      "Benutzername": "Benutzername",
+      "Name": "Name",
+      "Email": "Email",
+      "Erstanmeldung": "Erstanmeldung",
+      "Art": "Art",
+      "Vertragsende": "Vertragsende",
+      "Restlaufzeit": "Restlaufzeit",
+      "ID": "ID",
+      "Team": "Team"
+    },
+    "English": {
+      "Benutzername": "Username",
+      "Name": "Name",
+      "Email": "Email",
+      "Erstanmeldung": "First login",
+      "Art": "Type",
+      "Vertragsende": "Contractsende",
+      "Restlaufzeit": "Restlaufzeit",
+      "ID": "ID",
+      "Team": "Team"
+    }
+  },
+  "fields": [
+    {
+      "name": "Team",
+      "type": 200,
+      "index": 1,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Benutzername",
+      "type": 200,
+      "index": 2,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200,
+        "denyDuplicates": true
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Name",
+      "type": 200,
+      "index": 3,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Email",
+      "type": 200,
+      "index": 4,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "ViewFormat": "Email Hyperlink"
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "email",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Erstanmeldung",
+      "type": 7,
+      "index": 5,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "DateEditType": 13,
+        "InitialYearFactor": 3,
+        "LastYearFactor": 10,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Vertragsende",
+      "type": 200,
+      "index": 6,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Restlaufzeit",
+      "type": 3,
+      "index": 7,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "ID",
+      "type": 3,
+      "index": 8,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "number",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "AutoInc": true,
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Art",
+      "type": 200,
+      "index": 9,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 0,
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 4,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    }
   ]
- },
- "export": {
-  "exportTo": null,
-  "exportDelimiter": null,
-  "exportFormatting": null
- },
- "print": {
-  "printerPageOrientation": 0,
-  "nPrinterPageScale": 100,
-  "nPrinterSplitRecords": 40,
-  "nPrinterPDFSplitRecords": 40
- },
- "tabs": [],
- "labels": {
-  "German": {
-   "Benutzername": "Benutzername",
-   "Name": "Name",
-   "Email": "Email",
-   "Erstanmeldung": "Erstanmeldung",
-   "Art": "Art",
-   "Vertragsende": "Vertragsende",
-   "Restlaufzeit": "Restlaufzeit",
-   "ID": "ID",
-   "Team": "Team"
-  }
- },
- "fields": [
-  {
-   "name": "Team",
-   "type": 200,
-   "index": 1,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Benutzername",
-   "type": 200,
-   "index": 2,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200,
-    "denyDuplicates": true
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Name",
-   "type": 200,
-   "index": 3,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Email",
-   "type": 200,
-   "index": 4,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "ViewFormat": "Email Hyperlink"
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "email",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Erstanmeldung",
-   "type": 7,
-   "index": 5,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "DateEditType": 13,
-    "InitialYearFactor": 3,
-    "LastYearFactor": 10,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Vertragsende",
-   "type": 200,
-   "index": 6,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Restlaufzeit",
-   "type": 3,
-   "index": 7,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "ID",
-   "type": 3,
-   "index": 8,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "number",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "AutoInc": true,
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Art",
-   "type": 200,
-   "index": 9,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 0,
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 4,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  }
- ]
 }

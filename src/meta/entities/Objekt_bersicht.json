@@ -1,112 +1,19 @@
 {
- "entity": "Objekt_bersicht",
- "shortName": "Objekt_bersicht",
- "baseTable": "Objekte",
- "isVirtual": true,
- "ownerField": "Team",
- "sql": {
-  "strOrderBy": "ORDER BY Objekte.Bezeichnung, Einheiten.Bezeichnung, Raeume.Bezeichnung",
-  "sqlHead": "SELECT Objekte.Bezeichnung,  Einheiten.Bezeichnung AS Einheit,  Raeume.Bezeichnung AS Raum,  Raeume.Nummer AS Raumnummer,  Raeume.Raumart,  Objekte.Team",
-  "sqlFrom": "FROM Objekte  INNER JOIN Einheiten ON Objekte.ID = Einheiten.Objekt  INNER JOIN Raeume ON Einheiten.ID = Raeume.Einheit",
-  "sqlWhere": "",
-  "sqlTail": ""
- },
- "keys": [],
- "pageSize": 5,
- "capabilities": {
-  "list": true,
-  "view": true,
-  "add": true,
-  "edit": true,
-  "export": true,
-  "print": true,
-  "search": true,
-  "masterList": true
- },
- "fieldSets": {
-  "list": [
-   "Bezeichnung",
-   "Einheit",
-   "Raum",
-   "Raumnummer",
-   "Raumart",
-   "Team"
-  ],
-  "view": [
-   "Bezeichnung",
-   "Einheit",
-   "Raum",
-   "Raumnummer",
-   "Raumart",
-   "Team"
-  ],
-  "add": [
-   "Bezeichnung"
-  ],
-  "edit": [
-   "Bezeichnung",
-   "Team"
-  ],
-  "export": [
-   "Bezeichnung",
-   "Einheit",
-   "Raum",
-   "Raumnummer",
-   "Raumart",
-   "Team"
-  ],
-  "print": [
-   "Bezeichnung",
-   "Einheit",
-   "Raum",
-   "Raumnummer",
-   "Raumart",
-   "Team"
-  ],
-  "search": [
-   "Bezeichnung",
-   "Einheit",
-   "Raum",
-   "Raumnummer",
-   "Raumart"
-  ],
-  "masterList": [
-   "Bezeichnung",
-   "Einheit",
-   "Raum",
-   "Raumnummer",
-   "Raumart",
-   "Team"
-  ]
- },
- "export": {
-  "exportTo": true,
-  "exportDelimiter": ",",
-  "exportFormatting": 2
- },
- "print": {
-  "printerPageOrientation": 1,
-  "nPrinterPageScale": 100,
-  "nPrinterSplitRecords": 40,
-  "nPrinterPDFSplitRecords": 40
- },
- "tabs": [],
- "labels": {
-  "German": {
-   "Bezeichnung": "Bezeichnung",
-   "Einheit": "Einheit",
-   "Raum": "Raum",
-   "Raumnummer": "Raumnummer",
-   "Raumart": "Raumart",
-   "Team": "Team"
-  }
- },
- "fields": [
-  {
-   "name": "Bezeichnung",
-   "type": 200,
-   "index": 1,
-   "pages": {
+  "entity": "Objekt_bersicht",
+  "shortName": "Objekt_bersicht",
+  "baseTable": "Objekte",
+  "isVirtual": true,
+  "ownerField": "Team",
+  "sql": {
+    "strOrderBy": "ORDER BY Objekte.Bezeichnung, Einheiten.Bezeichnung, Raeume.Bezeichnung",
+    "sqlHead": "SELECT Objekte.Bezeichnung,  Einheiten.Bezeichnung AS Einheit,  Raeume.Bezeichnung AS Raum,  Raeume.Nummer AS Raumnummer,  Raeume.Raumart,  Objekte.Team",
+    "sqlFrom": "FROM Objekte  INNER JOIN Einheiten ON Objekte.ID = Einheiten.Objekt  INNER JOIN Raeume ON Einheiten.ID = Raeume.Einheit",
+    "sqlWhere": "",
+    "sqlTail": ""
+  },
+  "keys": [],
+  "pageSize": 5,
+  "capabilities": {
     "list": true,
     "view": true,
     "add": true,
@@ -115,160 +22,261 @@
     "print": true,
     "search": true,
     "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200,
-    "denyDuplicates": true
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
   },
-  {
-   "name": "Einheit",
-   "type": 200,
-   "index": 2,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
+  "fieldSets": {
+    "list": [
+      "Bezeichnung",
+      "Einheit",
+      "Raum",
+      "Raumnummer",
+      "Raumart",
+      "Team"
+    ],
+    "view": [
+      "Bezeichnung",
+      "Einheit",
+      "Raum",
+      "Raumnummer",
+      "Raumart",
+      "Team"
+    ],
+    "add": [
+      "Bezeichnung"
+    ],
+    "edit": [
+      "Bezeichnung",
+      "Team"
+    ],
+    "export": [
+      "Bezeichnung",
+      "Einheit",
+      "Raum",
+      "Raumnummer",
+      "Raumart",
+      "Team"
+    ],
+    "print": [
+      "Bezeichnung",
+      "Einheit",
+      "Raum",
+      "Raumnummer",
+      "Raumart",
+      "Team"
+    ],
+    "search": [
+      "Bezeichnung",
+      "Einheit",
+      "Raum",
+      "Raumnummer",
+      "Raumart"
+    ],
+    "masterList": [
+      "Bezeichnung",
+      "Einheit",
+      "Raum",
+      "Raumnummer",
+      "Raumart",
+      "Team"
+    ]
   },
-  {
-   "name": "Raum",
-   "type": 200,
-   "index": 3,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
+  "export": {
+    "exportTo": true,
+    "exportDelimiter": ",",
+    "exportFormatting": 2
   },
-  {
-   "name": "Raumnummer",
-   "type": 200,
-   "index": 4,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "number",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
+  "print": {
+    "printerPageOrientation": 1,
+    "nPrinterPageScale": 100,
+    "nPrinterSplitRecords": 40,
+    "nPrinterPDFSplitRecords": 40
   },
-  {
-   "name": "Raumart",
-   "type": 200,
-   "index": 5,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
+  "tabs": [],
+  "labels": {
+    "German": {
+      "Bezeichnung": "Bezeichnung",
+      "Einheit": "Einheit",
+      "Raum": "Raum",
+      "Raumnummer": "Raumnummer",
+      "Raumart": "Raumart",
+      "Team": "Team"
+    },
+    "English": {
+      "Bezeichnung": "Description",
+      "Einheit": "Unit",
+      "Raum": "Raum",
+      "Raumnummer": "Raumnummer",
+      "Raumart": "Raumart",
+      "Team": "Team"
+    }
   },
-  {
-   "name": "Team",
-   "type": 200,
-   "index": 6,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  }
- ]
+  "fields": [
+    {
+      "name": "Bezeichnung",
+      "type": 200,
+      "index": 1,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200,
+        "denyDuplicates": true
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Einheit",
+      "type": 200,
+      "index": 2,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Raum",
+      "type": 200,
+      "index": 3,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Raumnummer",
+      "type": 200,
+      "index": 4,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "number",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Raumart",
+      "type": 200,
+      "index": 5,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Team",
+      "type": 200,
+      "index": 6,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    }
+  ]
 }

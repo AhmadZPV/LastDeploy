@@ -1,334 +1,344 @@
 {
- "entity": "Navigator",
- "shortName": "Navigator",
- "baseTable": "Navigator",
- "isVirtual": false,
- "ownerField": "Team",
- "sql": {
-  "strOrderBy": "ORDER BY `Reihenfolge`, `Titel`",
-  "sqlHead": "SELECT `ID`,  `Titel`,  `Beschreibung`,  `Link`,  `Etikett`,  `Reihenfolge`,  `Kategorie`,  Team",
-  "sqlFrom": "FROM `Navigator`",
-  "sqlWhere": "",
-  "sqlTail": ""
- },
- "keys": [
-  "ID"
- ],
- "pageSize": 20,
- "capabilities": {
-  "list": true,
-  "view": false,
-  "add": true,
-  "edit": true,
-  "export": false,
-  "print": false,
-  "search": true,
-  "masterList": true
- },
- "fieldSets": {
-  "list": [
-   "Kategorie",
-   "Titel",
-   "Beschreibung",
-   "Link",
-   "Etikett"
+  "entity": "Navigator",
+  "shortName": "Navigator",
+  "baseTable": "Navigator",
+  "isVirtual": false,
+  "ownerField": "Team",
+  "sql": {
+    "strOrderBy": "ORDER BY `Reihenfolge`, `Titel`",
+    "sqlHead": "SELECT `ID`,  `Titel`,  `Beschreibung`,  `Link`,  `Etikett`,  `Reihenfolge`,  `Kategorie`,  Team",
+    "sqlFrom": "FROM `Navigator`",
+    "sqlWhere": "",
+    "sqlTail": ""
+  },
+  "keys": [
+    "ID"
   ],
-  "add": [
-   "Titel",
-   "Beschreibung",
-   "Link",
-   "Etikett",
-   "Reihenfolge",
-   "Kategorie"
-  ],
-  "edit": [
-   "Titel",
-   "Beschreibung",
-   "Link",
-   "Etikett",
-   "Reihenfolge",
-   "Kategorie"
-  ],
-  "search": [
-   "Titel",
-   "Beschreibung",
-   "Link",
-   "Etikett",
-   "Kategorie"
-  ],
-  "masterList": [
-   "ID",
-   "Titel",
-   "Beschreibung",
-   "Link",
-   "Etikett",
-   "Reihenfolge",
-   "Kategorie",
-   "Team"
+  "pageSize": 20,
+  "capabilities": {
+    "list": true,
+    "view": false,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+  },
+  "fieldSets": {
+    "list": [
+      "Kategorie",
+      "Titel",
+      "Beschreibung",
+      "Link",
+      "Etikett"
+    ],
+    "add": [
+      "Titel",
+      "Beschreibung",
+      "Link",
+      "Etikett",
+      "Reihenfolge",
+      "Kategorie"
+    ],
+    "edit": [
+      "Titel",
+      "Beschreibung",
+      "Link",
+      "Etikett",
+      "Reihenfolge",
+      "Kategorie"
+    ],
+    "search": [
+      "Titel",
+      "Beschreibung",
+      "Link",
+      "Etikett",
+      "Kategorie"
+    ],
+    "masterList": [
+      "ID",
+      "Titel",
+      "Beschreibung",
+      "Link",
+      "Etikett",
+      "Reihenfolge",
+      "Kategorie",
+      "Team"
+    ]
+  },
+  "export": {
+    "exportTo": null,
+    "exportDelimiter": null,
+    "exportFormatting": null
+  },
+  "print": {
+    "printerPageOrientation": 0,
+    "nPrinterPageScale": 100,
+    "nPrinterSplitRecords": 40,
+    "nPrinterPDFSplitRecords": 40
+  },
+  "tabs": [],
+  "labels": {
+    "German": {
+      "ID": "ID",
+      "Titel": "Titel",
+      "Beschreibung": "Beschreibung",
+      "Link": "Link",
+      "Etikett": "Etikett",
+      "Reihenfolge": "Reihenfolge",
+      "Kategorie": "Kategorie",
+      "Team": "Team"
+    },
+    "English": {
+      "ID": "ID",
+      "Titel": "Title",
+      "Beschreibung": "Description",
+      "Link": "Link",
+      "Etikett": "Etikett",
+      "Reihenfolge": "Order",
+      "Kategorie": "Category",
+      "Team": "Team"
+    }
+  },
+  "fields": [
+    {
+      "name": "ID",
+      "type": 3,
+      "index": 1,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "AutoInc": true,
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Titel",
+      "type": 200,
+      "index": 2,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Beschreibung",
+      "type": 200,
+      "index": 3,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Link",
+      "type": 200,
+      "index": 4,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "hlType": 1,
+        "hlLinkWordNameType": "Text",
+        "hlLinkWordText": "Mehr ...",
+        "hlTitleField": ""
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Etikett",
+      "type": 200,
+      "index": 5,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "ViewFormat": "Custom"
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Farben",
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 2,
+        "HorizontalLookup": true,
+        "LinkField": "Farbwert",
+        "LinkFieldType": 0,
+        "DisplayField": "Farbname",
+        "LookupOrderBy": "Farbwert",
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Reihenfolge",
+      "type": 3,
+      "index": 6,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Kategorie",
+      "type": 200,
+      "index": 7,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Navigator",
+        "freeInput": true,
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 1,
+        "LookupUnique": true,
+        "LinkField": "Kategorie",
+        "LinkFieldType": 0,
+        "DisplayField": "Kategorie",
+        "LookupOrderBy": "Kategorie",
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Team",
+      "type": 200,
+      "index": 8,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    }
   ]
- },
- "export": {
-  "exportTo": null,
-  "exportDelimiter": null,
-  "exportFormatting": null
- },
- "print": {
-  "printerPageOrientation": 0,
-  "nPrinterPageScale": 100,
-  "nPrinterSplitRecords": 40,
-  "nPrinterPDFSplitRecords": 40
- },
- "tabs": [],
- "labels": {
-  "German": {
-   "ID": "ID",
-   "Titel": "Titel",
-   "Beschreibung": "Beschreibung",
-   "Link": "Link",
-   "Etikett": "Etikett",
-   "Reihenfolge": "Reihenfolge",
-   "Kategorie": "Kategorie",
-   "Team": "Team"
-  }
- },
- "fields": [
-  {
-   "name": "ID",
-   "type": 3,
-   "index": 1,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "AutoInc": true,
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Titel",
-   "type": 200,
-   "index": 2,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Beschreibung",
-   "type": 200,
-   "index": 3,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Link",
-   "type": 200,
-   "index": 4,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "hlType": 1,
-    "hlLinkWordNameType": "Text",
-    "hlLinkWordText": "Mehr ...",
-    "hlTitleField": ""
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Etikett",
-   "type": 200,
-   "index": 5,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "ViewFormat": "Custom"
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Farben",
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 2,
-    "HorizontalLookup": true,
-    "LinkField": "Farbwert",
-    "LinkFieldType": 0,
-    "DisplayField": "Farbname",
-    "LookupOrderBy": "Farbwert",
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Reihenfolge",
-   "type": 3,
-   "index": 6,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Kategorie",
-   "type": 200,
-   "index": 7,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Navigator",
-    "freeInput": true,
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 1,
-    "LookupUnique": true,
-    "LinkField": "Kategorie",
-    "LinkFieldType": 0,
-    "DisplayField": "Kategorie",
-    "LookupOrderBy": "Kategorie",
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Team",
-   "type": 200,
-   "index": 8,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  }
- ]
 }

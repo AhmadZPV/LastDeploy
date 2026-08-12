@@ -1,505 +1,519 @@
 {
- "entity": "Gewinn_und_Verlust",
- "shortName": "Gewinn_und_Verlust",
- "baseTable": "Kontenrahmen",
- "isVirtual": true,
- "ownerField": "Team",
- "sql": {
-  "strOrderBy": "ORDER BY `Kontenrahmen`.`Buchfuehrung`, `Kontenrahmen`.`Guv`, `Kontenrahmen`.`Nummer`, `Buchungen`.`Datum`",
-  "sqlHead": "SELECT `Kontenrahmen`.`ID`,  `Kontenrahmen`.`Buchfuehrung`,  `Kontenrahmen`.`Guv`,    `Kontenrahmen`.`Nummer`,  `Kontenrahmen`.`Kontobezeichnung`,  Concat(`Kontenrahmen`.`Nummer`,' ',`Kontenrahmen`.`Kontobezeichnung`) as Konto,  `Buchungen`.`Betreff`,  `Buchungen`.`Datum`,  if(Kontenrahmen.ID=Buchungen.Konto,`Buchungen`.`Betrag`,0) as Betraglinks,  if(Kontenrahmen.ID=Buchungen.Gegenkonto,`Buchungen`.`Betrag`,0) as Betragrechts,      if(Kontenrahmen.ID=Buchungen.Konto,`Buchungen`.`Betrag`*-1,Betrag) as Saldo,    Kontenrahmen.Team",
-  "sqlFrom": "FROM `Kontenrahmen`  LEFT OUTER JOIN `Buchungen` ON `Kontenrahmen`.`ID` = `Buchungen`.`Konto` OR `Kontenrahmen`.`ID` = `Buchungen`.`Gegenkonto`",
-  "sqlWhere": "",
-  "sqlTail": ""
- },
- "keys": [
-  "ID"
- ],
- "pageSize": 5,
- "capabilities": {
-  "list": true,
-  "view": true,
-  "add": true,
-  "edit": true,
-  "export": true,
-  "print": true,
-  "search": true,
-  "masterList": true
- },
- "fieldSets": {
-  "list": [
-   "ID",
-   "Buchfuehrung",
-   "Guv",
-   "Nummer",
-   "Kontobezeichnung",
-   "Konto",
-   "Betreff",
-   "Datum",
-   "Betraglinks",
-   "Betragrechts",
-   "Saldo",
-   "Team"
+  "entity": "Gewinn_und_Verlust",
+  "shortName": "Gewinn_und_Verlust",
+  "baseTable": "Kontenrahmen",
+  "isVirtual": true,
+  "ownerField": "Team",
+  "sql": {
+    "strOrderBy": "ORDER BY `Kontenrahmen`.`Buchfuehrung`, `Kontenrahmen`.`Guv`, `Kontenrahmen`.`Nummer`, `Buchungen`.`Datum`",
+    "sqlHead": "SELECT `Kontenrahmen`.`ID`,  `Kontenrahmen`.`Buchfuehrung`,  `Kontenrahmen`.`Guv`,    `Kontenrahmen`.`Nummer`,  `Kontenrahmen`.`Kontobezeichnung`,  Concat(`Kontenrahmen`.`Nummer`,' ',`Kontenrahmen`.`Kontobezeichnung`) as Konto,  `Buchungen`.`Betreff`,  `Buchungen`.`Datum`,  if(Kontenrahmen.ID=Buchungen.Konto,`Buchungen`.`Betrag`,0) as Betraglinks,  if(Kontenrahmen.ID=Buchungen.Gegenkonto,`Buchungen`.`Betrag`,0) as Betragrechts,      if(Kontenrahmen.ID=Buchungen.Konto,`Buchungen`.`Betrag`*-1,Betrag) as Saldo,    Kontenrahmen.Team",
+    "sqlFrom": "FROM `Kontenrahmen`  LEFT OUTER JOIN `Buchungen` ON `Kontenrahmen`.`ID` = `Buchungen`.`Konto` OR `Kontenrahmen`.`ID` = `Buchungen`.`Gegenkonto`",
+    "sqlWhere": "",
+    "sqlTail": ""
+  },
+  "keys": [
+    "ID"
   ],
-  "view": [
-   "ID",
-   "Buchfuehrung",
-   "Guv",
-   "Nummer",
-   "Kontobezeichnung",
-   "Konto",
-   "Betreff",
-   "Datum",
-   "Betraglinks",
-   "Betragrechts",
-   "Saldo",
-   "Team"
-  ],
-  "add": [
-   "Buchfuehrung",
-   "Guv",
-   "Nummer",
-   "Kontobezeichnung"
-  ],
-  "edit": [
-   "Buchfuehrung",
-   "Guv",
-   "Nummer",
-   "Kontobezeichnung",
-   "Team"
-  ],
-  "export": [
-   "ID",
-   "Buchfuehrung",
-   "Guv",
-   "Nummer",
-   "Kontobezeichnung",
-   "Konto",
-   "Betreff",
-   "Datum",
-   "Betraglinks",
-   "Betragrechts",
-   "Saldo",
-   "Team"
-  ],
-  "print": [
-   "ID",
-   "Buchfuehrung",
-   "Guv",
-   "Nummer",
-   "Kontobezeichnung",
-   "Konto",
-   "Betreff",
-   "Datum",
-   "Betraglinks",
-   "Betragrechts",
-   "Saldo",
-   "Team"
-  ],
-  "search": [
-   "ID",
-   "Buchfuehrung",
-   "Guv",
-   "Nummer",
-   "Kontobezeichnung",
-   "Konto",
-   "Betreff",
-   "Datum",
-   "Betraglinks",
-   "Betragrechts",
-   "Saldo"
-  ],
-  "masterList": [
-   "ID",
-   "Buchfuehrung",
-   "Guv",
-   "Nummer",
-   "Kontobezeichnung",
-   "Konto",
-   "Betreff",
-   "Datum",
-   "Betraglinks",
-   "Betragrechts",
-   "Saldo",
-   "Team"
+  "pageSize": 5,
+  "capabilities": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+  },
+  "fieldSets": {
+    "list": [
+      "ID",
+      "Buchfuehrung",
+      "Guv",
+      "Nummer",
+      "Kontobezeichnung",
+      "Konto",
+      "Betreff",
+      "Datum",
+      "Betraglinks",
+      "Betragrechts",
+      "Saldo",
+      "Team"
+    ],
+    "view": [
+      "ID",
+      "Buchfuehrung",
+      "Guv",
+      "Nummer",
+      "Kontobezeichnung",
+      "Konto",
+      "Betreff",
+      "Datum",
+      "Betraglinks",
+      "Betragrechts",
+      "Saldo",
+      "Team"
+    ],
+    "add": [
+      "Buchfuehrung",
+      "Guv",
+      "Nummer",
+      "Kontobezeichnung"
+    ],
+    "edit": [
+      "Buchfuehrung",
+      "Guv",
+      "Nummer",
+      "Kontobezeichnung",
+      "Team"
+    ],
+    "export": [
+      "ID",
+      "Buchfuehrung",
+      "Guv",
+      "Nummer",
+      "Kontobezeichnung",
+      "Konto",
+      "Betreff",
+      "Datum",
+      "Betraglinks",
+      "Betragrechts",
+      "Saldo",
+      "Team"
+    ],
+    "print": [
+      "ID",
+      "Buchfuehrung",
+      "Guv",
+      "Nummer",
+      "Kontobezeichnung",
+      "Konto",
+      "Betreff",
+      "Datum",
+      "Betraglinks",
+      "Betragrechts",
+      "Saldo",
+      "Team"
+    ],
+    "search": [
+      "ID",
+      "Buchfuehrung",
+      "Guv",
+      "Nummer",
+      "Kontobezeichnung",
+      "Konto",
+      "Betreff",
+      "Datum",
+      "Betraglinks",
+      "Betragrechts",
+      "Saldo"
+    ],
+    "masterList": [
+      "ID",
+      "Buchfuehrung",
+      "Guv",
+      "Nummer",
+      "Kontobezeichnung",
+      "Konto",
+      "Betreff",
+      "Datum",
+      "Betraglinks",
+      "Betragrechts",
+      "Saldo",
+      "Team"
+    ]
+  },
+  "export": {
+    "exportTo": true,
+    "exportDelimiter": ",",
+    "exportFormatting": 2
+  },
+  "print": {
+    "printerPageOrientation": 0,
+    "nPrinterPageScale": 100,
+    "nPrinterSplitRecords": 40,
+    "nPrinterPDFSplitRecords": 40
+  },
+  "tabs": [],
+  "labels": {
+    "German": {
+      "ID": "ID",
+      "Buchfuehrung": "Buchführung",
+      "Nummer": "Nummer",
+      "Kontobezeichnung": "Kontobezeichnung",
+      "Guv": "GuV",
+      "Konto": "Konto",
+      "Betreff": "Betreff",
+      "Datum": "Datum",
+      "Betraglinks": "Summe Soll",
+      "Betragrechts": "Summe Haben",
+      "Saldo": "Saldo",
+      "Team": "Team"
+    },
+    "English": {
+      "ID": "ID",
+      "Buchfuehrung": "Bookkeeping",
+      "Nummer": "Number",
+      "Kontobezeichnung": "Accountbezeichnung",
+      "Guv": "GuV",
+      "Konto": "Account",
+      "Betreff": "Subject",
+      "Datum": "Date",
+      "Betraglinks": "Total Debit",
+      "Betragrechts": "Total Credit",
+      "Saldo": "Balance",
+      "Team": "Team"
+    }
+  },
+  "fields": [
+    {
+      "name": "ID",
+      "type": 3,
+      "index": 1,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "AutoInc": true,
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Buchfuehrung",
+      "type": 200,
+      "index": 2,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Buchfuehrungen",
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 2,
+        "LinkField": "ID",
+        "LinkFieldType": 0,
+        "DisplayField": "Bezeichnung",
+        "LookupOrderBy": "Bezeichnung",
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Guv",
+      "type": 200,
+      "index": 3,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Kontenrahmen",
+        "freeInput": true,
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 1,
+        "LinkField": "Guv",
+        "LinkFieldType": 0,
+        "DisplayField": "Guv",
+        "LookupOrderBy": "Guv",
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Nummer",
+      "type": 200,
+      "index": 4,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Kontobezeichnung",
+      "type": 200,
+      "index": 5,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Konto",
+      "type": 200,
+      "index": 6,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Betreff",
+      "type": 200,
+      "index": 7,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Datum",
+      "type": 7,
+      "index": 8,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "DateEditType": 13,
+        "InitialYearFactor": 3,
+        "LastYearFactor": 10,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Betraglinks",
+      "type": 14,
+      "index": 9,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Betragrechts",
+      "type": 14,
+      "index": 10,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Saldo",
+      "type": 14,
+      "index": 11,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Team",
+      "type": 200,
+      "index": 12,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    }
   ]
- },
- "export": {
-  "exportTo": true,
-  "exportDelimiter": ",",
-  "exportFormatting": 2
- },
- "print": {
-  "printerPageOrientation": 0,
-  "nPrinterPageScale": 100,
-  "nPrinterSplitRecords": 40,
-  "nPrinterPDFSplitRecords": 40
- },
- "tabs": [],
- "labels": {
-  "German": {
-   "ID": "ID",
-   "Buchfuehrung": "Buchführung",
-   "Nummer": "Nummer",
-   "Kontobezeichnung": "Kontobezeichnung",
-   "Guv": "GuV",
-   "Konto": "Konto",
-   "Betreff": "Betreff",
-   "Datum": "Datum",
-   "Betraglinks": "Summe Soll",
-   "Betragrechts": "Summe Haben",
-   "Saldo": "Saldo",
-   "Team": "Team"
-  }
- },
- "fields": [
-  {
-   "name": "ID",
-   "type": 3,
-   "index": 1,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "AutoInc": true,
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Buchfuehrung",
-   "type": 200,
-   "index": 2,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Buchfuehrungen",
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 2,
-    "LinkField": "ID",
-    "LinkFieldType": 0,
-    "DisplayField": "Bezeichnung",
-    "LookupOrderBy": "Bezeichnung",
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Guv",
-   "type": 200,
-   "index": 3,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Kontenrahmen",
-    "freeInput": true,
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 1,
-    "LinkField": "Guv",
-    "LinkFieldType": 0,
-    "DisplayField": "Guv",
-    "LookupOrderBy": "Guv",
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Nummer",
-   "type": 200,
-   "index": 4,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Kontobezeichnung",
-   "type": 200,
-   "index": 5,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Konto",
-   "type": 200,
-   "index": 6,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Betreff",
-   "type": 200,
-   "index": 7,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Datum",
-   "type": 7,
-   "index": 8,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "DateEditType": 13,
-    "InitialYearFactor": 3,
-    "LastYearFactor": 10,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Betraglinks",
-   "type": 14,
-   "index": 9,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Betragrechts",
-   "type": 14,
-   "index": 10,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Saldo",
-   "type": 14,
-   "index": 11,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Team",
-   "type": 200,
-   "index": 12,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  }
- ]
 }

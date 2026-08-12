@@ -39,7 +39,7 @@ export async function salesMailMergeRows(prisma, where = {}) {
     include: { rel_Adressen_Kunde: true, rel_Positionen_Verkaufsvorgang: true },
   });
   const out = [];
-  for (const sale of sales) for (const position of (sale.rel_Positionen_Verkaufsvorgang.length ? sale.rel_Positionen_Verkaufsvorgang : [{}])) {
+  for (const sale of sales) for (const position of (sale.rel_Positionen_Verkaufsvorgang?.length ? sale.rel_Positionen_Verkaufsvorgang : [{}])) {
     const address = sale.rel_Adressen_Kunde || {};
     const amount = Number(position.Menge || 0) * Number(position.Listenpreis || 0);
     const taxRate = Number(position.Mwst_Satz || 0);

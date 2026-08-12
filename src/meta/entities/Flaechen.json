@@ -1,481 +1,495 @@
 {
- "entity": "Flaechen",
- "shortName": "Flaechen",
- "baseTable": "Flaechen",
- "isVirtual": false,
- "ownerField": "Team",
- "sql": {
-  "strOrderBy": "ORDER BY Objekt, Einheit, Flaechen.Raum, Flaechen.Bezeichnung",
-  "sqlHead": "SELECT Flaechen.ID,  Flaechen.Bezeichnung,  Flaechen.Breite,  Flaechen.Tiefe,  Flaechen.Anrechenbarkeit,  Flaechen.Hoehe,  Flaechen.Raum,  round(Breite*Tiefe*Anrechenbarkeit, 2) AS Quadratmeter,  round(Breite*Tiefe*Hoehe*Anrechenbarkeit, 2) AS Kubikmeter,  Einheiten.Bezeichnung AS Einheit,  Objekte.Bezeichnung AS Objekt,  Flaechen.Team",
-  "sqlFrom": "FROM Flaechen  LEFT OUTER JOIN Raeume ON Flaechen.Raum = Raeume.ID  LEFT OUTER JOIN Einheiten ON Raeume.Einheit = Einheiten.ID  LEFT OUTER JOIN Objekte ON Einheiten.Objekt = Objekte.ID",
-  "sqlWhere": "",
-  "sqlTail": ""
- },
- "keys": [
-  "ID"
- ],
- "pageSize": 20,
- "capabilities": {
-  "list": true,
-  "view": true,
-  "add": true,
-  "edit": true,
-  "export": true,
-  "print": true,
-  "search": true,
-  "masterList": true
- },
- "fieldSets": {
-  "list": [
-   "Objekt",
-   "Einheit",
-   "Raum",
-   "Bezeichnung",
-   "Breite",
-   "Tiefe",
-   "Anrechenbarkeit",
-   "Quadratmeter",
-   "Hoehe",
-   "Kubikmeter"
+  "entity": "Flaechen",
+  "shortName": "Flaechen",
+  "baseTable": "Flaechen",
+  "isVirtual": false,
+  "ownerField": "Team",
+  "sql": {
+    "strOrderBy": "ORDER BY Objekt, Einheit, Flaechen.Raum, Flaechen.Bezeichnung",
+    "sqlHead": "SELECT Flaechen.ID,  Flaechen.Bezeichnung,  Flaechen.Breite,  Flaechen.Tiefe,  Flaechen.Anrechenbarkeit,  Flaechen.Hoehe,  Flaechen.Raum,  round(Breite*Tiefe*Anrechenbarkeit, 2) AS Quadratmeter,  round(Breite*Tiefe*Hoehe*Anrechenbarkeit, 2) AS Kubikmeter,  Einheiten.Bezeichnung AS Einheit,  Objekte.Bezeichnung AS Objekt,  Flaechen.Team",
+    "sqlFrom": "FROM Flaechen  LEFT OUTER JOIN Raeume ON Flaechen.Raum = Raeume.ID  LEFT OUTER JOIN Einheiten ON Raeume.Einheit = Einheiten.ID  LEFT OUTER JOIN Objekte ON Einheiten.Objekt = Objekte.ID",
+    "sqlWhere": "",
+    "sqlTail": ""
+  },
+  "keys": [
+    "ID"
   ],
-  "view": [
-   "Objekt",
-   "Einheit",
-   "Raum",
-   "Bezeichnung",
-   "Breite",
-   "Tiefe",
-   "Anrechenbarkeit",
-   "Quadratmeter",
-   "Hoehe",
-   "Kubikmeter"
-  ],
-  "add": [
-   "Raum",
-   "Bezeichnung",
-   "Breite",
-   "Tiefe",
-   "Anrechenbarkeit",
-   "Hoehe"
-  ],
-  "edit": [
-   "Raum",
-   "Bezeichnung",
-   "Breite",
-   "Tiefe",
-   "Anrechenbarkeit",
-   "Hoehe"
-  ],
-  "export": [
-   "ID",
-   "Objekt",
-   "Einheit",
-   "Raum",
-   "Bezeichnung",
-   "Breite",
-   "Tiefe",
-   "Anrechenbarkeit",
-   "Quadratmeter",
-   "Hoehe",
-   "Kubikmeter"
-  ],
-  "print": [
-   "Objekt",
-   "Einheit",
-   "Raum",
-   "Bezeichnung",
-   "Breite",
-   "Tiefe",
-   "Anrechenbarkeit",
-   "Quadratmeter",
-   "Hoehe",
-   "Kubikmeter"
-  ],
-  "search": [
-   "ID",
-   "Raum",
-   "Bezeichnung",
-   "Breite",
-   "Tiefe",
-   "Anrechenbarkeit",
-   "Quadratmeter",
-   "Hoehe",
-   "Kubikmeter"
-  ],
-  "masterList": [
-   "Team",
-   "ID",
-   "Objekt",
-   "Einheit",
-   "Raum",
-   "Bezeichnung",
-   "Breite",
-   "Tiefe",
-   "Anrechenbarkeit",
-   "Quadratmeter",
-   "Hoehe",
-   "Kubikmeter"
+  "pageSize": 20,
+  "capabilities": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": true,
+    "masterList": true
+  },
+  "fieldSets": {
+    "list": [
+      "Objekt",
+      "Einheit",
+      "Raum",
+      "Bezeichnung",
+      "Breite",
+      "Tiefe",
+      "Anrechenbarkeit",
+      "Quadratmeter",
+      "Hoehe",
+      "Kubikmeter"
+    ],
+    "view": [
+      "Objekt",
+      "Einheit",
+      "Raum",
+      "Bezeichnung",
+      "Breite",
+      "Tiefe",
+      "Anrechenbarkeit",
+      "Quadratmeter",
+      "Hoehe",
+      "Kubikmeter"
+    ],
+    "add": [
+      "Raum",
+      "Bezeichnung",
+      "Breite",
+      "Tiefe",
+      "Anrechenbarkeit",
+      "Hoehe"
+    ],
+    "edit": [
+      "Raum",
+      "Bezeichnung",
+      "Breite",
+      "Tiefe",
+      "Anrechenbarkeit",
+      "Hoehe"
+    ],
+    "export": [
+      "ID",
+      "Objekt",
+      "Einheit",
+      "Raum",
+      "Bezeichnung",
+      "Breite",
+      "Tiefe",
+      "Anrechenbarkeit",
+      "Quadratmeter",
+      "Hoehe",
+      "Kubikmeter"
+    ],
+    "print": [
+      "Objekt",
+      "Einheit",
+      "Raum",
+      "Bezeichnung",
+      "Breite",
+      "Tiefe",
+      "Anrechenbarkeit",
+      "Quadratmeter",
+      "Hoehe",
+      "Kubikmeter"
+    ],
+    "search": [
+      "ID",
+      "Raum",
+      "Bezeichnung",
+      "Breite",
+      "Tiefe",
+      "Anrechenbarkeit",
+      "Quadratmeter",
+      "Hoehe",
+      "Kubikmeter"
+    ],
+    "masterList": [
+      "Team",
+      "ID",
+      "Objekt",
+      "Einheit",
+      "Raum",
+      "Bezeichnung",
+      "Breite",
+      "Tiefe",
+      "Anrechenbarkeit",
+      "Quadratmeter",
+      "Hoehe",
+      "Kubikmeter"
+    ]
+  },
+  "export": {
+    "exportTo": true,
+    "exportDelimiter": ",",
+    "exportFormatting": 2
+  },
+  "print": {
+    "printerPageOrientation": 1,
+    "nPrinterPageScale": 100,
+    "nPrinterSplitRecords": 40,
+    "nPrinterPDFSplitRecords": 40
+  },
+  "tabs": [],
+  "labels": {
+    "German": {
+      "ID": "ID",
+      "Bezeichnung": "Bezeichnung",
+      "Breite": "Breite",
+      "Tiefe": "Tiefe",
+      "Anrechenbarkeit": "Anrechenbarkeit",
+      "Hoehe": "Höhe",
+      "Raum": "Raum",
+      "Einheit": "Einheit",
+      "Objekt": "Objekt",
+      "Quadratmeter": "Quadratmeter",
+      "Kubikmeter": "Kubikmeter",
+      "Team": "Team"
+    },
+    "English": {
+      "ID": "ID",
+      "Bezeichnung": "Description",
+      "Breite": "Breite",
+      "Tiefe": "Tiefe",
+      "Anrechenbarkeit": "Creditability",
+      "Hoehe": "Height",
+      "Raum": "Raum",
+      "Einheit": "Unit",
+      "Objekt": "Property",
+      "Quadratmeter": "Square metres",
+      "Kubikmeter": "Kubikmeter",
+      "Team": "Team"
+    }
+  },
+  "fields": [
+    {
+      "name": "ID",
+      "type": 3,
+      "index": 1,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "number",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "AutoInc": true,
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Bezeichnung",
+      "type": 200,
+      "index": 2,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Breite",
+      "type": 14,
+      "index": 3,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Tiefe",
+      "type": 14,
+      "index": 4,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Anrechenbarkeit",
+      "type": 14,
+      "index": 5,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 0,
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 4,
+        "HorizontalLookup": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Hoehe",
+      "type": 14,
+      "index": 6,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Raum",
+      "type": 3,
+      "index": 7,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Raeume",
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 2,
+        "LinkField": "ID",
+        "LinkFieldType": 0,
+        "DisplayField": "Bezeichnung",
+        "LookupOrderBy": "Bezeichnung",
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Quadratmeter",
+      "type": 14,
+      "index": 8,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Kubikmeter",
+      "type": 14,
+      "index": 9,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "DecimalDigits": 2,
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Einheit",
+      "type": 200,
+      "index": 10,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Objekt",
+      "type": 200,
+      "index": 11,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": true,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Team",
+      "type": 200,
+      "index": 12,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    }
   ]
- },
- "export": {
-  "exportTo": true,
-  "exportDelimiter": ",",
-  "exportFormatting": 2
- },
- "print": {
-  "printerPageOrientation": 1,
-  "nPrinterPageScale": 100,
-  "nPrinterSplitRecords": 40,
-  "nPrinterPDFSplitRecords": 40
- },
- "tabs": [],
- "labels": {
-  "German": {
-   "ID": "ID",
-   "Bezeichnung": "Bezeichnung",
-   "Breite": "Breite",
-   "Tiefe": "Tiefe",
-   "Anrechenbarkeit": "Anrechenbarkeit",
-   "Hoehe": "Höhe",
-   "Raum": "Raum",
-   "Einheit": "Einheit",
-   "Objekt": "Objekt",
-   "Quadratmeter": "Quadratmeter",
-   "Kubikmeter": "Kubikmeter",
-   "Team": "Team"
-  }
- },
- "fields": [
-  {
-   "name": "ID",
-   "type": 3,
-   "index": 1,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "number",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "AutoInc": true,
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Bezeichnung",
-   "type": 200,
-   "index": 2,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Breite",
-   "type": 14,
-   "index": 3,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Tiefe",
-   "type": 14,
-   "index": 4,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Anrechenbarkeit",
-   "type": 14,
-   "index": 5,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 0,
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 4,
-    "HorizontalLookup": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Hoehe",
-   "type": 14,
-   "index": 6,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Raum",
-   "type": 3,
-   "index": 7,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Raeume",
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 2,
-    "LinkField": "ID",
-    "LinkFieldType": 0,
-    "DisplayField": "Bezeichnung",
-    "LookupOrderBy": "Bezeichnung",
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Quadratmeter",
-   "type": 14,
-   "index": 8,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Kubikmeter",
-   "type": 14,
-   "index": 9,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "DecimalDigits": 2,
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Einheit",
-   "type": 200,
-   "index": 10,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Objekt",
-   "type": 200,
-   "index": 11,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": true,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Team",
-   "type": 200,
-   "index": 12,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  }
- ]
 }

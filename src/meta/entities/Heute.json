@@ -1,49 +1,52 @@
 {
- "entity": "Heute",
- "shortName": "Heute",
- "baseTable": "Heute",
- "isVirtual": true,
- "ownerField": null,
- "sql": {
-  "strOrderBy": "",
-  "sqlHead": "",
-  "sqlFrom": "",
-  "sqlWhere": "",
-  "sqlTail": ""
- },
- "keys": [],
- "pageSize": 0,
- "capabilities": {
-  "list": false,
-  "view": false,
-  "add": false,
-  "edit": false,
-  "export": false,
-  "print": false,
-  "search": true,
-  "masterList": false
- },
- "fieldSets": {
-  "search": [
-   "WV_Tag"
-  ]
- },
- "export": {
-  "exportTo": null,
-  "exportDelimiter": null,
-  "exportFormatting": null
- },
- "print": {
-  "printerPageOrientation": null,
-  "nPrinterPageScale": null,
-  "nPrinterSplitRecords": null,
-  "nPrinterPDFSplitRecords": null
- },
- "tabs": [],
- "labels": {
-  "German": {
-   "WV_Tag": "WV Tag"
-  }
- },
- "fields": []
+  "entity": "Heute",
+  "shortName": "Heute",
+  "baseTable": "Heute",
+  "isVirtual": true,
+  "ownerField": null,
+  "sql": {
+    "strOrderBy": "",
+    "sqlHead": "",
+    "sqlFrom": "",
+    "sqlWhere": "",
+    "sqlTail": ""
+  },
+  "keys": [],
+  "pageSize": 0,
+  "capabilities": {
+    "list": false,
+    "view": false,
+    "add": false,
+    "edit": false,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": false
+  },
+  "fieldSets": {
+    "search": [
+      "WV_Tag"
+    ]
+  },
+  "export": {
+    "exportTo": null,
+    "exportDelimiter": null,
+    "exportFormatting": null
+  },
+  "print": {
+    "printerPageOrientation": null,
+    "nPrinterPageScale": null,
+    "nPrinterSplitRecords": null,
+    "nPrinterPDFSplitRecords": null
+  },
+  "tabs": [],
+  "labels": {
+    "German": {
+      "WV_Tag": "WV Tag"
+    },
+    "English": {
+      "WV_Tag": "WV Day"
+    }
+  },
+  "fields": []
 }

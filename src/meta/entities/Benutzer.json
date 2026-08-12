@@ -1,397 +1,408 @@
 {
- "entity": "Benutzer",
- "shortName": "Benutzer",
- "baseTable": "Benutzer",
- "isVirtual": false,
- "ownerField": "Benutzername",
- "sql": {
-  "strOrderBy": "ORDER BY `Benutzername`",
-  "sqlHead": "SELECT `Benutzername`,  `Passwort`,  `Name`,  `Email`,  `Bild`,  `Gruppe`,  `Freigabe`,  `Team`,  `Erstanmeldung`,  `Art`",
-  "sqlFrom": "FROM `Benutzer`",
-  "sqlWhere": "",
-  "sqlTail": ""
- },
- "keys": [
-  "Benutzername"
- ],
- "pageSize": 20,
- "capabilities": {
-  "list": true,
-  "view": true,
-  "add": false,
-  "edit": true,
-  "export": false,
-  "print": false,
-  "search": true,
-  "masterList": true
- },
- "fieldSets": {
-  "list": [
-   "Team",
-   "Erstanmeldung",
-   "Art",
-   "Benutzername",
-   "Name",
-   "Bild",
-   "Email"
+  "entity": "Benutzer",
+  "shortName": "Benutzer",
+  "baseTable": "Benutzer",
+  "isVirtual": false,
+  "ownerField": "Benutzername",
+  "sql": {
+    "strOrderBy": "ORDER BY `Benutzername`",
+    "sqlHead": "SELECT `Benutzername`,  `Passwort`,  `Name`,  `Email`,  `Bild`,  `Gruppe`,  `Freigabe`,  `Team`,  `Erstanmeldung`,  `Art`",
+    "sqlFrom": "FROM `Benutzer`",
+    "sqlWhere": "",
+    "sqlTail": ""
+  },
+  "keys": [
+    "Benutzername"
   ],
-  "view": [
-   "Freigabe",
-   "Team",
-   "Erstanmeldung",
-   "Art",
-   "Benutzername",
-   "Name",
-   "Bild",
-   "Email",
-   "Gruppe"
-  ],
-  "edit": [
-   "Gruppe",
-   "Freigabe",
-   "Team",
-   "Erstanmeldung",
-   "Art",
-   "Passwort",
-   "Name",
-   "Bild",
-   "Email"
-  ],
-  "search": [
-   "Gruppe",
-   "Freigabe",
-   "Team",
-   "Erstanmeldung",
-   "Art",
-   "Name",
-   "Email",
-   "Benutzername"
-  ],
-  "masterList": [
-   "Gruppe",
-   "Freigabe",
-   "Team",
-   "Erstanmeldung",
-   "Art",
-   "Name",
-   "Bild",
-   "Email",
-   "Benutzername",
-   "Passwort"
+  "pageSize": 20,
+  "capabilities": {
+    "list": true,
+    "view": true,
+    "add": false,
+    "edit": true,
+    "export": false,
+    "print": false,
+    "search": true,
+    "masterList": true
+  },
+  "fieldSets": {
+    "list": [
+      "Team",
+      "Erstanmeldung",
+      "Art",
+      "Benutzername",
+      "Name",
+      "Bild",
+      "Email"
+    ],
+    "view": [
+      "Freigabe",
+      "Team",
+      "Erstanmeldung",
+      "Art",
+      "Benutzername",
+      "Name",
+      "Bild",
+      "Email",
+      "Gruppe"
+    ],
+    "edit": [
+      "Gruppe",
+      "Freigabe",
+      "Team",
+      "Erstanmeldung",
+      "Art",
+      "Passwort",
+      "Name",
+      "Bild",
+      "Email"
+    ],
+    "search": [
+      "Gruppe",
+      "Freigabe",
+      "Team",
+      "Erstanmeldung",
+      "Art",
+      "Name",
+      "Email",
+      "Benutzername"
+    ],
+    "masterList": [
+      "Gruppe",
+      "Freigabe",
+      "Team",
+      "Erstanmeldung",
+      "Art",
+      "Name",
+      "Bild",
+      "Email",
+      "Benutzername"
+    ]
+  },
+  "export": {
+    "exportTo": null,
+    "exportDelimiter": null,
+    "exportFormatting": null
+  },
+  "print": {
+    "printerPageOrientation": 0,
+    "nPrinterPageScale": 100,
+    "nPrinterSplitRecords": 40,
+    "nPrinterPDFSplitRecords": 40
+  },
+  "tabs": [],
+  "labels": {
+    "German": {
+      "Benutzername": "Benutzername",
+      "Passwort": "Passwort",
+      "Name": "Name",
+      "Email": "Email",
+      "Bild": "Bild",
+      "Gruppe": "Gruppe",
+      "Freigabe": "Freigabe",
+      "Team": "Team",
+      "Erstanmeldung": "Erstanmeldung",
+      "Art": "Art"
+    },
+    "English": {
+      "Benutzername": "Username",
+      "Passwort": "Password",
+      "Name": "Name",
+      "Email": "Email",
+      "Bild": "Image",
+      "Gruppe": "Group",
+      "Freigabe": "Release",
+      "Team": "Team",
+      "Erstanmeldung": "First login",
+      "Art": "Type"
+    }
+  },
+  "fields": [
+    {
+      "name": "Benutzername",
+      "type": 200,
+      "index": 1,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200,
+        "denyDuplicates": true
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Passwort",
+      "type": 200,
+      "index": 2,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": false
+      },
+      "view": {
+        "ViewFormat": "Custom"
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Name",
+      "type": 200,
+      "index": 3,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Email",
+      "type": 200,
+      "index": 4,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "ViewFormat": "Email Hyperlink"
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "email",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Bild",
+      "type": 128,
+      "index": 5,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "ImageWidth": 72,
+        "ImageHeight": 72,
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200,
+        "ResizeImage": true,
+        "NewSize": 72
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Gruppe",
+      "type": 200,
+      "index": 6,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": false,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 1,
+        "LookupTable": "intex hausverwaltung_uggroups",
+        "LookupConnId": "d023a667_at_intex_publishing_de",
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 4,
+        "LinkField": "GroupID",
+        "LinkFieldType": 3,
+        "DisplayField": "Label",
+        "LookupOrderBy": "Label",
+        "SimpleAdd": true,
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Freigabe",
+      "type": 200,
+      "index": 7,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": false,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Team",
+      "type": 200,
+      "index": 8,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Erstanmeldung",
+      "type": 7,
+      "index": 9,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "DateEditType": 13,
+        "InitialYearFactor": 3,
+        "LastYearFactor": 10,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Art",
+      "type": 200,
+      "index": 10,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": false,
+        "edit": true,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    }
   ]
- },
- "export": {
-  "exportTo": null,
-  "exportDelimiter": null,
-  "exportFormatting": null
- },
- "print": {
-  "printerPageOrientation": 0,
-  "nPrinterPageScale": 100,
-  "nPrinterSplitRecords": 40,
-  "nPrinterPDFSplitRecords": 40
- },
- "tabs": [],
- "labels": {
-  "German": {
-   "Benutzername": "Benutzername",
-   "Passwort": "Passwort",
-   "Name": "Name",
-   "Email": "Email",
-   "Bild": "Bild",
-   "Gruppe": "Gruppe",
-   "Freigabe": "Freigabe",
-   "Team": "Team",
-   "Erstanmeldung": "Erstanmeldung",
-   "Art": "Art"
-  }
- },
- "fields": [
-  {
-   "name": "Benutzername",
-   "type": 200,
-   "index": 1,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200,
-    "denyDuplicates": true
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Passwort",
-   "type": 200,
-   "index": 2,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "ViewFormat": "Custom"
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Name",
-   "type": 200,
-   "index": 3,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Email",
-   "type": 200,
-   "index": 4,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "ViewFormat": "Email Hyperlink"
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "email",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Bild",
-   "type": 128,
-   "index": 5,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "ImageWidth": 72,
-    "ImageHeight": 72,
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200,
-    "ResizeImage": true,
-    "NewSize": 72
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Gruppe",
-   "type": 200,
-   "index": 6,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": false,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 1,
-    "LookupTable": "intex hausverwaltung_uggroups",
-    "LookupConnId": "d023a667_at_intex_publishing_de",
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 4,
-    "LinkField": "GroupID",
-    "LinkFieldType": 3,
-    "DisplayField": "Label",
-    "LookupOrderBy": "Label",
-    "SimpleAdd": true,
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Freigabe",
-   "type": 200,
-   "index": 7,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": false,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Team",
-   "type": 200,
-   "index": 8,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Erstanmeldung",
-   "type": 7,
-   "index": 9,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "DateEditType": 13,
-    "InitialYearFactor": 3,
-    "LastYearFactor": 10,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Art",
-   "type": 200,
-   "index": 10,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": false,
-    "edit": true,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  }
- ]
 }

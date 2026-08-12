@@ -1,408 +1,420 @@
 {
- "entity": "Angebote",
- "shortName": "Angebote",
- "baseTable": "Verkauf",
- "isVirtual": true,
- "ownerField": "Team",
- "sql": {
-  "strOrderBy": "ORDER BY Verkauf.Datum DESC",
-  "sqlHead": "SELECT Verkauf.ID,  Verkauf.Kunde,  Verkauf.Datum,  Verkauf.Zahlungsbedingungen,  Verkauf.Lieferbedingungen,  Concat(if(Adressen.Firma='','', Concat(Adressen.Firma, '<br>')), if(Adressen.Abteilung='','', Concat(Adressen.Abteilung, '<br>')), Adressen.Vorname, ' ', Adressen.Nachname, '<br>', Adressen.Strasse, '<br>', Adressen.PLZ, ' ', Adressen.Ort) AS Anschrift,  Verkauf.Art,  Verkauf.Bemerkungen,  Verkauf.Bezeichnung,  Verkauf.Team",
-  "sqlFrom": "FROM Verkauf  LEFT OUTER JOIN Adressen ON Verkauf.Kunde = Adressen.ID",
-  "sqlWhere": "",
-  "sqlTail": ""
- },
- "keys": [
-  "ID"
- ],
- "pageSize": 20,
- "capabilities": {
-  "list": true,
-  "view": true,
-  "add": true,
-  "edit": true,
-  "export": false,
-  "print": true,
-  "search": true,
-  "masterList": true
- },
- "fieldSets": {
-  "list": [
-   "Kunde",
-   "Bezeichnung",
-   "Datum"
+  "entity": "Angebote",
+  "shortName": "Angebote",
+  "baseTable": "Verkauf",
+  "isVirtual": true,
+  "ownerField": "Team",
+  "sql": {
+    "strOrderBy": "ORDER BY Verkauf.Datum DESC",
+    "sqlHead": "SELECT Verkauf.ID,  Verkauf.Kunde,  Verkauf.Datum,  Verkauf.Zahlungsbedingungen,  Verkauf.Lieferbedingungen,  Concat(if(Adressen.Firma='','', Concat(Adressen.Firma, '<br>')), if(Adressen.Abteilung='','', Concat(Adressen.Abteilung, '<br>')), Adressen.Vorname, ' ', Adressen.Nachname, '<br>', Adressen.Strasse, '<br>', Adressen.PLZ, ' ', Adressen.Ort) AS Anschrift,  Verkauf.Art,  Verkauf.Bemerkungen,  Verkauf.Bezeichnung,  Verkauf.Team",
+    "sqlFrom": "FROM Verkauf  LEFT OUTER JOIN Adressen ON Verkauf.Kunde = Adressen.ID",
+    "sqlWhere": "",
+    "sqlTail": ""
+  },
+  "keys": [
+    "ID"
   ],
-  "view": [
-   "Art",
-   "Kunde",
-   "Anschrift",
-   "Bezeichnung",
-   "Datum",
-   "Zahlungsbedingungen",
-   "Lieferbedingungen",
-   "Bemerkungen"
-  ],
-  "add": [
-   "Art",
-   "Kunde",
-   "Bezeichnung",
-   "Datum",
-   "Zahlungsbedingungen",
-   "Lieferbedingungen",
-   "Bemerkungen"
-  ],
-  "edit": [
-   "Kunde",
-   "Bezeichnung",
-   "Datum",
-   "Zahlungsbedingungen",
-   "Lieferbedingungen",
-   "Bemerkungen"
-  ],
-  "print": [
-   "Anschrift",
-   "Kunde",
-   "Bezeichnung",
-   "Datum",
-   "Zahlungsbedingungen",
-   "Lieferbedingungen",
-   "Bemerkungen"
-  ],
-  "search": [
-   "ID",
-   "Kunde",
-   "Art",
-   "Bezeichnung",
-   "Datum",
-   "Zahlungsbedingungen",
-   "Lieferbedingungen"
-  ],
-  "masterList": [
-   "Kunde",
-   "Art",
-   "Bezeichnung",
-   "Datum"
+  "pageSize": 20,
+  "capabilities": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": false,
+    "print": true,
+    "search": true,
+    "masterList": true
+  },
+  "fieldSets": {
+    "list": [
+      "Kunde",
+      "Bezeichnung",
+      "Datum"
+    ],
+    "view": [
+      "Art",
+      "Kunde",
+      "Anschrift",
+      "Bezeichnung",
+      "Datum",
+      "Zahlungsbedingungen",
+      "Lieferbedingungen",
+      "Bemerkungen"
+    ],
+    "add": [
+      "Art",
+      "Kunde",
+      "Bezeichnung",
+      "Datum",
+      "Zahlungsbedingungen",
+      "Lieferbedingungen",
+      "Bemerkungen"
+    ],
+    "edit": [
+      "Kunde",
+      "Bezeichnung",
+      "Datum",
+      "Zahlungsbedingungen",
+      "Lieferbedingungen",
+      "Bemerkungen"
+    ],
+    "print": [
+      "Anschrift",
+      "Kunde",
+      "Bezeichnung",
+      "Datum",
+      "Zahlungsbedingungen",
+      "Lieferbedingungen",
+      "Bemerkungen"
+    ],
+    "search": [
+      "ID",
+      "Kunde",
+      "Art",
+      "Bezeichnung",
+      "Datum",
+      "Zahlungsbedingungen",
+      "Lieferbedingungen"
+    ],
+    "masterList": [
+      "Kunde",
+      "Art",
+      "Bezeichnung",
+      "Datum"
+    ]
+  },
+  "export": {
+    "exportTo": null,
+    "exportDelimiter": null,
+    "exportFormatting": null
+  },
+  "print": {
+    "printerPageOrientation": 0,
+    "nPrinterPageScale": 100,
+    "nPrinterSplitRecords": 40,
+    "nPrinterPDFSplitRecords": 40
+  },
+  "tabs": [],
+  "labels": {
+    "German": {
+      "ID": "ID",
+      "Kunde": "Kunde",
+      "Datum": "Datum",
+      "Zahlungsbedingungen": "Zahlungsbedingungen",
+      "Lieferbedingungen": "Lieferbedingungen",
+      "Anschrift": "Anschrift",
+      "Art": "Art",
+      "Bemerkungen": "Bemerkungen",
+      "Bezeichnung": "Bezeichnung",
+      "Team": "Team"
+    },
+    "English": {
+      "ID": "ID",
+      "Kunde": "Kunde",
+      "Datum": "Date",
+      "Zahlungsbedingungen": "Payment terms",
+      "Lieferbedingungen": "Delivery terms",
+      "Anschrift": "Anschrift",
+      "Art": "Type",
+      "Bemerkungen": "Notes",
+      "Bezeichnung": "Description",
+      "Team": "Team"
+    }
+  },
+  "fields": [
+    {
+      "name": "ID",
+      "type": 3,
+      "index": 1,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "AutoInc": true,
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Kunde",
+      "type": 3,
+      "index": 2,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Adressen",
+        "autoCompleteFieldsOnEdit": 1,
+        "LCType": 2,
+        "LinkField": "ID",
+        "LinkFieldType": 0,
+        "DisplayField": "Kurzname",
+        "LookupOrderBy": "Kurzname",
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Datum",
+      "type": 7,
+      "index": 3,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "DateEditType": 13,
+        "InitialYearFactor": 3,
+        "LastYearFactor": 10,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Zahlungsbedingungen",
+      "type": 200,
+      "index": 4,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": true,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Verkauf",
+        "freeInput": true,
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 1,
+        "LookupUnique": true,
+        "LinkField": "Zahlungsbedingungen",
+        "LinkFieldType": 0,
+        "DisplayField": "Zahlungsbedingungen",
+        "LookupOrderBy": "Zahlungsbedingungen",
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Lieferbedingungen",
+      "type": 200,
+      "index": 5,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": true,
+        "search": true,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Verkauf",
+        "freeInput": true,
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 1,
+        "LookupUnique": true,
+        "LinkField": "Lieferbedingungen",
+        "LinkFieldType": 0,
+        "DisplayField": "Lieferbedingungen",
+        "LookupOrderBy": "Lieferbedingungen",
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Anschrift",
+      "type": 200,
+      "index": 6,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": true,
+        "search": false,
+        "masterList": false
+      },
+      "view": {
+        "ViewFormat": "Custom"
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Art",
+      "type": 200,
+      "index": 7,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Bemerkungen",
+      "type": 200,
+      "index": 8,
+      "pages": {
+        "list": false,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": true,
+        "search": false,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "nRows": 100,
+        "nCols": 200,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Bezeichnung",
+      "type": 200,
+      "index": 9,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": false,
+        "print": true,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Team",
+      "type": 200,
+      "index": 10,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": false
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    }
   ]
- },
- "export": {
-  "exportTo": null,
-  "exportDelimiter": null,
-  "exportFormatting": null
- },
- "print": {
-  "printerPageOrientation": 0,
-  "nPrinterPageScale": 100,
-  "nPrinterSplitRecords": 40,
-  "nPrinterPDFSplitRecords": 40
- },
- "tabs": [],
- "labels": {
-  "German": {
-   "ID": "ID",
-   "Kunde": "Kunde",
-   "Datum": "Datum",
-   "Zahlungsbedingungen": "Zahlungsbedingungen",
-   "Lieferbedingungen": "Lieferbedingungen",
-   "Anschrift": "Anschrift",
-   "Art": "Art",
-   "Bemerkungen": "Bemerkungen",
-   "Bezeichnung": "Bezeichnung",
-   "Team": "Team"
-  }
- },
- "fields": [
-  {
-   "name": "ID",
-   "type": 3,
-   "index": 1,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "AutoInc": true,
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Kunde",
-   "type": 3,
-   "index": 2,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Adressen",
-    "autoCompleteFieldsOnEdit": 1,
-    "LCType": 2,
-    "LinkField": "ID",
-    "LinkFieldType": 0,
-    "DisplayField": "Kurzname",
-    "LookupOrderBy": "Kurzname",
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Datum",
-   "type": 7,
-   "index": 3,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "DateEditType": 13,
-    "InitialYearFactor": 3,
-    "LastYearFactor": 10,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Zahlungsbedingungen",
-   "type": 200,
-   "index": 4,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": true,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Verkauf",
-    "freeInput": true,
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 1,
-    "LookupUnique": true,
-    "LinkField": "Zahlungsbedingungen",
-    "LinkFieldType": 0,
-    "DisplayField": "Zahlungsbedingungen",
-    "LookupOrderBy": "Zahlungsbedingungen",
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Lieferbedingungen",
-   "type": 200,
-   "index": 5,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": true,
-    "search": true,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Verkauf",
-    "freeInput": true,
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 1,
-    "LookupUnique": true,
-    "LinkField": "Lieferbedingungen",
-    "LinkFieldType": 0,
-    "DisplayField": "Lieferbedingungen",
-    "LookupOrderBy": "Lieferbedingungen",
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Anschrift",
-   "type": 200,
-   "index": 6,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": true,
-    "search": false,
-    "masterList": false
-   },
-   "view": {
-    "ViewFormat": "Custom"
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Art",
-   "type": 200,
-   "index": 7,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Bemerkungen",
-   "type": 200,
-   "index": 8,
-   "pages": {
-    "list": false,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": true,
-    "search": false,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "nRows": 100,
-    "nCols": 200,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Bezeichnung",
-   "type": 200,
-   "index": 9,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": false,
-    "print": true,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Team",
-   "type": 200,
-   "index": 10,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": false
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  }
- ]
 }

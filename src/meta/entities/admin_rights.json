@@ -1,170 +1,175 @@
 {
- "entity": "admin_rights",
- "shortName": "admin_rights",
- "baseTable": "intex hausverwaltung_ugrights",
- "isVirtual": true,
- "ownerField": null,
- "sql": {
-  "strOrderBy": "",
-  "sqlHead": "SELECT TableName,  \tGroupID,  \tAccessMask",
-  "sqlFrom": "FROM `intex hausverwaltung_ugrights`",
-  "sqlWhere": "",
-  "sqlTail": ""
- },
- "keys": [
-  "TableName",
-  "GroupID"
- ],
- "pageSize": 20,
- "capabilities": {
-  "list": true,
-  "view": true,
-  "add": true,
-  "edit": true,
-  "export": true,
-  "print": true,
-  "search": false,
-  "masterList": true
- },
- "fieldSets": {
-  "list": [
-   "TableName",
-   "GroupID",
-   "AccessMask"
+  "entity": "admin_rights",
+  "shortName": "admin_rights",
+  "baseTable": "intex hausverwaltung_ugrights",
+  "isVirtual": true,
+  "ownerField": null,
+  "sql": {
+    "strOrderBy": "",
+    "sqlHead": "SELECT TableName,  \tGroupID,  \tAccessMask",
+    "sqlFrom": "FROM `intex hausverwaltung_ugrights`",
+    "sqlWhere": "",
+    "sqlTail": ""
+  },
+  "keys": [
+    "TableName",
+    "GroupID"
   ],
-  "view": [
-   "TableName",
-   "GroupID",
-   "AccessMask"
-  ],
-  "add": [
-   "TableName",
-   "GroupID",
-   "AccessMask"
-  ],
-  "edit": [
-   "TableName",
-   "GroupID",
-   "AccessMask"
-  ],
-  "export": [
-   "TableName",
-   "GroupID",
-   "AccessMask"
-  ],
-  "print": [
-   "TableName",
-   "GroupID",
-   "AccessMask"
-  ],
-  "masterList": [
-   "TableName",
-   "GroupID",
-   "AccessMask"
+  "pageSize": 20,
+  "capabilities": {
+    "list": true,
+    "view": true,
+    "add": true,
+    "edit": true,
+    "export": true,
+    "print": true,
+    "search": false,
+    "masterList": true
+  },
+  "fieldSets": {
+    "list": [
+      "TableName",
+      "GroupID",
+      "AccessMask"
+    ],
+    "view": [
+      "TableName",
+      "GroupID",
+      "AccessMask"
+    ],
+    "add": [
+      "TableName",
+      "GroupID",
+      "AccessMask"
+    ],
+    "edit": [
+      "TableName",
+      "GroupID",
+      "AccessMask"
+    ],
+    "export": [
+      "TableName",
+      "GroupID",
+      "AccessMask"
+    ],
+    "print": [
+      "TableName",
+      "GroupID",
+      "AccessMask"
+    ],
+    "masterList": [
+      "TableName",
+      "GroupID",
+      "AccessMask"
+    ]
+  },
+  "export": {
+    "exportTo": null,
+    "exportDelimiter": null,
+    "exportFormatting": null
+  },
+  "print": {
+    "printerPageOrientation": 0,
+    "nPrinterPageScale": 100,
+    "nPrinterSplitRecords": 40,
+    "nPrinterPDFSplitRecords": 40
+  },
+  "tabs": [],
+  "labels": {
+    "German": {
+      "TableName": "Tabellenname",
+      "GroupID": "Gruppe",
+      "AccessMask": "Zugang"
+    },
+    "English": {
+      "TableName": "Tabellenname",
+      "GroupID": "Group",
+      "AccessMask": "Zugang"
+    }
+  },
+  "fields": [
+    {
+      "name": "TableName",
+      "type": 200,
+      "index": 1,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "GroupID",
+      "type": 3,
+      "index": 2,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "AccessMask",
+      "type": 200,
+      "index": 3,
+      "pages": {
+        "list": true,
+        "view": true,
+        "add": true,
+        "edit": true,
+        "export": true,
+        "print": true,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    }
   ]
- },
- "export": {
-  "exportTo": null,
-  "exportDelimiter": null,
-  "exportFormatting": null
- },
- "print": {
-  "printerPageOrientation": 0,
-  "nPrinterPageScale": 100,
-  "nPrinterSplitRecords": 40,
-  "nPrinterPDFSplitRecords": 40
- },
- "tabs": [],
- "labels": {
-  "German": {
-   "TableName": "Tabellenname",
-   "GroupID": "Gruppe",
-   "AccessMask": "Zugang"
-  }
- },
- "fields": [
-  {
-   "name": "TableName",
-   "type": 200,
-   "index": 1,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "GroupID",
-   "type": 3,
-   "index": 2,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "AccessMask",
-   "type": 200,
-   "index": 3,
-   "pages": {
-    "list": true,
-    "view": true,
-    "add": true,
-    "edit": true,
-    "export": true,
-    "print": true,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  }
- ]
 }

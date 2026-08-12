@@ -13,12 +13,12 @@
     </h3>
     <% if (!relation.viaMeta) { %>
       <a class="btn btn-link"
-         href="/<%= relation.detailSlug %>?<%= relation.detailKeys[0] %>=<%= encodeURIComponent(masterId) %>">Alle anzeigen</a>
+         href="/<%= relation.detailSlug %>?<%= relation.detailKeys[0] %>=<%= encodeURIComponent(masterId) %>"><%= t('view_all') %></a>
     <% } %>
   </div>
 
   <% if (!rows.length) { %>
-    <p class="muted">Keine Datens&auml;tze.</p>
+    <p class="muted"><%= t('no_records') %></p>
   <% } else { %>
     <div class="table-wrap detail-table-wrap"><table class="child-table">
       <thead>

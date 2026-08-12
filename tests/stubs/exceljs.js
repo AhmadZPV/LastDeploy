@@ -83,6 +83,49 @@ class Worksheet {
     this.data = [];
   }
   addRow(row) { this.data.push(row); return this; }
+  /**
+   * Mirrors the real API: row.values is 1-based, so index 0 is a hole.
+   */
+  eachRow(options, callback) {
+    if (typeof options === 'function') { callback = options; options = {}; }
+    const includeEmpty = options && options.includeEmpty;
+    let number = 0;
+    for (const entry of this.data) {
+      const cells = Array.isArray(entry) ? entry : Object.values(entry);
+      number += 1;
+      const isEmpty = cells.every((c) => c === undefined || c === null || c === '');
+      if (isEmpty && !includeEmpty) continue;
+      callback({ values: [null, ...cells], number, getCell: (i) => ({ value: cells[i - 1] }) }, number);
+    }
+  }
+}
+
+/** Reads back the STORED (uncompressed) zip that writeBuffer produces. */
+function unzipStore(buffer) {
+  const buf = Buffer.isBuffer(buffer) ? buffer : Buffer.from(buffer);
+  const files = new Map();
+  let offset = 0;
+  while (offset + 30 <= buf.length) {
+    if (buf.readUInt32LE(offset) !== 0x04034b50) break;
+    const method = buf.readUInt16LE(offset + 8);
+    const size = buf.readUInt32LE(offset + 18);
+    const nameLen = buf.readUInt16LE(offset + 26);
+    const extraLen = buf.readUInt16LE(offset + 28);
+    const nameStart = offset + 30;
+    const name = buf.slice(nameStart, nameStart + nameLen).toString('utf8');
+    const dataStart = nameStart + nameLen + extraLen;
+    if (method !== 0) throw new Error('exceljs stub: only stored zip entries are supported');
+    files.set(name, buf.slice(dataStart, dataStart + size).toString('utf8'));
+    offset = dataStart + size;
+  }
+  return files;
+}
+
+function xmlUnescape(text) {
+  return String(text)
+    .replace(/&lt;/g, '<').replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"').replace(/&apos;/g, "'")
+    .replace(/&amp;/g, '&');
 }
 
 export class Workbook {
@@ -94,8 +137,42 @@ export class Workbook {
     this.sheets.push(ws);
     return ws;
   }
+  get worksheets() {
+    return this.sheets;
+  }
+  getWorksheet(id) {
+    if (id === undefined) return this.sheets[0];
+    if (typeof id === 'number') return this.sheets[id - 1];
+    return this.sheets.find((s) => s.name === id);
+  }
   get xlsx() {
     return {
+      load: async (buffer) => {
+        const files = unzipStore(buffer);
+        this.sheets = [];
+        const sheetNames = [...files.keys()].filter((n) => /^xl\/worksheets\/.+\.xml$/.test(n));
+        for (const name of sheetNames.length ? sheetNames : []) {
+          const xml = files.get(name);
+          const sheet = new Worksheet(name.replace(/^.*\/(.*)\.xml$/, '$1'));
+          const rowRe = /<row[^>]*>([\s\S]*?)<\/row>/g;
+          let rowMatch;
+          while ((rowMatch = rowRe.exec(xml)) !== null) {
+            const cells = [];
+            const cellRe = /<c[^>]*>(?:<v>([\s\S]*?)<\/v>)?<\/c>/g;
+            let cellMatch;
+            while ((cellMatch = cellRe.exec(rowMatch[1])) !== null) {
+              cells.push(cellMatch[1] === undefined ? '' : xmlUnescape(cellMatch[1]));
+            }
+            sheet.addRow(cells);
+          }
+          this.sheets.push(sheet);
+        }
+        return this;
+      },
+      readFile: async (path) => {
+        const { readFileSync } = await import('node:fs');
+        return this.xlsx.load(readFileSync(path));
+      },
       writeBuffer: async () => {
         const sheet = this.sheets[0] || new Worksheet('Sheet1');
         const rows = [];

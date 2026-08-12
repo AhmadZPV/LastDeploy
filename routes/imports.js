@@ -29,7 +29,7 @@ export default function createImportRouter({ prisma, canAccess, teamWhere }) {
     const slug = String(req.params.entity || '').toLowerCase();
     const meta = registry[slug];
     if (!meta || !prisma[meta.model]) return res.status(404).render('error', { message: 'Importziel nicht gefunden' });
-    if (!canAccess(req, slug, 'I')) return res.status(403).render('error', { message: 'Keine Import-Berechtigung' });
+    if (!canAccess(req, slug, 'I')) return res.status(403).render('error', { message: (res.locals?.t ? res.locals.t('no_import_permission') : 'Keine Import-Berechtigung') });
     const fields = importFields(slug);
     res.render('import/index', { entity: slug, meta, fields, preview: null, error: null });
   });
@@ -38,7 +38,7 @@ export default function createImportRouter({ prisma, canAccess, teamWhere }) {
     const slug = String(req.params.entity || '').toLowerCase();
     const meta = registry[slug];
     if (!meta || !prisma[meta.model]) return res.status(404).render('error', { message: 'Importziel nicht gefunden' });
-    if (!canAccess(req, slug, 'I')) return res.status(403).render('error', { message: 'Keine Import-Berechtigung' });
+    if (!canAccess(req, slug, 'I')) return res.status(403).render('error', { message: (res.locals?.t ? res.locals.t('no_import_permission') : 'Keine Import-Berechtigung') });
     const file = (req.files || []).find((entry) => entry.fieldname === 'file');
     if (!file) return res.status(400).render('import/index', { entity: slug, meta, fields: importFields(slug), preview: null, error: 'Keine Datei empfangen' });
 
@@ -63,11 +63,11 @@ export default function createImportRouter({ prisma, canAccess, teamWhere }) {
     const meta = registry[slug];
     const Model = meta && prisma[meta.model];
     if (!Model) return res.status(404).render('error', { message: 'Importziel nicht gefunden' });
-    if (!canAccess(req, slug, 'I')) return res.status(403).render('error', { message: 'Keine Import-Berechtigung' });
+    if (!canAccess(req, slug, 'I')) return res.status(403).render('error', { message: (res.locals?.t ? res.locals.t('no_import_permission') : 'Keine Import-Berechtigung') });
     let rows;
     try { rows = JSON.parse(Buffer.from(String(req.body.token || ''), 'base64url').toString('utf8')).rows; }
-    catch { return res.status(400).render('error', { message: 'Importvorschau ist ungültig' }); }
-    if (!Array.isArray(rows) || rows.length > 5000) return res.status(400).render('error', { message: 'Importgröße ist ungültig' });
+    catch { return res.status(400).render('error', { message: (res.locals?.t ? res.locals.t('import_preview_invalid') : 'Importvorschau ist ungültig') }); }
+    if (!Array.isArray(rows) || rows.length > 5000) return res.status(400).render('error', { message: (res.locals?.t ? res.locals.t('import_size_invalid') : 'Importgröße ist ungültig') });
 
     const allowed = new Set(importFields(slug));
     const policy = req.body.duplicates || 'skip';

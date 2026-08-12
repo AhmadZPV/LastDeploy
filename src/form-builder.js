@@ -39,20 +39,25 @@ export function orderedFields(meta, page) {
     .map((f) => f.name);
 }
 
-/** The German label the source assigns, falling back to the field name. */
-export function labelFor(meta, name) {
+/**
+ * The label the source assigns, falling back to the field name.
+ * `lang === 'en'` prefers the generated labels.English bag.
+ */
+export function labelFor(meta, name, lang) {
   const labels = meta && meta.labels;
   const german = labels && (labels.German || labels.german);
+  const english = labels && (labels.English || labels.english);
+  if (lang === 'en' && english && english[name]) return english[name];
   return (german && german[name]) || name;
 }
 
 /** One form field, fully described for rendering. */
-export function fieldSpec(meta, entity, name) {
+export function fieldSpec(meta, entity, name, lang) {
   const edit = editSettings(meta, name);
   const attrs = inputAttributes(meta, name);
   return {
     name,
-    label: labelFor(meta, name),
+    label: labelFor(meta, name, lang),
     required: edit.required,
     inputType: edit.inputType,
     width: edit.width,
@@ -68,20 +73,20 @@ export function fieldSpec(meta, entity, name) {
  * The add/edit form of an entity: ordered fields with everything the
  * renderer needs.
  */
-export function formSpec(meta, entity, page) {
+export function formSpec(meta, entity, page, lang) {
   const names = orderedFields(meta, page);
   return {
     entity: entity || (meta && meta.entity) || '',
     page,
-    fields: names.map((n) => fieldSpec(meta, entity || (meta && meta.entity), n)),
+    fields: names.map((n) => fieldSpec(meta, entity || (meta && meta.entity), n, lang)),
   };
 }
 
 /** The view page: ordered fields with their German labels. */
-export function viewSpec(meta, entity) {
+export function viewSpec(meta, entity, lang) {
   return {
     entity: entity || (meta && meta.entity) || '',
-    fields: orderedFields(meta, 'view').map((n) => ({ name: n, label: labelFor(meta, n) })),
+    fields: orderedFields(meta, 'view').map((n) => ({ name: n, label: labelFor(meta, n, lang) })),
   };
 }
 
@@ -108,16 +113,16 @@ export function validateSubmission(meta, entity, page, body) {
 }
 
 /** Convenience: resolve + load + build in one call. Null when unknown. */
-export function loadFormSpec(entity, page) {
+export function loadFormSpec(entity, page, lang) {
   const meta = manifestFor(entity);
   if (!meta) return null;
-  return formSpec(meta, meta.entity || entity, page);
+  return formSpec(meta, meta.entity || entity, page, lang);
 }
 
-export function loadViewSpec(entity) {
+export function loadViewSpec(entity, lang) {
   const meta = manifestFor(entity);
   if (!meta) return null;
-  return viewSpec(meta, meta.entity || entity);
+  return viewSpec(meta, meta.entity || entity, lang);
 }
 
 export default {

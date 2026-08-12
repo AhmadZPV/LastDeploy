@@ -3,16 +3,13 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci
 
-FROM node:22-bookworm-slim AS runtime
+FROM node:22-bookworm AS runtime
 ENV NODE_ENV=production \
     PORT=3000 \
     DATABASE_URL=file:/app/data/dev.db
 WORKDIR /app
 
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends openssl ca-certificates \
-    && rm -rf /var/lib/apt/lists/* \
-    && groupadd --system app \
+RUN groupadd --system app \
     && useradd --system --gid app --home-dir /app app
 
 COPY --from=dependencies /app/node_modules ./node_modules
@@ -27,7 +24,8 @@ COPY tests/parity/fixtures ./tests/parity/fixtures
 COPY server.js ./server.js
 COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 
-RUN npx prisma generate \
+RUN ./node_modules/.bin/prisma generate \
+    && sed -i 's/\r$//' /usr/local/bin/docker-entrypoint.sh \
     && chmod +x /usr/local/bin/docker-entrypoint.sh \
     && mkdir -p /app/data /app/uploads \
     && chown -R app:app /app

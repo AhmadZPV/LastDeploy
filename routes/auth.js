@@ -82,7 +82,7 @@ export default function createAuthRouter({ prisma, sendMail } = {}) {
     }
     if (v[PASS_FIELD] !== v.confirm) errors.push('Die Passw\u00f6rter stimmen nicht \u00fcberein.');
     if (POLICY.pwdStrong && !checkPassword(v[PASS_FIELD])) {
-      errors.push(...passwordErrors(v[PASS_FIELD]));
+      errors.push(...passwordErrors(v[PASS_FIELD], POLICY, res.locals?.lang));
     }
     // classes/registerpage.php:165 captcha
     if (captchaId && !captchaOk(req, captchaId, v.securitycode)) {
@@ -128,7 +128,7 @@ export default function createAuthRouter({ prisma, sendMail } = {}) {
 
     res.render('auth/message', {
       title: 'Registrierung',
-      message: 'Ihre Registrierung wurde gespeichert. Bitte best\u00e4tigen Sie Ihre Email-Adresse.',
+      message: res.locals?.t ? res.locals.t('registration_saved') : 'Ihre Registrierung wurde gespeichert.',
     });
   });
 
@@ -219,18 +219,18 @@ export default function createAuthRouter({ prisma, sendMail } = {}) {
         where: { [USER_FIELD]: req.session.user[USER_FIELD] },
       }).catch(() => null);
       if (!user) {
-        errors.push('Benutzer nicht gefunden.');
+        errors.push(res.locals?.t ? res.locals.t('user_not_found') : 'Benutzer nicht gefunden.');
         return render(400);
       }
       // classes/changepwdpage.php:184/207 -> verify the old password first
       if (!(await verifyPassword(oldpass, user[PASS_FIELD]))) {
-        errors.push('Ung\u00fcltiges Passwort');
+        errors.push(res.locals?.t ? res.locals.t('invalid_password') : 'Ung\u00fcltiges Passwort');
         return render(400);
       }
     }
 
-    if (newpass !== confirm) errors.push('Die Passw\u00f6rter stimmen nicht \u00fcberein.');
-    if (POLICY.pwdStrong && !checkPassword(newpass)) errors.push(...passwordErrors(newpass));
+    if (newpass !== confirm) errors.push(res.locals?.t ? res.locals.t('passwords_mismatch') : 'Die Passw\u00f6rter stimmen nicht \u00fcberein.');
+    if (POLICY.pwdStrong && !checkPassword(newpass)) errors.push(...passwordErrors(newpass, POLICY, res.locals?.lang));
     if (errors.length) return render(400);
 
     await users().update({
@@ -239,8 +239,8 @@ export default function createAuthRouter({ prisma, sendMail } = {}) {
     });
 
     res.render('auth/message', {
-      title: 'Passwort ge\u00e4ndert',
-      message: 'Ihr Passwort wurde ge\u00e4ndert.',
+      title: res.locals?.t ? res.locals.t('password_changed') : 'Passwort ge\u00e4ndert',
+      message: res.locals?.t ? res.locals.t('password_changed_msg') : 'Ihr Passwort wurde ge\u00e4ndert.',
     });
   });
 

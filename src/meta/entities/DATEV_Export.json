@@ -1,577 +1,594 @@
 {
- "entity": "DATEV_Export",
- "shortName": "DATEV_Export",
- "baseTable": "Buchungen",
- "isVirtual": true,
- "ownerField": "Team",
- "sql": {
-  "strOrderBy": "ORDER BY Buchungen.Belegnummer DESC",
-  "sqlHead": "SELECT Buchungen.ID,  Buchungen.Buchfuehrung,  Buchungen.Konto AS Kontonummer,  Kontenrahmen.Kontobezeichnung AS Konto,  Buchungen.Gegenkonto AS Gegenkontonummer,  Kontenrahmen1.Kontobezeichnung AS Gegenkonto,  Buchungen.Betreff,  Buchungen.Belegnummer,  Buchungen.DATEV_Betragskennzeichen AS DATEVBetragskennzeichen,  Buchungen.DATEV_Steuerschluessel AS DATEVSteuerschluessel,  0 AS DATEVFestschreibekennzeichen,  concat(lpad(day(Buchungen.Datum),2,'0'),lpad(month(Buchungen.Datum),2,'0'),year(Buchungen.Datum)) as DATEVDatum,  round(Betrag*100, 0) AS DATEVBetrag,  Buchungen.Datum,  Buchungen.Team",
-  "sqlFrom": "FROM Buchungen  LEFT OUTER JOIN Kontenrahmen ON Buchungen.Konto = Kontenrahmen.ID  LEFT OUTER JOIN Kontenrahmen AS Kontenrahmen1 ON Buchungen.Gegenkonto = Kontenrahmen1.ID",
-  "sqlWhere": "",
-  "sqlTail": ""
- },
- "keys": [
-  "ID"
- ],
- "pageSize": 20,
- "capabilities": {
-  "list": true,
-  "view": false,
-  "add": false,
-  "edit": false,
-  "export": true,
-  "print": false,
-  "search": true,
-  "masterList": true
- },
- "fieldSets": {
-  "list": [
-   "Buchfuehrung",
-   "Belegnummer",
-   "Betreff",
-   "DATEVDatum",
-   "DATEVBetrag",
-   "Kontonummer",
-   "Konto",
-   "Gegenkontonummer",
-   "Gegenkonto",
-   "DATEVBetragskennzeichen",
-   "DATEVSteuerschluessel"
+  "entity": "DATEV_Export",
+  "shortName": "DATEV_Export",
+  "baseTable": "Buchungen",
+  "isVirtual": true,
+  "ownerField": "Team",
+  "sql": {
+    "strOrderBy": "ORDER BY Buchungen.Belegnummer DESC",
+    "sqlHead": "SELECT Buchungen.ID,  Buchungen.Buchfuehrung,  Buchungen.Konto AS Kontonummer,  Kontenrahmen.Kontobezeichnung AS Konto,  Buchungen.Gegenkonto AS Gegenkontonummer,  Kontenrahmen1.Kontobezeichnung AS Gegenkonto,  Buchungen.Betreff,  Buchungen.Belegnummer,  Buchungen.DATEV_Betragskennzeichen AS DATEVBetragskennzeichen,  Buchungen.DATEV_Steuerschluessel AS DATEVSteuerschluessel,  0 AS DATEVFestschreibekennzeichen,  concat(lpad(day(Buchungen.Datum),2,'0'),lpad(month(Buchungen.Datum),2,'0'),year(Buchungen.Datum)) as DATEVDatum,  round(Betrag*100, 0) AS DATEVBetrag,  Buchungen.Datum,  Buchungen.Team",
+    "sqlFrom": "FROM Buchungen  LEFT OUTER JOIN Kontenrahmen ON Buchungen.Konto = Kontenrahmen.ID  LEFT OUTER JOIN Kontenrahmen AS Kontenrahmen1 ON Buchungen.Gegenkonto = Kontenrahmen1.ID",
+    "sqlWhere": "",
+    "sqlTail": ""
+  },
+  "keys": [
+    "ID"
   ],
-  "export": [
-   "Belegnummer",
-   "Betreff",
-   "DATEVDatum",
-   "DATEVBetrag",
-   "Kontonummer",
-   "Konto",
-   "Gegenkontonummer",
-   "Gegenkonto",
-   "DATEVBetragskennzeichen",
-   "DATEVSteuerschluessel",
-   "DATEVFestschreibekennzeichen"
-  ],
-  "search": [
-   "ID",
-   "Datum",
-   "Buchfuehrung",
-   "Belegnummer",
-   "Betreff",
-   "DATEVDatum",
-   "DATEVBetrag",
-   "Kontonummer",
-   "Konto",
-   "Gegenkontonummer",
-   "Gegenkonto",
-   "DATEVBetragskennzeichen",
-   "DATEVSteuerschluessel"
-  ],
-  "masterList": [
-   "ID",
-   "DATEVFestschreibekennzeichen",
-   "Datum",
-   "Team",
-   "Buchfuehrung",
-   "Belegnummer",
-   "Betreff",
-   "DATEVDatum",
-   "DATEVBetrag",
-   "Kontonummer",
-   "Konto",
-   "Gegenkontonummer",
-   "Gegenkonto",
-   "DATEVBetragskennzeichen",
-   "DATEVSteuerschluessel"
+  "pageSize": 20,
+  "capabilities": {
+    "list": true,
+    "view": false,
+    "add": false,
+    "edit": false,
+    "export": true,
+    "print": false,
+    "search": true,
+    "masterList": true
+  },
+  "fieldSets": {
+    "list": [
+      "Buchfuehrung",
+      "Belegnummer",
+      "Betreff",
+      "DATEVDatum",
+      "DATEVBetrag",
+      "Kontonummer",
+      "Konto",
+      "Gegenkontonummer",
+      "Gegenkonto",
+      "DATEVBetragskennzeichen",
+      "DATEVSteuerschluessel"
+    ],
+    "export": [
+      "Belegnummer",
+      "Betreff",
+      "DATEVDatum",
+      "DATEVBetrag",
+      "Kontonummer",
+      "Konto",
+      "Gegenkontonummer",
+      "Gegenkonto",
+      "DATEVBetragskennzeichen",
+      "DATEVSteuerschluessel",
+      "DATEVFestschreibekennzeichen"
+    ],
+    "search": [
+      "ID",
+      "Datum",
+      "Buchfuehrung",
+      "Belegnummer",
+      "Betreff",
+      "DATEVDatum",
+      "DATEVBetrag",
+      "Kontonummer",
+      "Konto",
+      "Gegenkontonummer",
+      "Gegenkonto",
+      "DATEVBetragskennzeichen",
+      "DATEVSteuerschluessel"
+    ],
+    "masterList": [
+      "ID",
+      "DATEVFestschreibekennzeichen",
+      "Datum",
+      "Team",
+      "Buchfuehrung",
+      "Belegnummer",
+      "Betreff",
+      "DATEVDatum",
+      "DATEVBetrag",
+      "Kontonummer",
+      "Konto",
+      "Gegenkontonummer",
+      "Gegenkonto",
+      "DATEVBetragskennzeichen",
+      "DATEVSteuerschluessel"
+    ]
+  },
+  "export": {
+    "exportTo": true,
+    "exportDelimiter": ",",
+    "exportFormatting": 2
+  },
+  "print": {
+    "printerPageOrientation": 0,
+    "nPrinterPageScale": 100,
+    "nPrinterSplitRecords": 40,
+    "nPrinterPDFSplitRecords": 40
+  },
+  "tabs": [],
+  "labels": {
+    "German": {
+      "ID": "ID",
+      "Buchfuehrung": "Buchführung",
+      "Konto": "Konto",
+      "Gegenkonto": "Gegenkonto",
+      "Betreff": "Betreff",
+      "Belegnummer": "Belegnummer",
+      "Kontonummer": "Kontonummer",
+      "Gegenkontonummer": "Gegenkontonummer",
+      "DATEVBetragskennzeichen": "DATEV Betragskennzeichen",
+      "DATEVSteuerschluessel": "DATEV Steuerschlüssel",
+      "DATEVDatum": "DATEV Datum",
+      "DATEVBetrag": "DATEV Betrag",
+      "DATEVFestschreibekennzeichen": "DATEVFestschreibekennzeichen",
+      "Datum": "Datum",
+      "Team": "Team"
+    },
+    "English": {
+      "ID": "ID",
+      "Buchfuehrung": "Bookkeeping",
+      "Konto": "Account",
+      "Gegenkonto": "Gegenkonto",
+      "Betreff": "Subject",
+      "Belegnummer": "Receipt number",
+      "Kontonummer": "Account number",
+      "Gegenkontonummer": "Gegenkontonummer",
+      "DATEVBetragskennzeichen": "DATEV Amountskennzeichen",
+      "DATEVSteuerschluessel": "DATEV Taxschlüssel",
+      "DATEVDatum": "DATEV Date",
+      "DATEVBetrag": "DATEV Amount",
+      "DATEVFestschreibekennzeichen": "DATEVFestschreibekennzeichen",
+      "Datum": "Date",
+      "Team": "Team"
+    }
+  },
+  "fields": [
+    {
+      "name": "ID",
+      "type": 3,
+      "index": 1,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "AutoInc": true,
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Buchfuehrung",
+      "type": 3,
+      "index": 2,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Buchfuehrungen",
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 2,
+        "LinkField": "ID",
+        "LinkFieldType": 0,
+        "DisplayField": "Bezeichnung",
+        "LookupOrderBy": "Bezeichnung",
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Kontonummer",
+      "type": 3,
+      "index": 3,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Kontenrahmen",
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 0,
+        "LinkField": "ID",
+        "LinkFieldType": 0,
+        "DisplayField": "Nummer",
+        "LookupOrderBy": "Nummer",
+        "SelectSize": 1,
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Konto",
+      "type": 200,
+      "index": 4,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Kontenrahmen",
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 2,
+        "LinkField": "ID",
+        "LinkFieldType": 0,
+        "DisplayField": "Concat(Nummer,' ',Kontobezeichnung)",
+        "CustomDisplay": "true",
+        "LookupOrderBy": "Nummer",
+        "UseCategory": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Gegenkontonummer",
+      "type": 3,
+      "index": 5,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Kontenrahmen",
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 0,
+        "LinkField": "ID",
+        "LinkFieldType": 0,
+        "DisplayField": "Nummer",
+        "LookupOrderBy": "Nummer",
+        "SelectSize": 1,
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Gegenkonto",
+      "type": 200,
+      "index": 6,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Kontenrahmen",
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 2,
+        "LinkField": "ID",
+        "LinkFieldType": 0,
+        "DisplayField": "Concat(Nummer,' ',Kontobezeichnung)",
+        "CustomDisplay": "true",
+        "LookupOrderBy": "Nummer",
+        "UseCategory": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Betreff",
+      "type": 200,
+      "index": 7,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "LookupType": 2,
+        "LookupTable": "Buchungen",
+        "freeInput": true,
+        "autoCompleteFieldsOnEdit": 0,
+        "LCType": 1,
+        "LookupUnique": true,
+        "LinkField": "Betreff",
+        "LinkFieldType": 0,
+        "DisplayField": "Betreff",
+        "LookupOrderBy": "Betreff",
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Belegnummer",
+      "type": 3,
+      "index": 8,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "DATEVBetragskennzeichen",
+      "type": 200,
+      "index": 9,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "DATEVSteuerschluessel",
+      "type": 200,
+      "index": 10,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "DATEVFestschreibekennzeichen",
+      "type": 3,
+      "index": 11,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "UploadFolder": "files"
+    },
+    {
+      "name": "DATEVDatum",
+      "type": 200,
+      "index": 12,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "DATEVBetrag",
+      "type": 14,
+      "index": 13,
+      "pages": {
+        "list": true,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": true,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "IsRequired": true,
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Datum",
+      "type": 7,
+      "index": 14,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": true,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "DateEditType": 13,
+        "InitialYearFactor": 0,
+        "LastYearFactor": 10,
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    },
+    {
+      "name": "Team",
+      "type": 200,
+      "index": 15,
+      "pages": {
+        "list": false,
+        "view": false,
+        "add": false,
+        "edit": false,
+        "export": false,
+        "print": false,
+        "search": false,
+        "masterList": true
+      },
+      "view": {
+        "NeedEncode": true
+      },
+      "edit": {
+        "acceptFileTypes": ".+$",
+        "maxNumberOfFiles": 1,
+        "HTML5InuptType": "text",
+        "EditParams": "",
+        "controlWidth": 200
+      },
+      "isSQLExpression": true,
+      "UploadFolder": "files"
+    }
   ]
- },
- "export": {
-  "exportTo": true,
-  "exportDelimiter": ",",
-  "exportFormatting": 2
- },
- "print": {
-  "printerPageOrientation": 0,
-  "nPrinterPageScale": 100,
-  "nPrinterSplitRecords": 40,
-  "nPrinterPDFSplitRecords": 40
- },
- "tabs": [],
- "labels": {
-  "German": {
-   "ID": "ID",
-   "Buchfuehrung": "Buchführung",
-   "Konto": "Konto",
-   "Gegenkonto": "Gegenkonto",
-   "Betreff": "Betreff",
-   "Belegnummer": "Belegnummer",
-   "Kontonummer": "Kontonummer",
-   "Gegenkontonummer": "Gegenkontonummer",
-   "DATEVBetragskennzeichen": "DATEV Betragskennzeichen",
-   "DATEVSteuerschluessel": "DATEV Steuerschlüssel",
-   "DATEVDatum": "DATEV Datum",
-   "DATEVBetrag": "DATEV Betrag",
-   "DATEVFestschreibekennzeichen": "DATEVFestschreibekennzeichen",
-   "Datum": "Datum",
-   "Team": "Team"
-  }
- },
- "fields": [
-  {
-   "name": "ID",
-   "type": 3,
-   "index": 1,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "AutoInc": true,
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Buchfuehrung",
-   "type": 3,
-   "index": 2,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Buchfuehrungen",
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 2,
-    "LinkField": "ID",
-    "LinkFieldType": 0,
-    "DisplayField": "Bezeichnung",
-    "LookupOrderBy": "Bezeichnung",
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Kontonummer",
-   "type": 3,
-   "index": 3,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Kontenrahmen",
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 0,
-    "LinkField": "ID",
-    "LinkFieldType": 0,
-    "DisplayField": "Nummer",
-    "LookupOrderBy": "Nummer",
-    "SelectSize": 1,
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Konto",
-   "type": 200,
-   "index": 4,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Kontenrahmen",
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 2,
-    "LinkField": "ID",
-    "LinkFieldType": 0,
-    "DisplayField": "Concat(Nummer,' ',Kontobezeichnung)",
-    "CustomDisplay": "true",
-    "LookupOrderBy": "Nummer",
-    "UseCategory": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Gegenkontonummer",
-   "type": 3,
-   "index": 5,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Kontenrahmen",
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 0,
-    "LinkField": "ID",
-    "LinkFieldType": 0,
-    "DisplayField": "Nummer",
-    "LookupOrderBy": "Nummer",
-    "SelectSize": 1,
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Gegenkonto",
-   "type": 200,
-   "index": 6,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Kontenrahmen",
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 2,
-    "LinkField": "ID",
-    "LinkFieldType": 0,
-    "DisplayField": "Concat(Nummer,' ',Kontobezeichnung)",
-    "CustomDisplay": "true",
-    "LookupOrderBy": "Nummer",
-    "UseCategory": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Betreff",
-   "type": 200,
-   "index": 7,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "LookupType": 2,
-    "LookupTable": "Buchungen",
-    "freeInput": true,
-    "autoCompleteFieldsOnEdit": 0,
-    "LCType": 1,
-    "LookupUnique": true,
-    "LinkField": "Betreff",
-    "LinkFieldType": 0,
-    "DisplayField": "Betreff",
-    "LookupOrderBy": "Betreff",
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Belegnummer",
-   "type": 3,
-   "index": 8,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "DATEVBetragskennzeichen",
-   "type": 200,
-   "index": 9,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "DATEVSteuerschluessel",
-   "type": 200,
-   "index": 10,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "DATEVFestschreibekennzeichen",
-   "type": 3,
-   "index": 11,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "UploadFolder": "files"
-  },
-  {
-   "name": "DATEVDatum",
-   "type": 200,
-   "index": 12,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "DATEVBetrag",
-   "type": 14,
-   "index": 13,
-   "pages": {
-    "list": true,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": true,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "IsRequired": true,
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Datum",
-   "type": 7,
-   "index": 14,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": true,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "DateEditType": 13,
-    "InitialYearFactor": 0,
-    "LastYearFactor": 10,
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  },
-  {
-   "name": "Team",
-   "type": 200,
-   "index": 15,
-   "pages": {
-    "list": false,
-    "view": false,
-    "add": false,
-    "edit": false,
-    "export": false,
-    "print": false,
-    "search": false,
-    "masterList": true
-   },
-   "view": {
-    "NeedEncode": true
-   },
-   "edit": {
-    "acceptFileTypes": ".+$",
-    "maxNumberOfFiles": 1,
-    "HTML5InuptType": "text",
-    "EditParams": "",
-    "controlWidth": 200
-   },
-   "isSQLExpression": true,
-   "UploadFolder": "files"
-  }
- ]
 }
