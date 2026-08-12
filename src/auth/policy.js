@@ -88,4 +88,33 @@ export function generateToken(len = 20, rnd = Math.random) {
   return randString('alphanum', len, rnd);
 }
 
-export default { POLICY, checkPassword, passwordErrors, randString, generateToken };
+/** Prefixes so /activate and /changepwd cannot consume each other's tokens. */
+export const ACTIVATE_PREFIX = 'act_';
+export const RESET_PREFIX = 'pwd_';
+export const AUTH_TOKEN_TTL_MS = 24 * 60 * 60 * 1000;
+
+export function issueAuthToken(kind, rnd = Math.random) {
+  const prefix = kind === 'activate' ? ACTIVATE_PREFIX : RESET_PREFIX;
+  return prefix + generateToken(20, rnd);
+}
+
+export function authTokenKind(token) {
+  const s = String(token || '');
+  if (s.startsWith(ACTIVATE_PREFIX)) return 'activate';
+  if (s.startsWith(RESET_PREFIX)) return 'reset';
+  return null;
+}
+
+/** Missing date is treated as not expired so legacy rows still work. */
+export function isAuthTokenExpired(resetDate, now = Date.now(), ttl = AUTH_TOKEN_TTL_MS) {
+  if (resetDate == null || resetDate === '') return false;
+  const t = resetDate instanceof Date ? resetDate.getTime() : new Date(resetDate).getTime();
+  if (Number.isNaN(t)) return true;
+  return now - t > ttl;
+}
+
+export default {
+  POLICY, checkPassword, passwordErrors, randString, generateToken,
+  ACTIVATE_PREFIX, RESET_PREFIX, AUTH_TOKEN_TTL_MS,
+  issueAuthToken, authTokenKind, isAuthTokenExpired,
+};

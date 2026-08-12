@@ -929,6 +929,16 @@ test('phase 1: unknown entity or hook is a safe no-op', async () => {
 // ---------------------------------------------------------------------------
 import { checkPassword, passwordErrors, randString, generateToken, POLICY }
   from '../src/auth/policy.js';
+import { loginWhere } from '../src/auth/login-lookup.js';
+import { teamWhere as scopedTeamWhere } from '../src/auth/team-scope.js';
+import { recordValuesFromBody, PRIVILEGED_FIELDS } from '../src/record-payload.js';
+import { formatDatevDate, formatDeDate, formatIsoDate } from '../src/calendar-date.js';
+import { epochToIsoSql, normalizeSqliteDateTimes } from '../src/sqlite-dates.js';
+import {
+  loginAllowed, recordLoginFailure, recordLoginSuccess, resetLoginThrottle,
+  LOGIN_MAX_FAILURES,
+} from '../src/auth/login-throttle.js';
+import { sessionSecret, WEAK_SESSION_SECRETS } from '../src/auth/session-secret.js';
 import createAuthRouter, { verifyPassword, ADMIN_NOTIFY_EMAIL } from '../routes/auth.js';
 
 test('phase 1: checkpassword() matches include/commonfunctions.php:4862', () => {
@@ -1052,7 +1062,7 @@ test('phase 1: register creates an INACTIVE user and mails user + admin', async 
   const row = prisma._store[0];
   assert.equal(row.active, 0, 'registerpage.php sets active = 0');
   assert.notEqual(row.Passwort, 'Online@1234', 'password is hashed, not stored plain');
-  assert.ok(row.reset_token && row.reset_token.length === 20);
+  assert.ok(row.reset_token && row.reset_token.startsWith('act_') && row.reset_token.length === 24);
   assert.equal(mails.length, 2);
   assert.equal(mails[0].to, 'neu@example.de');
   assert.equal(mails[1].to, ADMIN_NOTIFY_EMAIL);
@@ -1071,16 +1081,33 @@ test('phase 1: duplicate username or email is refused', async () => {
 });
 
 test('phase 1: activation link flips active to 1 and burns the token', async () => {
-  const prisma = fakeUsers([{ ID: 1, Benutzername: 'neu', active: 0, reset_token: 'TOK123' }]);
+  const prisma = fakeUsers([{ ID: 1, Benutzername: 'neu', active: 0, reset_token: 'act_TOK123' }]);
   const router = routerFor(prisma, []);
   const res = resStub();
-  await routeHandler(router, 'get', '/activate')(reqStub({ query: { token: 'TOK123' } }), res);
+  await routeHandler(router, 'get', '/activate')(reqStub({ query: { token: 'act_TOK123' } }), res);
   assert.equal(prisma._store[0].active, 1);
   assert.equal(prisma._store[0].reset_token, null, 'token cannot be replayed');
 
   const res2 = resStub();
-  await routeHandler(router, 'get', '/activate')(reqStub({ query: { token: 'TOK123' } }), res2);
+  await routeHandler(router, 'get', '/activate')(reqStub({ query: { token: 'act_TOK123' } }), res2);
   assert.equal(res2.statusCode, 400, 'replay is rejected');
+});
+
+test('phase 1: a password-reset token cannot reactivate a deactivated account', async () => {
+  const prisma = fakeUsers([{
+    ID: 1, Benutzername: 'alt', active: 0, Email: 'alt@example.de',
+    reset_token: 'RESETME', reset_date: new Date(),
+  }]);
+  const router = routerFor(prisma, []);
+  await routeHandler(router, 'post', '/remind')(reqStub({ body: { username_email: 'alt' } }), resStub());
+  const resetToken = prisma._store[0].reset_token;
+  assert.ok(resetToken, 'remind issued a reset token');
+
+  const res = resStub();
+  await routeHandler(router, 'get', '/activate')(reqStub({ query: { token: resetToken } }), res);
+  assert.equal(res.statusCode, 400, 'activate must not accept a password-reset token');
+  assert.equal(prisma._store[0].active, 0, 'deactivated account stays inactive');
+  assert.equal(prisma._store[0].reset_token, resetToken, 'reset token is still usable for changepwd');
 });
 
 test('phase 1: remind uses the exact German not-registered wording', async () => {
@@ -1098,7 +1125,8 @@ test('phase 1: remind stores a token and mails a /changepwd link', async () => {
   const res = resStub();
   // looked up by email as well as username (remindpwdpage.php:230)
   await routeHandler(router, 'post', '/remind')(reqStub({ body: { username_email: 'a@b.de' } }), res);
-  assert.equal(prisma._store[0].reset_token.length, 20);
+  assert.equal(prisma._store[0].reset_token.length, 24);
+  assert.ok(prisma._store[0].reset_token.startsWith('pwd_'));
   assert.equal(mails.length, 1);
   assert.match(mails[0].data.reseturl, /\/changepwd\?token=/);
   assert.ok(res.locals.sent);
@@ -1125,16 +1153,103 @@ test('phase 1: changepwd rejects a wrong current password', async () => {
 });
 
 test('phase 1: changepwd via token sets a hash and burns the token', async () => {
-  const prisma = fakeUsers([{ ID: 1, Benutzername: 'admin', Passwort: 'alt', reset_token: 'T20' }]);
+  const prisma = fakeUsers([{ ID: 1, Benutzername: 'admin', Passwort: 'alt', reset_token: 'pwd_T20' }]);
   const router = routerFor(prisma, []);
   const res = resStub();
   await routeHandler(router, 'post', '/changepwd')(reqStub({
-    body: { token: 'T20', newpass: 'Neues@9999', confirm: 'Neues@9999' },
+    body: { token: 'pwd_T20', newpass: 'Neues@9999', confirm: 'Neues@9999' },
   }), res);
   assert.equal(res.view, 'auth/message');
   assert.equal(prisma._store[0].reset_token, null);
   assert.notEqual(prisma._store[0].Passwort, 'Neues@9999', 'hashed');
   assert.equal(await verifyPassword('Neues@9999', prisma._store[0].Passwort), true);
+});
+
+test('phase 1: an expired password-reset token is rejected', async () => {
+  const stale = new Date(Date.now() - 48 * 60 * 60 * 1000);
+  const prisma = fakeUsers([{
+    ID: 1, Benutzername: 'admin', Passwort: 'alt',
+    reset_token: 'pwd_OLDTOKEN', reset_date: stale,
+  }]);
+  const router = routerFor(prisma, []);
+  const res = resStub();
+  await routeHandler(router, 'post', '/changepwd')(reqStub({
+    body: { token: 'pwd_OLDTOKEN', newpass: 'Neues@9999', confirm: 'Neues@9999' },
+  }), res);
+  assert.equal(res.statusCode, 400);
+  assert.equal(prisma._store[0].Passwort, 'alt', 'expired token must not change the password');
+});
+
+test('phase 1: login ignores a missing or blank username instead of matching any active user', () => {
+  assert.equal(loginWhere({}), null);
+  assert.equal(loginWhere({ Passwort: 'Online@1234' }), null);
+  assert.equal(loginWhere({ Benutzername: '   ' }), null);
+  assert.deepEqual(loginWhere({ Benutzername: ' admin ' }), { Benutzername: 'admin', active: 1 });
+  assert.deepEqual(loginWhere({ username: 'Volker' }), { Benutzername: 'Volker', active: 1 });
+});
+
+test('phase 1: tenant scope cannot be overridden by extra.Team from a parent row', () => {
+  const req = { session: { user: { Team: 'TeamA', isAdmin: false } } };
+  assert.deepEqual(scopedTeamWhere(req, { ID: 7, Team: null }, 'adressen'), { ID: 7, Team: 'TeamA' });
+  assert.deepEqual(scopedTeamWhere(req, { ID: 7, Team: undefined }, 'adressen'), { ID: 7, Team: 'TeamA' });
+  assert.deepEqual(scopedTeamWhere(req, { ID: 7, Team: 'TeamB' }, 'adressen'), { ID: 7, Team: 'TeamA' });
+  const admin = { session: { user: { Team: 'TeamA', isAdmin: true } } };
+  assert.deepEqual(scopedTeamWhere(admin, { ID: 7 }, 'adressen'), { ID: 7 });
+});
+
+test('phase 1: CRUD payloads drop CSRF tokens and privilege columns', () => {
+  const fields = { Kurzname: { type: 'String' }, Gruppe: { type: 'String' }, active: { type: 'Int' }, Team: { type: 'String' } };
+  const identity = (entity, field, raw) => raw;
+  const data = recordValuesFromBody({
+    _csrf: 'deadbeef', _method: 'POST', ID: '99', Kurzname: 'Muster',
+    Gruppe: 'Admins', active: '1', Team: 'OtherTeam', unknown: 'nope',
+  }, { entity: 'benutzer', fields, coerce: identity, isEdit: true, isAdmin: false });
+  assert.deepEqual(data, { Kurzname: 'Muster' });
+  assert.equal(PRIVILEGED_FIELDS.has('Gruppe'), true);
+});
+
+test('phase 1: DATEV and list dates keep the stored calendar day behind UTC', () => {
+  const utcMidnight = new Date('2026-08-09T00:00:00.000Z');
+  assert.equal(formatDatevDate(utcMidnight), '09082026');
+  assert.equal(formatDeDate(utcMidnight), '09.08.2026');
+  assert.equal(formatIsoDate(utcMidnight), '2026-08-09');
+  assert.equal(formatDatevDate('2026-08-09'), '09082026');
+});
+
+test('phase 1: login throttle locks after repeated failures and clears on success', () => {
+  resetLoginThrottle();
+  const user = 'spray';
+  const ip = '10.0.0.9';
+  for (let i = 0; i < LOGIN_MAX_FAILURES; i++) {
+    assert.equal(loginAllowed(user, ip), true, 'attempt ' + i);
+    recordLoginFailure(user, ip);
+  }
+  assert.equal(loginAllowed(user, ip), false, 'sixth attempt is blocked');
+  assert.equal(loginAllowed('other', ip), true, 'a different username is not locked');
+  recordLoginSuccess(user, ip);
+  assert.equal(loginAllowed(user, ip), true, 'a successful login clears the bucket');
+  resetLoginThrottle();
+});
+
+test('phase 1: production refuses the documented SESSION_SECRET placeholders', () => {
+  const example = nodeFs.readFileSync('.env.example', 'utf8');
+  const documented = example.match(/^SESSION_SECRET=(.*)$/m)[1].trim();
+  assert.equal(WEAK_SESSION_SECRETS.has(documented), true);
+  assert.throws(
+    () => sessionSecret({ NODE_ENV: 'production', SESSION_SECRET: documented }),
+    /SESSION_SECRET/,
+  );
+  assert.equal(sessionSecret({ NODE_ENV: 'development', SESSION_SECRET: '' }), 'ap-emlaki-secret-change-me');
+  assert.equal(sessionSecret({ NODE_ENV: 'production', SESSION_SECRET: 'unique-live-value-32chars-min' }), 'unique-live-value-32chars-min');
+});
+
+test('phase 1: Benutzername is unique at the database and Team is indexed on hot tables', () => {
+  const schema = nodeFs.readFileSync('prisma/schema.prisma', 'utf8');
+  assert.match(schema, /model Benutzer \{[\s\S]*?Benutzername\s+String\s+@unique/, 'duplicate logins cannot be inserted');
+  for (const model of ['Adressen', 'Objekte', 'Einheiten', 'Kontobuch', 'Buchungen', 'Aufgaben', 'Termine']) {
+    const body = schema.split('model ' + model + ' {')[1].split('\n}')[0];
+    assert.match(body, /@@index\(\[Team\]\)/, model + ' list queries filter by Team');
+  }
 });
 
 test('phase 1: captcha is stored in the session and cleared once used', async () => {
@@ -1381,6 +1496,16 @@ test('phase 1: Autobuchungen replaces the MySQL EVENT without MySQL syntax', asy
   assert.equal(teamB.Belegnummer, 4, 'TeamB keeps its own sequence');
   assert.equal(team.Wiederholung, 0, 'the copy does not recur again');
   assert.equal(team.Datum.toISOString().slice(0, 10), '2026-08-07', 'CURDATE() equivalent');
+});
+
+test('phase 1: Autobuchungen does not duplicate when run twice on the same day', async () => {
+  const db = fakeAdminDb({ kontobuch: [
+    { ID: 1, Team: 'Team', Belegnummer: 7, Betrag: 100, Betreff: 'Miete', Wiederholung: 1, Wiederholende: '2030-01-01' },
+  ] });
+  const day = new Date('2026-08-07T00:00:00Z');
+  assert.equal(await runAutoBookings(db, day), 1);
+  assert.equal(await runAutoBookings(db, day), 0, 'second run on the same calendar day must be a no-op');
+  assert.equal(db.kontobuch.store.filter((r) => r.Wiederholung === 0).length, 1);
 });
 
 // ---------------------------------------------------------------------------
@@ -2878,6 +3003,32 @@ test('phase 10: a record lock blocks other sessions but not the owner', async ()
   // the owner re-entering refreshes (heartbeat) instead of being blocked
   const a2 = await acquireLock({ ...base, sessionId: 's1', userId: 'anna' });
   assert.equal(a2.own, true);
+});
+
+test('phase 10: lock timestamps are ISO-8601 so Prisma SQLite can decode them', async () => {
+  const created = [];
+  const prisma = {
+    intex_hausverwaltung_locking: {
+      deleteMany: async () => ({ count: 0 }),
+      findFirst: async () => null,
+      create: async ({ data }) => { created.push(data); return { id: 1, ...data }; },
+    },
+  };
+  await acquireLock({ prisma, table: 'objekte', keys: { ID: 1 }, sessionId: 's', userId: 'u' });
+  assert.match(String(created[0].startdatetime), /^\d{4}-\d{2}-\d{2}T/);
+  assert.match(String(created[0].confirmdatetime), /^\d{4}-\d{2}-\d{2}T/);
+});
+
+test('phase 10: startup date normalizer converts unix-ms DateTime values to ISO-8601', async () => {
+  const sql = epochToIsoSql('intex hausverwaltung_locking', 'startdatetime');
+  assert.match(sql, /unixepoch/);
+  assert.match(sql, /"intex hausverwaltung_locking"/);
+  assert.match(sql, /NOT GLOB '\*\[\^0-9\]\*'/);
+  const ran = [];
+  const prisma = { $executeRawUnsafe: async (s) => { ran.push(s); return 0; } };
+  await normalizeSqliteDateTimes(prisma);
+  assert.ok(ran.some((s) => /unixepoch/.test(s) && /startdatetime/.test(s)),
+    'locking timestamps are rewritten before Prisma tries to decode them');
 });
 
 test('phase 10: releasing the lock frees the record for others', async () => {

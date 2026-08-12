@@ -36,6 +36,10 @@ import { FileSessionStore } from './src/session-store.js';
 import { createTranslator, langFromRequest, normalizeLang, SUPPORTED } from './src/i18n.js';
 import { slugify as dashSlugify } from './src/dashboards.js';
 import { normalizeSqliteDateTimes } from './src/sqlite-dates.js';
+import { loginWhere } from './src/auth/login-lookup.js';
+import { teamWhere as scopedTeamWhere } from './src/auth/team-scope.js';
+import { loginAllowed, recordLoginFailure, recordLoginSuccess } from './src/auth/login-throttle.js';
+import { sessionSecret } from './src/auth/session-secret.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 export const prisma = new PrismaClient();
@@ -56,7 +60,7 @@ for (const file of ['manifest.json', 'sw.js', 'offline.html', 'icon-192.png', 'i
   app.get('/' + file, (req, res) => res.sendFile(path.join(__dirname, 'public', file)));
 }
 app.use(session({
-  secret: process.env.SESSION_SECRET || 'ap-emlaki-secret-change-me',
+  secret: sessionSecret(),
   store: new FileSessionStore({ dir: process.env.SESSION_DIR || path.join(__dirname, 'data', 'sessions') }),
   resave: false,
   saveUninitialized: false,
@@ -271,18 +275,7 @@ export const requireAdmin = (req, res, next) => {
 
 // Team scoped where helper (appended to every list query). Only adds Team if the model has it.
 export function teamWhere(req, extra = {}, entity = null) {
-  // Admins see all tenants; mirroring ACCESS_LEVEL_ADMIN in PHPRunner.
-  if (req.session?.user?.isAdmin) return extra;
-  const team = req.session?.user?.Team;
-  if (!team) return extra;
-  // If an entity name is given, only add Team filter when the manifest declares multiTenant.
-  // Registry keys are lowercased slugs — normalize PascalCase table names.
-  if (entity) {
-    const key = String(entity).toLowerCase();
-    const meta = registry[key] || registry[entity];
-    if (!meta || !meta.multiTenant) return extra;
-  }
-  return { Team: team, ...extra };
+  return scopedTeamWhere(req, extra, entity);
 }
 
 app.get('/', requireAuth, async (req, res) => {
@@ -325,17 +318,23 @@ app.get('/healthz', async (req, res) => {
   }
 });
 app.post('/login', async (req, res) => {
-  const Benutzername = req.body.Benutzername ?? req.body.username;
+  const where = loginWhere(req.body || {});
   const Passwort = req.body.Passwort ?? req.body.password;
-  const user = await safe(prisma.benutzer.findFirst({ where: { Benutzername, active: 1 } }), null);
+  const ip = req.ip || req.socket?.remoteAddress || '';
+  const t = res.locals.t || ((k) => k);
+  if (where && !loginAllowed(where.Benutzername, ip)) {
+    return res.status(429).render('login', { error: t('login_throttled') });
+  }
+  const user = where ? await safe(prisma.benutzer.findFirst({ where }), null) : null;
   let ok = false;
   if (user) {
     try { ok = (user.Passwort === Passwort) || (user.Passwort?.startsWith('$2') && await bcrypt.compare(Passwort, user.Passwort)); } catch {}
   }
   if (!user || !ok) {
-    const t = res.locals.t || ((k) => k);
+    recordLoginFailure(where?.Benutzername || '', ip);
     return res.render('login', { error: t('login_error') });
   }
+  recordLoginSuccess(user.Benutzername, ip);
   if (!user.Passwort?.startsWith('$2')) {
     const hash = await bcrypt.hash(Passwort, 10);
     await prisma.benutzer.update({ where: { ID: user.ID }, data: { Passwort: hash } }).catch(() => {});

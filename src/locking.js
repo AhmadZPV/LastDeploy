@@ -36,6 +36,20 @@ export function lockKeys(keys) {
   return Object.entries(keys).map(([k, v]) => `${k}=${v}`).join('&');
 }
 
+/** Prisma SQLite DateTime columns must be ISO-8601, not Date.getTime(). */
+export function lockTimestamp(value = new Date()) {
+  const d = value instanceof Date ? value : new Date(typeof value === 'number' || /^\d+$/.test(String(value)) ? Number(value) : value);
+  if (Number.isNaN(d.getTime())) return new Date().toISOString();
+  return d.toISOString();
+}
+
+function parseLockTime(value) {
+  if (value instanceof Date) return value;
+  if (typeof value === 'number' || /^\d+$/.test(String(value || ''))) return new Date(Number(value));
+  const d = new Date(value);
+  return Number.isNaN(d.getTime()) ? null : d;
+}
+
 /**
  * Try to lock a record.
  *
@@ -46,6 +60,7 @@ export async function acquireLock({ prisma, table, keys, sessionId, userId } = {
   if (!delegate) return { own: true, lockId: null };
   const ks = lockKeys(keys);
   const now = new Date();
+  const stamp = lockTimestamp(now);
   const cutoff = new Date(now.getTime() - LOCK_TTL_MINUTES * 60000);
   try {
     // Stale rows are deleted on touch, then the record is free.
@@ -62,7 +77,7 @@ export async function acquireLock({ prisma, table, keys, sessionId, userId } = {
       };
     }
     if (existing) {
-      await delegate.update({ where: { id: existing.id }, data: { confirmdatetime: now } });
+      await delegate.update({ where: { id: existing.id }, data: { confirmdatetime: stamp } });
       return { own: true, refreshed: true, lockId: existing.id };
     }
     const row = await delegate.create({
@@ -71,8 +86,8 @@ export async function acquireLock({ prisma, table, keys, sessionId, userId } = {
         keys: ks,
         sessionid: String(sessionId ?? ''),
         userid: String(userId ?? ''),
-        startdatetime: now,
-        confirmdatetime: now,
+        startdatetime: stamp,
+        confirmdatetime: stamp,
         action: 0,
       },
     });
@@ -105,9 +120,8 @@ export async function checkLock({ prisma, table, keys } = {}) {
   try {
     const row = await delegate.findFirst({ where: { table: String(table), keys: lockKeys(keys) } });
     if (!row) return null;
-    const stamp = row.confirmdatetime || row.startdatetime;
-    const t = stamp instanceof Date ? stamp : new Date(stamp);
-    if (Number.isNaN(t.getTime()) || Date.now() - t.getTime() >= LOCK_TTL_MINUTES * 60000) {
+    const stamp = parseLockTime(row.confirmdatetime || row.startdatetime);
+    if (!stamp || Date.now() - stamp.getTime() >= LOCK_TTL_MINUTES * 60000) {
       return null;
     }
     return { locked: true, by: String(row.userid ?? ''), sessionId: row.sessionid, since: row.startdatetime };
@@ -116,4 +130,4 @@ export async function checkLock({ prisma, table, keys } = {}) {
   }
 }
 
-export default { acquireLock, releaseLock, checkLock, lockKeys, LOCK_TTL_MINUTES };
+export default { acquireLock, releaseLock, checkLock, lockKeys, lockTimestamp, LOCK_TTL_MINUTES };

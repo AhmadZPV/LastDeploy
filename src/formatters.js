@@ -10,6 +10,7 @@
  */
 import { registry } from './registry.js';
 import { isRichTextField, sanitizeRichText } from './rich-text.js';
+import { formatDeDate, formatIsoDate } from './calendar-date.js';
 
 export function escapeHtml(value) {
   return String(value == null ? '' : value)
@@ -87,19 +88,13 @@ export function fmtNum(value, digits = 2) {
 /** DD.MM.YYYY — the date format every PHP page printed. */
 export function fmtDate(value) {
   if (value == null || value === '') return '';
-  const d = value instanceof Date ? value : new Date(value);
-  if (Number.isNaN(d.getTime())) return String(value);
-  const p = (n) => String(n).padStart(2, '0');
-  return `${p(d.getDate())}.${p(d.getMonth() + 1)}.${d.getFullYear()}`;
+  return formatDeDate(value);
 }
 
 /** Value for <input type="date">: YYYY-MM-DD or ''. */
 export function inputDate(value) {
   if (value == null || value === '') return '';
-  const d = value instanceof Date ? value : new Date(value);
-  if (Number.isNaN(d.getTime())) return String(value);
-  const p = (n) => String(n).padStart(2, '0');
-  return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`;
+  return formatIsoDate(value);
 }
 
 /**

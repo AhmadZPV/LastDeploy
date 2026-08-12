@@ -11,10 +11,13 @@
  */
 import { Router } from 'express';
 import bcrypt from 'bcryptjs';
-import { checkPassword, passwordErrors, randString, generateToken, POLICY } from '../src/auth/policy.js';
+import {
+  checkPassword, passwordErrors, randString, POLICY,
+  issueAuthToken, authTokenKind, isAuthTokenExpired,
+} from '../src/auth/policy.js';
+import { hashPassword } from '../src/auth/password-guard.js';
 
 /** classes/registerpage.php uses the Benutzer login table. */
-const LOGIN_TABLE = 'Benutzer';
 const USER_FIELD = 'Benutzername';
 const PASS_FIELD = 'Passwort';
 const MAIL_FIELD = 'Email';
@@ -31,9 +34,6 @@ export async function verifyPassword(plain, stored) {
   return String(stored) === String(plain);
 }
 
-async function hashPassword(plain) {
-  try { return await bcrypt.hash(String(plain), 10); } catch { return String(plain); }
-}
 
 /**
  * @param deps.prisma   Prisma client
@@ -103,7 +103,7 @@ export default function createAuthRouter({ prisma, sendMail } = {}) {
     }
 
     // classes/registerpage.php:285 -> $values["active"] = 0
-    const token = generateToken();
+    const token = issueAuthToken('activate');
     const max = await users().aggregate({ _max: { ID: true } }).catch(() => ({ _max: { ID: 0 } }));
     await users().create({
       data: {
@@ -139,12 +139,15 @@ export default function createAuthRouter({ prisma, sendMail } = {}) {
     const user = token
       ? await users().findFirst({ where: { reset_token: token } }).catch(() => null)
       : null;
-    if (!user) {
+    const invalid = !user
+      || authTokenKind(token) !== 'activate'
+      || isAuthTokenExpired(user.reset_date);
+    if (invalid) {
       return res.status(400).render('auth/message', {
         title: 'Aktivierung', message: 'Der Aktivierungslink ist ung\u00fcltig oder abgelaufen.',
       });
     }
-    await users().update({ where: { ID: user.ID }, data: { active: 1, reset_token: null } });
+    await users().update({ where: { ID: user.ID }, data: { active: 1, reset_token: null, reset_date: null } });
     res.render('auth/message', {
       title: 'Aktivierung', message: 'Ihr Konto wurde aktiviert. Sie k\u00f6nnen sich jetzt anmelden.',
     });
@@ -169,7 +172,7 @@ export default function createAuthRouter({ prisma, sendMail } = {}) {
       });
     }
 
-    const token = generateToken();
+    const token = issueAuthToken('reset');
     await users().update({
       where: { ID: user.ID }, data: { reset_token: token, reset_date: new Date() },
     });
@@ -210,7 +213,7 @@ export default function createAuthRouter({ prisma, sendMail } = {}) {
     let user = null;
     if (token) {
       user = await users().findFirst({ where: { reset_token: token } }).catch(() => null);
-      if (!user) {
+      if (!user || authTokenKind(token) !== 'reset' || isAuthTokenExpired(user.reset_date)) {
         errors.push('Der Link ist ung\u00fcltig oder abgelaufen.');
         return render(400);
       }

@@ -12,12 +12,11 @@
  * before `npm install` has run.
  */
 
+import { formatDeDate } from '../calendar-date.js';
+
 /** German d.m.Y date. */
 function fmtDate(value) {
-  const d = value instanceof Date ? value : new Date(value);
-  if (Number.isNaN(d.getTime())) return String(value);
-  const p = (n) => String(n).padStart(2, '0');
-  return `${p(d.getDate())}.${p(d.getMonth() + 1)}.${d.getFullYear()}`;
+  return formatDeDate(value);
 }
 
 const de2 = new Intl.NumberFormat('de-DE', {

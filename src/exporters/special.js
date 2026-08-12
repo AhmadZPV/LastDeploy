@@ -1,8 +1,7 @@
+import { formatDatevDate } from '../calendar-date.js';
+
 function datevDate(value) {
-  const d = value instanceof Date ? value : new Date(value);
-  if (Number.isNaN(d.getTime())) return '';
-  const pad = (n) => String(n).padStart(2, '0');
-  return `${pad(d.getDate())}${pad(d.getMonth() + 1)}${d.getFullYear()}`;
+  return formatDatevDate(value);
 }
 
 export async function datevRows(prisma, where = {}) {

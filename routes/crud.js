@@ -19,6 +19,7 @@ const SKIP_DISPLAY = new Set([]); // we keep everything; blobs are rendered as [
 
 import { parseSearchRequest, buildSearchWhere, fieldSearchSpec } from '../src/search-ops.js';
 import { manifestFor, formSpec, viewSpec, validateSubmission } from '../src/form-builder.js';
+import { recordValuesFromBody } from '../src/record-payload.js';
 
 export default function createCrudRouter(name, meta) {
   const router = Router();
@@ -361,11 +362,13 @@ export default function createCrudRouter(name, meta) {
   // CREATE (was the original NEW position)
   router.post('/', gate('A'), async (req, res) => {
     try {
-      const data = {};
-      for (const [k, v] of Object.entries(req.body)) {
-        if (k === '_method' || v === '') continue;
-        data[k] = coerce(name, k, v);
-      }
+      const data = recordValuesFromBody(req.body, {
+        entity: name,
+        fields: meta.fields,
+        coerce: (entity, field, raw) => coerce(entity, field, raw),
+        isEdit: false,
+        isAdmin: req.session?.user?.isAdmin === true,
+      });
       // BLOB uploads
       for (const f of req.files || []) {
         if (meta.fields?.[f.fieldname]) {
@@ -431,11 +434,13 @@ export default function createCrudRouter(name, meta) {
 
   router.post('/:id', gate('E'), async (req, res) => {
     try {
-      const data = {};
-      for (const [k, v] of Object.entries(req.body)) {
-        if (k === '_method' || k === 'ID' || k === 'Team' || v === '') continue;
-        data[k] = coerce(name, k, v);
-      }
+      const data = recordValuesFromBody(req.body, {
+        entity: name,
+        fields: meta.fields,
+        coerce: (entity, field, raw) => coerce(entity, field, raw),
+        isEdit: true,
+        isAdmin: req.session?.user?.isAdmin === true,
+      });
       for (const f of req.files || []) {
         if (meta.fields?.[f.fieldname]) data[f.fieldname] = Buffer.from(f.buffer);
       }

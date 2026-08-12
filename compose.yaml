@@ -12,7 +12,7 @@ services:
       PORT: 3000
       DATABASE_URL: file:/app/data/dev.db
       SESSION_DIR: /app/data/sessions
-      SESSION_SECRET: ${SESSION_SECRET:-replace-this-before-public-deployment}
+      SESSION_SECRET: ${SESSION_SECRET:?Set SESSION_SECRET to a unique value before starting}
       SESSION_COOKIE_SECURE: ${SESSION_COOKIE_SECURE:-false}
       TRUST_PROXY: ${TRUST_PROXY:-0}
       GEOCODING_PROVIDER: ${GEOCODING_PROVIDER:-nominatim}

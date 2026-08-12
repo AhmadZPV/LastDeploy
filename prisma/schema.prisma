@@ -173,6 +173,7 @@ model Adressen {
   rel_Abrechnungskonten_Adresse Abrechnungskonten[] @relation("rel_Adressen_Abrechnungskonten_Adresse")
   rel_Kontenrahmen_Adresse Kontenrahmen[] @relation("rel_Adressen_Kontenrahmen_Adresse")
 
+  @@index([Team])
 }
 
 model Ansprechpartner {
@@ -216,6 +217,7 @@ model Aufgaben {
   rel_Raeume_Raum Raeume? @relation("rel_Raeume_Aufgaben_Raum", fields: [Raum], references: [ID])
   rel_Vertraege_Vertrag Vertraege? @relation("rel_Vertraege_Aufgaben_Vertrag", fields: [Vertrag], references: [ID])
 
+  @@index([Team])
 }
 
 model Aufteilungsassistent {
@@ -248,7 +250,7 @@ model Ausleihen {
 
 model Benutzer {
   ID            Int       @id @default(autoincrement())
-  Benutzername  String
+  Benutzername  String    @unique
   Passwort      String
   Name          String
   Email         String
@@ -261,6 +263,9 @@ model Benutzer {
   Team          String?
   Erstanmeldung DateTime?
   Art           String?
+
+  @@index([Team])
+  @@index([reset_token])
 }
 
 /// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
@@ -308,6 +313,7 @@ model Buchungen {
   rel_Kontenrahmen_Konto Kontenrahmen? @relation("rel_Kontenrahmen_Buchungen_Konto", fields: [Konto], references: [ID])
   rel_Kontenrahmen_Gegenkonto Kontenrahmen? @relation("rel_Kontenrahmen_Buchungen_Gegenkonto", fields: [Gegenkonto], references: [ID])
 
+  @@index([Team])
 }
 
 model Buchungsassistent {
@@ -460,6 +466,7 @@ model Einheiten {
   rel_Korrespondenz_Einheit Korrespondenz[] @relation("rel_Einheiten_Korrespondenz_Einheit")
   rel_Objekte_Objekt Objekte? @relation("rel_Objekte_Einheiten_Objekt", fields: [Objekt], references: [ID])
 
+  @@index([Team])
 }
 
 model Einheitenarten {
@@ -772,6 +779,7 @@ model Kontobuch {
   rel_Abrechnungen_Abrechnung Abrechnungen? @relation("rel_Abrechnungen_Kontobuch_Abrechnung", fields: [Abrechnung], references: [ID])
   rel_Abrechnungskonten_Abrechnungskonto Abrechnungskonten? @relation("rel_Abrechnungskonten_Kontobuch_Abrechnungskonto", fields: [Abrechnungskonto], references: [ID])
 
+  @@index([Team])
 }
 
 model Korrespondenz {
@@ -967,6 +975,7 @@ model Objekte {
   rel_Vertraege_Objekt Vertraege[] @relation("rel_Objekte_Vertraege_Objekt")
   rel_Korrespondenz_Objekt Korrespondenz[] @relation("rel_Objekte_Korrespondenz_Objekt")
 
+  @@index([Team])
 }
 
 model PLZ {
@@ -1120,6 +1129,7 @@ model Termine {
   rel_Adressen_Adresse Adressen? @relation("rel_Adressen_Termine_Adresse", fields: [Adresse], references: [ID])
   rel_Inventar_Inventar Inventar? @relation("rel_Inventar_Termine_Inventar", fields: [Inventar], references: [ID])
 
+  @@index([Team])
 }
 
 model Verkauf {

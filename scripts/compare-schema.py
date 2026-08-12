@@ -122,6 +122,8 @@ def main():
          "reason": "business key marked @unique so Prisma relations can reference it (documented decision)"},
         {"model": "Kontenrahmen", "field": "ID",
          "reason": "business key marked @unique so Prisma relations can reference it (documented decision)"},
+        {"model": "Benutzer", "field": "Benutzername",
+         "reason": "login identity must be unique at the database so concurrent register/admin-create cannot insert duplicate accounts"},
     ]
 
     def is_documented(diff):
