@@ -13,6 +13,8 @@
     "smoke:charts": "node scripts/smoke-charts.mjs",
     "smoke:imports": "node scripts/smoke-imports.mjs",
     "test:features": "node scripts/test-features.mjs",
+    "test:e2e": "node tests/run-playwright-e2e.mjs",
+    "production:prepare": "node scripts/prepare-production.mjs",
     "db:import": "node scripts/import-mysql-dump.js",
     "entities:build": "python scripts/extract-metadata.py \"%PHP_SOURCE%\"",
     "catalog:build": "node scripts/build-source-catalog.mjs",
@@ -42,6 +44,7 @@
     "sharp": "^0.35.3"
   },
   "devDependencies": {
+    "playwright": "^1.62.1",
     "prisma": "5.22.0"
   }
 }

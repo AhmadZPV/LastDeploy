@@ -48,6 +48,7 @@ export function parseSchema(schemaPath = path.join(root, 'prisma', 'schema.prism
     const [, name, body] = m;
     const fields = {};
     const relations = [];
+    const primaryKey = [];
     let table = name;
     const mapMatch = body.match(/@@map\("([^"]+)"\)/);
     if (mapMatch) table = mapMatch[1];
@@ -65,9 +66,13 @@ export function parseSchema(schemaPath = path.join(root, 'prisma', 'schema.prism
         type: ftype,
         column: colMap ? colMap[1] : fname,
         optional: optional === '?',
+        hasDefault: /@default\(/.test(line),
       };
+      if (/@id\b/.test(line)) primaryKey.push(fname);
     }
-    models[name] = { name, table, fields, relations };
+    const compoundId = body.match(/@@id\(\[([^\]]+)\]\)/);
+    if (compoundId) primaryKey.push(...compoundId[1].split(',').map((field) => field.trim()).filter(Boolean));
+    models[name] = { name, table, fields, relations, primaryKey };
   }
   return models;
 }
@@ -92,6 +97,7 @@ function buildRegistry() {
       model: delegateName(model.name),
       table: model.table,
       fields: model.fields,
+      primaryKey: model.primaryKey,
       multiTenant: Object.prototype.hasOwnProperty.call(model.fields, 'Team'),
       listColumns: [],
       searchFields: [],

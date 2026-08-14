@@ -25,8 +25,9 @@
       <% for (const c of visibleColumns) { %><td><%- helpers.display(module, c, item[c], locals.waehrung) %></td><% } %>
       <% if (meta.capabilities?.view !== false || meta.capabilities?.edit !== false) { %><td>
         <div class="row-actions">
-        <% if (meta.capabilities?.view !== false) { %><a class="btn btn-ghost btn-sm" href="/<%= module %>/<%= item.ID %>"><%= t('show') %></a><% } %>
-        <% if (meta.capabilities?.edit !== false) { %><a class="btn btn-ghost btn-sm" href="/<%= module %>/<%= item.ID %>/edit"><%= t('edit') %></a><% } %>
+        <% const rowKey = typeof primaryKey !== 'undefined' ? primaryKey : 'ID'; const recordKey = rowKey ? item[rowKey] : null; %>
+        <% if (recordKey != null && meta.capabilities?.view !== false) { %><a class="btn btn-ghost btn-sm" href="/<%= module %>/<%= encodeURIComponent(String(recordKey)) %>"><%= t('show') %></a><% } %>
+        <% if (recordKey != null && meta.capabilities?.edit !== false) { %><a class="btn btn-ghost btn-sm" href="/<%= module %>/<%= encodeURIComponent(String(recordKey)) %>/edit"><%= t('edit') %></a><% } %>
         </div>
       </td><% } %>
     </tr><% } %></tbody>

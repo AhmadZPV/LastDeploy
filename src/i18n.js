@@ -75,6 +75,7 @@ const STRINGS = {
     details: 'Details',
     not_found: 'Nicht gefunden',
     please_fill: 'Bitte ausfüllen',
+    required_fields_missing: 'Bitte füllen Sie die folgenden Pflichtfelder aus: {fields}',
     no_permission_for: 'Keine Berechtigung für',
     no_right_for: 'Keine Berechtigung',
     list_error: 'Listenfehler',
@@ -202,6 +203,7 @@ const STRINGS = {
     details: 'Details',
     not_found: 'Not found',
     please_fill: 'Please fill in',
+    required_fields_missing: 'Please fill in the following required fields: {fields}',
     no_permission_for: 'No permission for',
     no_right_for: 'No permission',
     list_error: 'List error',
@@ -711,6 +713,76 @@ export function normalizeLang(lang) {
 // Longest-first so compound labels are matched before their fragments.
 const DE_TO_EN_SORTED = Object.entries(DE_TO_EN).sort((a, b) => b[0].length - a[0].length);
 
+const FIELD_LABELS_EN = {
+  Anschrift: 'Address',
+  Anmerkungen: 'Notes',
+  Bemerkungen: 'Notes',
+  Besitzer: 'Owner',
+  Nutzer: 'Occupant',
+  Raum: 'Room',
+  Kunde: 'Customer',
+  Gegenkonto: 'Offset account',
+  Verbucht: 'Posted',
+  Erfasser: 'Entered by',
+  Kostenstelle: 'Cost center',
+  Kontobezeichnung: 'Account name',
+  Gesamtbemerkung: 'Overall notes',
+  Gebaeudeausstattung: 'Building features',
+  Gebäudeausstattung: 'Building features',
+  Fertigstellungsgrad: 'Completion percentage',
+  Zubehör: 'Accessories',
+  Zubehoer: 'Accessories',
+  'Tage vorher': 'Days before',
+  'Tage nachher': 'Days after',
+  'Eindeutiger Bezeichner': 'Unique identifier',
+  'Bundesland/Kanton': 'State / canton',
+  'Land/Region': 'Country / region',
+  'Telefon Büro': 'Office phone',
+  'E-Mail-Adresse': 'Email address',
+  DATEV_Steuerschluessel: 'DATEV tax key',
+  'DATEV Steuerschlüssel': 'DATEV tax key',
+  Anteilbrutto: 'Gross share',
+  Personenschnitt: 'Average occupants',
+  Klassifikation: 'Classification',
+  Kurzname: 'Short name',
+  Firma: 'Company',
+  Abteilung: 'Department',
+  Vorname: 'First name',
+  Nachname: 'Last name',
+  Strasse: 'Street',
+  Straße: 'Street',
+  Ort: 'City',
+  Bundesland: 'State',
+  Staat: 'Country',
+  Geburtstag: 'Date of birth',
+  Geschlecht: 'Gender',
+  Anrede: 'Salutation',
+  Stellung: 'Position',
+  Wiedervorlage: 'Follow-up',
+  Bearbeitungsstatus: 'Processing status',
+  Datenherkunft: 'Data source',
+  Erfassungsdatum: 'Date entered',
+  Bezeichnung: 'Description',
+  Nummer: 'Number',
+  Betrag: 'Amount',
+  Buchungskonto: 'Posting account',
+  Buchungsdatum: 'Posting date',
+  Belegnummer: 'Document number',
+  Steuersatz: 'Tax rate',
+  Steuerschluessel: 'Tax key',
+  Steuerschlüssel: 'Tax key',
+  Kontoinhaber: 'Account holder',
+  Zahlungsbedingungen: 'Payment terms',
+  Lieferbedingungen: 'Delivery terms',
+};
+
+export function translateFieldLabel(name, german, english) {
+  const exact = FIELD_LABELS_EN[name] || FIELD_LABELS_EN[german];
+  if (exact) return exact;
+  if (english && english !== german) return english;
+  return DE_TO_EN[german] || english || german || name || '';
+}
+
 export function createTranslator(lang) {
   const l = normalizeLang(lang);
   const bag = STRINGS[l] || STRINGS[DEFAULT_LANG];
@@ -729,13 +801,7 @@ export function createTranslator(lang) {
     if (l === 'de') return text;
     const s = String(text);
     if (DE_TO_EN[s]) return DE_TO_EN[s];
-    // Multi-word: replace known tokens, keep rest
-    let out = s;
-    for (const [de, en] of DE_TO_EN_SORTED) {
-      if (de.length < 3) continue;
-      if (out.includes(de)) out = out.split(de).join(en);
-    }
-    return out;
+    return s;
   }
   return { lang: l, t, tx, strings: bag };
 }

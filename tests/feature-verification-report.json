@@ -1,0 +1,3184 @@
+{
+  "generatedAt": "2026-08-14T00:22:10.525Z",
+  "baseUrl": "http://localhost:3000",
+  "readOnly": true,
+  "summary": {
+    "total": 485,
+    "PASS": 442,
+    "FAIL": 0,
+    "SKIP": 43
+  },
+  "failures": [],
+  "skipped": [
+    {
+      "area": "CRUD",
+      "name": "ansprechpartner record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "aufteilungsassistent record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "ausleihen record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "buchfuehrungen record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "buchungen record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "buchungsassistent record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "buchungsimport record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "checklisten record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "dokumente record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "einheitenarten record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "farben record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "flaechen record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "intex_hausverwaltung_settings record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "informationen record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "kalender record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "kalenderwoche record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "klassifikationen_adressen record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "klassifikationen_inventar record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "klassifikationenkontobuch record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "kontoauszuege record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "korrespondenz record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "kostenarten record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "kostenbelege record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "leistungen record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "navigator record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "objektarten record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "plz record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "personen record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "positionen record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "protokolle record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "raeume record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "raumarten record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "schlagwoerter record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "schluessel record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "seriennummern record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "sets record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "verkauf record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "vorwegabzuege record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "wertelisten record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "zaehler record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "zeiten record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "intex_hausverwaltung_ugmembers record workflow",
+      "status": "SKIP",
+      "detail": "Composite primary key uses dedicated workflow"
+    },
+    {
+      "area": "CRUD",
+      "name": "intex_hausverwaltung_ugrights record workflow",
+      "status": "SKIP",
+      "detail": "Composite primary key uses dedicated workflow"
+    }
+  ],
+  "results": [
+    {
+      "area": "Platform",
+      "name": "Health endpoint",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Security",
+      "name": "Anonymous dashboard protection",
+      "status": "PASS",
+      "detail": "HTTP 302"
+    },
+    {
+      "area": "Authentication",
+      "name": "Admin login with CSRF",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "area": "Navigation",
+      "name": "Authenticated dashboard",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Localization",
+      "name": "Switch to English",
+      "status": "PASS",
+      "detail": "HTTP 302"
+    },
+    {
+      "area": "Localization",
+      "name": "English application chrome",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "area": "Localization",
+      "name": "Switch to German",
+      "status": "PASS",
+      "detail": "HTTP 302"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Navi",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Kontobuch",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Kontoauszugsimport",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Kontobuch Auszug",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Banking",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Buchungsbericht (Abrechnungen)",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Buchungsbericht (Objekte)",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Buchungsbericht Mwst",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Mieterkonten Saldenliste",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Mieterkonten",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Einnahmen/Ausgaben",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Kostenverteilung",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Einnahmeverteilung",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Klassifikationen Kontobuch",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Assistent Doppelte Buchführung",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Journale",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Schnellbuchungen",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Buchungsassistent",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Kontoauszugsimport",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Buchungsimport",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Buchungsübersicht",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Banking",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Kontenrahmen Druck",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Kontenblätter",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Summen und Salden",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Summen und Salden (kurz)",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Saldenliste",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Gewinn und Verlust",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Gewinn und Verlust (kurz)",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Umsatzsteuervoranmeldung",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Debitorenkonten",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "DATEV Export",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Aufteilungsassistent",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Vorwegabzüge",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Buchführungen",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Konten/Kontenrahmen",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Assistent Abrechnungen",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Abrechnungen",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Abrechnungskonten",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Vorauszahlungen",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Rücklagebuchungen",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Umlagen",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Direkte Kosten",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "§35a Einkommensteuergesetz",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Verbrauchsanteile",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Zeitliche Verteilung",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Verteilung Umlegbare Kosten",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Betriebskosten",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Betriebskosten (Individuell)",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Betriebskosten netto",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Heizkosten",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Heizkosten ohne Warmwasser",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "§35a EStG Druck",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Abrechnungsdaten Übersicht",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Abrechnungsbericht",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Abrechnungsempfänger",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Serienbrief",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Kostenarten",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Assistent Objekte und Einheiten",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Objekte",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Ansprechpartner",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Einheiten",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Räume",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Schlüssel",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Protokolle",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Zähler",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Flächen / Quadratmeter",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Objektübersicht",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Nutzerliste",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Leerstandsquote",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Vermietungskonditionen",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "WEG Stimmrechte",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "WEG Eigentümerliste",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Immobilien Diagramme",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Objektarten",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Einheitenarten",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Raumarten",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Inventar",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Ausleihen",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Inventar Bilder",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Finanzbericht",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Mengenbericht",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Inventar Diagramme",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Inventar Datenblätter",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Inventar Etiketten",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Kategorien",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Sets",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Schlagwörter",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Stapelverarbeitung",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Rechnungen",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Angebote",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Rechnungsdruck",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Angebotsdruck",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Vorgänge",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Verkauf Serienbrief Steuerdatei",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Umsatzauswertung",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Leistungen",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Adressen",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Adressen (Kerndaten)",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Adressen (Vertraulich)",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "vCard Import",
+      "status": "PASS",
+      "detail": "HTTP 302"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Adressliste",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Adressetiketten",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Telefonliste",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Mail Web Skype",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Serienbrief Steuerdatei",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Adressen Diagramme",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Klassifikationen",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Stapelverarbeitung",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Notizen",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Aufgaben",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Wiedervorlage",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Dokumente",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Fotos",
+      "status": "PASS",
+      "detail": "HTTP 302"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Bilder",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Verträge",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Alle Termine",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Agenda Heute",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Kalenderwoche",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Termine diese Woche",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Monatskalender",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Termine dieser Monat",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "ics Import",
+      "status": "PASS",
+      "detail": "HTTP 302"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Korrespondenz",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Export nach Word",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Briefdruck",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Informationen",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "PLZ",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Wertelisten",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Farben",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Seriennummern",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Einstellungen",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Vertragsdaten",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Backup",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Anmeldung",
+      "status": "PASS",
+      "detail": "HTTP 302"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Kontaktaufnahme",
+      "status": "PASS",
+      "detail": "HTTP 302"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Zählerstände melden",
+      "status": "PASS",
+      "detail": "HTTP 302"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Mitteilungen",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Objekte Vermietung Verkauf",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Einheiten Vermietung Verkauf",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Mitarbeiter",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Zugriffsrechte",
+      "status": "PASS",
+      "detail": "HTTP 302"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Benutzer einer Gruppe zuordnen",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Sidebar",
+      "name": "Hinzufügen/Ändern eines Benutzers",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "abrechnungen list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "abrechnungen search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "abrechnungen add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "abrechnungen detail",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "abrechnungen edit form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Export",
+      "name": "abrechnungen CSV",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "abrechnungskonten list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "abrechnungskonten search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "abrechnungskonten add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "abrechnungskonten detail",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "abrechnungskonten edit form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Export",
+      "name": "abrechnungskonten CSV",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "adressen list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "adressen search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "adressen add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "adressen detail",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "adressen edit form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Export",
+      "name": "adressen CSV",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "ansprechpartner list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "ansprechpartner search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "ansprechpartner add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "ansprechpartner record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "aufgaben list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "aufgaben search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "aufgaben add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "aufgaben detail",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "aufgaben edit form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Export",
+      "name": "aufgaben CSV",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "aufteilungsassistent list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "aufteilungsassistent search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "aufteilungsassistent add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "aufteilungsassistent record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "ausleihen list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "ausleihen search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "ausleihen add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "ausleihen record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "benutzer list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "benutzer search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "benutzer add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "benutzer detail",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "benutzer edit form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Export",
+      "name": "benutzer CSV",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "buchfuehrungen list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "buchfuehrungen search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "buchfuehrungen add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "buchfuehrungen record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "buchungen list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "buchungen search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "buchungen add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "buchungen record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "buchungsassistent list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "buchungsassistent search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "buchungsassistent add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "buchungsassistent record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "buchungsimport list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "buchungsimport search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "buchungsimport add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "buchungsimport record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "checklisten list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "checklisten search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "checklisten add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "checklisten record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "dokumente list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "dokumente search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "dokumente add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "dokumente record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "einheiten list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "einheiten search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "einheiten add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "einheiten detail",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "einheiten edit form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Export",
+      "name": "einheiten CSV",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "einheitenarten list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "einheitenarten search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "einheitenarten add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "einheitenarten record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "einstellungen list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "einstellungen search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "einstellungen add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "einstellungen detail",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "einstellungen edit form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Export",
+      "name": "einstellungen CSV",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "farben list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "farben search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "farben add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "farben record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "flaechen list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "flaechen search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "flaechen add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "flaechen record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "intex_hausverwaltung_settings list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "intex_hausverwaltung_settings search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "intex_hausverwaltung_settings add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "intex_hausverwaltung_settings record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "informationen list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "informationen search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "informationen add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "informationen record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "inventar list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "inventar search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "inventar add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "inventar detail",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "inventar edit form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Export",
+      "name": "inventar CSV",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "kalender list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "kalender search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "kalender add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "kalender record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "kalenderwoche list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "kalenderwoche search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "kalenderwoche add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "kalenderwoche record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "klassifikationen_adressen list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "klassifikationen_adressen search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "klassifikationen_adressen add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "klassifikationen_adressen record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "klassifikationen_inventar list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "klassifikationen_inventar search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "klassifikationen_inventar add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "klassifikationen_inventar record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "klassifikationenkontobuch list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "klassifikationenkontobuch search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "klassifikationenkontobuch add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "klassifikationenkontobuch record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "kontenrahmen list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "kontenrahmen search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "kontenrahmen add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "kontenrahmen detail",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "kontenrahmen edit form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Export",
+      "name": "kontenrahmen CSV",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "kontoauszuege list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "kontoauszuege search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "kontoauszuege add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "kontoauszuege record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "kontobuch list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "kontobuch search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "kontobuch add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "kontobuch detail",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "kontobuch edit form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Export",
+      "name": "kontobuch CSV",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "korrespondenz list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "korrespondenz search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "korrespondenz add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "korrespondenz record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "kosten list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "kosten search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "kosten add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "kosten detail",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "kosten edit form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Export",
+      "name": "kosten CSV",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "kostenarten list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "kostenarten search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "kostenarten add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "kostenarten record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "kostenbelege list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "kostenbelege search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "kostenbelege add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "kostenbelege record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "leistungen list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "leistungen search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "leistungen add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "leistungen record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "navigator list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "navigator search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "navigator add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "navigator record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "notizen list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "notizen search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "notizen add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "notizen detail",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "notizen edit form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Export",
+      "name": "notizen CSV",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "objektarten list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "objektarten search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "objektarten add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "objektarten record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "objekte list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "objekte search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "objekte add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "objekte detail",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "objekte edit form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Export",
+      "name": "objekte CSV",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "plz list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "plz search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "plz add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "plz record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "personen list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "personen search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "personen add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "personen record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "positionen list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "positionen search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "positionen add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "positionen record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "protokolle list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "protokolle search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "protokolle add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "protokolle record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "raeume list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "raeume search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "raeume add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "raeume record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "raumarten list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "raumarten search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "raumarten add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "raumarten record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "schlagwoerter list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "schlagwoerter search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "schlagwoerter add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "schlagwoerter record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "schluessel list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "schluessel search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "schluessel add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "schluessel record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "seriennummern list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "seriennummern search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "seriennummern add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "seriennummern record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "sets list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "sets search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "sets add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "sets record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "termine list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "termine search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "termine add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "termine detail",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "termine edit form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Export",
+      "name": "termine CSV",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "verkauf list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "verkauf search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "verkauf add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "verkauf record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "vertraege list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "vertraege search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "vertraege add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "vertraege detail",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "vertraege edit form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Export",
+      "name": "vertraege CSV",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "vorwegabzuege list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "vorwegabzuege search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "vorwegabzuege add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "vorwegabzuege record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "wv list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "wv search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "wv add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "wv detail",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "wv edit form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Export",
+      "name": "wv CSV",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "wertelisten list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "wertelisten search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "wertelisten add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "wertelisten record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "zaehler list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "zaehler search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "zaehler add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "zaehler record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "zeiten list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "zeiten search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "zeiten add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "zeiten record workflow",
+      "status": "SKIP",
+      "detail": "No record available"
+    },
+    {
+      "area": "CRUD",
+      "name": "intex_hausverwaltung_audit list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "intex_hausverwaltung_audit search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "intex_hausverwaltung_audit add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "intex_hausverwaltung_audit detail",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "intex_hausverwaltung_audit edit form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Export",
+      "name": "intex_hausverwaltung_audit CSV",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "intex_hausverwaltung_locking list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "intex_hausverwaltung_locking search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "intex_hausverwaltung_locking add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "intex_hausverwaltung_locking detail",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "intex_hausverwaltung_locking edit form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Export",
+      "name": "intex_hausverwaltung_locking CSV",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "intex_hausverwaltung_uggroups list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "intex_hausverwaltung_uggroups search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "intex_hausverwaltung_uggroups add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "intex_hausverwaltung_uggroups detail",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "intex_hausverwaltung_uggroups edit form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Export",
+      "name": "intex_hausverwaltung_uggroups CSV",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "intex_hausverwaltung_ugmembers list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "intex_hausverwaltung_ugmembers search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "intex_hausverwaltung_ugmembers add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "intex_hausverwaltung_ugmembers record workflow",
+      "status": "SKIP",
+      "detail": "Composite primary key uses dedicated workflow"
+    },
+    {
+      "area": "CRUD",
+      "name": "intex_hausverwaltung_ugrights list",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "intex_hausverwaltung_ugrights search form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "intex_hausverwaltung_ugrights add form",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "CRUD",
+      "name": "intex_hausverwaltung_ugrights record workflow",
+      "status": "SKIP",
+      "detail": "Composite primary key uses dedicated workflow"
+    },
+    {
+      "area": "Dashboard",
+      "name": "assistent_doppelte_buchfuehrung",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Dashboard",
+      "name": "assistent_abrechnungen",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Dashboard",
+      "name": "assistent_objekte_und_einheiten",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Dashboard",
+      "name": "immobilien_diagramme",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Dashboard",
+      "name": "inventar_diagramme",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Dashboard",
+      "name": "adressen_diagramme",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Dashboard",
+      "name": "heute",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Chart",
+      "name": "Abrechnungskonten Zeitliche Verteilung",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Chart data",
+      "name": "Abrechnungskonten_Zeitliche_Verteilung",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Chart",
+      "name": "Einheiten nach Art",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Chart data",
+      "name": "Einheiten_nach_Art",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Chart",
+      "name": "Einnahmeverteilung",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Chart data",
+      "name": "Einnahmeverteilung",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Chart",
+      "name": "Inventar nach Aufbewahrungsort",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Chart data",
+      "name": "Inventar_nach_Aufbewahrungsort",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Chart",
+      "name": "Inventar nach Hersteller",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Chart data",
+      "name": "Inventar_nach_Hersteller",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Chart",
+      "name": "Inventar nach Kategorien",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Chart data",
+      "name": "Inventar_nach_Kategorien",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Chart",
+      "name": "Inventar nach Verkäufer",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Chart data",
+      "name": "Inventar_nach_Verk_ufer",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Chart",
+      "name": "Kontostände",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Chart data",
+      "name": "Kontost_nde",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Chart",
+      "name": "Kostenverteilung",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Chart data",
+      "name": "Kostenverteilung",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Chart",
+      "name": "Leerstandsquote",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Chart data",
+      "name": "Leerstandsquote",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Chart",
+      "name": "Objekte nach Art",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Chart data",
+      "name": "Objekte_nach_Art",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Chart",
+      "name": "Objekte nach Flaeche",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Chart data",
+      "name": "Objekte_nach_Flaeche",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Chart",
+      "name": "Verbrauchsanteile",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Chart data",
+      "name": "Verbrauchsanteile",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Chart",
+      "name": "Verteilung Umlegbare Kosten",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Chart data",
+      "name": "Verteilung_Umlegbare_Kosten",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Chart",
+      "name": "Verteilung nach Bundesland",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Chart data",
+      "name": "Verteilung_nach_Bundesland",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Chart",
+      "name": "Verteilung nach Klassifikation",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Chart data",
+      "name": "Verteilung_nach_Klassifikation",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Chart",
+      "name": "Verteilung nach Ort",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Chart data",
+      "name": "Verteilung_nach_Ort",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Chart",
+      "name": "Verteilung nach Staat",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Chart data",
+      "name": "Verteilung_nach_Staat",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "PWA",
+      "name": "Web manifest",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "PWA",
+      "name": "Service worker",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "PWA",
+      "name": "Offline page",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "area": "Security",
+      "name": "Logout",
+      "status": "PASS",
+      "detail": "HTTP 302"
+    },
+    {
+      "area": "Security",
+      "name": "Session removed after logout",
+      "status": "PASS",
+      "detail": "HTTP 302"
+    }
+  ]
+}

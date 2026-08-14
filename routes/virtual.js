@@ -83,6 +83,14 @@ export default function createVirtualRouter({ prisma, canAccess, teamWhere }) {
     return res.redirect(`/${page.baseSlug}/${encodeURIComponent(String(row[key]))}/edit`);
   });
 
+  router.get('/:entity/search', (req, res) => {
+    const page = virtualPage(req.params.entity);
+    if (!page) return res.status(404).render('error', { message: 'Seite nicht gefunden' });
+    if (!page.meta.capabilities?.search) return res.status(404).render('error', { message: 'Erweiterte Suche nicht verfügbar' });
+    if (!canAccess(req, page.baseSlug, 'S')) return res.status(403).render('error', { message: 'Keine Berechtigung' });
+    return res.redirect(`/${page.baseSlug}/search`);
+  });
+
   router.get('/:entity/:id/edit', (req, res) => {
     const page = virtualPage(req.params.entity);
     if (!page) return res.status(404).render('error', { message: 'Seite nicht gefunden' });

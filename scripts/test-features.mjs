@@ -1,7 +1,9 @@
 import { PrismaClient } from '@prisma/client';
+import fs from 'node:fs';
 import { loadCatalogue } from '../src/menu.js';
 import { registry } from '../src/registry.js';
 import { getChart, listCharts } from '../src/charts/engine.js';
+import { menuDashboards } from '../src/dashboards.js';
 
 const baseUrl = process.env.TEST_BASE_URL || 'http://localhost:3000';
 const username = process.env.TEST_USERNAME || 'admin';
@@ -47,6 +49,8 @@ function applicationError(body) {
   const markers = [
     'Cannot GET', 'List error:', 'Diagramm fehlgeschlagen:', 'Virtuelle Quelle nicht verfügbar',
     'Something went wrong', 'Es ist ein Fehler aufgetreten', 'Invalid `prisma.',
+    'Listenfehler:', 'View error:', 'Anzeigefehler:', 'Export error:', 'Exportfehler:',
+    'Dashboard error:', 'Dashboard-Fehler:', 'Internal Server Error',
   ];
   return markers.find((marker) => body.includes(marker)) || '';
 }
@@ -83,9 +87,10 @@ async function login() {
 }
 
 async function firstId(meta) {
+  if (meta?.primaryKey?.length !== 1) return null;
   const model = meta?.model && prisma[meta.model];
   if (!model?.findFirst) return null;
-  const key = Object.keys(meta.fields || {}).find((field) => /@id|primary/i.test(String(meta.fields[field]?.attributes || ''))) || 'ID';
+  const key = meta.primaryKey[0];
   const candidates = [key, 'ID', 'Benutzername', 'TableName'].filter((field, index, all) => field && all.indexOf(field) === index);
   for (const candidate of candidates) {
     try {
@@ -127,24 +132,23 @@ for (const item of menuLinks) {
   await probe('Sidebar', item.title || item.href, item.href, [200, 302, 403]);
 }
 
-const representative = ['objekte', 'einheiten', 'adressen', 'kontobuch', 'termine', 'dokumente', 'benutzer'];
-for (const slug of representative) {
-  const meta = registry[slug];
-  if (!meta) {
-    record('CRUD', slug, 'SKIP', 'Not in registry');
-    continue;
-  }
+for (const [slug, meta] of Object.entries(registry)) {
   await probe('CRUD', `${slug} list`, `/${slug}`);
   await probe('CRUD', `${slug} search form`, `/${slug}/search`);
   await probe('CRUD', `${slug} add form`, `/${slug}/new`, [200, 403]);
   const id = await firstId(meta);
   if (id == null) {
-    record('CRUD', `${slug} record workflow`, 'SKIP', 'No record available');
+    record('CRUD', `${slug} record workflow`, 'SKIP', meta.primaryKey?.length > 1 ? 'Composite primary key uses dedicated workflow' : 'No record available');
     continue;
   }
   await probe('CRUD', `${slug} detail`, `/${slug}/${encodeURIComponent(String(id.value))}`, [200, 403]);
   await probe('CRUD', `${slug} edit form`, `/${slug}/${encodeURIComponent(String(id.value))}/edit`, [200, 403]);
   await probe('Export', `${slug} CSV`, `/${slug}/export.csv`, [200, 403]);
+}
+
+for (const dashboard of menuDashboards()) {
+  const name = dashboard.slug || dashboard.entity;
+  await probe('Dashboard', name, `/dashboard/${encodeURIComponent(name)}`, [200, 403]);
 }
 
 for (const chart of listCharts()) {
@@ -162,6 +166,17 @@ await probe('Security', 'Session removed after logout', '/', [302]);
 
 await prisma.$disconnect();
 const counts = Object.fromEntries(['PASS', 'FAIL', 'SKIP'].map((status) => [status, results.filter((r) => r.status === status).length]));
+const report = {
+  generatedAt: new Date().toISOString(),
+  baseUrl,
+  readOnly: true,
+  summary: { total: results.length, ...counts },
+  failures: results.filter((result) => result.status === 'FAIL'),
+  skipped: results.filter((result) => result.status === 'SKIP'),
+  results,
+};
+fs.writeFileSync(new URL('../tests/feature-verification-report.json', import.meta.url), JSON.stringify(report, null, 2) + '\n');
 console.log('\nFeature verification summary');
 console.log(JSON.stringify({ total: results.length, ...counts }, null, 2));
+console.log('Report: tests/feature-verification-report.json');
 if (counts.FAIL) process.exitCode = 1;

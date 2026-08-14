@@ -68,16 +68,22 @@ export async function auditLog({ prisma, req, table, action, recordId, oldData, 
   try {
     const delegate = delegateOf(prisma);
     if (!delegate) return null;
-    const row = await delegate.create({
-      data: {
-        datetime: new Date(),
-        ip: req?.headers?.['x-forwarded-for'] || req?.ip || '',
-        user: req?.session?.user?.Benutzername || req?.session?.user?.username || '',
-        table: String(table || ''),
-        action: String(action || ''),
-        description: describeChange(action, recordId, oldData, newData),
-      },
-    });
+    const data = {
+      datetime: new Date().toISOString(),
+      ip: req?.headers?.['x-forwarded-for'] || req?.ip || '',
+      user: req?.session?.user?.Benutzername || req?.session?.user?.username || '',
+      table: String(table || ''),
+      action: String(action || ''),
+      description: describeChange(action, recordId, oldData, newData),
+    };
+    if (typeof prisma.$executeRawUnsafe === 'function') {
+      await prisma.$executeRawUnsafe(
+        'INSERT INTO "intex hausverwaltung_audit" ("datetime", "ip", "user", "table", "action", "description") VALUES (?, ?, ?, ?, ?, ?)',
+        data.datetime, data.ip, data.user, data.table, data.action, data.description,
+      );
+      return data;
+    }
+    const row = await delegate.create({ data: { ...data, datetime: new Date(data.datetime) } });
     return row;
   } catch (e) {
     console.warn('audit: logging failed for', action, 'on', table, '-', e.message);

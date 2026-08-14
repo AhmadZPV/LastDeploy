@@ -28,8 +28,9 @@ export function recordValuesFromBody(body, {
     if (isEdit && k === 'Team') continue;
     if (!isAdmin && PRIVILEGED_FIELDS.has(k)) continue;
     if (allowed && !Object.prototype.hasOwnProperty.call(allowed, k)) continue;
-    if (v === '') continue;
-    data[k] = coerce ? coerce(entity, k, v) : v;
+    const raw = Array.isArray(v) ? v.find((item) => item !== '') ?? '' : v;
+    if (raw === '') continue;
+    data[k] = coerce ? coerce(entity, k, raw) : raw;
   }
   return data;
 }

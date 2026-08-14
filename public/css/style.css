@@ -619,6 +619,19 @@ body.nav-open button.sidebar-scrim { display: block; }
   align-items: center;
   width: min(100%, 560px);
 }
+.search-box input {
+  background: var(--surface);
+  color: var(--ink);
+  border-color: var(--line-strong);
+}
+.search-box input::placeholder { color: var(--ink-2); opacity: 1; }
+.search-box input:hover { background: var(--surface); border-color: color-mix(in srgb, var(--accent) 38%, var(--line-strong)); }
+.search-box input:focus {
+  background: var(--surface);
+  color: var(--ink);
+  border-color: color-mix(in srgb, var(--accent) 65%, transparent);
+  box-shadow: var(--ring);
+}
 
 /* KPI grid ----------------------------------------------------------------*/
 .grid {
@@ -959,6 +972,13 @@ input:focus, select:focus, textarea:focus, .rich-text-editor:focus {
   background: var(--surface-3);
   border-color: color-mix(in srgb, var(--accent) 55%, transparent);
   box-shadow: var(--ring);
+}
+/* The list search field is plain <input>, not type="search". Keep its text
+   readable when the generic form focus rule applies. */
+.search-box input:hover,
+.search-box input:focus {
+  background: var(--surface) !important;
+  color: var(--ink) !important;
 }
 input:disabled, select:disabled, textarea:disabled,
 input[readonly] { background: var(--surface); color: var(--ink-3); cursor: not-allowed; }

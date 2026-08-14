@@ -22,6 +22,11 @@ export function calendarParts(value) {
   }
   const d = value instanceof Date ? value : new Date(value);
   if (Number.isNaN(d.getTime())) return null;
+  // Date constructors without a timezone represent a local calendar day;
+  // preserve that day while normalized database values remain UTC midnight.
+  if (value instanceof Date && d.getHours() === 0 && d.getMinutes() === 0 && d.getSeconds() === 0) {
+    return { y: d.getFullYear(), m: d.getMonth() + 1, d: d.getDate() };
+  }
   return { y: d.getUTCFullYear(), m: d.getUTCMonth() + 1, d: d.getUTCDate() };
 }
 

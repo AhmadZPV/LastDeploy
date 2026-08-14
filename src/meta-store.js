@@ -14,6 +14,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { translateFieldLabel } from './i18n.js';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const ENT_DIR = path.join(root, 'src', 'meta', 'entities');
@@ -123,8 +124,9 @@ export function fieldLabel(meta, field, lang) {
   const bags = meta && meta.labels;
   const german = bags && (bags.German || bags.german);
   const english = bags && (bags.English || bags.english);
-  if (lang === 'en' && english && english[name]) return english[name];
-  return (german && german[name]) || name || '';
+  const de = (german && german[name]) || name || '';
+  if (lang === 'en') return translateFieldLabel(name, de, english && english[name]);
+  return de;
 }
 
 /**

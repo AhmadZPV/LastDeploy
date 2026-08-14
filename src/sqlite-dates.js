@@ -25,6 +25,11 @@ export function epochToIsoSql(table, column) {
 /** Normalize date-only dump values so Prisma can decode DateTime columns. */
 export async function normalizeSqliteDateTimes(prisma) {
   let updated = 0;
+  updated += await prisma.$executeRawUnsafe(
+    `UPDATE "intex hausverwaltung_audit"
+     SET "id" = rowid
+     WHERE "id" IS NULL`,
+  );
   for (const model of Object.values(parseSchema())) {
     for (const field of Object.values(model.fields || {})) {
       if (field.type !== 'DateTime') continue;

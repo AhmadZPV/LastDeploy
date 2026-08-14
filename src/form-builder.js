@@ -13,7 +13,7 @@
  * tests never touch Prisma or express.
  */
 
-import { loadMeta, resolveEntityName } from './meta-store.js';
+import { fieldLabel, loadMeta, resolveEntityName } from './meta-store.js';
 import { editSettings, inputAttributes } from './field-format.js';
 import { dependentsOf } from './lookups.js';
 
@@ -44,11 +44,7 @@ export function orderedFields(meta, page) {
  * `lang === 'en'` prefers the generated labels.English bag.
  */
 export function labelFor(meta, name, lang) {
-  const labels = meta && meta.labels;
-  const german = labels && (labels.German || labels.german);
-  const english = labels && (labels.English || labels.english);
-  if (lang === 'en' && english && english[name]) return english[name];
-  return (german && german[name]) || name;
+  return fieldLabel(meta, name, lang);
 }
 
 /** One form field, fully described for rendering. */

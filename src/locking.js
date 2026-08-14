@@ -36,11 +36,10 @@ export function lockKeys(keys) {
   return Object.entries(keys).map(([k, v]) => `${k}=${v}`).join('&');
 }
 
-/** Prisma SQLite DateTime columns must be ISO-8601, not Date.getTime(). */
+/** Canonical timestamp used by raw SQLite writes and in-memory test delegates. */
 export function lockTimestamp(value = new Date()) {
   const d = value instanceof Date ? value : new Date(typeof value === 'number' || /^\d+$/.test(String(value)) ? Number(value) : value);
-  if (Number.isNaN(d.getTime())) return new Date().toISOString();
-  return d.toISOString();
+  return Number.isNaN(d.getTime()) ? new Date().toISOString() : d.toISOString();
 }
 
 function parseLockTime(value) {
@@ -77,20 +76,26 @@ export async function acquireLock({ prisma, table, keys, sessionId, userId } = {
       };
     }
     if (existing) {
+      if (typeof prisma.$executeRawUnsafe === 'function') {
+        await prisma.$executeRawUnsafe(
+          'UPDATE "intex hausverwaltung_locking" SET "confirmdatetime" = ? WHERE "id" = ?', stamp, existing.id,
+        );
+        return { own: true, refreshed: true, lockId: existing.id };
+      }
       await delegate.update({ where: { id: existing.id }, data: { confirmdatetime: stamp } });
       return { own: true, refreshed: true, lockId: existing.id };
     }
-    const row = await delegate.create({
-      data: {
-        table: String(table),
-        keys: ks,
-        sessionid: String(sessionId ?? ''),
-        userid: String(userId ?? ''),
-        startdatetime: stamp,
-        confirmdatetime: stamp,
-        action: 0,
-      },
-    });
+    if (typeof prisma.$executeRawUnsafe === 'function') {
+      await prisma.$executeRawUnsafe(
+        'INSERT INTO "intex hausverwaltung_locking" ("table", "startdatetime", "confirmdatetime", "keys", "sessionid", "userid", "action") VALUES (?, ?, ?, ?, ?, ?, ?)',
+        String(table), stamp, stamp, ks, String(sessionId ?? ''), String(userId ?? ''), 0,
+      );
+      return { own: true, locked: false, lockId: null };
+    }
+    const row = await delegate.create({ data: {
+      table: String(table), keys: ks, sessionid: String(sessionId ?? ''), userid: String(userId ?? ''),
+      startdatetime: stamp, confirmdatetime: stamp, action: 0,
+    } });
     return { own: true, locked: false, lockId: row.id ?? null };
   } catch (e) {
     console.warn('locking: acquire failed for', table, ks, '-', e.message);

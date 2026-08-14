@@ -8,6 +8,7 @@ export class FileSessionStore extends session.Store {
     super();
     this.dir = dir;
     this.ready = fs.mkdir(dir, { recursive: true });
+    this.writes = new Map();
     this.timer = setInterval(() => this.reap().catch(() => {}), reapIntervalMs);
     this.timer.unref?.();
   }
@@ -35,14 +36,20 @@ export class FileSessionStore extends session.Store {
   }
 
   set(sid, value, callback = () => {}) {
-    this.ready.then(async () => {
+    const previous = this.writes.get(sid) || Promise.resolve();
+    const write = previous.catch(() => {}).then(() => this.ready).then(async () => {
       const file = this.filename(sid);
       const temporary = `${file}.${process.pid}.${Date.now()}.tmp`;
       const expiresAt = value?.cookie?.expires
         ? new Date(value.cookie.expires).getTime()
         : Date.now() + Number(value?.cookie?.maxAge || 8 * 60 * 60 * 1000);
       await fs.writeFile(temporary, JSON.stringify({ expiresAt, session: value }), { mode: 0o600 });
+      if (process.platform === 'win32') await fs.rm(file, { force: true });
       await fs.rename(temporary, file);
+    });
+    this.writes.set(sid, write);
+    write.finally(() => {
+      if (this.writes.get(sid) === write) this.writes.delete(sid);
     }).then(() => callback()).catch(callback);
   }
 

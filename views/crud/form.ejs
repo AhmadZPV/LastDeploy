@@ -61,7 +61,8 @@
   }
 %>
 
-<form class="entity-form<%= module === 'benutzer' ? ' user-edit-form' : '' %>" method="post" action="/<%= module %><%= isEdit ? '/' + item.ID : '' %>" enctype="multipart/form-data">
+<% const recordKey = isEdit ? item[(typeof primaryKey !== 'undefined' && primaryKey) || 'ID'] : null; %>
+<form class="entity-form<%= module === 'benutzer' ? ' user-edit-form' : '' %>" method="post" action="/<%= module %><%= isEdit ? '/' + encodeURIComponent(String(recordKey)) : '' %>" enctype="multipart/form-data">
   <%- include('../partials/csrf') %>
   <% const specFields = (typeof spec !== 'undefined' && spec && spec.fields && spec.fields.length) ? spec.fields : null; %>
   <% const formFields = (specFields ? spec.fields.map(f => [f.name, f.label, f.required]) : (meta.listColumns || []).map(c => [c, c, false])).filter(([name]) => name !== 'ID'); %>
@@ -79,7 +80,7 @@
     </div>
   <% } %></div>
 
-  <% const listed = new Set(['ID', ...(meta.listColumns || [])]); %>
+  <% const listed = new Set(['ID', ...formFields.map(([name]) => name)]); %>
   <% const extra = Object.keys(meta.fields || {}).filter(f => !listed.has(f)); %>
   <% if (extra.length) { %>
   <details class="form-extra">

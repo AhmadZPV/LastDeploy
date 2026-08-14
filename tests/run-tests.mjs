@@ -1208,6 +1208,22 @@ test('phase 1: CRUD payloads drop CSRF tokens and privilege columns', () => {
   assert.equal(PRIVILEGED_FIELDS.has('Gruppe'), true);
 });
 
+test('phase 1: English field labels use exact domain translations', () => {
+  const meta = loadMeta('Adressen');
+  assert.equal(fieldLabel(meta, 'Klassifikation', 'en'), 'Classification');
+  assert.equal(fieldLabel(meta, 'Anschrift', 'en'), 'Address');
+  assert.equal(fieldLabel(meta, 'Kurzname', 'en'), 'Short name');
+});
+
+test('phase 1: CRUD payloads collapse duplicate multipart field values', () => {
+  const fields = { Kurzname: { type: 'String' }, Abteilung: { type: 'String' } };
+  const identity = (entity, field, raw) => raw;
+  const data = recordValuesFromBody({
+    Kurzname: ['test', ''], Abteilung: ['', 'Verwaltung'],
+  }, { entity: 'adressen', fields, coerce: identity });
+  assert.deepEqual(data, { Kurzname: 'test', Abteilung: 'Verwaltung' });
+});
+
 test('phase 1: DATEV and list dates keep the stored calendar day behind UTC', () => {
   const utcMidnight = new Date('2026-08-09T00:00:00.000Z');
   assert.equal(formatDatevDate(utcMidnight), '09082026');
@@ -3005,7 +3021,7 @@ test('phase 10: a record lock blocks other sessions but not the owner', async ()
   assert.equal(a2.own, true);
 });
 
-test('phase 10: lock timestamps are ISO-8601 so Prisma SQLite can decode them', async () => {
+test('phase 10: lock timestamps are canonical ISO-8601 values', async () => {
   const created = [];
   const prisma = {
     intex_hausverwaltung_locking: {
@@ -3015,8 +3031,8 @@ test('phase 10: lock timestamps are ISO-8601 so Prisma SQLite can decode them', 
     },
   };
   await acquireLock({ prisma, table: 'objekte', keys: { ID: 1 }, sessionId: 's', userId: 'u' });
-  assert.match(String(created[0].startdatetime), /^\d{4}-\d{2}-\d{2}T/);
-  assert.match(String(created[0].confirmdatetime), /^\d{4}-\d{2}-\d{2}T/);
+  assert.match(created[0].startdatetime, /^\d{4}-\d{2}-\d{2}T/);
+  assert.match(created[0].confirmdatetime, /^\d{4}-\d{2}-\d{2}T/);
 });
 
 test('phase 10: startup date normalizer converts unix-ms DateTime values to ISO-8601', async () => {
@@ -3027,6 +3043,8 @@ test('phase 10: startup date normalizer converts unix-ms DateTime values to ISO-
   const ran = [];
   const prisma = { $executeRawUnsafe: async (s) => { ran.push(s); return 0; } };
   await normalizeSqliteDateTimes(prisma);
+  assert.ok(ran.some((s) => /hausverwaltung_audit/.test(s) && /rowid/.test(s)),
+    'legacy audit rows without an id are repaired before Prisma reads them');
   assert.ok(ran.some((s) => /unixepoch/.test(s) && /startdatetime/.test(s)),
     'locking timestamps are rewritten before Prisma tries to decode them');
 });

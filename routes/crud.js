@@ -13,6 +13,7 @@ import {
 } from '../src/master-detail.js';
 
 const safe = (p, fb) => (p?.catch ? p.catch(() => fb) : p);
+const coerceKey = (value, type) => type === 'Int' || type === 'BigInt' ? Number(value) : String(value);
 
 // Skip these technical fields in generic views/exports (BLOBs handled separately).
 const SKIP_DISPLAY = new Set([]); // we keep everything; blobs are rendered as [BLOB]
@@ -20,6 +21,7 @@ const SKIP_DISPLAY = new Set([]); // we keep everything; blobs are rendered as [
 import { parseSearchRequest, buildSearchWhere, fieldSearchSpec } from '../src/search-ops.js';
 import { manifestFor, formSpec, viewSpec, validateSubmission } from '../src/form-builder.js';
 import { recordValuesFromBody } from '../src/record-payload.js';
+import { normalizeSqliteDateTimes } from '../src/sqlite-dates.js';
 
 export default function createCrudRouter(name, meta) {
   const router = Router();
@@ -29,6 +31,8 @@ export default function createCrudRouter(name, meta) {
     return router;
   }
   const ent = String(name || '').toLowerCase();
+  const primaryKey = meta.primaryKey?.length === 1 ? meta.primaryKey[0] : null;
+  const defaultOrderBy = primaryKey ? { [primaryKey]: 'desc' } : undefined;
 
   // Per-action AccessMask gate. Admin bypasses via canAccess. Letters follow
   // the PHPRunner mask: S=list/search/view, A=create, E=update, D=delete.
@@ -52,6 +56,37 @@ export default function createCrudRouter(name, meta) {
     return (req.session.sc[name] = req.session.sc[name] || { q: '', filters: {} });
   }
 
+  function crudFormSpec(manifest, page, lang) {
+    if (!manifest) return null;
+    const spec = formSpec(manifest, manifest.entity || name, page, lang);
+    for (const field of spec.fields) {
+      const schemaField = meta.fields?.[field.name];
+      if (field.name !== 'ID' && schemaField && schemaField.optional === false) field.required = true;
+    }
+    return spec;
+  }
+
+  function validateForm(manifest, page, body) {
+    const check = validateSubmission(manifest, name, page, body);
+    const missing = new Set(check.missing.map((field) => field.name));
+    for (const field of crudFormSpec(manifest, page)?.fields || []) {
+      const value = body?.[field.name];
+      if (field.required && (value == null || value === '' || (Array.isArray(value) && value.every((item) => item === '')))) {
+        if (!missing.has(field.name)) check.missing.push({ name: field.name, label: field.label });
+      }
+    }
+    check.ok = check.missing.length === 0;
+    return check;
+  }
+
+  function requiredNotification(check) {
+    return {
+      type: 'error',
+      key: 'required_fields_missing',
+      params: { fields: check.missing.map((field) => field.label).join(', ') },
+    };
+  }
+
   // Build a Prisma `where` from search string + AdvancedSearch state.
   function buildWhere(req, sc) {
     sc = sc || getSearchClause(req);
@@ -73,6 +108,7 @@ export default function createCrudRouter(name, meta) {
     const filterWhere = {};
     const opFilters = {};
     for (const [k, v] of Object.entries(sc.filters || {})) {
+      if (!Object.prototype.hasOwnProperty.call(meta.fields || {}, k)) continue;
       if (v == null || v === '') continue;
       if (typeof v === 'object' && !Array.isArray(v) && !(v instanceof Date)
           && (v.option !== undefined || v.value !== undefined) && !v.from && !v.to) {
@@ -216,9 +252,9 @@ export default function createCrudRouter(name, meta) {
     try {
       const orderBy = sc.sortBy
         ? { [sc.sortBy]: (sc.sortDir === 'desc' ? 'desc' : 'asc') }
-        : { ID: 'desc' };
+        : defaultOrderBy;
       const [rows, total] = await Promise.all([
-        Model.findMany({ where, orderBy, skip: (sc.page - 1) * pageSize, take: pageSize }),
+        Model.findMany({ where, ...(orderBy ? { orderBy } : {}), skip: (sc.page - 1) * pageSize, take: pageSize }),
         Model.count({ where })
       ]);
       // child counters the original showed in the list (dispChildCount)
@@ -231,7 +267,7 @@ export default function createCrudRouter(name, meta) {
         items: rows, module: name, meta, registry, totalCount: total,
         page: sc.page, pageSize, sc, q: sc.q, childCounts: counts,
         relations: relationsForPage(name, 'list').filter((r) => r.dispChildCount),
-        lookups: {}, helpers: { display, fieldCategory }, error: null
+        lookups: {}, primaryKey, helpers: { display, fieldCategory }, error: null
       });
     } catch (e) {
       res.status(500).render('error', { message: (res.locals?.t ? res.locals.t('list_error') : 'List error') + ': ' + e.message });
@@ -254,19 +290,23 @@ export default function createCrudRouter(name, meta) {
       if (k.endsWith('__op') && v) ops[k.slice(0, -4)] = v;
     }
     for (const [k, v] of Object.entries(req.body)) {
-      if (k === 'q' || k === '_method' || v === '' || v === undefined) continue;
+      if (k === 'q' || k.startsWith('_') || v === '' || v === undefined) continue;
       if (k.endsWith('__op')) continue;
       if (k.endsWith('_from')) {
         const base = k.slice(0, -5);
+        if (!Object.prototype.hasOwnProperty.call(meta.fields || {}, base)) continue;
         sc.filters[base] = sc.filters[base] || {};
         sc.filters[base].from = v;
       } else if (k.endsWith('_to')) {
         const base = k.slice(0, -3);
+        if (!Object.prototype.hasOwnProperty.call(meta.fields || {}, base)) continue;
         sc.filters[base] = sc.filters[base] || {};
         sc.filters[base].to = v;
       } else if (ops[k]) {
+        if (!Object.prototype.hasOwnProperty.call(meta.fields || {}, k)) continue;
         sc.filters[k] = { option: ops[k], value: v };
       } else {
+        if (!Object.prototype.hasOwnProperty.call(meta.fields || {}, k)) continue;
         sc.filters[k] = v;
       }
     }
@@ -279,11 +319,12 @@ export default function createCrudRouter(name, meta) {
     try {
       const sc = getSearchClause(req);
       const where = buildWhere(req, sc);
-      const rows = await Model.findMany({ where, orderBy: { ID: 'asc' }, take: 5000 });
+      const rows = await Model.findMany({ where, ...(primaryKey ? { orderBy: { [primaryKey]: 'asc' } } : {}), take: 5000 });
       res.setHeader('Content-Type', 'text/csv; charset=utf-8');
       res.setHeader('Content-Disposition', `attachment; filename="${name}.csv"`);
       const cols = meta.listColumns || [];
-      const head = ['ID', ...cols];
+      const keyColumns = meta.primaryKey?.length ? meta.primaryKey : [];
+      const head = [...keyColumns, ...cols.filter((column) => !keyColumns.includes(column))];
       const esc = (v) => {
         if (v == null) return '';
         const n = typeof v === 'object' && 'toNumber' in v ? v.toNumber() : v;
@@ -291,7 +332,7 @@ export default function createCrudRouter(name, meta) {
         return /[",\n]/.test(str) ? `"${str.replace(/"/g, '""')}"` : str;
       };
       const lines = [head.join(',')];
-      for (const r of rows) lines.push([r.ID, ...cols.map(c => esc(display(name, c, r[c])))].join(','));
+      for (const r of rows) lines.push(head.map((column) => esc(display(name, column, r[column]))).join(','));
       res.send('\ufeff' + lines.join('\n'));
     } catch (e) {
       res.status(500).render('error', { message: (res.locals?.t ? res.locals.t('export_error') : 'Export error') + ': ' + e.message });
@@ -304,7 +345,7 @@ export default function createCrudRouter(name, meta) {
     const manifest = manifestFor(name);
     res.render('crud/form', {
       item: {}, module: name, meta, registry, lookups, isEdit: false,
-      spec: manifest ? formSpec(manifest, manifest.entity || name, 'add', res.locals?.lang) : null,
+      spec: crudFormSpec(manifest, 'add', res.locals?.lang),
       helpers: { fieldCategory, inputDate, fmtNum, coerce }, error: null
     });
   });
@@ -312,20 +353,22 @@ export default function createCrudRouter(name, meta) {
   // EDIT (must precede /:id)
   router.get('/:id/edit', gate('E'), async (req, res) => {
     try {
-      const item = await Model.findFirst({ where: teamWhere(req, { ID: +req.params.id }, name) });
+      if (!primaryKey) return res.status(404).render('error', { message: (res.locals?.t ? res.locals.t('not_found') : 'Nicht gefunden') });
+      const keyValue = coerceKey(req.params.id, meta.fields?.[primaryKey]?.type);
+      const item = await Model.findFirst({ where: teamWhere(req, { [primaryKey]: keyValue }, name) });
       if (!item) return res.status(404).render('error', { message: (res.locals?.t ? res.locals.t('not_found') : 'Nicht gefunden') });
       const lookups = await loadLookups(req);
       const manifest = manifestFor(name);
       // Phase 10: record locking — opening the edit page takes the lock, and a
       // fresh foreign lock is shown instead of silently allowing a conflict.
       const lock = await acquireLock({
-        prisma, table: name, keys: { ID: +req.params.id },
+        prisma, table: name, keys: { [primaryKey]: keyValue },
         sessionId: req.sessionID || req.session?.id || '',
         userId: req.session?.user?.Benutzername || '',
       });
       res.render('crud/form', {
-        item, module: name, meta, registry, lookups, isEdit: true,
-        spec: manifest ? formSpec(manifest, manifest.entity || name, 'edit', res.locals?.lang) : null,
+        item, module: name, meta, registry, lookups, isEdit: true, primaryKey,
+        spec: crudFormSpec(manifest, 'edit', res.locals?.lang),
         helpers: { fieldCategory, inputDate, fmtNum, coerce },
         lock, error: lock.locked && !lock.own
           ? 'Gesperrt durch ' + (lock.by || '?') : null
@@ -338,7 +381,8 @@ export default function createCrudRouter(name, meta) {
   // VIEW
   router.get('/:id', gate('S'), async (req, res) => {
     try {
-      const item = await Model.findFirst({ where: teamWhere(req, { ID: +req.params.id }, name) });
+      if (!primaryKey) return res.status(404).render('error', { message: (res.locals?.t ? res.locals.t('not_found') : 'Nicht gefunden') });
+      const item = await Model.findFirst({ where: teamWhere(req, { [primaryKey]: coerceKey(req.params.id, meta.fields?.[primaryKey]?.type) }, name) });
       if (!item) return res.status(404).render('error', { message: (res.locals?.t ? res.locals.t('not_found') : 'Nicht gefunden') });
       // master/detail previews the original showed under the record
       const details = [];
@@ -379,13 +423,14 @@ export default function createCrudRouter(name, meta) {
       const manifest = manifestFor(name);
       const submitted = { ...req.body };
       for (const f of req.files || []) submitted[f.fieldname] = submitted[f.fieldname] || 'file';
-      const check = validateSubmission(manifest, name, 'add', submitted);
+      const check = validateForm(manifest, 'add', submitted);
       if (!check.ok) {
         const lookups = await loadLookups(req);
         return res.render('crud/form', {
           item: req.body, module: name, meta, registry, lookups, isEdit: false,
-          spec: manifest ? formSpec(manifest, manifest.entity || name, 'add', res.locals?.lang) : null,
+          spec: crudFormSpec(manifest, 'add', res.locals?.lang),
           helpers: { fieldCategory, inputDate, fmtNum, coerce },
+          notification: requiredNotification(check),
           error: (res.locals?.t ? res.locals.t('please_fill') : 'Bitte ausfüllen') + ': ' + check.missing.map((m) => (res.locals.tx ? res.locals.tx(m.label) : m.label)).join(', ')
         });
       }
@@ -397,7 +442,12 @@ export default function createCrudRouter(name, meta) {
       await runHook(name, 'BeforeInsert', addCtx);
       // never persist a credential in clear text, whichever entity this is
       await hashPasswordFields(addCtx.values);
-      await Model.create({ data: addCtx.values });
+      if (Object.values(addCtx.values).some((value) => value instanceof Date)) {
+        await Model.createMany({ data: [addCtx.values] });
+        await normalizeSqliteDateTimes(prisma);
+      } else {
+        await Model.create({ data: addCtx.values });
+      }
       // Phase 10: audit trail
       await auditLog({ prisma, req, table: name, action: 'add', recordId: addCtx.values.ID, newData: addCtx.values });
       req.notify?.('success', 'record_created', { name: res.locals.tx?.(meta.label || name) || meta.label || name });
@@ -406,6 +456,7 @@ export default function createCrudRouter(name, meta) {
       const lookups = await loadLookups(req);
       res.render('crud/form', {
         item: req.body, module: name, meta, registry, lookups, isEdit: false,
+        spec: crudFormSpec(manifestFor(name), 'add', res.locals?.lang),
         helpers: { fieldCategory, inputDate, fmtNum, coerce }, error: e.message
       });
     }
@@ -448,13 +499,14 @@ export default function createCrudRouter(name, meta) {
       const manifest = manifestFor(name);
       const submitted = { ...req.body };
       for (const f of req.files || []) submitted[f.fieldname] = submitted[f.fieldname] || 'file';
-      const check = validateSubmission(manifest, name, 'edit', submitted);
+      const check = validateForm(manifest, 'edit', submitted);
       if (!check.ok) {
         const lookups = await loadLookups(req);
         return res.render('crud/form', {
           item: { ...req.body, ID: req.params.id }, module: name, meta, registry, lookups, isEdit: true,
-          spec: manifest ? formSpec(manifest, manifest.entity || name, 'edit', res.locals?.lang) : null,
+          spec: crudFormSpec(manifest, 'edit', res.locals?.lang),
           helpers: { fieldCategory, inputDate, fmtNum, coerce },
+          notification: requiredNotification(check),
           error: (res.locals?.t ? res.locals.t('please_fill') : 'Bitte ausfüllen') + ': ' + check.missing.map((m) => (res.locals.tx ? res.locals.tx(m.label) : m.label)).join(', ')
         });
       }
@@ -463,13 +515,23 @@ export default function createCrudRouter(name, meta) {
       await runHook(name, 'BeforeEdit', editCtx);
       // never persist a credential in clear text, whichever entity this is
       await hashPasswordFields(editCtx.values);
-      const before = await safe(Model.findFirst({ where: teamWhere(req, { ID: +req.params.id }, name) }), null);
+      if (!primaryKey) return res.status(404).render('error', { message: (res.locals?.t ? res.locals.t('not_found') : 'Nicht gefunden') });
+      const keyValue = coerceKey(req.params.id, meta.fields?.[primaryKey]?.type);
+      const hasDateTime = Object.values(editCtx.values).some((value) => value instanceof Date);
+      if (hasDateTime) await normalizeSqliteDateTimes(prisma);
+      const recordWhere = { [primaryKey]: keyValue };
+      const before = await safe(Model.findFirst({ where: teamWhere(req, recordWhere, name) }), null);
       if (!before) return res.status(404).render('error', { message: (res.locals?.t ? res.locals.t('not_found') : 'Nicht gefunden') });
-      await Model.update({ where: { ID: before.ID }, data: editCtx.values });
+      if (hasDateTime) {
+        await Model.updateMany({ where: recordWhere, data: editCtx.values });
+        await normalizeSqliteDateTimes(prisma);
+      } else {
+        await Model.update({ where: recordWhere, data: editCtx.values });
+      }
       // Phase 10: audit trail + release the edit lock
-      await auditLog({ prisma, req, table: name, action: 'edit', recordId: +req.params.id, oldData: before, newData: editCtx.values });
+      await auditLog({ prisma, req, table: name, action: 'edit', recordId: keyValue, oldData: before, newData: editCtx.values });
       await releaseLock({
-        prisma, table: name, keys: { ID: +req.params.id },
+        prisma, table: name, keys: recordWhere,
         sessionId: req.sessionID || req.session?.id || '',
       });
       req.notify?.('success', 'record_updated', { name: res.locals.tx?.(meta.label || name) || meta.label || name });
