@@ -18,17 +18,19 @@
 <% } %>
 <section id="users" class="admin-section">
   <div class="section-heading"><div><h2>Users</h2><p>Manage accounts, status and credentials.</p></div><span class="badge"><%= users.length %></span></div>
-  <div class="table-wrap"><table>
-    <thead><tr><th>Username</th><th>Name</th><th>Email</th><th>Status</th><th>Group</th><th>Actions</th></tr></thead>
+  <div class="table-wrap"><table class="admin-table admin-users-table">
+    <thead><tr><th>Username</th><th>Name</th><th>Email</th><th>Status</th><th>Group</th><th class="col-actions">Actions</th></tr></thead>
     <tbody><% users.forEach(u => { %><tr>
       <td><strong><%= u.Benutzername %></strong></td><td><%= u.Name %></td><td><%= u.Email %></td>
       <td><span class="status-pill <%= u.active ? 'is-active' : 'is-inactive' %>"><%= u.active ? 'Active' : 'Inactive' %></span></td><td><%= u.Gruppe || '—' %></td>
-      <td><div class="admin-actions">
-        <a class="btn btn-link" href="/benutzer/<%= u.ID %>/edit">Edit</a>
-        <form method="post" action="/admin/users/<%= u.ID %>/active"><%- include('partials/csrf') %><button class="btn btn-link"><%= u.active ? 'Deactivate' : 'Activate' %></button></form>
-        <details class="inline-disclosure"><summary>Password</summary><form method="post" action="/admin/users/<%= u.ID %>/password"><%- include('partials/csrf') %><input type="password" name="Passwort" placeholder="New password" required><button class="btn">Update</button></form></details>
-        <form method="post" action="/admin/users/<%= u.ID %>/delete" onsubmit="return confirm('Delete this user?')"><%- include('partials/csrf') %><button class="btn btn-danger">Delete</button></form>
-      </div></td>
+      <td>
+        <div class="admin-actions admin-actions-grid">
+          <span class="action-slot"><a class="btn btn-link" href="/benutzer/<%= u.ID %>/edit">Edit</a></span>
+          <span class="action-slot"><form method="post" action="/admin/users/<%= u.ID %>/active"><%- include('partials/csrf') %><button class="btn btn-link"><%= u.active ? 'Deactivate' : 'Activate' %></button></form></span>
+          <span class="action-slot"><details class="inline-disclosure"><summary>Password</summary><form method="post" action="/admin/users/<%= u.ID %>/password"><%- include('partials/csrf') %><input type="password" name="Passwort" placeholder="New password" required><button class="btn">Update</button></form></details></span>
+          <span class="action-slot action-slot-danger"><form method="post" action="/admin/users/<%= u.ID %>/delete" onsubmit="return confirm('Delete this user?')"><%- include('partials/csrf') %><button class="btn btn-danger">Delete</button></form></span>
+        </div>
+      </td>
     </tr><% }) %></tbody>
   </table></div>
   <details class="admin-create"><summary>Add user</summary><form class="form-grid" method="post" action="/admin/users">
@@ -44,15 +46,32 @@
 
 <section id="groups" class="admin-section">
   <div class="section-heading"><div><h2>Groups and rights</h2><p>Define roles and open their permission matrix.</p></div><span class="badge"><%= groups.length %></span></div>
-  <div class="table-wrap"><table><thead><tr><th>Group</th><th>Members</th><th>Rules</th><th>Actions</th></tr></thead><tbody>
-  <% groups.forEach(g => { %><tr><td><form class="compact-form" method="post" action="/admin/groups/<%= g.GroupID %>/rename"><%- include('partials/csrf') %><input name="Label" value="<%= g.Label %>"><button class="btn">Rename</button></form></td><td><%= (membersByGroup[g.GroupID] || []).join(', ') || '—' %></td><td><a class="btn btn-primary" href="/admin/rights/<%= g.GroupID %>">Permission matrix (<%= rights.filter(r => r.GroupID === g.GroupID).length %>)</a></td><td><form method="post" action="/admin/groups/<%= g.GroupID %>/delete" onsubmit="return confirm('Delete group and all its rights?')"><%- include('partials/csrf') %><button class="btn btn-danger">Delete</button></form></td></tr><% }) %>
+  <div class="table-wrap"><table class="admin-table admin-groups-table"><thead><tr><th>Group</th><th>Members</th><th>Rules</th><th class="col-actions">Actions</th></tr></thead><tbody>
+  <% groups.forEach(g => { %><tr>
+    <td><form class="compact-form" method="post" action="/admin/groups/<%= g.GroupID %>/rename"><%- include('partials/csrf') %><input name="Label" value="<%= g.Label %>"><button class="btn">Rename</button></form></td>
+    <td><%= (membersByGroup[g.GroupID] || []).join(', ') || '—' %></td>
+    <td><a class="btn btn-primary" href="/admin/rights/<%= g.GroupID %>">Permission matrix (<%= rights.filter(r => r.GroupID === g.GroupID).length %>)</a></td>
+    <td>
+      <div class="admin-actions admin-actions-grid admin-actions-grid-single">
+        <span class="action-slot action-slot-danger"><form method="post" action="/admin/groups/<%= g.GroupID %>/delete" onsubmit="return confirm('Delete group and all its rights?')"><%- include('partials/csrf') %><button class="btn btn-danger">Delete</button></form></span>
+      </div>
+    </td>
+  </tr><% }) %>
   </tbody></table></div>
   <details class="admin-create"><summary>Add group</summary><form class="compact-form" method="post" action="/admin/groups"><%- include('partials/csrf') %><input name="Label" placeholder="Group name" required><button class="btn btn-primary">Add group</button></form></details>
 </section>
 
 <section id="members" class="admin-section">
   <div class="section-heading"><div><h2>Memberships</h2><p>Assign users to authorization groups.</p></div><span class="badge"><%= members.length %></span></div>
-  <div class="table-wrap"><table><thead><tr><th>User</th><th>Group</th><th>Action</th></tr></thead><tbody><% members.forEach(m => { %><tr><td><%= m.UserName %></td><td><%= (groups.find(g => g.GroupID === m.GroupID) || {}).Label || '?' %></td><td><form method="post" action="/admin/members/delete"><%- include('partials/csrf') %><input type="hidden" name="UserName" value="<%= m.UserName %>"><input type="hidden" name="GroupID" value="<%= m.GroupID %>"><button class="btn btn-danger">Remove</button></form></td></tr><% }) %></tbody></table></div>
+  <div class="table-wrap"><table class="admin-table admin-members-table"><thead><tr><th>User</th><th>Group</th><th class="col-actions">Actions</th></tr></thead><tbody><% members.forEach(m => { %><tr>
+    <td><%= m.UserName %></td>
+    <td><%= (groups.find(g => g.GroupID === m.GroupID) || {}).Label || '?' %></td>
+    <td>
+      <div class="admin-actions admin-actions-grid admin-actions-grid-single">
+        <span class="action-slot action-slot-danger"><form method="post" action="/admin/members/delete"><%- include('partials/csrf') %><input type="hidden" name="UserName" value="<%= m.UserName %>"><input type="hidden" name="GroupID" value="<%= m.GroupID %>"><button class="btn btn-danger">Remove</button></form></span>
+      </div>
+    </td>
+  </tr><% }) %></tbody></table></div>
   <details class="admin-create"><summary>Add membership</summary><form class="form-grid" method="post" action="/admin/members"><%- include('partials/csrf') %><div class="form-group"><label>User</label><select name="UserName" required><% users.forEach(u => { %><option value="<%= u.Benutzername %>"><%= u.Benutzername %></option><% }) %></select></div><div class="form-group"><label>Group</label><select name="GroupID" required><% groups.forEach(g => { %><option value="<%= g.GroupID %>"><%= g.Label %></option><% }) %></select></div><div class="form-grid-actions"><button class="btn btn-primary">Assign</button></div></form></details>
 </section>
 

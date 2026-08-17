@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><%= (typeof pageTitle !== 'undefined' ? pageTitle : (typeof title !== 'undefined' ? title : (typeof t === 'function' ? t('app_name') : 'Erwin Property Mgmt'))) %> - <%= typeof t === 'function' ? t('app_name') : 'Erwin Property Mgmt' %></title>
   <script>document.documentElement.dataset.theme=localStorage.getItem('erwin-theme')||'dark';</script>
-  <link rel="stylesheet" href="/static/css/style.css?v=20260814-search-contrast2">
+  <%- include('fonts') %>
+  <link rel="stylesheet" href="/static/css/style.css?v=20260817-select-theme">
   <%- include('pwa') %>
 </head>
 <body>
@@ -41,7 +42,7 @@
 %>
 <div class="layout">
   <aside class="sidebar" id="sidebar">
-    <a class="logo" href="/"><span class="logo-mark">E</span>Erwin <span>Property Mgmt</span></a>
+    <a class="logo" href="/"><span class="logo-word">Erwin</span><span class="logo-sub">Property</span></a>
     <nav>
       <a href="/" class="<%= path === '/' ? 'active' : '' %>"><span class="nav-icon"><%- navIcon('/') %></span><span class="nav-label"><%= typeof t === 'function' ? t('dashboard') : 'Dashboard' %></span></a>
       <% for (const section of (menu?.sections || [])) { %>

@@ -2,8 +2,9 @@
 <html lang="<%= typeof lang !== 'undefined' ? lang : 'de' %>"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title><%= title %> - Erwin Property Mgmt</title>
-<script>document.documentElement.dataset.theme=localStorage.getItem('erwin-theme')||'light';</script>
-<link rel="stylesheet" href="/static/css/style.css?v=20260811-ui2"></head>
+<script>document.documentElement.dataset.theme=localStorage.getItem('erwin-theme')||'dark';</script>
+<%- include('../partials/fonts') %>
+<link rel="stylesheet" href="/static/css/style.css?v=20260817-select-theme"></head>
 <body class="login-page"><main class="auth-shell"><div class="auth-card">
   <div class="auth-heading"><div class="login-brand-mark">E</div><div><h1><%= title %></h1><p><%= typeof t === 'function' ? t('app_name') : 'Erwin Property Mgmt' %></p></div></div>
   <p><%= message %></p>
