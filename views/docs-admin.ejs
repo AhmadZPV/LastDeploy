@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>راهنمای پنل مدیریت</title>
+  <link rel="icon" type="image/svg+xml" href="/static/erwin-mark.svg?v=1">
+  <script>document.documentElement.dataset.theme=localStorage.getItem('erwin-theme')||'dark';</script>
+  <%- include('partials/fonts') %>
+  <link rel="stylesheet" href="/static/css/style.css?v=20260819-doc-builder">
+</head>
+<body class="docs-page">
+  <header class="docs-toolbar">
+    <a class="docs-brand" href="/admin"><span>Erwin</span><small>Documentation</small></a>
+    <div class="docs-toolbar-actions">
+      <a class="btn" href="/docs/admin.md">Markdown</a>
+      <a class="btn btn-primary" href="/admin">پنل مدیریت</a>
+    </div>
+  </header>
+  <main class="docs-shell">
+    <aside class="docs-sidebar" aria-label="فهرست مستندات">
+      <div class="docs-sidebar-heading"><span class="eyebrow">Doc Builder style</span><h1>راهنمای سامانه</h1></div>
+      <label class="docs-search"><span aria-hidden="true">⌕</span><input type="search" placeholder="جست‌وجوی مستندات" data-docs-search></label>
+      <nav class="docs-toc" data-docs-toc>
+        <a href="#overview" data-doc-link>شروع کار</a>
+        <a href="#users" data-doc-link>کاربران</a>
+        <a href="#groups" data-doc-link>گروه‌ها و دسترسی‌ها</a>
+        <a href="#members" data-doc-link>عضویت‌ها</a>
+        <a href="#automation" data-doc-link>اتوماسیون</a>
+        <a href="#workflow" data-doc-link>روش کار مدیر</a>
+      </nav>
+      <p class="docs-result" data-docs-result role="status" aria-live="polite"></p>
+    </aside>
+    <section class="docs-preview" aria-label="پیش‌نمایش مستندات">
+      <div class="docs-hero doc-block" id="overview" data-doc-block data-doc-title="شروع کار راهنمای سامانه">
+        <span class="eyebrow">AP Emlaki / Admin workspace</span>
+        <h2>راهنمای پنل مدیریت</h2>
+        <p>راهنمای تعاملی مدیریت کاربران، مجوزها و عملیات سامانه. هر بخش مانند یک block مستقل قابل مرور است.</p>
+        <div class="docs-meta"><span>۶ بخش</span><span>نسخه داخلی</span><span>به‌روزرسانی ۲۰۲۶</span></div>
+      </div>
+      <article class="doc-block" id="users" data-doc-block data-doc-title="کاربران Users حساب کاربری رمز عبور">
+        <div class="doc-block-head"><span class="doc-number">01</span><h2>کاربران</h2></div>
+        <p>در این بخش حساب‌های کاربری، وضعیت فعال یا غیرفعال، گروه، ایمیل و رمز عبور مدیریت می‌شود.</p>
+        <div class="doc-callout"><strong>مسیر پیشنهادی</strong><span>کاربر جدید بسازید، گروه را انتخاب کنید و نتیجه عملیات را از پیام وضعیت بررسی کنید.</span></div>
+      </article>
+      <article class="doc-block" id="groups" data-doc-block data-doc-title="گروه ها دسترسی permissions rights matrix">
+        <div class="doc-block-head"><span class="doc-number">02</span><h2>گروه‌ها و دسترسی‌ها</h2></div>
+        <p>گروه‌ها نقش‌های سامانه هستند. ماتریس مجوز برای هر entity امکان افزودن، ویرایش، حذف، جست‌وجو، چاپ، نقشه و import را کنترل می‌کند.</p>
+        <pre><code>AccessMask = A E D S P M I
+A  افزودن   E  ویرایش   D  حذف
+S  جست‌وجو  P  چاپ      M  نقشه   I  import</code></pre>
+      </article>
+      <article class="doc-block" id="members" data-doc-block data-doc-title="عضویت membership اتصال کاربر گروه">
+        <div class="doc-block-head"><span class="doc-number">03</span><h2>عضویت‌ها</h2></div>
+        <p>هر عضویت یک کاربر را به یک گروه متصل می‌کند و مشخص می‌سازد کدام مجموعه مجوزها را دریافت کند.</p>
+      </article>
+      <article class="doc-block" id="automation" data-doc-block data-doc-title="اتوماسیون automation ثبت دوره ای ledger">
+        <div class="doc-block-head"><span class="doc-number">04</span><h2>اتوماسیون</h2></div>
+        <p>عملیات ثبت‌های دوره‌ای و تخصیص شماره بعدی اسناد از این بخش قابل اجرای دستی است. قبل از اجرا وضعیت داده‌ها را بررسی کنید.</p>
+        <div class="doc-callout warning"><strong>توجه</strong><span>عملیات خودکار می‌تواند داده ایجاد کند؛ اجرای تکراری را بدون بررسی نتیجه قبلی انجام ندهید.</span></div>
+      </article>
+      <article class="doc-block" id="workflow" data-doc-block data-doc-title="روش کار workflow مدیر راهبری">
+        <div class="doc-block-head"><span class="doc-number">05</span><h2>روش کار مدیر</h2></div>
+        <ol class="docs-steps"><li>وارد حساب مدیریتی شوید.</li><li>از جست‌وجوی پنل یا سکشن مربوط، بخش مورد نظر را پیدا کنید.</li><li>تغییرات را ذخیره و پیام موفقیت یا خطا را بررسی کنید.</li><li>برای تغییر مجوز، گروه و سپس ماتریس دسترسی را باز کنید.</li></ol>
+      </article>
+    </section>
+  </main>
+  <script src="/static/js/app.js?v=20260819-doc-builder"></script>
+  <script>
+    const input = document.querySelector('[data-docs-search]');
+    const blocks = [...document.querySelectorAll('[data-doc-block]')];
+    const links = [...document.querySelectorAll('[data-doc-link]')];
+    const result = document.querySelector('[data-docs-result]');
+    const filterDocs = () => { const q = String(input.value || '').toLocaleLowerCase().trim(); let count = 0; blocks.forEach(block => { const match = !q || (block.dataset.docTitle + ' ' + block.textContent).toLocaleLowerCase().includes(q); block.hidden = !match; if (match) count++; }); links.forEach(link => { const target = document.querySelector(link.hash); link.hidden = Boolean(target?.hidden); }); result.textContent = q ? `${count} بخش پیدا شد` : ''; };
+    input.addEventListener('input', filterDocs);
+    document.addEventListener('keydown', event => { if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') { event.preventDefault(); input.focus(); input.select(); } });
+  </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<%- include('layout_top', { activeNav: '' }) %>
+<div class="portal-hero">
+  <div class="portal-hero-content">
+    <h1><%= t('portal_welcome') %></h1>
+    <p class="portal-hero-lede">
+      <%= t('portal_lede') %>
+    </p>
+    <div class="portal-hero-actions">
+      <a href="/portal/anmeldung" class="btn btn-primary"><%= t('portal_register_now') %></a>
+      <a href="/portal/login" class="btn"><%= t('portal_sign_in') %></a>
+    </div>
+  </div>
+</div>
+
+<div class="portal-features">
+  <div class="portal-feature-card">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16M8 14h3M8 17h2"/></svg>
+    <h3><%= t('portal_feature_mitteilungen') %></h3>
+    <p><%= t('portal_feature_mitteilungen_desc') %></p>
+  </div>
+  <div class="portal-feature-card">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 15V3m0 0L8 7m4-4 4 4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+    <h3><%= t('portal_feature_zaehler') %></h3>
+    <p><%= t('portal_feature_zaehler_desc') %></p>
+  </div>
+  <div class="portal-feature-card">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 21V6l7-3v18M11 10h9v11M14 21v-4h3v4M14 13h.01M17 13h.01"/></svg>
+    <h3><%= t('portal_feature_objekte') %></h3>
+    <p><%= t('portal_feature_objekte_desc') %></p>
+  </div>
+  <div class="portal-feature-card">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M14 3H7a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V7Z"/><path d="M14 3v4h4M9 13h6M9 17h4"/></svg>
+    <h3><%= t('portal_feature_kontakt') %></h3>
+    <p><%= t('portal_feature_kontakt_desc') %></p>
+  </div>
+</div>
+<%- include('layout_bottom') %>

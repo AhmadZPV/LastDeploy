@@ -1,0 +1,21 @@
+<%- include('layout_top', { activeNav: '' }) %>
+<div class="portal-auth-card portal-auth-narrow">
+  <h1><%= t('login_title') %></h1>
+  <% if (typeof error !== 'undefined' && error) { %><div class="portal-error-box"><%= error %></div><% } %>
+  <form method="post" action="/portal/login" class="portal-form">
+    <%- include('../partials/csrf') %>
+    <div class="form-group">
+      <label for="l-username"><%= t('username') %></label>
+      <input id="l-username" name="Benutzername" required autofocus>
+    </div>
+    <div class="form-group">
+      <label for="l-password"><%= t('password') %></label>
+      <input id="l-password" type="password" name="Passwort" required>
+    </div>
+    <div class="portal-form-actions">
+      <button type="submit" class="btn btn-primary"><%= t('login_submit') %></button>
+      <a href="/portal/anmeldung" class="btn"><%= t('portal_not_registered') %></a>
+    </div>
+  </form>
+</div>
+<%- include('layout_bottom') %>

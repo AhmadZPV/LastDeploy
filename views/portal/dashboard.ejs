@@ -1,0 +1,62 @@
+<%- include('layout_top', { activeNav: 'dashboard' }) %>
+<div class="portal-section">
+  <div class="portal-section-heading">
+    <h1><%= t('portal_overview') %></h1>
+    <p class="muted"><%= t('portal_welcome_user', { name: portalUser.Name || portalUser.Benutzername }) %></p>
+  </div>
+
+  <div class="portal-stats">
+    <div class="portal-stat">
+      <strong><%= objekte %></strong>
+      <span><%= t('portal_properties') %></span>
+    </div>
+    <div class="portal-stat">
+      <strong><%= einheiten %></strong>
+      <span><%= t('portal_units') %></span>
+    </div>
+    <div class="portal-stat">
+      <strong><%= mitteilungen %></strong>
+      <span><%= t('portal_announcements') %></span>
+    </div>
+    <div class="portal-stat">
+      <strong><%= zaehler %></strong>
+      <span><%= t('portal_meter_readings') %></span>
+    </div>
+  </div>
+
+  <% if (recentMitteilungen && recentMitteilungen.length) { %>
+    <div class="portal-card">
+      <div class="portal-card-heading">
+        <h2><%= t('portal_recent_announcements') %></h2>
+        <a href="/portal/mitteilungen" class="btn"><%= t('portal_view_all') %></a>
+      </div>
+      <div class="portal-list">
+        <% recentMitteilungen.forEach(m => { %>
+          <div class="portal-list-item">
+            <div class="portal-list-main">
+              <strong><%= typeof txContent === 'function' ? txContent(m.Betreff) : m.Betreff %></strong>
+              <% if (m.Datum) { %><span class="portal-list-meta"><%= new Date(m.Datum).toLocaleDateString(typeof lang !== 'undefined' ? lang : 'de') %></span><% } %>
+            </div>
+            <% if (m.Text) { %><% const announcementText = typeof txContent === 'function' ? txContent(m.Text) : m.Text; %><p class="portal-list-text"><%= announcementText.substring(0, 200) %><%= announcementText.length > 200 ? '…' : '' %></p><% } %>
+          </div>
+        <% }) %>
+      </div>
+    </div>
+  <% } %>
+
+  <div class="portal-quick-actions">
+    <a href="/portal/meldungen" class="portal-quick-card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 15V3m0 0L8 7m4-4 4 4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      <span><%= t('portal_meter_reading_submit') %></span>
+    </a>
+    <a href="/portal/kontakt" class="portal-quick-card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M14 3H7a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V7Z"/><path d="M14 3v4h4M9 13h6M9 17h4"/></svg>
+      <span><%= t('portal_send_message') %></span>
+    </a>
+    <a href="/portal/objekte" class="portal-quick-card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 21V6l7-3v18M11 10h9v11M14 21v-4h3v4M14 13h.01M17 13h.01"/></svg>
+      <span><%= t('portal_my_properties') %></span>
+    </a>
+  </div>
+</div>
+<%- include('layout_bottom') %>

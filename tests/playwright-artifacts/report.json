@@ -1,82 +1,23 @@
 {
-  "generatedAt": "2026-08-14T01:19:32.526Z",
+  "generatedAt": "2026-08-19T00:01:14.714Z",
   "baseURL": "http://localhost:3100",
-  "total": 12,
-  "pass": 12,
-  "fail": 0,
-  "failures": [],
+  "total": 1,
+  "pass": 0,
+  "fail": 1,
+  "failures": [
+    {
+      "area": "Authentication",
+      "name": "Login as admin",
+      "status": "FAIL",
+      "detail": "Login ended at http://localhost:3100/login"
+    }
+  ],
   "results": [
     {
       "area": "Authentication",
       "name": "Login as admin",
-      "status": "PASS",
-      "detail": ""
-    },
-    {
-      "area": "Navigation",
-      "name": "Sidebar internal links",
-      "status": "PASS",
-      "detail": ""
-    },
-    {
-      "area": "Localization",
-      "name": "English and German switch",
-      "status": "PASS",
-      "detail": ""
-    },
-    {
-      "area": "Validation",
-      "name": "Required fields show notification",
-      "status": "PASS",
-      "detail": ""
-    },
-    {
-      "area": "CRUD",
-      "name": "Create contact with real form submit",
-      "status": "PASS",
-      "detail": ""
-    },
-    {
-      "area": "Search",
-      "name": "Advanced search submit",
-      "status": "PASS",
-      "detail": ""
-    },
-    {
-      "area": "CRUD DateTime",
-      "name": "Create loan with date and time",
-      "status": "PASS",
-      "detail": ""
-    },
-    {
-      "area": "CRUD DateTime",
-      "name": "Edit task date",
-      "status": "PASS",
-      "detail": ""
-    },
-    {
-      "area": "Interaction",
-      "name": "Search hover and focus contrast",
-      "status": "PASS",
-      "detail": ""
-    },
-    {
-      "area": "Analytics",
-      "name": "Dashboards and charts render",
-      "status": "PASS",
-      "detail": ""
-    },
-    {
-      "area": "Export",
-      "name": "CSV download works",
-      "status": "PASS",
-      "detail": ""
-    },
-    {
-      "area": "Responsive",
-      "name": "Mobile navigation and no horizontal body overflow",
-      "status": "PASS",
-      "detail": ""
+      "status": "FAIL",
+      "detail": "Login ended at http://localhost:3100/login"
     }
   ]
 }

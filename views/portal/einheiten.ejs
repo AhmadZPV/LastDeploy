@@ -1,0 +1,29 @@
+<%- include('layout_top', { activeNav: 'einheiten' }) %>
+<div class="portal-section">
+  <div class="portal-section-heading">
+    <h1><%= t('portal_units') %></h1>
+    <p class="muted"><%= t('portal_unit_count', { n: einheiten.length }) %></p>
+  </div>
+  <% if (einheiten && einheiten.length) { %>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th><%= t('portal_property_name') %></th><th><%= t('portal_properties') %></th><th><%= t('portal_unit_type') %></th><th><%= t('portal_floor') %></th><th><%= t('portal_living_area') %></th><th><%= t('portal_base_rent') %></th></tr></thead>
+        <tbody>
+          <% einheiten.forEach(e => { %>
+            <tr>
+              <td><strong><%= e.Bezeichnung || '—' %></strong></td>
+              <td><%= e.rel_Objekte_Objekt?.Bezeichnung || '—' %></td>
+              <td><%= e.Einheitenart || '—' %></td>
+              <td><%= e.Etage || '—' %></td>
+              <td><%= e.Wohnflaeche ? e.Wohnflaeche + ' m²' : '—' %></td>
+              <td><%= e.Kaltmiete ? Number(e.Kaltmiete).toFixed(2) + ' €' : '—' %></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  <% } else { %>
+    <div class="portal-empty"><p><%= t('portal_no_units') %></p></div>
+  <% } %>
+</div>
+<%- include('layout_bottom') %>

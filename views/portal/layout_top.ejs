@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="<%= typeof portalLang !== 'undefined' ? portalLang : 'de' %>">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><%= typeof title !== 'undefined' ? title : t('portal_name') %> - <%= t('app_name') %></title>
+  <link rel="icon" type="image/svg+xml" href="/static/erwin-mark.svg?v=1">
+  <script>document.documentElement.dataset.theme=localStorage.getItem('erwin-theme')||'dark';</script>
+  <%- include('../partials/fonts') %>
+  <link rel="stylesheet" href="/static/css/style.css?v=20260817-portal">
+</head>
+<body class="portal-body">
+<div class="portal-shell">
+  <header class="portal-header">
+    <a href="/portal" class="portal-logo">
+      <span class="portal-logo-word">Erwin</span>
+      <span class="portal-logo-sub"><%= t('portal_name') %></span>
+    </a>
+    <nav class="portal-nav">
+      <% if (portalUser) { %>
+        <a href="/portal/dashboard" class="<%= typeof activeNav !== 'undefined' && activeNav === 'dashboard' ? 'active' : '' %>"><%= t('portal_overview') %></a>
+        <a href="/portal/mitteilungen" class="<%= typeof activeNav !== 'undefined' && activeNav === 'mitteilungen' ? 'active' : '' %>"><%= t('portal_announcements') %></a>
+        <a href="/portal/meldungen" class="<%= typeof activeNav !== 'undefined' && activeNav === 'meldungen' ? 'active' : '' %>"><%= t('portal_meter_readings') %></a>
+        <a href="/portal/objekte" class="<%= typeof activeNav !== 'undefined' && activeNav === 'objekte' ? 'active' : '' %>"><%= t('portal_properties') %></a>
+        <a href="/portal/einheiten" class="<%= typeof activeNav !== 'undefined' && activeNav === 'einheiten' ? 'active' : '' %>"><%= t('portal_units') %></a>
+        <a href="/portal/rechnungen" class="<%= typeof activeNav !== 'undefined' && activeNav === 'rechnungen' ? 'active' : '' %>"><%= t('portal_invoices') %></a>
+        <a href="/portal/kontakt" class="<%= typeof activeNav !== 'undefined' && activeNav === 'kontakt' ? 'active' : '' %>"><%= t('portal_contact') %></a>
+      <% } else { %>
+        <a href="/portal/anmeldung"><%= t('portal_registration') %></a>
+        <a href="/portal/login"><%= t('login_title') %></a>
+      <% } %>
+    </nav>
+    <div class="portal-user-area">
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle color theme" title="Light / Dark mode">
+        <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5 8.5 8.5 0 1 0 20.5 14.2Z"/></svg>
+        <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"/></svg>
+      </button>
+      <div class="lang-toggle" role="group" aria-label="<%= t('language') %>">
+        <a href="/lang/de?next=<%= encodeURIComponent(typeof path !== 'undefined' ? path : '/portal') %>" class="lang-btn<%= (typeof lang !== 'undefined' ? lang : 'de') === 'de' ? ' active' : '' %>" title="Deutsch">DE</a>
+        <a href="/lang/en?next=<%= encodeURIComponent(typeof path !== 'undefined' ? path : '/portal') %>" class="lang-btn<%= (typeof lang !== 'undefined' ? lang : 'de') === 'en' ? ' active' : '' %>" title="English">EN</a>
+      </div>
+      <% if (portalUser) { %>
+        <span class="portal-user-name"><%= portalUser.Name || portalUser.Benutzername %></span>
+        <a href="/portal/logout" class="portal-logout"><%= t('logout') %></a>
+      <% } %>
+    </div>
+  </header>
+  <main class="portal-main">

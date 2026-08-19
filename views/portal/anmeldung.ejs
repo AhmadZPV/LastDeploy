@@ -1,0 +1,75 @@
+<%- include('layout_top', { activeNav: '' }) %>
+<div class="portal-auth-card">
+  <h1><%= t('portal_registration') %></h1>
+  <% if (typeof success !== 'undefined' && success) { %>
+    <div class="portal-success-box">
+      <h2><%= t('portal_registration_success') %></h2>
+      <p><%= t('portal_registration_success_desc') %></p>
+      <a href="/portal/login" class="btn btn-primary"><%= t('login_title') %></a>
+    </div>
+  <% } else { %>
+    <% if (typeof error !== 'undefined' && error) { %><div class="portal-error-box"><%= error %></div><% } %>
+    <form method="post" action="/portal/anmeldung" class="portal-form">
+      <%- include('../partials/csrf') %>
+      <div class="portal-form-section">
+        <h3><%= t('portal_access_data') %></h3>
+        <div class="portal-form-grid">
+          <div class="form-group">
+            <label for="r-username"><%= t('username') %> *</label>
+            <input id="r-username" name="Benutzername" value="<%= typeof values?.Benutzername !== 'undefined' ? values.Benutzername : '' %>" required>
+          </div>
+          <div class="form-group">
+            <label for="r-password"><%= t('password') %> *</label>
+            <input id="r-password" type="password" name="Passwort" required>
+          </div>
+          <div class="form-group">
+            <label for="r-name"><%= t('portal_full_name') %> *</label>
+            <input id="r-name" name="Name" value="<%= typeof values?.Name !== 'undefined' ? values.Name : '' %>" required>
+          </div>
+          <div class="form-group">
+            <label for="r-email"><%= t('email') %> *</label>
+            <input id="r-email" type="email" name="Email" value="<%= typeof values?.Email !== 'undefined' ? values.Email : '' %>" required>
+          </div>
+        </div>
+      </div>
+      <div class="portal-form-section">
+        <h3><%= t('portal_contact_data') %></h3>
+        <div class="portal-form-grid">
+          <div class="form-group">
+            <label for="r-firma"><%= t('portal_company') %></label>
+            <input id="r-firma" name="Firma" value="<%= typeof values?.Firma !== 'undefined' ? values.Firma : '' %>">
+          </div>
+          <div class="form-group">
+            <label for="r-vorname"><%= t('portal_first_name') %></label>
+            <input id="r-vorname" name="Vorname" value="<%= typeof values?.Vorname !== 'undefined' ? values.Vorname : '' %>">
+          </div>
+          <div class="form-group">
+            <label for="r-nachname"><%= t('portal_last_name') %></label>
+            <input id="r-nachname" name="Nachname" value="<%= typeof values?.Nachname !== 'undefined' ? values.Nachname : '' %>">
+          </div>
+          <div class="form-group">
+            <label for="r-telefon"><%= t('portal_phone') %></label>
+            <input id="r-telefon" name="Telefon" value="<%= typeof values?.Telefon !== 'undefined' ? values.Telefon : '' %>">
+          </div>
+          <div class="form-group">
+            <label for="r-strasse"><%= t('portal_street') %></label>
+            <input id="r-strasse" name="Strasse" value="<%= typeof values?.Strasse !== 'undefined' ? values.Strasse : '' %>">
+          </div>
+          <div class="form-group">
+            <label for="r-plz"><%= t('portal_postal_code') %></label>
+            <input id="r-plz" name="PLZ" value="<%= typeof values?.PLZ !== 'undefined' ? values.PLZ : '' %>">
+          </div>
+          <div class="form-group">
+            <label for="r-ort"><%= t('portal_city') %></label>
+            <input id="r-ort" name="Ort" value="<%= typeof values?.Ort !== 'undefined' ? values.Ort : '' %>">
+          </div>
+        </div>
+      </div>
+      <div class="portal-form-actions">
+        <button type="submit" class="btn btn-primary"><%= t('register') %></button>
+        <a href="/portal/login" class="btn"><%= t('portal_already_registered') %></a>
+      </div>
+    </form>
+  <% } %>
+</div>
+<%- include('layout_bottom') %>

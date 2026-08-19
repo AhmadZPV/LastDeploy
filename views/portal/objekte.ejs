@@ -1,0 +1,27 @@
+<%- include('layout_top', { activeNav: 'objekte' }) %>
+<div class="portal-section">
+  <div class="portal-section-heading">
+    <h1><%= t('portal_properties') %></h1>
+    <p class="muted"><%= t('portal_property_count', { n: objekte.length }) %></p>
+  </div>
+  <% if (objekte && objekte.length) { %>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th><%= t('portal_property_name') %></th><th><%= t('portal_address') %></th><th><%= t('portal_property_type') %></th><th><%= t('portal_living_area') %></th></tr></thead>
+        <tbody>
+          <% objekte.forEach(o => { %>
+            <tr>
+              <td><strong><%= o.Bezeichnung || '—' %></strong></td>
+              <td><%= o.Anschrift || '—' %></td>
+              <td><%= o.Objektart || '—' %></td>
+              <td><%= o.Wohnflaeche ? o.Wohnflaeche + ' m²' : '—' %></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  <% } else { %>
+    <div class="portal-empty"><p><%= t('portal_no_objects') %></p></div>
+  <% } %>
+</div>
+<%- include('layout_bottom') %>

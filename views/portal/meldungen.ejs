@@ -1,0 +1,71 @@
+<%- include('layout_top', { activeNav: 'meldungen' }) %>
+<div class="portal-section">
+  <div class="portal-section-heading">
+    <h1><%= t('portal_meter_heading') %></h1>
+    <p class="muted"><%= t('portal_meter_desc') %></p>
+  </div>
+
+  <% if (typeof success !== 'undefined' && success) { %>
+    <div class="portal-success-box">
+      <p><%= t('portal_meter_submitted') %></p>
+    </div>
+  <% } %>
+  <% if (typeof error !== 'undefined' && error) { %><div class="portal-error-box"><%= error %></div><% } %>
+
+  <div class="portal-card">
+    <div class="portal-card-heading"><h2><%= t('portal_new_reading') %></h2></div>
+    <form method="post" action="/portal/meldungen" class="portal-form">
+      <%- include('../partials/csrf') %>
+      <div class="portal-form-grid">
+        <div class="form-group">
+          <label for="z-art"><%= t('portal_meter_art') %> *</label>
+          <select id="z-art" name="Zaehlerart" required>
+            <option value=""><%= t('portal_choose_option') %></option>
+            <option value="Strom"><%= t('portal_meter_electricity') %></option>
+            <option value="Gas"><%= t('portal_meter_gas') %></option>
+            <option value="Wasser"><%= t('portal_meter_water') %></option>
+            <option value="Wärme"><%= t('portal_meter_heat') %></option>
+            <option value="Fernwärme"><%= t('portal_meter_district_heat') %></option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="z-nummer"><%= t('portal_meter_number') %> *</label>
+          <input id="z-nummer" name="Zaehlernummer" required>
+        </div>
+        <div class="form-group">
+          <label for="z-stand"><%= t('portal_meter_reading') %> *</label>
+          <input id="z-stand" type="number" step="0.01" name="Zaehlerstand" required>
+        </div>
+        <div class="form-group">
+          <label for="z-datum"><%= t('portal_reading_date') %></label>
+          <input id="z-datum" type="date" name="Ablesedatum" value="<%= new Date().toISOString().slice(0, 10) %>">
+        </div>
+      </div>
+      <div class="portal-form-actions">
+        <button type="submit" class="btn btn-primary"><%= t('portal_meter_reading_submit') %></button>
+      </div>
+    </form>
+  </div>
+
+  <% if (zaehler && zaehler.length) { %>
+    <div class="portal-card">
+      <div class="portal-card-heading"><h2><%= t('portal_past_readings') %></h2></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th><%= t('portal_reading_date') %></th><th><%= t('portal_meter_art') %></th><th><%= t('portal_meter_number') %></th><th><%= t('portal_meter_reading') %></th></tr></thead>
+          <tbody>
+            <% zaehler.forEach(z => { %>
+              <tr>
+                <td><%= z.Ablesedatum ? new Date(z.Ablesedatum).toLocaleDateString(typeof lang !== 'undefined' ? lang : 'de') : '—' %></td>
+                <td><%= ({ Strom: t('portal_meter_electricity'), Gas: t('portal_meter_gas'), Wasser: t('portal_meter_water'), 'Wärme': t('portal_meter_heat'), 'Fernwärme': t('portal_meter_district_heat') })[z.Zaehlerart] || z.Zaehlerart || '—' %></td>
+                <td><%= z.Zaehlernummer || '—' %></td>
+                <td><%= z.Zaehlerstand || '—' %></td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  <% } %>
+</div>
+<%- include('layout_bottom') %>

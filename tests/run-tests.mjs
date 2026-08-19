@@ -2573,7 +2573,7 @@ test('phase 1: the loaders resolve slugs and degrade quietly', () => {
 
   test('phase 1: the relation-rich schema still parses into 62 models', () => {
     const models = schemaText.match(/model\s+(\w+)\s*\{/g) || [];
-    assert.equal(models.length, 62);
+    assert.equal(models.length, 63);
     assert.deepEqual(relReport.counts.uniqueBusinessKeys, ['Buchfuehrungen', 'Kontenrahmen']);
   });
 }
@@ -2677,7 +2677,7 @@ test('phase 0: a pre-1804 database is bootstrapped before the ladder', async () 
 
 test('phase 0: the dump importer maps every table through the schema', () => {
   const schema = importParseSchema();
-  assert.equal(Object.keys(schema).length, 62, 'one mapping per table');
+  assert.equal(Object.keys(schema).length, 63, 'one mapping per table plus portal invoices');
   const manifest = JSON.parse(nodeFs.readFileSync('prisma/dump-data/_manifest.json', 'utf8'));
   const tables = Object.keys(manifest);
   assert.equal(tables.length, 62, 'the extracted dump covers every table');
