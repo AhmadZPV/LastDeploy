@@ -207,6 +207,7 @@ const STRINGS = {
     portal_page: 'Seite {page} von {pages}',
     portal_back: '‹ Zurück',
     portal_next: 'Weiter ›',
+<<<<<<< HEAD
     portal_company: 'Firma',
     portal_first_name: 'Vorname',
     portal_last_name: 'Nachname',
@@ -244,6 +245,8 @@ const STRINGS = {
     portal_invoice_status_needs_info: 'Rückfrage erforderlich',
     portal_invoice_required: 'Bitte Rechnungsnummer, Betrag und Datei angeben.',
     portal_invoice_file_invalid: 'Ungültige Datei. Erlaubt sind PDF, JPG und PNG bis 10 MB.',
+=======
+>>>>>>> b1e2a115ebdf1aabca5527a29b41d347db50e10c
   },
   en: {
     app_name: 'Erwin Property Mgmt',
@@ -445,6 +448,7 @@ const STRINGS = {
     portal_page: 'Page {page} of {pages}',
     portal_back: '‹ Back',
     portal_next: 'Next ›',
+<<<<<<< HEAD
     portal_company: 'Company',
     portal_first_name: 'First name',
     portal_last_name: 'Last name',
@@ -482,6 +486,8 @@ const STRINGS = {
     portal_invoice_status_needs_info: 'More information needed',
     portal_invoice_required: 'Please provide an invoice number, amount and file.',
     portal_invoice_file_invalid: 'Invalid file. PDF, JPG and PNG files up to 10 MB are allowed.',
+=======
+>>>>>>> b1e2a115ebdf1aabca5527a29b41d347db50e10c
   },
 };
 

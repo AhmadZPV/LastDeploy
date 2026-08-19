@@ -5,7 +5,10 @@ import { POLICY, checkPassword } from '../src/auth/policy.js';
 import { loginWhere } from '../src/auth/login-lookup.js';
 import { loginAllowed, recordLoginFailure, recordLoginSuccess } from '../src/auth/login-throttle.js';
 import { normalizeLang, langFromRequest, createTranslator } from '../src/i18n.js';
+<<<<<<< HEAD
 import { contentTypeByExtension, sanitizeFileName } from '../src/uploads.js';
+=======
+>>>>>>> b1e2a115ebdf1aabca5527a29b41d347db50e10c
 
 /**
  * Customer Portal (Kundenportal)
@@ -21,8 +24,11 @@ import { contentTypeByExtension, sanitizeFileName } from '../src/uploads.js';
 const PORTAL_ART = 'portal';
 const PORTAL_GROUP = 'Portal';
 const MITTEILUNGEN_POSTKORB = 'Mitteilungen';
+<<<<<<< HEAD
 const INVOICE_TYPES = new Set(['application/pdf', 'image/jpeg', 'image/png']);
 const INVOICE_MAX_SIZE = 10 * 1024 * 1024;
+=======
+>>>>>>> b1e2a115ebdf1aabca5527a29b41d347db50e10c
 
 export default function createPortalRouter(deps = {}) {
   const router = Router();
@@ -45,7 +51,10 @@ export default function createPortalRouter(deps = {}) {
     res.locals.portalLang = lang;
     res.locals.t = i18n.t;
     res.locals.tx = i18n.tx;
+<<<<<<< HEAD
     res.locals.txContent = i18n.txContent;
+=======
+>>>>>>> b1e2a115ebdf1aabca5527a29b41d347db50e10c
     res.locals.lang = lang;
     next();
   });
@@ -250,6 +259,7 @@ export default function createPortalRouter(deps = {}) {
     }
   });
 
+<<<<<<< HEAD
   // --------------------------------------------------------------- invoices
   router.get('/rechnungen', requirePortalUser, async (req, res) => {
     const where = { Benutzer: req.session.user.Benutzername, Team: req.session.user.Team };
@@ -302,6 +312,8 @@ export default function createPortalRouter(deps = {}) {
     res.send(Buffer.from(invoice.Datei));
   });
 
+=======
+>>>>>>> b1e2a115ebdf1aabca5527a29b41d347db50e10c
   // --------------------------------------------------------------- meter reading
   router.get('/meldungen', requirePortalUser, async (req, res) => {
     try {

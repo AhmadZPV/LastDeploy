@@ -10,12 +10,20 @@
       <% items.forEach(m => { %>
         <div class="portal-list-item portal-list-item-card">
           <div class="portal-list-main">
+<<<<<<< HEAD
               <strong><%= typeof txContent === 'function' ? txContent(m.Betreff) : m.Betreff %></strong>
+=======
+            <strong><%= m.Betreff %></strong>
+>>>>>>> b1e2a115ebdf1aabca5527a29b41d347db50e10c
             <% if (m.Datum) { %>
               <span class="portal-list-meta"><%= new Date(m.Datum).toLocaleDateString(typeof lang !== 'undefined' ? lang : 'de', { year: 'numeric', month: 'long', day: 'numeric' }) %></span>
             <% } %>
           </div>
+<<<<<<< HEAD
           <% if (m.Text) { %><p class="portal-list-text"><%= typeof txContent === 'function' ? txContent(m.Text) : m.Text %></p><% } %>
+=======
+          <% if (m.Text) { %><p class="portal-list-text"><%= m.Text %></p><% } %>
+>>>>>>> b1e2a115ebdf1aabca5527a29b41d347db50e10c
         </div>
       <% }) %>
     </div>
