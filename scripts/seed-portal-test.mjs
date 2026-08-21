@@ -1,5 +1,9 @@
 import { PrismaClient } from '@prisma/client';
+<<<<<<< HEAD
 import bcrypt from 'bcrypt';
+=======
+import bcrypt from 'bcryptjs';
+>>>>>>> 52b0c1004eb08b6a12b067d508be853482ae6d8e
 const prisma = new PrismaClient();
 const TEAM = 'Team';
 

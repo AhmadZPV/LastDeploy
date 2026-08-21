@@ -7,6 +7,10 @@
 :root {
   color-scheme: dark;
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 52b0c1004eb08b6a12b067d508be853482ae6d8e
   /* Surfaces — neutral charcoal, dark without becoming pure black --------*/
   --bg: #111214;
   --bg-grad-a: rgba(176, 138, 90, .045);
@@ -17,6 +21,21 @@
   --surface-hover: #303239;
   --sidebar: #0d0e10;
   --overlay: rgba(9, 10, 12, .76);
+<<<<<<< HEAD
+=======
+=======
+  /* Surfaces — warm off-black, never cool ink or pure black --------------*/
+  --bg: #161310;
+  --bg-grad-a: rgba(176, 138, 90, .07);
+  --bg-grad-b: rgba(176, 138, 90, .04);
+  --surface: #1c1814;
+  --surface-2: #221e19;
+  --surface-3: #2b251f;
+  --surface-hover: #322b24;
+  --sidebar: #12100e;
+  --overlay: rgba(16, 13, 10, .76);
+>>>>>>> b1e2a115ebdf1aabca5527a29b41d347db50e10c
+>>>>>>> 52b0c1004eb08b6a12b067d508be853482ae6d8e
 
   /* Lines -----------------------------------------------------------------*/
   --line: rgba(243, 236, 226, .12);
@@ -27,13 +46,29 @@
   --ink: #f3ece2;
   --ink-2: #b8aea2;
   --ink-3: #8a8076;
+<<<<<<< HEAD
   --ink-inverse: #111214;
+=======
+<<<<<<< HEAD
+  --ink-inverse: #111214;
+=======
+  --ink-inverse: #161310;
+>>>>>>> b1e2a115ebdf1aabca5527a29b41d347db50e10c
+>>>>>>> 52b0c1004eb08b6a12b067d508be853482ae6d8e
 
   /* Accent — antique brass only ------------------------------------------*/
   --accent: #b08a5a;
   --accent-2: #9a7649;
   --accent-strong: #c9a574;
+<<<<<<< HEAD
   --accent-ink: #111214;
+=======
+<<<<<<< HEAD
+  --accent-ink: #111214;
+=======
+  --accent-ink: #161310;
+>>>>>>> b1e2a115ebdf1aabca5527a29b41d347db50e10c
+>>>>>>> 52b0c1004eb08b6a12b067d508be853482ae6d8e
   --accent-soft: rgba(176, 138, 90, .14);
   --accent-soft-strong: rgba(176, 138, 90, .24);
   --blue: #8a8076;
@@ -47,10 +82,23 @@
   --amber-soft: rgba(176, 138, 90, .14);
   --danger-soft: rgba(192, 112, 104, .14);
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 52b0c1004eb08b6a12b067d508be853482ae6d8e
   /* Elevation — neutral charcoal shadows, never pure black ---------------*/
   --shadow-1: 0 1px 2px rgba(8, 9, 11, .35);
   --shadow-2: 0 18px 40px -28px rgba(8, 9, 11, .56);
   --shadow-3: 0 28px 64px -36px rgba(8, 9, 11, .62);
+<<<<<<< HEAD
+=======
+=======
+  /* Elevation — warm, never #000 -----------------------------------------*/
+  --shadow-1: 0 1px 2px rgba(22, 19, 16, .35);
+  --shadow-2: 0 18px 40px -28px rgba(22, 19, 16, .5);
+  --shadow-3: 0 28px 64px -36px rgba(22, 19, 16, .55);
+>>>>>>> b1e2a115ebdf1aabca5527a29b41d347db50e10c
+>>>>>>> 52b0c1004eb08b6a12b067d508be853482ae6d8e
   --glow: none;
   --ring: 0 0 0 1px rgba(176, 138, 90, .45);
 
@@ -123,10 +171,23 @@
   --glass-shadow:
     inset 0 1px 0 rgba(255, 255, 255, .14),
     inset 0 -1px 0 rgba(255, 255, 255, .04);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 52b0c1004eb08b6a12b067d508be853482ae6d8e
   --opt-bg: #202126;
   --opt-fg: #f3ece2;
   --opt-hover-bg: #303239;
   --opt-selected-bg: #35373e;
+<<<<<<< HEAD
+=======
+=======
+  --opt-bg: #221e19;
+  --opt-fg: #f3ece2;
+  --opt-hover-bg: #322b24;
+  --opt-selected-bg: #3a3128;
+>>>>>>> b1e2a115ebdf1aabca5527a29b41d347db50e10c
+>>>>>>> 52b0c1004eb08b6a12b067d508be853482ae6d8e
   --opt-selected-fg: #c9a574;
 }
 

@@ -21,11 +21,25 @@
           <label for="z-art"><%= t('portal_meter_art') %> *</label>
           <select id="z-art" name="Zaehlerart" required>
             <option value=""><%= t('portal_choose_option') %></option>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 52b0c1004eb08b6a12b067d508be853482ae6d8e
             <option value="Strom"><%= t('portal_meter_electricity') %></option>
             <option value="Gas"><%= t('portal_meter_gas') %></option>
             <option value="Wasser"><%= t('portal_meter_water') %></option>
             <option value="Wärme"><%= t('portal_meter_heat') %></option>
             <option value="Fernwärme"><%= t('portal_meter_district_heat') %></option>
+<<<<<<< HEAD
+=======
+=======
+            <option value="Strom"><%= typeof lang !== 'undefined' && lang === 'en' ? 'Electricity' : 'Strom' %></option>
+            <option value="Gas"><%= typeof lang !== 'undefined' && lang === 'en' ? 'Gas' : 'Gas' %></option>
+            <option value="Wasser"><%= typeof lang !== 'undefined' && lang === 'en' ? 'Water' : 'Wasser' %></option>
+            <option value="Wärme"><%= typeof lang !== 'undefined' && lang === 'en' ? 'Heat' : 'Wärme' %></option>
+            <option value="Fernwärme"><%= typeof lang !== 'undefined' && lang === 'en' ? 'District heating' : 'Fernwärme' %></option>
+>>>>>>> b1e2a115ebdf1aabca5527a29b41d347db50e10c
+>>>>>>> 52b0c1004eb08b6a12b067d508be853482ae6d8e
           </select>
         </div>
         <div class="form-group">
@@ -57,7 +71,15 @@
             <% zaehler.forEach(z => { %>
               <tr>
                 <td><%= z.Ablesedatum ? new Date(z.Ablesedatum).toLocaleDateString(typeof lang !== 'undefined' ? lang : 'de') : '—' %></td>
+<<<<<<< HEAD
                 <td><%= ({ Strom: t('portal_meter_electricity'), Gas: t('portal_meter_gas'), Wasser: t('portal_meter_water'), 'Wärme': t('portal_meter_heat'), 'Fernwärme': t('portal_meter_district_heat') })[z.Zaehlerart] || z.Zaehlerart || '—' %></td>
+=======
+<<<<<<< HEAD
+                <td><%= ({ Strom: t('portal_meter_electricity'), Gas: t('portal_meter_gas'), Wasser: t('portal_meter_water'), 'Wärme': t('portal_meter_heat'), 'Fernwärme': t('portal_meter_district_heat') })[z.Zaehlerart] || z.Zaehlerart || '—' %></td>
+=======
+                <td><%= z.Zaehlerart || '—' %></td>
+>>>>>>> b1e2a115ebdf1aabca5527a29b41d347db50e10c
+>>>>>>> 52b0c1004eb08b6a12b067d508be853482ae6d8e
                 <td><%= z.Zaehlernummer || '—' %></td>
                 <td><%= z.Zaehlerstand || '—' %></td>
               </tr>

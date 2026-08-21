@@ -34,10 +34,23 @@
         <% recentMitteilungen.forEach(m => { %>
           <div class="portal-list-item">
             <div class="portal-list-main">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 52b0c1004eb08b6a12b067d508be853482ae6d8e
               <strong><%= typeof txContent === 'function' ? txContent(m.Betreff) : m.Betreff %></strong>
               <% if (m.Datum) { %><span class="portal-list-meta"><%= new Date(m.Datum).toLocaleDateString(typeof lang !== 'undefined' ? lang : 'de') %></span><% } %>
             </div>
             <% if (m.Text) { %><% const announcementText = typeof txContent === 'function' ? txContent(m.Text) : m.Text; %><p class="portal-list-text"><%= announcementText.substring(0, 200) %><%= announcementText.length > 200 ? '…' : '' %></p><% } %>
+<<<<<<< HEAD
+=======
+=======
+              <strong><%= m.Betreff %></strong>
+              <% if (m.Datum) { %><span class="portal-list-meta"><%= new Date(m.Datum).toLocaleDateString(typeof lang !== 'undefined' ? lang : 'de') %></span><% } %>
+            </div>
+            <% if (m.Text) { %><p class="portal-list-text"><%= (m.Text || '').substring(0, 200) %><%= (m.Text || '').length > 200 ? '…' : '' %></p><% } %>
+>>>>>>> b1e2a115ebdf1aabca5527a29b41d347db50e10c
+>>>>>>> 52b0c1004eb08b6a12b067d508be853482ae6d8e
           </div>
         <% }) %>
       </div>
