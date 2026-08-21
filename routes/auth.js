@@ -10,7 +10,7 @@
  * Login itself stays in server.js, matching the original split.
  */
 import { Router } from 'express';
-import bcrypt from 'bcryptjs';
+import bcrypt from 'bcrypt';
 import {
   checkPassword, passwordErrors, randString, POLICY,
   issueAuthToken, authTokenKind, isAuthTokenExpired,
@@ -25,13 +25,14 @@ const MAIL_FIELD = 'Email';
 /** classes/registerpage.php:253 */
 export const ADMIN_NOTIFY_EMAIL = 'support@intex-publishing.de';
 
-/** Password comparison shared with the login route: plain or bcrypt. */
+/** Password comparison with an explicit legacy migration switch. */
 export async function verifyPassword(plain, stored) {
   if (stored == null) return false;
   if (String(stored).startsWith('$2')) {
     try { return await bcrypt.compare(String(plain), String(stored)); } catch { return false; }
   }
-  return String(stored) === String(plain);
+  return (process.env.NODE_ENV !== 'production' || process.env.ALLOW_PLAINTEXT_PASSWORDS === 'true')
+    && String(stored) === String(plain);
 }
 
 

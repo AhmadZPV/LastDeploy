@@ -7,7 +7,7 @@
  * The router is factory-injected so it can be tested with a fake prisma.
  */
 import { Router } from 'express';
-import bcrypt from 'bcryptjs';
+import bcrypt from 'bcrypt';
 import { hashPassword } from '../src/auth/password-guard.js';
 import { POLICY, checkPassword, passwordErrors } from '../src/auth/policy.js';
 import { MASK_LETTERS, MASK_LABELS, FULL_MASK, normalizeMask, maskToMap }
@@ -39,6 +39,9 @@ export default function createAdminRouter(deps = {}) {
         members().findMany(),
         rightsTbl().findMany(),
       ]);
+      const invoiceRows = P().portalRechnungen
+        ? await P().portalRechnungen.findMany({ orderBy: { EingereichtAm: 'desc' }, take: 100 })
+        : [];
       const membersByGroup = {};
       for (const m of memberRows) {
         (membersByGroup[m.GroupID] = membersByGroup[m.GroupID] || []).push(m.UserName);
@@ -46,12 +49,36 @@ export default function createAdminRouter(deps = {}) {
       res.render('admin', {
         adminError: typeof req.query.err === 'string' ? req.query.err : null,
         users: userRows, groups: groupRows, members: memberRows,
-        rights: rightRows, membersByGroup,
+        rights: rightRows, membersByGroup, invoices: invoiceRows,
         maskLetters: MASK_LETTERS, maskLabels: MASK_LABELS,
       });
     } catch (e) {
       res.status(500).send('Admin error: ' + e.message);
     }
+  });
+
+  router.get('/invoices/:id/file', async (req, res) => {
+    const invoice = await P().portalRechnungen.findFirst({ where: { ID: Number(req.params.id) } });
+    if (!invoice) return res.status(404).send('Invoice not found');
+    res.setHeader('Content-Type', invoice.MimeType || 'application/octet-stream');
+    res.setHeader('Content-Disposition', `attachment; filename*=UTF-8''${encodeURIComponent(invoice.Dateiname)}`);
+    res.send(Buffer.from(invoice.Datei));
+  });
+
+  router.post('/invoices/:id/status', async (req, res) => {
+    const allowed = new Set(['pending', 'approved', 'rejected', 'needs_info']);
+    const Status = String(req.body?.Status || '');
+    if (!allowed.has(Status)) return res.status(400).send('Invalid invoice status');
+    await P().portalRechnungen.update({
+      where: { ID: Number(req.params.id) },
+      data: {
+        Status,
+        Pruefnotiz: String(req.body?.Pruefnotiz || '').trim() || null,
+        GeprueftAm: Status === 'pending' ? null : new Date(),
+        GeprueftVon: Status === 'pending' ? null : req.session?.user?.Benutzername || null,
+      },
+    });
+    res.redirect('/admin#invoices');
   });
 
   // ---------------------------------------------------------------- users

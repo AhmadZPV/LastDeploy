@@ -1,0 +1,36 @@
+<%- include('layout_top', { activeNav: 'mitteilungen' }) %>
+<div class="portal-section">
+  <div class="portal-section-heading">
+    <h1><%= t('portal_announcements') %></h1>
+    <p class="muted"><%= t('portal_announcements_total', { n: total }) %></p>
+  </div>
+
+  <% if (items && items.length) { %>
+    <div class="portal-list portal-list-cards">
+      <% items.forEach(m => { %>
+        <div class="portal-list-item portal-list-item-card">
+          <div class="portal-list-main">
+              <strong><%= typeof txContent === 'function' ? txContent(m.Betreff) : m.Betreff %></strong>
+            <% if (m.Datum) { %>
+              <span class="portal-list-meta"><%= new Date(m.Datum).toLocaleDateString(typeof lang !== 'undefined' ? lang : 'de', { year: 'numeric', month: 'long', day: 'numeric' }) %></span>
+            <% } %>
+          </div>
+          <% if (m.Text) { %><p class="portal-list-text"><%= typeof txContent === 'function' ? txContent(m.Text) : m.Text %></p><% } %>
+        </div>
+      <% }) %>
+    </div>
+
+    <% if (pages > 1) { %>
+      <div class="pagination">
+        <% if (page > 1) { %><a href="/portal/mitteilungen?page=<%= page - 1 %>" class="btn"><%= t('portal_back') %></a><% } %>
+        <span><%= t('portal_page', { page: page, pages: pages }) %></span>
+        <% if (page < pages) { %><a href="/portal/mitteilungen?page=<%= page + 1 %>" class="btn"><%= t('portal_next') %></a><% } %>
+      </div>
+    <% } %>
+  <% } else { %>
+    <div class="portal-empty">
+      <p><%= t('portal_no_announcements') %></p>
+    </div>
+  <% } %>
+</div>
+<%- include('layout_bottom') %>

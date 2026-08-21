@@ -14,7 +14,7 @@
  *   - an empty value is removed from the payload, so "leave blank" keeps the
  *     stored password instead of clearing it
  */
-import bcrypt from 'bcryptjs';
+import bcrypt from 'bcrypt';
 
 /** Same vocabulary the display masking in src/formatters.js uses. */
 export const SECRET_NAME = /(passwort|password|passwd|kennwort)/i;

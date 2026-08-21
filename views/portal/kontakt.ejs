@@ -1,0 +1,33 @@
+<%- include('layout_top', { activeNav: 'kontakt' }) %>
+<div class="portal-section">
+  <div class="portal-section-heading">
+    <h1><%= t('portal_contact_heading') %></h1>
+    <p class="muted"><%= t('portal_contact_desc') %></p>
+  </div>
+
+  <% if (typeof success !== 'undefined' && success) { %>
+    <div class="portal-success-box">
+      <h2><%= t('portal_message_sent') %></h2>
+      <p><%= t('portal_message_sent_desc') %></p>
+      <a href="/portal/dashboard" class="btn btn-primary"><%= t('portal_back_to_overview') %></a>
+    </div>
+  <% } else { %>
+    <% if (typeof error !== 'undefined' && error) { %><div class="portal-error-box"><%= error %></div><% } %>
+    <form method="post" action="/portal/kontakt" class="portal-form portal-form-narrow">
+      <%- include('../partials/csrf') %>
+      <div class="form-group">
+        <label for="k-betreff"><%= t('portal_subject') %> *</label>
+        <input id="k-betreff" name="Betreff" required>
+      </div>
+      <div class="form-group">
+        <label for="k-text"><%= t('portal_message') %> *</label>
+        <textarea id="k-text" name="Text" rows="6" required></textarea>
+      </div>
+      <div class="portal-form-actions">
+        <button type="submit" class="btn btn-primary"><%= t('send') %></button>
+        <a href="/portal/dashboard" class="btn"><%= t('cancel') %></a>
+      </div>
+    </form>
+  <% } %>
+</div>
+<%- include('layout_bottom') %>

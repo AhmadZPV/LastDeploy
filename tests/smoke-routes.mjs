@@ -59,22 +59,29 @@ const createTranslator = i18nMod.createTranslator || ((lang) => ({
 
 /** A prisma double seeded with a couple of plausible rows per model. */
 function makePrisma() {
-  const row = { ID: 1, Team: 1, Kurzname: 'Muster', Bezeichnung: 'Muster', Name: 'Muster' }
+  const row = {
+    ID: 1, Team: 1, Kurzname: 'Muster', Bezeichnung: 'Muster', Name: 'Muster',
+    MimeType: 'application/octet-stream', Dateiname: 'fixture.bin', Datei: Buffer.from('fixture'),
+  }
   const base = mkClient({})
-  // any model returns the same shaped rows; unknown models degrade to []
+  // Any model returns the same shaped rows. Create delegates lazily as route
+  // modules can reference optional models that are absent from a slim client.
   return new Proxy(base, {
     get(target, prop) {
       if (typeof prop === 'string' && prop.startsWith('$')) return target[prop]
       const delegate = target[prop]
-      if (!delegate || typeof delegate !== 'object') return delegate
+      if (delegate && typeof delegate !== 'object') return delegate
       return {
-        ...delegate,
+        ...(delegate || {}),
         findMany: async () => [row],
         findFirst: async () => row,
         findUnique: async () => row,
         count: async () => 1,
         aggregate: async () => ({ _count: 1, _sum: {} }),
         groupBy: async () => [],
+        create: async ({ data } = {}) => ({ ...row, ...data }),
+        update: async ({ data } = {}) => ({ ...row, ...data }),
+        delete: async () => row,
       }
     },
   })

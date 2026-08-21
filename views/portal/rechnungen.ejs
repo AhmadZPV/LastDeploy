@@ -1,0 +1,24 @@
+<%- include('layout_top', { activeNav: 'rechnungen' }) %>
+<div class="portal-section">
+  <div class="portal-section-heading"><h1><%= t('portal_invoices') %></h1><p class="muted"><%= t('portal_invoice_desc') %></p></div>
+  <% if (success) { %><div class="portal-success-box"><p><%= t('portal_invoice_sent') %></p></div><% } %>
+  <% if (error) { %><div class="portal-error-box"><%= error %></div><% } %>
+  <div class="portal-card">
+    <div class="portal-card-heading"><h2><%= t('portal_submit_invoice') %></h2></div>
+    <form method="post" action="/portal/rechnungen" enctype="multipart/form-data" class="portal-form">
+      <%- include('../partials/csrf') %>
+      <div class="portal-form-grid">
+        <div class="form-group"><label for="invoice-number"><%= t('portal_invoice_number') %> *</label><input id="invoice-number" name="Rechnungsnummer" required></div>
+        <div class="form-group"><label for="invoice-date"><%= t('portal_invoice_date') %></label><input id="invoice-date" type="date" name="Rechnungsdatum"></div>
+        <div class="form-group"><label for="invoice-amount"><%= t('portal_invoice_amount') %> *</label><input id="invoice-amount" type="number" step="0.01" min="0.01" name="Betrag" required></div>
+        <div class="form-group"><label for="invoice-file"><%= t('portal_invoice_file') %> *</label><input id="invoice-file" type="file" name="invoice" accept="application/pdf,image/jpeg,image/png" required><small><%= t('portal_invoice_file_hint') %></small></div>
+        <div class="form-group portal-form-wide"><label for="invoice-description"><%= t('portal_invoice_description') %></label><textarea id="invoice-description" name="Beschreibung" rows="4"></textarea></div>
+      </div>
+      <div class="portal-form-actions"><button type="submit" class="btn btn-primary"><%= t('portal_submit_invoice') %></button></div>
+    </form>
+  </div>
+  <% if (rechnungen?.length) { %><div class="portal-card"><div class="portal-card-heading"><h2><%= t('portal_invoice_history') %></h2></div><div class="table-wrap"><table><thead><tr><th><%= t('portal_invoice_number') %></th><th><%= t('portal_invoice_amount') %></th><th><%= t('portal_invoice_status') %></th><th><%= t('portal_invoice_file') %></th></tr></thead><tbody>
+    <% rechnungen.forEach(invoice => { %><tr><td><%= invoice.Rechnungsnummer %></td><td><%= invoice.Betrag ?? '—' %> €</td><td><span class="status-pill is-<%= invoice.Status %>"><%= t('portal_invoice_status_' + invoice.Status) %></span><% if (invoice.Pruefnotiz) { %><small class="portal-list-meta"><%= invoice.Pruefnotiz %></small><% } %></td><td><a href="/portal/rechnungen/<%= invoice.ID %>/datei"><%= invoice.Dateiname %></a></td></tr><% }) %>
+  </tbody></table></div></div><% } %>
+</div>
+<%- include('layout_bottom') %>

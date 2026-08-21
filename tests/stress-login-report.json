@@ -1,0 +1,21 @@
+{
+  "generatedAt": "2026-08-21T09:07:15.933Z",
+  "baseUrl": "http://localhost:3000",
+  "total": 1000,
+  "concurrency": 1000,
+  "elapsedMs": 38183,
+  "throughputPerSec": 26.2,
+  "ok": 998,
+  "failed": 2,
+  "successRate": 99.8,
+  "latencyMs": {
+    "min": 4353,
+    "p50": 29418,
+    "p95": 37416,
+    "p99": 37753,
+    "max": 37980
+  },
+  "failuresByReason": {
+    "fetch failed": 2
+  }
+}

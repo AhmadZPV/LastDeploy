@@ -1,0 +1,4249 @@
+{
+  "generatedAt": "2026-08-21T07:10:15.376Z",
+  "startedAt": "2026-08-21T07:10:05.846Z",
+  "durationMs": 9530,
+  "baseUrl": "http://localhost:3000",
+  "username": "admin",
+  "readOnly": true,
+  "summary": {
+    "total": 543,
+    "PASS": 507,
+    "FAIL": 0,
+    "SKIP": 36
+  },
+  "byArea": [
+    {
+      "area": "Platform",
+      "total": 2,
+      "pass": 2,
+      "fail": 0,
+      "skip": 0
+    },
+    {
+      "area": "Security",
+      "total": 7,
+      "pass": 7,
+      "fail": 0,
+      "skip": 0
+    },
+    {
+      "area": "Authentication",
+      "total": 1,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0
+    },
+    {
+      "area": "Localization",
+      "total": 4,
+      "pass": 4,
+      "fail": 0,
+      "skip": 0
+    },
+    {
+      "area": "Navigation",
+      "total": 3,
+      "pass": 3,
+      "fail": 0,
+      "skip": 0
+    },
+    {
+      "area": "Sidebar",
+      "total": 144,
+      "pass": 144,
+      "fail": 0,
+      "skip": 0
+    },
+    {
+      "area": "CRUD list",
+      "total": 63,
+      "pass": 63,
+      "fail": 0,
+      "skip": 0
+    },
+    {
+      "area": "CRUD search",
+      "total": 63,
+      "pass": 63,
+      "fail": 0,
+      "skip": 0
+    },
+    {
+      "area": "CRUD new",
+      "total": 63,
+      "pass": 63,
+      "fail": 0,
+      "skip": 0
+    },
+    {
+      "area": "CRUD detail",
+      "total": 63,
+      "pass": 27,
+      "fail": 0,
+      "skip": 36
+    },
+    {
+      "area": "CRUD edit",
+      "total": 27,
+      "pass": 27,
+      "fail": 0,
+      "skip": 0
+    },
+    {
+      "area": "CRUD export CSV",
+      "total": 27,
+      "pass": 27,
+      "fail": 0,
+      "skip": 0
+    },
+    {
+      "area": "Dashboard",
+      "total": 7,
+      "pass": 7,
+      "fail": 0,
+      "skip": 0
+    },
+    {
+      "area": "Chart page",
+      "total": 18,
+      "pass": 18,
+      "fail": 0,
+      "skip": 0
+    },
+    {
+      "area": "Chart data",
+      "total": 18,
+      "pass": 18,
+      "fail": 0,
+      "skip": 0
+    },
+    {
+      "area": "Reports",
+      "total": 1,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0
+    },
+    {
+      "area": "Print",
+      "total": 1,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0
+    },
+    {
+      "area": "Export",
+      "total": 1,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0
+    },
+    {
+      "area": "Special export",
+      "total": 2,
+      "pass": 2,
+      "fail": 0,
+      "skip": 0
+    },
+    {
+      "area": "Settings",
+      "total": 1,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0
+    },
+    {
+      "area": "Saved searches",
+      "total": 1,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0
+    },
+    {
+      "area": "Portal",
+      "total": 14,
+      "pass": 14,
+      "fail": 0,
+      "skip": 0
+    },
+    {
+      "area": "Admin",
+      "total": 5,
+      "pass": 5,
+      "fail": 0,
+      "skip": 0
+    },
+    {
+      "area": "PWA",
+      "total": 5,
+      "pass": 5,
+      "fail": 0,
+      "skip": 0
+    },
+    {
+      "area": "Static",
+      "total": 2,
+      "pass": 2,
+      "fail": 0,
+      "skip": 0
+    }
+  ],
+  "failures": [],
+  "skipped": [
+    {
+      "area": "CRUD detail",
+      "name": "ansprechpartner",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "aufteilungsassistent",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "buchfuehrungen",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "buchungen",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "buchungsassistent",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "buchungsimport",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "checklisten",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "dokumente",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "farben",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "intex_hausverwaltung_settings",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "informationen",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "kalender",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "kalenderwoche",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "klassifikationen_adressen",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "klassifikationen_inventar",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "klassifikationenkontobuch",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "kontoauszuege",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "kostenarten",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "kostenbelege",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "portalrechnungen",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "leistungen",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "navigator",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "plz",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "personen",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "positionen",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "protokolle",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "schlagwoerter",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "schluessel",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "seriennummern",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "sets",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "verkauf",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "vorwegabzuege",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "wertelisten",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "zeiten",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "intex_hausverwaltung_ugmembers",
+      "status": "SKIP",
+      "detail": "composite key",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "intex_hausverwaltung_ugrights",
+      "status": "SKIP",
+      "detail": "composite key",
+      "ms": 0
+    }
+  ],
+  "results": [
+    {
+      "area": "Platform",
+      "name": "Health endpoint",
+      "status": "PASS",
+      "detail": "HTTP 200 (/healthz) [64ms]",
+      "ms": 0
+    },
+    {
+      "area": "Platform",
+      "name": "Health returns ok JSON",
+      "status": "PASS",
+      "detail": "HTTP 200 (/healthz) [7ms]",
+      "ms": 0
+    },
+    {
+      "area": "Security",
+      "name": "Anonymous root redirects to login",
+      "status": "PASS",
+      "detail": "HTTP 302 (/) [9ms]",
+      "ms": 0
+    },
+    {
+      "area": "Security",
+      "name": "Anonymous admin blocked",
+      "status": "PASS",
+      "detail": "HTTP 302 (/admin) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "Security",
+      "name": "Anonymous CRUD blocked",
+      "status": "PASS",
+      "detail": "HTTP 302 (/objekte) [5ms]",
+      "ms": 0
+    },
+    {
+      "area": "Authentication",
+      "name": "Admin login with CSRF",
+      "status": "PASS",
+      "detail": "user=admin",
+      "ms": 0
+    },
+    {
+      "area": "Security",
+      "name": "CSRF token present on forms",
+      "status": "PASS",
+      "detail": "HTTP 200 (/benutzer/new) [27ms]",
+      "ms": 0
+    },
+    {
+      "area": "Security",
+      "name": "Wrong password rejected",
+      "status": "PASS",
+      "detail": "HTTP 200 (/login) [10ms]",
+      "ms": 0
+    },
+    {
+      "area": "Security",
+      "name": "Logout",
+      "status": "PASS",
+      "detail": "HTTP 302 (/logout) [4ms]",
+      "ms": 0
+    },
+    {
+      "area": "Security",
+      "name": "Session removed after logout",
+      "status": "PASS",
+      "detail": "HTTP 302 (/) [3ms]",
+      "ms": 0
+    },
+    {
+      "area": "Localization",
+      "name": "Switch to English",
+      "status": "PASS",
+      "detail": "HTTP 302 (/lang/en) [6ms]",
+      "ms": 0
+    },
+    {
+      "area": "Localization",
+      "name": "English application chrome",
+      "status": "PASS",
+      "detail": "HTTP 200 (/) [27ms]",
+      "ms": 0
+    },
+    {
+      "area": "Localization",
+      "name": "Switch to German",
+      "status": "PASS",
+      "detail": "HTTP 302 (/lang/de) [12ms]",
+      "ms": 0
+    },
+    {
+      "area": "Localization",
+      "name": "German application chrome",
+      "status": "PASS",
+      "detail": "HTTP 200 (/) [38ms]",
+      "ms": 0
+    },
+    {
+      "area": "Navigation",
+      "name": "Authenticated dashboard",
+      "status": "PASS",
+      "detail": "HTTP 200 (/) [31ms]",
+      "ms": 0
+    },
+    {
+      "area": "Navigation",
+      "name": "Top bar present",
+      "status": "PASS",
+      "detail": "HTTP 200 (/) [30ms]",
+      "ms": 0
+    },
+    {
+      "area": "Navigation",
+      "name": "Sidebar present",
+      "status": "PASS",
+      "detail": "HTTP 200 (/) [32ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Navi",
+      "status": "PASS",
+      "detail": "HTTP 200 (/navigator) [14ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Kontobuch",
+      "status": "PASS",
+      "detail": "HTTP 200 (/kontobuch) [18ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Kontoauszugsimport",
+      "status": "PASS",
+      "detail": "HTTP 200 (/kontoauszuege2) [8ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Kontobuch Auszug",
+      "status": "PASS",
+      "detail": "HTTP 200 (/report/kontobuch_auszug) [20ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Banking",
+      "status": "PASS",
+      "detail": "HTTP 200 (/kontobuch_banking) [18ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Buchungsbericht (Abrechnungen)",
+      "status": "PASS",
+      "detail": "HTTP 200 (/report/buchungsbericht) [13ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Buchungsbericht (Objekte)",
+      "status": "PASS",
+      "detail": "HTTP 200 (/report/buchungsbericht_objekte) [7ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Buchungsbericht Mwst",
+      "status": "PASS",
+      "detail": "HTTP 200 (/report/buchungsbericht_mwst) [9ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Mieterkonten Saldenliste",
+      "status": "PASS",
+      "detail": "HTTP 200 (/mieterkonten_saldenliste) [19ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Mieterkonten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/report/mieterkonten) [8ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Einnahmen/Ausgaben",
+      "status": "PASS",
+      "detail": "HTTP 200 (/chart/kontostaende) [23ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Kostenverteilung",
+      "status": "PASS",
+      "detail": "HTTP 200 (/chart/kostenverteilung) [12ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Einnahmeverteilung",
+      "status": "PASS",
+      "detail": "HTTP 200 (/chart/einnahmeverteilung) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Klassifikationen Kontobuch",
+      "status": "PASS",
+      "detail": "HTTP 200 (/klassifikationenkontobuch) [32ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Assistent Doppelte Buchführung",
+      "status": "PASS",
+      "detail": "HTTP 200 (/dashboard/assistent_doppelte_buchfuehrung) [12ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Journale",
+      "status": "PASS",
+      "detail": "HTTP 200 (/journal) [21ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Schnellbuchungen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/schnellbuchungen) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Buchungsassistent",
+      "status": "PASS",
+      "detail": "HTTP 200 (/buchungsassistent) [17ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Kontoauszugsimport",
+      "status": "PASS",
+      "detail": "HTTP 200 (/kontoauszuege) [8ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Buchungsimport",
+      "status": "PASS",
+      "detail": "HTTP 200 (/buchungsimport) [22ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Buchungsübersicht",
+      "status": "PASS",
+      "detail": "HTTP 200 (/report/buchungsuebersicht) [14ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Banking",
+      "status": "PASS",
+      "detail": "HTTP 200 (/banking) [17ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Kontenrahmen Druck",
+      "status": "PASS",
+      "detail": "HTTP 200 (/report/kontenrahmen_druck) [6ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Kontenblätter",
+      "status": "PASS",
+      "detail": "HTTP 200 (/kontenblaetter) [10ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Summen und Salden",
+      "status": "PASS",
+      "detail": "HTTP 200 (/report/summen_und_salden) [12ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Summen und Salden (kurz)",
+      "status": "PASS",
+      "detail": "HTTP 200 (/report/summen_und_salden_kurz) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Saldenliste",
+      "status": "PASS",
+      "detail": "HTTP 200 (/saldenliste) [19ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Gewinn und Verlust",
+      "status": "PASS",
+      "detail": "HTTP 200 (/report/gewinn_und_verlust) [13ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Gewinn und Verlust (kurz)",
+      "status": "PASS",
+      "detail": "HTTP 200 (/report/guv_kurz) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Umsatzsteuervoranmeldung",
+      "status": "PASS",
+      "detail": "HTTP 200 (/report/umsatzsteuervoranmeldung) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Debitorenkonten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/report/debitorenkonten) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "DATEV Export",
+      "status": "PASS",
+      "detail": "HTTP 200 (/datev_export) [19ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Aufteilungsassistent",
+      "status": "PASS",
+      "detail": "HTTP 200 (/aufteilungsassistent) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Vorwegabzüge",
+      "status": "PASS",
+      "detail": "HTTP 200 (/vorwegabzuege) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Buchführungen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/buchfuehrungen) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Konten/Kontenrahmen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/kontenrahmen) [17ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Assistent Abrechnungen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/dashboard/assistent_abrechnungen) [18ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Abrechnungen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/abrechnungen) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Abrechnungskonten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/abrechnungskonten) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Vorauszahlungen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/vorauszahlungen) [9ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Rücklagebuchungen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/ruecklagebuchungen) [22ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Umlagen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/kosten) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Direkte Kosten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/direktekosten) [14ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "§35a Einkommensteuergesetz",
+      "status": "PASS",
+      "detail": "HTTP 200 (/p35aestg) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Verbrauchsanteile",
+      "status": "PASS",
+      "detail": "HTTP 200 (/chart/verbrauchsanteile) [39ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Zeitliche Verteilung",
+      "status": "PASS",
+      "detail": "HTTP 200 (/chart/abrechnungskonten_zeitliche_verteilung) [20ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Verteilung Umlegbare Kosten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/chart/verteilung_umlegbare_kosten) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Betriebskosten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/report/abrechnungsdruck) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Betriebskosten (Individuell)",
+      "status": "PASS",
+      "detail": "HTTP 200 (/report/abrechnungsdruck_individuell) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Betriebskosten netto",
+      "status": "PASS",
+      "detail": "HTTP 200 (/report/abrechnungsdruck_netto) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Heizkosten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/report/abrechnungsdruck_hk) [5ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Heizkosten ohne Warmwasser",
+      "status": "PASS",
+      "detail": "HTTP 200 (/report/abrechnungsdruck_hk_ohne_ww) [10ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "§35a EStG Druck",
+      "status": "PASS",
+      "detail": "HTTP 200 (/report/p35aestg_druck) [17ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Abrechnungsdaten Übersicht",
+      "status": "PASS",
+      "detail": "HTTP 200 (/abrechnungsdaten_uebersicht) [19ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Abrechnungsbericht",
+      "status": "PASS",
+      "detail": "HTTP 200 (/report/abrechnungsbericht) [13ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Abrechnungsempfänger",
+      "status": "PASS",
+      "detail": "HTTP 200 (/abrechnungsempfaenger) [19ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Serienbrief",
+      "status": "PASS",
+      "detail": "HTTP 200 (/report/serienbrief) [13ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Kostenarten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/kostenarten) [19ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Assistent Objekte und Einheiten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/dashboard/assistent_objekte_und_einheiten) [25ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Objekte",
+      "status": "PASS",
+      "detail": "HTTP 200 (/objekte) [30ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Ansprechpartner",
+      "status": "PASS",
+      "detail": "HTTP 200 (/ansprechpartner) [23ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Einheiten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/einheiten) [22ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Räume",
+      "status": "PASS",
+      "detail": "HTTP 200 (/raeume) [17ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Schlüssel",
+      "status": "PASS",
+      "detail": "HTTP 200 (/schluessel) [24ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Protokolle",
+      "status": "PASS",
+      "detail": "HTTP 200 (/protokolle) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Zähler",
+      "status": "PASS",
+      "detail": "HTTP 200 (/zaehler) [17ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Flächen / Quadratmeter",
+      "status": "PASS",
+      "detail": "HTTP 200 (/flaechen) [9ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Objektübersicht",
+      "status": "PASS",
+      "detail": "HTTP 200 (/report/objektuebersicht) [21ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Nutzerliste",
+      "status": "PASS",
+      "detail": "HTTP 200 (/nutzerliste) [18ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Leerstandsquote",
+      "status": "PASS",
+      "detail": "HTTP 200 (/chart/leerstandsquote) [13ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Vermietungskonditionen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/vermietungskonditionen) [20ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "WEG Stimmrechte",
+      "status": "PASS",
+      "detail": "HTTP 200 (/report/weg_stimmrechte) [13ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "WEG Eigentümerliste",
+      "status": "PASS",
+      "detail": "HTTP 200 (/weg_eigentuemerliste) [26ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Immobilien Diagramme",
+      "status": "PASS",
+      "detail": "HTTP 200 (/dashboard/immobilien_diagramme) [26ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Objektarten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/objektarten) [27ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Einheitenarten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/einheitenarten) [32ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Raumarten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/raumarten) [32ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Inventar",
+      "status": "PASS",
+      "detail": "HTTP 200 (/inventar) [22ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Ausleihen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/ausleihen) [12ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Inventar Bilder",
+      "status": "PASS",
+      "detail": "HTTP 200 (/inventar_bilder) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Finanzbericht",
+      "status": "PASS",
+      "detail": "HTTP 200 (/report/finanzbericht) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Mengenbericht",
+      "status": "PASS",
+      "detail": "HTTP 200 (/report/mengenbericht) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Inventar Diagramme",
+      "status": "PASS",
+      "detail": "HTTP 200 (/dashboard/inventar_diagramme) [20ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Inventar Datenblätter",
+      "status": "PASS",
+      "detail": "HTTP 200 (/report/inventar_datenblatt) [12ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Inventar Etiketten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/report/inventar_etiketten) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Kategorien",
+      "status": "PASS",
+      "detail": "HTTP 200 (/klassifikationen_inventar) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Sets",
+      "status": "PASS",
+      "detail": "HTTP 200 (/sets) [34ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Schlagwörter",
+      "status": "PASS",
+      "detail": "HTTP 200 (/schlagwoerter) [30ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Stapelverarbeitung",
+      "status": "PASS",
+      "detail": "HTTP 200 (/inventar_stapelverarbeitung) [19ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Rechnungen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/rechnungen) [10ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Angebote",
+      "status": "PASS",
+      "detail": "HTTP 200 (/angebote) [20ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Rechnungsdruck",
+      "status": "PASS",
+      "detail": "HTTP 200 (/report/rechnungsdruck) [13ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Angebotsdruck",
+      "status": "PASS",
+      "detail": "HTTP 200 (/report/angebotsdruck) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Vorgänge",
+      "status": "PASS",
+      "detail": "HTTP 200 (/verkauf) [20ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Verkauf Serienbrief Steuerdatei",
+      "status": "PASS",
+      "detail": "HTTP 200 (/verkauf_serienbrief_steuerdatei) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Umsatzauswertung",
+      "status": "PASS",
+      "detail": "HTTP 200 (/report/umsatzauswertung) [13ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Leistungen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/leistungen) [19ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Adressen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/adressen) [26ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Adressen (Kerndaten)",
+      "status": "PASS",
+      "detail": "HTTP 200 (/kerndaten) [23ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Adressen (Vertraulich)",
+      "status": "PASS",
+      "detail": "HTTP 200 (/vertraulich) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "vCard Import",
+      "status": "PASS",
+      "detail": "HTTP 302 (/vcard_import/edit) [12ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Adressliste",
+      "status": "PASS",
+      "detail": "HTTP 200 (/report/adressliste) [17ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Adressetiketten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/report/adressetiketten) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Telefonliste",
+      "status": "PASS",
+      "detail": "HTTP 200 (/report/telefonliste) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Mail Web Skype",
+      "status": "PASS",
+      "detail": "HTTP 200 (/report/mail_web_skype) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Serienbrief Steuerdatei",
+      "status": "PASS",
+      "detail": "HTTP 200 (/serienbrief_steuerdatei) [17ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Adressen Diagramme",
+      "status": "PASS",
+      "detail": "HTTP 200 (/dashboard/adressen_diagramme) [24ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Klassifikationen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/klassifikationen_adressen) [37ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Stapelverarbeitung",
+      "status": "PASS",
+      "detail": "HTTP 200 (/adressen_stapelverarbeitung) [18ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Notizen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/notizen) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Aufgaben",
+      "status": "PASS",
+      "detail": "HTTP 200 (/aufgaben) [17ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Wiedervorlage",
+      "status": "PASS",
+      "detail": "HTTP 200 (/dashboard/heute) [24ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Dokumente",
+      "status": "PASS",
+      "detail": "HTTP 200 (/dokumente) [22ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Fotos",
+      "status": "PASS",
+      "detail": "HTTP 302 (/dokumente_fotos/add) [12ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Bilder",
+      "status": "PASS",
+      "detail": "HTTP 200 (/bilder) [19ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Verträge",
+      "status": "PASS",
+      "detail": "HTTP 200 (/vertraege) [43ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Alle Termine",
+      "status": "PASS",
+      "detail": "HTTP 200 (/termine) [22ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Agenda Heute",
+      "status": "PASS",
+      "detail": "HTTP 200 (/agenda_heute) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Kalenderwoche",
+      "status": "PASS",
+      "detail": "HTTP 200 (/kalenderwoche) [30ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Termine diese Woche",
+      "status": "PASS",
+      "detail": "HTTP 200 (/termine_diese_woche) [18ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Monatskalender",
+      "status": "PASS",
+      "detail": "HTTP 200 (/kalender) [29ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Termine dieser Monat",
+      "status": "PASS",
+      "detail": "HTTP 200 (/termine_dieser_monat) [19ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "ics Import",
+      "status": "PASS",
+      "detail": "HTTP 302 (/ics_import/edit) [13ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Korrespondenz",
+      "status": "PASS",
+      "detail": "HTTP 200 (/korrespondenz) [19ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Export nach Word",
+      "status": "PASS",
+      "detail": "HTTP 200 (/report/korrespondenz_word) [13ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Briefdruck",
+      "status": "PASS",
+      "detail": "HTTP 200 (/report/korrespondenz_briefdruck) [5ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Informationen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/informationen) [13ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "PLZ",
+      "status": "PASS",
+      "detail": "HTTP 200 (/plz) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Wertelisten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/wertelisten) [31ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Farben",
+      "status": "PASS",
+      "detail": "HTTP 200 (/farben) [30ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Seriennummern",
+      "status": "PASS",
+      "detail": "HTTP 200 (/seriennummern) [19ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Einstellungen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/einstellungen) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Vertragsdaten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/vertragsdaten) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Backup",
+      "status": "PASS",
+      "detail": "HTTP 200 (/backup) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Anmeldung",
+      "status": "PASS",
+      "detail": "HTTP 302 (/anmeldung/add) [20ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Kontaktaufnahme",
+      "status": "PASS",
+      "detail": "HTTP 302 (/kontaktaufnahme/add) [10ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Zählerstände melden",
+      "status": "PASS",
+      "detail": "HTTP 302 (/zaehlerstaende_melden/add) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Mitteilungen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/mitteilungen) [20ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Objekte Vermietung Verkauf",
+      "status": "PASS",
+      "detail": "HTTP 200 (/objekte_vermietung_verkauf) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Einheiten Vermietung Verkauf",
+      "status": "PASS",
+      "detail": "HTTP 200 (/einheiten_vermietung_verkauf) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Mitarbeiter",
+      "status": "PASS",
+      "detail": "HTTP 200 (/mitarbeiter) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Zugriffsrechte",
+      "status": "PASS",
+      "detail": "HTTP 302 (/admin_rights) [12ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Benutzer einer Gruppe zuordnen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/admin_members) [20ms]",
+      "ms": 0
+    },
+    {
+      "area": "Sidebar",
+      "name": "Hinzufügen/Ändern eines Benutzers",
+      "status": "PASS",
+      "detail": "HTTP 200 (/admin_users) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "abrechnungen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/abrechnungen) [26ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "abrechnungen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/abrechnungen/search) [12ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "abrechnungen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/abrechnungen/new) [17ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "abrechnungen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/abrechnungen/900001) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD edit",
+      "name": "abrechnungen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/abrechnungen/900001/edit) [13ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD export CSV",
+      "name": "abrechnungen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/abrechnungen/export.csv) [11ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "abrechnungskonten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/abrechnungskonten) [22ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "abrechnungskonten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/abrechnungskonten/search) [13ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "abrechnungskonten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/abrechnungskonten/new) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "abrechnungskonten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/abrechnungskonten/900001) [20ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD edit",
+      "name": "abrechnungskonten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/abrechnungskonten/900001/edit) [22ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD export CSV",
+      "name": "abrechnungskonten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/abrechnungskonten/export.csv) [18ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "adressen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/adressen) [27ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "adressen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/adressen/search) [25ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "adressen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/adressen/new) [13ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "adressen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/adressen/900001) [25ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD edit",
+      "name": "adressen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/adressen/900001/edit) [23ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD export CSV",
+      "name": "adressen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/adressen/export.csv) [10ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "ansprechpartner",
+      "status": "PASS",
+      "detail": "HTTP 200 (/ansprechpartner) [33ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "ansprechpartner",
+      "status": "PASS",
+      "detail": "HTTP 200 (/ansprechpartner/search) [9ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "ansprechpartner",
+      "status": "PASS",
+      "detail": "HTTP 200 (/ansprechpartner/new) [23ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "ansprechpartner",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "aufgaben",
+      "status": "PASS",
+      "detail": "HTTP 200 (/aufgaben) [11ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "aufgaben",
+      "status": "PASS",
+      "detail": "HTTP 200 (/aufgaben/search) [19ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "aufgaben",
+      "status": "PASS",
+      "detail": "HTTP 200 (/aufgaben/new) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "aufgaben",
+      "status": "PASS",
+      "detail": "HTTP 200 (/aufgaben/900001) [26ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD edit",
+      "name": "aufgaben",
+      "status": "PASS",
+      "detail": "HTTP 200 (/aufgaben/900001/edit) [21ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD export CSV",
+      "name": "aufgaben",
+      "status": "PASS",
+      "detail": "HTTP 200 (/aufgaben/export.csv) [8ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "aufteilungsassistent",
+      "status": "PASS",
+      "detail": "HTTP 200 (/aufteilungsassistent) [32ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "aufteilungsassistent",
+      "status": "PASS",
+      "detail": "HTTP 200 (/aufteilungsassistent/search) [18ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "aufteilungsassistent",
+      "status": "PASS",
+      "detail": "HTTP 200 (/aufteilungsassistent/new) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "aufteilungsassistent",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "ausleihen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/ausleihen) [13ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "ausleihen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/ausleihen/search) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "ausleihen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/ausleihen/new) [17ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "ausleihen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/ausleihen/1) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD edit",
+      "name": "ausleihen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/ausleihen/1/edit) [17ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD export CSV",
+      "name": "ausleihen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/ausleihen/export.csv) [9ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "benutzer",
+      "status": "PASS",
+      "detail": "HTTP 200 (/benutzer) [18ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "benutzer",
+      "status": "PASS",
+      "detail": "HTTP 200 (/benutzer/search) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "benutzer",
+      "status": "PASS",
+      "detail": "HTTP 200 (/benutzer/new) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "benutzer",
+      "status": "PASS",
+      "detail": "HTTP 200 (/benutzer/900001) [17ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD edit",
+      "name": "benutzer",
+      "status": "PASS",
+      "detail": "HTTP 200 (/benutzer/900001/edit) [9ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD export CSV",
+      "name": "benutzer",
+      "status": "PASS",
+      "detail": "HTTP 200 (/benutzer/export.csv) [18ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "buchfuehrungen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/buchfuehrungen) [19ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "buchfuehrungen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/buchfuehrungen/search) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "buchfuehrungen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/buchfuehrungen/new) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "buchfuehrungen",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "buchungen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/buchungen) [35ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "buchungen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/buchungen/search) [12ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "buchungen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/buchungen/new) [10ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "buchungen",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "buchungsassistent",
+      "status": "PASS",
+      "detail": "HTTP 200 (/buchungsassistent) [22ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "buchungsassistent",
+      "status": "PASS",
+      "detail": "HTTP 200 (/buchungsassistent/search) [14ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "buchungsassistent",
+      "status": "PASS",
+      "detail": "HTTP 200 (/buchungsassistent/new) [17ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "buchungsassistent",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "buchungsimport",
+      "status": "PASS",
+      "detail": "HTTP 200 (/buchungsimport) [24ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "buchungsimport",
+      "status": "PASS",
+      "detail": "HTTP 200 (/buchungsimport/search) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "buchungsimport",
+      "status": "PASS",
+      "detail": "HTTP 200 (/buchungsimport/new) [8ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "buchungsimport",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "checklisten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/checklisten) [32ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "checklisten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/checklisten/search) [17ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "checklisten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/checklisten/new) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "checklisten",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "dokumente",
+      "status": "PASS",
+      "detail": "HTTP 200 (/dokumente) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "dokumente",
+      "status": "PASS",
+      "detail": "HTTP 200 (/dokumente/search) [12ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "dokumente",
+      "status": "PASS",
+      "detail": "HTTP 200 (/dokumente/new) [22ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "dokumente",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "einheiten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/einheiten) [18ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "einheiten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/einheiten/search) [24ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "einheiten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/einheiten/new) [8ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "einheiten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/einheiten/900001) [32ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD edit",
+      "name": "einheiten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/einheiten/900001/edit) [24ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD export CSV",
+      "name": "einheiten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/einheiten/export.csv) [11ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "einheitenarten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/einheitenarten) [32ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "einheitenarten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/einheitenarten/search) [18ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "einheitenarten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/einheitenarten/new) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "einheitenarten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/einheitenarten/1) [17ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD edit",
+      "name": "einheitenarten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/einheitenarten/1/edit) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD export CSV",
+      "name": "einheitenarten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/einheitenarten/export.csv) [11ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "einstellungen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/einstellungen) [20ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "einstellungen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/einstellungen/search) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "einstellungen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/einstellungen/new) [14ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "einstellungen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/einstellungen/900001) [17ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD edit",
+      "name": "einstellungen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/einstellungen/900001/edit) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD export CSV",
+      "name": "einstellungen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/einstellungen/export.csv) [12ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "farben",
+      "status": "PASS",
+      "detail": "HTTP 200 (/farben) [32ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "farben",
+      "status": "PASS",
+      "detail": "HTTP 200 (/farben/search) [18ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "farben",
+      "status": "PASS",
+      "detail": "HTTP 200 (/farben/new) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "farben",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "flaechen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/flaechen) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "flaechen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/flaechen/search) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "flaechen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/flaechen/new) [18ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "flaechen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/flaechen/1) [17ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD edit",
+      "name": "flaechen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/flaechen/1/edit) [18ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD export CSV",
+      "name": "flaechen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/flaechen/export.csv) [6ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "intex_hausverwaltung_settings",
+      "status": "PASS",
+      "detail": "HTTP 200 (/intex_hausverwaltung_settings) [20ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "intex_hausverwaltung_settings",
+      "status": "PASS",
+      "detail": "HTTP 200 (/intex_hausverwaltung_settings/search) [19ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "intex_hausverwaltung_settings",
+      "status": "PASS",
+      "detail": "HTTP 200 (/intex_hausverwaltung_settings/new) [11ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "intex_hausverwaltung_settings",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "informationen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/informationen) [10ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "informationen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/informationen/search) [17ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "informationen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/informationen/new) [25ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "informationen",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "inventar",
+      "status": "PASS",
+      "detail": "HTTP 200 (/inventar) [18ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "inventar",
+      "status": "PASS",
+      "detail": "HTTP 200 (/inventar/search) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "inventar",
+      "status": "PASS",
+      "detail": "HTTP 200 (/inventar/new) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "inventar",
+      "status": "PASS",
+      "detail": "HTTP 200 (/inventar/900001) [18ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD edit",
+      "name": "inventar",
+      "status": "PASS",
+      "detail": "HTTP 200 (/inventar/900001/edit) [30ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD export CSV",
+      "name": "inventar",
+      "status": "PASS",
+      "detail": "HTTP 200 (/inventar/export.csv) [7ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "kalender",
+      "status": "PASS",
+      "detail": "HTTP 200 (/kalender) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "kalender",
+      "status": "PASS",
+      "detail": "HTTP 200 (/kalender/search) [17ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "kalender",
+      "status": "PASS",
+      "detail": "HTTP 200 (/kalender/new) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "kalender",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "kalenderwoche",
+      "status": "PASS",
+      "detail": "HTTP 200 (/kalenderwoche) [29ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "kalenderwoche",
+      "status": "PASS",
+      "detail": "HTTP 200 (/kalenderwoche/search) [18ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "kalenderwoche",
+      "status": "PASS",
+      "detail": "HTTP 200 (/kalenderwoche/new) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "kalenderwoche",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "klassifikationen_adressen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/klassifikationen_adressen) [28ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "klassifikationen_adressen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/klassifikationen_adressen/search) [17ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "klassifikationen_adressen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/klassifikationen_adressen/new) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "klassifikationen_adressen",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "klassifikationen_inventar",
+      "status": "PASS",
+      "detail": "HTTP 200 (/klassifikationen_inventar) [28ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "klassifikationen_inventar",
+      "status": "PASS",
+      "detail": "HTTP 200 (/klassifikationen_inventar/search) [18ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "klassifikationen_inventar",
+      "status": "PASS",
+      "detail": "HTTP 200 (/klassifikationen_inventar/new) [8ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "klassifikationen_inventar",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "klassifikationenkontobuch",
+      "status": "PASS",
+      "detail": "HTTP 200 (/klassifikationenkontobuch) [35ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "klassifikationenkontobuch",
+      "status": "PASS",
+      "detail": "HTTP 200 (/klassifikationenkontobuch/search) [18ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "klassifikationenkontobuch",
+      "status": "PASS",
+      "detail": "HTTP 200 (/klassifikationenkontobuch/new) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "klassifikationenkontobuch",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "kontenrahmen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/kontenrahmen) [14ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "kontenrahmen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/kontenrahmen/search) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "kontenrahmen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/kontenrahmen/new) [7ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "kontenrahmen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/kontenrahmen/6) [28ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD edit",
+      "name": "kontenrahmen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/kontenrahmen/6/edit) [37ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD export CSV",
+      "name": "kontenrahmen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/kontenrahmen/export.csv) [19ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "kontoauszuege",
+      "status": "PASS",
+      "detail": "HTTP 200 (/kontoauszuege) [21ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "kontoauszuege",
+      "status": "PASS",
+      "detail": "HTTP 200 (/kontoauszuege/search) [8ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "kontoauszuege",
+      "status": "PASS",
+      "detail": "HTTP 200 (/kontoauszuege/new) [22ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "kontoauszuege",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "kontobuch",
+      "status": "PASS",
+      "detail": "HTTP 200 (/kontobuch) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "kontobuch",
+      "status": "PASS",
+      "detail": "HTTP 200 (/kontobuch/search) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "kontobuch",
+      "status": "PASS",
+      "detail": "HTTP 200 (/kontobuch/new) [14ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "kontobuch",
+      "status": "PASS",
+      "detail": "HTTP 200 (/kontobuch/900001) [14ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD edit",
+      "name": "kontobuch",
+      "status": "PASS",
+      "detail": "HTTP 200 (/kontobuch/900001/edit) [18ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD export CSV",
+      "name": "kontobuch",
+      "status": "PASS",
+      "detail": "HTTP 200 (/kontobuch/export.csv) [12ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "korrespondenz",
+      "status": "PASS",
+      "detail": "HTTP 200 (/korrespondenz) [8ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "korrespondenz",
+      "status": "PASS",
+      "detail": "HTTP 200 (/korrespondenz/search) [11ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "korrespondenz",
+      "status": "PASS",
+      "detail": "HTTP 200 (/korrespondenz/new) [12ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "korrespondenz",
+      "status": "PASS",
+      "detail": "HTTP 200 (/korrespondenz/1) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD edit",
+      "name": "korrespondenz",
+      "status": "PASS",
+      "detail": "HTTP 200 (/korrespondenz/1/edit) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD export CSV",
+      "name": "korrespondenz",
+      "status": "PASS",
+      "detail": "HTTP 200 (/korrespondenz/export.csv) [11ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "kosten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/kosten) [8ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "kosten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/kosten/search) [11ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "kosten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/kosten/new) [17ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "kosten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/kosten/900001) [19ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD edit",
+      "name": "kosten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/kosten/900001/edit) [11ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD export CSV",
+      "name": "kosten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/kosten/export.csv) [11ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "kostenarten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/kostenarten) [18ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "kostenarten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/kostenarten/search) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "kostenarten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/kostenarten/new) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "kostenarten",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "kostenbelege",
+      "status": "PASS",
+      "detail": "HTTP 200 (/kostenbelege) [28ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "kostenbelege",
+      "status": "PASS",
+      "detail": "HTTP 200 (/kostenbelege/search) [11ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "kostenbelege",
+      "status": "PASS",
+      "detail": "HTTP 200 (/kostenbelege/new) [22ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "kostenbelege",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "portalrechnungen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/portalrechnungen) [14ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "portalrechnungen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/portalrechnungen/search) [17ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "portalrechnungen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/portalrechnungen/new) [19ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "portalrechnungen",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "leistungen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/leistungen) [25ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "leistungen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/leistungen/search) [17ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "leistungen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/leistungen/new) [8ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "leistungen",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "navigator",
+      "status": "PASS",
+      "detail": "HTTP 200 (/navigator) [20ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "navigator",
+      "status": "PASS",
+      "detail": "HTTP 200 (/navigator/search) [9ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "navigator",
+      "status": "PASS",
+      "detail": "HTTP 200 (/navigator/new) [23ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "navigator",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "notizen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/notizen) [13ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "notizen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/notizen/search) [18ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "notizen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/notizen/new) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "notizen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/notizen/900001) [13ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD edit",
+      "name": "notizen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/notizen/900001/edit) [19ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD export CSV",
+      "name": "notizen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/notizen/export.csv) [9ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "objektarten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/objektarten) [31ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "objektarten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/objektarten/search) [18ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "objektarten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/objektarten/new) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "objektarten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/objektarten/1) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD edit",
+      "name": "objektarten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/objektarten/1/edit) [19ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD export CSV",
+      "name": "objektarten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/objektarten/export.csv) [11ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "objekte",
+      "status": "PASS",
+      "detail": "HTTP 200 (/objekte) [25ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "objekte",
+      "status": "PASS",
+      "detail": "HTTP 200 (/objekte/search) [25ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "objekte",
+      "status": "PASS",
+      "detail": "HTTP 200 (/objekte/new) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "objekte",
+      "status": "PASS",
+      "detail": "HTTP 200 (/objekte/900001) [24ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD edit",
+      "name": "objekte",
+      "status": "PASS",
+      "detail": "HTTP 200 (/objekte/900001/edit) [23ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD export CSV",
+      "name": "objekte",
+      "status": "PASS",
+      "detail": "HTTP 200 (/objekte/export.csv) [12ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "plz",
+      "status": "PASS",
+      "detail": "HTTP 200 (/plz) [18ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "plz",
+      "status": "PASS",
+      "detail": "HTTP 200 (/plz/search) [17ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "plz",
+      "status": "PASS",
+      "detail": "HTTP 200 (/plz/new) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "plz",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "personen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/personen) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "personen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/personen/search) [10ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "personen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/personen/new) [20ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "personen",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "positionen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/positionen) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "positionen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/positionen/search) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "positionen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/positionen/new) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "positionen",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "protokolle",
+      "status": "PASS",
+      "detail": "HTTP 200 (/protokolle) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "protokolle",
+      "status": "PASS",
+      "detail": "HTTP 200 (/protokolle/search) [17ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "protokolle",
+      "status": "PASS",
+      "detail": "HTTP 200 (/protokolle/new) [14ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "protokolle",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "raeume",
+      "status": "PASS",
+      "detail": "HTTP 200 (/raeume) [17ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "raeume",
+      "status": "PASS",
+      "detail": "HTTP 200 (/raeume/search) [13ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "raeume",
+      "status": "PASS",
+      "detail": "HTTP 200 (/raeume/new) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "raeume",
+      "status": "PASS",
+      "detail": "HTTP 200 (/raeume/1) [20ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD edit",
+      "name": "raeume",
+      "status": "PASS",
+      "detail": "HTTP 200 (/raeume/1/edit) [31ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD export CSV",
+      "name": "raeume",
+      "status": "PASS",
+      "detail": "HTTP 200 (/raeume/export.csv) [7ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "raumarten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/raumarten) [33ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "raumarten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/raumarten/search) [18ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "raumarten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/raumarten/new) [7ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "raumarten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/raumarten/2) [24ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD edit",
+      "name": "raumarten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/raumarten/2/edit) [38ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD export CSV",
+      "name": "raumarten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/raumarten/export.csv) [6ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "schlagwoerter",
+      "status": "PASS",
+      "detail": "HTTP 200 (/schlagwoerter) [32ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "schlagwoerter",
+      "status": "PASS",
+      "detail": "HTTP 200 (/schlagwoerter/search) [18ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "schlagwoerter",
+      "status": "PASS",
+      "detail": "HTTP 200 (/schlagwoerter/new) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "schlagwoerter",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "schluessel",
+      "status": "PASS",
+      "detail": "HTTP 200 (/schluessel) [14ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "schluessel",
+      "status": "PASS",
+      "detail": "HTTP 200 (/schluessel/search) [17ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "schluessel",
+      "status": "PASS",
+      "detail": "HTTP 200 (/schluessel/new) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "schluessel",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "seriennummern",
+      "status": "PASS",
+      "detail": "HTTP 200 (/seriennummern) [13ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "seriennummern",
+      "status": "PASS",
+      "detail": "HTTP 200 (/seriennummern/search) [17ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "seriennummern",
+      "status": "PASS",
+      "detail": "HTTP 200 (/seriennummern/new) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "seriennummern",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "sets",
+      "status": "PASS",
+      "detail": "HTTP 200 (/sets) [29ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "sets",
+      "status": "PASS",
+      "detail": "HTTP 200 (/sets/search) [18ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "sets",
+      "status": "PASS",
+      "detail": "HTTP 200 (/sets/new) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "sets",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "termine",
+      "status": "PASS",
+      "detail": "HTTP 200 (/termine) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "termine",
+      "status": "PASS",
+      "detail": "HTTP 200 (/termine/search) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "termine",
+      "status": "PASS",
+      "detail": "HTTP 200 (/termine/new) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "termine",
+      "status": "PASS",
+      "detail": "HTTP 200 (/termine/900001) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD edit",
+      "name": "termine",
+      "status": "PASS",
+      "detail": "HTTP 200 (/termine/900001/edit) [18ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD export CSV",
+      "name": "termine",
+      "status": "PASS",
+      "detail": "HTTP 200 (/termine/export.csv) [10ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "verkauf",
+      "status": "PASS",
+      "detail": "HTTP 200 (/verkauf) [8ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "verkauf",
+      "status": "PASS",
+      "detail": "HTTP 200 (/verkauf/search) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "verkauf",
+      "status": "PASS",
+      "detail": "HTTP 200 (/verkauf/new) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "verkauf",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "vertraege",
+      "status": "PASS",
+      "detail": "HTTP 200 (/vertraege) [26ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "vertraege",
+      "status": "PASS",
+      "detail": "HTTP 200 (/vertraege/search) [17ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "vertraege",
+      "status": "PASS",
+      "detail": "HTTP 200 (/vertraege/new) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "vertraege",
+      "status": "PASS",
+      "detail": "HTTP 200 (/vertraege/900001) [18ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD edit",
+      "name": "vertraege",
+      "status": "PASS",
+      "detail": "HTTP 200 (/vertraege/900001/edit) [14ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD export CSV",
+      "name": "vertraege",
+      "status": "PASS",
+      "detail": "HTTP 200 (/vertraege/export.csv) [9ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "vorwegabzuege",
+      "status": "PASS",
+      "detail": "HTTP 200 (/vorwegabzuege) [17ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "vorwegabzuege",
+      "status": "PASS",
+      "detail": "HTTP 200 (/vorwegabzuege/search) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "vorwegabzuege",
+      "status": "PASS",
+      "detail": "HTTP 200 (/vorwegabzuege/new) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "vorwegabzuege",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "wv",
+      "status": "PASS",
+      "detail": "HTTP 200 (/wv) [32ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "wv",
+      "status": "PASS",
+      "detail": "HTTP 200 (/wv/search) [14ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "wv",
+      "status": "PASS",
+      "detail": "HTTP 200 (/wv/new) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "wv",
+      "status": "PASS",
+      "detail": "HTTP 200 (/wv/900001) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD edit",
+      "name": "wv",
+      "status": "PASS",
+      "detail": "HTTP 200 (/wv/900001/edit) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD export CSV",
+      "name": "wv",
+      "status": "PASS",
+      "detail": "HTTP 200 (/wv/export.csv) [11ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "wertelisten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/wertelisten) [33ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "wertelisten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/wertelisten/search) [18ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "wertelisten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/wertelisten/new) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "wertelisten",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "zaehler",
+      "status": "PASS",
+      "detail": "HTTP 200 (/zaehler) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "zaehler",
+      "status": "PASS",
+      "detail": "HTTP 200 (/zaehler/search) [22ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "zaehler",
+      "status": "PASS",
+      "detail": "HTTP 200 (/zaehler/new) [11ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "zaehler",
+      "status": "PASS",
+      "detail": "HTTP 200 (/zaehler/1) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD edit",
+      "name": "zaehler",
+      "status": "PASS",
+      "detail": "HTTP 200 (/zaehler/1/edit) [17ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD export CSV",
+      "name": "zaehler",
+      "status": "PASS",
+      "detail": "HTTP 200 (/zaehler/export.csv) [11ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "zeiten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/zeiten) [34ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "zeiten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/zeiten/search) [17ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "zeiten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/zeiten/new) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "zeiten",
+      "status": "SKIP",
+      "detail": "no record",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "intex_hausverwaltung_audit",
+      "status": "PASS",
+      "detail": "HTTP 200 (/intex_hausverwaltung_audit) [35ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "intex_hausverwaltung_audit",
+      "status": "PASS",
+      "detail": "HTTP 200 (/intex_hausverwaltung_audit/search) [10ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "intex_hausverwaltung_audit",
+      "status": "PASS",
+      "detail": "HTTP 200 (/intex_hausverwaltung_audit/new) [18ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "intex_hausverwaltung_audit",
+      "status": "PASS",
+      "detail": "HTTP 200 (/intex_hausverwaltung_audit/1) [14ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD edit",
+      "name": "intex_hausverwaltung_audit",
+      "status": "PASS",
+      "detail": "HTTP 200 (/intex_hausverwaltung_audit/1/edit) [17ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD export CSV",
+      "name": "intex_hausverwaltung_audit",
+      "status": "PASS",
+      "detail": "HTTP 200 (/intex_hausverwaltung_audit/export.csv) [18ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "intex_hausverwaltung_locking",
+      "status": "PASS",
+      "detail": "HTTP 200 (/intex_hausverwaltung_locking) [33ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "intex_hausverwaltung_locking",
+      "status": "PASS",
+      "detail": "HTTP 200 (/intex_hausverwaltung_locking/search) [25ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "intex_hausverwaltung_locking",
+      "status": "PASS",
+      "detail": "HTTP 200 (/intex_hausverwaltung_locking/new) [12ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "intex_hausverwaltung_locking",
+      "status": "PASS",
+      "detail": "HTTP 200 (/intex_hausverwaltung_locking/2) [20ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD edit",
+      "name": "intex_hausverwaltung_locking",
+      "status": "PASS",
+      "detail": "HTTP 200 (/intex_hausverwaltung_locking/2/edit) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD export CSV",
+      "name": "intex_hausverwaltung_locking",
+      "status": "PASS",
+      "detail": "HTTP 200 (/intex_hausverwaltung_locking/export.csv) [37ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "intex_hausverwaltung_uggroups",
+      "status": "PASS",
+      "detail": "HTTP 200 (/intex_hausverwaltung_uggroups) [37ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "intex_hausverwaltung_uggroups",
+      "status": "PASS",
+      "detail": "HTTP 200 (/intex_hausverwaltung_uggroups/search) [17ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "intex_hausverwaltung_uggroups",
+      "status": "PASS",
+      "detail": "HTTP 200 (/intex_hausverwaltung_uggroups/new) [17ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "intex_hausverwaltung_uggroups",
+      "status": "PASS",
+      "detail": "HTTP 200 (/intex_hausverwaltung_uggroups/900001) [17ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD edit",
+      "name": "intex_hausverwaltung_uggroups",
+      "status": "PASS",
+      "detail": "HTTP 200 (/intex_hausverwaltung_uggroups/900001/edit) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD export CSV",
+      "name": "intex_hausverwaltung_uggroups",
+      "status": "PASS",
+      "detail": "HTTP 200 (/intex_hausverwaltung_uggroups/export.csv) [25ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "intex_hausverwaltung_ugmembers",
+      "status": "PASS",
+      "detail": "HTTP 200 (/intex_hausverwaltung_ugmembers) [35ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "intex_hausverwaltung_ugmembers",
+      "status": "PASS",
+      "detail": "HTTP 200 (/intex_hausverwaltung_ugmembers/search) [9ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "intex_hausverwaltung_ugmembers",
+      "status": "PASS",
+      "detail": "HTTP 200 (/intex_hausverwaltung_ugmembers/new) [25ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "intex_hausverwaltung_ugmembers",
+      "status": "SKIP",
+      "detail": "composite key",
+      "ms": 0
+    },
+    {
+      "area": "CRUD list",
+      "name": "intex_hausverwaltung_ugrights",
+      "status": "PASS",
+      "detail": "HTTP 200 (/intex_hausverwaltung_ugrights) [55ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD search",
+      "name": "intex_hausverwaltung_ugrights",
+      "status": "PASS",
+      "detail": "HTTP 200 (/intex_hausverwaltung_ugrights/search) [24ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD new",
+      "name": "intex_hausverwaltung_ugrights",
+      "status": "PASS",
+      "detail": "HTTP 200 (/intex_hausverwaltung_ugrights/new) [17ms]",
+      "ms": 0
+    },
+    {
+      "area": "CRUD detail",
+      "name": "intex_hausverwaltung_ugrights",
+      "status": "SKIP",
+      "detail": "composite key",
+      "ms": 0
+    },
+    {
+      "area": "Dashboard",
+      "name": "assistent_doppelte_buchfuehrung",
+      "status": "PASS",
+      "detail": "HTTP 200 (/dashboard/assistent_doppelte_buchfuehrung) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "Dashboard",
+      "name": "assistent_abrechnungen",
+      "status": "PASS",
+      "detail": "HTTP 200 (/dashboard/assistent_abrechnungen) [21ms]",
+      "ms": 0
+    },
+    {
+      "area": "Dashboard",
+      "name": "assistent_objekte_und_einheiten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/dashboard/assistent_objekte_und_einheiten) [34ms]",
+      "ms": 0
+    },
+    {
+      "area": "Dashboard",
+      "name": "immobilien_diagramme",
+      "status": "PASS",
+      "detail": "HTTP 200 (/dashboard/immobilien_diagramme) [28ms]",
+      "ms": 0
+    },
+    {
+      "area": "Dashboard",
+      "name": "inventar_diagramme",
+      "status": "PASS",
+      "detail": "HTTP 200 (/dashboard/inventar_diagramme) [14ms]",
+      "ms": 0
+    },
+    {
+      "area": "Dashboard",
+      "name": "adressen_diagramme",
+      "status": "PASS",
+      "detail": "HTTP 200 (/dashboard/adressen_diagramme) [21ms]",
+      "ms": 0
+    },
+    {
+      "area": "Dashboard",
+      "name": "heute",
+      "status": "PASS",
+      "detail": "HTTP 200 (/dashboard/heute) [37ms]",
+      "ms": 0
+    },
+    {
+      "area": "Chart page",
+      "name": "Abrechnungskonten Zeitliche Verteilung",
+      "status": "PASS",
+      "detail": "HTTP 200 (/chart/Abrechnungskonten_Zeitliche_Verteilung) [8ms]",
+      "ms": 0
+    },
+    {
+      "area": "Chart data",
+      "name": "Abrechnungskonten_Zeitliche_Verteilung",
+      "status": "PASS",
+      "detail": "HTTP 200 (/chart/Abrechnungskonten_Zeitliche_Verteilung/data) [20ms]",
+      "ms": 0
+    },
+    {
+      "area": "Chart page",
+      "name": "Einheiten nach Art",
+      "status": "PASS",
+      "detail": "HTTP 200 (/chart/Einheiten_nach_Art) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "Chart data",
+      "name": "Einheiten_nach_Art",
+      "status": "PASS",
+      "detail": "HTTP 200 (/chart/Einheiten_nach_Art/data) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "Chart page",
+      "name": "Einnahmeverteilung",
+      "status": "PASS",
+      "detail": "HTTP 200 (/chart/Einnahmeverteilung) [17ms]",
+      "ms": 0
+    },
+    {
+      "area": "Chart data",
+      "name": "Einnahmeverteilung",
+      "status": "PASS",
+      "detail": "HTTP 200 (/chart/Einnahmeverteilung/data) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "Chart page",
+      "name": "Inventar nach Aufbewahrungsort",
+      "status": "PASS",
+      "detail": "HTTP 200 (/chart/Inventar_nach_Aufbewahrungsort) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "Chart data",
+      "name": "Inventar_nach_Aufbewahrungsort",
+      "status": "PASS",
+      "detail": "HTTP 200 (/chart/Inventar_nach_Aufbewahrungsort/data) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "Chart page",
+      "name": "Inventar nach Hersteller",
+      "status": "PASS",
+      "detail": "HTTP 200 (/chart/Inventar_nach_Hersteller) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "Chart data",
+      "name": "Inventar_nach_Hersteller",
+      "status": "PASS",
+      "detail": "HTTP 200 (/chart/Inventar_nach_Hersteller/data) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "Chart page",
+      "name": "Inventar nach Kategorien",
+      "status": "PASS",
+      "detail": "HTTP 200 (/chart/Inventar_nach_Kategorien) [6ms]",
+      "ms": 0
+    },
+    {
+      "area": "Chart data",
+      "name": "Inventar_nach_Kategorien",
+      "status": "PASS",
+      "detail": "HTTP 200 (/chart/Inventar_nach_Kategorien/data) [5ms]",
+      "ms": 0
+    },
+    {
+      "area": "Chart page",
+      "name": "Inventar nach Verkäufer",
+      "status": "PASS",
+      "detail": "HTTP 200 (/chart/Inventar_nach_Verk_ufer) [5ms]",
+      "ms": 0
+    },
+    {
+      "area": "Chart data",
+      "name": "Inventar_nach_Verk_ufer",
+      "status": "PASS",
+      "detail": "HTTP 200 (/chart/Inventar_nach_Verk_ufer/data) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "Chart page",
+      "name": "Kontostände",
+      "status": "PASS",
+      "detail": "HTTP 200 (/chart/Kontost_nde) [21ms]",
+      "ms": 0
+    },
+    {
+      "area": "Chart data",
+      "name": "Kontost_nde",
+      "status": "PASS",
+      "detail": "HTTP 200 (/chart/Kontost_nde/data) [12ms]",
+      "ms": 0
+    },
+    {
+      "area": "Chart page",
+      "name": "Kostenverteilung",
+      "status": "PASS",
+      "detail": "HTTP 200 (/chart/Kostenverteilung) [5ms]",
+      "ms": 0
+    },
+    {
+      "area": "Chart data",
+      "name": "Kostenverteilung",
+      "status": "PASS",
+      "detail": "HTTP 200 (/chart/Kostenverteilung/data) [10ms]",
+      "ms": 0
+    },
+    {
+      "area": "Chart page",
+      "name": "Leerstandsquote",
+      "status": "PASS",
+      "detail": "HTTP 200 (/chart/Leerstandsquote) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "Chart data",
+      "name": "Leerstandsquote",
+      "status": "PASS",
+      "detail": "HTTP 200 (/chart/Leerstandsquote/data) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "Chart page",
+      "name": "Objekte nach Art",
+      "status": "PASS",
+      "detail": "HTTP 200 (/chart/Objekte_nach_Art) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "Chart data",
+      "name": "Objekte_nach_Art",
+      "status": "PASS",
+      "detail": "HTTP 200 (/chart/Objekte_nach_Art/data) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "Chart page",
+      "name": "Objekte nach Flaeche",
+      "status": "PASS",
+      "detail": "HTTP 200 (/chart/Objekte_nach_Flaeche) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "Chart data",
+      "name": "Objekte_nach_Flaeche",
+      "status": "PASS",
+      "detail": "HTTP 200 (/chart/Objekte_nach_Flaeche/data) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "Chart page",
+      "name": "Verbrauchsanteile",
+      "status": "PASS",
+      "detail": "HTTP 200 (/chart/Verbrauchsanteile) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "Chart data",
+      "name": "Verbrauchsanteile",
+      "status": "PASS",
+      "detail": "HTTP 200 (/chart/Verbrauchsanteile/data) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "Chart page",
+      "name": "Verteilung Umlegbare Kosten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/chart/Verteilung_Umlegbare_Kosten) [17ms]",
+      "ms": 0
+    },
+    {
+      "area": "Chart data",
+      "name": "Verteilung_Umlegbare_Kosten",
+      "status": "PASS",
+      "detail": "HTTP 200 (/chart/Verteilung_Umlegbare_Kosten/data) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "Chart page",
+      "name": "Verteilung nach Bundesland",
+      "status": "PASS",
+      "detail": "HTTP 200 (/chart/Verteilung_nach_Bundesland) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "Chart data",
+      "name": "Verteilung_nach_Bundesland",
+      "status": "PASS",
+      "detail": "HTTP 200 (/chart/Verteilung_nach_Bundesland/data) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "Chart page",
+      "name": "Verteilung nach Klassifikation",
+      "status": "PASS",
+      "detail": "HTTP 200 (/chart/Verteilung_nach_Klassifikation) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "Chart data",
+      "name": "Verteilung_nach_Klassifikation",
+      "status": "PASS",
+      "detail": "HTTP 200 (/chart/Verteilung_nach_Klassifikation/data) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "Chart page",
+      "name": "Verteilung nach Ort",
+      "status": "PASS",
+      "detail": "HTTP 200 (/chart/Verteilung_nach_Ort) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "Chart data",
+      "name": "Verteilung_nach_Ort",
+      "status": "PASS",
+      "detail": "HTTP 200 (/chart/Verteilung_nach_Ort/data) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "Chart page",
+      "name": "Verteilung nach Staat",
+      "status": "PASS",
+      "detail": "HTTP 200 (/chart/Verteilung_nach_Staat) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "Chart data",
+      "name": "Verteilung_nach_Staat",
+      "status": "PASS",
+      "detail": "HTTP 200 (/chart/Verteilung_nach_Staat/data) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "Reports",
+      "name": "Report engine entry",
+      "status": "PASS",
+      "detail": "HTTP 200 (/report/adressen) [17ms]",
+      "ms": 0
+    },
+    {
+      "area": "Print",
+      "name": "Print engine entry",
+      "status": "PASS",
+      "detail": "HTTP 200 (/print/adressen) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "Export",
+      "name": "CSV export engine",
+      "status": "PASS",
+      "detail": "HTTP 200 (/export/adressen/csv) [18ms]",
+      "ms": 0
+    },
+    {
+      "area": "Special export",
+      "name": "DATEV export",
+      "status": "PASS",
+      "detail": "HTTP 200 (/export/datev) [13ms]",
+      "ms": 0
+    },
+    {
+      "area": "Special export",
+      "name": "Serienbrief",
+      "status": "PASS",
+      "detail": "HTTP 200 (/export/Serienbrief) [17ms]",
+      "ms": 0
+    },
+    {
+      "area": "Settings",
+      "name": "Team settings page",
+      "status": "PASS",
+      "detail": "HTTP 200 (/settings) [19ms]",
+      "ms": 0
+    },
+    {
+      "area": "Saved searches",
+      "name": "Saved searches page",
+      "status": "PASS",
+      "detail": "HTTP 200 (/savedsearches) [11ms]",
+      "ms": 0
+    },
+    {
+      "area": "Portal",
+      "name": "Landing page",
+      "status": "PASS",
+      "detail": "HTTP 200 (/portal) [17ms]",
+      "ms": 0
+    },
+    {
+      "area": "Portal",
+      "name": "Login page",
+      "status": "PASS",
+      "detail": "HTTP 200 (/portal/login) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "Portal",
+      "name": "Registration page",
+      "status": "PASS",
+      "detail": "HTTP 200 (/portal/anmeldung) [17ms]",
+      "ms": 0
+    },
+    {
+      "area": "Portal",
+      "name": "Anonymous dashboard blocked",
+      "status": "PASS",
+      "detail": "HTTP 302 (/portal/dashboard) [4ms]",
+      "ms": 0
+    },
+    {
+      "area": "Portal",
+      "name": "Anonymous properties blocked",
+      "status": "PASS",
+      "detail": "HTTP 302 (/portal/objekte) [8ms]",
+      "ms": 0
+    },
+    {
+      "area": "Portal",
+      "name": "Portal login",
+      "status": "PASS",
+      "detail": "user=kunde",
+      "ms": 0
+    },
+    {
+      "area": "Portal",
+      "name": "Authenticated dashboard",
+      "status": "PASS",
+      "detail": "HTTP 200 (/portal/dashboard) [27ms]",
+      "ms": 0
+    },
+    {
+      "area": "Portal",
+      "name": "Properties page",
+      "status": "PASS",
+      "detail": "HTTP 200 (/portal/objekte) [12ms]",
+      "ms": 0
+    },
+    {
+      "area": "Portal",
+      "name": "Units page",
+      "status": "PASS",
+      "detail": "HTTP 200 (/portal/einheiten) [17ms]",
+      "ms": 0
+    },
+    {
+      "area": "Portal",
+      "name": "Announcements page",
+      "status": "PASS",
+      "detail": "HTTP 200 (/portal/mitteilungen) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "Portal",
+      "name": "Meter readings page",
+      "status": "PASS",
+      "detail": "HTTP 200 (/portal/meldungen) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "Portal",
+      "name": "Invoices page",
+      "status": "PASS",
+      "detail": "HTTP 200 (/portal/rechnungen) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "Portal",
+      "name": "Contact page",
+      "status": "PASS",
+      "detail": "HTTP 200 (/portal/kontakt) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "Portal",
+      "name": "Portal logout",
+      "status": "PASS",
+      "detail": "HTTP 302 (/portal/logout) [12ms]",
+      "ms": 0
+    },
+    {
+      "area": "Admin",
+      "name": "Admin overview",
+      "status": "PASS",
+      "detail": "HTTP 200 (/admin) [39ms]",
+      "ms": 0
+    },
+    {
+      "area": "Admin",
+      "name": "Admin rights redirect",
+      "status": "PASS",
+      "detail": "HTTP 302 (/admin_rights) [10ms]",
+      "ms": 0
+    },
+    {
+      "area": "Admin",
+      "name": "Backup page",
+      "status": "PASS",
+      "detail": "HTTP 200 (/backup) [18ms]",
+      "ms": 0
+    },
+    {
+      "area": "Admin",
+      "name": "Documentation page",
+      "status": "PASS",
+      "detail": "HTTP 200 (/docs/admin) [41ms]",
+      "ms": 0
+    },
+    {
+      "area": "Admin",
+      "name": "Documentation markdown",
+      "status": "PASS",
+      "detail": "HTTP 200 (/docs/admin.md) [20ms]",
+      "ms": 0
+    },
+    {
+      "area": "PWA",
+      "name": "Web manifest is JSON",
+      "status": "PASS",
+      "detail": "HTTP 200 (/manifest.json) [13ms]",
+      "ms": 0
+    },
+    {
+      "area": "PWA",
+      "name": "Service worker",
+      "status": "PASS",
+      "detail": "HTTP 200 (/sw.js) [15ms]",
+      "ms": 0
+    },
+    {
+      "area": "PWA",
+      "name": "Offline page",
+      "status": "PASS",
+      "detail": "HTTP 200 (/offline.html) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "PWA",
+      "name": "Icon 192",
+      "status": "PASS",
+      "detail": "HTTP 200 (/static/icon-192.png) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "PWA",
+      "name": "Icon 512",
+      "status": "PASS",
+      "detail": "HTTP 200 (/static/icon-512.png) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "Static",
+      "name": "Main stylesheet",
+      "status": "PASS",
+      "detail": "HTTP 200 (/static/css/style.css) [16ms]",
+      "ms": 0
+    },
+    {
+      "area": "Static",
+      "name": "Application script",
+      "status": "PASS",
+      "detail": "HTTP 200 (/static/js/app.js) [17ms]",
+      "ms": 0
+    }
+  ]
+}

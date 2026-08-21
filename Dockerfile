@@ -14,13 +14,12 @@ RUN groupadd --system app \
 
 COPY --from=dependencies /app/node_modules ./node_modules
 COPY package.json package-lock.json ./
-COPY prisma ./prisma
+COPY prisma/schema.prisma ./prisma/schema.prisma
 COPY routes ./routes
 COPY src ./src
 COPY views ./views
 COPY public ./public
 COPY scripts ./scripts
-COPY tests/parity/fixtures ./tests/parity/fixtures
 COPY server.js ./server.js
 COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 

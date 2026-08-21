@@ -4,7 +4,7 @@ import session from 'express-session';
 import { PrismaClient } from '@prisma/client';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import bcrypt from 'bcryptjs';
+import bcrypt from 'bcrypt';
 import { loadMenu, menuFor } from './src/menu.js';
 import { dashboardFor } from './src/dashboards.js';
 import { registry, moduleNames } from './src/registry.js';
@@ -31,10 +31,13 @@ import { createVariantRouter } from './routes/variants.js';
 import createSpecialExportRouter from './routes/special-exports.js';
 import createVirtualRouter from './routes/virtual.js';
 import createGeocodingRouter from './routes/geocoding.js';
+import createPortalRouter from './routes/portal.js';
 import { multipartParser } from './src/multipart.js';
 import { FileSessionStore } from './src/session-store.js';
 import { createTranslator, langFromRequest, normalizeLang, SUPPORTED } from './src/i18n.js';
 import { slugify as dashSlugify } from './src/dashboards.js';
+import cluster from 'node:cluster';
+import os from 'node:os';
 import { normalizeSqliteDateTimes } from './src/sqlite-dates.js';
 import { loginWhere } from './src/auth/login-lookup.js';
 import { teamWhere as scopedTeamWhere } from './src/auth/team-scope.js';
@@ -143,6 +146,7 @@ async function populateSession(req) {
   if (!u.Team) {
     const dbUser = await prisma.benutzer.findUnique({ where: { ID: u.ID } }).catch(() => null);
     u.Team = dbUser?.Team || 'Team';
+    if (dbUser?.Art) u.Art = dbUser.Art;
   }
   const loaded = await loadRights(prisma, u.Benutzername, u.Gruppe);
   u.rights = loaded.rights;
@@ -222,6 +226,7 @@ app.get('/lang/:code', (req, res) => {
 
 export const requireAuth = (req, res, next) => {
   if (!req.session?.user) return res.redirect('/login');
+  if (req.session.user.Art === 'portal') return res.redirect('/portal/dashboard');
   next();
 };
 
@@ -328,14 +333,19 @@ app.post('/login', async (req, res) => {
   const user = where ? await safe(prisma.benutzer.findFirst({ where }), null) : null;
   let ok = false;
   if (user) {
-    try { ok = (user.Passwort === Passwort) || (user.Passwort?.startsWith('$2') && await bcrypt.compare(Passwort, user.Passwort)); } catch {}
+    try {
+      ok = user.Passwort?.startsWith('$2')
+        ? await bcrypt.compare(String(Passwort || ''), user.Passwort)
+        : (process.env.NODE_ENV !== 'production' || process.env.ALLOW_PLAINTEXT_PASSWORDS === 'true')
+          && user.Passwort === Passwort;
+    } catch {}
   }
   if (!user || !ok) {
     recordLoginFailure(where?.Benutzername || '', ip);
     return res.render('login', { error: t('login_error') });
   }
   recordLoginSuccess(user.Benutzername, ip);
-  if (!user.Passwort?.startsWith('$2')) {
+  if (ok && !user.Passwort?.startsWith('$2')) {
     const hash = await bcrypt.hash(Passwort, 10);
     await prisma.benutzer.update({ where: { ID: user.ID }, data: { Passwort: hash } }).catch(() => {});
   }
@@ -349,6 +359,7 @@ app.post('/login', async (req, res) => {
     req.session.user = {
       ID: user.ID, Benutzername: user.Benutzername, Name: user.Name,
       Gruppe: user.Gruppe, Team: user.Team || 'Team',
+      Art: user.Art || null,
     };
     req.notify('success', 'welcome', { name: user.Name || user.Benutzername });
     res.redirect('/');
@@ -366,6 +377,9 @@ for (const name of moduleNames()) {
 app.use('/ajax', requireAuth, createAjaxRouter());
 app.use('/file', requireAuth, fileRouter({ prisma, canAccess, teamWhere }));
 app.use('/', createAuthRouter({ prisma }));
+// Portal routes must be mounted before the catch-all '/' routers below
+// (variant, virtual) which carry requireAuth and would redirect /portal to /login.
+app.use('/portal', createPortalRouter({ prisma }));
 app.use('/upload', requireAuth, createUploadRouter({ prisma, canAccess, teamWhere }));
 app.use('/import', requireAuth, createImportRouter({ prisma, canAccess, teamWhere }));
 app.use('/webhook', requireAuth, createWebhookRouter({ prisma, canAccess, teamWhere }));
@@ -398,17 +412,44 @@ app.get('/backup', requireAuth, requireAdmin, (req, res) => {
   res.render('backup', { databasePath: process.env.DATABASE_URL || 'file:./dev.db' });
 });
 
+app.get('/docs/admin', requireAuth, (req, res) => {
+  res.render('docs-admin', { pageTitle: 'Admin documentation' });
+});
+
+app.get('/docs/admin.md', requireAuth, (req, res) => {
+  res.type('text/markdown').sendFile(path.join(__dirname, 'docs', 'admin-panel-guide.md'));
+});
+
 // Menu list pages keep their original PHPRunner paths (for example
 // /kontoauszuege2), even when they are metadata-backed views rather than
 // Prisma models. Mount this fallback last so concrete application routes win.
 app.use('/', requireAuth, createVirtualRouter({ prisma, canAccess, teamWhere }));
 
 const PORT = process.env.PORT || 3000;
-const normalizedDates = await normalizeSqliteDateTimes(prisma);
-if (normalizedDates) console.log(`Normalized ${normalizedDates} SQLite date values`);
-const server = app.listen(PORT, () => {
-  console.log('Ap Emlaki (SQLite) running on http://localhost:' + PORT);
+let server;
+
+// Optional multi-core mode. Disabled by default so the single-process behaviour
+// and the test suite are unchanged. With ENABLE_CLUSTER=1 the primary forks one
+// worker per CPU; only the workers accept connections, while scheduled jobs
+// (Autobuchungen) run once in the primary so they are never duplicated.
+if (process.env.ENABLE_CLUSTER === '1' && cluster.isPrimary) {
+  const workers = Math.max(1, Number(process.env.WORKERS || os.cpus().length));
+  const normalizedDates = await normalizeSqliteDateTimes(prisma);
+  if (normalizedDates) console.log(`Normalized ${normalizedDates} SQLite date values`);
   startAutoBookings({ prisma });
-});
+  console.log(`Clustering enabled: forking ${workers} worker(s)`);
+  for (let i = 0; i < workers; i++) cluster.fork();
+  cluster.on('exit', (worker, code, signal) => {
+    console.log(`Worker ${worker.process.pid} exited (${signal || code}); restarting`);
+    cluster.fork();
+  });
+} else {
+  const normalizedDates = await normalizeSqliteDateTimes(prisma);
+  if (normalizedDates) console.log(`Normalized ${normalizedDates} SQLite date values`);
+  server = app.listen(PORT, () => {
+    console.log('Ap Emlaki (SQLite) running on http://localhost:' + PORT);
+    startAutoBookings({ prisma });
+  });
+}
 
 export { server };

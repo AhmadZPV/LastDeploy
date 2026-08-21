@@ -1,0 +1,32 @@
+{
+  "generatedAt": "2026-08-21T09:34:40.608Z",
+  "baseUrl": "http://localhost:3000",
+  "totalUsers": 300,
+  "concurrency": 300,
+  "burst": 5,
+  "wallMs": 13356,
+  "login": {
+    "ok": 300,
+    "fail": 0,
+    "successRate": 100,
+    "reasons": {}
+  },
+  "activity": {
+    "requests": 1500,
+    "ok": 1500,
+    "fail": 0,
+    "successRate": 100,
+    "throughputPerSec": 112.3,
+    "latencyMs": {
+      "p50": 313,
+      "p95": 6107,
+      "p99": 7895,
+      "max": 8817
+    },
+    "statuses": {
+      "200": 748,
+      "302": 752
+    },
+    "reasons": {}
+  }
+}

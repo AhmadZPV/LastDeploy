@@ -92,3 +92,38 @@ for (const notification of document.querySelectorAll('[data-notification]')) {
   notification.querySelector('[data-notification-close]')?.addEventListener('click', dismiss);
   if (notification.classList.contains('notification-success')) setTimeout(dismiss, 5000);
 }
+
+const adminSearch = document.querySelector('[data-admin-search]');
+if (adminSearch) {
+  const sections = [...document.querySelectorAll('[data-admin-section]')];
+  const tabs = [...document.querySelectorAll('.admin-tabs a')];
+  const status = document.querySelector('[data-admin-search-status]');
+  const normalize = (value) => String(value || '').toLocaleLowerCase().normalize('NFKD');
+  const update = () => {
+    const query = normalize(adminSearch.value).trim();
+    let visible = 0;
+    for (const section of sections) {
+      const haystack = normalize([
+        section.dataset.searchTitle,
+        section.dataset.searchContent,
+        section.textContent,
+      ].join(' '));
+      const match = !query || haystack.includes(query);
+      section.hidden = !match;
+      if (match) visible += 1;
+    }
+    for (const tab of tabs) {
+      const target = document.querySelector(tab.getAttribute('href'));
+      tab.hidden = Boolean(target?.hidden);
+    }
+    if (status) status.textContent = query ? `${visible} section${visible === 1 ? '' : 's'} found` : '';
+  };
+  adminSearch.addEventListener('input', update);
+  document.addEventListener('keydown', (event) => {
+    if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') {
+      event.preventDefault();
+      adminSearch.focus();
+      adminSearch.select();
+    }
+  });
+}

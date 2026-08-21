@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
-import bcrypt from 'bcryptjs';
+import bcrypt from 'bcrypt';
 import { PrismaClient } from '@prisma/client';
 import { checkPassword } from '../src/auth/policy.js';
 

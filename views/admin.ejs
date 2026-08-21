@@ -5,8 +5,21 @@
   <div class="admin-stat"><strong><%= members.length %></strong><span>Memberships</span></div>
   <div class="admin-stat"><strong><%= rights.length %></strong><span>Access rules</span></div>
 </div>
+<section class="admin-command-bar" aria-labelledby="admin-search-title">
+  <div class="admin-command-copy">
+    <span class="eyebrow">Admin workspace</span>
+    <h2 id="admin-search-title">Find anything in administration</h2>
+    <p>Search users, groups, memberships, permissions and automation sections.</p>
+  </div>
+  <label class="admin-search" for="admin-section-search">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+    <input id="admin-section-search" type="search" placeholder="Search administration…" autocomplete="off" data-admin-search>
+    <kbd>Ctrl K</kbd>
+  </label>
+  <p class="admin-search-status" data-admin-search-status role="status" aria-live="polite"></p>
+</section>
 <nav class="admin-tabs" aria-label="Administration sections">
-  <a href="#users">Users</a><a href="#groups">Groups</a><a href="#members">Memberships</a><a href="#automation">Automation</a>
+  <a href="#users">Users</a><a href="#groups">Groups</a><a href="#members">Memberships</a><a href="#invoices">Invoices</a><a href="#automation">Automation</a><a href="/docs/admin">Guide</a>
 </nav>
 
 <% if (typeof adminError !== "undefined" && adminError) { %>
@@ -16,19 +29,21 @@
     <span><%= t(adminError) %></span>
   </div>
 <% } %>
-<section id="users" class="admin-section">
+<section id="users" class="admin-section" data-admin-section data-search-title="Users" data-search-content="accounts users status credentials">
   <div class="section-heading"><div><h2>Users</h2><p>Manage accounts, status and credentials.</p></div><span class="badge"><%= users.length %></span></div>
-  <div class="table-wrap"><table>
-    <thead><tr><th>Username</th><th>Name</th><th>Email</th><th>Status</th><th>Group</th><th>Actions</th></tr></thead>
+  <div class="table-wrap"><table class="admin-table admin-users-table">
+    <thead><tr><th>Username</th><th>Name</th><th>Email</th><th>Status</th><th>Group</th><th class="col-actions">Actions</th></tr></thead>
     <tbody><% users.forEach(u => { %><tr>
       <td><strong><%= u.Benutzername %></strong></td><td><%= u.Name %></td><td><%= u.Email %></td>
       <td><span class="status-pill <%= u.active ? 'is-active' : 'is-inactive' %>"><%= u.active ? 'Active' : 'Inactive' %></span></td><td><%= u.Gruppe || '—' %></td>
-      <td><div class="admin-actions">
-        <a class="btn btn-link" href="/benutzer/<%= u.ID %>/edit">Edit</a>
-        <form method="post" action="/admin/users/<%= u.ID %>/active"><%- include('partials/csrf') %><button class="btn btn-link"><%= u.active ? 'Deactivate' : 'Activate' %></button></form>
-        <details class="inline-disclosure"><summary>Password</summary><form method="post" action="/admin/users/<%= u.ID %>/password"><%- include('partials/csrf') %><input type="password" name="Passwort" placeholder="New password" required><button class="btn">Update</button></form></details>
-        <form method="post" action="/admin/users/<%= u.ID %>/delete" onsubmit="return confirm('Delete this user?')"><%- include('partials/csrf') %><button class="btn btn-danger">Delete</button></form>
-      </div></td>
+      <td>
+        <div class="admin-actions admin-actions-grid">
+          <span class="action-slot"><a class="btn btn-link" href="/benutzer/<%= u.ID %>/edit">Edit</a></span>
+          <span class="action-slot"><form method="post" action="/admin/users/<%= u.ID %>/active"><%- include('partials/csrf') %><button class="btn btn-link"><%= u.active ? 'Deactivate' : 'Activate' %></button></form></span>
+          <span class="action-slot"><details class="inline-disclosure"><summary>Password</summary><form method="post" action="/admin/users/<%= u.ID %>/password"><%- include('partials/csrf') %><input type="password" name="Passwort" placeholder="New password" required><button class="btn">Update</button></form></details></span>
+          <span class="action-slot action-slot-danger"><form method="post" action="/admin/users/<%= u.ID %>/delete" onsubmit="return confirm('Delete this user?')"><%- include('partials/csrf') %><button class="btn btn-danger">Delete</button></form></span>
+        </div>
+      </td>
     </tr><% }) %></tbody>
   </table></div>
   <details class="admin-create"><summary>Add user</summary><form class="form-grid" method="post" action="/admin/users">
@@ -42,21 +57,45 @@
   </form></details>
 </section>
 
-<section id="groups" class="admin-section">
+<section id="invoices" class="admin-section" data-admin-section data-search-title="Invoices" data-search-content="customer invoice review approval rejected pending file">
+  <div class="section-heading"><div><h2>Customer invoices</h2><p>Review uploaded invoices and update their status.</p></div><span class="badge"><%= (invoices || []).length %></span></div>
+  <div class="table-wrap"><table class="admin-table"><thead><tr><th>Customer</th><th>Invoice</th><th>Amount</th><th>Status</th><th>File</th><th>Review</th></tr></thead><tbody>
+    <% (invoices || []).forEach(invoice => { %><tr><td><%= invoice.Benutzer %></td><td><%= invoice.Rechnungsnummer %></td><td><%= invoice.Betrag ?? '—' %> €</td><td><span class="status-pill is-<%= invoice.Status %>"><%= invoice.Status %></span></td><td><a href="/admin/invoices/<%= invoice.ID %>/file"><%= invoice.Dateiname %></a></td><td><form method="post" action="/admin/invoices/<%= invoice.ID %>/status" class="compact-form"><%- include('partials/csrf') %><select name="Status"><option value="pending" <%= invoice.Status === 'pending' ? 'selected' : '' %>>Pending</option><option value="approved" <%= invoice.Status === 'approved' ? 'selected' : '' %>>Approved</option><option value="rejected" <%= invoice.Status === 'rejected' ? 'selected' : '' %>>Rejected</option><option value="needs_info" <%= invoice.Status === 'needs_info' ? 'selected' : '' %>>Needs information</option></select><input name="Pruefnotiz" value="<%= invoice.Pruefnotiz || '' %>" placeholder="Review note"><button class="btn btn-primary">Save</button></form></td></tr><% }) %>
+  </tbody></table></div>
+</section>
+
+<section id="groups" class="admin-section" data-admin-section data-search-title="Groups and rights" data-search-content="roles permissions access matrix groups">
   <div class="section-heading"><div><h2>Groups and rights</h2><p>Define roles and open their permission matrix.</p></div><span class="badge"><%= groups.length %></span></div>
-  <div class="table-wrap"><table><thead><tr><th>Group</th><th>Members</th><th>Rules</th><th>Actions</th></tr></thead><tbody>
-  <% groups.forEach(g => { %><tr><td><form class="compact-form" method="post" action="/admin/groups/<%= g.GroupID %>/rename"><%- include('partials/csrf') %><input name="Label" value="<%= g.Label %>"><button class="btn">Rename</button></form></td><td><%= (membersByGroup[g.GroupID] || []).join(', ') || '—' %></td><td><a class="btn btn-primary" href="/admin/rights/<%= g.GroupID %>">Permission matrix (<%= rights.filter(r => r.GroupID === g.GroupID).length %>)</a></td><td><form method="post" action="/admin/groups/<%= g.GroupID %>/delete" onsubmit="return confirm('Delete group and all its rights?')"><%- include('partials/csrf') %><button class="btn btn-danger">Delete</button></form></td></tr><% }) %>
+  <div class="table-wrap"><table class="admin-table admin-groups-table"><thead><tr><th>Group</th><th>Members</th><th>Rules</th><th class="col-actions">Actions</th></tr></thead><tbody>
+  <% groups.forEach(g => { %><tr>
+    <td><form class="compact-form" method="post" action="/admin/groups/<%= g.GroupID %>/rename"><%- include('partials/csrf') %><input name="Label" value="<%= g.Label %>"><button class="btn">Rename</button></form></td>
+    <td><%= (membersByGroup[g.GroupID] || []).join(', ') || '—' %></td>
+    <td><a class="btn btn-primary" href="/admin/rights/<%= g.GroupID %>">Permission matrix (<%= rights.filter(r => r.GroupID === g.GroupID).length %>)</a></td>
+    <td>
+      <div class="admin-actions admin-actions-grid admin-actions-grid-single">
+        <span class="action-slot action-slot-danger"><form method="post" action="/admin/groups/<%= g.GroupID %>/delete" onsubmit="return confirm('Delete group and all its rights?')"><%- include('partials/csrf') %><button class="btn btn-danger">Delete</button></form></span>
+      </div>
+    </td>
+  </tr><% }) %>
   </tbody></table></div>
   <details class="admin-create"><summary>Add group</summary><form class="compact-form" method="post" action="/admin/groups"><%- include('partials/csrf') %><input name="Label" placeholder="Group name" required><button class="btn btn-primary">Add group</button></form></details>
 </section>
 
-<section id="members" class="admin-section">
+<section id="members" class="admin-section" data-admin-section data-search-title="Memberships" data-search-content="assign users authorization groups membership">
   <div class="section-heading"><div><h2>Memberships</h2><p>Assign users to authorization groups.</p></div><span class="badge"><%= members.length %></span></div>
-  <div class="table-wrap"><table><thead><tr><th>User</th><th>Group</th><th>Action</th></tr></thead><tbody><% members.forEach(m => { %><tr><td><%= m.UserName %></td><td><%= (groups.find(g => g.GroupID === m.GroupID) || {}).Label || '?' %></td><td><form method="post" action="/admin/members/delete"><%- include('partials/csrf') %><input type="hidden" name="UserName" value="<%= m.UserName %>"><input type="hidden" name="GroupID" value="<%= m.GroupID %>"><button class="btn btn-danger">Remove</button></form></td></tr><% }) %></tbody></table></div>
+  <div class="table-wrap"><table class="admin-table admin-members-table"><thead><tr><th>User</th><th>Group</th><th class="col-actions">Actions</th></tr></thead><tbody><% members.forEach(m => { %><tr>
+    <td><%= m.UserName %></td>
+    <td><%= (groups.find(g => g.GroupID === m.GroupID) || {}).Label || '?' %></td>
+    <td>
+      <div class="admin-actions admin-actions-grid admin-actions-grid-single">
+        <span class="action-slot action-slot-danger"><form method="post" action="/admin/members/delete"><%- include('partials/csrf') %><input type="hidden" name="UserName" value="<%= m.UserName %>"><input type="hidden" name="GroupID" value="<%= m.GroupID %>"><button class="btn btn-danger">Remove</button></form></span>
+      </div>
+    </td>
+  </tr><% }) %></tbody></table></div>
   <details class="admin-create"><summary>Add membership</summary><form class="form-grid" method="post" action="/admin/members"><%- include('partials/csrf') %><div class="form-group"><label>User</label><select name="UserName" required><% users.forEach(u => { %><option value="<%= u.Benutzername %>"><%= u.Benutzername %></option><% }) %></select></div><div class="form-group"><label>Group</label><select name="GroupID" required><% groups.forEach(g => { %><option value="<%= g.GroupID %>"><%= g.Label %></option><% }) %></select></div><div class="form-grid-actions"><button class="btn btn-primary">Assign</button></div></form></details>
 </section>
 
-<section id="automation" class="admin-section">
+<section id="automation" class="admin-section" data-admin-section data-search-title="Automation" data-search-content="recurring bookings ledger document number automation">
   <div class="section-heading"><div><h2>Automation</h2><p>Create due recurring ledger entries and allocate the next document number per Team.</p></div></div>
   <form method="post" action="/admin/auto-bookings" onsubmit="return confirm('Run recurring bookings now?')"><%- include('partials/csrf') %><button class="btn btn-primary">Run recurring bookings</button></form>
 </section>

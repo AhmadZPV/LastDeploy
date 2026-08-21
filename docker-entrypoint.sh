@@ -3,14 +3,9 @@ set -eu
 
 mkdir -p /app/data /app/uploads
 
-if [ ! -s /app/data/dev.db ] && [ -s /app/prisma/dev.db ]; then
-  echo "Initializing persistent database from the project fixture"
-  cp /app/prisma/dev.db /app/data/dev.db
-fi
-
 if [ ! -s /app/data/dev.db ]; then
-  echo "Creating the initial fixture database"
-  node scripts/build-fixture.mjs --db=/app/data/dev.db
+  echo "Preparing a clean production database"
+  PRODUCTION_DB_PATH=/app/data/dev.db node scripts/prepare-production.mjs
 fi
 
 # Existing databases are never altered automatically. Schema changes must be
